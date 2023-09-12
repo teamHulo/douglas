@@ -1,0 +1,114 @@
+{%- liquid
+  unless section.settings.content_max_width == 0
+    assign content_max_width = section.settings.content_max_width | append: 'px'
+  endunless
+-%}
+
+<div
+  class="page page--narrow"
+  data-section-id="{{ section.id }}"
+  data-section-type="page"
+  style="--content-max-width: {{ content_max_width }};"
+>
+  <div class="page__inner">
+    <header class="page__header">
+      <h1 class="page__heading ff-heading fs-heading-1-base ta-c">{{ page.title }}</h1>
+      {% if section.settings.intro != blank %}
+        <p class="page__subheading fs-body-large ta-c">{{ section.settings.intro }}</p>
+      {% endif %}
+    </header>
+  </div>
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="about__grid about__grid--{{ section.blocks.size }}">
+      {%- liquid
+        assign should_disable_image_style = true
+
+        if section.blocks.size == 1 and section.blocks[0].settings.video_url == blank
+          assign should_disable_image_style = false
+        endif
+      -%}
+
+      {%- for block in section.blocks -%}
+        <div class="about__block about__block--{{ forloop.index }}">
+          {%- if block.settings.image == blank and block.settings.video_url == blank -%}
+            <div class="placeholder-image">
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            </div>
+          {%- endif -%}
+
+          {%- if block.settings.image != blank -%}
+            {% render 'image',
+              image: block.settings.image,
+              focal_point: 'image_presentation',
+              disable_style: should_disable_image_style
+            %}
+          {%- endif -%}
+
+          {% if block.settings.video_url != blank %}
+            <video
+              class="about__block-video image"
+              autoplay
+              playsinline
+              loop
+              muted
+              src="{{ block.settings.video_url }}"
+            ></video>
+            {% render 'video-pause' %}
+          {% endif %}
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+  <div class="page__inner">
+    <div class="page__rte ff-body rte rte--page">
+      {{ page.content }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main_page_about.name",
+  "tag": "section",
+  "class": "page-section",
+  "settings": [
+    {
+      "id": "intro",
+      "type": "textarea",
+      "label": "t:sections.main_page_about.settings.intro.label"
+    },
+    {
+      "id": "content_max_width",
+      "type": "range",
+      "min": 400,
+      "max": 2000,
+      "step": 100,
+      "default": 700,
+      "label": "t:sections.main_page_about.settings.content_max_width.label",
+      "info": "t:sections.main_page_about.settings.content_max_width.info"
+    }
+  ],
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "type": "media",
+      "name": "t:sections.main_page_about.blocks.media.name",
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "t:sections.main_page_about.blocks.media.settings.image.label"
+        },
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "t:sections.main_page_about.blocks.media.settings.video_url.label",
+          "info": "t:sections.main_page_about.blocks.media.settings.video_url.info"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

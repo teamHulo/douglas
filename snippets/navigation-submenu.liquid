@@ -1,0 +1,59 @@
+<ul class="navigation__submenu fs-body-base" data-submenu data-depth="{{ depth }}" aria-hidden="true">
+  {%- assign depth = depth | plus: 1 -%}
+
+  {%- for link in menu -%}
+    {%- if link.links.size > 0 -%}
+      {%- assign has_children = true -%}
+    {%- endif -%}
+
+    <li class="navigation__submenu-item">
+      {%- if has_children -%}
+        {%- liquid
+          assign child_is_active = false
+          for link in link.links
+            if link.active
+              assign child_is_active = true
+              break
+            elsif link.links.size > 0
+              for link in link.links
+                if link.active
+                  assign child_is_active = true
+                  break
+                endif
+              endfor
+            endif
+          endfor
+        -%}
+
+        <button
+          class="navigation__submenu-trigger no-transition has-icon{% if child_is_active %} active{% endif %}"
+          data-parent
+          data-link
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <span class="navigation__submenu-child-link">
+            {{ link.title }}
+          </span>
+          <span class="navigation__submenu-icon">
+            {% render 'icon' with icon: 'chevron' %}
+          </span>
+        </button>
+
+        {% render 'navigation-submenu', menu: link.links, depth: depth %}
+
+      {%- else -%}
+        <a
+          href="{{ link.url }}"
+          class="{% if link.active %}active{% endif %}"
+          {% if link.active %}aria-current="page"{% endif %}
+          data-link
+        >
+          {{ link.title }}
+        </a>
+      {%- endif -%}
+    </li>
+
+    {%- assign has_children = false -%}
+  {%- endfor -%}
+</ul>

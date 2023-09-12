@@ -1,0 +1,29 @@
+<div
+  class="store-availability-drawer popover"
+  data-store-availability-drawer
+  aria-describedby="drawer-title"
+  aria-hidden="true"
+  role="dialog"
+>
+  <div class="store-availability-drawer__wash" data-store-availability-drawer-wash></div>
+  <div class="store-availability-drawer__inner">
+    <div class="store-availability-drawer__header">
+      <div class="store-availability-drawer__product-info">
+        <h4 id="drawer-title" class="store-availability-drawer__store-list-product-title ff-heading fs-heading-2-large">
+          {{ 'store_availability.general.availability' | t }}
+        </h4>
+      </div>
+      <button
+        type="button"
+        class="store-availability-drawer__close"
+        data-store-availability-close aria-label="{{ 'general.accessibility.close_modal' | t }}"
+      >
+        {% render 'icon-button' with icon: 'close-stroke' %}
+      </button>
+    </div>
+    <div class="store-availbility-drawer__product" data-store-availability-product></div>
+
+    <div class="store-availbility-drawer__content" data-store-list-container></div>
+  </div>
+</div>
+

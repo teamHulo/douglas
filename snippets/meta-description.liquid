@@ -1,0 +1,15 @@
+{% comment %}
+  - outputs the <meta> tag with the description of the current page or collection
+  Params:
+    - content (string, optional): The content for the <meta> tag. If present, overrides the description for the current page or collection.
+{% endcomment %}
+
+{% assign meta_description_content = content
+  | default: collection.description
+  | default: page_description
+  | default: shop.name
+%}
+
+{% if meta_description_content != blank %}
+  <meta name="description" content="{{ meta_description_content | escape }}">
+{% endif %}

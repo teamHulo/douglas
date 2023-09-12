@@ -1,0 +1,239 @@
+{
+  "sections": {
+    "image-with-text-1": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+          }
+        },
+        "subheading": {
+          "type": "subheading",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "subheading"
+      ],
+      "settings": {
+        "text_alignment": "center",
+        "section_contrast": true
+      }
+    },
+    "logo-list": {
+      "type": "logo-list",
+      "blocks": {
+        "logo-1": {
+          "type": "logo",
+          "settings": {
+          }
+        },
+        "logo-2": {
+          "type": "logo",
+          "settings": {
+          }
+        },
+        "logo-3": {
+          "type": "logo",
+          "settings": {
+          }
+        },
+        "logo-4": {
+          "type": "logo",
+          "settings": {
+          }
+        },
+        "logo-5": {
+          "type": "logo",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "logo-1",
+        "logo-2",
+        "logo-3",
+        "logo-4",
+        "logo-5"
+      ],
+      "settings": {
+        "section_contrast": true
+      }
+    },
+    "rich-text": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+      }
+    },
+    "image-with-text-2": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+          }
+        },
+        "subheading": {
+          "type": "subheading",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "subheading"
+      ],
+      "settings": {
+        "text_alignment": "center"
+      }
+    },
+    "image-with-text-3": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+          }
+        },
+        "subheading": {
+          "type": "subheading",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "subheading"
+      ],
+      "settings": {
+        "image_position": "left",
+        "text_alignment": "center"
+      }
+    },
+    "image-with-text-4": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+          }
+        },
+        "subheading": {
+          "type": "subheading",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "subheading"
+      ],
+      "settings": {
+        "text_alignment": "center"
+      }
+    },
+    "quote": {
+      "type": "quote",
+      "blocks": {
+        "quote": {
+          "type": "quote",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "quote"
+      ],
+      "settings": {
+        "section_contrast": true
+      }
+    },
+    "main": {
+      "type": "main-page--about",
+      "settings": {
+      }
+    },
+    "blog-posts": {
+      "type": "blog-posts",
+      "blocks": {
+        "article-1": {
+          "type": "article",
+          "settings": {
+          }
+        },
+        "article-2": {
+          "type": "article",
+          "settings": {
+          }
+        }
+      },
+      "settings": {
+        "columns": 2
+      }
+    },
+    "text-columns-with-images": {
+      "type": "text-columns-with-images",
+      "blocks": {
+        "column-1": {
+          "type": "column",
+          "settings": {
+          }
+        },
+        "column-2": {
+          "type": "column",
+          "settings": {
+          }
+        },
+        "column-3": {
+          "type": "column",
+          "settings": {
+          }
+        },
+        "column-4": {
+          "type": "column",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "column-1",
+        "column-2",
+        "column-3",
+        "column-4"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "image-with-text-1",
+    "logo-list",
+    "rich-text",
+    "image-with-text-2",
+    "image-with-text-3",
+    "image-with-text-4",
+    "quote",
+    "main",
+    "blog-posts",
+    "text-columns-with-images"
+  ]
+}

@@ -1,0 +1,242 @@
+{%- liquid
+  assign paginated = false
+  if section.settings.pagination == 'paginated'
+    assign paginated = true
+  endif
+-%}
+
+<section
+  data-section-id="{{ section.id }}"
+  data-section-type="collection"
+  data-pagination-type="{{ section.settings.pagination }}"
+  data-collection-item-count="{{ collection.all_products_count }}"
+  class="
+    collection
+    collection--columns-{{ section.settings.columns }}
+    collection--columns-mobile-{{ section.settings.columns_mobile }}
+    collection--pagination-{{ section.settings.pagination }}
+    {% if settings.enable_reveal_animations and section.settings.enable_animation %}
+      animation
+    {% endif %}
+  "
+>
+  <div class="collection__inner">
+    {%- if collection.all_products_count > 0 -%}
+      <script type="application/json" data-tags>
+        {% if collection.all_tags.size > 0 %}
+          [
+            {%- for tag in collection.all_tags -%}
+              { "label": "{{ tag | escape }}", "handle": "{{ tag | handleize }}" }
+              {%- if forloop.last == false -%}, {%- endif -%}
+            {%- endfor -%}
+          ]
+        {% else %}
+          []
+        {% endif %}
+      </script>
+
+      {% paginate collection.products by section.settings.per_page %}
+        <div class="collection__container">
+          <div class="collection__content">
+            <div class="collection__filters" data-filter-bar>
+              {%
+                render 'filter-bar' with
+                results: collection,
+                show_sort: section.settings.show_sort,
+                show_filters: section.settings.show_filters
+              %}
+
+              {%
+                render 'mobile-filters' with
+                results: collection,
+                show_sort: section.settings.show_sort,
+                show_filters: section.settings.show_filters
+              %}
+            </div>
+
+            <div class="collection__main-area">
+              <div class="collection__window">
+                <div class="collection__loading" data-loading>
+                  {% render 'loader' %}
+                </div>
+
+                <div id="root" data-partial>
+                  <div class="collection__active-filters-container animation-fade-up-reveal">
+                    {%- render 'active-filters' with results: collection -%}
+                  </div>
+                  <div class="collection__products collection__infinite-container">
+                    {% for product in collection.products %}
+                      {%
+                        render 'product-item' with
+                        product: product,
+                        aspect_ratio: section.settings.aspect_ratio,
+                        product_columns: section.settings.columns,
+                        product_columns_mobile: section.settings.columns_mobile,
+                        wrapper_class: 'animation-fade-up-reveal'
+                      %}
+                    {% else %}
+                      <div class="collection__empty">
+                        <div>{{ 'collections.general.no_products' | t }}</div>
+                        <button type="button" class="btn btn--text-link" data-clear="true">
+                          {{ 'filters.clear_filters' | t }}
+                        </button>
+                      </div>
+                    {% endfor %}
+                  </div>
+
+                  {% unless paginated %}
+                    <div class="collection__infinite-trigger animation-fade-up-reveal">
+                      {% if paginate.next %}
+                        <a href="{{ paginate.next.url }}" class="btn btn--secondary no-transition">
+                          {{- 'general.pagination.load_more' | t -}}
+                        </a>
+                      {% endif %}
+                    </div>
+                  {% endunless %}
+
+                  {% if paginated %}
+                    <div class="animation-fade-up-reveal">
+                      {% if paginate.pages > 1 %}
+                        {%
+                          render 'pagination' with
+                          paginate: paginate,
+                          type: 'general.pagination.products'
+                        %}
+                      {% else %}
+                        {%
+                          render 'pagination' with
+                          paginate: paginate,
+                          type: 'general.pagination.products',
+                          display_paginate_item_count_only: true
+                        %}
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endpaginate %}
+
+      {%
+        render 'filter-drawer' with
+        results: collection,
+        show_sort: section.settings.show_sort,
+        show_filters: section.settings.show_filters,
+      %}
+    {%- else -%}
+      <div class="collection__empty ta-c">
+        <p class="fs-body-large">{{ 'collections.general.no_matches' | t }}</p>
+        <a class="btn btn--text-link" href="{{ routes.all_products_collection_url }}">{{ 'general.404.link' | t }}</a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.main_collection_product_grid.name",
+  "class": "collection-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.main_collection_product_grid.settings.filtering__header.content"
+    },
+    {
+      "id": "show_sort",
+      "type": "checkbox",
+      "label": "t:sections.main_collection_product_grid.settings.show_sort.label",
+      "default": true
+    },
+    {
+      "id": "show_filters",
+      "type": "checkbox",
+      "label": "t:sections.main_collection_product_grid.settings.show_filters.label",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main_collection_product_grid.settings.collection__header.content"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "t:sections.main_collection_product_grid.settings.columns.label",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "t:sections.main_collection_product_grid.settings.columns_mobile.label",
+      "options": [
+        {
+          "value": "1",
+          "label": "t:sections.main_collection_product_grid.settings.columns_mobile.options__1"
+        },
+        {
+          "value": "2",
+          "label": "t:sections.main_collection_product_grid.settings.columns_mobile.options__2"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "id": "per_page",
+      "type": "range",
+      "label": "t:sections.main_collection_product_grid.settings.per_page.label",
+      "default": 12,
+      "min": 12,
+      "max": 36,
+      "step": 12
+    },
+    {
+      "type": "select",
+      "id": "pagination",
+      "label": "t:sections.main_collection_product_grid.settings.pagination.label",
+      "default": "paginated",
+      "options": [
+        {
+          "value": "infinite",
+          "label": "t:sections.main_collection_product_grid.settings.pagination.options__1"
+        },
+        {
+          "value": "click",
+          "label": "t:sections.main_collection_product_grid.settings.pagination.options__2"
+        },
+        {
+          "value": "paginated",
+          "label": "t:sections.main_collection_product_grid.settings.pagination.options__3"
+        }
+      ],
+      "info": "t:sections.main_collection_product_grid.settings.pagination.info"
+    },
+    {
+      "id": "aspect_ratio",
+      "type": "select",
+      "label": "t:sections.main_collection_product_grid.settings.aspect_ratio.label",
+      "options": [
+        { "label": "t:sections.main_collection_product_grid.settings.aspect_ratio.options__1", "value": "natural" },
+        { "label": "t:sections.main_collection_product_grid.settings.aspect_ratio.options__2", "value": "square" },
+        { "label": "t:sections.main_collection_product_grid.settings.aspect_ratio.options__3", "value": "landscape" },
+        { "label": "t:sections.main_collection_product_grid.settings.aspect_ratio.options__4", "value": "portrait" }
+      ],
+      "default": "natural"
+    },
+    {
+      "type": "header",
+      "content": "t:shared.settings.section_style.header_style.content"
+    },
+    {
+      "id": "enable_animation",
+      "type": "checkbox",
+      "label": "t:shared.settings.section_style.enable_animation.label",
+      "info": "t:shared.settings.section_style.enable_animation.info",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

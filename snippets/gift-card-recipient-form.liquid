@@ -1,0 +1,164 @@
+{%- liquid
+  comment
+    Renders the gift card recipient form.
+
+    Required parameters:
+
+    - product: { Object } The product object
+    - form: { Object } The parent form object.
+  endcomment
+
+  assign gcr_string = 'gift-card-recipient'
+  assign input_class = 'input input-reset'
+-%}
+
+<div class="product-form__gift-card-recipient" data-section-id="{{ section.id }}">
+  <label class="checkbox-input__wrapper" for="{{ gcr_string }}-enable--{{ section.id }}">
+    <input
+      type="checkbox"
+      id="{{ gcr_string }}-enable--{{ section.id }}"
+      class="checkbox-input__input visually-hidden"
+      name="properties[__shopify_send_gift_card_to_recipient]"
+      disabled
+    >
+
+    <div class="checkbox-input__icon">
+      {% render 'icon' with icon: 'check' %}
+    </div>
+
+    <span class="checkbox-input__label">
+      {{ 'products.gift_card_recipient.enable' | t }}
+    </span>
+  </label>
+
+  <div
+    class="gift-card-recipient__form-errors"
+    {%- unless form.errors %}
+      hidden
+    {% endunless %}
+  >
+    <ul>
+      {% if form.errors -%}
+        {% for field in form.errors -%}
+          <li>
+            {% if field == 'form' -%}
+              {{ form.errors.messages[field] }}
+            {%- else -%}
+              <a href="#{{ gcr_string }}-{{ field }}-{{ section.id }}">
+                {{ form.errors.messages[field] }}
+              </a>
+            {%- endif %}
+          </li>
+        {%- endfor %}
+      {%- endif %}
+    </ul>
+  </div>
+
+  <div class="gift-card-recipient-fields">
+    <label for="{{ gcr_string }}-email--{{ section.id }}" class="gift-card-recipient-email-label">
+      <span class="optional">
+        {{ 'products.gift_card_recipient.email_optional' | t }}
+      </span>
+
+      <span class="required" hidden>
+        {{ 'products.gift_card_recipient.email' | t }}
+      </span>
+    </label>
+
+    {% liquid
+      assign email_class = input_class
+
+      if form.errors contains 'email'
+        assign email_class = email_class | append: ' input-error'
+      endif
+    -%}
+
+    <input
+      id="{{ gcr_string }}-email--{{ section.id }}"
+      type="email"
+      class="{{ email_class }}"
+      value="{{ form.email }}"
+      placeholder="{{ 'products.gift_card_recipient.email_placeholder' | t }}"
+      name="properties[Recipient email]"
+    >
+
+    <label for="{{ gcr_string }}-name--{{ section.id }}">{{ 'products.gift_card_recipient.name' | t }}</label>
+
+    {% liquid
+      assign name_class = input_class
+
+      if form.errors contains 'name'
+        assign name_class = name_class | append: ' input-error'
+      endif
+    -%}
+
+    <input
+      id="{{ gcr_string }}-name--{{ section.id }}"
+      type="text"
+      class="{{ name_class }}"
+      value="{{ form.name }}"
+      placeholder="{{ 'products.gift_card_recipient.name_placeholder' | t }}"
+      name="properties[Recipient name]"
+    >
+
+    <label for="{{ gcr_string }}-message--{{ section.id }}">{{ 'products.gift_card_recipient.message' | t }}</label>
+
+    {% liquid
+      assign message_class = input_class
+
+      if form.errors contains 'message'
+        assign message_class = message_class | append: ' input-error'
+      endif
+    -%}
+
+    <textarea
+      id="{{ gcr_string }}-message--{{ section.id }}"
+      class="{{ message_class }}"
+      maxlength="200"
+      rows="3"
+      placeholder="{{ 'products.gift_card_recipient.message_placeholder' | t }}"
+      name="properties[Message]"
+    >
+      {{- form.message -}}
+    </textarea>
+
+    <div class="textarea-note">
+      {{ 'products.gift_card_recipient.message_character_limit' | t }}
+    </div>
+
+    <label for="{{ gcr_string }}-send_on--{{ section.id }}">{{ 'products.gift_card_recipient.send_on' | t }}</label>
+
+    {% liquid
+      assign send_on_class = input_class
+
+      if form.errors contains 'send_on'
+        assign send_on_class = send_on_class | append: ' input-error'
+      endif
+    -%}
+
+    <input
+      id="{{ gcr_string }}-send_on--{{ section.id }}"
+      type="date"
+      class="{{ send_on_class }}"
+      value="{{ form.send_on }}"
+      pattern="\d{4}-\d{2}-\d{2}"
+      placeholder="{{ 'products.gift_card_recipient.send_on_placeholder' | t }}"
+      name="properties[Send on]"
+    >
+
+    <input
+      type="hidden"
+      id="{{ gcr_string }}-control--{{ section.id }}"
+      name="properties[__shopify_send_gift_card_to_recipient]"
+      value="if_present"
+    >
+
+    <input
+      type="hidden"
+      id="{{ gcr_string }}-timezone-offset--{{ section.id }}"
+      name="properties[__shopify_offset]"
+      value=""
+      disabled
+    >
+  </div>
+</div>

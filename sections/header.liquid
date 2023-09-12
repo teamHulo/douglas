@@ -1,0 +1,401 @@
+{% liquid
+  assign logo = section.settings.logo
+  assign logo_max_width = section.settings.logo_max_width
+  assign logo_position = section.settings.logo_position
+  assign navigation_position = section.settings.navigation_position
+  assign style = section.settings.style
+
+  assign transparent_home = section.settings.enable_transparent_home
+  assign color_text_transparent = section.settings.color_text_transparent
+  assign color_icon_transparent = section.settings.color_icon_transparent
+  assign color_border_transparent = section.settings.color_border_transparent
+  assign color_count_transparent = section.settings.color_count_transparent
+  assign opacity_border_transparent = section.settings.opacity_border_transparent
+  assign logo_transparent = section.settings.logo_transparent
+  assign border_opacity = opacity_border_transparent | divided_by: 100.0
+
+  assign menu = section.settings.menu
+  assign secondary_menu = section.settings.secondary_menu
+
+  assign links = linklists[menu].links
+  assign secondary_links = linklists[secondary_menu].links
+
+  assign secondary_menu_valid = false
+
+  if secondary_menu != blank and secondary_menu != menu
+    assign secondary_menu_valid = true
+  endif
+
+  if cart.item_count > 0
+    assign count_visible = true
+  endif
+
+  assign enable_locale_selector = section.settings.enable_locale_selector
+  assign enable_country_selector = section.settings.enable_country_selector
+%}
+
+<script>
+  {% comment %}This is done here AND in the JS so it is responsive in TE but doesn't wait for JS otherwise{% endcomment %}
+  {%- if transparent_home -%}
+    document.body.classList.add("header-transparent-on-home");
+  {%- endif -%}
+</script>
+
+{%- capture header_logo -%}
+  <h1 class="header__logo">
+    <a
+      class="header__logo-link"
+      href="{{ routes.root_url }}"
+      {% if logo != blank or logo_transparent != blank %}
+        aria-label="{{ shop.name }}"
+      {% endif %}
+    >
+      {%- if logo != blank -%}
+        {%- render 'image' with image: logo, wrapper_class: 'regular-logo', preload: true -%}
+      {%- endif -%}
+
+      {%- if logo_transparent != blank -%}
+        {%- render 'image' with image: logo_transparent, wrapper_class: 'transparent-logo', preload: true -%}
+      {%- endif -%}
+
+      {%- if logo == blank or logo_transparent == blank -%}
+        <span class="header__logo-text">{{ shop.name }}</span>
+      {%- endif -%}
+    </a>
+  </h1>
+{%- endcapture -%}
+
+{%- capture search_icon -%}
+  <a
+    class="header__icon-touch header__icon-touch--search no-transition"
+    href="{{ routes.search_url }}"
+    data-search
+    aria-label="{{ 'general.accessibility.open_search' | t }}"
+  >
+    {% render 'icon-button' with icon: 'search' %}
+  </a>
+{%- endcapture -%}
+
+{%- capture account_icon -%}
+  <a
+    class="header__icon-touch header__icon-touch--account"
+    href="{{ routes.account_url }}"
+    aria-label="{{ 'general.accessibility.go_account' | t }}"
+  >
+    {% render 'icon-button' with icon: 'account' %}
+  </a>
+{%- endcapture -%}
+
+{%- capture cart_icon -%}
+  <a
+    class="header__icon-touch header__icon-touch--cart no-transition"
+    href="{{ routes.cart_url }}"
+    aria-label="{{ 'general.accessibility.open_cart' | t }}"
+    data-js-cart-icon
+  >
+    {% render 'icon-button' with icon: 'shopping-cart' %}
+    <div class="header__cart-count" data-js-cart-indicator>
+      <span data-js-cart-count>{{ cart.item_count }}</span>
+    </div>
+  </a>
+{%- endcapture -%}
+
+{%- capture nav -%}
+  <nav class="header__links" data-navigation>
+    {%- if menu == blank and secondary_menu != blank -%}
+      {% render 'navigation' with menu: secondary_links %}
+    {%- else -%}
+      {% render 'navigation' with menu: links %}
+    {%- endif -%}
+  </nav>
+{%- endcapture -%}
+
+{%- capture burger -%}
+  <button
+    class="header__menu-icon header__icon-touch header__icon-menu"
+    aria-label="{{ 'general.accessibility.open_menu' | t }}"
+    data-js-menu-button
+  >
+    {% render 'icon-button' with icon: 'menu' %}
+  </button>
+{%- endcapture -%}
+
+{%- capture filler -%}<div class="header__filler"></div>{%- endcapture -%}
+
+<header
+  data-section-id="{{ section.id }}"
+  data-section-type="header"
+  {% if settings.enable_sticky_header %}
+    data-enable-sticky-header="true"
+  {% endif %}
+  {% if transparent_home %}
+    data-transparent-header-on-home="true"
+  {% endif %}
+  class="
+    header
+    header--{{ style }}
+    header--{{ logo_position }}
+    header--navigation-{{ navigation_position }}
+    {% if logo != blank -%}
+      header--has-logo
+    {%- endif %}
+    {% if transparent_home and template.name == 'index' %}
+      header--transparent-home
+    {% endif %}
+    {% if logo_transparent != blank %}
+      header--has-transparent-logo
+    {% endif %}
+    {% if shop.customer_accounts_enabled -%}
+      header--has-accounts
+    {%- endif %}
+    {% if secondary_menu_valid -%}
+      header--has-secondary-menu
+    {%- endif %}
+    {% if menu == blank and secondary_menu != blank -%}
+      header--primary-menu-is-secondary
+    {%- endif %}
+  "
+  style="
+    --width-max-logo: {{ logo_max_width }}px;
+    --color-cart-count-transparent: {{ color_count_transparent }};
+    --color-text-transparent: {{ color_text_transparent }};
+    --color-icon-transparent: {{ color_icon_transparent }};
+    --color-border-transparent: {{ color_border_transparent | color_modify: 'alpha', border_opacity }};
+  "
+>
+  <a href="#main" class="header__skip-top-content btn btn--primary btn--small">
+    {{ 'general.accessibility.skip_to_content' | t }}
+  </a>
+
+  <div class="header__inner">
+    <div class="header__left">
+      {%- if logo_position == 'center' and navigation_position == 'below' and style == 'inline' -%}
+        {{ burger }}
+        {{ search_icon }}
+      {%- elsif logo_position == 'left' and style == 'inline' and navigation_position != 'below' -%}
+        {{ header_logo }}
+        {{ burger }}
+        {{ nav }}
+      {%- elsif logo_position == 'left'
+        and style == 'inline'
+        and secondary_menu_valid
+        and navigation_position == 'below'
+      -%}
+        {{ burger }}
+        {{ header_logo }}
+      {%- elsif logo_position == 'left' and style == 'inline' and navigation_position == 'below' -%}
+        {{ burger }}
+        {{ header_logo }}
+      {%- elsif logo_position == 'left' and style == 'icon' -%}
+        {{ header_logo }}
+        {{ burger }}
+      {%- elsif logo_position == 'center' and style == 'inline' -%}
+        {{ burger }}
+        {{ nav }}
+      {%- elsif logo_position == 'center' and style == 'icon' -%}
+        {{ burger }}
+      {%- endif -%}
+    </div>
+    <div class="header__center">
+      {{ header_logo }}
+    </div>
+    <div class="header__right">
+      {%- unless logo_position == 'center' and navigation_position == 'below' and style == 'inline' -%}
+        {{ search_icon }}
+      {%- endunless -%}
+
+      {%- if shop.customer_accounts_enabled -%}
+        {{ account_icon }}
+      {%- endif -%}
+
+      {{ cart_icon }}
+    </div>
+    {%- if navigation_position == 'below' and style == 'inline' -%}
+      <div class="header__below-left">
+        <!-- logo menu needs to always be somewhre else -->
+        {%- if logo_position == 'left' -%}
+          {%- if secondary_menu_valid -%}
+            {{ burger }}
+          {%- endif -%}
+
+          {{ nav }}
+        {%- else -%}
+          {{ filler }}
+        {%- endif -%}
+      </div>
+      <div class="header__below-center">
+        {%- if logo_position == 'center' -%}
+          {{ nav }}
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {% render 'header-quick-search' %}
+    {% if settings.cart_type == 'flyout' %}
+      {% render 'quick-cart' %}
+    {% endif %}
+  </div>
+
+  <div class="no-js-menu no-js-menu--desktop">
+    {% render 'no-js-navmenu' with menu: menu, secondary_menu: secondary_menu %}
+  </div>
+
+  {% render 'drawer-menu',
+    menu: menu,
+    secondary_menu: secondary_menu,
+    enable_locale_selector: enable_locale_selector,
+    enable_country_selector: enable_country_selector
+  %}
+</header>
+
+<script>
+  // Set heading height at component level
+  const header = document.querySelector('.header__outer-wrapper');
+  document.documentElement.style.setProperty('--height-header', header.offsetHeight + 'px');
+</script>
+
+<style>
+  {% if transparent_home %}
+    .template-index #main {
+      margin-top: calc((var(--height-header) + var(--announcement-height)) * -1);
+    }
+  {% endif %}
+</style>
+
+{% schema %}
+{
+  "name": "t:sections.header.name",
+  "class": "header__outer-wrapper",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "t:sections.header.settings.image.label"
+    },
+    {
+      "id": "logo_max_width",
+      "type": "range",
+      "min": 50,
+      "max": 350,
+      "step": 10,
+      "unit": "px",
+      "label": "t:sections.header.settings.logo_max_width.label",
+      "default": 200
+    },
+    {
+      "id": "menu",
+      "type": "link_list",
+      "label": "t:sections.header.settings.menu.label",
+      "default": "main-menu"
+    },
+    {
+      "id": "secondary_menu",
+      "type": "link_list",
+      "label": "t:sections.header.settings.secondary_menu.label"
+    },
+    {
+      "id": "style",
+      "type": "select",
+      "label": "t:sections.header.settings.style.label",
+      "options": [
+        { "value": "inline", "label": "t:sections.header.settings.style.options__1" },
+        { "value": "icon", "label": "t:sections.header.settings.style.options__2" }
+      ],
+      "default": "icon"
+    },
+    {
+      "id": "navigation_position",
+      "type": "select",
+      "label": "t:sections.header.settings.navigation_position.label",
+      "options": [
+        { "value": "inline", "label": "t:sections.header.settings.navigation_position.options__1" },
+        { "value": "below", "label": "t:sections.header.settings.navigation_position.options__2" }
+      ],
+      "default": "inline"
+    },
+    {
+      "id": "logo_position",
+      "type": "select",
+      "label": "t:sections.header.settings.logo_position.label",
+      "options": [
+        { "value": "left", "label": "t:sections.header.settings.logo_position.options__1" },
+        { "value": "center", "label": "t:sections.header.settings.logo_position.options__2" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "t:shared.settings.disclosure.header__language.content",
+      "info": "t:shared.settings.disclosure.header__language.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_locale_selector",
+      "label": "t:shared.settings.disclosure.enable_locale_selector.label",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:shared.settings.disclosure.header__country.content",
+      "info": "t:shared.settings.disclosure.header__country.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_country_selector",
+      "label": "t:shared.settings.disclosure.enable_country_selector.label",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.header.settings.transparent__header.content"
+    },
+    {
+      "id": "enable_transparent_home",
+      "type": "checkbox",
+      "label": "t:sections.header.settings.enable_transparent_home.label",
+      "info": "t:sections.header.settings.enable_transparent_home.info",
+      "default": true
+    },
+    {
+      "id": "color_text_transparent",
+      "type": "color",
+      "label": "t:sections.header.settings.color_text_transparent.label",
+      "default": "#ffffff"
+    },
+    {
+      "id": "color_icon_transparent",
+      "type": "color",
+      "label": "t:sections.header.settings.color_icon_transparent.label",
+      "default": "#ffffff"
+    },
+    {
+      "id": "color_count_transparent",
+      "type": "color",
+      "label": "t:sections.header.settings.color_count_transparent.label",
+      "default": "#000"
+    },
+    {
+      "id": "color_border_transparent",
+      "type": "color",
+      "label": "t:sections.header.settings.color_border_transparent.label",
+      "default": "#ffffff"
+    },
+    {
+      "id": "opacity_border_transparent",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "t:sections.header.settings.opacity_border_transparent.label",
+      "default": 0
+    },
+    {
+      "id": "logo_transparent",
+      "type": "image_picker",
+      "label": "t:sections.header.settings.logo_transparent.label",
+      "info": "t:sections.header.settings.logo_transparent.info"
+    }
+  ]
+}
+{% endschema %}

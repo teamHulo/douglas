@@ -1,0 +1,264 @@
+<div
+  data-section-type="quick-add-product"
+  data-quick-add-item
+>
+  {%- if product -%}
+    {%- liquid
+      assign current_variant = product.selected_or_first_available_variant
+      assign compare_at_price = current_variant.compare_at_price
+      assign price = current_variant.price
+
+      assign file_extension = 'png'
+      assign chip_options = settings.chip_options | downcase | split: ', '
+      assign swatch_options = settings.swatch_options | downcase | split: ', '
+      assign button_options = swatch_options | concat: chip_options
+      assign dynamic_options = settings.enable_dynamic_product_options
+
+      # custom swatch colors
+      assign custom_colors = settings.custom_swatch_colors | newline_to_br | split: '<br />'
+      assign custom_color_map_key = ''
+      assign custom_color_map_value = ''
+
+      for color_value in custom_colors
+        assign custom_color_key = color_value | split: ':' | first | strip
+        assign custom_color_value = color_value | split: ':' | last | strip
+
+        assign custom_color_map_key = custom_color_map_key | append: ',' | append: custom_color_key
+        assign custom_color_map_value = custom_color_map_value | append: ',' | append: custom_color_value
+      endfor
+
+      assign custom_color_map_key = custom_color_map_key | remove_first: ',' | split: ','
+      assign custom_color_map_value = custom_color_map_value | remove_first: ',' | split: ','
+    -%}
+
+    <div class="product product__details" data-quick-add-product>
+      <div class="product__meta">
+        <h1 class="product__title product__block product__block--small ff-heading fs-heading-1-base">
+          {{ product.title }}
+        </h1>
+
+        <div class="product__price product__block product__block--small">
+          <span class="fs-heading-4-base" data-price>
+            {{- current_variant.price | money -}}
+            {%- if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif -%}
+          </span>
+
+          <span class="visually-hidden" data-compare-text>{{ 'products.product.regular_price' | t }}</span>
+          <s data-compare-price>
+            {%- if current_variant.compare_at_price > current_variant.price -%}
+              {{ current_variant.compare_at_price | money -}}
+              {%- if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif %}
+            {%- endif -%}
+          </s>
+          {% render 'unit-price', item: current_variant %}
+        </div>
+
+        <div class="product__border"></div>
+
+        {%- unless product.has_only_default_variant -%}
+          {%- liquid
+            assign variant_popup_page = pages[block.settings.variant_popup_page]
+            assign variant_popup_content_exists = false
+            assign variant_popup_option = ''
+
+            if block.settings.variant_popup_option != blank and block.settings.variant_popup_text != blank and variant_popup_page.content != blank
+              assign variant_popup_content_exists = true
+              assign variant_popup_option = block.settings.variant_popup_option | downcase
+            endif
+          -%}
+
+          <div
+            class="product__controls-group product__block product__block--medium"
+            data-product-variants
+            data-enable-dynamic-product-options="{{ settings.enable_dynamic_product_options }}"
+            data-current-variant-id="{{ current_variant.id }}"
+          >
+            {%- for option in product.options_with_values -%}
+              {%- liquid
+                assign option_name = option.name | downcase
+                assign show_popup_trigger = false
+
+                if variant_popup_content_exists and option_name == variant_popup_option
+                  assign show_popup_trigger = true
+                endif
+              -%}
+
+              {% comment %}
+                All inputs that have `name=options[Name]` will be picked up by
+                ProductForm, registered as an option input, and made available
+                at ProductForm.optionsInputs
+              {% endcomment %}
+              {%- capture option_values -%}
+                <select
+                  id="option{{ forloop.index }}"
+                  name="options[{{ option.name | escape }}]"
+                  class="input"
+                  {% if dynamic_options %}
+                    dynamic-variant-input
+                    data-index="option{{ forloop.index }}"
+                  {% endif %}
+                >
+                  {%- for value in option.values -%}
+                    <option
+                      data-value-handle="{{ value | handleize }}}--{{ forloop.index0 }}"
+                      value="{{ value | escape }}"
+                      {%- if option.selected_value == value -%}selected="selected"{%- endif -%}>
+                        {{ value }}
+                    </option>
+                  {%- endfor -%}
+                </select>
+              {%- endcapture -%}
+
+              <div
+                class="js-enabled product__option"
+                {% if dynamic_options %}
+                  data-index="option{{ forloop.index }}"
+                  dynamic-variant-input-wrap
+                {% endif %}
+              >
+                <div class="product__label-wrapper product__label-wrapper--collapse">
+                  <label class="product__label ff-heading fs-heading-4-base" for="Option{{ option.position }}">
+                    {{ option.name }}
+                  </label>
+
+                  {%- if swatch_options contains option_name -%}
+                    <span class="product__color-swatch-value" data-swatch-selected>{{ option.selected_value }}</span>
+                  {%- endif -%}
+                </div>
+
+                {%- if swatch_options contains option_name -%}
+                  <!-- Handle swatches -->
+                  <div
+                    class="product__color-swatches"
+                    data-option-buttons
+                    data-product-option="Option{{ option.position }}"
+                  >
+                    {%- for value in option.values -%}
+                      {%- assign custom_swatch_image = value | handle | append: '.' | append: file_extension -%}
+                      <button
+                        type="button"
+                        data-swatch-button="true"
+                        data-label="{{ value }}"
+                        aria-label="{{ value }}"
+                        data-button="{{ value | handleize }}}--{{ forloop.index0 }}"
+                        {% if dynamic_options %}
+                          dynamic-variant-button
+                          data-option-value="{{ value | escape }}"
+                        {% endif %}
+                        class="product__color-swatch {% if option.selected_value == value %}selected{% endif %}"
+                        style="
+                          {% if custom_color_map_key contains value %}
+                            {% for color_name in custom_color_map_key %}
+                              {% if color_name == value %}
+                                background-color: {{ custom_color_map_value[forloop.index0] }};
+                                {% break %}
+                              {% endif %}
+                            {% endfor %}
+                          {% else %}
+                            background-color: {{ value | lowercase | replace: ' ', '' }};
+                          {% endif %}
+                          {% if images[custom_swatch_image] != blank %}
+                            background-image: url({{ custom_swatch_image | file_url }});
+                          {% endif %}
+                        "
+                      ></button>
+                    {%- endfor -%}
+
+                    {{ option_values }}
+                  </div>
+                {%- endif -%}
+
+                {%- if chip_options contains option_name -%}
+                  <!-- Handle chips -->
+                  <div
+                    class="product__color-chips"
+                    data-option-buttons
+                    data-product-option="Option{{ option.position }}"
+                  >
+                    {%- for value in option.values -%}
+                      <button
+                        type="button"
+                        data-button="{{ value | handleize }}}--{{ forloop.index0 }}"
+                        {% if dynamic_options %}
+                          dynamic-variant-button
+                          data-option-value="{{ value | escape }}"
+                        {% endif %}
+                        class="product__chip {% if option.selected_value == value %}selected{% endif %}"
+                      >
+                        {{ value }}
+                      </button>
+                    {%- endfor -%}
+
+                    {{ option_values }}
+                  </div>
+                {%- endif -%}
+
+                {%- unless button_options contains option_name -%}
+                  <div class="product__option-select-wrapper select-wrapper">
+                    {{ option_values }}
+
+                    {% render 'icon' with icon: 'triangle' %}
+                  </div>
+                {%- endunless -%}
+              </div>
+            {% endfor %}
+          </div>
+        {% endunless %}
+
+        {%- if dynamic_options -%}
+          <script type="application/json" data-variant-json>
+            {{ product.variants | json }}
+          </script>
+        {%- endif -%}
+
+        <div class="product__controls-group product__controls-group-quanity  product__block product__block--medium">
+          <div class="product__label-wrapper{% unless block.settings.show_labels %} product__label-wrapper--collapse{% endunless %}">
+            <label class="product__label ff-heading fs-heading-4-base" for="Quantity-Input-{{ product.id }}">
+              {{ 'products.product.quantity' | t }}
+            </label>
+          </div>
+          <div class="product__item product__quantity">
+            <button
+              type="button"
+              class="product__quantity-button product__quantity-subtract-item"
+              data-subtract-quantity
+              aria-label="{{ 'general.accessibility.quantity_add' | t }}"
+            >
+              {% render 'icon' with icon: 'minus' true, non_focusable: true %}
+            </button>
+            <input
+              type="number"
+              id="Quantity-Input-{{ product.id }}"
+              value="1"
+              min="1"
+              pattern="[0-9]*"
+              class="product__input product__input--quantity"
+              data-quantity-input
+              aria-label="{{ 'general.accessibility.quantity' | t }}"
+            >
+            <button
+              type="button"
+              class="product__quantity-button product__quantity-add-item"
+              data-add-quantity
+              aria-label="{{ 'general.accessibility.quantity_subtract' | t }}"
+            >
+              {% render 'icon' with icon: 'plus', non_focusable: true %}
+            </button>
+          </div>
+        </div>
+
+        <div class="product__quantity-error product__block product__block--medium hidden" data-quantity-error>
+          {{ 'products.product.quantity_error' | t }}
+        </div>
+
+        {%
+          render 'product-form' with
+          product: product,
+          current_variant: current_variant,
+          show_dynamic_checkout: false,
+          hide_shop_pay: true
+        %}
+      </div>
+    </div>
+  {%- endif -%}
+</div>

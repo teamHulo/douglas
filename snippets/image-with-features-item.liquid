@@ -1,0 +1,40 @@
+{%- liquid
+  assign block_has_image = false
+  assign heading_style = 'fs-heading-2-base'
+
+  if image
+    assign block_has_image = true
+    assign heading_style = 'fs-heading-3-base'
+  endif
+-%}
+
+<div
+  class="
+    image-with-features__item
+    {% if image_shape == 'round' %} image-with-features__item--rounded{% endif %}
+    {% if block_has_image %} image-with-features__item--has-image{% endif %}
+  "
+  style="--text-max-width: {{ text_max_width }}rem;"
+>
+  {%- if block_has_image -%}
+    <div class="image-with-features__item-image animation-fade-up-reveal">
+      {% render 'image', image: image, focal_point: 'image_presentation', disable_style: true %}
+    </div>
+  {%- endif -%}
+
+  {%- if heading != blank or subheading != blank -%}
+    <div class="image-with-features__item-content">
+      {%- unless heading == blank -%}
+        <h4 class="image-with-features__item-heading ff-heading animation-fade-up-split-reveal {{ heading_style }}">
+          {{ heading }}
+        </h4>
+      {%- endunless -%}
+
+      {%- unless subheading == blank -%}
+        <div class="image-with-features__item-text fs-body-base animation-fade-up-reveal">
+          {{ subheading }}
+        </div>
+      {%- endunless -%}
+    </div>
+  {%- endif -%}
+</div>

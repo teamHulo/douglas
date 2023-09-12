@@ -1,0 +1,73 @@
+{%- liquid
+  assign image_is_constrained = true
+
+  if aspect_ratio == 'natural'
+    assign image_is_constrained = false
+  endif
+-%}
+
+{% capture placeholder_image %}
+  {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+  <div class="collection-item__image-wrapper">
+    <div class="collection-item__image placeholder-image">
+      {{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+    </div>
+  </div>
+{% endcapture %}
+
+<div
+  class="collection-item collection-item--{{ aspect_ratio }}"
+  style="--text-max-width: {{ text_max_width }}rem;"
+>
+  {%- if collection.image != blank or collection.products.first != blank -%}
+    {%- assign image_object = collection.image | default: collection.products.first.featured_media.preview_image -%}
+    {%- assign image_id = collection.image.id | default: collection.products.first.featured_media.id -%}
+
+    <a
+      href="{{ collection.url }}"
+      class="collection-item__image-wrapper hover"
+      aria-label="{{ collection.title }}"
+    >
+      {%- if image_object -%}
+        {%
+          render 'image' with
+          image: image_object,
+          id: image_id,
+          wrapper_class: 'collection-item__image',
+          disable_style: image_is_constrained,
+          has_reveal_container: true
+        %}
+      {%- else -%}
+        <div class="placeholder-image">
+          {{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+      {%- endif -%}
+    </a>
+  {%- elsif collection == empty -%}
+    {{ placeholder_image }}
+  {%- else -%}
+    {{ placeholder_image }}
+  {%- endif -%}
+
+  <div class="collection-item__footer ta-c">
+    <h4 class="collection-item__header ff-heading fs-heading-2-large animation-fade-up-reveal">
+      {%- if collection == empty -%}
+        {{ 'collections.general.collection_label' | t }}
+      {%- else -%}
+        <a href="{{ collection.url }}">{{ collection.title }}</a>
+      {%- endif -%}
+    </h4>
+
+    {%- unless subheading == blank -%}
+      <div class="collection-item__subheading fs-body-base animation-fade-up-reveal">
+        {{ subheading }}
+      </div>
+    {%- endunless -%}
+
+    {%- if show_description == true and collection.description != blank -%}
+      <p class="collection-item__subheading fs-body-base animation-fade-up-reveal">
+        {{ collection.description | truncate: 120 }}
+      </p>
+    {%- endif -%}
+  </div>
+</div>

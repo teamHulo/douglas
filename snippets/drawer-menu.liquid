@@ -1,0 +1,238 @@
+{%- liquid
+  assign links = linklists[menu].links
+  assign secondary_links = linklists[secondary_menu].links
+
+  assign account_visible = false
+  if shop.customer_accounts_enabled
+    assign account_visible = true
+  endif
+
+  assign language_visible = false
+  if enable_locale_selector and shop.published_locales.size > 1
+    assign language_visible = true
+  endif
+
+  assign currency_visible = false
+  if enable_country_selector and localization.available_countries.size > 1
+    assign currency_visible = true
+  endif
+-%}
+
+<div
+  class="drawer-menu popover"
+  data-drawer-menu
+>
+  <div class="drawer-menu__overlay" data-overlay></div>
+
+  <div class="drawer-menu__panel" data-scroll-lock-ignore>
+    <div class="drawer-menu__close-wrapper">
+      <button
+        type="button"
+        data-drawer-close
+        class="drawer-menu__close-icon"
+        aria-label="{{ 'general.accessibility.close_modal' | t }}"
+      >
+        {% render 'icon-button' with icon: 'close-stroke' %}
+      </button>
+    </div>
+
+    <div class="drawer-menu__bottom">
+      <div class="drawer-menu__all-links" data-depth="0" data-all-links>
+        <div class="drawer-menu__contents">
+          <div class="drawer-menu__main" data-main>
+            <ul class="drawer-menu__primary-links drawer-menu-list--0" data-primary-container="true" data-depth="0">
+              <!-- if primary doesn't exist but secondary does -->
+              {%- if menu == blank and secondary_menu != blank -%}
+                {% render 'drawer-menu-list', links: secondary_links, emphasized: true %}
+
+                <!-- If scondary menu is different show both with primary first -->
+              {%- elsif secondary_menu != blank and secondary_menu != menu -%}
+                {% render 'drawer-menu-list', links: links, emphasized: true %}
+                {% render 'drawer-menu-list', links: secondary_links %}
+
+                <!-- If secondary menu doesnt exist only show main menu -->
+              {%- else -%}
+                {% render 'drawer-menu-list', links: links, emphasized: true %}
+              {%- endif -%}
+
+              <li class="drawer-menu__item drawer-menu__search-parent" data-list-item>
+                <a
+                  class="drawer-menu__link fs-body-large"
+                  href="#"
+                  data-item="parent"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  {{ 'sections.drawer_menu.search_title' | t }}
+                  {% render 'icon' with icon: 'arrow-stroke', class: 'menu-icon' %}
+                </a>
+                <ul class="drawer-menu__list drawer-menu__list--sub" data-search-menu aria-hidden="true">
+                  <li class="drawer-menu__item drawer-menu__item--heading">
+                    <button class="drawer-menu__link" data-item="back">
+                      <span class="ff-heading fs-heading-2-large">
+                        {{ 'sections.drawer_menu.search_title' | t }}
+                      </span>
+                      {% render 'icon' with icon: 'arrow-stroke', class: 'menu-icon' %}
+                    </button>
+                  </li>
+                  <li class="drawer-menu__search">
+                    <form action="{{ routes.search_url }}" autocomplete="off">
+                      <div class="drawer-menu__header">
+                        <div class="drawer-menu__search-input-wrapper">
+                          <label for="drawer-search" class="visually-hidden">
+                            {{- 'sections.drawer_menu.search_title' | t -}}
+                          </label>
+                          <input
+                            name="q"
+                            id="drawer-search"
+                            class="drawer-menu__search-input"
+                            placeholder="{{ 'sections.drawer_menu.search_title' | t }}"
+                            data-input
+                          >
+                          <input type="hidden" name="options[prefix]" value="last">
+                          <div class="drawer-menu__actions">
+                            <button
+                              class="drawer-menu__clear"
+                              type="button"
+                              data-search-clear
+                              aria-label="{{ 'search.clear_search' | t }}"
+                            >
+                              {% render 'icon' with icon: 'close-stroke' %}
+                            </button>
+                            <button
+                              class="drawer-menu__submit"
+                              type="submit"
+                              data-search-submit
+                              aria-label="{{ 'search.search' | t }}"
+                            >
+                              {% render 'icon' with icon: 'arrow-stroke' %}
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="drawer-menu__search-results" data-scroll-lock-ignore data-search-results></div>
+                    </form>
+                  </li>
+                </ul>
+              </li>
+
+              {%- if account_visible -%}
+                <li class="drawer-menu__item" data-list-item>
+                  <a class="drawer-menu__link fs-body-large" href="{{ routes.account_url }}">
+                    {%- if customer -%}
+                      {{ 'sections.drawer_menu.account.logged_in' | t }}
+                    {% else %}
+                      {{ 'sections.drawer_menu.account.logged_out' | t }}
+                    {%- endif -%}
+                  </a>
+                </li>
+              {%- endif -%}
+
+              {%- if language_visible or currency_visible -%}
+                {%- form 'localization', class: 'drawer-menu__form' -%}
+                  {%- if language_visible -%}
+                    <li class="drawer-menu__item" data-list-item>
+                      <a
+                        class="drawer-menu__link fs-body-large"
+                        href="#"
+                        data-item="parent"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        {{ 'sections.drawer_menu.language' | t }}
+                        {% render 'icon' with icon: 'arrow-stroke', class: 'menu-icon' %}
+                      </a>
+                      <ul class="drawer-menu__list drawer-menu__list--sub" aria-hidden="true">
+                        <li class="drawer-menu__item drawer-menu__item--heading">
+                          <button class="drawer-menu__link" data-item="back">
+                            <span class="ff-heading fs-heading-2-large">
+                              {{ 'sections.drawer_menu.language' | t }}
+                            </span>
+                            {% render 'icon' with icon: 'arrow-stroke', class: 'menu-icon' %}
+                          </button>
+                        </li>
+                        {% for locale in form.available_locales %}
+                          <li class="drawer-menu__item" data-list-item>
+                            <a
+                              class="drawer-menu__link drawer-menu__link--cb"
+                              href="#"
+                              data-item="locale"
+                              data-value="{{ locale.iso_code }}"
+                            >
+                              <div
+                                class="drawer-menu__radio{% if locale.iso_code == form.current_locale.iso_code %} active{% endif %}"
+                              ></div>
+                              <span>{{ locale.endonym_name }}</span>
+                            </a>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    </li>
+                    <input
+                      type="hidden"
+                      name="locale_code"
+                      id="LocaleSelectorDrawer"
+                      value="{{ form.current_locale.iso_code }}"
+                      data-locale-input
+                    >
+                  {%- endif -%}
+
+                  {%- if currency_visible -%}
+                    <li class="drawer-menu__item" data-list-item>
+                      <a
+                        class="drawer-menu__link fs-body-large"
+                        href="#"
+                        data-item="parent"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        {{ 'sections.drawer_menu.currency' | t }}
+                        {% render 'icon' with icon: 'arrow-stroke', class: 'menu-icon' %}
+                      </a>
+                      <ul class="drawer-menu__list drawer-menu__list--sub" aria-hidden="true">
+                        <li class="drawer-menu__item drawer-menu__item--heading">
+                          <button class="drawer-menu__link drawer-menu__item--emphasized" data-item="back">
+                            <span class="ff-heading fs-heading-2-large">
+                              {{ 'sections.drawer_menu.currency' | t }}
+                            </span>
+                            {% render 'icon' with icon: 'arrow-stroke', class: 'menu-icon' %}
+                          </button>
+                        </li>
+                        {% for country in localization.available_countries %}
+                          <li class="drawer-menu__item" data-list-item>
+                            <a
+                              class="drawer-menu__link drawer-menu__link--cb"
+                              href="#"
+                              data-item="currency"
+                              data-value="{{ country.iso_code }}"
+                            >
+                              <div
+                                class="drawer-menu__radio{% if country.iso_code == localization.country.iso_code %} active{% endif %}"
+                              ></div>
+                              <span class="fs-body-large">
+                                {{ country.name }} ({{ country.currency.iso_code }}
+                                {{ country.currency.symbol }})
+                                {% comment %} {{ country.iso_code }} {%- if country.currency.symbol -%}&#40;{{ country.currency.symbol }}&#41;{%- endif -%} {% endcomment %}
+                              </span>
+                            </a>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    </li>
+                    <input
+                      type="hidden"
+                      name="country_code"
+                      id="CurrencySelector"
+                      value="{{ localization.country.iso_code }}"
+                      data-currency-input
+                    >
+                  {%- endif -%}
+                {%- endform -%}
+              {%- endif -%}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

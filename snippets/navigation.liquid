@@ -1,0 +1,67 @@
+<ul class="header__links-list">
+  {% for link in menu %}
+    {%- liquid
+      if link.links.size > 0
+        assign has_children = true
+      endif
+    -%}
+
+    <li
+      {% if has_children %}
+        data-submenu-parent
+      {% endif %}
+    >
+      {%- if has_children -%}
+        {%- liquid
+          assign child_is_active = false
+          for link in link.links
+            if link.active
+              assign child_is_active = true
+              break
+            elsif link.links.size > 0
+              for link in link.links
+                if link.active
+                  assign child_is_active = true
+                  break
+                endif
+              endfor
+            endif
+          endfor
+        -%}
+
+        <button
+          type="button"
+          class="navigation__submenu-trigger fs-navigation-base no-transition{% if child_is_active %} active{% endif %}"
+          data-link
+          data-parent
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          {{ link.title }}
+          <span class="header__links-icon">
+            {% render 'icon' with icon: 'chevron' %}
+          </span>
+        </button>
+
+        {%- liquid
+          if has_children
+            render 'navigation-submenu' with menu: link.links, depth: 1
+          endif
+
+          assign has_children = false
+        -%}
+      {%- else -%}
+        <a
+          href="{{ link.url }}"
+          class="fs-navigation-base {% if link.active %}active{% endif %}"
+          data-link
+          {% if link.active %}
+            aria-current="page"
+          {% endif %}
+        >
+          {{ link.title }}
+        </a>
+      {%- endif -%}
+    </li>
+  {% endfor %}
+</ul>

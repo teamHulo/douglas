@@ -1,0 +1,245 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product--default",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "border": {
+          "type": "border",
+          "settings": {
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "payment_widget": {
+          "type": "payment_widget",
+          "settings": {
+          }
+        },
+        "security_widget": {
+          "type": "security_widget",
+          "settings": {
+          }
+        },
+        "shipping_widget": {
+          "type": "shipping_widget",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "border",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "payment_widget",
+        "security_widget",
+        "shipping_widget"
+      ],
+      "settings": {
+      }
+    },
+    "text-columns-with-images": {
+      "type": "text-columns-with-images",
+      "blocks": {
+        "column-1": {
+          "type": "column",
+          "settings": {
+          }
+        },
+        "column-2": {
+          "type": "column",
+          "settings": {
+          }
+        },
+        "column-3": {
+          "type": "column",
+          "settings": {
+          }
+        },
+        "column-4": {
+          "type": "column",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "column-1",
+        "column-2",
+        "column-3",
+        "column-4"
+      ],
+      "settings": {
+      }
+    },
+    "image-with-features": {
+      "type": "image-with-features",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+          }
+        },
+        "feature-1": {
+          "type": "feature",
+          "settings": {
+          }
+        },
+        "feature-2": {
+          "type": "feature",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "feature-1",
+        "feature-2"
+      ],
+      "settings": {
+        "section_contrast": true
+      }
+    },
+    "logo-list": {
+      "type": "logo-list",
+      "blocks": {
+        "logo-1": {
+          "type": "logo",
+          "settings": {
+          }
+        },
+        "logo-2": {
+          "type": "logo",
+          "settings": {
+          }
+        },
+        "logo-3": {
+          "type": "logo",
+          "settings": {
+          }
+        },
+        "logo-4": {
+          "type": "logo",
+          "settings": {
+          }
+        },
+        "logo-5": {
+          "type": "logo",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "logo-1",
+        "logo-2",
+        "logo-3",
+        "logo-4",
+        "logo-5"
+      ],
+      "settings": {
+        "section_contrast": true
+      }
+    },
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "slide-1": {
+          "type": "slide",
+          "settings": {
+            "link": "https:\/\/fluorescent.co\/help\/spark\/slideshow",
+            "alignment": "left_center"
+          }
+        }
+      },
+      "block_order": [
+        "slide-1"
+      ],
+      "settings": {
+      }
+    },
+    "questions": {
+      "type": "questions",
+      "blocks": {
+        "question-1": {
+          "type": "question",
+          "settings": {
+          }
+        },
+        "question-2": {
+          "type": "question",
+          "settings": {
+          }
+        },
+        "question-3": {
+          "type": "question",
+          "settings": {
+          }
+        },
+        "question-4": {
+          "type": "question",
+          "settings": {
+          }
+        },
+        "question-5": {
+          "type": "question",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "question-1",
+        "question-2",
+        "question-3",
+        "question-4",
+        "question-5"
+      ],
+      "settings": {
+        "section_contrast": true
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "text-columns-with-images",
+    "image-with-features",
+    "logo-list",
+    "slideshow",
+    "questions",
+    "recommendations"
+  ]
+}

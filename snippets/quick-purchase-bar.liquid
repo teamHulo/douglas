@@ -1,0 +1,80 @@
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign compare_at_price = current_variant.compare_at_price
+  assign price = current_variant.price
+  assign featured_media = product.selected_or_first_available_variant.featured_media | default: product.featured_media
+  assign first_3d_model = product.media | where: 'media_type', 'model' | first
+
+  assign product_available_label = 'products.product.add_to_cart' | t
+  assign buy_now_label = 'products.product.buy_now' | t
+  if template.suffix == 'preorder' and request.design_mode or product.template_suffix == 'preorder'
+    assign product_available_label = 'products.product.preorder' | t
+    assign buy_now_label = 'products.product.preorder' | t
+  endif
+-%}
+
+<div class="quick-purchase-bar" data-quick-purchase-bar>
+  <button
+    type="button"
+    class="quick-purchase-bar__hide btn"
+    aria-label="{{ 'general.accessibility.mobile_filters' | t }}"
+    data-mobile-hide
+  >
+    {% render 'icon', icon: 'triangle' %}
+  </button>
+
+  <div class="quick-purchase-bar__inner">
+    <div class="quick-purchase-bar__product">
+      {%- if featured_media != blank -%}
+        {%- render 'image',
+          image: featured_media,
+          wrapper_class: 'quick-purchase-bar__product-image',
+          disable_style: true
+        -%}
+      {%- endif -%}
+
+      <div class="quick-purchase-bar__product-text">
+        <h4
+          class="quick-purchase-bar__product-title ff-heading fs-heading-3-base"
+          data-bar-product-title
+        >
+          {{ product.title }}
+        </h4>
+
+        <div class="quick-purchase-bar__product-price fs-body-base">
+          <span data-price>
+            {{- current_variant.price | money -}}
+            {%- if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif -%}
+          </span>
+          <s data-compare-price>
+            {%- if current_variant.compare_at_price > current_variant.price -%}
+              {{ current_variant.compare_at_price | money -}}
+              {%- if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif %}
+            {%- endif -%}
+          </s>
+          <span class="fs-body-base" data-bar-quantity></span>
+        </div>
+      </div>
+    </div>
+    <div class="quick-purchase-bar__purchase">
+      {%- if show_share_buttons -%}
+        {%- render 'share-icons', title: product.title, url: product.url, image: product.featured_media -%}
+      {%- endif -%}
+
+      <button
+        type="button"
+        class="quick-purchase-bar__purchase-button btn btn--small btn--primary"
+        data-quick-purchase-button="{{ purchase_bar_flow }}"
+      >
+        {%- if purchase_bar_flow == 'checkout' -%}
+          {{ buy_now_label }}
+        {%- elsif purchase_bar_flow == 'add-to-cart' -%}
+          {{ product_available_label }}
+        {%- endif -%}
+      </button>
+      {%- if purchase_bar_flow == 'checkout' -%}
+        <a href="/checkout" class="quick-purchase-bar__purchase-link"></a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>

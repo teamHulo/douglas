@@ -1,0 +1,36 @@
+{%- liquid
+  assign filters_valid = false
+  if results.filters and show_filters
+    assign filters_valid = true
+  endif
+-%}
+
+<div class="filter-bar animation-fade-up-reveal">
+  <div class="filter-bar__inner{% if filters_valid or show_sort %} show{% endif %}">
+    {%- if filters_valid -%}
+      <div class="filter-bar__group" data-group="{{ 'filters.title' | t }}">
+        <button type="button" class="filter-bar__button filter-bar__button-dropdown" data-filter-target="__tags" data-tags-dropdown>
+          {{ 'filters.title' | t }}
+
+          <span class="filter-bar__icon">
+            {% render 'icon' with icon: 'triangle' %}
+          </span>
+        </button>
+      </div>
+    {%- endif -%}
+
+
+    {%- if show_sort -%}
+      <div class="filter-bar__group" data-group="{{ heading }}">
+        <button type="button" class="filter-bar__button filter-bar__button-dropdown" data-filter-target="__sort" data-sort-dropdown>
+          {{ 'filters.sort_title' | t }}
+
+          <span class="filter-bar__icon">
+            {% render 'icon' with icon: 'triangle' %}
+          </span>
+        </button>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+

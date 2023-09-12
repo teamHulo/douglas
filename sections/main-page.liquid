@@ -1,0 +1,44 @@
+{%- liquid
+  unless section.settings.content_max_width == 0
+    assign content_max_width = section.settings.content_max_width | append: 'px'
+  endunless
+-%}
+
+<div
+  class="page page--narrow"
+  data-section-id="{{ section.id }}"
+  data-section-type="page"
+  style="--content-max-width: {{ content_max_width }};"
+>
+  <div class="page__inner">
+    <header class="page__header">
+      <h1 class="page__heading ff-heading fs-heading-1-base ta-c">{{ page.title }}</h1>
+    </header>
+  </div>
+
+  <div class="page__inner">
+    <div class="page__rte ff-body rte rte--page">
+      {{ page.content }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main_page.name",
+  "tag": "section",
+  "class": "page-section",
+  "settings": [
+    {
+      "id": "content_max_width",
+      "type": "range",
+      "min": 400,
+      "max": 2000,
+      "step": 100,
+      "default": 700,
+      "label": "t:sections.main_page.settings.content_max_width.label",
+      "info": "t:sections.main_page.settings.content_max_width.info"
+    }
+  ]
+}
+{% endschema %}

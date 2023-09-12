@@ -1,0 +1,263 @@
+{%- liquid
+  assign font_heading = settings.font_heading
+  assign font_body = settings.font_body
+  assign font_logo = settings.font_logo
+
+  assign font_heading_light = font_heading | font_modify: 'weight', '-300'
+  assign font_body_bold = font_body | font_modify: 'weight', '+300'
+  assign font_body_italic = font_body | font_modify: 'style', 'italic'
+  assign font_body_bold_italic = font_body_bold | font_modify: 'style', 'italic'
+
+  assign heading_text_transform = 'none'
+  if settings.capitalize_headings
+    assign heading_text_transform = 'uppercase'
+  endif
+
+  assign logo_text_transform = 'none'
+  if settings.capitalize_logo
+    assign logo_text_transform = 'uppercase'
+  endif
+
+  assign product_title_text_transform = 'none'
+  if settings.capitalize_product_title
+    assign product_title_text_transform = 'uppercase'
+  endif
+
+  assign navigation_text_transform = 'none'
+  if settings.capitalize_navigation
+    assign navigation_text_transform = 'uppercase'
+  endif
+
+  assign logo_mobile_base_scale = settings.logo_mobile_base_scale | divided_by: 100.0
+  assign heading_mobile_base_scale = settings.heading_mobile_base_scale | divided_by: 100.0
+  assign body_mobile_base_scale = settings.body_mobile_base_scale | divided_by: 100.0
+
+  assign brightness_background = settings.color_background_body | color_brightness
+  if brightness_background > 127
+    assign color_background_meta = settings.color_background_body | color_darken: 4
+    assign color_card_background = settings.color_background_body | color_darken: 4
+    assign color_icon = settings.color_text | color_darken: 2
+  else
+    assign color_background_meta = settings.color_background_body | color_lighten: 4
+    assign color_card_background = settings.color_background_body | color_lighten: 8
+    assign color_icon = settings.color_text | color_lighten: 2
+  endif
+
+  assign brightness_contrast_background = settings.color_background_contrast | color_brightness
+  if brightness_contrast_background > 127
+    assign color_background_meta_contrast = settings.color_background_contrast | color_darken: 4
+    assign color_card_background_contrast = settings.color_background_contrast | color_darken: 4
+  else
+    assign color_background_meta_contrast = settings.color_background_contrast | color_lighten: 4
+    assign color_card_background_contrast = settings.color_background_contrast | color_lighten: 6
+  endif
+
+  assign brightness_popover_background = settings.color_background_popover | color_brightness
+  if brightness_popover_background > 127
+    assign color_background_meta_popover = settings.color_background_popover | color_darken: 4
+  else
+    assign color_background_meta_popover = settings.color_background_popover | color_lighten: 4
+  endif
+
+  assign brightness_primary_button = settings.color_background_button | color_brightness
+  if brightness_primary_button > 60
+    assign color_background_button_hover = settings.color_background_button | color_darken: 20
+  else
+    assign color_background_button_hover = settings.color_background_button | color_lighten: 20
+  endif
+
+  assign brightness_contrast_button = settings.color_background_button_contrast | color_brightness
+  if brightness_contrast_button > 60
+    assign color_background_button_hover_contrast = settings.color_background_button_contrast | color_darken: 20
+  else
+    assign color_background_button_hover_contrast = settings.color_background_button_contrast | color_lighten: 20
+  endif
+
+  assign brightness_popover_button = settings.color_background_button_popover | color_brightness
+  if brightness_popover_button > 60
+    assign color_background_button_hover_popover = settings.color_background_button_popover | color_darken: 20
+  else
+    assign color_background_button_hover_popover = settings.color_background_button_popover | color_lighten: 20
+  endif
+
+  assign brightness_popover_border = settings.color_border_popover | color_brightness
+  if brightness_popover_border > 60
+    assign color_border_meta_popover = settings.color_border_popover | color_darken: 20
+  else
+    assign color_border_meta_popover = settings.color_border_popover | color_lighten: 20
+  endif
+-%}
+
+<style>
+  {{ font_logo | font_face: font_display: 'swap' }}
+  {{ font_heading | font_face: font_display: 'swap' }}
+  {{ font_heading_light | font_face: font_display: 'swap' }}
+  {{ font_body | font_face: font_display: 'swap' }}
+  {{ font_body_bold | font_face: font_display: 'swap' }}
+  {{ font_body_italic | font_face: font_display: 'swap' }}
+  {{ font_body_bold_italic | font_face: font_display: 'swap' }}
+
+  :root {
+    --color-text: {{ settings.color_text }};
+    --color-text-meta: {{ settings.color_text | color_modify: 'alpha', 0.6 }};
+    --color-text-link: {{ settings.color_text_link }};
+    --color-text-error: #C71B1B;
+    --color-text-success: #21b646;
+
+    --color-background: {{ settings.color_background_body }};
+    --color-background-transparent: {{ settings.color_background_body | color_modify: 'alpha', 0.8 }};
+    --color-border: {{ settings.color_border }};
+    --color-overlay: {{ settings.color_overlay }};
+    --color-overlay-transparent: {{ settings.color_overlay | color_modify: 'alpha', 0.6 }};
+
+    --color-background-meta: {{ color_background_meta }};
+    --color-background-darker-meta: {{ color_background_meta | color_darken: 5 }};
+    --color-foreground-meta: {{ settings.color_text | color_modify: 'alpha', 0.6 }};
+
+    --color-card-background: {{ color_card_background }};
+    --color-card-background-contrast: {{ color_card_background_contrast }};
+
+    --color-border-input: {{ settings.color_border }};
+    --color-text-input: {{ settings.color_text }};
+
+    --color-background-button: {{ settings.color_background_button }};
+    --color-background-button-hover: {{ color_background_button_hover }};
+    --color-text-button: {{ settings.color_text_button }};
+    --color-icon: {{ settings.color_text | color_modify: 'alpha', 0.4 }};
+    --color-icon-darker: {{ settings.color_text | color_modify: 'alpha', 0.6 }};
+
+    --color-background-sale-badge: {{ settings.color_background_sale_badge }};
+    --color-text-sale-badge: {{ settings.color_text_sale_badge }};
+    --color-background-sold-badge: {{ settings.color_background_sold_badge }};
+    --color-text-sold-badge: {{ settings.color_text_sold_badge }};
+
+    --color-background-contrast: {{ settings.color_background_contrast }};
+    --color-background-meta-contrast: {{ color_background_meta_contrast }};
+    --color-background-darker-meta-contrast: {{ color_background_meta_contrast | color_darken: 5 }};
+    --color-foreground-meta-contrast: {{ settings.color_text_contrast | color_modify: 'alpha', 0.6 }};
+    --color-text-contrast: {{ settings.color_text_contrast }};
+    --color-text-meta-contrast: {{ settings.color_text_contrast | color_modify: 'alpha', 0.6 }};
+    --color-border-contrast: {{ settings.color_border_contrast }};
+    --color-background-button-contrast: {{ settings.color_background_button_contrast }};
+    --color-background-button-hover-contrast: {{ color_background_button_hover_contrast }};
+    --color-text-button-contrast: {{ settings.color_text_button_contrast }};
+    --color-text-link-contrast: {{ settings.color_text_link_contrast }};
+
+    --color-text-header: {{ settings.color_header_text }};
+    --color-background-header: {{ settings.color_header_bg }};
+    --color-background-header-transparent: {{ settings.color_header_bg | color_modify: 'alpha', 0 }};
+    --color-icon-header: {{ settings.color_header_text }};
+    --color-shadow-header: rgba(0, 0, 0, 0.15);
+
+    --color-background-footer: {{ settings.color_background_footer }};
+    --color-text-footer: {{ settings.color_text_footer }};
+
+    --color-text-popover: {{ settings.color_text_popover }};
+    --color-text-meta-popover: {{ settings.color_text_popover | color_modify: 'alpha', 0.6 }};
+    --color-background-popover: {{ settings.color_background_popover }};
+    --color-background-meta-popover: {{ color_background_meta_popover }};
+    --color-background-darker-meta-popover: {{ color_background_meta_popover | color_darken: 5 }};
+    --color-background-button-popover: {{ settings.color_background_button_popover }};
+    --color-background-button-hover-popover: {{ color_background_button_hover_popover}};
+    --color-text-button-popover: {{ settings.color_text_button_popover }};
+    --color-border-popover: {{ settings.color_border_popover }};
+    --color-border-meta-popover: {{ color_border_meta_popover }};
+
+    --button-style: {{ settings.button_style }};
+    --button-shape: {{ settings.button_shape }};
+
+    --font-logo: {{ font_logo.family }}, {{ font_logo.fallback_families }};
+    --font-logo-weight: {{ font_logo.weight }};
+    --font-logo-style: {{ font_logo.style }};
+    --logo-font-size: {{ settings.logo_base_size }}px;
+    --logo-text-transform: {{ logo_text_transform }};
+    --logo-letter-spacing: {{ settings.logo_letter_spacing | times: 0.001 | append: 'em' }};
+
+    --font-heading: {{ font_heading.family }}, {{ font_heading.fallback_families }};
+    --font-heading-weight: {{ font_heading.weight }};
+    --font-heading-style: {{ font_heading.style }};
+    --font-heading-light-weight: {{ font_heading_light.weight | default: 'light' }};
+    --font-heading-text-transform: {{ heading_text_transform }};
+    --font-heading-base-letter-spacing: {{ settings.heading_letter_spacing | times: 0.001 | append: 'em' }};
+    --font-heading-base-size: {{ settings.heading_base_size | append: 'px' }};
+
+    --font-body: {{ font_body.family }}, {{ font_body.fallback_families }};
+    --font-body-weight: {{ font_body.weight }};
+    --font-body-style: {{ font_body.style }};
+    --font-body-italic: {{ font_body_italic.style | default: 'italic' }};
+    --font-body-bold-weight: {{ font_body_bold.weight | default: 'bold' }};
+    --font-body-base-letter-spacing: {{ settings.body_letter_spacing | times: 0.001 | append: 'em' }};
+    --font-body-base-size: {{ settings.body_base_size | append: 'px' }};
+    --font-body-base-line-height: 1.56;
+
+    --font-product-title-text-transform: {{ product_title_text_transform }};
+    --font-product-title-base-letter-spacing: {{ settings.product_title_letter_spacing | times: 0.001 | append: 'em' }};
+
+    --font-navigation-text-transform: {{ navigation_text_transform }};
+    --font-navigation-base-letter-spacing: {{ settings.navigation_letter_spacing | times: 0.001 | append: 'em' }};
+
+    /* Typography */
+    --font-size-heading-1-large: {{ settings.heading_base_size | times: 1.3333 | round | append: 'px' }};
+    --line-height-heading-1-large: 44;
+
+    --font-size-heading-1-base: {{ settings.heading_base_size | append: 'px' }};
+    --line-height-heading-1-base: 1.08;
+
+    --font-size-heading-2-large: {{ settings.heading_base_size | times: 0.75 | round | append: 'px' }};
+    --line-height-heading-2-large: 1.22;
+
+    --font-size-heading-2-base: {{ settings.heading_base_size | times: 0.58333 | round | append: 'px' }};
+    --line-height-heading-2-base: 1.29;
+
+    --font-size-heading-3-base: {{ settings.heading_base_size | times: 0.5 | round | append: 'px' }};
+    --line-height-heading-3-base: 1.33;
+
+    --font-size-heading-4-base: {{ settings.heading_base_size | times: 0.41666 | round | append: 'px' }};
+    --line-height-heading-4-base: 1.4;
+
+    --font-size-body-large: {{ settings.body_base_size | times: 1.333 | round | append: 'px' }};
+    --line-height-body-large: 1.5;
+
+    --font-size-body-base: {{ settings.body_base_size | append: 'px' }};
+    --line-height-body-base:  1.56;
+
+    --font-size-body-small: {{ settings.body_base_size | times: 0.888 | round | append: 'px' }};
+    --line-height-body-small: 1.75;
+
+    --font-size-body-x-small: {{ settings.body_base_size | times: 0.777 | round | append: 'px' }};
+    --line-height-body-x-small: 1.85;
+
+    --font-size-navigation-base: {{ settings.navigation_base_size | append: 'px' }};
+
+    /* Shopify pay specific */
+    --payment-terms-background-color: {{ color_background_meta }};
+  }
+
+  @media (max-width: 45em) {
+    :root{
+      --logo-font-size: {{ settings.logo_base_size | times: logo_mobile_base_scale | round | append: 'px' }};
+
+      --font-size-heading-1-large: {{ settings.heading_base_size | times: heading_mobile_base_scale | times: 1.3333 | round | append: 'px' }};
+
+      --font-size-heading-1-base: {{ settings.heading_base_size | times: heading_mobile_base_scale | append: 'px' }};
+
+      --font-size-heading-2-large: {{ settings.heading_base_size | times: heading_mobile_base_scale | times: 0.75 | round | append: 'px' }};
+
+      --font-size-heading-2-base: {{ settings.heading_base_size | times: heading_mobile_base_scale | times: 0.58333 | round | append: 'px' }};
+
+      --font-size-heading-3-base: {{ settings.heading_base_size | times: heading_mobile_base_scale | times: 0.5 | round | append: 'px' }};
+
+      --font-size-heading-4-base: {{ settings.heading_base_size | times: heading_mobile_base_scale | times: 0.41666 | round | append: 'px' }};
+
+      --font-size-body-large: {{ settings.body_base_size | times: body_mobile_base_scale | times: 1.333 | round | append: 'px' }};
+
+      --font-size-body-base: {{ settings.body_base_size | times: body_mobile_base_scale | append: 'px' }};
+
+      --font-size-body-small: {{ settings.body_base_size | times: body_mobile_base_scale | times: 0.888 | round | append: 'px' }};
+
+      --font-size-body-x-small: {{ settings.body_base_size | times: body_mobile_base_scale | times: 0.777 | round | append: 'px' }};
+
+      --font-size-navigation-base: {{ settings.navigation_base_size | times: body_mobile_base_scale | append: 'px' }};
+    }
+  }
+</style>

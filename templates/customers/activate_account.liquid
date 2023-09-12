@@ -1,0 +1,47 @@
+<section
+  class="customer login page"
+  data-section-id="{{ section.id }}"
+  data-section-type="reset-password"
+>
+
+  <div class="login__inner page__inner "></div>
+    <header class="login__header page__header">
+      <h1 class="login__heading ff-heading fs-heading-1-base ta-c">{{ 'customer.activate_account.title' | t }}</h1>
+      <p class="login__subheading fs-body-large">{{ 'customer.activate_account.subtext' | t }}</p>
+    </header>
+
+    <div class="login__main">
+      {% form 'activate_customer_password' %}
+
+        {%- assign post_message = 'customer.activate_account.success' | t -%}
+
+        {% render 'form-status', form: form, form_id: 'activateAccount', success_message: post_message %}
+
+        <label for="CustomerPassword" class="visually-hidden">{{ 'customer.activate_account.password' | t }}</label>
+        <input
+          type="password"
+          value=""
+          name="customer[password]"
+          id="CustomerPassword"
+          class="input"
+          placeholder="{{ 'customer.activate_account.password' | t }}"
+        >
+
+        <label for="CustomerPasswordConfirmation" class="visually-hidden">{{ 'customer.activate_account.password_confirm' | t }}</label>
+        <input
+          type="password"
+          value=""
+          name="customer[password_confirmation]"
+          id="CustomerPasswordConfirmation"
+          class="input"
+          placeholder="{{ 'customer.activate_account.password_confirm' | t }}"
+        >
+
+        <input type="submit" class="btn btn--primary btn--form btn--full" value="{{ 'customer.activate_account.submit' | t }}">
+        <div class="login__links fs-body fs-body-base">
+          <button type="submit" class="btn btn--text-link" name="decline">{{ 'customer.activate_account.cancel' | t }}</button>
+        </div>
+      {% endform %}
+    </div>
+  </div>
+</section>

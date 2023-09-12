@@ -1,0 +1,103 @@
+{%- assign timing_in_ms = section.settings.timing | times: 1000 -%}
+
+{%- if section.blocks.size -%}
+  <div
+    class="
+      announcement-bar
+      {% if section.blocks.size == 1 %}announcement-bar--single-slide{% endif %}
+      {% if section.blocks.size == 0 %}hidden{% endif %}
+    "
+    data-section-id="{{ section.id }}"
+    data-section-type="announcement-bar"
+    data-timing="{{ timing_in_ms }}"
+  >
+    {%- for block in section.blocks -%}
+      <div
+        class="announcement-bar__item ff-body fs-body-x-small"
+        style="
+          --color-background: {{ block.settings.color_background }};
+          --color-gradient-overlay: {{ block.settings.color_background | color_to_rgb | replace: 'rgb', 'rgba' | replace: ')', ', 100)' }};
+          --color-gradient-overlay-transparent: {{ block.settings.color_background | color_to_rgb | replace: 'rgb', 'rgba' | replace: ')', ', 0)' }};
+          --color-text: {{ block.settings.color_text }};
+        "
+        data-announcement
+        data-index="{{ forloop.index0 }}"
+        {{ block.shopify_attributes }}
+      >
+        <div class="announcement-bar__content-wrapper">
+          <div class="announcement-bar__content">
+            {%- if block.settings.link != blank -%}
+              <span>
+                <a class="announcement-bar__link color-inherit" href="{{ block.settings.link }}">
+                  {{ block.settings.title | strip_html }}
+                </a>
+              </span>
+            {%- else -%}
+              <span tabindex="1">{{ block.settings.title | strip_html }}</span>
+            {%- endif -%}
+          </div>
+        </div>
+
+        <div class="announcement-bar__gradient-gap"></div>
+      </div>
+    {%- endfor -%}
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:sections.announcement_bar.name",
+  "class": "announcement-bar__outer",
+  "max_blocks": 3,
+  "settings": [
+    {
+      "type": "range",
+      "id": "timing",
+      "label": "t:sections.announcement_bar.settings.timing.label",
+      "min": 3,
+      "max": 15,
+      "step": 1,
+      "default": 4
+    }
+  ],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "t:sections.announcement_bar.blocks.announcement.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Announce something here",
+          "label": "t:sections.announcement_bar.blocks.announcement.settings.title.label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.announcement_bar.blocks.announcement.settings.link.label",
+          "info": "t:sections.announcement_bar.blocks.announcement.settings.link.info"
+        },
+        {
+          "id": "color_background",
+          "type": "color",
+          "label": "t:sections.announcement_bar.blocks.announcement.settings.color_background.label",
+          "default": "#FFFFFF"
+        },
+        {
+          "id": "color_text",
+          "type": "color",
+          "label": "t:sections.announcement_bar.blocks.announcement.settings.color_text.label",
+          "default": "#000000"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "announcement"
+      }
+    ]
+  }
+}
+{% endschema %}

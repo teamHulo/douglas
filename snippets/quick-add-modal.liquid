@@ -1,0 +1,19 @@
+<div
+  class="quick-add-modal popover" data-quick-add-modal
+  data-section-type="recently-viewed-item"
+>
+  <div class="quick-add-modal__wash"></div>
+  <div class="quick-add-modal__inner" data-scroll-lock-ignore>
+    <div class="quick-add-modal__header">
+      <button
+      type="button"
+      data-quick-add-modal-close
+      class="quick-add-modal__close-icon"
+      aria-label="{{ 'general.accessibility.close_modal' | t }}"
+      >
+        {% render 'icon-button' with icon: 'close-stroke' %}
+      </button>
+    </div>
+    <div class="quick-add-modal__content"></div>
+  </div>
+</div>

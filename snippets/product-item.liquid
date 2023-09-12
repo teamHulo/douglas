@@ -1,0 +1,311 @@
+{%- liquid
+  if product.media.size > 1
+    assign multiple_images = true
+  endif
+
+  assign includes_aspect_ratio = false
+  assign current_variant = product.selected_or_first_available_variant
+
+  if aspect_ratio != blank and aspect_ratio != 'natural'
+    assign includes_aspect_ratio = true
+  endif
+
+  # Calculate the lowest discount percentage
+
+  assign percent = 0
+  if product.compare_at_price_varies or product.price_varies
+    for variant in product.variants
+      if variant.compare_at_price > variant.price
+        assign variant_percent = variant.compare_at_price | minus: variant.price | times: 100.00 | divided_by: variant.compare_at_price | round
+        if variant_percent > percent
+          assign percent = variant_percent
+        endif
+      endif
+    endfor
+  else
+    assign percent = product.compare_at_price | minus: product.price | times: 100.00 | divided_by: product.compare_at_price | round
+  endif
+-%}
+
+<div
+  class="
+    product-item
+    {% if includes_aspect_ratio %} product-item--{{ aspect_ratio }}{% endif %}
+    {% if product_columns_mobile == "2" %} product-item--compact {% endif %}
+    {% if settings.enable_quick_add and current_variant.available and product != blank %} product-item--has-quick-add{% endif %}
+    {{ wrapper_class }}
+  "
+  style="--z-index-item: {{ forloop.rindex }};"
+>
+  <div class="product-item__inner">
+    <div class="product-item__media{% if multiple_images %} product-item__media--multiple-images{% endif %}">
+      {%- if placeholder or product.featured_media == blank -%}
+        {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+
+        {%- liquid
+          assign media_tag = 'a'
+
+          if placeholder
+            assign media_tag = 'div'
+          endif
+        -%}
+
+        <{{ media_tag }}
+          class="product-item__image-link"
+          {%- unless placeholder -%}
+            href="{{ product.url | within: collection }}"
+            aria-label="{{ product.title }}"
+          {%- endunless -%}
+        >
+          <div class="placeholder-image product-item__image">
+            {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        </{{ media_tag }}>
+      {%- elsif product.featured_media -%}
+        <a
+          class="product-item__image-link"
+          href="{{ product.url | within: collection }}"
+          aria-label="{{ product.title }}"
+        >
+          {%- if multiple_images -%}
+            {% render 'image',
+              id: product.featured_media.id,
+              image: product.featured_media.preview_image,
+              wrapper_class: 'product-item__image product-item__image--one',
+              disable_style: includes_aspect_ratio
+            %}
+
+            {% # Check to make sure the second image isn't already featured %}
+            {% if product.media[1].id == product.featured_media.id %}
+              {% assign image_two = product.media[0].preview_image %}
+            {% else %}
+              {% assign image_two = product.media[1].preview_image %}
+            {% endif %}
+
+            {% render 'image',
+              image: image_two,
+              wrapper_class: 'product-item__image product-item__image--two',
+              disable_style: includes_aspect_ratio
+            %}
+          {%- else -%}
+            {% render 'image',
+              id: product.featured_media.id,
+              image: product.featured_media.preview_image,
+              wrapper_class: 'product-item__image',
+              disable_style: includes_aspect_ratio
+            %}
+          {%- endif -%}
+        </a>
+
+        {%- unless product.available -%}
+          <div class="product-item__wash"></div>
+        {%- endunless -%}
+
+        {%- if settings.enable_card_hover_options -%}
+          {%- render 'product-item-options', product: product, product_columns: product_columns -%}
+        {%- endif -%}
+      {%- endif -%}
+    </div>
+
+    <div class="product-item__meta fs-body-small">
+      <div class="product-item__text ff-body fs-body-base ta-c">
+        <h4 class="product-item__product-title fs-product-title fs-body-bold">
+          {%- if placeholder -%}
+            {{ 'homepage.onboarding.product_title' | t }}
+          {%- else -%}
+            <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
+          {%- endif -%}
+        </h4>
+
+        <span class="product-item__price-wrapper">
+          {% if placeholder %}
+            {{ 9999 | money -}}
+            {%- if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif %}
+          {% elsif product.compare_at_price > product.price %}
+            <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
+            <s class="t-subdued">
+              {{- product.compare_at_price | money -}}
+              {%- if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif -%}
+            </s>
+
+            <span class="sale">
+              {% if product.price_varies %}
+                {%- assign sale_price = product.price | money -%}
+                {{ 'products.product.on_sale_from_html' | t: price: sale_price -}}
+                {%- if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif %}
+              {% else %}
+                {{ product.price | money -}}
+                {%- if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif %}
+              {% endif %}
+            </span>
+
+            {%- if settings.enable_discount -%}
+              <span class="displayed-discount fs-body-small">
+                {%- if product.price_varies -%}
+                  {{ 'products.product.on_sale_varied' | t }}
+                  {{ 'products.product.on_sale_percent' | t: value: percent }}
+                {%- else -%}
+                  {{ 'products.product.on_sale_percent' | t: value: percent }}
+                {%- endif -%}
+              </span>
+            {%- endif -%}
+          {% else %}
+            {% if product.price_varies %}
+              {%- assign price = product.price | money -%}
+              {{ 'products.product.from_lowest_price_html' | t: lowest_price: price -}}
+              {%- if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif %}
+            {% else %}
+              <span class="product-item__price">
+                {{- product.price | money -}}
+                {%- if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif -%}
+              </span>
+            {% endif %}
+          {% endif %}
+
+          <div>
+            {% render 'unit-price', item: current_variant %}
+          </div>
+        </span>
+      </div>
+
+      {% # Add discount to sale badge, if enabled %}
+
+      {%- if product.compare_at_price > product.price or product.available != true -%}
+        <div class="product-item__badges fs-body-x-small">
+          {% if product.compare_at_price > product.price and product.available and settings.enable_sales_badge %}
+            <div class="product-item__badge product-item__badge--sale">
+              {%- if settings.sale_badge_includes_percent -%}
+                {%- if product.compare_at_price_varies or product.price_varies -%}
+                  <span class="fs-percent-bold">{{ 'products.product.on_sale_varied' | t }}</span>
+                {%- else -%}
+                  <span class="fs-body-bold">{{ 'products.product.on_sale' | t }}</span>
+                {%- endif -%}
+                &nbsp;{{ 'products.product.on_sale_percent' | t: value: percent }}
+              {%- else -%}
+                <span class="fs-body-bold">{{ 'products.product.on_sale' | t }}</span>
+              {%- endif -%}
+            </div>
+          {% endif %}
+
+          {% unless product.available or placeholder %}
+            <div class="product-item__badge product-item__badge--sold-out fs-body-bold">
+              {{ 'products.product.sold_out' | t }}
+            </div>
+          {% endunless %}
+        </div>
+      {%- endif -%}
+
+      {%- if settings.enable_quick_add and current_variant.available -%}
+        {%- liquid
+          assign open_in_modal = false
+
+          if product.has_only_default_variant == false and product.variants.size > 1
+            assign open_in_modal = true
+          endif
+
+          assign product_available_label = 'products.product.add_to_cart' | t
+
+          if product.template_suffix == 'preorder'
+            assign product_available_label = 'products.product.preorder' | t
+          endif
+        -%}
+
+        {%- capture quick_add_content -%}
+          <div class="product-item__quick-add-button-wrapper">
+            {%- if settings.show_quick_add_quantity -%}
+              <div class="product-item__quick-add-qty-selector">
+                <button
+                  type="button"
+                  class="product-item__quick-add-qty-button product-item__quick-add-qty-button--minus"
+                  data-change="decrement"
+                  data-quick-add-quantity
+                  aria-label="{{ 'general.accessibility.quantity_add' | t }}"
+                >
+                  {% render 'icon', icon: 'minus' %}
+                </button>
+                <input
+                  type="number"
+                  id="Quantity-{{ product.id }}"
+                  name="quantity"
+                  value="1"
+                  min="1"
+                  pattern="[0-9]*"
+                  aria-label="{{ 'cart.general.quantity' | t }}"
+                  data-quantity-input
+                >
+                <button
+                  type="button"
+                  class="product-item__quick-add-qty-button product-item__quick-add-qty-button--plus"
+                  data-change="increment"
+                  data-quick-add-quantity
+                  aria-label="{{ 'general.accessibility.quantity_subtract' | t }}"
+                >
+                  {% render 'icon', icon: 'plus' %}
+                </button>
+              </div>
+            {%- endif -%}
+
+            <button
+              data-quick-add="{{ product.handle }}"
+              data-product-id="{{ current_variant.id }}"
+              type="{% if open_in_modal or settings.cart_type == 'flyout' %}button{% else %}submit{% endif %}"
+              class="product-item__quick-add-button btn btn--medium-small btn--primary btn--full"
+              {% if open_in_modal %}
+                data-open-modal="true"
+              {% endif %}
+              {% if settings.show_quick_cart_after_quick_add and settings.cart_type == 'flyout' %}
+                data-open-quick-cart="true"
+              {% endif %}
+            >
+              <span class="product-item__quick-add-button-text">{{ product_available_label }}</span>
+              <span class="product-item__quick-add-button-text-height">x</span>
+              {% render 'icon', icon: 'plus', class: "product-item__quick-add-button-icon" %}
+              <div class="btn__loading-wrap">
+                <div class="btn__loading-bar"></div>
+              </div>
+              {% render 'icon', icon: 'check', class: "product-item__quick-add-button-check" %}
+            </button>
+          </div>
+        {%- endcapture -%}
+
+        {%- if open_in_modal -%}
+          {{ quick_add_content }}
+        {%- else -%}
+          {% form 'product',
+            product,
+            class: form_classes,
+            novalidate: 'novalidate',
+            data-product-form: '',
+            data-product-handle: product.handle,
+            data-current-product-id: current_variant.id
+          %}
+            <div class="product-item__quick-add-variant-selector">
+              <select
+                name="id"
+                class="input"
+                id="variant-selector"
+                data-variant-select
+              >
+                {%- for variant in product.variants -%}
+                  <option
+                    value="{{ variant.id }}"
+                    {%- if variant == current_variant -%}
+                      selected="selected"
+                    {%- endif -%}
+                  >
+                    {{ variant.title }}
+                  </option>
+                {%- endfor -%}
+              </select>
+            </div>
+            {{ quick_add_content }}
+          {% endform %}
+        {%- endif -%}
+      {%- endif -%}
+    </div>
+
+    {%- if settings.enable_quick_add and current_variant.available -%}
+      <div class="product-item__quick-add-container"></div>
+    {%- endif -%}
+  </div>
+</div>

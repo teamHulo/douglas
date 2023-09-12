@@ -1,0 +1,50 @@
+<div class="widgets-accordion accordion accordion--product accordion--{{ style }} {{ classes }}">
+  <div
+    class="accordion__group"
+    data-index="{{ forloop.index0 }}"
+    {{ block.shopify_attributes }}
+  >
+    <button type="button" class="accordion__label">
+      {%- if block.settings.title != blank -%}
+        <h4 class="widgets-accordion__item-heading ff-heading fs-heading-4-base">
+          {%- unless block.settings.icon == 'none' -%}
+            {%- render 'icon' with icon: block.settings.icon -%}
+          {%- endunless -%}
+          {{ block.settings.title }}
+        </h4>
+
+      {%- endif -%}
+
+      {% render 'icon' with icon: 'triangle', class: 'icon-triangle' %}
+      </button>
+
+    <div class="accordion__text">
+      {%- if block.settings.show_payment_icons -%}
+        <div class="widgets-accordion__item-icons">
+          {% render 'payment-icons' %}
+        </div>
+      {%- endif -%}
+
+      {%- if block.settings.text != blank -%}
+        <div class="widgets-accordion__item-text rte ff-body fs-body-small">{{ block.settings.text }}</div>
+      {%- endif -%}
+
+      {%- if block.settings.show_estimator and country_option_tags != blank -%}
+        <button
+          type="button"
+          class="
+            btn
+            btn--primary
+            btn--small
+            widgets-accordion__item-estimator-trigger
+            {% unless current_variant.available %}hidden{% endunless %}
+          "
+          data-estimator-trigger
+        >
+          {{ 'products.product.estimate_shipping' | t }}
+        </button>
+        {% render 'shipping-estimator-modal' with id: 'widget-accordion' %}
+      {%- endif -%}
+    </div>
+  </div>
+</div>

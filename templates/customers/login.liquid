@@ -1,0 +1,143 @@
+<section
+  class="customer login page"
+  data-section-id="{{ section.id }}"
+  data-section-type="login"
+>
+  <div class="login__inner page__inner">
+
+    <div class="login__success" data-success-message tabindex="-1">
+      <div class="fs-body-large">
+        {{ 'customer.recover_password.success' | t }}
+      </div>
+    </div>
+
+    <div id="login-form" class="login__wrapper" data-part="login" aria-hidden="false">
+      <header class="login__header page__header">
+        <h1 class="login__heading ff-heading fs-heading-1-base ta-c">{{ 'customer.login.title' | t }}</h1>
+      </header>
+
+        <div class="login__main">
+
+          {% form 'customer_login', novalidate: 'novalidate', class: 'login__form' %}
+
+            {%- if form.errors -%}
+              <div class="form-message form-message--error">
+                {{ form.errors | default_errors }}
+              </div>
+            {%- endif -%}
+
+            <label for="CustomerEmail" class="visually-hidden">{{ 'customer.login.email' | t }}</label>
+            <input
+              type="email"
+              class="input"
+              placeholder="{{ 'customer.login.email' | t }}"
+              name="customer[email]"
+              id="CustomerEmail"
+              autocomplete="email"
+              autocorrect="off"
+              autocapitalize="off"
+              {%- if form.errors contains 'form' -%}
+                class="input--error"
+                aria-invalid="true"
+              {%- endif -%}
+              >
+
+            {% if form.password_needed %}
+              <label for="CustomerPassword" class="visually-hidden">{{ 'customer.login.password' | t }}</label>
+              <input
+                type="password"
+                class="input"
+                value=""
+                placeholder="{{ 'customer.login.password' | t }}"
+                name="customer[password]"
+                id="CustomerPassword"
+                {%- if form.errors contains 'form' -%}
+                  class="input--error"
+                  aria-invalid="true"
+                {%- endif -%}
+              >
+            {% endif %}
+
+            <input type="submit" class="btn btn--primary btn--form btn--full" value="{{ 'customer.login.sign_in' | t }}">
+
+            <ul class="login__links ff-body fs-body-base">
+              {% if form.password_needed %}
+                <li><button type="button" class="btn btn--text-link" data-toggle aria-controls="register-form">{{ 'customer.login.forgot_password' | t }}</a></li>
+              {% endif %}
+              <li><a class="link" href="{{ routes.account_register_url }}">{{ 'layout.customer.create_account' | t }}</a></li>
+            </ul>
+
+          {% endform %}
+        </div>
+      </div>
+    </div>
+
+
+
+    <div id="register-form" class="login__wrapper hide" data-part="reset" aria-hidden="true">
+
+      <div class="login__header page__header">
+        <h2 class="login__heading ff-heading fs-heading-1-base ta-c">{{ 'customer.recover_password.title' | t }}</h2>
+        <p class="login__subheading fs-body-large">{{ 'customer.recover_password.subtext' | t }}</p>
+      </div>
+
+      <div class="login__main">
+
+        {% form 'recover_customer_password' %}
+          {% comment %}
+            Add a hidden span to indicate the form was submitted succesfully.
+          {% endcomment %}
+          {% if form.posted_successfully? %}
+            <span data-success class="hide"></span>
+          {% endif %}
+
+          {%- if form.errors -%}
+            <div id="RecoverEmail-email-error" class="login__error ff-body fs-body-base">
+              <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+              <span>{{ form.errors.messages['form'] }}</span>
+            </div>
+          {%- endif -%}
+
+          <label for="RecoverEmail" class="visually-hidden">{{ 'customer.recover_password.email' | t }}</label>
+          <input
+            type="email"
+            value=""
+            name="email"
+            placeholder="{{ 'customer.recover_password.email' | t }}"
+            class="input"
+            id="RecoverEmail"
+            class="input-full{% if form.errors %} input--error{% endif %}"
+            autocorrect="off"
+            autocapitalize="off"
+            {% if form.errors %}
+              aria-invalid="true"
+              aria-describedby="RecoverEmail-email-error"
+            {%- endif -%}
+          >
+
+          <input type="submit" class="btn btn--primary btn--form btn--full" value="{{ 'customer.recover_password.submit' | t }}">
+
+          <div class="login__links fs-body fs-body-base">
+            <button type="button" data-toggle class="btn btn--text-link" aria-controls="login-form">{{ 'customer.recover_password.cancel' | t }}</button>
+          </div>
+        {% endform %}
+      </div>
+
+    </div>
+
+    {% comment %}
+      If accounts are set as optional, the following will be shown as an option
+      during checkout, not on the default /login page.
+    {% endcomment %}
+    {% if shop.checkout.guest_login %}
+      <div class="text-center">
+        <hr class="hr--invisible">
+        <h2>{{ 'customer.login.guest_title' | t }}</h2>
+
+        {% form 'guest_login' %}
+          <input type="submit" class="btn btn--primary btn--form" value="{{ 'customer.login.guest_continue' | t }}">
+        {% endform %}
+      </div>
+    {% endif %}
+  </div>
+</section>

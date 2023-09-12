@@ -1,0 +1,56 @@
+{%- assign current_template = template | split: '.' | first -%}
+<nav class="breadcrumbs ff-body fs-body-base" role="navigation" aria-label="breadcrumbs">
+  {%- if show_breadcrumbs -%}
+    <ol class="breadcrumbs__list">
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link" href="{{ routes.root_url }}">{{ 'general.navigation.home' | t }}</a>
+        <div class="breadcrumbs__icon">{% render 'icon', icon: 'chevron' %}</div>
+      </li>
+      {%- case current_template -%}
+        {%- when 'product' -%}
+          {%- if collection.url -%}
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="{{ collection.url }}">{{ collection.title }}</a>
+              <div class="breadcrumbs__icon">{% render 'icon', icon: 'chevron' %}</div>
+            </li>
+          {%- endif -%}
+          <li class="breadcrumbs__item">
+            <span class="breadcrumbs__current" aria-current="page">{{ product.title }}</span>
+          </li>
+        {%- when 'collection' and collection.handle -%}
+          {%- if current_tags -%}
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="{{ collection.url }}">{{ collection.title }}</a>
+              <div class="breadcrumbs__icon">{% render 'icon', icon: 'chevron' %}</div>
+            </li>
+            <li class="breadcrumbs__item">
+              <span class="breadcrumbs__current" aria-current="page">{{- current_tags | join: ' + ' -}}</span>
+            </li>
+          {%- else -%}
+            <li class="breadcrumbs__item">
+              <span class="breadcrumbs__current" aria-current="page">{{ collection.title }}</span>
+            </li>
+          {%- endif -%}
+      {%- endcase -%}
+    </ol>
+  {%- endif -%}
+
+  {%- if show_navigation_buttons and collection -%}
+    <ol class="navigation-buttons__list">
+      <li class="navigation-buttons__item">
+        {%- if collection.previous_product -%}
+          {{ 'general.navigation.previous' | t | link_to: collection.previous_product }}
+        {%- else -%}
+          <span>{{ 'general.navigation.previous' | t }}</span>
+        {%- endif -%}
+      </li>
+      <li class="navigation-buttons__item">
+        {%- if collection.next_product -%}
+          {{ 'general.navigation.next' | t | link_to: collection.next_product }}
+        {%- else -%}
+          <span>{{ 'general.navigation.next' | t }}</span>
+        {%- endif -%}
+      </li>
+    </ol>
+  {%- endif -%}
+</nav>

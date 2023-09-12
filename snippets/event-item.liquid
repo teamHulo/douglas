@@ -1,0 +1,61 @@
+{%- liquid
+  assign link_element = 'div'
+  unless block.settings.link == blank
+    assign link_element = 'a'
+  endunless
+
+  assign date_badge_month = 'general.month_abbreviations.' | append: block.settings.date_badge_month
+%}
+
+<li class="
+    event-item
+    {% if block.settings.image %}event-item--has-image{% endif %}
+  ">
+  <{{ link_element }}
+    {% unless block.settings.link == blank %}
+      href="{{ block.settings.link }}"
+    {% endunless %}
+    class="event-item__link"
+  >
+    {%- if block.settings.enable_date_badge or block.settings.image != blank -%}
+      <div class="event-item__image-wrapper hover">
+        {%- unless block.settings.image == blank -%}
+          {%-
+            render 'image' with
+            wrapper_class: "event-item__image",
+            image: block.settings.image,
+            disable_style: image_is_constrained,
+            has_reveal_container: true
+          -%}
+        {%- endunless -%}
+
+        {%- if block.settings.enable_date_badge -%}
+          <span class="event-item__date-badge animation-fade-up-reveal">
+            <span class="event-item__date-badge-day fs-body-bold fs-body-large">
+              {{ block.settings.date_badge_day }}
+            </span>
+            <span class="event-item__date-badge-month fs-accent">
+              {{ date_badge_month | t }}
+            </span>
+          </span>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    <div class="event-item__details ta-c">
+      {%- unless block.settings.name == blank -%}
+        <h4 class="event-item__name ff-heading fs-heading-3-base animation-fade-up-reveal {{ event_heading_type }}">
+          {{ block.settings.name }}
+        </h4>
+      {%- endunless -%}
+      {%- unless block.settings.date == blank -%}
+        <p class="event-item__date fs-body-base animation-fade-up-reveal">{{ block.settings.date }}</p>
+      {%- endunless -%}
+      {%- unless block.settings.venue == blank -%}
+        <p class="event-item__venue fs-body-base animation-fade-up-reveal">{{ block.settings.venue }}</p>
+      {%- endunless -%}
+      {%- unless block.settings.summary == blank -%}
+        <div class="event-item__summary fs-body-base rte animation-fade-up-reveal">{{ block.settings.summary }}</div>
+      {%- endunless -%}
+    </div>
+  </{{ link_element }}>
+</li>

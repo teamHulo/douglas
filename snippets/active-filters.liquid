@@ -1,0 +1,72 @@
+{%- liquid
+  assign sort_by = results.sort_by | default: results.default_sort_by
+  if results.url
+    assign results_url = results.url
+  else
+    assign terms = results.terms | escape
+    assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
+  endif
+-%}
+
+<div class="active-filters">
+  {%- for filter in results.filters -%}
+    {%- for value in filter.active_values -%}
+      <a
+        href="{{ value.url_to_remove }}"
+        class="active-filters__active-filter no-transition"
+        data-remove-filter
+        data-filter="filter-{{ value.label | handleize | escape }}"
+        data-name="{{ value.param_name }}"
+        data-value="{{ value.value }}"
+      >
+        {%- if filter.type == 'boolean' -%}
+          {{ filter.label | escape }}
+        {%- else -%}
+          {{ value.label | escape }}
+        {%- endif -%}
+        {%- render 'icon' with icon: 'close-stroke' -%}
+      </a>
+    {%- endfor -%}
+
+    {% if filter.type == 'price_range' %}
+      {%- if filter.min_value.value != null or filter.max_value.value != null -%}
+        <a href="{{ value.url_to_remove }}" class="active-filters__active-filter no-transition" data-remove-range>
+          {%- if filter.min_value.value -%}{{ filter.min_value.value | money }}{%- else -%}{{ 0 | money }}{%- endif -%}
+          &nbsp;-&nbsp;
+          {%- if filter.max_value.value -%}
+            {{ filter.max_value.value | money }}
+          {%- else -%}
+            {{ filter.range_max | money }}
+          {%- endif -%}
+          {%- render 'icon' with icon: 'close-stroke' -%}
+        </a>
+      {%- endif -%}
+    {% endif %}
+  {%- endfor -%}
+
+  {%- comment -%} Do not show active sort for search template as it shows the default 'Relevant' on all searches {%- endcomment -%}
+  {%- if results.sort_by != blank and results.terms == blank -%}
+    {%- comment -%} Would be nice not to loop to get the formatted label {%- endcomment -%}
+    {%- for option in results.sort_options -%}
+      {%- if results.sort_by == option.value -%}
+        {%- assign label = option.name -%}
+        {%- assign value = option.value -%}
+      {%- endif -%}
+    {%- endfor -%}
+    <a
+      href="#"
+      class="active-filters__active-filter no-transition"
+      data-remove-filter
+      data-filter="filter-{{ label | handleize | escape }}"
+      data-name="sort_by"
+      data-value="{{ value }}"
+    >
+      Sort: {{ label }}
+      {%- render 'icon' with icon: 'close-stroke' -%}
+    </a>
+  {%- endif -%}
+
+  <a href="{{ results_url }}" class="active-filters__active-filter active-filters__clear btn btn--text-link">
+    <span>{{ 'filters.clear_filters' | t }}</span>
+  </a>
+</div>

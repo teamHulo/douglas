@@ -1,0 +1,63 @@
+{%- liquid
+  assign image_is_constrained = true
+
+  if aspect_ratio == 'natural'
+    assign image_is_constrained = false
+  endif
+-%}
+
+<div
+  class="
+    media
+    media--aspect-ratio-{{ aspect_ratio }}
+    {% if enable_product_lightbox %}media--has-lightbox{% endif %}
+    {% if media.media_type == 'external_video' %}media--has-external-video{% endif %}
+  "
+  data-media-id="{{ media.id }}{% if mobile_carousel %}-carousel{% endif %}"
+  data-media-type="{{ media.media_type }}"
+  {% if media.media_type == 'video' %}
+    data-loop="{{ loop_video }}"
+    style="--video-aspect-ratio: {{ media.preview_image.width }} / {{ media.preview_image.height }};"
+  {% endif %}
+  {% if media.media_type != 'image' %}
+    data-interactive
+  {% endif %}
+>
+  {%- if media.media_type == 'image' -%}
+    {%- capture media_atributes -%}
+      {% if enable_product_lightbox %}
+        href="#" data-open="{{ media.id }}"
+      {%- elsif enable_product_lightbox != true and featured -%}
+        href="{{ link }}"
+      {% endif %}
+    {%- endcapture -%}
+    <a {{ media_atributes }}>
+      {%
+        render 'image' with
+        image: media,
+        disable_style: image_is_constrained,
+        has_reveal: has_reveal
+      %}
+    </a>
+  {%- elsif media.media_type == 'video' -%}
+    {{ media | video_tag: image_size: '1024x' }}
+  {%- elsif media.media_type == 'external_video' -%}
+    {%- liquid
+      if loop_video
+        assign loop_binary = '1'
+      else
+        assign loop_binary = '0'
+      endif
+    -%}
+    {{ media | external_video_url: playlist: media.external_id, loop: loop_binary | external_video_tag }}
+    <div class="media__video-grip"></div>
+    <div class="media__video-grip"></div>
+  {%- elsif media.media_type == 'model' -%}
+    {{ media | model_viewer_tag: reveal: 'interaction', toggleable: true }}
+    <a href="#" class="model-poster" style="background-image: url({{ media | img_url: '1000x' }})">
+      <span class="media-badge model in-poster">
+        {% render 'icon' with icon: '3d-button-control' %}
+      </span>
+    </a>
+  {%- endif -%}
+</div>

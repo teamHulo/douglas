@@ -1,0 +1,89 @@
+<section
+  class="customer login page"
+  data-section-id="{{ section.id }}"
+  data-section-type="register"
+>
+  <div class="login__inner page__inner">
+    <header class="login__header page__header">
+      <h1 class="login__heading article__heading ff-heading fs-heading-1-base ta-c">
+        {{ 'customer.register.title' | t }}
+      </h1>
+    </header>
+
+    <div class="login__main">
+      {%- assign formId = 'RegisterForm' -%}
+      {% form 'create_customer', id: formId, novalidate: 'novalidate' %}
+        {%- assign success_msg = 'customer.register.success' | t -%}
+        {%- render 'form-status', form: form, form_id: formId, success_message: success_msg -%}
+
+        <label for="{{ formId }}-FirstName" class="visually-hidden">{{ 'customer.register.first_name' | t }}</label>
+        <input
+          type="text"
+          name="customer[first_name]"
+          placeholder="{{ 'customer.register.first_name' | t }}"
+          id="{{ formId }}-FirstName"
+          class="input"
+          {% if form.first_name %}
+            value="{{ form.first_name }}"
+          {% endif %}
+          autocomplete="given-name"
+        >
+
+        <label for="{{ formId }}-LastName" class="visually-hidden">{{ 'customer.register.last_name' | t }}</label>
+        <input
+          type="text"
+          name="customer[last_name]"
+          placeholder="{{ 'customer.register.last_name' | t }}"
+          id="{{ formId }}-LastName"
+          class="input"
+          {% if form.last_name %}
+            value="{{ form.last_name }}"
+          {% endif %}
+          autocomplete="family-name"
+        >
+
+        <label for="{{ formId }}-email" class="visually-hidden">{{ 'customer.register.email' | t }}</label>
+        <input
+          type="email"
+          name="customer[email]"
+          placeholder="{{ 'customer.register.email' | t }}"
+          id="{{ formId }}-email"
+          class="input {% if form.errors contains 'email' %} input--error{% endif %}"
+          {% if form.email %}
+            value="{{ form.email }}"
+          {% endif %}
+          autocorrect="off"
+          autocapitalize="off"
+          autocomplete="email"
+          aria-required="true"
+          {%- if form.errors contains 'email' -%}
+            class="input--error"
+            aria-invalid="true"
+            aria-describedby="{{ formId }}-email-error"
+          {%- endif -%}
+        >
+
+        <label for="{{ formId }}-password" class="visually-hidden">{{ 'customer.register.password' | t }}</label>
+        <input
+          type="password"
+          name="customer[password]"
+          placeholder="{{ 'customer.register.password' | t }}"
+          id="{{ formId }}-password"
+          class="input {% if form.errors contains 'password' %} input--error{% endif %}"
+          aria-required="true"
+          {%- if form.errors contains 'password' -%}
+            class="input--error"
+            aria-invalid="true"
+            aria-describedby="{{ formId }}-password-error"
+          {%- endif -%}
+        >
+
+        <input
+          type="submit"
+          class="btn btn--primary btn--form btn--full"
+          value="{{ 'customer.register.submit' | t }}"
+        >
+      {% endform %}
+    </div>
+  </div>
+</section>

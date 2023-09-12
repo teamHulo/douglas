@@ -1,0 +1,133 @@
+{%- liquid
+  assign desktop_image = desktop_image
+  assign mobile_image = mobile_image
+  assign align = alignment | split: "_"
+  assign shadow_amount = overlay_shadow | divided_by: 100.00
+  assign shadow_amount_lesser = shadow_amount | minus: 0.04
+  assign overlay_opacity_final = overlay_opacity | divided_by: 100.00
+  assign enable_text_overlay = true
+  assign disable_style = true
+
+  if image_aspect == 'original'
+    assign disable_style = false
+  endif
+
+  assign has_content = false
+  if heading != blank or subheading != blank or link != blank or link_text != blank
+    assign has_content = true
+  endif
+
+  if shadow_amount == 0
+    assign enable_text_overlay = false
+  endif
+
+  assign color_background_button = color_background_button
+
+  assign brightness_button = color_background_button | color_brightness
+  if brightness_button > 60
+    assign color_background_button_hover = color_background_button | color_darken: 20
+    else
+    assign color_background_button_hover = color_background_button | color_lighten: 20
+  endif
+-%}
+
+<div
+  class="
+    slideshow__cell
+    {% if enable_text_overlay %}slideshow--has-shadow{% endif %}
+    {% if mobile_image != blank %}slideshow__cell--has-mobile-image{% endif %}
+    {% if desktop_image == blank and mobile_image == blank %}slideshow__cell--no-image{% endif %}
+  "
+  data-slide
+  data-index="{{ forloop.index0 }}"
+  {{ block.shopify_attributes }}
+  style="
+    --color-background-button: {{ color_background_button }};
+    --color-background-button-hover: {{ color_background_button_hover }};
+    --slide-color-text: {{ color_text }};
+    --color-text-button: {{ color_text_button }};
+    --color-overlay: {{ color_overlay }};
+    {% if color_overlay_gradient != blank %}
+      --overlay-gradient: {{ color_overlay_gradient }};
+    {% endif %}
+    --overlay-opacity: {{ overlay_opacity_final }};
+    --text-shadow-amount: {{ shadow_amount }};
+    --text-shadow-amount-lesser: {{ shadow_amount_lesser }};
+    --heading-font-size: {{ heading_text_size }}px;
+  "
+>
+  <div class="slideshow__asset">
+    {%- if desktop_image != blank -%}
+      {% render 'image',
+        image: desktop_image,
+        wrapper_class: 'slideshow__image-wrapper slideshow__image--desktop',
+        focal_point: focal_point,
+        disable_style: disable_style
+      %}
+    {%- endif -%}
+
+    {%- if mobile_image != blank -%}
+      {% render 'image',
+        image: mobile_image,
+        wrapper_class: 'slideshow__image-wrapper slideshow__image--mobile',
+        focal_point: mobile_focal_point,
+        disable_style: disable_style
+      %}
+    {%- endif -%}
+
+    {%- if desktop_image == blank -%}
+      {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+
+      <div class="placeholder-image">
+        {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+      </div>
+    {%- endif -%}
+    <div class="slideshow__overlay"></div>
+  </div>
+
+  {%- if link != blank and link_text == blank -%}
+    <a href="{{ link }}" class="slideshow__content-wrapper">
+  {%- else -%}
+    <div class="slideshow__content-wrapper">
+  {%- endif -%}
+    <div
+      class="
+        slideshow__content
+        slideshow__content--h-{{ align[0] }}
+        slideshow__content--v-{{ align[1] }}
+        {% if has_content != true %}slideshow__content--no-content{% endif %}
+      "
+      style="--max-width-content: {{ max_width_subheading }}rem;"
+    >
+      <div class="slideshow__content-inner">
+
+        {%- if heading != blank -%}
+          <h4 class="slideshow__heading ff-heading animation-fade-up-split-reveal">
+            {{ heading | newline_to_br }}
+          </h4>
+        {%- endif -%}
+
+        {%- if subheading != blank -%}
+          <div class="slideshow__subheading rte ff-body fs-body-large animation-fade-up-reveal">
+            {{ subheading }}
+          </div>
+        {%- endif -%}
+
+        {%- if link != blank and link_text != blank -%}
+          <div class="slideshow__button animation-fade-up-reveal">
+            <a class="btn btn--primary btn--large" href="{{ link }}">
+              {{ link_text }}
+            </a>
+          </div>
+        {%- endif -%}
+
+      </div>
+    </div>
+
+  {%- if link != blank and link_text == blank -%}
+    </a>
+  {%- else -%}
+    </div>
+  {%- endif -%}
+
+</div>

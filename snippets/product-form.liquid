@@ -1,0 +1,160 @@
+{% comment %}
+  Pass these variables into snippet:
+  * product: (product object)
+  * current_variant: (product/variant currently selected)
+  custom_text_input_title: [String](required if custom_text_input block is present)
+  show_dynamic_checkout: [Boolean](shows dynamic checkout button)
+  hide_shop_pay: [Boolean](hides Shop pay banner)
+  * hidden: boolean (optional, used to not trip up javascript if buy button is removed)
+{% endcomment %}
+{%- liquid
+  assign product_available_label = 'products.product.add_to_cart' | t
+  assign product_unavailable_label = 'products.product.sold_out' | t
+
+  if is_featured_product == true
+    if product.template_suffix == 'preorder'
+      assign product_available_label = 'products.product.preorder' | t
+    endif
+  elsif template.suffix == 'preorder' and request.design_mode or product.template_suffix == 'preorder'
+    assign product_available_label = 'products.product.preorder' | t
+  endif
+-%}
+
+{% capture "form_classes" -%}
+  product-form product__block animation-fade-up-reveal product-form-{{ section.id }} {% if hidden %}visually-hidden{% endif %}
+{%- endcapture %}
+
+{% form 'product',
+  product,
+  class: form_classes,
+  novalidate: 'novalidate',
+  data-product-form: '',
+  data-product-handle: product.handle,
+  data-product-id: product.id,
+  data-current-product-id: current_variant.id
+%}
+  {% comment %}
+     product quantity within form remains hidden but will be updated
+    from outside the form if enabled.
+  {% endcomment %}
+  <div class="product-form__quantity">
+    <div class="product__label-wrapper">
+      <label class="product__label {{ label_classes }}" for="Quantity-Input-{{ product.id }}">
+        {{ 'products.product.quantity' | t }}
+      </label>
+    </div>
+    <input
+      type="number"
+      id="Quantity-{{ product.id }}"
+      name="quantity"
+      value="1"
+      min="1"
+      pattern="[0-9]*"
+      class="input product-form__input product-form__input--quantity"
+      aria-label="{{ 'general.accessibility.quantity' | t }}"
+    >
+  </div>
+
+  {% comment %}
+     text field within form remains hidden but will be updated
+    from outside the form if enabled.
+  {% endcomment %}
+  {%- if custom_text_input_title -%}
+    <div class="product-form__custom-text-input">
+      <input
+        type="text"
+        name="properties[{{ custom_text_input_title }}]"
+        data-custom-text-input-target
+      >
+    </div>
+  {%- endif -%}
+
+  {% comment %}
+    In order for this form to submit, it needs to contain an input with name="id".
+    ProductForm() will automatically create this input (or make sure it has the
+    right value set if it already exists) on form submit based on the
+    currently selected variant. However, if JS is disabled we need a fallback.
+
+    Include a single <select> element which allows users to select all variants
+    as a fallback and present it only when JS is disabled. In addition,
+    make sure you hide the option inputs declared above, like we do with the
+    `.js-enabled` class which only shows its contents when JS is enabled.
+  {% endcomment %}
+  <div class="product-form__variants">
+    <select
+      name="id"
+      class="input"
+      id="variant-selector"
+      data-variant-select
+    >
+      {%- for variant in product.variants -%}
+        <option
+          value="{{ variant.id }}"
+          {%- if variant == current_variant -%}
+            selected="selected"
+          {%- endif -%}
+        >
+          {{ variant.title }}
+          {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+        </option>
+      {%- endfor -%}
+    </select>
+  </div>
+
+  {% if show_gift_card_recipient_form and product.gift_card? -%}
+    {% render 'gift-card-recipient-form', product: product, form: form %}
+  {%- endif %}
+
+  <div class="product-form__controls-group product-form__controls-group--submit">
+    <div
+      class="
+        product-form__item product-form__item--submit
+        {%- if show_dynamic_checkout %} product-form__item--payment-button {%- endif -%}
+        {%- if product.has_only_default_variant %} product-form__item--no-variants {%- endif -%}
+      "
+    >
+      <button
+        type="submit"
+        name="add"
+        {% unless current_variant.available %}
+          aria-disabled="true" disabled
+        {% endunless %}
+        aria-label="{% unless current_variant.available %}{{ product_unavailable_label }}{% else %}{{ product_available_label }}{% endunless %}"
+        class="product-form__cart-submit btn btn--small btn--medium-ns btn--full {% if show_dynamic_checkout %}btn--secondary{% else %}btn--primary{% endif %}"
+        data-add-to-cart
+        data-lang-available="{{ product_available_label }}"
+        data-lang-unavailable="{{ 'product.unavailable' | t }}"
+        data-lang-sold-out="{{ 'product.sold_out' | t }}"
+      >
+        <span data-add-to-cart-text>
+          {%- unless current_variant.available -%}
+            {{ product_unavailable_label }}
+          {%- else -%}
+            {{ product_available_label }}
+          {%- endunless -%}
+        </span>
+        <div class="btn__loading-wrap">
+          <div class="btn__loading-bar"></div>
+        </div>
+        {% render 'icon' with icon: 'check' %}
+      </button>
+
+      {%- if show_dynamic_checkout -%}
+        {{ form | payment_button }}
+      {%- endif -%}
+
+      {%- unless hide_shop_pay -%}
+        <div class="product-form__shop-pay fs-body-small">
+          {{- form | payment_terms -}}
+        </div>
+      {%- endunless -%}
+
+      {% comment %} Surface pick-up {% endcomment %}
+      <div
+        class="store-availability-container__wrapper"
+        data-store-availability-container
+        data-base-url="{{ shop.url }}{{ routes.root_url }}"
+      ></div>
+    </div>
+  </div>
+{%- endform -%}

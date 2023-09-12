@@ -1,0 +1,127 @@
+{%- liquid
+  assign show_collection_image = section.settings.show_collection_image
+  assign collection_image_aspect_ratio = section.settings.collection_image_aspect_ratio
+  assign disable_image_style = true
+
+  if section.settings.show_collection_description
+    assign collection_description = collection.description
+  endif
+
+  if collection_image_aspect_ratio == 'natural'
+    assign disable_image_style = false
+  endif
+-%}
+
+<div
+  data-section-id="{{ section.id }}"
+  data-section-type="collection-banner"
+  class="
+    collection
+    collection--header
+    collection--image-aspect-{{ collection_image_aspect_ratio }}
+    {% if show_collection_image and collection.image -%}collection--has-image{%- endif %}
+    {% if settings.enable_reveal_animations and section.settings.enable_animation %}
+      animation
+    {% endif %}
+  "
+  style="--text-max-width: {{ section.settings.text_max_width }}rem;"
+>
+  <div class="collection__inner">
+    {% if section.settings.show_breadcrumbs %}
+      <div class="collection__breadcrumbs">
+        {% render 'breadcrumbs', show_breadcrumbs: section.settings.show_breadcrumbs %}
+      </div>
+    {% endif %}
+    <header class="collection__header">
+      <div class="collection__header-text">
+        {%
+          render 'section-header',
+          heading: collection.title,
+          subheading: collection_description,
+          classes: 'section-header--large section-header--center',
+        %}
+      </div>
+
+      {% if show_collection_image and collection.image %}
+        <div class="collection__header-image-wrapper">
+          {% render 'image',
+            image: collection.image,
+            wrapper_class: 'lazyload collection__header-image',
+            disable_style: disable_image_style
+          %}
+        </div>
+      {% endif %}
+    </header>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main_collection_banner.name",
+  "class": "collection-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumbs",
+      "label": "t:shared.settings.show_breadcrumbs.label",
+      "default": false
+    },
+    {
+      "id": "show_collection_image",
+      "type": "checkbox",
+      "label": "t:sections.main_collection_banner.settings.show_collection_image.label",
+      "default": false
+    },
+    {
+      "id": "collection_image_aspect_ratio",
+      "type": "select",
+      "label": "t:sections.main_collection_banner.settings.collection_image_aspect_ratio.label",
+      "options": [
+        {
+          "label": "t:sections.main_collection_banner.settings.collection_image_aspect_ratio.options__1",
+          "value": "natural"
+        },
+        {
+          "label": "t:sections.main_collection_banner.settings.collection_image_aspect_ratio.options__2",
+          "value": "square"
+        },
+        {
+          "label": "t:sections.main_collection_banner.settings.collection_image_aspect_ratio.options__3",
+          "value": "landscape"
+        },
+        {
+          "label": "t:sections.main_collection_banner.settings.collection_image_aspect_ratio.options__4",
+          "value": "portrait"
+        }
+      ],
+      "default": "natural"
+    },
+    {
+      "id": "show_collection_description",
+      "type": "checkbox",
+      "label": "t:sections.main_collection_banner.settings.show_collection_description.label",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "text_max_width",
+      "label": "t:sections.main_collection_banner.settings.text_max_width.label",
+      "min": 24,
+      "max": 48,
+      "step": 1,
+      "default": 42
+    },
+    {
+      "type": "header",
+      "content": "t:shared.settings.section_style.header_style.content"
+    },
+    {
+      "id": "enable_animation",
+      "type": "checkbox",
+      "label": "t:shared.settings.section_style.enable_animation.label",
+      "info": "t:shared.settings.section_style.enable_animation.info",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

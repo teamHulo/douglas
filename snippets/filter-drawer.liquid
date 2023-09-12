@@ -1,0 +1,252 @@
+{%- liquid
+  assign swatch_options = settings.swatch_options | downcase | split: ', '
+  assign chip_options = settings.chip_options | downcase | split: ', '
+-%}
+
+{%- if results.filters or show_sort -%}
+  <form class="filter-drawer popover" data-filer-modal-wrapper data-filter-form>
+    <div class="filter-drawer__wash" data-drawer-wash></div>
+
+    {%- comment -%} Keep search term within form {%- endcomment -%}
+    {%- if results.terms -%}
+      <input type="hidden" name="q" value="{{ results.terms | escape }}">
+      <input name="options[prefix]" type="hidden" value="last">
+    {%- endif -%}
+
+    {%- comment -%} Keep product type within form {%- endcomment -%}
+    {%- if results.current_type -%}
+      <input type="hidden" name="q" value="{{ results.current_type | escape }}">
+    {%- endif -%}
+
+    {%- comment -%} Keep product vendor within form {%- endcomment -%}
+    {%- if results.current_vendor -%}
+      <input type="hidden" name="q" value="{{ results.current_vendor | escape }}">
+    {%- endif -%}
+
+    {%- if results.filters -%}
+      <div
+        class="filter-drawer__panel"
+        data-filter-modal="__tags"
+        aria-labelledby="modal-{{ 'filters.title' | t }}"
+        aria-modal="true"
+        aria-hidden="true"
+      >
+        <button
+          type="button"
+          class="filter-drawer__close"
+          aria-label="{{ 'general.accessibility.close_modal' | t }}"
+          data-close-icon
+        >
+          {% render 'icon-button' with icon: 'close-stroke' %}
+        </button>
+
+        <div class="filter-drawer__content" data-scroll-lock-ignore>
+          <div class="filter-drawer__heading">
+            <h2 id="modal-{{ 'filters.title' | t }}" class="ff-heading fs-heading-2-large">
+              {{ 'filters.title' | t }}
+            </h2>
+          </div>
+
+          {% for filter in results.filters %}
+            <div class="filter-drawer__group">
+              <div class="filter-drawer__group-heading-wrapper">
+                <h4 class="filter-drawer__group-heading ff-heading fs-heading-3-base">{{ filter.label }}</h4>
+                <button
+                  type="button"
+                  class="filter-drawer__group-clear btn btn--text-link ff-body fs-body-base"
+                  data-button="clear"
+                  data-category="{{ filter.label | handleize }}"
+                >
+                  {{ 'filters.clear' | t }}
+                </button>
+              </div>
+
+              {%- case filter.type -%}
+                {%- when 'boolean', 'list' -%}
+                  {%- liquid
+                    assign group_name = filter.label | downcase
+                    assign list_modifiers = ''
+                    if swatch_options contains group_name or chip_options contains group_name
+                      assign list_modifiers = list_modifiers | append: ' is-flex'
+                    endif
+                    if swatch_options contains group_name
+                      assign list_modifiers = list_modifiers | append: ' has-swatch'
+                    elsif chip_options contains group_name
+                      assign list_modifiers = list_modifiers | append: ' has-chip'
+                    endif
+                  -%}
+
+                  <ul class="filter-drawer__list{{ list_modifiers }}">
+                    {%- for filter_value in filter.values -%}
+                      {%- liquid
+                        if filter_value.active
+                          assign url = filter_value.url_to_remove
+                        else
+                          assign url = filter_value.url_to_add
+                        endif
+                      -%}
+
+                      {%- if swatch_options contains group_name -%}
+                        {%
+                          render 'filter-item' with
+                          type: 'swatch',
+                          forloop: forloop,
+                          filter_value: filter_value,
+                          custom_swatch_colors: settings.custom_swatch_colors
+                        %}
+                      {%- elsif chip_options contains group_name -%}
+                        {%
+                          render 'filter-item' with
+                          type: 'chip',
+                          forloop: forloop,
+                          filter_value: filter_value,
+                          custom_swatch_colors: settings.custom_swatch_colors
+                        %}
+                      {%- else -%}
+                        {%
+                          render 'filter-item' with
+                          type: 'checkbox',
+                          forloop: forloop,
+                          filter_value: filter_value
+                        %}
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </ul>
+                {%- when 'price_range' -%}
+                  {% liquid
+                    assign max_price_amount = filter.range_max | money | strip_html | escape
+                  %}
+                  <div class="filter-drawer__price-range" data-price-range>
+                    <p class="filter-drawer__price-range-title">
+                      {{ 'filters.max_price' | t: price: max_price_amount }}
+                    </p>
+                    <div class="filter-drawer__slider" data-range-slider></div>
+
+                    <div class="filter-drawer__price-range-input-wrapper">
+                      <div class="filter-drawer__price-range-input">
+                        <span class="filter-drawer__price-range-currency">{{ cart.currency.symbol }}</span>
+                        <input
+                          data-min-range-input
+                          data-range-input
+                          class="input"
+                          name="{{ filter.min_value.param_name }}"
+                          id="filter-{{ filter.label | escape }}"
+                          {%- if filter.min_value.value -%}
+                            value="{{ filter.min_value.value | divided_by: 100 }}"
+                          {%- endif -%}
+                          type="number"
+                          placeholder="0"
+                          min="0"
+                          max="{{ filter.range_max | divided_by: 100 | ceil }}"
+                        >
+                        <label
+                          class="filter-drawer__price-range-label visually-hidden"
+                          for="filter-{{ filter.label | escape }}"
+                        >
+                          {{- 'filters.from' | t -}}
+                        </label>
+                      </div>
+                      <span class="filter-drawer__price-range-separator">&ndash;</span>
+                      <div class="filter-drawer__price-range-input">
+                        <span class="filter-drawer__price-range-currency">{{ cart.currency.symbol }}</span>
+                        <input
+                          data-max-range-input
+                          data-range-input
+                          class="input"
+                          name="{{ filter.max_value.param_name }}"
+                          id="filter-{{ filter.label | escape }}"
+                          {%- if filter.max_value.value -%}
+                            value="{{ filter.max_value.value | divided_by: 100 }}"
+                          {%- endif -%}
+                          type="number"
+                          placeholder="{{ filter.range_max | divided_by: 100 | ceil }}"
+                          min="0"
+                          max="{{ filter.range_max | divided_by: 100 | ceil }}"
+                        >
+                        <label
+                          class="filter-drawer__price-range-label visually-hidden"
+                          for="filter-{{ filter.label | escape }}"
+                        >
+                          {{- 'filters.to' | t -}}
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+              {%- endcase -%}
+            </div>
+          {% endfor %}
+        </div>
+
+        <div class="filter-drawer__footer">
+          <button class="filter-drawer__button-apply btn btn--primary btn--medium" data-button="apply">
+            {{ 'filters.apply' | t }}
+          </button>
+          <button class="filter-drawer__button-clear btn btn--secondary btn--medium" data-button="clear-all">
+            {{ 'filters.clear_all' | t }}
+          </button>
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if show_sort -%}
+      <div
+        class="filter-drawer__panel"
+        data-filter-modal="__sort"
+        aria-labelledby="modal-{{ 'filters.sort_title' | t }}"
+        aria-modal="true"
+        aria-hidden="true"
+      >
+        <button
+          type="button"
+          class="filter-drawer__close"
+          aria-label="{{ 'general.accessibility.close_modal' | t }}"
+          data-close-icon
+        >
+          {% render 'icon-button' with icon: 'close-stroke' %}
+        </button>
+        <div class="filter-drawer__content" data-scroll-lock-ignore>
+          <div class="filter-drawer__heading">
+            <h2 id="modal-{{ 'filters.sort_title' | t }}" class="ff-heading fs-heading-2-large">
+              {{ 'filters.sort_title' | t }}
+            </h2>
+          </div>
+
+          <ul class="filter-drawer__list">
+            {%- for option in results.sort_options -%}
+              {%- assign is_active = false -%}
+              {%- if option.value == results.sort_by -%}
+                {%- assign is_active = true -%}
+              {%- endif -%}
+              <li class="filter-item">
+                <label data-sort for="filter-{{ option.name | handleize }}" class="filter-item__content">
+                  <input
+                    type="radio"
+                    name="sort_by"
+                    {% if is_active %}
+                      checked
+                    {% endif %}
+                    value="{{ option.value }}"
+                    id="filter-{{ option.name | escape | handleize }}"
+                    class="filter-item__radio visually-hidden"
+                  >
+                  <div class="filter-input__input">
+                    <div class="indicator"></div>
+                  </div>
+                  <span class="filter-item__label">{{ option.name }}</span>
+                </label>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+        <div class="filter-drawer__footer">
+          <button class="filter-drawer__button-apply btn btn--primary btn--medium" data-button="apply">
+            {{ 'filters.apply' | t }}
+          </button>
+          <button class="filter-drawer__button-clear btn btn--secondary btn--medium" data-button="clear-all">
+            {{ 'filters.clear' | t }}
+          </button>
+        </div>
+      </div>
+    {%- endif -%}
+  </form>
+{%- endif -%}

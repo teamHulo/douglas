@@ -1,0 +1,39 @@
+<div class="quick-cart" data-quick-cart>
+  <div class="quick-cart__overlay" data-overlay></div>
+
+  <div class="quick-cart__container popover">
+    <button
+      type="button"
+      class="quick-cart__close"
+      aria-label="{{ 'general.accessibility.close_modal' | t }}"
+      data-close-icon
+    >
+      {% render 'icon-button' with icon: 'close-stroke' %}
+    </button>
+    <div class="quick-cart__cart visible" data-cart data-scroll-lock-ignore>
+      <div class="quick-cart__header ff-heading fs-heading-2-large">{{ 'quick_cart.cart' | t }}</div>
+      <div class="quick-cart__items" data-items></div>
+      <div class="quick_cart__empty ff-body fs-body-base" data-empty>{{ 'quick_cart.empty' | t }}</div>
+      <div class="quick-cart__footer ff-body fs-body-base ta-c" data-footer>
+        <div class="quick-cart__discounts c-subdued" data-discounts></div>
+        <div class="quick-cart__total">
+          <span>{{ 'quick_cart.subtotal' | t }}</span>
+          <span class="fs-body-bold" data-subtotal></span>
+        </div>
+        <a href="{{ routes.cart_url }}" class="btn btn--secondary btn--medium btn--full visible">
+          {{- 'quick_cart.go_to_cart' | t -}}
+        </a>
+        <form action="{{ routes.cart_url }}" method="post" novalidate>
+          <button
+            type="submit"
+            name="checkout"
+            class="quick-cart__buy-now btn btn--primary btn--medium btn--full visible"
+            data-buy-now-button
+          >
+            {{ 'quick_cart.checkout' | t }}
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

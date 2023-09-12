@@ -1,0 +1,28 @@
+{% if heading != blank or subheading != blank or link_text != blank %}
+  {%- liquid
+    assign button_classes = 'btn--small btn--medium-ns'
+
+    if classes contains 'section-header--large'
+      assign button_classes = 'btn--medium'
+    endif
+  -%}
+  <div class="section-header {{ classes }}">
+    {%- unless heading == blank -%}
+      <h2 class="section-header__heading ff-heading fs-heading-1-base animation-fade-up-split-reveal">
+        {{ heading | newline_to_br }}
+      </h2>
+    {%- endunless -%}
+
+    {%- unless subheading == blank -%}
+      <div class="section-header__subheading rte fs-body-large animation-fade-up-reveal">
+        {{ subheading }}
+      </div>
+    {%- endunless -%}
+
+    {%- if url != blank and link_text != blank -%}
+      <a href="{{ url }}" class="section-header__button btn btn--primary animation-fade-up-reveal {{ button_classes }}">
+        {{ link_text }}
+      </a>
+    {%- endif -%}
+  </div>
+{% endif %}

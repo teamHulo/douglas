@@ -1,0 +1,50 @@
+<div
+  class="
+    countdown-timer
+    countdown-timer--{{ size }}
+    animation-fade-up-reveal
+  "
+  data-countdown-timer
+>
+  <script type="application/json" data-timer-settings>
+    {
+      "year": {{ year | json }},
+      "month": {{ month | json }},
+      "day": {{ day | json }},
+      "hour": {{ hour | json }},
+      "minute": {{ minute | json }},
+      "shopTimezone": {{ 'now' | date: '%z' | json }},
+      "timeZoneSelection": {{ time_zone_selection | json }},
+      "hideTimerOnComplete": {{ hide_timer_on_complete | json }}
+    }
+  </script>
+
+  <div class="countdown-timer__inner">
+    <div class="countdown-timer__item">
+      <div class="countdown-timmer__amount ff-heading" data-days>0</div>
+      <div class="countdown-timer__type fs-body">{{ 'sections.countdown_timer.days' | t }}</div>
+    </div>
+    <div class="countdown-timer__item">
+      <div class="countdown-timmer__amount ff-heading" data-hours>0</div>
+      <div class="countdown-timer__type fs-body">{{ 'sections.countdown_timer.hours' | t }}</div>
+    </div>
+    <div class="countdown-timer__item">
+      <div class="countdown-timmer__amount ff-heading" data-minutes>0</div>
+      <div class="countdown-timer__type fs-body">{{ 'sections.countdown_timer.minutes' | t }}</div>
+    </div>
+    <div class="countdown-timer__item">
+      <div class="countdown-timmer__amount ff-heading" data-seconds>0</div>
+      <div class="countdown-timer__type fs-body">{{ 'sections.countdown_timer.seconds' | t }}</div>
+    </div>
+  </div>
+
+  {%- if timer_complete_message != blank -%}
+    <div class="
+        countdown-timer__message
+        ff-body
+        {% if size == 'small' %}fs-body-small{% else %}fs-body-base{% endif %}
+      ">
+      {{ timer_complete_message }}
+    </div>
+  {%- endif -%}
+</div>

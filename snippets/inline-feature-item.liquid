@@ -1,0 +1,40 @@
+<div class="inline-features__item">
+  <div class="inline-features__item-inner">
+    {%- if show_image -%}
+      {%- if image -%}
+        {%
+          render 'image',
+          image: image,
+          wrapper_class: 'inline-features__item-image animation-fade-up-reveal',
+          focal_point: 'image_presentation',
+          disable_style: true,
+        %}
+      {%- else -%}
+        <div class="inline-features__item-image placeholder-image">
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+    {%- if heading != blank or subheading != blank -%}
+      <div class="inline-features__item-content">
+        {% unless heading == blank %}
+          <h4
+            class="inline-features__item-heading ff-heading animation-fade-up-split-reveal {{ column_heading_type }}"
+            style="--text-max-width: {{ text_max_width }}rem;"
+          >
+            {{ heading }}
+          </h4>
+        {% endunless %}
+
+        {% unless subheading == blank %}
+          <div
+            class="inline-features__item-text fs-body-base animation-fade-up-reveal"
+            style="--text-max-width: {{ text_max_width }}rem;"
+          >
+            {{ subheading }}
+          </div>
+        {% endunless %}
+      </div>
+    {%- endif -%}
+  </div>
+</div>

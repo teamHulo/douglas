@@ -1,0 +1,253 @@
+{%- liquid
+  assign image = section.settings.image
+  assign map_address = section.settings.map_address
+  assign api_key = section.settings.api_key
+  assign map_json = section.settings.map_json
+  assign section_contrast = section.settings.section_contrast
+-%}
+
+<div
+  class="
+    map
+    section
+    section--extra-small
+    {{ section.settings.section_padding }}
+
+    {% if section.settings.section_contrast -%}
+      section--contrast
+    {%- endif %}
+
+    {% if settings.contrast_spacer -%}
+      section--contrast-spacer
+    {%- endif %}
+
+    {% if settings.enable_reveal_animations and section.settings.enable_animation %}
+      animation
+    {% endif %}
+  "
+  data-section-id="{{ section.id }}"
+  data-section-type="map"
+  style="--padding-amount: {{ section.settings.padding_amount }};"
+>
+  <div class="map__inner section__inner">
+    <div class="map__text">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'heading' -%}
+            <h2
+              class="map__heading ff-heading fs-heading-2-large animation-fade-up-split-reveal"
+              style="--text-max-width: {{  block.settings.text_max_width }}rem;"
+            >
+              {{ block.settings.title | newline_to_br }}
+            </h2>
+          {%- when 'store_information' -%}
+            <div
+              class="map__location rte ff-body fs-body-base animation-fade-up-reveal"
+              style="--text-max-width: {{  block.settings.text_max_width }}rem;"
+            >
+              {{ block.settings.store_information }}
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+
+    <div class="map__content">
+      {% assign image_classes = 'map__image' %}
+      {% if api_key != blank and map_address != blank %}
+        {% assign image_classes = image_classes | append: ' hidden' %}
+      {% endif %}
+
+      {% if image %}
+        {% render 'image', image: image, wrapper_class: image_classes, has_reveal: true %}
+      {% else %}
+        <div class="{{ image_classes }} placeholder-image">
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+      {% endif %}
+
+      {% if api_key != blank and map_address != blank %}
+        <div
+          class="map__container"
+          data-api-key="{{ api_key }}"
+          data-address="{{ map_address | url_encode }}"
+          style="height: 450px;"
+        >
+          <div class="map__element" style="height: 100%;"></div>
+        </div>
+      {% endif %}
+    </div>
+
+    <script id="map-styles" type="application/json">
+      {
+        "styles":
+          {%- if map_json != blank -%}
+            {{ map_json }}
+          {% else %}
+            {}
+          {%- endif -%}
+      }
+    </script>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.map.name",
+  "tag": "section",
+  "class": "shopify-section--stackable shopify-section--extra-small shopify-section--image-first",
+  "disabled_on": {
+    "groups": ["header", "custom.overlay"]
+  },
+  "settings": [
+    {
+      "id": "image",
+      "type": "image_picker",
+      "label": "t:sections.map.settings.image.label",
+      "info": "t:sections.map.settings.image.info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.map.settings.header.content",
+      "info": "t:sections.map.settings.header.info"
+    },
+    {
+      "type": "text",
+      "id": "map_address",
+      "label": "t:sections.map.settings.map_address.label",
+      "info": "t:sections.map.settings.map_address.info"
+    },
+    {
+      "type": "text",
+      "id": "api_key",
+      "label": "t:sections.map.settings.api_key.label",
+      "info": "t:sections.map.settings.api_key.info"
+    },
+    {
+      "type": "textarea",
+      "id": "map_json",
+      "label": "t:sections.map.settings.map_json.label",
+      "info": "t:sections.map.settings.map_json.info"
+    },
+    {
+      "type": "header",
+      "content": "t:shared.settings.section_style.header_style.content"
+    },
+    {
+      "id": "enable_animation",
+      "type": "checkbox",
+      "label": "t:shared.settings.section_style.enable_animation.label",
+      "info": "t:shared.settings.section_style.enable_animation.info",
+      "default": true
+    },
+    {
+      "id": "section_contrast",
+      "type": "checkbox",
+      "label": "t:sections.map.settings.section_contrast.label",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "t:shared.settings.section_style.section_padding.label",
+      "default": "section--vertical-padding-top-bottom",
+      "options": [
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_both",
+          "value": "section--vertical-padding-top-bottom"
+        },
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_top",
+          "value": "section--vertical-padding-top-only"
+        },
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_bottom",
+          "value": "section--vertical-padding-bottom-only"
+        },
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_none",
+          "value": "section--vertical-padding-none"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "padding_amount",
+      "label": "t:shared.settings.section_style.padding_amount.label",
+      "default": "1.0",
+      "options": [
+        {
+          "label": "t:shared.settings.section_style.padding_amount.option_full",
+          "value": "1.0"
+        },
+        {
+          "label": "t:shared.settings.section_style.padding_amount.option_half",
+          "value": "0.5"
+        },
+        {
+          "label": "t:shared.settings.section_style.padding_amount.option_minimum",
+          "value": "0.075"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "t:sections.map.blocks.heading.name",
+      "limit": 1,
+      "settings": [
+        {
+          "id": "title",
+          "type": "text",
+          "label": "t:sections.map.blocks.heading.settings.title.label",
+          "default": "Our store"
+        },
+        {
+          "type": "range",
+          "id": "text_max_width",
+          "label": "t:sections.map.blocks.heading.settings.text_max_width.label",
+          "min": 24,
+          "max": 48,
+          "step": 1,
+          "default": 42
+        }
+      ]
+    },
+    {
+      "type": "store_information",
+      "name": "t:sections.map.blocks.store_information.name",
+      "limit": 1,
+      "settings": [
+        {
+          "id": "store_information",
+          "type": "richtext",
+          "label": "t:sections.map.blocks.store_information.settings.store_information.label",
+          "default": "<p>123 Water St.<br/>Vancouver, BC  F1L 2U3<br/>(604) 000-000<br/><br/>Weekdays: 10am – 5pm<br/>Saturdays: 11am – 5pm<br/>Sundays: 12pm – 4pm</p>"
+        },
+        {
+          "type": "range",
+          "id": "text_max_width",
+          "label": "t:sections.map.blocks.store_information.settings.text_max_width.label",
+          "min": 24,
+          "max": 48,
+          "step": 1,
+          "default": 42
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.map.presets.name",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "store_information"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

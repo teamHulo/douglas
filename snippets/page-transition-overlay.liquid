@@ -1,0 +1,23 @@
+<div class="active" id="page-transition-overlay"></div>
+<script>
+  var pageTransitionOverlay = document.getElementById("page-transition-overlay"),
+      internalReferrer = document.referrer.includes(document.location.origin),
+      winPerf = window.performance,
+      navTypeLegacy = winPerf && winPerf.navigation && winPerf.navigation.type,
+      navType = winPerf && winPerf.getEntriesByType && winPerf.getEntriesByType("navigation")[0] && winPerf.getEntriesByType("navigation")[0].type;
+
+  if (!internalReferrer || navType !== "navigate" || navTypeLegacy !== 0) {
+    {% comment %}
+    goal is to avoid transitioning if it isn't a navigation throughout the site to improve performance
+    {% endcomment %}
+    pageTransitionOverlay.className = "active skip-animation";
+    setTimeout(function(){
+      pageTransitionOverlay.className = "skip-animation";
+      setTimeout(function(){ pageTransitionOverlay.className = ""; }, 1);
+    }, 1);
+  } else { {% comment %} fallback if app js breaks {% endcomment %}
+    setTimeout(function(){
+      pageTransitionOverlay.className = "";
+    }, 500);
+  }
+</script>

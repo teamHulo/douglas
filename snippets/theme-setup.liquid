@@ -1,0 +1,75 @@
+<script>
+  console.log('Spark v3.2.0 by Fluorescent');
+
+  document.documentElement.className = document.documentElement.className.replace('no-js', '');
+  if (window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true) {
+    document.documentElement.classList.add('prefers-reduced-motion');
+  }
+
+  window.theme = {
+    version: 'v3.2.0',
+    animation: {
+      delayExtraShort: 0.08,
+      delayShort: 0.1,
+      delay: 0.14,
+      delayLong: 0.33,
+      duration: 0.66,
+      ease: "0.33,0.00,0.00,1.00"
+    },
+    strings: {
+      name: {{ shop.name | json }},
+      accessibility: {
+        play_video: {{ 'general.accessibility.play' | t | json }},
+        pause_video: {{ 'general.accessibility.pause' | t | json }}
+      },
+      product: {
+        no_shipping_rates: {{ 'products.product.no_rates' | t | json }},
+        country_placeholder: {{ 'products.product.country_placeholder' | t | json }},
+        review: {{ 'products.product.write_a_review' | t | json }}
+      },
+      products: {
+        product: {
+          unavailable: {{ 'products.product.unavailable' | t | json }},
+          unitPrice: {{ 'products.product.unit_price_label' | t | json }},
+          unitPriceSeparator: {{ 'general.accessibility.unit_price_separator' | t | json }},
+          sku: {{ 'products.product.sku' | t | json }}
+        }
+      },
+      quickCart: {
+        addProductQuantity: {{ 'general.accessibility.quantity_subtract' | t | json }},
+        removeProductQuantity: {{ 'general.accessibility.quantity_add' | t | json }},
+        removeProduct: {{ 'general.accessibility.remove_product' | t | json }},
+        quantity: {{ 'cart.general.quantity' | t | json }}
+      }
+    },
+    routes: {
+      root: "{{ routes.root_url }}",
+      cart: {
+        base: "{{ routes.cart_url }}",
+        add: "{{ routes.cart_add_url }}",
+        change: "{{ routes.cart_change_url }}",
+        clear: "{{ routes.cart_clear_url }}",
+        // Manual routes until Shopify adds support
+        shipping: "{% if routes.root_url == '/' %}/cart/shipping_rates{% else %}{{ routes.root_url }}/cart/shipping_rates{% endif %}",
+      },
+      // Manual routes until Shopify adds support
+      products: "{% if routes.root_url == '/' %}/products{% else %}{{ routes.root_url }}/products{% endif %}",
+      productRecommendations: "{{ routes.product_recommendations_url }}",
+      predictive_search_url: '{{ routes.predictive_search_url }}'
+    },
+  }
+
+  {% if template.directory == 'customers' or template == 'product' %}
+    window.theme.allCountryOptionTags = {{ all_country_option_tags | json }};
+  {% endif %}
+</script>
+
+{%- if settings.currency_code_enabled -%}
+  <script>
+    window.theme.moneyFormat = {{ shop.money_with_currency_format | json }}
+  </script>
+{%- else -%}
+  <script>
+    window.theme.moneyFormat = {{ shop.money_format | json }}
+  </script>
+{%- endif -%}

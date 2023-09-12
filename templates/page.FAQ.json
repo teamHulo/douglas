@@ -1,0 +1,86 @@
+{
+  "sections": {
+    "rich-text": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
+      "settings": {
+      }
+    },
+    "questions": {
+      "type": "questions",
+      "blocks": {
+        "question-1": {
+          "type": "question",
+          "settings": {
+          }
+        },
+        "question-2": {
+          "type": "question",
+          "settings": {
+          }
+        },
+        "question-3": {
+          "type": "question",
+          "settings": {
+          }
+        },
+        "question-4": {
+          "type": "question",
+          "settings": {
+          }
+        },
+        "question-5": {
+          "type": "question",
+          "settings": {
+          }
+        },
+        "question-6": {
+          "type": "question",
+          "settings": {
+          }
+        },
+        "question-7": {
+          "type": "question",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "question-1",
+        "question-2",
+        "question-3",
+        "question-4",
+        "question-5",
+        "question-6",
+        "question-7"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "rich-text",
+    "questions"
+  ]
+}

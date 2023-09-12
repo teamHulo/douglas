@@ -1,0 +1,82 @@
+{% liquid
+  assign file_extension = 'png'
+
+  # custom swatch colors
+  assign custom_colors = custom_swatch_colors | newline_to_br | split: '<br />'
+  assign custom_color_map_key = ''
+  assign custom_color_map_value = ''
+
+  for color_value in custom_colors
+    assign custom_color_key = color_value | split: ':' | first | strip
+    assign custom_color_value = color_value | split: ':' | last | strip
+
+    assign custom_color_map_key = custom_color_map_key | append: ',' | append: custom_color_key
+    assign custom_color_map_value = custom_color_map_value | append: ',' | append: custom_color_value
+  endfor
+
+  assign custom_color_map_key = custom_color_map_key | remove_first: ',' | split: ','
+  assign custom_color_map_value = custom_color_map_value | remove_first: ',' | split: ','
+
+  # if filter_value.label is in custom_color_map_key, filter_color equals the value of custom_color_map_value at the index of custom_color_map_key
+  assign filter_color = filter_value.label
+  for color_key in custom_color_map_key
+    if color_key == filter_value.label
+      assign filter_color = custom_color_map_value[forloop.index0]
+    endif
+  endfor
+-%}
+
+<li class="filter-item{% if type == 'swatch' or type == 'chip' %} inline{% endif %}">
+  <label
+    data-filter
+    class="filter-item__content {% if filter_value.count == 0 and filter_value.active == false %}filter-item__content--disabled{% endif %}"
+    for="filter--{{ filter_value.param_name | url_escape }}--{{ filter_value.label | url_escape }}"
+  >
+    <input
+      type="checkbox"
+      name="{{ filter_value.param_name }}"
+      value="{{ filter_value.value }}"
+      class="filter-item__checkbox visually-hidden"
+      id="filter--{{ filter_value.param_name | url_escape }}--{{ filter_value.label | url_escape }}"
+      {% if filter_value.active -%}
+        checked
+      {% endif %}
+      {%- if key != blank and val != blank -%}
+        data-{{ key }}="{{ val | handle }}"
+      {%- endif -%}
+      {%- if type == 'swatch' -%}
+        aria-label="{{ filter_value.label }}"
+      {%- endif -%}
+      {% if filter_value.count == 0 and filter_value.active == false %}
+        disabled
+      {% endif %}
+    >
+    {%- if type == 'checkbox' -%}
+      <div class="filter-input__input ">
+        {% render 'icon' with icon: 'check' %}
+      </div>
+    {%- endif -%}
+
+    {%- if type == 'checkbox' -%}
+      <span class="filter-item__label">
+        {{ filter_value.label }}
+      </span>
+      <span class="filter-item__count">{{ filter_value.count }}</span>
+    {%- endif -%}
+    {%- if type == 'swatch' -%}
+      <div
+        class="filter-item__swatch"
+        style="
+          background-image: url({{ filter_value.label | handle | append: '.' | append: file_extension | file_url }});
+          background-color: {{ filter_color }};
+        "
+      ></div>
+    {%- endif -%}
+
+    {%- if type == 'chip' -%}
+      <div class="filter-item__chip">
+        {{ filter_value.label }}
+      </div>
+    {%- endif -%}
+  </label>
+</li>

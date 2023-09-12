@@ -1,0 +1,83 @@
+<section class="account page">
+  <div class="account__container page__inner">
+    <header class="account__header page__header">
+      <h1 class="account__heading ff-heading fs-heading-1-base ta-c">{{ 'account.title' | t }}</h1>
+
+      <div class="account__subheading fs-body-large">
+        {%- if customer.first_name != blank -%}
+          {{ 'account.welcome' | t: name: customer.first_name }}
+        {%- else -%}
+          {{ 'account.welcome_nameless' | t }}
+        {%- endif -%}
+        <a class="account__logout btn btn--text-link" href="{{ routes.account_logout_url }}">
+          {{- 'account.log_out' | t -}}
+        </a>
+      </div>
+    </header>
+
+    <div class="account__sections ff-body fs-body-base">
+      <div class="account__top">
+        <h2 class="account__col-heading ff-heading fs-heading-2-base">{{ 'customer.account.details' | t }}</h2>
+        {{ customer.default_address | format_address }}
+        <p class="account__cta-wrap">
+          {%- if customer.addresses.size > 1 -%}
+            <a class="btn btn--text-link" href="{{ routes.account_addresses_url }}">
+              {{- 'account.view_addresses' | t }} ({{ customer.addresses_count }})</a
+            >
+          {%- else -%}
+            <a class="btn btn--text-link" href="{{ routes.account_addresses_url }}">{{ 'account.add_address' | t }}</a>
+          {%- endif -%}
+        </p>
+      </div>
+
+      <div class="account__main">
+        {% paginate customer.orders by 20 %}
+          {% if customer.orders.size != 0 %}
+            <table class="account__table smart-table account__table--expanded">
+              <thead>
+                <tr class="ta-l">
+                  <th class="fs-body-bold" scope="col">{{ 'customer.orders.order_number' | t }}</th>
+                  <th class="fs-body-bold" scope="col">{{ 'customer.orders.date' | t }}</th>
+                  <th class="fs-body-bold" scope="col">{{ 'customer.orders.payment_status' | t }}</th>
+                  <th class="fs-body-bold" scope="col">{{ 'customer.orders.fulfillment_status' | t }}</th>
+                  <th class="fs-body-bold ta-r" scope="col">{{ 'customer.orders.total' | t }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for order in customer.orders %}
+                  <tr class="ta-l">
+                    <td data-label="{{ 'customer.orders.order_number' | t }}" scope="row">
+                      <a
+                        href="{{ order.customer_url }}"
+                        aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}"
+                        class="btn btn--text-link"
+                      >
+                        {{ order.name }}
+                      </a>
+                    </td>
+                    <td data-label="{{ 'customer.orders.date' | t }}">
+                      {{ order.created_at | time_tag: format: 'date' }}
+                    </td>
+                    <td data-label="{{ 'customer.orders.payment_status' | t }}">{{ order.financial_status_label }}</td>
+                    <td data-label="{{ 'customer.orders.fulfillment_status' | t }}">
+                      {{ order.fulfillment_status_label }}
+                    </td>
+                    <td class="ta-r" data-label="{{ 'customer.orders.total' | t }}">{{ order.total_price | money }}</td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          {% else %}
+            <h4 class="account__my-orders-heading">{{ 'account.orders.title' | t }}</h4>
+            <div class="account__no-orders">
+              <p>{{ 'account.orders.none' | t }}</p>
+            </div>
+          {% endif %}
+          {%- if paginate.pages > 1 -%}
+            {% render 'pagination', paginate: paginate, type: 'account.orders_paginate', %}
+          {%- endif -%}
+        {% endpaginate %}
+      </div>
+    </div>
+  </div>
+</section>

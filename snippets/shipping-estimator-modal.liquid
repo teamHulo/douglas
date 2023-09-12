@@ -1,0 +1,72 @@
+<div
+  class="shipping-estimator-modal popover"
+  aria-labelledby="modal-Estimator-{{ id }}"
+  aria-modal="true"
+  aria-hidden="true"
+  data-estimator-modal
+>
+  <div class="shipping-estimator-modal__wash" data-mobile-wash></div>
+
+  <div class="shipping-estimator-modal__inner">
+
+    <button type="button" class="shipping-estimator-modal__close" aria-label="{{ 'general.accessibility.close_modal' | t }}" data-close-icon>
+      {% render 'icon-button' with icon: 'close-stroke' %}
+    </button>
+
+    <div class="shipping-estimator-modal__content" data-scroll-lock-ignore>
+      <div class="shipping-estimator-modal__heading">
+        <h2 id="modal-Estimator-{{ id }}" class="ff-heading fs-heading-2-large ta-c">{{ 'products.product.shipping_estimator' | t }}</h2>
+      </div>
+      <ul class="shipping-estimator-modal__error" data-estimator-error></ul>
+      <form data-form>
+        <label for="address_country-{{ id }}" class="visually-hidden">"{{ 'customer.addresses.zip' | t }}"</label>
+        <select
+          class="input"
+          data-address-country
+          id="address_country-{{ id }}"
+          name="address[country]"
+          autocomplete="country"
+          placeholder="{{ 'customer.addresses.country' | t }}"
+          data-default="{% if shop.customer_accounts_enabled and customer %}{{ customer.default_address.country }}{% endif %}"
+        >
+          {{ country_option_tags }}
+        </select>
+
+        <div class="shipping-estimator-modal__province-wrapper hidden" data-address-province-wrapper>
+          <label for="address_province-{{ id }}" class="visually-hidden">{{ 'customer.addresses.province' | t }}</label>
+          <select
+            class="input"
+            data-address-province
+            id="address_province-{{ id }}"
+            name="address[province]"
+            autocomplete="address-level1"
+            data-default="{% if shop.customer_accounts_enabled and customer and customer.default_address.province != '' %}{{ customer.default_address.province }}{% endif %}"
+          ></select>
+        </div>
+
+        <div class="shipping-estimator-modal__postal-wrapper">
+          <label for="AddressZip--{{ id }}" class="visually-hidden">{{ 'customer.addresses.zip' | t }}</label>
+          <input
+            data-address-zip
+            type="text"
+            id="AddressZip--{{ id }}"
+            class="input"
+            name="address[zip]"
+            value="{{ form.zip }}"
+            autocapitalize="characters"
+            autocomplete="postal-code"
+            placeholder="{{ 'customer.addresses.zip' | t }}"
+          >
+        </div>
+
+        <button type="button" class="btn btn--primary btn--form btn--full" data-estimator-button>
+          <span>{{ 'products.product.get_shipping_rates' | t }}</span>
+          <div class="btn__loading-wrap">
+            <div class="btn__loading-bar"></div>
+          </div>
+        </button>
+        <ul class="shipping-estimator-modal__success" data-estimator-success></ul>
+      </div>
+    </form>
+  </div>
+</div>

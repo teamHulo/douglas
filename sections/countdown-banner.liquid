@@ -1,0 +1,415 @@
+{%- liquid
+  assign overlay_opacity = section.settings.overlay_opacity | divided_by: 100.0
+  assign min_height = section.settings.min_height
+  assign min_height_mobile = section.settings.min_height_mobile
+  assign has_image = false
+  if section.settings.image != blank or section.settings.mobile_image != blank
+    assign has_image = true
+  endif
+  assign has_mobile_image = false
+  if section.settings.mobile_image != blank
+    assign has_mobile_image = true
+  endif
+  assign brightness_primary_button = section.settings.button_background_color | color_brightness
+  if brightness_primary_button > 60
+    assign color_background_button_hover = section.settings.button_background_color | color_darken: 20
+  else
+    assign color_background_button_hover = section.settings.button_background_color | color_lighten: 20
+  endif
+-%}
+<div
+  class="
+    countdown-banner
+    {% if has_image %}countdown-banner--has-image{% endif %}
+    {% if has_mobile_image %}countdown-banner--has-mobile-image{% endif %}
+    section
+    {{ section.settings.section_padding }}
+    {% if section.settings.full_width %}section--full-width{% endif %}
+    {% if settings.enable_reveal_animations and section.settings.enable_animation %}
+      animation
+      animation--countdown-banner
+    {% endif %}
+  "
+  style="
+    --padding-amount: {{ section.settings.padding_amount }};
+    --color-background: {{ section.settings.background_color }};
+    --color-text: {{ section.settings.text_color }};
+    --color-text-link: {{ section.settings.text_color }};
+    --color-text-meta: {{ section.settings.text_color | color_modify: 'alpha', 0.6 }};
+    --overlay-background: {{ section.settings.color_overlay }};
+    {% if section.settings.color_overlay_gradient != blank %}
+      --overlay-background-gradient: {{ section.settings.color_overlay_gradient }};
+    {% endif %}
+    --color-background-button: {{ section.settings.button_background_color }};
+    --color-background-button-hover: {{ color_background_button_hover }};
+    --color-text-button: {{ section.settings.button_text_color }};
+    --overlay-opacity: {{ overlay_opacity }};
+    --min-height: {{ min_height }}px;
+    --min-height-mobile: {{ min_height_mobile }}px;
+  "
+  data-section-id="{{ section.id }}"
+  data-section-type="countdown-banner"
+>
+  <div class="{% unless section.settings.enable_full_width %}section__inner{% endunless %}">
+    <div class="countdown-banner__inner">
+      {%- if section.settings.mobile_image != blank -%}
+        {%- render 'image',
+          wrapper_class: 'countdown-banner__image countdown-banner__image--mobile',
+          image: section.settings.mobile_image,
+          focal_point: section.settings.mobile_focal_point,
+          disable_style: true
+        -%}
+      {%- endif -%}
+
+      {%- if section.settings.image != blank -%}
+        {%- render 'image',
+          wrapper_class: 'countdown-banner__image countdown-banner__image--desktop',
+          image: section.settings.image,
+          focal_point: section.settings.focal_point,
+          disable_style: true
+        -%}
+      {%- endif -%}
+      <div class="countdown-banner__overlay"></div>
+
+      <div class="countdown-banner__content">
+        <div class="countdown-banner__single-column">
+          {%- if section.settings.heading != blank -%}
+            <h4 class="countdown-banner__heading ff-heading fs-heading-1-base animation-fade-up-reveal">
+              {{ section.settings.heading }}
+            </h4>
+          {%- endif -%}
+
+          {%- if section.settings.subheading != blank -%}
+            <div class="countdown-banner__subheading ff-body fs-body-large animation-fade-up-reveal">
+              {{ section.settings.subheading }}
+            </div>
+          {%- endif -%}
+
+          {%- render 'countdown-timer',
+            year: section.settings.year,
+            month: section.settings.month,
+            day: section.settings.day,
+            hour: section.settings.hour,
+            minute: section.settings.minute,
+            time_zone_selection: section.settings.time_zone_selection,
+            hide_timer_on_complete: section.settings.hide_timer_on_complete,
+            timer_complete_message: section.settings.timer_complete_message
+          -%}
+
+          {%- if section.settings.text != blank -%}
+            <div class="countdown-banner__text rte ff-body fs-body-base animation-fade-up-reveal">
+              {{ section.settings.text }}
+            </div>
+          {%- endif -%}
+
+          {%- if section.settings.link_text and section.settings.link -%}
+            <a
+              href="{{ section.settings.link }}"
+              class="countdown-banner__button fs-body-base btn btn--primary btn--medium animation-fade-up-reveal"
+            >
+              {{ section.settings.link_text }}
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.countdown_banner.name",
+  "tag": "section",
+  "class": "shopify-section--full-width",
+  "disabled_on": {
+    "groups": ["header", "custom.overlay"]
+  },
+  "settings": [
+    {
+      "type": "range",
+      "id": "min_height",
+      "min": 200,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "label": "t:shared.settings.banners.min_height.label",
+      "default": 300
+    },
+    {
+      "type": "range",
+      "id": "min_height_mobile",
+      "min": 300,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "label": "t:shared.settings.banners.min_height_mobile.label",
+      "default": 500
+    },
+    {
+      "type": "header",
+      "content": "t:shared.settings.countdown.header__timer.content"
+    },
+    {
+      "type": "number",
+      "id": "year",
+      "label": "t:shared.settings.countdown.year.label",
+      "default": 2022
+    },
+    {
+      "type": "select",
+      "id": "month",
+      "label": "t:shared.settings.countdown.month.label",
+      "options": [{"value":"january","label":"t:shared.settings.countdown.month.option__january"},{"value":"february","label":"t:shared.settings.countdown.month.option__february"},{"value":"march","label":"t:shared.settings.countdown.month.option__march"},{"value":"april","label":"t:shared.settings.countdown.month.option__april"},{"value":"may","label":"t:shared.settings.countdown.month.option__may"},{"value":"june","label":"t:shared.settings.countdown.month.option__june"},{"value":"july","label":"t:shared.settings.countdown.month.option__july"},{"value":"august","label":"t:shared.settings.countdown.month.option__august"},{"value":"september","label":"t:shared.settings.countdown.month.option__september"},{"value":"october","label":"t:shared.settings.countdown.month.option__october"},{"value":"november","label":"t:shared.settings.countdown.month.option__november"},{"value":"december","label":"t:shared.settings.countdown.month.option__december"}],
+      "default": "january"
+    },
+    {
+      "type": "select",
+      "id": "day",
+      "label": "t:shared.settings.countdown.day.label",
+      "options": [{"value":"1","label":"t:shared.settings.countdown.day.option__1"},{"value":"2","label":"t:shared.settings.countdown.day.option__2"},{"value":"3","label":"t:shared.settings.countdown.day.option__3"},{"value":"4","label":"t:shared.settings.countdown.day.option__4"},{"value":"5","label":"t:shared.settings.countdown.day.option__5"},{"value":"6","label":"t:shared.settings.countdown.day.option__6"},{"value":"7","label":"t:shared.settings.countdown.day.option__7"},{"value":"8","label":"t:shared.settings.countdown.day.option__8"},{"value":"9","label":"t:shared.settings.countdown.day.option__9"},{"value":"10","label":"t:shared.settings.countdown.day.option__10"},{"value":"11","label":"t:shared.settings.countdown.day.option__11"},{"value":"12","label":"t:shared.settings.countdown.day.option__12"},{"value":"13","label":"t:shared.settings.countdown.day.option__13"},{"value":"14","label":"t:shared.settings.countdown.day.option__14"},{"value":"15","label":"t:shared.settings.countdown.day.option__15"},{"value":"16","label":"t:shared.settings.countdown.day.option__16"},{"value":"17","label":"t:shared.settings.countdown.day.option__17"},{"value":"18","label":"t:shared.settings.countdown.day.option__18"},{"value":"19","label":"t:shared.settings.countdown.day.option__19"},{"value":"20","label":"t:shared.settings.countdown.day.option__20"},{"value":"21","label":"t:shared.settings.countdown.day.option__21"},{"value":"22","label":"t:shared.settings.countdown.day.option__22"},{"value":"23","label":"t:shared.settings.countdown.day.option__23"},{"value":"24","label":"t:shared.settings.countdown.day.option__24"},{"value":"25","label":"t:shared.settings.countdown.day.option__25"},{"value":"26","label":"t:shared.settings.countdown.day.option__26"},{"value":"27","label":"t:shared.settings.countdown.day.option__27"},{"value":"28","label":"t:shared.settings.countdown.day.option__28"},{"value":"29","label":"t:shared.settings.countdown.day.option__29"},{"value":"30","label":"t:shared.settings.countdown.day.option__30"},{"value":"31","label":"t:shared.settings.countdown.day.option__31"}],
+      "default": "1"
+    },
+    {
+      "type": "select",
+      "id": "hour",
+      "label": "t:shared.settings.countdown.hour.label",
+      "options": [{"value":"0","label":"t:shared.settings.countdown.hour.option__0"},{"value":"1","label":"t:shared.settings.countdown.hour.option__1"},{"value":"2","label":"t:shared.settings.countdown.hour.option__2"},{"value":"3","label":"t:shared.settings.countdown.hour.option__3"},{"value":"4","label":"t:shared.settings.countdown.hour.option__4"},{"value":"5","label":"t:shared.settings.countdown.hour.option__5"},{"value":"6","label":"t:shared.settings.countdown.hour.option__6"},{"value":"7","label":"t:shared.settings.countdown.hour.option__7"},{"value":"8","label":"t:shared.settings.countdown.hour.option__8"},{"value":"9","label":"t:shared.settings.countdown.hour.option__9"},{"value":"10","label":"t:shared.settings.countdown.hour.option__10"},{"value":"11","label":"t:shared.settings.countdown.hour.option__11"},{"value":"12","label":"t:shared.settings.countdown.hour.option__12"},{"value":"13","label":"t:shared.settings.countdown.hour.option__13"},{"value":"14","label":"t:shared.settings.countdown.hour.option__14"},{"value":"15","label":"t:shared.settings.countdown.hour.option__15"},{"value":"16","label":"t:shared.settings.countdown.hour.option__16"},{"value":"17","label":"t:shared.settings.countdown.hour.option__17"},{"value":"18","label":"t:shared.settings.countdown.hour.option__18"},{"value":"19","label":"t:shared.settings.countdown.hour.option__19"},{"value":"20","label":"t:shared.settings.countdown.hour.option__20"},{"value":"21","label":"t:shared.settings.countdown.hour.option__21"},{"value":"22","label":"t:shared.settings.countdown.hour.option__22"},{"value":"23","label":"t:shared.settings.countdown.hour.option__23"}],
+      "default": "0"
+    },
+    {
+      "id": "minute",
+      "type": "select",
+      "label": "t:shared.settings.countdown.minute.label",
+      "options": [{"value":"0","label":"t:shared.settings.countdown.minute.option__0"},{"value":"1","label":"t:shared.settings.countdown.minute.option__1"},{"value":"2","label":"t:shared.settings.countdown.minute.option__2"},{"value":"3","label":"t:shared.settings.countdown.minute.option__3"},{"value":"4","label":"t:shared.settings.countdown.minute.option__4"},{"value":"5","label":"t:shared.settings.countdown.minute.option__5"},{"value":"6","label":"t:shared.settings.countdown.minute.option__6"},{"value":"7","label":"t:shared.settings.countdown.minute.option__7"},{"value":"8","label":"t:shared.settings.countdown.minute.option__8"},{"value":"9","label":"t:shared.settings.countdown.minute.option__9"},{"value":"10","label":"t:shared.settings.countdown.minute.option__10"},{"value":"11","label":"t:shared.settings.countdown.minute.option__11"},{"value":"12","label":"t:shared.settings.countdown.minute.option__12"},{"value":"13","label":"t:shared.settings.countdown.minute.option__13"},{"value":"14","label":"t:shared.settings.countdown.minute.option__14"},{"value":"15","label":"t:shared.settings.countdown.minute.option__15"},{"value":"16","label":"t:shared.settings.countdown.minute.option__16"},{"value":"17","label":"t:shared.settings.countdown.minute.option__17"},{"value":"18","label":"t:shared.settings.countdown.minute.option__18"},{"value":"19","label":"t:shared.settings.countdown.minute.option__19"},{"value":"20","label":"t:shared.settings.countdown.minute.option__20"},{"value":"21","label":"t:shared.settings.countdown.minute.option__21"},{"value":"22","label":"t:shared.settings.countdown.minute.option__22"},{"value":"23","label":"t:shared.settings.countdown.minute.option__23"},{"value":"24","label":"t:shared.settings.countdown.minute.option__24"},{"value":"25","label":"t:shared.settings.countdown.minute.option__25"},{"value":"26","label":"t:shared.settings.countdown.minute.option__26"},{"value":"27","label":"t:shared.settings.countdown.minute.option__27"},{"value":"28","label":"t:shared.settings.countdown.minute.option__28"},{"value":"29","label":"t:shared.settings.countdown.minute.option__29"},{"value":"30","label":"t:shared.settings.countdown.minute.option__30"},{"value":"31","label":"t:shared.settings.countdown.minute.option__31"},{"value":"32","label":"t:shared.settings.countdown.minute.option__32"},{"value":"33","label":"t:shared.settings.countdown.minute.option__33"},{"value":"34","label":"t:shared.settings.countdown.minute.option__34"},{"value":"35","label":"t:shared.settings.countdown.minute.option__35"},{"value":"36","label":"t:shared.settings.countdown.minute.option__36"},{"value":"37","label":"t:shared.settings.countdown.minute.option__37"},{"value":"38","label":"t:shared.settings.countdown.minute.option__38"},{"value":"39","label":"t:shared.settings.countdown.minute.option__39"},{"value":"40","label":"t:shared.settings.countdown.minute.option__40"},{"value":"41","label":"t:shared.settings.countdown.minute.option__41"},{"value":"42","label":"t:shared.settings.countdown.minute.option__42"},{"value":"43","label":"t:shared.settings.countdown.minute.option__43"},{"value":"44","label":"t:shared.settings.countdown.minute.option__44"},{"value":"45","label":"t:shared.settings.countdown.minute.option__45"},{"value":"46","label":"t:shared.settings.countdown.minute.option__46"},{"value":"47","label":"t:shared.settings.countdown.minute.option__47"},{"value":"48","label":"t:shared.settings.countdown.minute.option__48"},{"value":"49","label":"t:shared.settings.countdown.minute.option__49"},{"value":"50","label":"t:shared.settings.countdown.minute.option__50"},{"value":"51","label":"t:shared.settings.countdown.minute.option__51"},{"value":"52","label":"t:shared.settings.countdown.minute.option__52"},{"value":"53","label":"t:shared.settings.countdown.minute.option__53"},{"value":"54","label":"t:shared.settings.countdown.minute.option__54"},{"value":"55","label":"t:shared.settings.countdown.minute.option__55"},{"value":"56","label":"t:shared.settings.countdown.minute.option__56"},{"value":"57","label":"t:shared.settings.countdown.minute.option__57"},{"value":"58","label":"t:shared.settings.countdown.minute.option__58"},{"value":"59","label":"t:shared.settings.countdown.minute.option__59"}],
+      "default": "0"
+    },
+    {
+      "type": "select",
+      "id": "time_zone_selection",
+      "label": "t:shared.settings.countdown.time_zone_selection.label",
+      "options": [
+        {
+          "value": "shop",
+          "label": "t:shared.settings.countdown.time_zone_selection.option__shop"
+        },
+        {
+          "value": "user",
+          "label": "t:shared.settings.countdown.time_zone_selection.option__user"
+        }
+      ],
+      "default": "shop",
+      "info": "t:shared.settings.countdown.time_zone_selection.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_timer_on_complete",
+      "label": "t:shared.settings.countdown.hide_timer_on_complete.label",
+      "default": false
+    },
+    {
+      "type": "richtext",
+      "id": "timer_complete_message",
+      "label": "t:shared.settings.countdown.timer_complete_message.label"
+    },
+    {
+      "type": "header",
+      "content": "t:shared.settings.banners.header__content.content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:shared.settings.banners.heading.label",
+      "default": "Countdown banner"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "t:shared.settings.banners.subheading.label",
+      "default": "<p>Use this timer to create urgency or highlight an upcoming event.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:shared.settings.banners.text.label"
+    },
+    {
+      "id": "link",
+      "type": "url",
+      "label": "t:shared.settings.banners.button_link.label",
+      "default": "/collections"
+    },
+    {
+      "id": "link_text",
+      "type": "text",
+      "label": "t:shared.settings.banners.button_link_text.label",
+      "default": "Button"
+    },
+    {
+      "type": "header",
+      "content": "t:shared.settings.banners.header__background_image.content"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:shared.settings.banners.image.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "t:shared.settings.banners.mobile_image.label"
+    },
+    {
+      "id": "focal_point",
+      "type": "select",
+      "label": "t:shared.settings.banners.focal_point.label",
+      "options": [
+        { "label": "t:shared.settings.banners.focal_point.options__0", "value": "image_presentation" },
+        { "label": "t:shared.settings.banners.focal_point.options__1", "value": "left_top" },
+        { "label": "t:shared.settings.banners.focal_point.options__2", "value": "center_top" },
+        { "label": "t:shared.settings.banners.focal_point.options__3", "value": "right_top" },
+        { "label": "t:shared.settings.banners.focal_point.options__4", "value": "left_center" },
+        { "label": "t:shared.settings.banners.focal_point.options__5", "value": "center_center" },
+        { "label": "t:shared.settings.banners.focal_point.options__6", "value": "right_center" },
+        { "label": "t:shared.settings.banners.focal_point.options__7", "value": "left_bottom" },
+        { "label": "t:shared.settings.banners.focal_point.options__8", "value": "center_bottom" },
+        { "label": "t:shared.settings.banners.focal_point.options__9", "value": "right_bottom" }
+      ],
+      "default": "image_presentation"
+    },
+    {
+      "id": "mobile_focal_point",
+      "type": "select",
+      "label": "t:shared.settings.banners.mobile_focal_point.label",
+      "options": [
+        { "label": "t:shared.settings.banners.focal_point.options__0", "value": "image_presentation" },
+        { "label": "t:shared.settings.banners.focal_point.options__1", "value": "left_top" },
+        { "label": "t:shared.settings.banners.focal_point.options__2", "value": "center_top" },
+        { "label": "t:shared.settings.banners.focal_point.options__3", "value": "right_top" },
+        { "label": "t:shared.settings.banners.focal_point.options__4", "value": "left_center" },
+        { "label": "t:shared.settings.banners.focal_point.options__5", "value": "center_center" },
+        { "label": "t:shared.settings.banners.focal_point.options__6", "value": "right_center" },
+        { "label": "t:shared.settings.banners.focal_point.options__7", "value": "left_bottom" },
+        { "label": "t:shared.settings.banners.focal_point.options__8", "value": "center_bottom" },
+        { "label": "t:shared.settings.banners.focal_point.options__9", "value": "right_bottom" }
+      ],
+      "default": "image_presentation"
+    },
+    {
+      "type": "header",
+      "content": "t:shared.settings.banners.header__color.content"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:shared.settings.banners.text_color.label",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "t:shared.settings.banners.button_background_color.label",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "t:shared.settings.banners.button_text_color.label",
+      "default": "#000000"
+    },
+    {
+      "id": "background_color",
+      "type": "color",
+      "label": "t:shared.settings.banners.background_color.label",
+      "info": "t:shared.settings.banners.background_color.info",
+      "default": "#C51C26"
+    },
+    {
+      "id": "color_overlay",
+      "type": "color",
+      "label": "t:shared.settings.banners.color_overlay.label",
+      "default": "#000"
+    },
+    {
+      "id": "color_overlay_gradient",
+      "type": "color_background",
+      "label": "t:shared.settings.banners.color_overlay_gradient.label"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "t:shared.settings.banners.overlay_opacity.label",
+      "unit": "%",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:shared.settings.section_style.header_style.content"
+    },
+    {
+      "id": "enable_animation",
+      "type": "checkbox",
+      "label": "t:shared.settings.section_style.enable_animation.label",
+      "info": "t:shared.settings.section_style.enable_animation.info",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_full_width",
+      "label": "t:shared.settings.banners.enable_full_width.label",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "t:shared.settings.section_style.section_padding.label",
+      "default": "section--vertical-padding-top-bottom",
+      "options": [
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_both",
+          "value": "section--vertical-padding-top-bottom"
+        },
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_top",
+          "value": "section--vertical-padding-top-only"
+        },
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_bottom",
+          "value": "section--vertical-padding-bottom-only"
+        },
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_none",
+          "value": "section--vertical-padding-none"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "padding_amount",
+      "label": "t:shared.settings.section_style.padding_amount.label",
+      "default": "1.0",
+      "options": [
+        {
+          "label": "t:shared.settings.section_style.padding_amount.option_full",
+          "value": "1.0"
+        },
+        {
+          "label": "t:shared.settings.section_style.padding_amount.option_half",
+          "value": "0.5"
+        },
+        {
+          "label": "t:shared.settings.section_style.padding_amount.option_minimum",
+          "value": "0.075"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.countdown_banner.presets.name"
+    }
+  ]
+}
+{% endschema %}

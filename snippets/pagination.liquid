@@ -1,0 +1,88 @@
+{%- liquid
+  assign pagination_current_item_start = paginate.current_offset | plus: 1
+  assign pagination_current_item_end = paginate.current_page | times: paginate.page_size
+  assign current_pagination_range = pagination_current_item_start
+  
+  if pagination_current_item_end > paginate.items
+    assign pagination_current_item_end = paginate.items
+  endif
+  
+  assign current_pagination_range = current_pagination_range | append: '-' | append: pagination_current_item_end
+  assign pagination_type = type | t
+-%}
+
+<div class="pagination">
+  {%- unless display_paginate_item_count_only -%}
+    <ul class="pagination__list">
+
+      {%- if paginate.previous != blank -%}
+        <li class="pagination__item pagination__previous">
+          <a
+            href="{{ paginate.previous.url }}"
+            class="
+              pagination__navigation-button
+              pagination__navigation-button-previous
+              btn
+              btn--secondary
+              btn--square
+            "
+            aria-label="{{ 'general.pagination.previous_page' | t: type: pagination_type }}"
+          >
+            {% render 'icon', with icon: 'arrow-stroke',  non_focusable: true %}
+          </a>
+        </li>
+      {%- endif -%}
+
+      {%- for part in paginate.parts -%}
+        {%- capture li_classes -%}
+          {%- if part.title == paginate.current_page -%}
+            pagination__item pagination__item--active
+          {%- elsif part.title == "&hellip;" -%}
+            pagination__ellip
+          {%- else -%}
+            pagination__item
+          {%- endif -%}
+        {%- endcapture -%}
+
+        <li class="{{ li_classes }}">
+          {%- if part.is_link == true -%}
+            <a
+              href="{{ part.url }}"
+              class="btn btn--secondary btn--square"
+              aria-label="{{ 'general.pagination.page' | t: number: part.title, type: pagination_type }}"
+            >
+              {{ part.title }}
+            </a>
+          {%- else -%}
+            {%- if part.title == "&hellip;" -%}
+              <span>{{ part.title }}</span>
+            {%- else -%}
+              <span>{{ part.title }}</span>
+            {%- endif -%}
+          {%- endif -%}
+
+        </li>
+      {%- endfor -%}
+
+      {%- if paginate.next != blank -%}
+        <li class="pagination__item pagination__next">
+          <a
+            href="{{ paginate.next.url }}"
+            class="
+              pagination__navigation-button
+              pagination__navigation-button-next
+              btn
+              btn--secondary
+              btn--square
+            "
+            aria-label="{{ 'general.pagination.next_page' | t: type: pagination_type }}"
+          >
+            {% render 'icon', with icon: 'arrow-stroke',  non_focusable: true %}
+          </a>
+        </li>
+      {%- endif -%}
+    </ul>
+  {%- endunless -%}
+
+  <p class="pagination__footer ff-body">{{ 'general.pagination.viewing' | t: of: current_pagination_range, total: paginate.items }} {{ pagination_type }}</p>
+</div>

@@ -1,0 +1,69 @@
+{%- liquid
+  assign image_is_constrained = true
+
+  if aspect_ratio == 'natural'
+    assign image_is_constrained = false
+  endif
+-%}
+
+<div
+  class="social-proof__slide"
+  data-slide
+  data-index="{{ forloop.index0 }}"
+  {{ block.shopify_attributes }}
+>
+  {%- if link != blank -%}
+    <a
+      href="{{ link }}"
+      class="social-proof__image-wrapper hover"
+      aria-label="{{ caption | strip_html | escape | default: image.alt }}"
+    >
+  {%- else -%}
+    <div class="social-proof__image-wrapper hover">
+  {%- endif -%}
+
+  {%- if image != blank -%}
+    {% render 'image',
+      image: image,
+      wrapper_class: 'social-proof__image',
+      focal_point: 'image_presentation',
+      disable_style: image_is_constrained,
+      has_reveal_container: true
+    %}
+  {%- else -%}
+    <div class="social-proof__image placeholder-image">
+      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+    </div>
+  {%- endif -%}
+
+  {%- if link != blank -%}
+    </a>
+  {%- else -%}
+    </div>
+  {%- endif -%}
+
+  {% if likes != blank or account != blank or caption != blank %}
+    <div class="social-proof__item-footer">
+      {% unless likes == blank %}
+        <div class="social-proof__item-likes fs-body-base">
+          {% render 'icon' with icon: 'heart' %}
+          <span><span>{{ likes }}</span>&nbsp;{{ 'sections.social_proof.likes' | t }}</span>
+        </div>
+      {% endunless %}
+
+      {% if account != blank or caption != blank %}
+        <div class="social-proof__content fs-body-base">
+          {%- unless account == blank -%}
+            <span class="social-proof__item-account fs-body-bold">
+              {{ account }}
+            </span>
+          {%- endunless -%}
+
+          {%- unless caption == blank -%}
+            {{ caption }}
+          {%- endunless -%}
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+</div>

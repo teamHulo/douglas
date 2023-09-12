@@ -1,0 +1,447 @@
+{% liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign accordion_base_class = 'rte--product'
+  assign description_title = 'products.product.description' | t
+  assign widgets_left = false
+
+  if section.blocks.size > 0
+    if section.blocks[0].type == 'payment_widget' or section.blocks[0].type == 'security_widget' or section.blocks[0].type == 'shipping_widget' or section.blocks[0].type == 'custom_widget'
+      assign widgets_left = true
+    endif
+  endif
+%}
+
+<div
+  class="product product-footer"
+  data-section-id="{{ section.id }}"
+  data-section-type="product"
+>
+  {%- if widgets_left -%}
+    <div class="product-footer__left product-footer--widgets">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'payment_widget' -%}
+            {%
+              render 'widgets' with
+              block: block,
+              current_variant: current_variant,
+              display_on_desktop: true
+            %}
+          {%- when 'security_widget' -%}
+            {%
+              render 'widgets' with
+              block: block,
+              current_variant: current_variant,
+              display_on_desktop: true
+            %}
+          {%- when 'shipping_widget' -%}
+            {%
+              render 'widgets' with
+              block: block,
+              current_variant: current_variant,
+              display_on_desktop: true
+            %}
+          {%- when 'custom_widget' -%}
+            {%
+              render 'widgets' with
+              block: block,
+              current_variant: current_variant,
+              display_on_desktop: true
+            %}
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+
+    <div class="product-footer__right">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'description' -%}
+            {%- if block.settings.style == 'paragraph' -%}
+              <div class="product__description product__description--below">
+                <h2 class="product__description-header ff-heading fs-heading-2-base">{{ description_title }}</h2>
+                <div
+                  class="product__description-content rte rte--product ff-body fs-body-base"
+                  data-description
+                >
+                  {{ product.description }}
+                </div>
+              </div>
+            {%- else -%}
+              {%- liquid
+                assign accordion_class = accordion_base_class | append: ' accordion--' | append: block.settings.style
+              -%}
+
+              {%-
+                render 'accordion-block' with
+                block: block,
+                classes: accordion_class,
+                heading: description_title,
+                content: product.description
+              -%}
+            {%- endif -%}
+          {%- when 'accordion' -%}
+            {%- liquid
+              assign accordion_class = accordion_base_class | append: ' accordion--' | append: block.settings.style
+            -%}
+
+            {%-
+              render 'accordion-block' with
+              block: block,
+              classes: accordion_class,
+              heading: block.settings.heading,
+              content: block.settings.content
+            -%}
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  {%- else -%}
+    <div class="product-footer__left">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'description' -%}
+            {%- if block.settings.style == 'paragraph' -%}
+              <div class="product__description product__description--below">
+                <h2 class="product__description-header ff-heading fs-heading-2-base">{{ description_title }}</h2>
+                <div
+                  class="product__description-content rte rte--product ff-body fs-body-base"
+                  data-description
+                >
+                  {{ product.description }}
+                </div>
+              </div>
+            {%- else -%}
+              {%- liquid
+                assign accordion_class = accordion_base_class | append: ' accordion--' | append: block.settings.style
+              -%}
+
+              {%-
+                render 'accordion-block' with
+                block: block,
+                classes: accordion_class,
+                heading: description_title,
+                content: product.description
+              -%}
+            {%- endif -%}
+          {%- when 'accordion' -%}
+            {%- liquid
+              assign accordion_class = accordion_base_class | append: ' accordion--' | append: block.settings.style
+            -%}
+
+            {%-
+              render 'accordion-block' with
+              block: block,
+              classes: accordion_class,
+              heading: block.settings.heading,
+              content: block.settings.content
+            -%}
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+
+    <div class="product-footer__right product-footer--widgets">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'payment_widget' -%}
+            {%
+              render 'widgets' with
+              block: block,
+              current_variant: current_variant,
+              display_on_desktop: true
+            %}
+          {%- when 'security_widget' -%}
+            {%
+              render 'widgets' with
+              block: block,
+              current_variant: current_variant,
+              display_on_desktop: true
+            %}
+          {%- when 'shipping_widget' -%}
+            {%
+              render 'widgets' with
+              block: block,
+              current_variant: current_variant,
+              display_on_desktop: true
+            %}
+          {%- when 'custom_widget' -%}
+            {%
+              render 'widgets' with
+              block: block,
+              current_variant: current_variant,
+              display_on_desktop: true
+            %}
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main_product_details.name",
+  "tag": "section",
+  "class": "product--footer",
+  "blocks": [
+    {
+      "type": "description",
+      "name": "t:sections.main_product_details.blocks.description.name",
+      "limit": 1,
+      "settings": [
+        {
+          "id": "style",
+          "label": "t:sections.main_product_details.blocks.description.settings.style.label",
+          "type": "select",
+          "default": "paragraph",
+          "options": [
+            {
+              "value": "paragraph",
+              "label": "t:sections.main_product_details.blocks.description.settings.style.options__1"
+            },
+            {
+              "value": "open",
+              "label": "t:sections.main_product_details.blocks.description.settings.style.options__2"
+            },
+            {
+              "value": "closed",
+              "label": "t:sections.main_product_details.blocks.description.settings.style.options__3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "accordion",
+      "name": "t:sections.main_product_details.blocks.accordion.name",
+      "settings": [
+        {
+          "id": "style",
+          "label": "t:sections.main_product_details.blocks.accordion.settings.style.label",
+          "type": "select",
+          "default": "closed",
+          "options": [
+            {
+              "value": "open",
+              "label": "t:sections.main_product_details.blocks.accordion.settings.style.options__1"
+            },
+            {
+              "value": "closed",
+              "label": "t:sections.main_product_details.blocks.accordion.settings.style.options__2"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "t:sections.main_product_details.blocks.accordion.settings.heading.label",
+          "info": "t:sections.main_product_details.blocks.accordion.settings.heading.info",
+          "default": "Accordion heading"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "t:sections.main_product_details.blocks.accordion.settings.content.label"
+        }
+      ]
+    },
+    {
+      "type": "payment_widget",
+      "name": "t:sections.main_product_details.blocks.payment_widget.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "t:sections.main_product_details.blocks.payment_widget.settings.icon.label",
+          "default": "payment",
+          "options": [
+            {
+              "value": "none",
+              "label": "t:sections.main_product_details.blocks.payment_widget.settings.icon.options__1"
+            },
+            {
+              "value": "chat",
+              "label": "t:sections.main_product_details.blocks.payment_widget.settings.icon.options__2"
+            },
+            {
+              "value": "payment",
+              "label": "t:sections.main_product_details.blocks.payment_widget.settings.icon.options__3"
+            },
+            {
+              "value": "security",
+              "label": "t:sections.main_product_details.blocks.payment_widget.settings.icon.options__4"
+            },
+            {
+              "value": "shipping",
+              "label": "t:sections.main_product_details.blocks.payment_widget.settings.icon.options__5"
+            }
+          ]
+        },
+        {
+          "id": "title",
+          "type": "text",
+          "label": "t:sections.main_product_details.blocks.payment_widget.settings.title.label",
+          "default": "Payment"
+        },
+        {
+          "id": "show_payment_icons",
+          "type": "checkbox",
+          "label": "t:sections.main_product_details.blocks.payment_widget.settings.show_payment_icons.label",
+          "default": true
+        },
+        {
+          "id": "text",
+          "type": "richtext",
+          "label": "t:sections.main_product_details.blocks.payment_widget.settings.text.label",
+          "default": "<p>Your payment information is processed securely. We do not store credit card details nor have access to your credit card information.</p>"
+        }
+      ]
+    },
+    {
+      "type": "security_widget",
+      "name": "t:sections.main_product_details.blocks.security_widget.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "t:sections.main_product_details.blocks.security_widget.settings.icon.label",
+          "default": "security",
+          "options": [
+            {
+              "value": "none",
+              "label": "t:sections.main_product_details.blocks.security_widget.settings.icon.options__1"
+            },
+            {
+              "value": "chat",
+              "label": "t:sections.main_product_details.blocks.security_widget.settings.icon.options__2"
+            },
+            {
+              "value": "payment",
+              "label": "t:sections.main_product_details.blocks.security_widget.settings.icon.options__3"
+            },
+            {
+              "value": "security",
+              "label": "t:sections.main_product_details.blocks.security_widget.settings.icon.options__4"
+            },
+            {
+              "value": "shipping",
+              "label": "t:sections.main_product_details.blocks.security_widget.settings.icon.options__5"
+            }
+          ]
+        },
+        {
+          "id": "title",
+          "type": "text",
+          "label": "t:sections.main_product_details.blocks.security_widget.settings.title.label",
+          "default": "Security"
+        },
+        {
+          "id": "text",
+          "type": "richtext",
+          "label": "t:sections.main_product_details.blocks.security_widget.settings.text.label",
+          "default": "<p>This website is encrypted. We take your security very seriously. All transactions powered by Shopify.</p>"
+        }
+      ]
+    },
+    {
+      "type": "shipping_widget",
+      "name": "t:sections.main_product_details.blocks.shipping_widget.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "t:sections.main_product_details.blocks.shipping_widget.settings.icon.label",
+          "default": "shipping",
+          "options": [
+            {
+              "value": "none",
+              "label": "t:sections.main_product_details.blocks.shipping_widget.settings.icon.options__1"
+            },
+            {
+              "value": "chat",
+              "label": "t:sections.main_product_details.blocks.shipping_widget.settings.icon.options__2"
+            },
+            {
+              "value": "payment",
+              "label": "t:sections.main_product_details.blocks.shipping_widget.settings.icon.options__3"
+            },
+            {
+              "value": "security",
+              "label": "t:sections.main_product_details.blocks.shipping_widget.settings.icon.options__4"
+            },
+            {
+              "value": "shipping",
+              "label": "t:sections.main_product_details.blocks.shipping_widget.settings.icon.options__5"
+            }
+          ]
+        },
+        {
+          "id": "title",
+          "type": "text",
+          "label": "t:sections.main_product_details.blocks.shipping_widget.settings.title.label",
+          "default": "Shipping"
+        },
+        {
+          "id": "text",
+          "type": "richtext",
+          "label": "t:sections.main_product_details.blocks.shipping_widget.settings.text.label",
+          "default": "<p>Rates are approximations. Exact rates will be provided at checkout.</p>"
+        },
+        {
+          "id": "show_estimator",
+          "type": "checkbox",
+          "label": "t:sections.main_product_details.blocks.shipping_widget.settings.show_estimator.label",
+          "info": "t:sections.main_product_details.blocks.shipping_widget.settings.show_estimator.info",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "custom_widget",
+      "name": "t:sections.main_product_details.blocks.custom_widget.name",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "t:sections.main_product_details.blocks.custom_widget.settings.icon.label",
+          "default": "chat",
+          "options": [
+            {
+              "value": "none",
+              "label": "t:sections.main_product_details.blocks.custom_widget.settings.icon.options__1"
+            },
+            {
+              "value": "chat",
+              "label": "t:sections.main_product_details.blocks.custom_widget.settings.icon.options__2"
+            },
+            {
+              "value": "payment",
+              "label": "t:sections.main_product_details.blocks.custom_widget.settings.icon.options__3"
+            },
+            {
+              "value": "security",
+              "label": "t:sections.main_product_details.blocks.custom_widget.settings.icon.options__4"
+            },
+            {
+              "value": "shipping",
+              "label": "t:sections.main_product_details.blocks.custom_widget.settings.icon.options__5"
+            }
+          ]
+        },
+        {
+          "id": "title",
+          "type": "text",
+          "label": "t:sections.main_product_details.blocks.custom_widget.settings.title.label",
+          "default": "Widget title"
+        },
+        {
+          "id": "text",
+          "type": "richtext",
+          "label": "t:sections.main_product_details.blocks.custom_widget.settings.text.label",
+          "default": "<p>Use these blocks to provide some at a glance information about your processes or procedures.</p>"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

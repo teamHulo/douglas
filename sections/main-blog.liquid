@@ -1,0 +1,203 @@
+{%- liquid
+  assign paginate_by = section.settings.articles_per_row | times: 3
+  assign columns = section.settings.articles_per_row
+  assign aspect_ratio = section.settings.aspect_ratio
+
+  assign image_is_constrained = true
+
+  if aspect_ratio == 'natural'
+    assign image_is_constrained = false
+  endif
+
+  case columns
+    when 2
+      assign article_heading_type = 'fs-heading-2-large'
+    when 3
+      assign article_heading_type = 'fs-heading-2-base'
+    when 4
+      assign article_heading_type = 'fs-heading-3-base'
+  endcase
+-%}
+
+{% paginate blog.articles by paginate_by %}
+  <div
+    class="
+      blog
+      blog--columns-{{ columns }}
+      blog--{{ aspect_ratio }}
+      page
+      {% if settings.enable_reveal_animations and section.settings.enable_animation %}
+        animation
+      {% endif %}
+    "
+    data-section-id="{{ section.id }}"
+    data-section-type="blog"
+  >
+    <div class="blog__inner page__inner">
+      <div class="blog__header page__header animation-fade-up-reveal">
+        <h1 class="blog__heading ff-heading fs-heading-1-base ta-c">
+          {{ page_title }}
+          {% if current_tags %} — {{ 'general.meta.tags' | t: tags: current_tags[0] }}{% endif %}
+        </h1>
+
+        {%- if section.settings.show_rss -%}
+          <a
+            class="blog__rss"
+            href="{{ blog.url | append: '.atom' }}"
+            aria-label="{{ 'general.accessibility.rss' | t }}"
+          >
+            {% render 'icon-button' with icon: 'rss_feed' %}
+          </a>
+        {%- endif -%}
+      </div>
+
+      <ul class="blog__article-list">
+        {%- for article in blog.articles -%}
+          <li class="blog__article-item animation-fade-up-reveal">
+            {%- if article.image != blank -%}
+              <a href="{{ article.url }}" class="hover">
+                {%
+                  render 'image',
+                  image: article.image,
+                  wrapper_class: 'blog__article-image'
+                  disable_style: image_is_constrained,
+                %}
+              </a>
+            {%- else -%}
+              <div class="blog__article-image placeholder-image">
+                {{ 'image' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+            {%- endif -%}
+
+            <div class="blog__meta {% if article.image == blank %}blog__meta--no-image{% endif %}">
+              {%- for block in section.blocks -%}
+                {%- case block.type -%}
+                  {%- when 'title' -%}
+                    <h3
+                      class="blog__article-title ff-heading {{ article_heading_type }} ta-c"
+                      {{ block.shopify_attributes }}
+                    >
+                      <a href="{{ article.url }}">{{ article.title }}</a>
+                    </h3>
+
+                    {%- if block.settings.show_date -%}
+                      <p class="blog__date fs-body-base ta-c">
+                        {{ article.published_at | time_tag: format: 'date' }}
+                      </p>
+                    {%- endif -%}
+                  {%- when 'summary' -%}
+                    <p class="blog__article-excerpt ff-body fs-body-base ta-c">
+                      {{ article.excerpt_or_content | strip_html | truncate: 120 }}
+                      {%- if block.settings.show_link -%}
+                        <a href="{{ article.url }}" class="btn btn--text-link">{{ 'sections.blog_posts.more' | t }}</a>
+                      {%- endif -%}
+                    </p>
+                {%- endcase -%}
+              {%- endfor -%}
+            </div>
+          </li>
+        {%- endfor -%}
+      </ul>
+
+      <div class="blog__pagination animation-fade-up-reveal">
+        {% if paginate.pages > 1 %}
+          {% render 'pagination' with paginate: paginate, type: 'general.pagination.blog_posts' %}
+        {% else %}
+          {% render 'pagination' with paginate: paginate, type: 'general.pagination.blog_posts', display_paginate_item_count_only: true %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endpaginate %}
+
+{% schema %}
+{
+  "name": "t:sections.main_blog.name",
+  "tag": "section",
+  "class": "spaced-section",
+  "settings": [
+    {
+      "id": "show_rss",
+      "type": "checkbox",
+      "label": "t:sections.main_blog.settings.show_rss.label",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "articles_per_row",
+      "label": "t:sections.main_blog.settings.articles_per_row.label",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main_blog.settings.header.content"
+    },
+    {
+      "type": "select",
+      "id": "aspect_ratio",
+      "options": [
+        {
+          "value": "natural",
+          "label": "t:sections.main_blog.settings.image_ratio.options__1.label"
+        },
+        {
+          "value": "square",
+          "label": "t:sections.main_blog.settings.image_ratio.options__2.label"
+        },
+        {
+          "value": "landscape",
+          "label": "t:sections.main_blog.settings.image_ratio.options__3.label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:sections.main_blog.settings.image_ratio.options__4.label"
+        }
+      ],
+      "default": "square",
+      "label": "t:sections.main_blog.settings.image_ratio.label"
+    },
+    {
+      "type": "header",
+      "content": "t:shared.settings.section_style.header_style.content"
+    },
+    {
+      "id": "enable_animation",
+      "type": "checkbox",
+      "label": "t:shared.settings.section_style.enable_animation.label",
+      "info": "t:shared.settings.section_style.enable_animation.info",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "title",
+      "name": "t:sections.main_blog.blocks.title.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_date",
+          "default": true,
+          "label": "t:sections.main_blog.blocks.title.settings.show_date.label"
+        }
+      ]
+    },
+    {
+      "type": "summary",
+      "name": "t:sections.main_blog.blocks.summary.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_link",
+          "default": true,
+          "label": "t:sections.main_blog.blocks.summary.settings.show_link.label"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

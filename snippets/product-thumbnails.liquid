@@ -1,0 +1,37 @@
+{% if product.media.size > 1 %}
+  <ul class="product-thumbnails" data-product-thumbnails>
+    {% for media in product.media %}
+      <li class="product-thumbnails__item animation-fade-up-reveal">
+        <button
+          type="button"
+          class="product-thumbnails__item-link{% if media.id == featured_media.id %} active{% endif %}"
+          data-thumbnail-id="{{ media.id }}"
+          data-product-thumbnail
+          aria-label="{{ 'general.accessibility.image_thumbail' | t: number: forloop.index }}"
+        >
+          {% render 'image' with
+            image: media.preview_image,
+            id: media.id
+            wrapper_class: 'product-thumbnails__item-image',
+            disable_style: true
+          %}
+
+          {% case media.media_type %}
+            {% when 'video' %}
+              <div class="product-thumbnails__item-badge">
+                {% render 'icon' with icon: 'play-badge' %}
+              </div>
+            {% when 'external_video' %}
+              <div class="product-thumbnails__item-badge">
+                {% render 'icon' with icon: 'play-badge' %}
+              </div>
+            {% when 'model' %}
+              <div class="product-thumbnails__item-badge">
+                {% render 'icon' with icon: '3d-badge' %}
+              </div>
+          {% endcase %}
+        </button>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

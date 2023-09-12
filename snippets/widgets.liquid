@@ -1,0 +1,43 @@
+<div class="widgets {% if display_on_desktop %} widgets--show-on-desktop{% endif %}">
+  <div
+    class="widgets__item"
+    data-index="{{ forloop.index0 }}"
+    {{ block.shopify_attributes }}
+  >
+    <div class="widget__item-header">
+      {%- unless block.settings.icon == 'none' -%}
+        {%- render 'icon' with icon: block.settings.icon -%}
+      {%- endunless -%}
+      {%- if block.settings.title != blank -%}
+        <h4 class="widget__item-heading ff-heading fs-heading-4-base">{{ block.settings.title }}</h4>
+      {%- endif -%}
+    </div>
+
+    {%- if block.settings.show_payment_icons -%}
+      <div class="widget__item-icons">
+        {% render 'payment-icons' %}
+      </div>
+    {%- endif -%}
+
+    {%- if block.settings.text != blank -%}
+      <div class="widget__item-text rte ff-body fs-body-small">{{ block.settings.text }}</div>
+    {%- endif -%}
+
+    {%- if block.settings.show_estimator and country_option_tags != blank -%}
+      <button
+        type="button"
+        class="
+          btn
+          btn--primary
+          btn--small
+          widget__item-estimator-trigger
+          {% unless current_variant.available %}hidden{% endunless %}
+        "
+        data-estimator-trigger
+      >
+        {{ 'products.product.estimate_shipping' | t }}
+      </button>
+      {% render 'shipping-estimator-modal' with id: 'widget' %}
+    {%- endif -%}
+  </div>
+</div>

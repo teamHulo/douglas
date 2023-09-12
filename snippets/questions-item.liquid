@@ -1,0 +1,39 @@
+<div
+  class="questions__accordion-group animation-fade-up-reveal"
+  data-index="{{ forloop.index0 }}"
+  {{ block.shopify_attributes }}
+>
+  {%- unless question == blank -%}
+    <button
+      type="button"
+      class="questions__accordion-label ff-heading fs-heading-2-base"
+      aria-controls="content-{{ forloop.index }}"
+      aria-expanded="false"
+    >
+      {% render 'icon' with icon: 'quote', class: 'questions__accordion-quote' %}
+      <span class="questions__accordion-title">
+        {{ question }}
+      </span>
+      {% render 'icon' with icon: 'triangle', class: 'questions__accordion-chevron' %}
+    </button>
+  {%- endunless -%}
+
+  {%- unless answer == blank -%}
+    <div
+      class="questions__accordion-answer"
+      aria-hidden="true"
+      id="content-{{ forloop.index }}"
+    >
+      <div class="questions__accordion-answer-inner">
+        <div class="questions__accordion-answer-text ff-body fs-body-base measure">
+          {{ answer }}
+        </div>
+        {%- if author != blank -%}
+          <p class="questions__accordion-answer-by ff-body fs-body-small">
+            {{ 'sections.questions.answered_by' | t: author: author }}
+          </p>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endunless -%}
+</div>

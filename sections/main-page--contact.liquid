@@ -1,0 +1,109 @@
+<div
+  class="contact{% if section.blocks.size > 0 %} contact--has-image{% endif %}"
+  data-section-id="{{ section.id }}"
+  data-section-type="contact"
+>
+  <div class="contact__inner">
+    {%- for block in section.blocks -%}
+      <div class="contact__image">
+        {%- if block.settings.image -%}
+          {% render 'image', image: block.settings.image, focal_point: 'image_presentation' %}
+        {%- else -%}
+          <div class="placeholder-image">
+            {{ 'image' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+
+    <div class="contact__content">
+      <header class="contact__header page__header">
+        <h1 class="contact__heading page__heading ff-heading fs-heading-1-base">{{ page.title }}</h1>
+      </header>
+
+      {%- if page.content != blank -%}
+        <div class="contact__rte page__rte">
+          {{ page.content }}
+        </div>
+      {%- endif -%}
+
+      {% form 'contact', class: 'contact__form' %}
+        {%- assign success_msg = 'contact.form.post_success' | t -%}
+        {% render 'form-status', form: form, form_id: 'contact', success_message: success_msg %}
+
+        <label for="contact-ContactFormName" class="visually-hidden">{{ 'contact.form.name' | t }}</label>
+        <input
+          type="text"
+          name="contact[name]"
+          id="contact-ContactFormName"
+          class="input"
+          placeholder="{{ 'contact.form.name' | t }}"
+          value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}"
+        >
+
+        <label for="contact-ContactFormEmail" class="visually-hidden">{{ 'contact.form.email' | t }}</label>
+        <input
+          type="email"
+          name="contact[email]"
+          id="contact-ContactFormEmail"
+          class="input"
+          placeholder="{{ 'contact.form.email' | t }}"
+          value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+          spellcheck="false"
+          autocomplete="off"
+          autocapitalize="off"
+        >
+
+        <label for="contact-ContactFormPhone" class="visually-hidden">{{ 'contact.form.phone' | t }}</label>
+        <input
+          type="tel"
+          name="contact[phone]"
+          id="contact-ContactFormPhone"
+          class="input-reset input w-100"
+          placeholder="{{ 'contact.form.phone' | t }}"
+          value="{% if form[phone] %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+          pattern="[0-9\-]*"
+        >
+
+        <label for="contact-ContactFormMessage" class="visually-hidden">{{ 'contact.form.message' | t }}</label>
+        <textarea
+          rows="10"
+          name="contact[body]"
+          id="contact-ContactFormMessage"
+          class="input-reset input w-100"
+          placeholder="{{ 'contact.form.message' | t }}"
+          required
+        >
+          {%- if form.body -%}
+            {{- form.body -}}
+          {%- endif -%}
+        </textarea>
+
+        <button type="submit" class="btn btn--primary btn--form">{{ 'contact.form.submit' | t }}</button>
+      {% endform %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main_page_contact.name",
+  "tag": "section",
+  "class": "page-section",
+  "blocks": [
+    {
+      "type": "image",
+      "name": "t:sections.main_page_contact.blocks.image.name",
+      "limit": 1,
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "t:sections.main_page_contact.blocks.image.settings.image.label",
+          "info": "t:sections.main_page_contact.blocks.image.settings.image.info"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

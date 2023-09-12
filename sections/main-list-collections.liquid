@@ -1,0 +1,127 @@
+{%- liquid
+  assign show_description = section.settings.show_description
+  assign aspect_ratio = section.settings.aspect_ratio
+  assign max_collections = columns | times: 3
+-%}
+
+<div class="
+    list-collections
+    list-collections--columns-{{ section.settings.columns }}
+    page
+  ">
+  <div class="list-collections__inner page__inner">
+    <header class="list-collections__header page__header">
+      <h1 class="list-collections__heading ff-heading fs-heading-1-base ta-c">{{ page_title }}</h1>
+    </header>
+
+    <div class="list-collections__grid">
+      {%- if section.settings.display_type == 'all' -%}
+        {%- for collection in collections -%}
+          {%-
+            render 'collection-item' with
+            collection: collection,
+            aspect_ratio: aspect_ratio,
+            show_description: show_description,
+          -%}
+        {%- endfor -%}
+      {%- else -%}
+        {%- for block in section.blocks -%}
+          {%-
+            render 'collection-item' with
+            collection: block.settings.collection,
+            aspect_ratio: aspect_ratio,
+            show_description: show_description,
+          -%}
+        {%- else -%}
+          {%- for i in (1..max_collections) -%}
+            {%-
+              render 'collection-item' with
+              collection: empty,
+              aspect_ratio: aspect_ratio,
+              show_description: show_description,
+            -%}
+          {%- endfor -%}
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main_list_collections.name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.main_list_collections.settings.paragraph.content"
+    },
+    {
+      "id": "display_type",
+      "type": "radio",
+      "label": "t:sections.main_list_collections.settings.display_type.label",
+      "default": "all",
+      "options": [
+        { "value": "all", "label": "t:sections.main_list_collections.settings.display_type.options__1" },
+        { "value": "selected", "label": "t:sections.main_list_collections.settings.display_type.options__2" }
+      ]
+    },
+    {
+      "id": "show_description",
+      "type": "checkbox",
+      "label": "t:sections.main_list_collections.settings.show_description.label",
+      "default": false
+    },
+    {
+      "id": "aspect_ratio",
+      "type": "select",
+      "label": "t:sections.main_list_collections.settings.aspect_ratio.label",
+      "options": [
+        {
+          "label": "t:sections.main_list_collections.settings.aspect_ratio.options__1",
+          "value": "natural"
+        },
+        {
+          "label": "t:sections.main_list_collections.settings.aspect_ratio.options__2",
+          "value": "round"
+        },
+        {
+          "label": "t:sections.main_list_collections.settings.aspect_ratio.options__3",
+          "value": "square"
+        },
+        {
+          "label": "t:sections.main_list_collections.settings.aspect_ratio.options__4",
+          "value": "landscape"
+        },
+        {
+          "label": "t:sections.main_list_collections.settings.aspect_ratio.options__5",
+          "value": "portrait"
+        }
+      ],
+      "default": "square"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "t:sections.main_list_collections.settings.columns.label",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 3
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "t:sections.main_list_collections.blocks.collection.name",
+      "settings": [
+        {
+          "id": "collection",
+          "type": "collection",
+          "label": "t:sections.main_list_collections.blocks.collection.settings.collection.label"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

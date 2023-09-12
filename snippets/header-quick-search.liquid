@@ -1,0 +1,45 @@
+<div class="quick-search" data-quick-search>
+  <div class="quick-search__overlay" data-overlay></div>
+
+  <div class="quick-search__container popover">
+    <button
+      type="button"
+      class="quick-search__close"
+      aria-label="{{ 'general.accessibility.close_modal' | t }}"
+      data-close-icon
+    >
+      {% render 'icon-button' with icon: 'close-stroke' %}
+    </button>
+
+    <div class="quick-search__heading ff-heading fs-heading-2-large">{{ 'search.search' | t }}</div>
+
+    <form action="{{ routes.search_url }}" class="quick-search__form" autocomplete="off">
+      <div class="quick-search__bar">
+        <label for="search" class="visually-hidden" aria-label="{{ 'search.placeholder' | t }}"></label>
+        <input
+          class="quick-search__input"
+          id="search"
+          type="text"
+          name="q"
+          placeholder="{{ 'search.placeholder' | t }}"
+          data-input
+        >
+        <input type="hidden" name="options[prefix]" value="last">
+        <div class="quick-search__actions">
+          <button class="quick-search__clear" type="button" data-clear aria-label="{{ 'search.clear_search' | t }}">
+            {% render 'icon' with icon: 'close-stroke' %}
+          </button>
+          <button class="quick-search__submit" type="submit" aria-label="{{ 'search.search' | t }}">
+            {% render 'icon' with icon: 'arrow-stroke' %}
+          </button>
+        </div>
+      </div>
+
+      <div class="quick-search__results-wrapper">
+        <div class="quick-search__results" data-results></div>
+      </div>
+    </form>
+
+    <div class="quick-search__blur"></div>
+  </div>
+</div>

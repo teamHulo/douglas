@@ -1,0 +1,269 @@
+{%- liquid
+  assign overlay_opacity = section.settings.overlay_opacity | divided_by: 100.00
+-%}
+
+<div
+  data-section-id="{{ section.id }}"
+  data-section-type="shoppable"
+  class="
+    shoppable-image
+    shoppable-image--{{ section.settings.aspect_ratio }}
+    section
+    {{ section.settings.section_padding }}
+
+    {% if section.settings.section_contrast -%}
+      section--contrast
+    {%- endif %}
+
+    {% if settings.contrast_spacer -%}
+      section--contrast-spacer
+    {%- endif %}
+
+    {% if settings.enable_reveal_animations and section.settings.enable_animation %}
+      animation
+    {% endif %}
+  "
+  style="
+    --text-max-width: {{ section.settings.text_max_width }}rem;
+    --color-overlay: {{ section.settings.overlay_color }};
+    --overlay-opacity: {{ overlay_opacity }};
+    {% if section.settings.color_overlay_gradient != blank %}
+      --overlay-gradient: {{ section.settings.color_overlay_gradient }};
+    {% endif %}
+    --transparent-hotspot-background: {{ settings.color_text | color_to_rgb | replace: 'rgb', 'rgba' | replace: ')', ', .6)' }};
+    --transparent-hotspot-background-darker: {{ settings.color_text | color_to_rgb | replace: 'rgb', 'rgba' | replace: ')', ', .8)' }};
+    --padding-amount: {{ section.settings.padding_amount }};
+  "
+>
+  <div class="section__inner">
+    {%
+      render 'section-header',
+      heading: section.settings.heading,
+      subheading: section.settings.subheading,
+      classes: 'section-header--large section-header--center',
+    %}
+
+    <div class="shoppable-image__image-container">
+      <div class="shoppable-image__image-container-inner">
+        <div class="shoppable-image__image-wrapper">
+          {%- if section.settings.image -%}
+            {% render 'image',
+              image: section.settings.image,
+              wrapper_class: 'shoppable-image__image',
+              focal_point: 'image_presentation',
+              disable_style: true,
+              has_reveal: true
+            %}
+          {%- else -%}
+            <div class="image shoppable-image__image image--style-disabled animation-image-reveal placeholder-image">
+              <div class="image__reveal-container">
+                <div class="image__img">
+                  {{ 'collection-4' | placeholder_svg_tag: 'placeholder-svg' }}
+                </div>
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <div class="shoppable-image__overlay"></div>
+
+      {%- for block in section.blocks -%}
+        {%
+          render 'shoppable-item' with
+          block: block,
+          index: forloop.index,
+          product_item: block.settings.product_item,
+          horizontal_position: block.settings.horizontal_position,
+          vertical_position: block.settings.vertical_position,
+          aspect_ratio: section.settings.aspect_ratio,
+        %}
+      {%- else -%}
+        {%- for i in (1..3) -%}
+          {%
+            render 'shoppable-item' with
+            placeholder: true,
+            index: forloop.index,
+            aspect_ratio: section.settings.aspect_ratio,
+          %}
+        {%- endfor -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.shoppable_image.name",
+  "tag": "section",
+  "class": "shopify-section--stackable",
+  "disabled_on": {
+    "groups": ["header", "custom.overlay"],
+    "templates": ["password"]
+  },
+  "settings": [
+    {
+      "id": "image",
+      "type": "image_picker",
+      "label": "t:sections.shoppable_image.settings.image.label"
+    },
+    {
+      "id": "aspect_ratio",
+      "type": "select",
+      "label": "t:sections.shoppable_image.settings.aspect_ratio.label",
+      "options": [
+        { "label": "t:sections.shoppable_image.settings.aspect_ratio.options__1", "value": "square" },
+        { "label": "t:sections.shoppable_image.settings.aspect_ratio.options__2", "value": "landscape" },
+        { "label": "t:sections.shoppable_image.settings.aspect_ratio.options__3", "value": "portrait" }
+      ],
+      "default": "landscape"
+    },
+    {
+      "id": "overlay_color",
+      "type": "color",
+      "label": "t:sections.shoppable_image.settings.overlay_color.label",
+      "default": "#000"
+    },
+    {
+      "id": "color_overlay_gradient",
+      "type": "color_background",
+      "label": "t:shared.settings.color.color_overlay_gradient.label"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "t:sections.shoppable_image.settings.overlay_opacity.label",
+      "unit": "%",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "t:sections.shoppable_image.settings.text__header.content"
+    },
+    {
+      "id": "heading",
+      "type": "text",
+      "label": "t:sections.shoppable_image.settings.heading.label",
+      "default": "Shoppable image"
+    },
+    {
+      "id": "subheading",
+      "type": "richtext",
+      "label": "t:sections.shoppable_image.settings.subheading.label",
+      "default": "<p>Use this section to highlight different products within an image</p>"
+    },
+    {
+      "type": "range",
+      "id": "text_max_width",
+      "label": "t:sections.social_proof.settings.text_max_width.label",
+      "min": 24,
+      "max": 48,
+      "step": 1,
+      "default": 42
+    },
+    {
+      "type": "header",
+      "content": "t:shared.settings.section_style.header_style.content"
+    },
+    {
+      "id": "enable_animation",
+      "type": "checkbox",
+      "label": "t:shared.settings.section_style.enable_animation.label",
+      "info": "t:shared.settings.section_style.enable_animation.info",
+      "default": true
+    },
+    {
+      "id": "section_contrast",
+      "type": "checkbox",
+      "label": "t:sections.shoppable_image.settings.section_contrast.label",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "t:shared.settings.section_style.section_padding.label",
+      "default": "section--vertical-padding-top-bottom",
+      "options": [
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_both",
+          "value": "section--vertical-padding-top-bottom"
+        },
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_top",
+          "value": "section--vertical-padding-top-only"
+        },
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_bottom",
+          "value": "section--vertical-padding-bottom-only"
+        },
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_none",
+          "value": "section--vertical-padding-none"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "padding_amount",
+      "label": "t:shared.settings.section_style.padding_amount.label",
+      "default": "1.0",
+      "options": [
+        {
+          "label": "t:shared.settings.section_style.padding_amount.option_full",
+          "value": "1.0"
+        },
+        {
+          "label": "t:shared.settings.section_style.padding_amount.option_half",
+          "value": "0.5"
+        },
+        {
+          "label": "t:shared.settings.section_style.padding_amount.option_minimum",
+          "value": "0.075"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "hotspot",
+      "name": "t:sections.shoppable_image.blocks.hotspot.name",
+      "limit": 6,
+      "settings": [
+        {
+          "id": "product_item",
+          "type": "product",
+          "label": "t:sections.shoppable_image.blocks.hotspot.settings.product_item.label"
+        },
+        {
+          "id": "horizontal_position",
+          "type": "range",
+          "label": "t:sections.shoppable_image.blocks.hotspot.settings.horizontal_position.label",
+          "unit": "%",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 50
+        },
+        {
+          "id": "vertical_position",
+          "type": "range",
+          "label": "t:sections.shoppable_image.blocks.hotspot.settings.vertical_position.label",
+          "unit": "%",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 50
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.shoppable_image.presets.name"
+    }
+  ]
+}
+{% endschema %}

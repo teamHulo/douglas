@@ -1,0 +1,32 @@
+<nav>
+  <ul>
+    {% for link in linklists[menu].links %}
+      <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+      {% for sub_link in link.links %}
+        <li><a href="{{ sub_link.url }}">{{ sub_link.title }}</a></li>
+        {% for sub_sub_link in sub_link.links %}
+          <li><a href="{{ sub_sub_link.url }}">{{ sub_sub_link.title }}</a></li>
+          {% for sub_sub_sub_link in sub_sub_link.links %}
+            <li><a href="{{ sub_sub_sub_link.url }}">{{ sub_sub_sub_link.title }}</a></li>
+          {% endfor %}
+        {% endfor %}
+      {% endfor %}
+    {% endfor %}
+
+    {%- if secondary_menu != blank-%}
+      
+      {% for link in linklists[secondary_menu].links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {% for sub_link in link.links %}
+          <li><a href="{{ sub_link.url }}">{{ sub_link.title }}</a></li>
+          {% for sub_sub_link in sub_link.links %}
+            <li><a href="{{ sub_sub_link.url }}">{{ sub_sub_link.title }}</a></li>
+            {% for sub_sub_sub_link in sub_sub_link.links %}
+              <li><a href="{{ sub_sub_sub_link.url }}">{{ sub_sub_sub_link.title }}</a></li>
+            {% endfor %}
+          {% endfor %}
+        {% endfor %}
+      {% endfor %}
+    {%- endif -%}
+  </ul>
+</nav>

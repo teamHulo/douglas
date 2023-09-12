@@ -1,0 +1,40 @@
+{%- liquid
+  assign filters_valid = false
+  if results.filters and show_filters
+    assign filters_valid = true
+  endif
+-%}
+
+<div
+  class="
+    mobile-filters
+    active
+    {% if filters_valid and show_sort -%}mobile-filters--has-grid{%- endif %}
+    {% if filters_valid or show_sort -%}show{%- endif %}
+  "
+  data-mobile-filters
+>
+  <button type="button" class="mobile-filters__trigger btn" aria-label="{{ 'general.accessibility.mobile_filters' | t }}" data-mobile-trigger>
+    {% render 'icon' with icon: 'triangle' %}
+  </button>
+
+  {%- if filters_valid -%}
+    <div class="mobile-filters__group" data-group="{{ 'filters.title' | t }}">
+      <button type="button" class="mobile-filters__button mobile-filters__button-dropdown fs-body-small" data-filter-target="__tags" data-tags-dropdown>
+        {{ 'filters.title' | t }}
+
+        {% render 'icon' with icon: 'triangle' %}
+      </button>
+    </div>
+  {%- endif -%}
+
+
+  {%- if show_sort -%}
+    <div class="mobile-filters__group" data-group="{{ heading }}">
+      <button type="button" class="mobile-filters__button mobile-filters__button-dropdown fs-body-small" data-filter-target="__sort" data-sort-dropdown>
+        {{ 'filters.sort_title' | t }}
+        {% render 'icon' with icon: 'triangle' %}
+      </button>
+    </div>
+  {%- endif -%}
+</div>

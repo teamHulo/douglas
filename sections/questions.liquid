@@ -1,0 +1,178 @@
+<div
+  data-section-id="{{ section.id }}"
+  data-section-type="questions"
+  class="
+    questions
+    section
+    {{ section.settings.section_padding }}
+
+    {% if section.settings.section_contrast %}
+      section--contrast
+    {% endif %}
+
+    {% if settings.contrast_spacer -%}
+      section--contrast-spacer
+    {%- endif %}
+
+    {% if settings.enable_reveal_animations and section.settings.enable_animation %}
+      animation
+    {% endif %}
+  "
+  style="
+    --s-icon-darker: {{ settings.color_border | color_darken: 10 }};
+    --s-icon-darker-contrast: {{  settings.color_border_contrast | color_darken: 10 }};
+    --padding-amount: {{ section.settings.padding_amount }};
+  "
+>
+  <div class="section__inner">
+    {%
+      render 'section-header',
+      heading: section.settings.section_title,
+      subheading: section.settings.subheading,
+      classes: 'section-header--large section-header--spacing-small',
+    %}
+
+    <div class="questions__accordion" aria-label="{{ 'general.accessibility.accordion_groups' | t }}">
+      {%- for block in section.blocks -%}
+        {%-
+          render 'questions-item' with
+          forloop: forloop,
+          block: block,
+          question: block.settings.title,
+          answer: block.settings.answer,
+          author: block.settings.author,
+        -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.questions.name",
+  "tag": "section",
+  "class": "shopify-section--stackable shopify-section--text-first",
+  "disabled_on": {
+    "groups": ["header", "custom.overlay"]
+  },
+  "settings": [
+    {
+      "id": "section_title",
+      "type": "text",
+      "label": "t:sections.questions.settings.title.label",
+      "default": "Questions"
+    },
+    {
+      "id": "subheading",
+      "type": "richtext",
+      "label": "t:sections.questions.settings.subheading.label"
+    },
+    {
+      "type": "header",
+      "content": "t:shared.settings.section_style.header_style.content"
+    },
+    {
+      "id": "enable_animation",
+      "type": "checkbox",
+      "label": "t:shared.settings.section_style.enable_animation.label",
+      "info": "t:shared.settings.section_style.enable_animation.info",
+      "default": true
+    },
+    {
+      "id": "section_contrast",
+      "type": "checkbox",
+      "label": "t:sections.questions.settings.section_contrast.label",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "t:shared.settings.section_style.section_padding.label",
+      "default": "section--vertical-padding-top-bottom",
+      "options": [
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_both",
+          "value": "section--vertical-padding-top-bottom"
+        },
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_top",
+          "value": "section--vertical-padding-top-only"
+        },
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_bottom",
+          "value": "section--vertical-padding-bottom-only"
+        },
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_none",
+          "value": "section--vertical-padding-none"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "padding_amount",
+      "label": "t:shared.settings.section_style.padding_amount.label",
+      "default": "1.0",
+      "options": [
+        {
+          "label": "t:shared.settings.section_style.padding_amount.option_full",
+          "value": "1.0"
+        },
+        {
+          "label": "t:shared.settings.section_style.padding_amount.option_half",
+          "value": "0.5"
+        },
+        {
+          "label": "t:shared.settings.section_style.padding_amount.option_minimum",
+          "value": "0.075"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "blocks": [
+    {
+      "type": "question",
+      "name": "t:sections.questions.blocks.question.name",
+      "settings": [
+        {
+          "id": "title",
+          "type": "text",
+          "label": "t:sections.questions.blocks.question.settings.title.label",
+          "default": "This is an example of a question that a customer might ask"
+        },
+        {
+          "id": "answer",
+          "type": "richtext",
+          "label": "t:sections.questions.blocks.question.settings.answer.label",
+          "default": "<p>This is an example of a response that you might give. It's good to be as thorough as possible in responses as that has a tendency to improve trust overall.</p>"
+        },
+        {
+          "id": "author",
+          "type": "text",
+          "label": "t:sections.questions.blocks.question.settings.author.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.questions.presets.name",
+      "blocks": [
+        {
+          "type": "question"
+        },
+        {
+          "type": "question"
+        },
+        {
+          "type": "question"
+        },
+        {
+          "type": "question"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

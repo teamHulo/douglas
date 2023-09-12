@@ -1,0 +1,204 @@
+{%- liquid
+  assign max_products = block.settings.max_products | times: 1
+  assign columns = block.settings.columns | times: 1
+  assign should_render_content = false
+
+  if block.settings.product_source == 'custom-product-list' and block.settings.product_list.count > 0
+    assign should_render_content = true
+  elsif block.settings.product_source == 'app-recommendations'
+    assign should_render_content = true
+  elsif request.design_mode
+    assign should_render_content = true
+  endif
+-%}
+
+{%- if should_render_content -%}
+  {% capture product_list_products %}
+    {%- assign product_count = block.settings.product_list.count -%}
+    {%- if product_count < 1 -%}
+      {%- assign product_count = max_products -%}
+    {%- endif -%}
+
+    <div
+      class="
+        complementary-products__content-wrapper
+        {% if block.settings.layout == 'slider' and product_count > columns and max_products > columns %}
+          complementary-products__content-wrapper--has-slider
+        {% else %}
+          complementary-products__content-wrapper--has-grid
+        {% endif %}
+      "
+    >
+      <div
+        class="
+          complementary-products__content
+          complementary-products__content--columns-{{ block.settings.columns }}
+          {% if block.settings.layout == 'slider' and product_count > columns and max_products > columns %}
+            complementary-products__content--has-slider
+          {% else %}
+            complementary-products__content--has-grid
+          {% endif %}
+        "
+        data-slider
+      >
+        {%- for product_item in block.settings.product_list limit: max_products -%}
+          <div class="complementary-products__slide carousel__slide" data-slide>
+            {%
+              render 'product-item' with
+              product: product_item,
+              aspect_ratio: block.settings.aspect_ratio,
+              quick_view_is_beneath: true,
+              product_columns: columns
+            %}
+          </div>
+        {%- else -%}
+          {%- for i in (1..max_products) -%}
+            <div class="complementary-products__slide carousel__slide" data-slide>
+              {% render 'product-item',
+                product: blank,
+                aspect_ratio: block.settings.aspect_ratio,
+                placeholder: true,
+                product_columns: columns
+              %}
+            </div>
+          {%- endfor -%}
+        {%- endfor -%}
+      </div>
+    </div>
+
+    {%- if block.settings.layout == 'slider' -%}
+      {% render 'carousel-navigation' with columns: block.settings.columns, item_count: recommendations.products_count %}
+    {%- endif -%}
+  {% endcapture %}
+
+  {% capture app_recommended_products %}
+    {%- if recommendations.performed and recommendations.products_count > 0 -%}
+      {%- assign product_count = recommendations.products_count -%}
+      <div data-complementary-products-content>
+        <div
+          class="
+          complementary-products__content-wrapper
+          {% if block.settings.layout == 'slider' and product_count > columns and max_products > columns %}
+            complementary-products__content-wrapper--has-slider
+          {% else %}
+            complementary-products__content-wrapper--has-grid
+          {% endif %}
+          "
+        >
+          <div
+            class="
+              complementary-products__content
+              complementary-products__content--columns-{{ block.settings.columns }}
+              {% if block.settings.layout == 'slider' and product_count > columns and max_products > columns %}
+                complementary-products__content--has-slider
+              {% else %}
+                complementary-products__content--has-grid
+              {% endif %}
+            "
+            data-slider
+          >
+            {%- if recommendations.products_count > 0 -%}
+              {%- for product_item in recommendations.products -%}
+                <div class="complementary-products__slide carousel__slide" data-slide>
+                  {%
+                    render 'product-item' with
+                    product: product_item,
+                    aspect_ratio: block.settings.aspect_ratio,
+                    quick_view_is_beneath: true,
+                    product_columns: columns
+                  %}
+                </div>
+              {%- endfor -%}
+            {%- endif -%}
+          </div>
+        </div>
+
+        {%- if block.settings.layout == 'slider' -%}
+          {% render 'carousel-navigation' with columns: block.settings.columns, item_count: recommendations.products_count %}
+        {%- endif -%}
+      </div>
+    {%- elsif request.design_mode -%}
+      {%- assign product_count = max_products -%}
+      <div data-complementary-products-content>
+        <div
+          class="
+            complementary-products__content-wrapper
+            {% if block.settings.layout == 'slider' and product_count > columns and max_products > columns %}
+              complementary-products__content-wrapper--has-slider
+            {% else %}
+              complementary-products__content-wrapper--has-grid
+            {% endif %}
+          "
+        >
+          <div
+            class="
+              complementary-products__content
+              complementary-products__content--columns-{{ block.settings.columns }}
+              {% if block.settings.layout == 'slider' and product_count > columns and max_products > columns %}
+                complementary-products__content--has-slider
+              {% else %}
+                complementary-products__content--has-grid
+              {% endif %}
+            "
+            data-slider
+          >
+            {%- for i in (1..max_products) -%}
+              <div class="complementary-products__slide carousel__slide" data-slide>
+                {% render 'product-item',
+                  product: blank,
+                  aspect_ratio: block.settings.aspect_ratio,
+                  placeholder: true,
+                  product_columns: columns
+                %}
+              </div>
+            {%- endfor -%}
+          </div>
+        </div>
+
+        {%- if block.settings.layout == 'slider' -%}
+          {% render 'carousel-navigation' with columns: block.settings.columns, item_count: recommendations.products_count %}
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  {% endcapture %}
+
+  {% capture content %}
+    <div
+      class="complementary-products__inner"
+      data-complementary-products
+      data-product-id="{{ product.id }}"
+      data-section-id="{{ section.id }}"
+      data-recommendations-type="{{ block.settings.product_source }}"
+      data-max-recommendations="{{ max_products }}"
+      data-layout="{{ block.settings.layout }}"
+    >
+      {%- if block.settings.product_source == 'custom-product-list' -%}
+        {{ product_list_products }}
+      {%- else -%}
+        {{ app_recommended_products }}
+      {%- endif -%}
+    </div>
+  {% endcapture %}
+
+  <div
+    class="
+      {{ classes }}
+      complementary-products
+      {% if settings.enable_quick_add -%}
+        complementary-products--has-quick-buy
+        section--has-quick-buy
+      {%- endif %}
+      {% if block.settings.product_source == 'app-recommendations' %}
+        hidden
+      {% endif %}
+    "
+    {{ block.shopify_attributes }}
+  >
+    {%- unless block.settings.heading == blank -%}
+      <h3 class="product__block-heading ff-heading fs-heading-4-base">
+        {{ block.settings.heading }}
+      </h3>
+    {%- endunless -%}
+    {{ content }}
+  </div>
+{%- endif -%}

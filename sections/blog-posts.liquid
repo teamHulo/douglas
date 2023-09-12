@@ -1,0 +1,272 @@
+{%- liquid
+  assign image_is_constrained = true
+
+  if section.settings.aspect_ratio == 'natural'
+    assign image_is_constrained = false
+  endif
+
+  case section.settings.columns
+    when 2
+      assign article_heading_type = 'fs-heading-2-large'
+    when 3
+      assign article_heading_type = 'fs-heading-2-base'
+    when 4
+      assign article_heading_type = 'fs-heading-3-base'
+  endcase
+-%}
+
+{%- capture placeholder_item -%}
+  <div class="blog-posts__item">
+    <div class="blog-posts__item-image-wrapper">
+      <div class="blog-posts__item-image placeholder-image animation-fade-up-reveal">
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+      </div>
+    </div>
+    <div class="blog-posts__item-footer ta-c">
+      <h4 class="blog-posts__item-heading ff-heading animation-fade-up-split-reveal {{ article_heading_type }}">
+        {{ 'homepage.onboarding.blog_title' | t }}
+      </h4>
+      {%- if section.settings.show_date -%}
+        <div class="blog-posts__item-date fs-body-base animation-fade-up-reveal">
+          {{ 'now' | time_tag: format: 'date' }}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endcapture -%}
+
+<div
+  data-section-id="{{ section.id }}"
+  data-section-type="blog-posts"
+  class="
+    blog-posts
+    blog-posts--columns-{{ section.settings.columns }}
+    blog-posts--{{ section.settings.aspect_ratio }}
+    section
+    {{ section.settings.section_padding }}
+
+    {% if section.settings.section_contrast -%}
+      section--contrast
+    {%- endif %}
+
+    {% if settings.contrast_spacer -%}
+      section--contrast-spacer
+    {%- endif %}
+
+    {% if settings.enable_reveal_animations and section.settings.enable_animation %}
+      animation
+    {% endif %}
+  "
+  style="
+    --text-max-width: {{ section.settings.text_max_width }}rem;
+    --padding-amount: {{ section.settings.padding_amount }};
+  "
+>
+  <div class="section__inner">
+    {%
+      render 'section-header',
+      heading: section.settings.title,
+      subheading: section.settings.subheading,
+      classes: 'section-header--large section-header--center',
+    %}
+    <div class="blog-posts__grid">
+      {%- for block in section.blocks -%}
+        {%- if block.settings.article != blank or block_id -%}
+          <div class="blog-posts__item">
+            {%- if block.settings.article.image -%}
+              <a href="{{ block.settings.article.url }}" class="blog-posts__item-image-wrapper hover">
+                {% render 'image',
+                  image: block.settings.article.image,
+                  wrapper_class: 'blog-posts__item-image',
+                  disable_style: image_is_constrained,
+                  has_reveal_container: true
+                %}
+              </a>
+            {%- endif -%}
+
+            <div class="blog-posts__item-footer ta-c">
+              <h4 class="blog-posts__item-heading ff-heading fs-heading-3-base animation-fade-up-reveal {{ article_heading_type }}">
+                <span
+                  ><a href="{{ block.settings.article.url }}">{{ block.settings.article.title }}</a></span
+                >
+              </h4>
+              {%- if section.settings.show_date -%}
+                <p class="blog-posts__item-date fs-body-base animation-fade-up-reveal">
+                  {{ block.settings.article.published_at | time_tag: format: 'date' }}
+                </p>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- else -%}
+          {{ placeholder_item }}
+        {%- endif -%}
+      {%- else -%}
+        {%- for i in (1..section.settings.columns) -%}
+          {{ placeholder_item }}
+        {%- endfor -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.blog_posts.name",
+  "tag": "section",
+  "class": "spaced-section spaced-section--full-width",
+  "disabled_on": {
+    "groups": ["header", "custom.overlay"]
+  },
+  "settings": [
+    {
+      "id": "show_date",
+      "type": "checkbox",
+      "label": "t:sections.blog_posts.settings.show_date.label",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "t:sections.blog_posts.settings.columns.label",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "id": "title",
+      "type": "text",
+      "label": "t:sections.blog_posts.settings.title.label"
+    },
+    {
+      "id": "subheading",
+      "type": "richtext",
+      "label": "t:sections.blog_posts.settings.subheading.label"
+    },
+    {
+      "type": "range",
+      "id": "text_max_width",
+      "label": "t:sections.blog_posts.settings.text_max_width.label",
+      "min": 24,
+      "max": 48,
+      "step": 1,
+      "default": 42
+    },
+    {
+      "type": "select",
+      "id": "aspect_ratio",
+      "options": [
+        {
+          "value": "natural",
+          "label": "t:sections.blog_posts.settings.image_ratio.options__1.label"
+        },
+        {
+          "value": "square",
+          "label": "t:sections.blog_posts.settings.image_ratio.options__2.label"
+        },
+        {
+          "value": "landscape",
+          "label": "t:sections.blog_posts.settings.image_ratio.options__3.label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:sections.blog_posts.settings.image_ratio.options__4.label"
+        }
+      ],
+      "default": "natural",
+      "label": "t:sections.blog_posts.settings.image_ratio.label"
+    },
+    {
+      "type": "header",
+      "content": "t:shared.settings.section_style.header_style.content"
+    },
+    {
+      "id": "enable_animation",
+      "type": "checkbox",
+      "label": "t:shared.settings.section_style.enable_animation.label",
+      "info": "t:shared.settings.section_style.enable_animation.info",
+      "default": true
+    },
+    {
+      "id": "section_contrast",
+      "type": "checkbox",
+      "label": "t:sections.blog_posts.settings.contrast.label",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "t:shared.settings.section_style.section_padding.label",
+      "default": "section--vertical-padding-top-bottom",
+      "options": [
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_both",
+          "value": "section--vertical-padding-top-bottom"
+        },
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_top",
+          "value": "section--vertical-padding-top-only"
+        },
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_bottom",
+          "value": "section--vertical-padding-bottom-only"
+        },
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_none",
+          "value": "section--vertical-padding-none"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "padding_amount",
+      "label": "t:shared.settings.section_style.padding_amount.label",
+      "default": "1.0",
+      "options": [
+        {
+          "label": "t:shared.settings.section_style.padding_amount.option_full",
+          "value": "1.0"
+        },
+        {
+          "label": "t:shared.settings.section_style.padding_amount.option_half",
+          "value": "0.5"
+        },
+        {
+          "label": "t:shared.settings.section_style.padding_amount.option_minimum",
+          "value": "0.075"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "article",
+      "name": "t:sections.blog_posts.blocks.article.name",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "article",
+          "id": "article",
+          "label": "t:sections.blog_posts.blocks.article.settings.article.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.blog_posts.presets.name",
+      "blocks": [
+        {
+          "type": "article"
+        },
+        {
+          "type": "article"
+        },
+        {
+          "type": "article"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

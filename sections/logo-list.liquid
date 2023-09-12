@@ -1,0 +1,191 @@
+{%- liquid
+  assign section_spacing = 28
+  assign section_spacing_large = 40
+  assign gutter_spacing = section.settings.gutter_spacing
+
+  if gutter_spacing >= section_spacing
+    assign section_spacing = gutter_spacing
+  endif
+
+  if gutter_spacing >= section_spacing_large
+    assign section_spacing_large = gutter_spacing
+  endif
+-%}
+
+<div
+  class="
+    logo-list
+    logo-list--columns-{{ section.settings.columns }}
+    section
+    section--extra-small
+    {{ section.settings.section_padding }}
+
+    {% if section.settings.section_contrast -%}
+      section--contrast
+    {%- endif %}
+
+    {% if settings.contrast_spacer -%}
+      section--contrast-spacer
+    {%- endif %}
+
+    {% if settings.enable_reveal_animations and section.settings.enable_animation %}
+      animation
+    {% endif %}
+  "
+  data-section-id="{{ section.id }}"
+  data-section-type="logo-list"
+  style="
+    --gutter-spacing: {{ gutter_spacing }}px;
+    --section-spacing: {{ section_spacing }}px;
+    --section-spacing-large: {{ section_spacing_large }}px;
+    --padding-amount: {{ section.settings.padding_amount }};
+  "
+>
+  <div class="section__inner">
+    <div class="logo-list__content animation-fade-up-reveal">
+      {%- unless section.settings.title == blank -%}
+        <h2 class="logo-list__heading ff-heading">
+          {{ section.settings.title }}
+        </h2>
+      {%- endunless -%}
+
+      <div class="logo-list__list">
+        {%- for block in section.blocks -%}
+          {%
+            render 'logo-list-item' with
+            image: block.settings.image,
+            link: block.settings.link,
+          %}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.logo_list.name",
+  "tag": "section",
+  "class": "shopify-section--stackable shopify-section--extra-small shopify-section--text-first",
+  "disabled_on": {
+    "groups": ["header", "custom.overlay"]
+  },
+  "settings": [
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "t:sections.logo_list.settings.columns.label",
+      "min": 3,
+      "max": 6,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "gutter_spacing",
+      "label": "t:sections.logo_list.settings.gutter_spacing.label",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 20
+    },
+    {
+      "id": "title",
+      "type": "text",
+      "label": "t:sections.logo_list.settings.title.label",
+      "default": "As featured in"
+    },
+    {
+      "type": "header",
+      "content": "t:shared.settings.section_style.header_style.content"
+    },
+    {
+      "id": "enable_animation",
+      "type": "checkbox",
+      "label": "t:shared.settings.section_style.enable_animation.label",
+      "info": "t:shared.settings.section_style.enable_animation.info",
+      "default": true
+    },
+    {
+      "id": "section_contrast",
+      "type": "checkbox",
+      "label": "t:sections.logo_list.settings.section_contrast.label",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "section_padding",
+      "label": "t:shared.settings.section_style.section_padding.label",
+      "default": "section--vertical-padding-top-bottom",
+      "options": [
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_both",
+          "value": "section--vertical-padding-top-bottom"
+        },
+        {
+          "label": "t:shared.settings.section_style.section_padding.option_top",
+          "value": "section--vertical-padding-top-only"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "padding_amount",
+      "label": "t:shared.settings.section_style.padding_amount.label",
+      "default": "1.0",
+      "options": [
+        {
+          "label": "t:shared.settings.section_style.padding_amount.option_full",
+          "value": "1.0"
+        },
+        {
+          "label": "t:shared.settings.section_style.padding_amount.option_half",
+          "value": "0.5"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 36,
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "t:sections.logo_list.blocks.logo.name",
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "t:sections.logo_list.blocks.logo.settings.image.label"
+        },
+        {
+          "id": "link",
+          "type": "url",
+          "label": "t:sections.logo_list.blocks.logo.settings.link.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.logo_list.presets.name",
+      "blocks": [
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

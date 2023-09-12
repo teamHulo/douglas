@@ -1,0 +1,57 @@
+{%- liquid
+  if columns != 4
+    assign button_size = 'btn--medium-l'
+  endif
+
+  case columns
+    when 2
+      assign column_heading_type = 'fs-heading-2-large'
+    when 3
+      assign column_heading_type = 'fs-heading-2-base'
+    when 4
+      assign column_heading_type = 'fs-heading-3-base'
+      assign button_size = ''
+  endcase
+-%}
+
+<div class="text-columns-with-images__item">
+  <div class="text-columns-with-images__item-inner">
+    {%- if image -%}
+      <div class="text-columns-with-images__item-image animation-fade-up-reveal">
+        {% render 'image', image: image, focal_point: 'image_presentation', disable_style: true %}
+      </div>
+    {%- endif -%}
+    {%- if heading != blank or subheading != blank -%}
+      <div class="text-columns-with-images__item-content">
+        {% unless heading == blank %}
+          <h4
+            class="text-columns-with-images__item-heading ff-heading animation-fade-up-split-reveal {{ column_heading_type }}"
+            style="--text-max-width: {{ text_max_width }}rem;"
+          >
+            {{ heading }}
+          </h4>
+        {% endunless %}
+
+        {% unless subheading == blank %}
+          <div
+            class="text-columns-with-images__item-text fs-body-base animation-fade-up-reveal"
+            style="--text-max-width: {{ text_max_width }}rem;"
+          >
+            {{ subheading }}
+          </div>
+        {% endunless %}
+      </div>
+    {%- endif -%}
+  </div>
+
+  {%- if link != blank and link_text != blank -%}
+    <div class="text-columns-with-images__item-footer">
+      <a
+        href="{{ link }}"
+        class="text-columns-with-images__button fs-body-base btn btn--primary btn--small animation-fade-up-reveal {{ button_size }}"
+      >
+        {{ link_text }}
+      </a>
+    </div>
+  {%- endif -%}
+</div>

@@ -1,0 +1,92 @@
+{%- liquid
+  unless placeholder
+    assign vertical_position = 100 | minus: vertical_position
+  endunless
+
+  assign delay_value = 0.3 | times: index
+  assign animation_delay = 1 | plus: delay_value
+-%}
+
+<div
+  class="
+    shoppable-item
+    shoppable-item--index-{{ index }}
+    shoppable-item--animating
+    shoppable-item--position-unset
+    shoppable-item--{{ aspect_ratio }}
+    {% if placeholder %} shoppable-item--is-placeholder{% endif %}
+  "
+  style="
+    --horizontal-position: {{ horizontal_position }}%;
+    --vertical-position: {{ vertical_position }}%;
+    --shoppable-item-delay: {{ animation_delay }}s;
+  "
+>
+  {%- capture hotspot_tag %}{% if product_item != blank %}button{% else %}div{% endif %}{% endcapture -%}
+  {%- capture hotspot_tag_attributes %}{% if product_item != blank %}aria-label="{{ 'general.accessibility.open_modal' | t }}" type="button"{% endif %}{% endcapture -%}
+  <{{ hotspot_tag }}
+    class="shoppable-item__hotspot"
+    {{ hotspot_tag_attributes }}
+    >
+  </{{ hotspot_tag }}>
+
+  {%- unless product_item == blank -%}
+    <div
+      class="
+        shoppable-item__product-card
+        {% if product_item.featured_media != blank %}shoppable-item__product-card--has-image{% endif %}
+        {% if horizontal_position >= 50 %}shoppable-item__product-card--align-right{% endif %}
+        hidden
+      "
+      aria-hidden="true"
+    >
+      <button
+        type="button"
+        class="shoppable-item__close"
+        data-shoppable-item-close
+        aria-label="{{ 'general.accessibility.close_modal' | t }}"
+      >
+        {% render 'icon-button' with icon: 'close-stroke' %}
+      </button>
+      <a href="{{ product_item.url }}" class="shoppable-item__product-card-inner">
+        <div class="shoppable-item__image-link">
+          {%- if product_item.featured_media != blank -%}
+            {% render 'image' with
+              id: product_item.featured_media.id,
+              image: product_item.media[0].preview_image,
+              wrapper_class: 'shoppable-item__image'
+            %}
+          {%- endif -%}
+        </div>
+
+        <div class="shoppable-item__meta fs-body-small">
+          <div class="shoppable-item__text ff-body fs-body-small">
+            <h4 class="shoppable-item__product-title fs-product-title fs-body-bold">
+              <span>{{ product_item.title }}</span>
+            </h4>
+
+            {% if product_item.compare_at_price > product_item.price %}
+              <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
+              <s class="t-subdued">{{ product_item.compare_at_price | money }}{% if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif %}</s>
+
+              {% if product_item.price_varies %}
+                {%- assign sale_price = product_item.price | money -%}
+                {{ 'products.product.on_sale_from_html' | t: price: sale_price }}{% if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif %}
+              {% else %}
+                <span class="sale">{{ product_item.price | money }}{% if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif %}<span>
+              {% endif %}
+
+            {% else %}
+              {% if product_item.price_varies %}
+                {%- assign price = product_item.price | money -%}
+                {{ 'products.product.from_lowest_price_html' | t: lowest_price: price }}{% if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif %}
+              {% else %}
+                <span class="shoppable-item__price">{{ product_item.price | money }}{% if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif %}</span>
+              {% endif %}
+            {% endif %}
+          </div>
+        </div>
+      </a>
+    </div>
+  {%- endunless -%}
+</div>

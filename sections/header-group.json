@@ -1,0 +1,60 @@
+{
+  "type": "header",
+  "name": "t:groups.header_group.name",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement-0": {
+          "type": "announcement",
+          "settings": {
+            "title": "ENJOY A 10% OFF WELCOME GIFT USE CODE DPWELCOME10",
+            "link": "https:\/\/fluorescent.co\/help\/spark\/announcement-bar#set-up-the-announcement-bar",
+            "color_background": "#ffffff",
+            "color_text": "#000000"
+          }
+        },
+        "announcement-1": {
+          "type": "announcement",
+          "settings": {
+            "title": "Announce something here",
+            "link": "https:\/\/fluorescent.co\/help\/spark\/announcement-bar#set-up-the-announcement-bar",
+            "color_background": "#ffffff",
+            "color_text": "#191919"
+          }
+        }
+      },
+      "block_order": [
+        "announcement-0",
+        "announcement-1"
+      ],
+      "settings": {
+        "timing": 4
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo": "shopify:\/\/shop_images\/DP_Logo_Cosmeceuticals_Horizontal_White_9f6e180d-e901-4e0c-9abe-ebcbf1017d95.png",
+        "logo_max_width": 280,
+        "menu": "main-menu",
+        "secondary_menu": "",
+        "style": "icon",
+        "navigation_position": "inline",
+        "logo_position": "center",
+        "enable_locale_selector": true,
+        "enable_country_selector": true,
+        "enable_transparent_home": true,
+        "color_text_transparent": "#ffffff",
+        "color_icon_transparent": "#ffffff",
+        "color_count_transparent": "#000000",
+        "color_border_transparent": "#ffffff",
+        "opacity_border_transparent": 0
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

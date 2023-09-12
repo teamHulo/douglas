@@ -1,0 +1,32 @@
+{%- liquid
+  assign added_classes = ''
+
+  if item_count <= columns
+    assign added_classes = added_classes | append: ' carousel-navigation--hidden-desktop'
+  endif
+
+  if item_count == 1
+    assign added_classes = added_classes | append: ' carousel-navigation--hidden'
+  endif
+
+  if self_centering
+    assign added_classes = added_classes | append: ' carousel-navigation--self-center'
+  endif
+-%}
+
+<button
+  type="button"
+  class="carousel-navigation{{ added_classes }} carousel-navigation__previous-button hidden{% if breakpoint_large %} carousel-navigation--bp-large{% endif %}"
+  aria-label="{{ 'general.accessibility.carousel_previous' | t }}"
+  data-prev
+>
+  {% render 'icon', with icon: 'arrow',  non_focusable: true %}
+</button>
+<button
+  type="button"
+  class="carousel-navigation{{ added_classes }} carousel-navigation__next-button hidden{% if breakpoint_large %} carousel-navigation--bp-large{% endif %}"
+  aria-label="{{ 'general.accessibility.carousel_next' | t }}"
+  data-next
+>
+  {% render 'icon', with icon: 'arrow',  non_focusable: true %}
+</button>

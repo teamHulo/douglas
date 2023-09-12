@@ -1,0 +1,92 @@
+{%- liquid
+  assign file_extension = 'png'
+  assign chip_options = settings.chip_options | downcase | split: ', '
+  assign swatch_options = settings.swatch_options | downcase | split: ', '
+  assign max_items = 4
+  assign desktop_max_items = 4
+  assign desktop_swatch_max_items = 4
+
+  if product_columns == 3
+    assign desktop_max_items = 3
+  elsif product_columns == 4
+    assign desktop_max_items = 2
+    assign desktop_swatch_max_items = 3
+  endif
+
+  # custom swatch colors
+  assign custom_colors = settings.custom_swatch_colors | newline_to_br | split: '<br />'
+  assign custom_color_map_key = ''
+  assign custom_color_map_value = ''
+
+  for color_value in custom_colors
+    assign custom_color_key = color_value | split: ':' | first | strip
+    assign custom_color_value = color_value | split: ':' | last | strip
+
+    assign custom_color_map_key = custom_color_map_key | append: ',' | append: custom_color_key
+    assign custom_color_map_value = custom_color_map_value | append: ',' | append: custom_color_value
+  endfor
+
+  assign custom_color_map_key = custom_color_map_key | remove_first: ',' | split: ','
+  assign custom_color_map_value = custom_color_map_value | remove_first: ',' | split: ','
+-%}
+
+{%- unless product.has_only_default_variant -%}
+  <div class="product-item-options product-item-options--product-columns-{{ product_columns }}">
+    {%- for option in product.options_with_values -%}
+      {%- liquid
+        assign option_name = option.name | downcase
+        assign overflow_amount = option.values.size | minus: max_items
+        assign overflow_amount_desktop = option.values.size | minus: desktop_max_items
+        assign overflow_swatch_amount_desktop = option.values.size | minus: desktop_swatch_max_items
+        assign option_includes_chips_or_swatches = false
+        if swatch_options contains option_name or chip_options contains option_name
+          assign option_includes_chips_or_swatches = true
+        endif
+      -%}
+
+      {%- if option_includes_chips_or_swatches -%}
+        <ul
+          class="product-item-options__list{% if swatch_options contains option_name %} product-item-options__list--swatch{% endif %} ff-body fs-body-x-small"
+          style="
+            {% if overflow_amount > 0 %}
+              --overflow-amount: '&#43;{{ overflow_amount }}';
+            {% endif %}
+            {% if overflow_amount_desktop > 0 %}
+              --overflow-amount-desktop: '&#43;{{ overflow_amount_desktop }}';
+            {% endif %}
+            {% if overflow_swatch_amount_desktop > 0 %}
+              --overflow-amount-swatch-desktop: '&#43;{{ overflow_swatch_amount_desktop }}';
+            {% endif %}
+          "
+        >
+          {%- for value in option.values -%}
+            <!-- Handle swatches -->
+            {%- if swatch_options contains option_name -%}
+              {% if forloop.index <= max_items %}
+                <li
+                  class="product-item-options__item product-item-options__item--swatch"
+                  style="
+                    {% if custom_color_map_key contains value %}
+                      {% for color_name in custom_color_map_key %}
+                        {% if color_name == value %}
+                          background-color: {{ custom_color_map_value[forloop.index0] }};
+                          {% break %}
+                        {% endif %}
+                      {% endfor %}
+                    {% else %}
+                      background-color: {{ value | lowercase | replace: ' ', '' }};
+                    {% endif %}
+                    background-image: url({{ value | handle | append: '.' | append: file_extension | file_url }})
+                  "
+                ></li>
+              {% endif %}
+              <!-- Handle chips -->
+            {%- else -%}
+              <li class="product-item-options__item product-item-options__item--chip">{{ value }}</li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+{%- endunless -%}
