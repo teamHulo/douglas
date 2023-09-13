@@ -1,1 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url(https://cdn.shopify.com/s/files/1/0786/5296/5146/files/ProximaNova-Regular_6dabe642-d34b-4a98-b213-12da8a21c487.ttf?v=1694613283);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: Proxima Nova;
+}
+
+p,
+span,
+a,
+label {
+  font-family: Raleway;
+}
+
+:root {
+  --font-size-82: clamp(36px, 4.271vw, 82px);
+  --font-size-72: clamp(30px, 3.75vw, 72px);
+  --font-size-62: clamp(28px, 3.229vw, 62px);
+  --font-size-52: clamp(25px, 2.708vw, 52px);
+  --font-size-44: clamp(22px, 2.292vw, 44px);
+  --font-size-42: clamp(22px, 2.188vw, 42px);
+  --font-size-32: clamp(22px, 1.667vw, 32px);
+  --font-size-28: clamp(22px, 1.458vw, 28px);
+  --font-size-26: clamp(20px, 1.354vw, 26px);
+  --font-size-26: clamp(20px, 1.354vw, 26px);
+  --font-size-24: clamp(18px, 1.25vw, 24px);
+  --font-size-22: clamp(18px, 1.146vw, 22px);
+  --font-size-20: clamp(18px, 1.042vw, 20px);
+  --font-size-18: clamp(14px, 0.938vw, 18px);
+  --font-size-16: clamp(14px, 0.833vw, 16px);
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4.167vw, 80px);
+}
+
+.a-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55px;
+  padding: 0 clamp(10px, 3.125vw, 60px);
+  border-radius: 32px;
+  border: 1px solid #fefefe;
+  font-family: Proxima Nova;
+  font-size: var(--font-size-16);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.64px;
+  text-transform: uppercase;
+}
+
+.title h2 {
+  font-family: Proxima Nova;
+  font-size: var(--font-size-72);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%; /* 79.2px */
+  text-transform: capitalize;
+}
+.title h2 {
+  font-family: Proxima Nova;
+  font-size: var(--font-size-72);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%; /* 79.2px */
+  text-transform: capitalize;
+}
+.name span {
+  font-family: Proxima Nova;
+  font-size: var(--font-size-18);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.72px;
+  text-transform: uppercase;
+}
+
+.text p {
+  color: #111;
+  font-family: Raleway;
+  font-size: var(--font-size-24);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 33.6px */
+  letter-spacing: 0.48px;
+}
 
