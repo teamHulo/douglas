@@ -2,7 +2,6 @@
   "sections": {
     "slideshow-1": {
       "type": "slideshow",
-      "disabled": true,
       "blocks": {
         "slide-1": {
           "type": "slide",
@@ -30,6 +29,7 @@
       "block_order": [
         "slide-1"
       ],
+      "disabled": true,
       "settings": {
         "image_aspect": "custom",
         "desktop_height": 100,
@@ -149,11 +149,11 @@
           "type": "column",
           "settings": {
             "image": "shopify:\/\/shop_images\/DPSS-CollectionImage.jpg",
-            "heading": "",
-            "subheading": "",
+            "heading": "title",
+            "subheading": "<p>desc<\/p>",
             "text_max_width": 42,
-            "link": "",
-            "link_text": "Read more"
+            "link": "shopify:\/\/collections\/all",
+            "link_text": "Read more1"
           }
         }
       },
