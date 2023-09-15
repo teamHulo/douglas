@@ -1,27 +1,28 @@
 <!doctype html>
 
 <!--
-  ___ ___ ___ ___
-       /  /\                     /__/\         /  /\         /  /\
-      /  /:/_                    \  \:\       /  /:/        /  /::\
-     /  /:/ /\  ___     ___       \  \:\     /  /:/        /  /:/\:\
-    /  /:/ /:/ /__/\   /  /\  ___  \  \:\   /  /:/  ___   /  /:/  \:\
-   /__/:/ /:/  \  \:\ /  /:/ /__/\  \__\:\ /__/:/  /  /\ /__/:/ \__\:\
-   \  \:\/:/    \  \:\  /:/  \  \:\ /  /:/ \  \:\ /  /:/ \  \:\ /  /:/
-    \  \::/      \  \:\/:/    \  \:\  /:/   \  \:\  /:/   \  \:\  /:/
-     \  \:\       \  \::/      \  \:\/:/     \  \:\/:/     \  \:\/:/
-      \  \:\       \__\/        \  \::/       \  \::/       \  \::/
-       \__\/                     \__\/         \__\/         \__\/
+___ ___ ___ ___
+/  /\                     /__/\         /  /\         /  /\
+/  /:/_                    \  \:\       /  /:/        /  /::\
+/  /:/ /\  ___     ___       \  \:\     /  /:/        /  /:/\:\
+/  /:/ /:/ /__/\   /  /\  ___  \  \:\   /  /:/  ___   /  /:/  \:\
+/__/:/ /:/  \  \:\ /  /:/ /__/\  \__\:\ /__/:/  /  /\ /__/:/ \__\:\
+\  \:\/:/    \  \:\  /:/  \  \:\ /  /:/ \  \:\ /  /:/ \  \:\ /  /:/
+\  \::/      \  \:\/:/    \  \:\  /:/   \  \:\  /:/   \  \:\  /:/
+\  \:\       \  \::/      \  \:\/:/     \  \:\/:/     \  \:\/:/
+\  \:\       \__\/        \  \::/       \  \::/       \  \::/
+\__\/                     \__\/         \__\/         \__\/
 
-  --------------------------------------------------------------------
-  #  Spark v3.2.0
-  #  Documentation: https://fluorescent.co/help/spark/
-  #  Purchase: https://themes.shopify.com/themes/spark/
-  #  A product by Fluorescent: https://fluorescent.co/
-  --------------------------------------------------------------------
--->
-
-<html class="no-js" lang="{{ request.locale.iso_code }}" style="--announcement-height: 1px;">
+--------------------------------------------------------------------
+#  Spark v3.2.0
+#  Documentation: https://fluorescent.co/help/spark/
+#  Purchase: https://themes.shopify.com/themes/spark/
+#  A product by Fluorescent: https://fluorescent.co/
+--------------------------------------------------------------------
+--><html
+  class="no-js"
+  lang="{{ request.locale.iso_code }}"
+  style="--announcement-height: 1px;">
   <head>
     <link rel="stylesheet" href="https://use.typekit.net/qbd5ouy.css">
     <link rel="stylesheet" href="{{ 'custom.css' | asset_url }}">
@@ -32,10 +33,16 @@
     {% render 'meta-description' %}
 
     <link rel="canonical" href="{{ canonical_url }}">
-    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    <link
+      rel="preconnect"
+      href="https://cdn.shopify.com"
+      crossorigin>
 
     {%- if settings.favicon != blank -%}
-      <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+      <link
+        rel="shortcut icon"
+        href="{{ settings.favicon | img_url: '32x32' }}"
+        type="image/png">
     {%- endif -%}
 
     {%- capture seo_title -%}
@@ -65,21 +72,24 @@
     {% render 'theme-setting-vars' %}
     {%- render 'theme-globals' -%}
 
-    {{ content_for_header }}   
-    {{ 'a-style.css' | asset_url | stylesheet_tag  }}
+    {{ content_for_header }}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+
+    {{ 'a-style.css' | asset_url | stylesheet_tag }}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   </head>
 
   <body
     class="template-{{ request.page_type | handle }}{% if settings.enable_sticky_header %} header-sticky{% endif %}"
     {% if settings.cart_type == 'flyout' %}
-      data-enable-quick-cart="true"
+    data-enable-quick-cart="true"
     {% endif %}
     {% if settings.enable_page_transitions %}
-      data-enable-page-transitions="true"
+    data-enable-page-transitions="true"
     {% endif %}
     data-enable-reveal-animations="{{ settings.enable_reveal_animations }}"
-    data-show-secondary-image-on-hover="{{ settings.show_secondary_image_on_hover }}"
-  >
+    data-show-secondary-image-on-hover="{{ settings.show_secondary_image_on_hover }}">
     <div class="page">
       {% if settings.enable_page_transitions %}
         {% render 'page-transition-overlay' %}
@@ -109,7 +119,13 @@
 
     {{ '//www.youtube.com/iframe_api' | script_tag }}
     {{ '//cdn.shopify.com/shopifycloud/shopify-plyr/v1.0/shopify-plyr.css' | stylesheet_tag }}
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+      integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      defer="defer"></script>
+    <script src="{{ 'a-script.js' | asset_url }}" defer="defer"></script>
 
-    
   </body>
 </html>

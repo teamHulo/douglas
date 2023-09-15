@@ -1,0 +1,102 @@
+<div class="section-about">
+  <div class="container">
+    <div class="section-about__wrap">
+      <div class="name">
+        <span>
+          {{ section.settings.name }}
+        </span>
+      </div>
+      <div class="title-2">
+        <h2>
+          {{ section.settings.title }}
+        </h2>
+      </div>
+      <div class="list-items">
+        {% for block in section.blocks %}
+          <div class="item">
+            <div class="item__wrap">
+              <div class="item-img">
+                <div class="item-img-body">
+                  <img src="{{block.settings.img | img_url: 'master'}}" alt="">
+                </div>
+
+              </div>
+              <div class="item-content">
+                <div class="title">
+                  <h4>
+                    {{ block.settings.title }}
+                  </h4>
+                </div>
+                <div class="small-text">
+                  <p>
+                    {{ block.settings.text }}
+                  </p>
+                </div>
+                <div class="item-btn">
+                  <a href="{{block.settings.url}}" class="a-btn prime">{{ block.settings.btn_name }}</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "section-about",
+    "settings": [
+      {
+        "type": "text",
+        "id": "name",
+        "label": "name"
+      }, {
+        "type": "text",
+        "id": "title",
+        "label": "title"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "item",
+        "type": "item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "img",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "title"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "text detail"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "url"
+          }, {
+            "type": "text",
+            "id": "btn_name",
+            "label": "btn name",
+            "default": "LEarn more"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "section-about"
+      }
+    ]
+  }
+{% endschema %}
