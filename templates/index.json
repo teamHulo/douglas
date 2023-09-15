@@ -39,910 +39,126 @@
         "enable_animation": true
       }
     },
-    "c2c32bae-bf42-4abb-b349-8765db5019d2": {
-      "type": "video-hero",
+    "59274cfa-014a-42aa-bef6-33567a0a50bf": {
+      "type": "banner-slider",
       "blocks": {
-        "template--20054696919322__c2c32bae-bf42-4abb-b349-8765db5019d2-heading-1": {
-          "type": "heading",
+        "c60df61b-9a99-4560-b107-843e8c40ca84": {
+          "type": "item",
           "settings": {
-            "title": "SKINCARE AS INDIVIDUAL AS YOU ARE",
-            "heading_text_size": 48,
-            "text_max_width": 36
+            "img": "shopify:\/\/shop_images\/1666847428_2-celes-club-p-kot-na-chernom-fone-oboi-krasivo-2.jpg"
           }
         },
-        "template--20054696919322__c2c32bae-bf42-4abb-b349-8765db5019d2-subheading-1": {
-          "type": "subheading",
-          "disabled": true,
+        "61a09a14-8e81-4938-9c9e-51bf23751c78": {
+          "type": "item",
           "settings": {
-            "subheading": "<p>Feature seamless auto-playing hero videos in this space.<\/p>",
-            "text_max_width": 40
-          }
-        },
-        "e41313e3-26be-474b-8a77-46b1f722eb35": {
-          "type": "button",
-          "settings": {
-            "link_text": "DISCOVER OUR PRODUCTS",
-            "link": "shopify:\/\/collections\/all"
+            "img": "shopify:\/\/shop_images\/lucija-ros-FzQiiLqcRtE-unsplash.jpg"
           }
         }
       },
       "block_order": [
-        "template--20054696919322__c2c32bae-bf42-4abb-b349-8765db5019d2-heading-1",
-        "template--20054696919322__c2c32bae-bf42-4abb-b349-8765db5019d2-subheading-1",
-        "e41313e3-26be-474b-8a77-46b1f722eb35"
+        "c60df61b-9a99-4560-b107-843e8c40ca84",
+        "61a09a14-8e81-4938-9c9e-51bf23751c78"
       ],
       "settings": {
-        "video_aspect": "custom",
-        "desktop_height": 100,
-        "mobile_height": 100,
-        "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/780cb65a1ed24917a6cc3cdb1dea33af.mp4",
-        "alignment": "left_center",
-        "overlay_shadow": 20,
-        "color_text": "#ffffff",
-        "color_background_button": "#ffffff",
-        "color_text_button": "#181818",
-        "color_overlay": "#000000",
-        "color_overlay_gradient": "",
-        "overlay_opacity": 0,
-        "enable_animation": true
+        "title": "SKINCARE  AS INDIVIDUAL  AS YOU ARE",
+        "text": "Lorem ipsum dolor sit amet consectetur.  Fusce maecenas posuere acilisis duis.  Cum eget sit mattis mauris.",
+        "url": "#",
+        "btn_name": "Our products"
       }
     },
-    "51794fbc-e8b0-49d1-873e-4910021936bd": {
-      "type": "rich-text",
+    "488d4fc0-4cab-4942-8eb2-eff919582ad8": {
+      "type": "section-about",
       "blocks": {
-        "template--20054696919322__51794fbc-e8b0-49d1-873e-4910021936bd-heading-1": {
-          "type": "heading",
+        "8fc8a8fa-e0a1-482a-ab82-36854cb7c046": {
+          "type": "item",
           "settings": {
-            "title": "",
-            "text_max_width": 42
+            "img": "shopify:\/\/shop_images\/Img_3.png",
+            "title": "DOUGLAS PEREIRA SKIN HEALTH",
+            "text": "Details",
+            "url": "",
+            "btn_name": "LEarn more"
           }
         },
-        "template--20054696919322__51794fbc-e8b0-49d1-873e-4910021936bd-text-1": {
-          "type": "text",
+        "d37195aa-510d-49c3-98f9-f4f72c48fbac": {
+          "type": "item",
           "settings": {
-            "subheading": "<h6>Where beauty meets science in perfect harmony. We embrace a holistic approach, pairing it with cutting-edge, scientifically innovative formulations that seamlessly complement your skin's biology.<\/h6>",
-            "text_max_width": 48
+            "img": "shopify:\/\/shop_images\/Img_3.png",
+            "title": "DOUGLAS PEREIRA SKIN SCIENCE",
+            "text": "Details",
+            "url": "",
+            "btn_name": "LEarn more"
+          }
+        },
+        "fc22061f-33eb-4659-8d24-8b9b23724322": {
+          "type": "item",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Img_3.png",
+            "title": "DOUGLAS PEREIRA Minerals",
+            "text": "Details",
+            "url": "",
+            "btn_name": "LEarn more"
           }
         }
       },
       "block_order": [
-        "template--20054696919322__51794fbc-e8b0-49d1-873e-4910021936bd-heading-1",
-        "template--20054696919322__51794fbc-e8b0-49d1-873e-4910021936bd-text-1"
-      ],
-      "custom_css": [
-        "h6 {font-size: 16px; line-height: 30px;}",
-        ".rich-text__heading,.rich-text__subheading {max-width: 50rem;}"
+        "8fc8a8fa-e0a1-482a-ab82-36854cb7c046",
+        "d37195aa-510d-49c3-98f9-f4f72c48fbac",
+        "fc22061f-33eb-4659-8d24-8b9b23724322"
       ],
       "settings": {
-        "enable_animation": true,
-        "section_contrast": false,
-        "section_padding": "section--vertical-padding-top-bottom",
-        "padding_amount": "0.5"
+        "name": "about douglas pereira",
+        "title": "Lorem ipsum dolor sit amet consectetur. Cras id  at varius nisl iaculis accumsan odio. Interdum dolor id tempor volutpat ipsum."
       }
     },
-    "text-columns-with-images": {
-      "type": "text-columns-with-images",
+    "0e6446f7-19a6-45f3-bce1-13749fe15be2": {
+      "type": "section-tab-hover",
       "blocks": {
-        "column-1": {
-          "type": "column",
+        "7ac15ed8-bfec-48f5-977f-82a5f745d39f": {
+          "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/DPSS-CollectionImage.jpg",
-            "heading": "DOUGLAS PEREIRA SKIN HEALTH",
-            "subheading": "<p>Tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
-            "text_max_width": 46,
-            "link": "",
-            "link_text": "Read more"
+            "img": "shopify:\/\/shop_images\/unsplash_wE3hiKhAbuE_1.png",
+            "title": "Lorem ipsum dolor sit",
+            "text": "Lorem ipsum dolor sit amet consectetur. Tellus aliquam quis sed viverra et aenean.",
+            "url": "",
+            "btn_name": "LEarn more"
           }
         },
-        "column-2": {
-          "type": "column",
+        "91f9303d-6777-4ed0-a068-f592bc771e9b": {
+          "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/DPSS-CollectionImage_8465b0cc-c9ac-4cf7-aafb-b9a4b862a15a.jpg",
-            "heading": "DOUGLAS PEREIRA SKIN SCIENCE",
-            "subheading": "<p>Tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
-            "text_max_width": 42,
-            "link": "shopify:\/\/collections\/all",
-            "link_text": "DISCOVER"
+            "img": "shopify:\/\/shop_images\/1666847428_2-celes-club-p-kot-na-chernom-fone-oboi-krasivo-2.jpg",
+            "title": "Lorem ipsum dolor sit",
+            "text": "Lorem ipsum dolor sit amet consectetur. Tellus aliquam quis sed viverra et aenean.",
+            "url": "#",
+            "btn_name": "LEarn more"
           }
         },
-        "6b56eaa8-8dc9-431b-8cdd-03dccb80c861": {
-          "type": "column",
+        "c459448a-740d-4168-a408-f1281187c0ab": {
+          "type": "item",
           "settings": {
-            "image": "shopify:\/\/shop_images\/DPSS-CollectionImage.jpg",
-            "heading": "title",
-            "subheading": "<p>desc<\/p>",
-            "text_max_width": 42,
-            "link": "shopify:\/\/collections\/all",
-            "link_text": "Read more1"
+            "img": "shopify:\/\/shop_images\/lucija-ros-FzQiiLqcRtE-unsplash.jpg",
+            "title": "Lorem ipsum dolor sit",
+            "text": "Lorem ipsum dolor sit amet consectetur. Tellus aliquam quis sed viverra et aenean.",
+            "url": "#",
+            "btn_name": "LEarn more"
           }
         }
       },
       "block_order": [
-        "column-1",
-        "column-2",
-        "6b56eaa8-8dc9-431b-8cdd-03dccb80c861"
-      ],
-      "custom_css": [
-        "h4 {font-size: 17px; letter-spacing: 1px;}",
-        ".text-columns-with-images__item-image {width: 100%; height: 100%; margin: auto;}"
+        "7ac15ed8-bfec-48f5-977f-82a5f745d39f",
+        "91f9303d-6777-4ed0-a068-f592bc771e9b",
+        "c459448a-740d-4168-a408-f1281187c0ab"
       ],
       "settings": {
-        "columns": 3,
-        "image_shape": "square",
-        "text_alignment": "center",
-        "enable_animation": true,
-        "section_contrast": false,
-        "section_padding": "section--vertical-padding-top-bottom",
-        "padding_amount": "1.0"
-      }
-    },
-    "image-with-text-1": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "title": "Image with text",
-            "text_max_width": 32
-          }
-        },
-        "subheading": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "<p>Use these sections to promote a particular feature with editorial photography.<\/p>",
-            "text_max_width": 32
-          }
-        },
-        "button": {
-          "type": "button",
-          "settings": {
-            "link": "https:\/\/fluorescent.co\/help\/spark\/image-with-text",
-            "link_text": "Learn more"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "subheading",
-        "button"
-      ],
-      "settings": {
-        "image_position": "right",
-        "image_width": "half",
-        "aspect_ratio": "natural",
-        "text_alignment": "left",
-        "enable_animation": true,
-        "section_contrast": false,
-        "section_padding": "section--vertical-padding-top-bottom",
-        "padding_amount": "1.0"
-      }
-    },
-    "slideshow-2": {
-      "type": "slideshow",
-      "blocks": {
-        "slide-1": {
-          "type": "slide",
-          "settings": {
-            "focal_point": "image_presentation",
-            "mobile_focal_point": "image_presentation",
-            "title": "Slideshow",
-            "subheading": "<p>Use this section to make a bold statement<\/p>",
-            "heading_text_size": 64,
-            "overlay_shadow": 10,
-            "max_width_subheading": 40,
-            "link_text": "Learn more",
-            "link": "https:\/\/fluorescent.co\/help\/spark\/slideshow",
-            "alignment": "left_center",
-            "color_text": "#ffffff",
-            "color_text_button": "#181818",
-            "color_background_button": "#ffffff",
-            "color_overlay": "#000000",
-            "color_overlay_gradient": "",
-            "overlay_opacity": 30
-          }
-        }
-      },
-      "block_order": [
-        "slide-1"
-      ],
-      "settings": {
-        "image_aspect": "custom",
-        "desktop_height": 100,
-        "mobile_height": 100,
-        "duration_autoplay": 6,
-        "color_dot": "#ffffff",
-        "enable_animation": true
-      }
-    },
-    "image-with-features": {
-      "type": "image-with-features",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "title": "Images with Features",
-            "text_max_width": 32
-          }
-        },
-        "feature-1": {
-          "type": "feature",
-          "settings": {
-            "image_shape": "round",
-            "heading": "Example heading",
-            "subheading": "<p>Use these small paragraph blocks to feature various aspects about a product. You can add up to three of these blocks and each can have an image associated with them.<\/p>",
-            "text_max_width": 32
-          }
-        },
-        "feature-2": {
-          "type": "feature",
-          "settings": {
-            "image_shape": "round",
-            "heading": "Example heading",
-            "subheading": "<p>Use these small paragraph blocks to feature various aspects about a product. You can add up to three of these blocks and each can have an image associated with them.<\/p>",
-            "text_max_width": 32
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "feature-1",
-        "feature-2"
-      ],
-      "settings": {
-        "image_width": "half",
-        "aspect_ratio": "natural",
-        "text_position": "left",
-        "text_alignment": "left",
-        "enable_animation": true,
-        "section_contrast": false,
-        "section_padding": "section--vertical-padding-top-bottom",
-        "padding_amount": "1.0"
-      }
-    },
-    "quote": {
-      "type": "quote",
-      "blocks": {
-        "quote": {
-          "type": "quote",
-          "settings": {
-            "quote": "<p>\"Absolutely unparalleled products and service. I'm confident that this store will be the next big thing in its industry, and that its products will be timeless.\"<\/p>",
-            "author": "Steve Jordans",
-            "text_max_width": 48
-          }
-        }
-      },
-      "block_order": [
-        "quote"
-      ],
-      "settings": {
-        "timer": 7,
-        "image_shape": "round",
-        "enable_animation": true,
-        "section_contrast": false,
-        "section_padding": "section--vertical-padding-top-bottom",
-        "padding_amount": "1.0"
-      }
-    },
-    "slideshow-3": {
-      "type": "slideshow",
-      "blocks": {
-        "slide-1": {
-          "type": "slide",
-          "settings": {
-            "focal_point": "image_presentation",
-            "mobile_focal_point": "image_presentation",
-            "title": "Slideshow",
-            "subheading": "<p>Use this section to make a bold statement<\/p>",
-            "heading_text_size": 64,
-            "overlay_shadow": 10,
-            "max_width_subheading": 40,
-            "link_text": "Learn more",
-            "link": "https:\/\/fluorescent.co\/help\/spark\/slideshow",
-            "alignment": "center_center",
-            "color_text": "#ffffff",
-            "color_text_button": "#181818",
-            "color_background_button": "#ffffff",
-            "color_overlay": "#000000",
-            "color_overlay_gradient": "",
-            "overlay_opacity": 30
-          }
-        },
-        "slide-2": {
-          "type": "slide",
-          "settings": {
-            "focal_point": "image_presentation",
-            "mobile_focal_point": "image_presentation",
-            "title": "Slideshow",
-            "subheading": "<p>Use this section to make a bold statement<\/p>",
-            "heading_text_size": 64,
-            "overlay_shadow": 10,
-            "max_width_subheading": 40,
-            "link_text": "Learn more",
-            "link": "https:\/\/fluorescent.co\/help\/spark\/slideshow",
-            "alignment": "center_center",
-            "color_text": "#ffffff",
-            "color_text_button": "#181818",
-            "color_background_button": "#ffffff",
-            "color_overlay": "#000000",
-            "color_overlay_gradient": "",
-            "overlay_opacity": 30
-          }
-        }
-      },
-      "block_order": [
-        "slide-1",
-        "slide-2"
-      ],
-      "settings": {
-        "image_aspect": "custom",
-        "desktop_height": 100,
-        "mobile_height": 100,
-        "duration_autoplay": 6,
-        "color_dot": "#ffffff",
-        "enable_animation": true
-      }
-    },
-    "image-with-text-2": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "title": "Image with text",
-            "text_max_width": 32
-          }
-        },
-        "subheading": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "<p>Use these sections to promote a particular feature with editorial photography.<\/p>",
-            "text_max_width": 32
-          }
-        },
-        "button": {
-          "type": "button",
-          "settings": {
-            "link": "https:\/\/fluorescent.co\/help\/spark\/image-with-text",
-            "link_text": "Learn more"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "subheading",
-        "button"
-      ],
-      "settings": {
-        "image_position": "right",
-        "image_width": "half",
-        "aspect_ratio": "natural",
-        "text_alignment": "left",
-        "enable_animation": true,
-        "section_contrast": false,
-        "section_padding": "section--vertical-padding-top-bottom",
-        "padding_amount": "1.0"
-      }
-    },
-    "featured-collection": {
-      "type": "featured-collection",
-      "settings": {
-        "collection": "",
-        "max_products": 6,
-        "columns": 3,
-        "title": "Featured collection",
-        "subheading": "",
-        "link_text": "",
-        "text_max_width": 36,
-        "aspect_ratio": "natural",
-        "enable_animation": true,
-        "section_contrast": false,
-        "section_padding": "section--vertical-padding-top-bottom",
-        "padding_amount": "1.0"
-      }
-    },
-    "slideshow-4": {
-      "type": "slideshow",
-      "blocks": {
-        "slide-1": {
-          "type": "slide",
-          "settings": {
-            "focal_point": "image_presentation",
-            "mobile_focal_point": "image_presentation",
-            "title": "Slideshow",
-            "subheading": "<p>Use this section to make a bold statement<\/p>",
-            "heading_text_size": 64,
-            "overlay_shadow": 10,
-            "max_width_subheading": 40,
-            "link_text": "Learn more",
-            "link": "https:\/\/fluorescent.co\/help\/spark\/slideshow",
-            "alignment": "center_center",
-            "color_text": "#ffffff",
-            "color_text_button": "#181818",
-            "color_background_button": "#ffffff",
-            "color_overlay": "#000000",
-            "color_overlay_gradient": "",
-            "overlay_opacity": 30
-          }
-        },
-        "slide-2": {
-          "type": "slide",
-          "settings": {
-            "focal_point": "image_presentation",
-            "mobile_focal_point": "image_presentation",
-            "title": "Slideshow",
-            "subheading": "<p>Use this section to make a bold statement<\/p>",
-            "heading_text_size": 64,
-            "overlay_shadow": 10,
-            "max_width_subheading": 40,
-            "link_text": "Learn more",
-            "link": "https:\/\/fluorescent.co\/help\/spark\/slideshow",
-            "alignment": "center_center",
-            "color_text": "#ffffff",
-            "color_text_button": "#181818",
-            "color_background_button": "#ffffff",
-            "color_overlay": "#000000",
-            "color_overlay_gradient": "",
-            "overlay_opacity": 30
-          }
-        }
-      },
-      "block_order": [
-        "slide-1",
-        "slide-2"
-      ],
-      "settings": {
-        "image_aspect": "custom",
-        "desktop_height": 100,
-        "mobile_height": 100,
-        "duration_autoplay": 6,
-        "color_dot": "#ffffff",
-        "enable_animation": true
-      }
-    },
-    "featured-product": {
-      "type": "featured-product",
-      "blocks": {
-        "title": {
-          "type": "title",
-          "settings": {
-          }
-        },
-        "price": {
-          "type": "price",
-          "settings": {
-          }
-        },
-        "border": {
-          "type": "border",
-          "settings": {
-          }
-        },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "show_labels": true,
-            "variant_popup_option": "Size",
-            "variant_popup_text": "Size guide",
-            "variant_popup_page": ""
-          }
-        },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {
-            "show_labels": true
-          }
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true
-          }
-        }
-      },
-      "block_order": [
-        "title",
-        "price",
-        "border",
-        "variant_picker",
-        "quantity_selector",
-        "buy_buttons"
-      ],
-      "settings": {
-        "product": "",
-        "image_aspect_ratio": "natural",
-        "gallery_size": "medium",
-        "enable_product_lightbox": true,
-        "enable_video_looping": true,
-        "enable_animation": true,
-        "section_contrast": false,
-        "section_padding": "section--vertical-padding-top-bottom",
-        "padding_amount": "1.0",
-        "enable_gift_card_recipient": true
-      }
-    },
-    "testimonials": {
-      "type": "testimonials",
-      "blocks": {
-        "testimonial-1": {
-          "type": "testimonial",
-          "settings": {
-            "heading": "Amazing product!",
-            "testimonial": "<p>\"Add customer reviews and testimonials to showcase your store’s happy customers.\"<\/p>",
-            "author": "Author's name",
-            "text_max_width": 42
-          }
-        },
-        "testimonial-2": {
-          "type": "testimonial",
-          "settings": {
-            "heading": "Amazing product!",
-            "testimonial": "<p>\"Add customer reviews and testimonials to showcase your store’s happy customers.\"<\/p>",
-            "author": "Author's name",
-            "text_max_width": 42
-          }
-        },
-        "testimonial-3": {
-          "type": "testimonial",
-          "settings": {
-            "heading": "Amazing product!",
-            "testimonial": "<p>\"Add customer reviews and testimonials to showcase your store’s happy customers.\"<\/p>",
-            "author": "Author's name",
-            "text_max_width": 42
-          }
-        }
-      },
-      "block_order": [
-        "testimonial-1",
-        "testimonial-2",
-        "testimonial-3"
-      ],
-      "settings": {
-        "columns": 3,
-        "title": "",
-        "subheading": "",
-        "text_alignment": "left",
-        "enable_animation": true,
-        "section_contrast": false,
-        "section_padding": "section--vertical-padding-top-bottom",
-        "padding_amount": "1.0"
-      }
-    },
-    "slideshow-5": {
-      "type": "slideshow",
-      "blocks": {
-        "slide-1": {
-          "type": "slide",
-          "settings": {
-            "focal_point": "image_presentation",
-            "mobile_focal_point": "image_presentation",
-            "title": "Slideshow",
-            "subheading": "<p>Use this section to make a bold statement<\/p>",
-            "heading_text_size": 64,
-            "overlay_shadow": 10,
-            "max_width_subheading": 40,
-            "link_text": "Learn more",
-            "link": "https:\/\/fluorescent.co\/help\/spark\/slideshow",
-            "alignment": "center_center",
-            "color_text": "#ffffff",
-            "color_text_button": "#181818",
-            "color_background_button": "#ffffff",
-            "color_overlay": "#000000",
-            "color_overlay_gradient": "",
-            "overlay_opacity": 30
-          }
-        },
-        "slide-2": {
-          "type": "slide",
-          "settings": {
-            "focal_point": "image_presentation",
-            "mobile_focal_point": "image_presentation",
-            "title": "Slideshow",
-            "subheading": "<p>Use this section to make a bold statement<\/p>",
-            "heading_text_size": 64,
-            "overlay_shadow": 10,
-            "max_width_subheading": 40,
-            "link_text": "Learn more",
-            "link": "https:\/\/fluorescent.co\/help\/spark\/slideshow",
-            "alignment": "center_center",
-            "color_text": "#ffffff",
-            "color_text_button": "#181818",
-            "color_background_button": "#ffffff",
-            "color_overlay": "#000000",
-            "color_overlay_gradient": "",
-            "overlay_opacity": 30
-          }
-        }
-      },
-      "block_order": [
-        "slide-1",
-        "slide-2"
-      ],
-      "settings": {
-        "image_aspect": "custom",
-        "desktop_height": 100,
-        "mobile_height": 100,
-        "duration_autoplay": 6,
-        "color_dot": "#ffffff",
-        "enable_animation": true
-      }
-    },
-    "image-with-text-3": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "title": "Image with text",
-            "text_max_width": 32
-          }
-        },
-        "subheading": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "<p>Use these sections to promote a particular feature with editorial photography.<\/p>",
-            "text_max_width": 32
-          }
-        },
-        "button": {
-          "type": "button",
-          "settings": {
-            "link": "https:\/\/fluorescent.co\/help\/spark\/image-with-text",
-            "link_text": "Learn more"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "subheading",
-        "button"
-      ],
-      "settings": {
-        "image_position": "right",
-        "image_width": "half",
-        "aspect_ratio": "natural",
-        "text_alignment": "center",
-        "enable_animation": true,
-        "section_contrast": false,
-        "section_padding": "section--vertical-padding-top-bottom",
-        "padding_amount": "1.0"
-      }
-    },
-    "questions": {
-      "type": "questions",
-      "blocks": {
-        "question-1": {
-          "type": "question",
-          "settings": {
-            "title": "This is an example of a question that a customer might ask",
-            "answer": "<p>This is an example of a response that you might give. It's good to be as thorough as possible in responses as that has a tendency to improve trust overall.<\/p>",
-            "author": ""
-          }
-        },
-        "question-2": {
-          "type": "question",
-          "settings": {
-            "title": "This is an example of a question that a customer might ask",
-            "answer": "<p>This is an example of a response that you might give. It's good to be as thorough as possible in responses as that has a tendency to improve trust overall.<\/p>",
-            "author": ""
-          }
-        },
-        "question-3": {
-          "type": "question",
-          "settings": {
-            "title": "This is an example of a question that a customer might ask",
-            "answer": "<p>This is an example of a response that you might give. It's good to be as thorough as possible in responses as that has a tendency to improve trust overall.<\/p>",
-            "author": ""
-          }
-        },
-        "question-4": {
-          "type": "question",
-          "settings": {
-            "title": "This is an example of a question that a customer might ask",
-            "answer": "<p>This is an example of a response that you might give. It's good to be as thorough as possible in responses as that has a tendency to improve trust overall.<\/p>",
-            "author": ""
-          }
-        }
-      },
-      "block_order": [
-        "question-1",
-        "question-2",
-        "question-3",
-        "question-4"
-      ],
-      "settings": {
-        "section_title": "Questions",
-        "subheading": "",
-        "enable_animation": true,
-        "section_contrast": false,
-        "section_padding": "section--vertical-padding-top-bottom",
-        "padding_amount": "1.0"
-      }
-    },
-    "slideshow-6": {
-      "type": "slideshow",
-      "blocks": {
-        "slide-1": {
-          "type": "slide",
-          "settings": {
-            "focal_point": "image_presentation",
-            "mobile_focal_point": "image_presentation",
-            "title": "Slideshow",
-            "subheading": "<p>Use this section to make a bold statement<\/p>",
-            "heading_text_size": 64,
-            "overlay_shadow": 10,
-            "max_width_subheading": 40,
-            "link_text": "Learn more",
-            "link": "https:\/\/fluorescent.co\/help\/spark\/slideshow",
-            "alignment": "center_center",
-            "color_text": "#ffffff",
-            "color_text_button": "#181818",
-            "color_background_button": "#ffffff",
-            "color_overlay": "#000000",
-            "color_overlay_gradient": "",
-            "overlay_opacity": 30
-          }
-        },
-        "slide-2": {
-          "type": "slide",
-          "settings": {
-            "focal_point": "image_presentation",
-            "mobile_focal_point": "image_presentation",
-            "title": "Slideshow",
-            "subheading": "<p>Use this section to make a bold statement<\/p>",
-            "heading_text_size": 64,
-            "overlay_shadow": 10,
-            "max_width_subheading": 40,
-            "link_text": "Learn more",
-            "link": "https:\/\/fluorescent.co\/help\/spark\/slideshow",
-            "alignment": "center_center",
-            "color_text": "#ffffff",
-            "color_text_button": "#181818",
-            "color_background_button": "#ffffff",
-            "color_overlay": "#000000",
-            "color_overlay_gradient": "",
-            "overlay_opacity": 30
-          }
-        }
-      },
-      "block_order": [
-        "slide-1",
-        "slide-2"
-      ],
-      "settings": {
-        "image_aspect": "custom",
-        "desktop_height": 100,
-        "mobile_height": 100,
-        "duration_autoplay": 6,
-        "color_dot": "#ffffff",
-        "enable_animation": true
-      }
-    },
-    "social-proof": {
-      "type": "social-proof",
-      "blocks": {
-        "post-1": {
-          "type": "post",
-          "settings": {
-            "link": "",
-            "likes": "",
-            "account": "",
-            "caption": ""
-          }
-        },
-        "post-2": {
-          "type": "post",
-          "settings": {
-            "link": "",
-            "likes": "",
-            "account": "",
-            "caption": ""
-          }
-        },
-        "post-3": {
-          "type": "post",
-          "settings": {
-            "link": "",
-            "likes": "",
-            "account": "",
-            "caption": ""
-          }
-        }
-      },
-      "block_order": [
-        "post-1",
-        "post-2",
-        "post-3"
-      ],
-      "settings": {
-        "columns": 3,
-        "title": "Social proof",
-        "subheading": "<p>Use this Section to display your favourite social images.<\/p>",
-        "text_max_width": 42,
-        "aspect_ratio": "natural",
-        "like_color": "#c71b1b",
-        "enable_animation": true,
-        "section_contrast": false,
-        "section_padding": "section--vertical-padding-top-bottom",
-        "padding_amount": "1.0"
-      }
-    },
-    "logo-list": {
-      "type": "logo-list",
-      "blocks": {
-        "logo-1": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/The_Sydney_Morning_Herald.png",
-            "link": ""
-          }
-        },
-        "logo-2": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/RUSSH.png",
-            "link": ""
-          }
-        },
-        "logo-3": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/aMODRN.png",
-            "link": ""
-          }
-        },
-        "logo-4": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Body-_-Soul.png",
-            "link": ""
-          }
-        },
-        "logo-5": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/OZ-BEAUTY-EXPER.png",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "logo-1",
-        "logo-2",
-        "logo-3",
-        "logo-4",
-        "logo-5"
-      ],
-      "settings": {
-        "columns": 5,
-        "gutter_spacing": 20,
-        "title": "As seen in",
-        "enable_animation": true,
-        "section_contrast": false,
-        "section_padding": "section--vertical-padding-top-bottom",
-        "padding_amount": "1.0"
+        "name": "",
+        "title": "How to shop with us"
       }
     }
   },
   "order": [
     "slideshow-1",
-    "c2c32bae-bf42-4abb-b349-8765db5019d2",
-    "51794fbc-e8b0-49d1-873e-4910021936bd",
-    "text-columns-with-images",
-    "image-with-text-1",
-    "slideshow-2",
-    "image-with-features",
-    "quote",
-    "slideshow-3",
-    "image-with-text-2",
-    "featured-collection",
-    "slideshow-4",
-    "featured-product",
-    "testimonials",
-    "slideshow-5",
-    "image-with-text-3",
-    "questions",
-    "slideshow-6",
-    "social-proof",
-    "logo-list"
+    "59274cfa-014a-42aa-bef6-33567a0a50bf",
+    "488d4fc0-4cab-4942-8eb2-eff919582ad8",
+    "0e6446f7-19a6-45f3-bce1-13749fe15be2"
   ]
 }

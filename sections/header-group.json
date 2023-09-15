@@ -8,25 +8,15 @@
         "announcement-0": {
           "type": "announcement",
           "settings": {
-            "title": "ENJOY A 10% OFF WELCOME GIFT USE CODE DPWELCOME10",
-            "link": "https:\/\/fluorescent.co\/help\/spark\/announcement-bar#set-up-the-announcement-bar",
-            "color_background": "#ffffff",
-            "color_text": "#000000"
-          }
-        },
-        "announcement-1": {
-          "type": "announcement",
-          "settings": {
-            "title": "Announce something here",
-            "link": "https:\/\/fluorescent.co\/help\/spark\/announcement-bar#set-up-the-announcement-bar",
-            "color_background": "#ffffff",
-            "color_text": "#191919"
+            "title": "get your Free shipping from $200",
+            "link": "",
+            "color_background": "#000000",
+            "color_text": "#ffffff"
           }
         }
       },
       "block_order": [
-        "announcement-0",
-        "announcement-1"
+        "announcement-0"
       ],
       "settings": {
         "timing": 4
@@ -35,8 +25,8 @@
     "header": {
       "type": "header",
       "settings": {
-        "logo": "shopify:\/\/shop_images\/DP_Logo_Cosmeceuticals_Horizontal_White_9f6e180d-e901-4e0c-9abe-ebcbf1017d95.png",
-        "logo_max_width": 280,
+        "logo": "shopify:\/\/shop_images\/DP_Logo_SkinHealth_Horizontal_Black_3.png",
+        "logo_max_width": 575,
         "menu": "main-menu",
         "secondary_menu": "",
         "style": "icon",
