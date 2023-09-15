@@ -75,7 +75,7 @@ label {
   padding: 0 clamp(20px, 3.125vw, 60px);
   width: max-content;
   border-radius: 32px;
-  border: 1px solid #fefefe;
+
   font-family: Proxima Nova;
   font-size: var(--font-size-16);
   font-style: normal;
@@ -84,6 +84,14 @@ label {
   letter-spacing: 0.64px;
   text-transform: uppercase;
   transition: all 0.3s ease;
+}
+.a-btn.prime {
+  border: 1px solid #000;
+  color: #000;
+}
+.a-btn.secondary {
+  border: 1px solid #fefefe;
+  color: #fff;
 }
 .a-btn.prime:hover {
   background: #080808;
@@ -359,7 +367,6 @@ header .header__inner {
 }
 .section-about .item-content .a-btn {
   width: 100%;
-  border-color: #080808;
 }
 @media (max-width: 767px) {
   .section-about .item {
