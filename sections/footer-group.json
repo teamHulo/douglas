@@ -13,7 +13,7 @@
             "collapse_on_mobile": false,
             "title": "About",
             "show_title_on_desktop": false,
-            "text": "<p>We acknowledge the Traditional Owners of the land where we work and live, the Gadigal of the Eora Nation and pay our respects to Elders past and present.<\/p>",
+            "text": "<p>We acknowledge the Traditional Owners of the land where we work and live, the Gadigal of the Eora Nation and pay our respects to Elders past and present.</p>",
             "image_max_width": 200,
             "image_placement": "above_text",
             "enable_follow_on_shop": true
@@ -55,17 +55,11 @@
             "collapse_on_mobile": true,
             "title": "BECOME A DP INSIDER",
             "show_title_on_desktop": true,
-            "text": "<p>Subscribe for store updates and discounts.<\/p>"
+            "text": "<p>Subscribe for store updates and discounts.</p>"
           }
         }
       },
-      "block_order": [
-        "text",
-        "spacer",
-        "links-0",
-        "links-1",
-        "newsletter"
-      ],
+      "block_order": ["text", "spacer", "links-0", "links-1", "newsletter"],
       "settings": {
         "show_locale_selector": true,
         "show_currency_selector": true,
@@ -74,7 +68,5 @@
       }
     }
   },
-  "order": [
-    "footer"
-  ]
+  "order": ["footer"]
 }

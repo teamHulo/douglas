@@ -1,18 +1,169 @@
+<style>
+  .custom__footer {
+    background: {{ section.settings.color_bg}}
+    ;
+  }
+</style>
+{% assign count = 0 %}
 
 <footer class="footer custom__footer">
-    <div class="container">
-        <div class="footer__wrap">
-            <div class="footer__top">
-                <div class="foooter__logo">
-                    <img src="{{section.settings.logo}}" alt="">
+  <div class="container">
+    <div class="footer__wrap">
+      <div class="footer__top">
+        {% if section.settings.logo != blank %}
+          <div class="foooter__logo">
+            <img
+              src="{{section.settings.logo | img_url: 'master'}}"
+              alt=""
+              style="max-width:{{section.settings.max_width}}px">
+          </div>
+        {% endif %}
+        <div class="footer__content">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'newsletter' %}
+              <div class="footer__newsletter">
+                <div class="footer__newsletter-wrap">
+                  {% if block.settings.text != blank %}
+                    <div class="text">
+                      {{ block.settings.text }}
+                    </div>
+                  {% endif %}
+                  <div class="footer-newsletter-form-wrap">
+                    {% render 'my-newsletter', title: block.settings.title, text: block.settings.subtitle %}
+                  </div>
+                  <div class="newsletter-social">
+                    <div class="social__wrap">
+                      {% render 'social-icons' %}
+                    </div>
+                  </div>
                 </div>
-                <div class="footer__content">
-                    
+              </div>
+              {% when 'links' %}
+
+              {% if block.type == 'links' %}
+                {% assign count = count | plus: 1 %}
+              {% endif %}
+              <div class="links-item {% if count == 1 or count == 3%} mb {%endif%}">
+                <div class="links__wrap">
+                  {% if block.settings.title != blank %}
+                    <div class="title">
+                      <h2>{{ block.settings.title }}</h2>
+                    </div>
+                  {% endif %}
+                  <ul class="footer__links-list">
+                    {%- assign link_list = linklists[block.settings.link_list].links -%}
+                    {%- for link in link_list -%}
+                      <li class="footer__links-item ">
+                        <a href="{{ link.url }}">{{ link.title }}</a>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
                 </div>
-            </div>
-            <div class="footer__bottom">
-                
-            </div>
+              </div>
+            {% endcase %}
+          {% endfor %}
         </div>
+      </div>
+
     </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="container">
+      <div class="left">
+        <ul class="footer__bottom-links-list">
+          {%- assign link_list = linklists[section.settings.menu_bottom].links -%}
+          {%- for link in link_list -%}
+            <li class="footer__links-item ">
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+      <div class="right">
+        <div class="footer__credits fs-body-x-small">
+          <p>{{ 'sections.footer.copyright' | t }} &copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: '/' }}.</p>
+          <p>{{ powered_by_link }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
+
+
+{% schema %}
+  {
+    "name": "t:sections.footer.name",
+    "blocks": [
+      {
+        "type": "links",
+        "name": "t:sections.footer.blocks.links.name",
+        "limit": 4,
+        "settings": [
+          {
+            "id": "title",
+            "type": "text",
+            "label": "title"
+          }, {
+            "id": "link_list",
+            "type": "link_list",
+            "label": "link list",
+            "default": "footer"
+          }
+
+        ]
+      }, {
+        "type": "newsletter",
+        "name": "newsletter",
+        "limit": 1,
+        "settings": [
+          {
+            "id": "text",
+            "type": "richtext",
+            "label": "text"
+          }, {
+            "id": "title",
+            "type": "text",
+            "label": "title"
+          }, {
+            "id": "subtitle",
+            "type": "text",
+            "label": "subtitle"
+          }
+        ]
+      }
+    ],
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "menu_bottom",
+        "label": "menu bottom"
+      }, {
+        "type": "color",
+        "id": "color_bg",
+        "label": "color background",
+        "default": "#000"
+      }, {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "logo"
+      }, {
+        "type": "range",
+        "id": "max_width",
+        "min": 100,
+        "max": 600,
+        "step": 25,
+        "unit": "px",
+        "label": "max width logo",
+        "default": 200
+      }
+    ],
+    "default": {
+      "blocks": [
+        {
+          "type": "links"
+        }
+      ]
+    }
+  }
+{% endschema %}

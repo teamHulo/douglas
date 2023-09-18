@@ -1,0 +1,17 @@
+{
+  "type": "footer",
+  "name": "t:groups.footer_group.name",
+  "sections": {
+    "new_footer": {
+      "type": "new_footer",
+
+      "settings": {
+        "show_locale_selector": true,
+        "show_currency_selector": true,
+        "show_social_icons": true,
+        "show_payment_icons": true
+      }
+    }
+  },
+  "order": ["new_footer"]
+}

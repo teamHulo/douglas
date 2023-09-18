@@ -5,9 +5,12 @@
     {%- capture social_link -%}social_{{ social_handle }}_link{%- endcapture -%}
 
     {%- if settings[social_link] != blank -%}
-      <li>
-        <a href="{{ settings[social_link] }}" title="{{ 'sections.footer.social_platform' | t: name: shop.name, platform: social }}" target="_blank">
-          {% render 'icon' with icon: social_handle %}
+      <li data-{{social}} data-{{social_handle}}>
+        <a
+          href="{{ settings[social_link] }}"
+          title="{{ 'sections.footer.social_platform' | t: name: shop.name, platform: social }}"
+          target="_blank">
+          {% render 'icon' with icon: social_handle, class: social %}
         </a>
       </li>
     {%- endif -%}
