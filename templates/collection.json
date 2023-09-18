@@ -40,7 +40,7 @@
         "show_sort": true,
         "show_filters": true,
         "columns": 4,
-        "columns_mobile": "2",
+        "columns_mobile": "1",
         "per_page": 12,
         "pagination": "paginated",
         "aspect_ratio": "natural",
