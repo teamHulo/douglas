@@ -3,6 +3,10 @@
     "main": {
       "type": "main-list-collections",
       "settings": {
+        "display_type": "all",
+        "show_description": false,
+        "aspect_ratio": "square",
+        "columns": 4
       }
     }
   },
