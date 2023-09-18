@@ -1,0 +1,386 @@
+<link rel="stylesheet" href="{{ 'section-image-with-text.css' | asset_url }}">
+<style>
+#shopify-section-{{ section.id }}  .image-text__wrapper {
+    display: flex;
+    gap: {{ section.settings.column_gap }}px;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+
+    {% case section.settings.border %}
+    {% when 'top' %}
+        border-top: 1px solid rgba(0,0,0,0.5);
+    {% when 'bottom' %}
+        border-bottom: 1px solid rgba(0,0,0,0.5);
+    {% when 'left' %}
+        border-left: 1px solid rgba(0,0,0,0.5);
+    {% when 'right' %}
+        border-right: 1px solid rgba(0,0,0,0.5);
+    {% when 'all' %}
+        border: 1px solid rgba(0,0,0,0.5);
+{% endcase %}
+}
+
+#shopify-section-{{ section.id }} .image-text__text .wrapper {
+    max-width: {{ section.settings.text_width }}px;
+    height: max-content;
+}
+
+{% for block in section.blocks %}
+    #shopify-section-{{ section.id }} .image-text__text h1,
+    #shopify-section-{{ section.id }} .image-text__text h2,
+    #shopify-section-{{ section.id }} .image-text__text h3,
+    #shopify-section-{{ section.id }} .image-text__text h4,
+    #shopify-section-{{ section.id }} .image-text__text h5,
+    #shopify-section-{{ section.id }} .image-text__text h6 {
+        padding-bottom: {{ block.settings.title_padding_bottom }}px;
+    }
+    #shopify-section-{{ section.id }} .image-text__text-subtitle {
+        padding-bottom: {{ block.settings.subtitle_padding_bottom }}px;
+    }
+    #shopify-section-{{ section.id }} .image-text__text {
+        padding: {{ block.settings.padding_y }}px {{ block.settings.padding_x }}px;
+        justify-content: {{ block.settings.text_position_x }};
+        align-items: {{ block.settings.text_position_y }};
+        text-align: {{ block.settings.text_align_item }}
+    }
+    #shopify-section-{{ section.id }} .image-text__text a {
+    {% case block.settings.text_align_item %}
+        {% when 'center' %}
+            margin: 0 auto;
+        {% when 'right' %}
+            margin-left: auto;
+        {% else %}
+            margin-left: inherit;
+    {% endcase %}
+}
+{% endfor %}
+</style>
+
+<div class="image-text container">
+    <div class="image-text__wrapper ">
+        {% for block in section.blocks %}
+            {% case block.type %}
+                {% when 'image' %}                                        
+                    <div class="image-text__img">
+                        <img src="{{ block.settings.img | img_url: 'master'}}" alt="">
+                    </div>
+                {% when 'text' %}
+                    <div class="image-text__text">
+                        <div class="wrapper" style="max-width: {{ block.settings.text_width }}px;">
+                            {% case block.settings.title_font %}
+                                {% when 'h1' %}
+                                    <h1>{{ block.settings.title }}</h1>
+                                {% when 'h2' %}
+                                    <h2>{{ block.settings.title }}</h2>
+                                {% when 'h3' %}
+                                    <h3>{{ block.settings.title }}</h3>
+                                {% when 'h4' %}
+                                    <h4>{{ block.settings.title }}</h4>
+                                {% when 'h5' %}
+                                    <h5>{{ block.settings.title }}</h5>
+                                {% when 'h6' %}
+                                    <h6>{{ block.settings.title }}</h6>
+                                {% else %}
+                                    <p>{{ block.settings.title }}</p>
+                            {% endcase %}
+                            {% if block.settings.subtitle != 'blank' %}
+                                <div class="image-text__text-subtitle">{{ block.settings.subtitle }}</div>
+                            {% endif %}
+                            {% if block.settings.btn_text != 'blank' %}
+                                <a href="{{ block.settings.btn_url }}" class="a-btn {% if block.settings.btn_style == 'prime' %}prime{% endif %}{% if section.settings.btn_style == 'secondary' %}secondary{% endif %}">
+                                    {{ block.settings.btn_text }}
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+            {% endcase %}
+        {% endfor %}
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Image with text",
+        "tag": "section",
+        "settings": [
+            {
+                "type": "range",
+                "id": "padding_top",
+                "min": 0,
+                "max": 180,
+                "step": 2,
+                "unit": "px",
+                "label": "Section padding top",
+                "default": 0
+            }, 
+            {
+                "type": "range",
+                "id": "padding_bottom",
+                "min": 0,
+                "max": 180,
+                "step": 2,
+                "unit": "px",
+                "label": "Section padding bottom",
+                "default": 0
+            },
+            {
+                "type": "range",
+                "id": "column_gap",
+                "min": 0,
+                "max": 100,
+                "step": 2,
+                "unit": "px",
+                "label": "Column gap",
+                "default": 0
+            },
+            {
+                "type": "select",
+                "id": "border",
+                "options": [
+                    {
+                        "value": "top",
+                        "label": "Top"
+                    },
+                    {
+                        "value": "bottom",
+                        "label": "Bottom"
+                    },
+                    {
+                        "value": "left",
+                        "label": "Left"
+                    },
+                    {
+                        "value": "right",
+                        "label": "Right"
+                    },
+                    {
+                        "value": "all",
+                        "label": "All"
+                    },
+                    {
+                        "value": "none",
+                        "label": "None"
+                    }
+                ],
+                "default": "none",
+                "label": "Border"
+            }
+        ],
+        "blocks": [
+            {
+                "name": "Image",
+                "type": "image",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "label": "Image",
+                        "id": "img"
+                    }
+                ]
+            },
+            {
+                "name": "Text",
+                "type": "text",
+                "settings": [
+                    {
+                        "type": "range",
+                        "id": "padding_x",
+                        "min": 0,
+                        "max": 180,
+                        "step": 2,
+                        "unit": "px",
+                        "label": "Section padding x",
+                        "default": 0
+                    }, 
+                    {
+                        "type": "range",
+                        "id": "padding_y",
+                        "min": 0,
+                        "max": 180,
+                        "step": 2,
+                        "unit": "px",
+                        "label": "Section padding y",
+                        "default": 0
+                    },
+                    {
+                        "type": "color",
+                        "label": "Text color",
+                        "id": "color_text",
+                        "default": "#fff"
+                    },
+                    {
+                        "type": "text",
+                        "label": "Title",
+                        "id": "title",
+                        "default": "the skincare regime builder"
+                    },
+                    {
+                        "type": "select",
+                        "id": "title_font",
+                        "options": [
+                            {
+                                "value": "h1",
+                                "label": "Heading 1"
+                            },
+                            {
+                                "value": "h2",
+                                "label": "Heading 2"
+                            },
+                            {
+                                "value": "h3",
+                                "label": "Heading 3"
+                            },
+                            {
+                                "value": "h4",
+                                "label": "Heading 4"
+                            },
+                            {
+                                "value": "h5",
+                                "label": "Heading 5"
+                            },
+                            {
+                                "value": "h6",
+                                "label": "Heading 6"
+                            }
+                        ],
+                        "default": "h3",
+                        "label": "Paragraph",
+                        "info": "It is not recommended to use 'Heading 1' if already on the page exist"
+                    },
+                    {
+                        "type": "range",
+                        "id": "title_padding_bottom",
+                        "min": 0,
+                        "max": 80,
+                        "step": 2,
+                        "default": 0,
+                        "unit": "px",
+                        "label": "Title padding bottom"
+                    }, 
+                    {
+                        "type": "richtext",
+                        "label": "Subtitle",
+                        "id": "subtitle",
+                        "default": "<p>Lorem ipsum dolor sit amet consectetur. Et ornare dolor mauris aliquet lacus et interdum eu. Orci pharetra urna duis malesuada auctor amet odio. Aliquam sit ut bibendum pellentesque libero quisque auctor. Cras mauris id erat sagittis elit sit nunc libero. Mattis dignissim aliquam lacus nam hac.</p>"
+                    },
+                    {
+                        "type": "range",
+                        "id": "subtitle_padding_bottom",
+                        "min": 0,
+                        "max": 80,
+                        "step": 2,
+                        "default": 0,
+                        "unit": "px",
+                        "label": "Subtitle padding bottom"
+                    }, 
+                    {
+                        "type": "text",
+                        "label": "Button text",
+                        "id": "btn_text",
+                        "default": "Take the skincare regime"
+                    },
+                    {
+                        "type": "url",
+                        "label": "Button url",
+                        "id": "btn_url"
+                    },
+                    {
+                        "type": "select",
+                        "id": "btn_style",
+                        "options": [
+                            {
+                                "value": "prime",
+                                "label": "Prime"
+                            },
+                            {
+                                "value": "secondary",
+                                "label": "Secondary"
+                            }
+                        ],
+                        "default": "prime",
+                        "label": "Button style"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Block with text posution"
+                    }, 
+                    {
+                        "type": "range",
+                        "id": "text_width",
+                        "min": 200,
+                        "max": 1200,
+                        "step": 10,
+                        "default": 400,
+                        "unit": "px",
+                        "label": "Max width block with text"
+                    },
+                    {
+                        "type": "select",
+                        "id": "text_align_item",
+                        "options": [
+                            {
+                                "value": "left",
+                                "label": "Left"
+                            },
+                            {
+                                "value": "center",
+                                "label": "Center"
+                            },
+                            {
+                                "value": "right",
+                                "label": "Right"
+                            }
+                        ],
+                        "default": "left",
+                        "label": "Text align item"
+                    },
+                    {
+                        "type": "select",
+                        "id": "text_position_x",
+                        "options": [
+                            {
+                                "value": "normal",
+                                "label": "Left"
+                            },
+                            {
+                                "value": "center",
+                                "label": "Center"
+                            },
+                            {
+                                "value": "end",
+                                "label": "Right"
+                            }
+                        ],
+                        "default": "normal",
+                        "label": "Text horizontal position "
+                    },
+                    {
+                        "type": "select",
+                        "id": "text_position_y",
+                        "options": [
+                            {
+                                "value": "normal",
+                                "label": "Top"
+                            },
+                            {
+                                "value": "center",
+                                "label": "Center"
+                            },
+                            {
+                                "value": "end",
+                                "label": "Botton"
+                            }
+                        ],
+                        "default": "normal",
+                        "label": "Text vertical position "
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Image text"
+            }
+        ]
+    }
+{% endschema %}
