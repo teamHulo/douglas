@@ -2,17 +2,55 @@
   "sections": {
     "banner": {
       "type": "main-collection-banner",
+      "disabled": true,
       "settings": {
+        "show_breadcrumbs": false,
+        "show_collection_image": false,
+        "collection_image_aspect_ratio": "natural",
+        "show_collection_description": true,
+        "text_max_width": 42,
+        "enable_animation": true
+      }
+    },
+    "4f229f80-200a-4638-a1c5-f42deec5601a": {
+      "type": "section-image-baner",
+      "settings": {
+        "padding_x": 0,
+        "padding_y": 94,
+        "img": "shopify:\/\/shop_images\/Rectangle_227.jpg",
+        "color_text": "#fff",
+        "title": "Lorem ipsum dolor sit amet consectetur.",
+        "title_font": "h1",
+        "title_padding_bottom": 52,
+        "subtitle": "<p>Lorem ipsum dolor sit amet consectetur. Amet risus erat arcu.<\/p>",
+        "subtitle_padding_bottom": 52,
+        "btn_text": "Take the skincare regime",
+        "btn_url": "shopify:\/\/collections",
+        "btn_style": "secondary",
+        "text_width": 740,
+        "text_align_item": "left",
+        "text_position": "normal",
+        "text_padding_top": 24,
+        "text_padding_bottom": 0
       }
     },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
+        "show_sort": true,
+        "show_filters": true,
+        "columns": 3,
+        "columns_mobile": "2",
+        "per_page": 12,
+        "pagination": "paginated",
+        "aspect_ratio": "natural",
+        "enable_animation": true
       }
     }
   },
   "order": [
     "banner",
+    "4f229f80-200a-4638-a1c5-f42deec5601a",
     "product-grid"
   ]
 }
