@@ -160,7 +160,7 @@
         "padding_x": 0,
         "padding_y": 140,
         "img": "shopify:\/\/shop_images\/Rectangle249-compress.jpg",
-        "color_text": "#fff",
+        "color_text": "#ffffff",
         "title": "The Skincare Regime Builder",
         "title_font": "h2",
         "title_padding_bottom": 40,
@@ -175,6 +175,88 @@
         "text_padding_top": 0,
         "text_padding_bottom": 0
       }
+    },
+    "701a8324-b670-4489-bde5-621c76cdd7d0": {
+      "type": "section-image-with-text",
+      "blocks": {
+        "26607107-68a6-4b07-8f5a-67289eb30010": {
+          "type": "text",
+          "settings": {
+            "padding_x": 0,
+            "padding_y": 0,
+            "color_text": "#fff",
+            "title": "Lorem ipsum dolor sit amet consectetur. Turpis quisque augue et nullam. Porttitor accumsan vel bibendum vel.",
+            "title_font": "h3",
+            "title_padding_bottom": 62,
+            "subtitle": "<p>Lorem ipsum dolor sit amet consectetur. Eleifend blandit cursus tempor aliquam. Elementum gravida cras etiam diam gravida. Imperdiet in quis ullamcorper mattis elementum. Sit metus mattis et quam. <\/p>",
+            "subtitle_padding_bottom": 62,
+            "btn_text": "Take the skincare regime",
+            "btn_url": "",
+            "btn_style": "prime",
+            "text_width": 650,
+            "text_align_item": "left",
+            "text_position_x": "normal",
+            "text_position_y": "normal"
+          }
+        },
+        "4613fc9c-99db-4989-8d2c-fa302419b981": {
+          "type": "image",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/605ParkAvenue_11G_lr5-scaled_1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "26607107-68a6-4b07-8f5a-67289eb30010",
+        "4613fc9c-99db-4989-8d2c-fa302419b981"
+      ],
+      "settings": {
+        "padding_top": 120,
+        "padding_bottom": 120,
+        "column_gap": 20,
+        "border": "top"
+      }
+    },
+    "a9582002-bf1a-412f-a25a-f2fb7ece2685": {
+      "type": "section-image-with-text",
+      "blocks": {
+        "13b1529e-4f92-47c7-b1ea-d018f88d176b": {
+          "type": "image",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/a3aeb630b86eae0691a3c8bc64de7848.jpg"
+          }
+        },
+        "35e30d95-bafe-45fb-a461-e3f1c98328a9": {
+          "type": "text",
+          "settings": {
+            "padding_x": 120,
+            "padding_y": 0,
+            "color_text": "#fff",
+            "title": "Lorem Ipsum",
+            "title_font": "h3",
+            "title_padding_bottom": 62,
+            "subtitle": "<p>Lorem ipsum dolor sit amet consectetur. Et ornare dolor mauris aliquet lacus et interdum eu. Orci pharetra urna duis malesuada auctor amet odio. Aliquam sit ut bibendum pellentesque libero quisque auctor. Cras mauris id erat sagittis elit sit nunc libero. Mattis dignissim aliquam lacus nam hac.<\/p>",
+            "subtitle_padding_bottom": 62,
+            "btn_text": "Take the skincare regime",
+            "btn_url": "",
+            "btn_style": "prime",
+            "text_width": 400,
+            "text_align_item": "left",
+            "text_position_x": "normal",
+            "text_position_y": "end"
+          }
+        }
+      },
+      "block_order": [
+        "13b1529e-4f92-47c7-b1ea-d018f88d176b",
+        "35e30d95-bafe-45fb-a461-e3f1c98328a9"
+      ],
+      "settings": {
+        "padding_top": 120,
+        "padding_bottom": 120,
+        "column_gap": 20,
+        "border": "top"
+      }
     }
   },
   "order": [
@@ -182,6 +264,8 @@
     "59274cfa-014a-42aa-bef6-33567a0a50bf",
     "488d4fc0-4cab-4942-8eb2-eff919582ad8",
     "0e6446f7-19a6-45f3-bce1-13749fe15be2",
-    "e93a0e87-b11a-40e2-b596-bd60239b309b"
+    "e93a0e87-b11a-40e2-b596-bd60239b309b",
+    "701a8324-b670-4489-bde5-621c76cdd7d0",
+    "a9582002-bf1a-412f-a25a-f2fb7ece2685"
   ]
 }
