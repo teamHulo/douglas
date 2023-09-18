@@ -184,7 +184,7 @@
           "settings": {
             "padding_x": 0,
             "padding_y": 0,
-            "color_text": "#fff",
+            "color_text": "#ffffff",
             "title": "Lorem ipsum dolor sit amet consectetur. Turpis quisque augue et nullam. Porttitor accumsan vel bibendum vel.",
             "title_font": "h3",
             "title_padding_bottom": 62,
@@ -231,7 +231,7 @@
           "settings": {
             "padding_x": 120,
             "padding_y": 0,
-            "color_text": "#fff",
+            "color_text": "#ffffff",
             "title": "Lorem Ipsum",
             "title_font": "h3",
             "title_padding_bottom": 62,
@@ -240,7 +240,7 @@
             "btn_text": "Take the skincare regime",
             "btn_url": "",
             "btn_style": "prime",
-            "text_width": 400,
+            "text_width": 800,
             "text_align_item": "left",
             "text_position_x": "normal",
             "text_position_y": "end"
