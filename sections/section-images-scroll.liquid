@@ -1,13 +1,18 @@
 <style>
-    #shopify-section-{{ section.id }} .scroll-image__img {
+#shopify-section-{{ section.id }} .scroll-image {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+}
+#shopify-section-{{ section.id }} .name span {
+    padding-bottom: {{ section.settings.name_padding_bottom }}px;
+}
+#shopify-section-{{ section.id }} .scroll-image__img {
     display:flex;
     justify-content: space-between;
     width:max-content;
     animation: marquee-img 15s linear infinite;
     min-width: 200%;
     column-gap: {{ section.settings.column_gap }}px;
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
 }
 #shopify-section-{{ section.id }} .scroll-image__img img {
     white-space: nowrap;
@@ -26,6 +31,11 @@
 </style>
 <div class="scroll-image">
     <div class="scroll-image__wrapper">
+        <div class="name">
+            <span>
+              {{ section.settings.name }}
+            </span>
+          </div>
         <div class="scroll-image__img">
             {% for block in section.blocks %}
                 <img src="{{ block.settings.img | img_url: 'master' }}" alt="">
@@ -64,8 +74,19 @@
             {
                 "type": "text",
                 "id": "name",
-                "label": "Section name"
+                "label": "Section name",
+                "default": "As seen in"
             },
+            {
+                "type": "range",
+                "id": "name_padding_bottom",
+                "min": 0,
+                "max": 180,
+                "step": 2,
+                "unit": "px",
+                "label": "Name padding bottom",
+                "default": 0
+            }, 
             {
                 "type": "range",
                 "id": "column_gap",
