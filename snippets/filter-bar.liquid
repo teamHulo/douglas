@@ -1,3 +1,14 @@
+<style>
+  .filter-bar__inner {
+    background-color: unset !important;
+  }
+  .collection__active-filters-container {
+    border-top: none !important;
+  }
+  .filter-bar__button {
+    border: none;
+  }
+</style>
 {%- liquid
   assign filters_valid = false
   if results.filters and show_filters

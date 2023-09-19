@@ -1,3 +1,18 @@
+<style>
+  .collection__filters-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .title-collections span {
+    font-family: Proxima Nova;
+    font-size: var(--font-size-52);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    text-transform: uppercase;
+  }
+</style>
 {%- liquid
   assign paginated = false
   if section.settings.pagination == 'paginated'
@@ -38,6 +53,8 @@
       {% paginate collection.products by section.settings.per_page %}
         <div class="collection__container">
           <div class="collection__content">
+            <div class="collection__filters-wrapper">
+              <div class="title-collections"><span>ALL PRODUCTS</span></div>
             <div class="collection__filters" data-filter-bar>
               {%
                 render 'filter-bar' with
@@ -52,6 +69,7 @@
                 show_sort: section.settings.show_sort,
                 show_filters: section.settings.show_filters
               %}
+            </div>
             </div>
 
             <div class="collection__main-area">
