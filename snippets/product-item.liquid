@@ -1,3 +1,23 @@
+<style>
+  .product-item__inner img, .product-item__inner h4, .product-item__inner .a-btn {
+    transition: all 0.3s !important;
+  }
+  .product-item__inner:hover img {
+    transform: scale(1.1);
+    transition: all 0.3s;
+  }
+  .product-item__inner:hover h4 {
+    font-weight: 700;
+    transition: all 0.3s;
+  }
+  .product-item__inner:hover .a-btn {
+    transform: translateY(5px);
+    transition: all 0.3s;
+  }
+  .product-item__image-link {
+    background-color: unset !important;
+  }
+</style>
 {%- liquid
   if product.media.size > 1
     assign multiple_images = true
@@ -117,55 +137,57 @@
           {%- endif -%}
         </h4>
 
-        <span class="product-item__price-wrapper">
-          {% if placeholder %}
-            {{ 9999 | money -}}
-            {%- if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif %}
-          {% elsif product.compare_at_price > product.price %}
-            <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
-            <s class="t-subdued">
-              {{- product.compare_at_price | money -}}
-              {%- if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif -%}
-            </s>
+        {% if show_price %}
+          <span class="product-item__price-wrapper">
+            {% if placeholder %}
+              {{ 9999 | money -}}
+              {%- if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif %}
+            {% elsif product.compare_at_price > product.price %}
+              <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
+              <s class="t-subdued">
+                {{- product.compare_at_price | money -}}
+                {%- if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif -%}
+              </s>
 
-            <span class="sale">
+              <span class="sale">
+                {% if product.price_varies %}
+                  {%- assign sale_price = product.price | money -%}
+                  {{ 'products.product.on_sale_from_html' | t: price: sale_price -}}
+                  {%- if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif %}
+                {% else %}
+                  {{ product.price | money -}}
+                  {%- if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif %}
+                {% endif %}
+              </span>
+
+              {%- if settings.enable_discount -%}
+                <span class="displayed-discount fs-body-small">
+                  {%- if product.price_varies -%}
+                    {{ 'products.product.on_sale_varied' | t }}
+                    {{ 'products.product.on_sale_percent' | t: value: percent }}
+                  {%- else -%}
+                    {{ 'products.product.on_sale_percent' | t: value: percent }}
+                  {%- endif -%}
+                </span>
+              {%- endif -%}
+            {% else %}
               {% if product.price_varies %}
-                {%- assign sale_price = product.price | money -%}
-                {{ 'products.product.on_sale_from_html' | t: price: sale_price -}}
+                {%- assign price = product.price | money -%}
+                {{ 'products.product.from_lowest_price_html' | t: lowest_price: price -}}
                 {%- if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif %}
               {% else %}
-                {{ product.price | money -}}
-                {%- if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif %}
+                <span class="product-item__price">
+                  {{- product.price | money -}}
+                  {%- if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif -%}
+                </span>
               {% endif %}
-            </span>
-
-            {%- if settings.enable_discount -%}
-              <span class="displayed-discount fs-body-small">
-                {%- if product.price_varies -%}
-                  {{ 'products.product.on_sale_varied' | t }}
-                  {{ 'products.product.on_sale_percent' | t: value: percent }}
-                {%- else -%}
-                  {{ 'products.product.on_sale_percent' | t: value: percent }}
-                {%- endif -%}
-              </span>
-            {%- endif -%}
-          {% else %}
-            {% if product.price_varies %}
-              {%- assign price = product.price | money -%}
-              {{ 'products.product.from_lowest_price_html' | t: lowest_price: price -}}
-              {%- if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif %}
-            {% else %}
-              <span class="product-item__price">
-                {{- product.price | money -}}
-                {%- if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif -%}
-              </span>
             {% endif %}
-          {% endif %}
 
-          <div>
-            {% render 'unit-price', item: current_variant %}
-          </div>
-        </span>
+            <div>
+              {% render 'unit-price', item: current_variant %}
+            </div>
+          </span>
+        {% endif %}
       </div>
 
       {% # Add discount to sale badge, if enabled %}
@@ -302,6 +324,9 @@
           {% endform %}
         {%- endif -%}
       {%- endif -%}
+      {% if settings.enable_quick_add == false %}
+        <a style="align-self: center; width: 100%; margin-top: 15px" href="{{section.settings.url}}" class="a-btn prime">Read more</a>
+      {% endif %}
     </div>
 
     {%- if settings.enable_quick_add and current_variant.available -%}
