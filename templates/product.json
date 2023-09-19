@@ -13,65 +13,74 @@
           "settings": {
           }
         },
-        "border": {
-          "type": "border",
+        "description": {
+          "type": "description",
           "settings": {
+            "style": "paragraph"
           }
         },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
+            "show_labels": true,
+            "variant_popup_option": "Size",
+            "variant_popup_text": "Size guide",
+            "variant_popup_page": "",
+            "siblings_show_product_image": true,
+            "siblings_option_name": "Color"
           }
         },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {
+            "show_labels": true
           }
         },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-          }
-        },
-        "description": {
-          "type": "description",
-          "settings": {
-          }
-        },
-        "payment_widget": {
-          "type": "payment_widget",
-          "settings": {
-          }
-        },
-        "security_widget": {
-          "type": "security_widget",
-          "settings": {
-          }
-        },
-        "shipping_widget": {
-          "type": "shipping_widget",
-          "settings": {
+            "show_dynamic_checkout": true
           }
         }
       },
       "block_order": [
         "title",
         "price",
-        "border",
+        "description",
         "variant_picker",
         "quantity_selector",
-        "buy_buttons",
-        "description",
-        "payment_widget",
-        "security_widget",
-        "shipping_widget"
+        "buy_buttons"
       ],
       "settings": {
+        "show_breadcrumbs": true,
+        "show_navigation_buttons": false,
+        "enable_sticky_product_details": true,
+        "purchase_bar_flow": "checkout",
+        "enable_quick_purchase_bar": true,
+        "show_share_buttons": true,
+        "image_aspect_ratio": "natural",
+        "gallery_style": "thumbnails",
+        "mobile_gallery_style": "thumbnails",
+        "gallery_size": "medium",
+        "enable_product_lightbox": true,
+        "enable_video_looping": true,
+        "enable_animation": true,
+        "enable_gift_card_recipient": true
       }
     },
     "recommendations": {
       "type": "product-recommendations",
       "settings": {
+        "max_products": 6,
+        "columns": 3,
+        "title": "Recommended",
+        "subheading": "<p>You might want to take a closer look.<\/p>",
+        "text_max_width": 42,
+        "aspect_ratio": "natural",
+        "enable_animation": true,
+        "section_contrast": true,
+        "section_padding": "section--vertical-padding-top-bottom",
+        "padding_amount": "1.0"
       }
     }
   },
