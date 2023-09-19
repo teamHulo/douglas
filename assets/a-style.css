@@ -30,6 +30,7 @@ label {
   --font-size-36: clamp(20px, 1.875vw, 36px);
   --font-size-34: clamp(22px, 1.771vw, 34px);
   --font-size-32: clamp(22px, 1.667vw, 32px);
+  --font-size-30: clamp(22px, 1.563vw, 30px);
   --font-size-28: clamp(22px, 1.458vw, 28px);
   --font-size-26: clamp(20px, 1.354vw, 26px);
   --font-size-24: clamp(18px, 1.25vw, 24px);
@@ -853,3 +854,228 @@ header .header__inner {
 }
 
 /*** end footer ***/
+
+/**** product page ***/
+.product-container{
+  padding-top:50px;
+  padding-bottom:clamp(50px,6.250vw,120px);
+}
+.product-container .product {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.product-container .product .product__breadcrumbs {
+  margin-top: 0;
+}
+.product-container .product__top {
+  display: flex;
+  gap: 8.4%;
+}
+.product-container .product__media-container {
+  width: 50.3%;
+  max-width: 868px;
+}
+.product-container .product__details {
+  max-width: 618px;
+  width: 100%;
+}
+.product-container .product__meta {
+  margin-left: 0;
+  margin-top: 0;
+}
+.product-container .product__title {
+  color: var(--black, #080808);
+  font-family: Proxima Nova;
+  font-size: var(--font-size-44);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.44px;
+  text-transform: uppercase;
+  margin-bottom: clamp(20px, 2.188vw, 42px);
+}
+.product-container .product__price,
+.product-container .product__price span {
+  color: #080808;
+  font-family: Proxima Nova;
+  font-size: var(--font-size-30);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: clamp(20px, 2.188vw, 42px);
+}
+.product-container .product__price span {
+  margin-bottom: 0;
+}
+.product-container .product__description {
+  margin-bottom: clamp(20px, 2.188vw, 42px);
+}
+.product-container .product__description p {
+  font-family: Raleway;
+  font-size: var(--font-size-20);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 28px */
+  letter-spacing: 0.4px;
+  opacity: 0.8;
+  margin-top: 20px;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #d9d9d9;
+}
+.product-container .product__description h4,
+.product-container .product__description h4 > * {
+  font-family: Proxima Nova;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.72px;
+  text-transform: uppercase;
+  margin: 0 0 20px 0;
+}
+.product-container .product__controls-group-quanity .product__label-wrapper {
+  display: none;
+}
+.product-container .product__quantity {
+  height: 46px;
+  border-radius: 60px;
+  border: 1px solid #080808;
+  width: 156px;
+  justify-content: space-between;
+}
+.product-container .product__quantity-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px !important;
+  font-size: 35px;
+  height: auto;
+  font-weight: 200;
+  font-family: "Raleway";
+}
+.product-container .product__input--quantity {
+  color: #080808;
+  text-align: center;
+  font-family: Proxima Nova;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.product-container .product__policies {
+  display: none;
+}
+.product-container .shopify-payment-button__more-options {
+  display: none;
+}
+.product-container .product-form__item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.product-form__cart-submit {
+  display: flex !important;
+  padding: 0;
+  width: 100%;
+  max-width: 301px;
+  height: 55px;
+  color: #080808;
+  text-align: center;
+  /* button */
+  font-family: Proxima Nova !important;
+  font-size: 16px !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  line-height: normal !important;
+  letter-spacing: 0.64px !important;
+  text-transform: uppercase !important;
+  border-radius: 32px !important;
+  border: 1px solid #080808 !important;
+}
+.product-form__cart-submit span {
+  font-family: Proxima Nova;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.64px;
+  text-transform: uppercase;
+}
+.shopify-payment-button {
+  width: 100%;
+  max-width: 301px;
+}
+.shopify-payment-button__button {
+  margin-top: 0 !important;
+  display: flex !important;
+  padding: 0;
+  width: 100%;
+  max-width: 301px;
+  height: 55px !important;
+  color: #fff;
+  text-align: center;
+  /* button */
+  background-color: #080808 !important;
+  font-family: Proxima Nova !important;
+  font-size: 16px !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  line-height: normal !important;
+  letter-spacing: 0.64px !important;
+  text-transform: uppercase !important;
+  border-radius: 32px !important;
+  border: 1px solid #080808 !important;
+}
+.kqsiVA9Jf8LJAbxw8Bau {
+  background: #080808 !important;
+}
+.breadcrumbs__item {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  padding:0;
+  margin:0;
+}
+.breadcrumbs__current{
+  opacity: 1;
+}
+.breadcrumbs__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.breadcrumbs__item a,
+.breadcrumbs__item span {
+  color: rgba(1, 1, 1, 0.6);
+  font-family: Proxima Nova;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 100% */
+  letter-spacing: 0.39px;
+}
+.breadcrumbs__icon {
+  position: static;
+  margin-left:12px;
+}
+.product__breadcrumbs{
+  margin-bottom:38px;
+}
+@media (max-width: 767px) {
+  .product-container .product__top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .product-container .product__media-container {
+    width: 100%;
+    max-width: 100%;
+  }
+  .product-container .product__details {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+/*** end product page ***/

@@ -4,14 +4,20 @@
     <ol class="breadcrumbs__list">
       <li class="breadcrumbs__item">
         <a class="breadcrumbs__link" href="{{ routes.root_url }}">{{ 'general.navigation.home' | t }}</a>
-        <div class="breadcrumbs__icon">{% render 'icon', icon: 'chevron' %}</div>
+        <div class="breadcrumbs__icon"><svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.27691 3.99979L0.360107 0.938499L0.942977 0.326241L4.44265 3.99979L0.942977 7.67334L0.360107 7.06108L3.27691 3.99979Z" fill="#010101" fill-opacity="0.6"/>
+        </svg>
+        </div>
       </li>
       {%- case current_template -%}
         {%- when 'product' -%}
           {%- if collection.url -%}
             <li class="breadcrumbs__item">
               <a class="breadcrumbs__link" href="{{ collection.url }}">{{ collection.title }}</a>
-              <div class="breadcrumbs__icon">{% render 'icon', icon: 'chevron' %}</div>
+              <div class="breadcrumbs__icon"><svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.27691 3.99979L0.360107 0.938499L0.942977 0.326241L4.44265 3.99979L0.942977 7.67334L0.360107 7.06108L3.27691 3.99979Z" fill="#010101" fill-opacity="0.6"/>
+              </svg>
+              </div>
             </li>
           {%- endif -%}
           <li class="breadcrumbs__item">
@@ -21,7 +27,10 @@
           {%- if current_tags -%}
             <li class="breadcrumbs__item">
               <a class="breadcrumbs__link" href="{{ collection.url }}">{{ collection.title }}</a>
-              <div class="breadcrumbs__icon">{% render 'icon', icon: 'chevron' %}</div>
+              <div class="breadcrumbs__icon"><svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.27691 3.99979L0.360107 0.938499L0.942977 0.326241L4.44265 3.99979L0.942977 7.67334L0.360107 7.06108L3.27691 3.99979Z" fill="#010101" fill-opacity="0.6"/>
+              </svg>
+              </div>
             </li>
             <li class="breadcrumbs__item">
               <span class="breadcrumbs__current" aria-current="page">{{- current_tags | join: ' + ' -}}</span>
