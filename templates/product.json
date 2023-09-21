@@ -55,7 +55,7 @@
         "show_breadcrumbs": true,
         "show_navigation_buttons": false,
         "enable_sticky_product_details": true,
-        "purchase_bar_flow": "checkout",
+        "purchase_bar_flow": "add-to-cart",
         "enable_quick_purchase_bar": false,
         "show_share_buttons": true,
         "image_aspect_ratio": "natural",
