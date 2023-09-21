@@ -26,7 +26,7 @@ body,
 .btn.btn--primary,
 .spr-button-primary {
   font-family: "ProximaNova-Light", sans-serif !important;
-  font-weight: 300 !important;
+  font-weight: 300 ;
   font-style: normal !important;
 }
 
@@ -46,7 +46,7 @@ body,
   text-align: center !important;
   text-decoration: none !important;
   transition: background-color 0.3s ease, color 0.3s ease,
-    border-color 0.3s ease !important;
+  border-color 0.3s ease !important;
 }
 
 /* Button hover effect for light background colors */

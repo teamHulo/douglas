@@ -89,7 +89,8 @@ ___ ___ ___ ___
     data-enable-page-transitions="true"
     {% endif %}
     data-enable-reveal-animations="{{ settings.enable_reveal_animations }}"
-    data-show-secondary-image-on-hover="{{ settings.show_secondary_image_on_hover }}">
+    data-show-secondary-image-on-hover="{{ settings.show_secondary_image_on_hover }}"
+    data-name="{{template.name}}">
     <div class="page">
       {% if settings.enable_page_transitions %}
         {% render 'page-transition-overlay' %}
@@ -104,7 +105,7 @@ ___ ___ ___ ___
       {% sections 'overlay-group' %}
 
       <main id="main" class="main">
-        {{ content_for_layout }}
+          {{ content_for_layout }}
       </main>
 
       {% sections 'new-footer-group' %}
@@ -125,6 +126,10 @@ ___ ___ ___ ___
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
       defer="defer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-animate-scroll/1.5.2/jquery.animate-scroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+
     <script src="{{ 'a-script.js' | asset_url }}" defer="defer"></script>
 
   </body>

@@ -799,6 +799,14 @@
 </div>
 {%- assign models = product.media | where: 'media_type', 'model' | json -%}
 
+
+
+{% render 'scroll-slides', product:product %} 
+
+
+
+
+
 <script>
   window.ShopifyXR = window.ShopifyXR || function() {
     (ShopifyXR.q = ShopifyXR.q || []).push(arguments)

@@ -1,14 +1,14 @@
-<div class="section-about">
+<div class="section-about  animation section" data-section-id="{{ section.id }}">
   <div class="container">
     <div class="section-about__wrap">
-      <div class="name">
+      <div class="name ">
         <span>
           {{ section.settings.name }}
         </span>
       </div>
-      <div class="title-2">
-        <h2>
-          {{ section.settings.title }}
+      <div class="title-2 ">
+        <h2 >
+          {{ section.settings.title }}    
         </h2>
       </div>
       <div class="list-items">
@@ -22,17 +22,17 @@
 
               </div>
               <div class="item-content">
-                <div class="title">
+                <div class="title ">
                   <h4>
                     {{ block.settings.title }}
                   </h4>
                 </div>
-                <div class="small-text">
+                <div class="small-text ">
                   <p>
                     {{ block.settings.text }}
                   </p>
                 </div>
-                <div class="item-btn">
+                <div class="item-btn ">
                   <a href="{{block.settings.url}}" class="a-btn prime">{{ block.settings.btn_name }}</a>
                 </div>
               </div>

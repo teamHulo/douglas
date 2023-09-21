@@ -1,0 +1,82 @@
+{% assign array = product.metafields.custom.steps_text.value %}
+{% assign arraySize = array | size %}
+
+{% if arraySize != 0 %}
+  <div class="section-scroll-slides scroll-container">
+    <div class="container">
+      <div class="section-scroll__wrap ">
+        <div class="left">
+          <div class="left__wrap">
+            <div class="content">
+              <div class="title">
+                <h2>
+                  {{ product.metafields.custom.title }}
+                </h2>
+              </div>
+              <div class="text__body">
+                <div class="text__wrap ">
+                  {% for value in product.metafields.custom.steps_text.value %}
+                    <div class="step contento">
+                      <div class="text">
+                        <p>
+                          {{ value }}
+                        </p>
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="right__wrap">
+            <div class="images-scroll-container">
+              <div class="images__wrap panels" id="images-wrap">
+                {% for value in product.metafields.custom.steps_images.value %}
+                  <div class="step-image panel">
+                    <img src="{{ value | img_url : 'master' }}" alt="">
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="mobile-metafields-product">
+    <div class="container">
+      <div class="mobile-metafields-product__wrap">
+        <div class="title">
+          <h2>
+            {{ product.metafields.custom.title }}
+          </h2>
+        </div>
+        <div class="items-list">
+          {% for i in (0..arraySize) %}
+          <div class="item">
+              <div class="item__wrap">
+                <div class="text">
+                  <p>
+                    {{ array[i] }}
+                  </p>
+                </div>
+                <div class="image">
+                  {% for value in product.metafields.custom.steps_images.value %}
+                    {% if i == forloop.index0 %}
+                      <img src="{{ value | img_url: 'master' }}" alt="">
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
