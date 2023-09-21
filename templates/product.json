@@ -56,7 +56,7 @@
         "show_navigation_buttons": false,
         "enable_sticky_product_details": true,
         "purchase_bar_flow": "checkout",
-        "enable_quick_purchase_bar": true,
+        "enable_quick_purchase_bar": false,
         "show_share_buttons": true,
         "image_aspect_ratio": "natural",
         "gallery_style": "thumbnails",
