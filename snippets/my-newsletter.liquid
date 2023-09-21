@@ -1,7 +1,7 @@
 {% form 'customer', class: class, id: id %}
   {% render 'form-status', form: form, form_id: id, success_message: success_msg %}
 
-  {%- unless form.posted_successfully? -%}
+  
     <div class="newsletter-form-inner">
       <input
         type="hidden"
@@ -36,5 +36,5 @@
         </p>
       </div>
     </div>
-  {%- endunless -%}
+  
 {% endform %}
