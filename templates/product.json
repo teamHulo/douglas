@@ -62,7 +62,7 @@
         "gallery_style": "thumbnails",
         "mobile_gallery_style": "thumbnails",
         "gallery_size": "medium",
-        "enable_product_lightbox": true,
+        "enable_product_lightbox": false,
         "enable_video_looping": true,
         "enable_animation": true,
         "enable_gift_card_recipient": true
