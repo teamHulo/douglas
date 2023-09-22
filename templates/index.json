@@ -181,50 +181,6 @@
         "column_gap": 50
       }
     },
-    "0e6446f7-19a6-45f3-bce1-13749fe15be2": {
-      "type": "section-tab-hover",
-      "blocks": {
-        "7ac15ed8-bfec-48f5-977f-82a5f745d39f": {
-          "type": "item",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/unsplash_wE3hiKhAbuE_1.png",
-            "title": "Lorem ipsum dolor sit",
-            "text": "Lorem ipsum dolor sit amet consectetur. Tellus aliquam quis sed viverra et aenean.",
-            "url": "",
-            "btn_name": "LEarn more"
-          }
-        },
-        "91f9303d-6777-4ed0-a068-f592bc771e9b": {
-          "type": "item",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/1666847428_2-celes-club-p-kot-na-chernom-fone-oboi-krasivo-2.jpg",
-            "title": "Lorem ipsum dolor sit",
-            "text": "Lorem ipsum dolor sit amet consectetur. Tellus aliquam quis sed viverra et aenean.",
-            "url": "#",
-            "btn_name": "LEarn more"
-          }
-        },
-        "c459448a-740d-4168-a408-f1281187c0ab": {
-          "type": "item",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/lucija-ros-FzQiiLqcRtE-unsplash.jpg",
-            "title": "Lorem ipsum dolor sit",
-            "text": "Lorem ipsum dolor sit amet consectetur. Tellus aliquam quis sed viverra et aenean.",
-            "url": "#",
-            "btn_name": "LEarn more"
-          }
-        }
-      },
-      "block_order": [
-        "7ac15ed8-bfec-48f5-977f-82a5f745d39f",
-        "91f9303d-6777-4ed0-a068-f592bc771e9b",
-        "c459448a-740d-4168-a408-f1281187c0ab"
-      ],
-      "settings": {
-        "name": "",
-        "title": "How to shop with us"
-      }
-    },
     "701a8324-b670-4489-bde5-621c76cdd7d0": {
       "type": "section-image-with-text",
       "blocks": {
@@ -306,6 +262,72 @@
         "column_gap": 20,
         "border": "top"
       }
+    },
+    "6145700a-f292-470e-83b3-547f6dc781de": {
+      "type": "section-image-baner",
+      "settings": {
+        "padding_x": 0,
+        "padding_y": 140,
+        "img": "shopify:\/\/shop_images\/Rectangle249-compress.jpg",
+        "color_text": "#ffffff",
+        "title": "Treatments",
+        "title_font": "h2",
+        "title_padding_bottom": 40,
+        "subtitle": "<p>Orci nunc vestibulum et mollis sed facilisis proin. Sed cursus nulla amet sodales etiam purus nunc nisi lectus. Pellentesque natoque nisi.<\/p>",
+        "subtitle_padding_bottom": 40,
+        "btn_text": "learn more",
+        "btn_url": "shopify:\/\/collections\/all",
+        "btn_style": "secondary",
+        "text_width": 800,
+        "text_align_item": "center",
+        "text_position": "center",
+        "text_padding_top": 0,
+        "text_padding_bottom": 0
+      }
+    },
+    "0e6446f7-19a6-45f3-bce1-13749fe15be2": {
+      "type": "section-tab-hover",
+      "blocks": {
+        "7ac15ed8-bfec-48f5-977f-82a5f745d39f": {
+          "type": "item",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/unsplash_wE3hiKhAbuE_1.png",
+            "title": "Lorem ipsum dolor sit",
+            "text": "Lorem ipsum dolor sit amet consectetur. Tellus aliquam quis sed viverra et aenean.",
+            "url": "",
+            "btn_name": "LEarn more"
+          }
+        },
+        "91f9303d-6777-4ed0-a068-f592bc771e9b": {
+          "type": "item",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/1666847428_2-celes-club-p-kot-na-chernom-fone-oboi-krasivo-2.jpg",
+            "title": "Lorem ipsum dolor sit",
+            "text": "Lorem ipsum dolor sit amet consectetur. Tellus aliquam quis sed viverra et aenean.",
+            "url": "#",
+            "btn_name": "LEarn more"
+          }
+        },
+        "c459448a-740d-4168-a408-f1281187c0ab": {
+          "type": "item",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/lucija-ros-FzQiiLqcRtE-unsplash.jpg",
+            "title": "Lorem ipsum dolor sit",
+            "text": "Lorem ipsum dolor sit amet consectetur. Tellus aliquam quis sed viverra et aenean.",
+            "url": "#",
+            "btn_name": "LEarn more"
+          }
+        }
+      },
+      "block_order": [
+        "7ac15ed8-bfec-48f5-977f-82a5f745d39f",
+        "91f9303d-6777-4ed0-a068-f592bc771e9b",
+        "c459448a-740d-4168-a408-f1281187c0ab"
+      ],
+      "settings": {
+        "name": "",
+        "title": "How to shop with us"
+      }
     }
   },
   "order": [
@@ -314,8 +336,9 @@
     "488d4fc0-4cab-4942-8eb2-eff919582ad8",
     "e93a0e87-b11a-40e2-b596-bd60239b309b",
     "6fbf64d4-c0e4-4bac-a621-219775a0c45a",
-    "0e6446f7-19a6-45f3-bce1-13749fe15be2",
     "701a8324-b670-4489-bde5-621c76cdd7d0",
-    "a9582002-bf1a-412f-a25a-f2fb7ece2685"
+    "a9582002-bf1a-412f-a25a-f2fb7ece2685",
+    "6145700a-f292-470e-83b3-547f6dc781de",
+    "0e6446f7-19a6-45f3-bce1-13749fe15be2"
   ]
 }
