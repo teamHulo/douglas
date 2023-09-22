@@ -717,6 +717,7 @@ header .header__inner {
 }
 .footer__content .links-item {
   width: max-content;
+  flex-basis: 40%;
 }
 .footer__content .links-item.mb {
   margin-bottom: auto;
@@ -863,6 +864,10 @@ header .header__inner {
   }
   .footer__newsletter {
     width: 100%;
+  }
+  .footer__content .links-item {
+    width: max-content;
+    flex-basis: auto;
   }
 }
 
