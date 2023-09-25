@@ -1,0 +1,34 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "content_max_width": 700
+      }
+    },
+    "83793e8e-8a4e-4f47-a28c-ca6748137289": {
+      "type": "section-image-with-text",
+      "blocks": {
+        "6db8ed52-0685-4896-ade3-6adf97b9b3bc": {
+          "type": "image",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Lum_Serum.png"
+          }
+        }
+      },
+      "block_order": [
+        "6db8ed52-0685-4896-ade3-6adf97b9b3bc"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "column_gap": 0,
+        "border": "none"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "83793e8e-8a4e-4f47-a28c-ca6748137289"
+  ]
+}
