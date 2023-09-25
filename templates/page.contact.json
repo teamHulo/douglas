@@ -7,7 +7,7 @@
           "type": "info",
           "settings": {
             "title": "Get in Touch",
-            "text": "<p>color: var(--black, #080808);<br\/>font-family: Raleway;<br\/>font-size: 22px;<br\/>font-style: normal;<br\/>font-weight: 400;<br\/>line-height: 140%; \/* 30.8px *\/<br\/>letter-spacing: 0.44px;<\/p>",
+            "text": "<p>Lorem ipsum dolor sit amet consectetur. Tempor pulvinar sed nibh maecenas amet ullamcorper. Fames vitae accumsan ullamcorper neque etiam. Interdum sodales sit.<\/p>",
             "label": "We’re happy to chat with you!",
             "mail": "info@douglas.com",
             "tel": "+1(555)-555-5555",
