@@ -1,18 +1,112 @@
+<style>
+  .contact__info {
+    display: flex;
+    flex-direction: column;
+  }
+  .contact__info h3 {
+    font-family: Proxima Nova;
+    font-size: var(--font-size-72);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+
+  .contact__info .contact-info {
+    font-family: Raleway;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: 0.44px;
+    margin-bottom: 16px;
+  }
+  .contact__info .contact-info span {
+    margin-right: 12px;
+  }
+  .contact__info p:not(.contact-info) {
+    font-family: Raleway;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 0.44px;
+    margin-bottom: 94px;
+  }
+  .item-icon {
+    display: flex;
+    align-items: center;
+  }
+  .radio-question {
+    margin: 52px 0;
+  }
+  .radio-question p {
+    font-family: Raleway;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    margin-bottom: 26px;
+  }
+  .radio-question label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+  }
+  .radio-question input::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1px solid black;
+  }
+  .contact__content input, .contact__content textarea, .contact__content input:focus, .contact__content textarea:focus {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-family: Raleway;
+  } 
+
+  .contact__content input, .contact__content textarea {
+    font-family: Raleway;
+    font-size: var(--font-size-32);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  } 
+  .contact__content input::placeholder, .contact__content textarea::placeholder, .contact__content .radio-question label {
+    font-size: var(--font-size-20);
+    letter-spacing: 0.4px;
+  } 
+  .contact__content input:focus, .contact__content textarea:focus {
+    box-shadow: none;
+  } 
+  .btn.btn--primary {
+    border-radius: 50px;
+    padding: 16px 60px !important;
+  }
+</style>
+
 <div
   class="contact{% if section.blocks.size > 0 %} contact--has-image{% endif %}"
   data-section-id="{{ section.id }}"
   data-section-type="contact"
 >
-  <div class="contact__inner">
+  <div class="contact__inner container">
     {%- for block in section.blocks -%}
-      <div class="contact__image">
-        {%- if block.settings.image -%}
-          {% render 'image', image: block.settings.image, focal_point: 'image_presentation' %}
-        {%- else -%}
-          <div class="placeholder-image">
-            {{ 'image' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
-          </div>
-        {%- endif -%}
+      <div class="contact__info">
+        <h3>{{ block.settings.title }}</h3>
+        {{ block.settings.text }}
+        <p>{{ block.settings.label }}</p>
+        
+        <p class="contact-info">{% render 'icon' with icon: 'mail', class: 'Contact' %}{{ block.settings.mail }}</p>
+        <p class="contact-info">{% render 'icon' with icon: 'phone', class: 'Contact' %}{{ block.settings.tel }}</p>
+        <p class="contact-info">{% render 'icon' with icon: 'location', class: 'Contact' %}{{ block.settings.address }}</p>
       </div>
     {%- endfor -%}
 
@@ -66,8 +160,46 @@
         >
 
         <label for="contact-ContactFormMessage" class="visually-hidden">{{ 'contact.form.message' | t }}</label>
+        <div class="radio-question">
+          <p>How we can help you?</p>
+            <div>
+              <label>
+                <input type="checkbox" name="contact[help-option-1]" value="I would like to book a complementary virtual video consultation"/>I would like to book a complementary virtual video consultation
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" name="contact[help-option-2]" value="I would like to book a complementary phone consultation"/>I would like to book a complementary phone consultation
+              </label>
+            </div>
+              <div>
+                <label>
+                  <input type="checkbox" name="contact[help-option-3]" value="I would like to book a in clinic consultation"/>I would like to book a in clinic consultation
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input type="checkbox" name="contact[help-option-4]" value="Please let me know my closest clinic"/>Please let me know my closest clinic
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input type="checkbox" name="contact[help-option-5]" value="I have a product enquiry"/>I have a product enquiry
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input type="checkbox" name="contact[help-option-6]" value="I would like to book a professional treatment"/>I would like to book a professional treatment
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input type="checkbox" name="contact[help-option-7]" value="Other"/>Other
+                </label>
+              </div>
+        </div>
         <textarea
-          rows="10"
+          rows="3"
           name="contact[body]"
           id="contact-ContactFormMessage"
           class="input-reset input w-100"
@@ -92,15 +224,39 @@
   "class": "page-section",
   "blocks": [
     {
-      "type": "image",
-      "name": "t:sections.main_page_contact.blocks.image.name",
+      "type": "info",
+      "name": "Info",
       "limit": 1,
       "settings": [
         {
-          "id": "image",
-          "type": "image_picker",
-          "label": "t:sections.main_page_contact.blocks.image.settings.image.label",
-          "info": "t:sections.main_page_contact.blocks.image.settings.image.info"
+          "id": "title",
+          "type": "text",
+          "label": "Title"
+        },
+        {
+          "id": "text",
+          "type": "richtext",
+          "label": "Text"
+        },
+        {
+          "id": "label",
+          "type": "text",
+          "label": "Label"
+        },
+        {
+          "id": "mail",
+          "type": "text",
+          "label": "E-mail"
+        },
+        {
+          "id": "tel",
+          "type": "text",
+          "label": "Phone number"
+        },
+        {
+          "id": "address",
+          "type": "text",
+          "label": "Address"
         }
       ]
     }
