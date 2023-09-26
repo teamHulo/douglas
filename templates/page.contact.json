@@ -2,6 +2,22 @@
   "sections": {
     "main": {
       "type": "main-page--contact",
+      "blocks": {
+        "96cc6995-4e70-479f-9346-3f1bb75e2856": {
+          "type": "info",
+          "settings": {
+            "title": "Get in Touch",
+            "text": "<p>Lorem ipsum dolor sit amet consectetur. Tempor pulvinar sed nibh maecenas amet ullamcorper. Fames vitae accumsan ullamcorper neque etiam. Interdum sodales sit.<\/p>",
+            "label": "We’re happy to chat with you!",
+            "mail": "info@douglas.com",
+            "tel": "+1(555)-555-5555",
+            "address": "Douglas Pereira Skin Health, Level 6, Suite 4 \/ 60 Park Street Sydney NSW Australia 2000"
+          }
+        }
+      },
+      "block_order": [
+        "96cc6995-4e70-479f-9346-3f1bb75e2856"
+      ],
       "settings": {
       }
     }

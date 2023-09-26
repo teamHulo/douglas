@@ -1,0 +1,206 @@
+<style>
+    #shopify-section-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  .shipping__wrapper {
+    display: flex;
+  }
+  .shipping__menu {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+  }
+  .shipping__menu a {
+    font-family: Proxima Nova;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    opacity: 0.5;
+    margin-bottom: 32px;
+  }
+  .shipping__menu a.item-active {
+    opacity: 1;
+  }
+  .shipping__content {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+  }
+  .item-tab-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .item__title {
+    font-family: Proxima Nova;
+    font-size: var(--font-size-36);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: 0.25px;
+    padding-right: 35px;
+  }
+  .item__text {
+    margin: 32px 0;
+    padding-right: 32px;
+  }
+  .item__text p {
+    font-family: Raleway;
+    font-size: var(--font-size-24);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+    letter-spacing: 0.48px;
+  }
+  .item {
+    margin-bottom: 32px;
+    border-bottom: 1px solid #383838;
+  }
+  .title {
+    font-family: Proxima Nova;
+    font-size: var(--font-size-72);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    text-transform: uppercase;
+    margin: 64px 0;
+  }
+  .item-tab .item-tab-content {
+    display: none;
+  }
+  .item-tab.active .item-tab-content {
+    display: block;
+  }
+  .close::before, .close::after {
+    position: absolute;
+    right: 16px;
+    top: 0;
+    content: ' ';
+    height: 32px;
+    width: 2px;
+    background-color: #333;
+    transition: all 0.3s ease;
+  }
+  .close::after {
+    transform: rotate(90deg);
+  }
+  .item-tab.active .close::before {
+    transform: rotate(90deg);
+  }
+  @media (max-width: 60em){
+    .shipping__wrapper {
+        flex-wrap: wrap;
+    }
+    .shipping__menu, .shipping__content {
+        width: 100%;
+        flex:auto;
+    }
+    .shipping__content {
+        margin-top: 60px;
+    }
+    .shipping__menu {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+  }
+</style>
+
+
+<div class="shipping container">
+  <h2 class="title">{{ section.settings.title }}</h2>
+  <div class="shipping__wrapper">
+    <div class="shipping__menu">
+      {% for item in section.settings.menu.links %}
+        <a
+          href="{{ item.url }}"
+          {% if item.active %}
+          class="item-active"
+          {% endif %}>{{ item.title }}</a>
+      {% endfor %}
+    </div>
+    <div class="shipping__content">
+      {% for block in section.blocks %}
+        <div class="item">
+          <div class="item-tab {% if forloop.first %}active{% endif %}">
+            <div class="item-tab-title">
+              <h2 class="item__title">{{ block.settings.title }}</h2>
+              <span class="close"></span>
+            </div>
+            <div class="item-tab-content">
+              <h4 class="item__text">{{ block.settings.text }}</h4>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Shipping",
+    "settings": [
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 180,
+        "step": 2,
+        "unit": "px",
+        "label": "Section padding top",
+        "default": 0
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 180,
+        "step": 2,
+        "unit": "px",
+        "label": "Section padding bottom",
+        "default": 0
+      }, {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }, {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Select menu"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Item",
+        "type": "item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          }, {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Shipping"
+      }
+    ]
+  }
+{% endschema %}
+
+<script>
+  let tabs = Array.from(document.getElementsByClassName('item-tab'));
+  tabs.map(e => e.addEventListener('click', function() {
+    e.classList.toggle('active');
+  }))
+</script>

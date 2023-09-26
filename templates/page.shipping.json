@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "content_max_width": 700
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

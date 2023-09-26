@@ -1,0 +1,52 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_max_width": 700
+      }
+    },
+    "0ec08dd8-c830-402d-bd9e-54ee0ec141da": {
+      "type": "section-shipping",
+      "blocks": {
+        "97441c29-3b1e-434b-80b7-0d0c1cdb0a3b": {
+          "type": "item",
+          "settings": {
+            "title": "Lorem ipsum dolor sit amet consectetur. Magna amet.",
+            "text": "<p>Lorem ipsum dolor sit amet consectetur. Aliquam quam mauris mauris quam tellus velit tincidunt nunc venenatis. Arcu sagittis mauris ullamcorper faucibus ullamcorper tristique sed. Nulla risus.<\/p>"
+          }
+        },
+        "6303e881-45b4-4e49-ae64-da943cd051a3": {
+          "type": "item",
+          "settings": {
+            "title": "Lorem ipsum dolor sit amet consectetur. Magna amet.",
+            "text": "<p>Lorem ipsum dolor sit amet consectetur. Aliquam quam mauris mauris quam tellus velit tincidunt nunc venenatis. Arcu sagittis mauris ullamcorper faucibus ullamcorper tristique sed. Nulla risus.<\/p>"
+          }
+        },
+        "ce3dcd61-7fbc-4545-af01-38bccb059a92": {
+          "type": "item",
+          "settings": {
+            "title": "Lorem ipsum dolor sit amet consectetur. Magna amet.",
+            "text": "<p>Lorem ipsum dolor sit amet consectetur. Aliquam quam mauris mauris quam tellus velit tincidunt nunc venenatis. Arcu sagittis mauris ullamcorper faucibus ullamcorper tristique sed. Nulla risus.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "97441c29-3b1e-434b-80b7-0d0c1cdb0a3b",
+        "6303e881-45b4-4e49-ae64-da943cd051a3",
+        "ce3dcd61-7fbc-4545-af01-38bccb059a92"
+      ],
+      "settings": {
+        "padding_top": 78,
+        "padding_bottom": 134,
+        "title": "Shippin + Returns",
+        "menu": "shipping-menu"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "0ec08dd8-c830-402d-bd9e-54ee0ec141da"
+  ]
+}

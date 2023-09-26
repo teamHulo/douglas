@@ -23,7 +23,7 @@
 #shopify-section-{{ section.id }} .image-banner__text h4,
 #shopify-section-{{ section.id }} .image-banner__text h5,
 #shopify-section-{{ section.id }} .image-banner__text h6 {
-    padding-bottom: {{ section.settings.subtitle_padding_bottom }}px;
+    padding-bottom: {{ section.settings.title_padding_bottom }}px;
 }
 #shopify-section-{{ section.id }} .image-banner__text-text {
     padding-bottom: {{ section.settings.subtitle_padding_bottom }}px;
@@ -79,6 +79,7 @@
     {
         "name": "image banner",
         "tag": "section",
+        "class": "section",
         "settings": [
             {
                 "type": "range",
