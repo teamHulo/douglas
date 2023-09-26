@@ -2,33 +2,67 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "content_max_width": 700
       }
     },
-    "83793e8e-8a4e-4f47-a28c-ca6748137289": {
-      "type": "section-image-with-text",
+    "29ad26a2-42da-4c1c-b1ca-bc893b78635b": {
+      "type": "section-shipping",
       "blocks": {
-        "6db8ed52-0685-4896-ade3-6adf97b9b3bc": {
-          "type": "image",
+        "e8004e63-7a37-4f63-b25f-ea8455ea5e04": {
+          "type": "item",
           "settings": {
-            "img": "shopify:\/\/shop_images\/Lum_Serum.png"
+            "title": "Lorem ipsum dolor sit amet consectetur. Magna amet.",
+            "text": "<p>Lorem ipsum dolor sit amet consectetur. Aliquam quam mauris mauris quam tellus velit tincidunt nunc venenatis. Arcu sagittis mauris ullamcorper faucibus ullamcorper tristique sed. Nulla risus.<\/p>"
+          }
+        },
+        "16a21761-0bc6-4030-9fcb-1f48e4333af8": {
+          "type": "item",
+          "settings": {
+            "title": "Lorem ipsum dolor sit amet consectetur. Magna amet.",
+            "text": "<p>Lorem ipsum dolor sit amet consectetur. Aliquam quam mauris mauris quam tellus velit tincidunt nunc venenatis. Arcu sagittis mauris ullamcorper faucibus ullamcorper tristique sed. Nulla risus.<\/p>"
+          }
+        },
+        "a708024b-532d-4017-a340-3ecbee534776": {
+          "type": "item",
+          "settings": {
+            "title": "Lorem ipsum dolor sit amet consectetur. Magna amet.",
+            "text": "<p>Lorem ipsum dolor sit amet consectetur. Aliquam quam mauris mauris quam tellus velit tincidunt nunc venenatis. Arcu sagittis mauris ullamcorper faucibus ullamcorper tristique sed. Nulla risus.<\/p>"
+          }
+        },
+        "d15b7e20-34fd-4d54-acbc-f06eeb09d848": {
+          "type": "item",
+          "settings": {
+            "title": "Lorem ipsum dolor sit amet consectetur. Magna amet.",
+            "text": "<p>Lorem ipsum dolor sit amet consectetur. Aliquam quam mauris mauris quam tellus velit tincidunt nunc venenatis. Arcu sagittis mauris ullamcorper faucibus ullamcorper tristique sed. Nulla risus.<\/p>"
+          }
+        },
+        "5d76e5b3-617e-4190-8960-09db365babab": {
+          "type": "item",
+          "settings": {
+            "title": "Lorem ipsum dolor sit amet consectetur. Magna amet.",
+            "text": "<p>Lorem ipsum dolor sit amet consectetur. Aliquam quam mauris mauris quam tellus velit tincidunt nunc venenatis. Arcu sagittis mauris ullamcorper faucibus ullamcorper tristique sed. Nulla risus.<\/p>"
           }
         }
       },
       "block_order": [
-        "6db8ed52-0685-4896-ade3-6adf97b9b3bc"
+        "e8004e63-7a37-4f63-b25f-ea8455ea5e04",
+        "16a21761-0bc6-4030-9fcb-1f48e4333af8",
+        "a708024b-532d-4017-a340-3ecbee534776",
+        "d15b7e20-34fd-4d54-acbc-f06eeb09d848",
+        "5d76e5b3-617e-4190-8960-09db365babab"
       ],
       "settings": {
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "column_gap": 0,
-        "border": "none"
+        "padding_top": 78,
+        "padding_bottom": 130,
+        "title": "Shippin + Returns",
+        "menu": "shipping-menu"
       }
     }
   },
   "order": [
     "main",
-    "83793e8e-8a4e-4f47-a28c-ca6748137289"
+    "29ad26a2-42da-4c1c-b1ca-bc893b78635b"
   ]
 }
