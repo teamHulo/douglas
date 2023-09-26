@@ -2,11 +2,76 @@
   "sections": {
     "main": {
       "type": "main-page--about",
+      "disabled": true,
+      "settings": {
+        "intro": "",
+        "content_max_width": 700
+      }
+    },
+    "28bf57a0-8977-4dfa-a6db-3a5bb98b2df6": {
+      "type": "scroll-about-fade",
+      "blocks": {
+        "c1c31b6d-fb59-4a35-8be7-985cc1334d60": {
+          "type": "section-1",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/unsplash_wE3hiKhAbuE_1.png",
+            "title": "DOUGLAS PEREIRA SKINSCIENCE:",
+            "subtitle": "(All skin type, uncomplicated skincare collection",
+            "text": "<p>Twelve years after founding our premium skincare range Douglas Pereira Skin Health we have launched our new range Douglas Pereira Skin Science. This collectionof products came from a need Douglas sawin the market, wheresome skincare consumers don’t want to have a complicated skincare routine, but still wanted to get most out of a few steps.<\/p><p>The rangeis a straightforward collection of products that has been developedfor all genders and skin types. Our universal formulations offerall in one skincare solutionsfor those not wanting a complicated homecare regime, but still striving for result driven skincare without toomany steps<\/p>"
+          }
+        },
+        "c0af95d9-96cb-4b14-baa9-b0fcba3a2742": {
+          "type": "section-2",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/1666847428_2-celes-club-p-kot-na-chernom-fone-oboi-krasivo-2.jpg",
+            "title": "AN UNCOMPLICATED APPROACH:",
+            "subtitle": "The range has been divided into three collections making it easy for you to navigate and select your products. Core, Supportive and Enhancement collections."
+          }
+        },
+        "d5eb7694-27ca-46a8-910c-a8f7a35a27f5": {
+          "type": "section-3",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/makeup-powders-and-brush.jpg",
+            "alignment": "flex-start",
+            "title": "Core collection",
+            "text": "<p>The core productcollectionis your everyday routine and hasbeen formulated to suite all skin types, eliminating the challenge of choosing the right products for your skin. <br\/>The system is straightforward and has minimal steps, so you don’t have to invest too much time looking after your skinbutcan have the confidence all bases are covered with just a few steps.<\/p>",
+            "url": "",
+            "btn_name": ""
+          }
+        },
+        "ae8e0f66-1cdf-4033-8c46-818f01155728": {
+          "type": "section-3",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/makeup-and-jewelry.jpg",
+            "alignment": "flex-start",
+            "title": "Universal cleanser",
+            "text": "<p>Lorem ipsum dolor sit amet consectetur. Orci hendrerit posuere volutpat egestas. Suscipit rutrum est urna sed porttitor elementum. Consectetur ut nec egestas felis nulla sed bibendum. Nisl risus ultricies enim sapien sollicitudin .<\/p>",
+            "url": "#",
+            "btn_name": "Learn more"
+          }
+        },
+        "1c0212c8-19c7-47cf-9f36-0c2894346569": {
+          "type": "section-4",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Img_3.png",
+            "title": "Lorem ipsum",
+            "text": "<p>Lorem ipsum dolor sit amet consectetur. Orci hendrerit posuere volutpat egestas. Suscipit rutrum est urna sed porttitor elementum. Consectetur ut nec egestas felis nulla sed bibendum. Nisl risus ultricies enim sapien sollicitudin .<\/p><p>Suscipit rutrum est urna sed porttitor elementum. Consectetur ut nec egestas felis nulla sed bibendum. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "c1c31b6d-fb59-4a35-8be7-985cc1334d60",
+        "c0af95d9-96cb-4b14-baa9-b0fcba3a2742",
+        "d5eb7694-27ca-46a8-910c-a8f7a35a27f5",
+        "ae8e0f66-1cdf-4033-8c46-818f01155728",
+        "1c0212c8-19c7-47cf-9f36-0c2894346569"
+      ],
       "settings": {
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "28bf57a0-8977-4dfa-a6db-3a5bb98b2df6"
   ]
 }
