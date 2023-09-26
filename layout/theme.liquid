@@ -90,7 +90,7 @@ ___ ___ ___ ___
     {% endif %}
     data-enable-reveal-animations="{{ settings.enable_reveal_animations }}"
     data-show-secondary-image-on-hover="{{ settings.show_secondary_image_on_hover }}"
-    data-name="{{template.name}}">
+    data-name="{{template.name}}" data-page="{{page.handle}}">
     <div class="page">
       {% if settings.enable_page_transitions %}
         {% render 'page-transition-overlay' %}

@@ -88,25 +88,22 @@ $(() => {
     }
   });
 });
-
 document.addEventListener("DOMContentLoaded", () => {
-  // Получаем все секции
   const sections = document.querySelectorAll(".special__section");
   const images = gsap.utils.toArray(".bg__all-wrap img");
+  images[0].classList.add("active");
 
-  // Создаем объект ScrollTrigger для прокрутки
   ScrollTrigger.create({
-    trigger: ".scroll-about-fade", // Триггер для всей секции
-    start: "top top", // Начало триггера в верхней части окна
-    end: () => `+=${100 * (sections.length - 1)}vh`, // Конец триггера на последней секции
-    scrub: 1, // Включаем "прокрутку" анимации
-    pin: true, // Фиксируем текущую секцию
+    trigger: ".scroll-about-fade",
+    start: "top top",
+    end: () => `+=${100 * (sections.length - 1)}vh`,
+    scrub: 1,
+    pin: true,
     onUpdate: (scrollTrigger) => {
       const newIndex = Math.floor(
         scrollTrigger.progress * (sections.length - 1)
       );
 
-      // Переключаем классы для активных и неактивных секций
       sections.forEach((section, index) => {
         if (index === newIndex) {
           section.style.display = "flex";
@@ -115,7 +112,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
 
-      // Переключаем классы для активных и неактивных изображений
       images.forEach((image, index) => {
         if (index === newIndex) {
           image.classList.add("active");
@@ -131,25 +127,36 @@ document.addEventListener("DOMContentLoaded", () => {
     const prev = images[index - 1];
     next && next.classList.toggle("active");
     prev && prev.classList.toggle("active");
+
+    const activeSection = sections[index];
+    if (activeSection) {
+      const elementsToAnimate = activeSection.querySelectorAll(".fade-in");
+
+      gsap.to(elementsToAnimate, {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        stagger: 0.2,
+      });
+    }
   };
 
-  // Задаем анимацию для каждой секции
   sections.forEach((section, index) => {
     tl.to(
-      section, // Текущая секция
+      section,
       {
-        y: `-${100 * index}vh`, // Прокручиваем по вертикали к текущей секции
-        opacity: 1, // Делаем текущую секцию видимой
-        duration: 1, // Продолжительность анимации прокрутки
-        ease: "none", // Без анимации (линейная)
+        y: `-${100 * index}vh`,
+        opacity: 1,
+        duration: 1,
+        ease: "none",
       },
-      index === 0 ? 0 : "-=0.1" // Задержка перед началом анимации
+      index === 0 ? 0 : "-=0.1"
     );
 
-    if (index) {
-      tl.call(toggleActive, [index], "<+=0.125");
+    if (index === 0) {
+      tl.call(toggleActive, [index]);
     } else {
-      tl.call(toggleActive, [index], 0.125);
+      tl.call(toggleActive, [index], "<+=0.125");
     }
   });
 });

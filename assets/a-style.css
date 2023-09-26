@@ -225,26 +225,32 @@ header .header__inner {
   line-height: 0px; /* 0% */
   letter-spacing: 0.28px;
 }
-[data-name="collection"] header {
+[data-name="collection"] header, [data-page="about"] header {
   background-color: #080808 !important;
 }
-[data-name="collection"] header svg path {
+[data-name="collection"] header svg path , [data-page="about"] header svg path{
   stroke: #fff;
   fill: #fff;
 }
-[data-name="collection"] .header__icon-menu svg rect {
+[data-name="collection"] .header__icon-menu svg rect, [data-page="about"] .header__icon-menu svg rect {
   fill: #fff;
 }
-[data-name="collection"] .header__logo-link .image__img {
+[data-name="collection"] .header__logo-link .image__img, [data-page="about"] .header__logo-link .image__img {
   filter: invert();
 }
 [data-name="collection"] .announcement-bar__item,
 [data-name="collection"] .announcement-bar,
-[data-name="collection"] .announcement-bar__gradient-gap {
+[data-name="collection"] .announcement-bar__gradient-gap,
+[data-page="about"] .announcement-bar__item,
+[data-page="about"] .announcement-bar,
+[data-page="about"] .announcement-bar__gradient-gap {
   background: #d9d9d9;
 }
-[data-name="collection"] .announcement-bar__content span {
+[data-name="collection"] .announcement-bar__content span, [data-page="about"] .announcement-bar__content span{
   color: #080808;
+}
+[data-page="about"] .header__outer-wrapper{
+  position: static !important;
 }
 /*** end header ***/
 
@@ -1387,26 +1393,26 @@ header .header__inner {
 .special__section-1 .title h2 {
   color: #fefefe;
   font-family: Proxima Nova;
-  font-size: var(--font-size-62);
+  font-size: clamp(28px,3.229vw,62px);
   font-style: normal;
   font-weight: 500;
   line-height: 120%;
 }
 .special__section-1 .subtitle {
-  margin-bottom: clamp(30px, 6.979vw, 134px);
+  margin-bottom: clamp(15px, 6.979vw, 134px);
 }
 .special__section-1 .subtitle p {
   color: #fefefe;
   font-family: Proxima Nova;
-  font-size: var(--font-size-32);
+  font-size: clamp(18px,1.667vw,32px);
   font-style: normal;
   font-weight: 500;
   line-height: 140%;
 }
 .special__section-1 .text p {
-  color: #fefefe;
+  
   font-family: Raleway;
-  font-size: var(--font-size-24);
+  font-size: clamp(16px,0.833vw,24px);
   font-style: normal;
   font-weight: 500;
   line-height: 140%; /* 33.6px */
@@ -1431,7 +1437,7 @@ header .header__inner {
 .special__section-2 .title h2 {
   color: #fefefe;
   font-family: Proxima Nova;
-  font-size: var(--font-size-82);
+  font-size: clamp(30px,4.271vw,82px);
   font-style: normal;
   font-weight: 400;
   line-height: 110%;
@@ -1445,7 +1451,7 @@ header .header__inner {
   color: #fefefe;
   text-align: center;
   font-family: Raleway;
-  font-size: var(--font-size-34);
+  font-size: clamp(18px,1.771vw,34px);
   font-style: normal;
   font-weight: 500;
   line-height: 140%; /* 47.6px */
@@ -1459,7 +1465,7 @@ header .header__inner {
 .special__section-3 .title h2 {
   color: #fefefe;
   font-family: Proxima Nova;
-  font-size: var(--font-size-72);
+  font-size: clamp(28px,3.750vw,72px);
   font-style: normal;
   font-weight: 400;
   line-height: 120%; /* 86.4px */
@@ -1467,9 +1473,8 @@ header .header__inner {
 }
 .special__section-3 .text p {
   max-width: 747px;
-  color: #fefefe;
   font-family: Raleway;
-  font-size: var(--font-size-24);
+  font-size: clamp(16px,0.833vw,24px);
   font-style: normal;
   font-weight: 500;
   line-height: 140%; /* 33.6px */
@@ -1494,7 +1499,7 @@ header .header__inner {
 .special__section-4 .title h2{
   color: #FEFEFE;
   font-family: Proxima Nova;
-  font-size: var(--font-size-72);
+  font-size: clamp(28px,3.750vw,72px);
   font-style: normal;
   font-weight: 400;
   line-height: 120%; /* 86.4px */
@@ -1504,9 +1509,8 @@ header .header__inner {
   max-width:696px;
 }
 .special__section-4 .text p{
-  color: #FEFEFE;
   font-family: Raleway;
-  font-size: var(--font-size-24);
+  font-size: clamp(16px,0.833vw,24px);
   font-style: normal;
   font-weight: 500;
   line-height: 140%; /* 33.6px */
@@ -1518,5 +1522,19 @@ header .header__inner {
 }
 .special__section-4 .special__section-wrap{
   width:100%;
+}
+@keyframes fade-in-animation {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fade-in-animation 0.5s ease-in-out;
 }
 /*** end scroll about fade ***/
