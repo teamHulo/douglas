@@ -1,0 +1,212 @@
+<div class="scroll-about-fade">
+  <div class="bg__all">
+    <div class="bg__all-wrap">
+      {% for block in section.blocks %}
+
+      <img src="{{block.settings.img | img_url: 'master'}}" alt="" >
+
+      {% endfor %}
+    </div>
+  </div>
+  <div class="container">
+    <div class="scroll-about__wrap">
+      <div class="scroll-about_wrap-body">
+        {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'section-1' %}
+          <div class="special__section special__section-1">
+            <div class="special__section-wrap">
+              <div class="title">
+                <h2>
+                  {{ block.settings.title }}
+                </h2>
+              </div>
+              <div class="subtitle">
+                <p>
+                  {{ block.settings.subtitle }}
+                </p>
+              </div>
+              <div class="text">
+                {{ block.settings.text }}
+              </div>
+            </div>
+          </div>
+          {% when 'section-2' %}
+          <div class="special__section special__section-2">
+            <div class="special__section-wrap">
+              <div class="title">
+                <h2>
+                  {{ block.settings.title }}
+                </h2>
+              </div>
+              <div class="subtitle">
+                <p>
+                  {{ block.settings.subtitle }}
+                </p>
+              </div>
+            </div>
+          </div>
+          {% when 'section-3' %}
+          <div class="special__section special__section-3 " style="justify-content:{{block.settings.alignment}}">
+            <div class="special__section-wrap">
+              <div class="title">
+                <h2>
+                  {{ block.settings.title }}
+                </h2>
+              </div>
+              <div class="text">
+
+                {{ block.settings.text }}
+
+              </div>
+              {% if block.settings.url != blank %}
+                <div class="special__section-btn ">
+                  <a href="{{block.settings.url}}" class="a-btn secondary">{{ block.settings.btn_name }}</a>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+          {% when 'section-4' %}
+          <div class="special__section special__section-4">
+            <div class="special__section-wrap">
+              <div class="title">
+                <h2>
+                  {{ block.settings.title }}
+                </h2>
+              </div>
+              <div class="text">
+                {{ block.settings.text }}
+              </div>
+            </div>
+          </div>
+        {% endcase %}
+      {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "full-slide-section",
+    "blocks": [
+
+      {
+        "type": "section-1",
+        "name": "section-1",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "img",
+            "label": "image"
+          }, {
+            "id": "title",
+            "type": "text",
+            "label": "title"
+          }, {
+            "id": "subtitle",
+            "type": "text",
+            "label": "subtitle"
+          }, {
+            "id": "text",
+            "type": "richtext",
+            "label": "text"
+          }
+        ]
+      }, {
+        "type": "section-2",
+        "name": "section-2",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "img",
+            "label": "image"
+          }, {
+            "id": "title",
+            "type": "text",
+            "label": "title"
+          }, {
+            "id": "subtitle",
+            "type": "text",
+            "label": "subtitle"
+          }
+
+
+        ]
+      }, {
+        "type": "section-3",
+        "name": "section-3",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "img",
+            "label": "image"
+          },
+          {
+            "type": "select",
+            "id": "alignment",
+            "label": " alignment",
+            "options": [
+              {
+                "value": "flex-end",
+                "label": "right"
+              }, {
+                "value": "center",
+                "label": "Middle"
+              }, {
+                "value": "flex-start",
+                "label": "left"
+              }
+            ],
+            "default": "flex-start"
+          },
+          {
+            "id": "title",
+            "type": "text",
+            "label": "title"
+          },
+          {
+            "id": "text",
+            "type": "richtext",
+            "label": "text"
+          }, {
+            "id": "url",
+            "type": "url",
+            "label": "url"
+          }, {
+            "id": "btn_name",
+            "type": "text",
+            "label": "btn name"
+          }
+
+        ]
+      }, {
+        "type": "section-4",
+        "name": "section-4",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "img",
+            "label": "image"
+          }, {
+            "id": "title",
+            "type": "text",
+            "label": "title"
+          }, {
+            "id": "text",
+            "type": "richtext",
+            "label": "text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "full-slide-section"
+      }
+    ]
+
+  }
+{% endschema %}
