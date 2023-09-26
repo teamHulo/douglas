@@ -43,7 +43,7 @@
           "type": "section-3",
           "settings": {
             "img": "shopify:\/\/shop_images\/makeup-and-jewelry.jpg",
-            "alignment": "flex-start",
+            "alignment": "flex-end",
             "title": "Universal cleanser",
             "text": "<p>Lorem ipsum dolor sit amet consectetur. Orci hendrerit posuere volutpat egestas. Suscipit rutrum est urna sed porttitor elementum. Consectetur ut nec egestas felis nulla sed bibendum. Nisl risus ultricies enim sapien sollicitudin .<\/p>",
             "url": "#",
