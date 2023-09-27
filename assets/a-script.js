@@ -44,7 +44,6 @@ $(() => {
     next && next.classList.toggle("revealed");
     prev && prev.classList.toggle("revealed");
   };
-
   gsap.set(panels, {
     yPercent: (i) => (i ? 100 : 0),
     opacity: (i) => (i ? 0 : 1) // Устанавливаем начальную нулевую непрозрачность для всех, кроме первой панели
@@ -88,75 +87,190 @@ $(() => {
     }
   });
 });
-document.addEventListener("DOMContentLoaded", () => {
-  const sections = document.querySelectorAll(".special__section");
+
+
+
+
+/*document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const container = document.querySelector(".scroll-about_wrap-body");
+  const sections = gsap.utils.toArray(".special__section");
+  const windowHeight = window.innerHeight;
   const images = gsap.utils.toArray(".bg__all-wrap img");
-  images[0].classList.add("active");
+  const totalSectionsHeight = sections.reduce(
+    (totalHeight, section) => totalHeight + section.clientHeight,
+    0
+  );
+
+  const toggleActive = (index) => {
+    $('.bg__all-wrap img').eq(index).addClass('active');
+    $('.bg__all-wrap img').eq(index - 1).removeClass('active');
+  };
+
+  toggleActive(0);
+
+  let animateStart = true;
+  let scrollDirection = 1; // Направление скролла (1 - вниз, -1 - вверх)
+
+  function animateScroll() {
+    if (animateStart) {
+      const currentY = gsap.getProperty(container, "y");
+      let newY = currentY - windowHeight * scrollDirection; // Учитываем направление скролла
+
+      // Проверка на достижение нижней границы
+      if (newY > 0) {
+        newY = 0;
+      }
+      // Проверка на достижение верхней границы
+      if (Math.abs(newY) > totalSectionsHeight - windowHeight) {
+        newY = -(totalSectionsHeight - windowHeight);
+      }
+
+      if (newY !== currentY) {
+        const indx = Math.abs(newY / windowHeight);
+        console.log(indx);
+        toggleActive(indx);
+        gsap.to(container, {
+          y: newY,
+          duration: 1,
+          ease: "power1.inOut",
+          onStart: () => {
+            animateStart = false;
+            console.log("началась");
+            $('body').css('overflow', 'hidden');
+          },
+          onComplete: () => {
+            console.log("выполнилась");
+            animateStart = true;
+           $('body').css('overflow', 'auto');
+          }
+        });
+      }
+    }
+  }
 
   ScrollTrigger.create({
     trigger: ".scroll-about-fade",
-    start: "top top",
-    end: () => `+=${100 * (sections.length - 1)}vh`,
+    start: "top top+=0",
+    end: () => `bottom bottom-=${sections[sections.length - 1].clientHeight}`,
     scrub: 1,
     pin: true,
-    onUpdate: (scrollTrigger) => {
-      const newIndex = Math.floor(
-        scrollTrigger.progress * (sections.length - 1)
-      );
-
-      sections.forEach((section, index) => {
-        if (index === newIndex) {
-          section.style.display = "flex";
-        } else {
-          section.style.display = "none";
-        }
-      });
-
-      images.forEach((image, index) => {
-        if (index === newIndex) {
-          image.classList.add("active");
-        } else {
-          image.classList.remove("active");
-        }
-      });
-    },
+    onUpdate: (self) => {
+      // Обновляем направление скролла на основе выполнения анимации ScrollTrigger
+      if (self.direction === -1) {
+        scrollDirection = -1;
+      } else if (self.direction === 1) {
+        scrollDirection = 1;
+      }
+      
+      if (animateStart) {
+        animateScroll();
+      }
+    }
   });
 
-  const toggleActive = (index) => {
-    const next = images[index];
-    const prev = images[index - 1];
-    next && next.classList.toggle("active");
-    prev && prev.classList.toggle("active");
-
-    const activeSection = sections[index];
-    if (activeSection) {
-      const elementsToAnimate = activeSection.querySelectorAll(".fade-in");
-
-      gsap.to(elementsToAnimate, {
-        opacity: 1,
-        y: 0,
-        duration: 0.5,
-        stagger: 0.2,
-      });
+  // Обработчик события прокрутки страницы
+  window.addEventListener("wheel", (event) => {
+    if (event.deltaY < 0) {
+      // Прокрутка вверх
+      scrollDirection = -1;
+    } else if (event.deltaY > 0) {
+      // Прокрутка вниз
+      scrollDirection = 1;
     }
+  });
+});*/
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const container = document.querySelector(".scroll-about_wrap-body");
+  const sections = gsap.utils.toArray(".special__section");
+  const windowHeight = window.innerHeight;
+  const images = gsap.utils.toArray(".bg__all-wrap img");
+  const totalSectionsHeight = sections.reduce(
+    (totalHeight, section) => totalHeight + section.clientHeight,
+    0
+  );
+
+  let indx = 0; // Индекс текущего изображения
+  const toggleActive = (index) => {
+    $('.bg__all-wrap img').removeClass('active'); // Убираем класс "active" у всех изображений
+    $('.bg__all-wrap img').eq(index).addClass('active'); // Добавляем класс "active" только к текущему изображению
   };
 
-  sections.forEach((section, index) => {
-    tl.to(
-      section,
-      {
-        y: `-${100 * index}vh`,
-        opacity: 1,
-        duration: 1,
-        ease: "none",
-      },
-      index === 0 ? 0 : "-=0.1"
-    );
+  toggleActive(indx);
 
-    if (index === 0) {
-      tl.call(toggleActive, [index]);
-    } else {
-      tl.call(toggleActive, [index], "<+=0.125");
+  let animateStart = true;
+  let scrollDirection = 1; // Направление скролла (1 - вниз, -1 - вверх)
+
+  function animateScroll() {
+    if (animateStart) {
+      const currentY = gsap.getProperty(container, "y");
+      let newY = currentY - windowHeight * scrollDirection; // Учитываем направление скролла
+
+      // Проверка на достижение нижней границы
+      if (newY > 0) {
+        newY = 0;
+      }
+      // Проверка на достижение верхней границы
+      if (Math.abs(newY) > totalSectionsHeight - windowHeight) {
+        newY = -(totalSectionsHeight - windowHeight);
+      }
+
+      if (newY !== currentY) {
+        const newIndx = Math.abs(newY / windowHeight);
+        if (newIndx !== indx) {
+          indx = newIndx; // Обновляем индекс при изменении изображения
+          toggleActive(indx);
+        }
+        gsap.to(container, {
+          y: newY,
+          duration: 1,
+          ease: "power1.inOut",
+          onStart: () => {
+            animateStart = false;
+            console.log("началась");
+            $('body').css('overflow', 'hidden');
+          },
+          onComplete: () => {
+            console.log("выполнилась");
+            animateStart = true;
+            $('body').css('overflow', 'auto');
+          }
+        });
+      }
+    }
+  }
+
+  ScrollTrigger.create({
+    trigger: ".scroll-about-fade",
+    start: "top top+=0",
+    end: () => `bottom bottom-=${sections[sections.length - 1].clientHeight}`,
+    scrub: 1,
+    pin: true,
+    onUpdate: (self) => {
+      // Обновляем направление скролла на основе выполнения анимации ScrollTrigger
+      if (self.direction === -1) {
+        scrollDirection = -1;
+      } else if (self.direction === 1) {
+        scrollDirection = 1;
+      }
+      
+      if (animateStart) {
+        animateScroll();
+      }
+    }
+  });
+
+  // Обработчик события прокрутки страницы
+  window.addEventListener("wheel", (event) => {
+    if (event.deltaY < 0) {
+      // Прокрутка вверх
+      scrollDirection = -1;
+    } else if (event.deltaY > 0) {
+      // Прокрутка вниз
+      scrollDirection = 1;
     }
   });
 });

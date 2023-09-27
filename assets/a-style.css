@@ -44,7 +44,7 @@ option {
   --font-size-18: clamp(14px, 0.938vw, 18px);
   --font-size-16: clamp(14px, 0.833vw, 16px);
 }
-
+body::-webkit-scrollbar { width: 0; }
 .template-index #main {
   margin-top: 0 !important;
 }
@@ -1337,6 +1337,8 @@ header .header__inner {
 .scroll-about-fade {
   position: relative;
   background-color: #000;
+  overflow: hidden; /* Apply overflow hidden to hide content outside the container */
+  height: 100vh;
 }
 .bg__all {
   position: absolute;
@@ -1372,13 +1374,17 @@ header .header__inner {
   position: relative;
   z-index: 1;
 }
-.scroll-about__wrap {
+.scroll-about_wrap-body {
   width: 100%;
-  height: 100vh; /* Контейнер высотой в 100vh (высота экрана) */
-  overflow: hidden; /* Скрыть содержимое, которое выходит за пределы контейнера */
   position: relative; /* Позиционирование контейнера */
   display: flex;
   flex-direction: column; /* Содержимое будет вертикально выравниваться */
+
+}
+
+
+.scroll-about__wrap{
+  overflow: hidden;
 }
 
 .special__section-1 {
@@ -1428,6 +1434,7 @@ header .header__inner {
   display: flex;
   align-items: center;
 }
+
 .special__section-2{
   justify-content: center;
 }
