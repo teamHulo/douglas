@@ -29,7 +29,7 @@
         {% for block in section.blocks %}
         {% case block.type %}
           {% when 'section-1' %}
-          <div class="special__section special__section-1">
+          <div class="special__section special__section-1" data-index="{{forloop.index}}">
             <div class="special__section-wrap">
               <div class="title fade-in">
                 <h2 style="color:{{block.settings.color}};">
@@ -47,7 +47,7 @@
             </div>
           </div>
           {% when 'section-2' %}
-          <div class="special__section special__section-2">
+          <div class="special__section special__section-2" data-index="{{forloop.index}}">
             <div class="special__section-wrap">
               <div class="title fade-in">
                 <h2 style="color:{{block.settings.color}};">
@@ -62,7 +62,7 @@
             </div>
           </div>
           {% when 'section-3' %}
-          <div class="special__section special__section-3 " style="justify-content:{{block.settings.alignment}}">
+          <div class="special__section special__section-3 " style="justify-content:{{block.settings.alignment}}" data-index="{{forloop.index}}">
             <div class="special__section-wrap">
               <div class="title fade-in">
                 <h2 style="color:{{block.settings.color}};">
@@ -82,7 +82,7 @@
             </div>
           </div>
           {% when 'section-4' %}
-          <div class="special__section special__section-4">
+          <div class="special__section special__section-4" data-index="{{forloop.index}}">
             <div class="special__section-wrap">
               <div class="title fade-in">
                 <h2 style="color:{{block.settings.color}};">
