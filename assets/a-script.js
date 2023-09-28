@@ -205,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let scrollDirection = 1; // Направление скролла (1 - вниз, -1 - вверх)
 
   function animateScroll() {
-    if (animateStart) {
+    
       const currentY = gsap.getProperty(container, "y");
       let newY = currentY - windowHeight * scrollDirection; // Учитываем направление скролла
 
@@ -224,12 +224,13 @@ document.addEventListener("DOMContentLoaded", () => {
           indx = newIndx; // Обновляем индекс при изменении изображения
           toggleActive(indx);
         }
+      }  
         gsap.to(container, {
           y: newY,
           duration: 1,
           ease: "power1.inOut",
           onStart: () => {
-            animateStart = false;
+            
             console.log("началась");
             $('body').css('overflow', 'hidden');
           },
@@ -239,8 +240,8 @@ document.addEventListener("DOMContentLoaded", () => {
             $('body').css('overflow', 'auto');
           }
         });
-      }
-    }
+      
+    
   }
 
   ScrollTrigger.create({
@@ -258,6 +259,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       
       if (animateStart) {
+        animateStart = false;
         animateScroll();
       }
     }
