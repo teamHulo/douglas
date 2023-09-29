@@ -1,0 +1,65 @@
+<style>
+    .treatments__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: {{ section.settings.gap }}px;
+    }
+    .item {
+        width: calc((100% / 3) - ({{ section.settings.gap }}px * 2 / 3) );
+    }
+    .item img {
+        width: 100%;
+    }
+    .logo-list__item {
+        width: 100% !important;
+    }
+</style>
+
+<div class="treatments container">
+    <h1>{{ section.settings.collection.title }}</h1>
+    <h3>{{ section.settings.label }}</h3>
+    <div class="treatments__wrapper">
+        {% for item in section.settings.collection.products %}
+            <script>console.log({{ item | json  }})</script>
+            <div class="item">
+                {% 
+                    render 'logo-list-item' with 
+                    image: item.images[0]
+                %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Treatments",
+        "settings": [
+            {
+                "type": "text",
+                "id": "label",
+                "label": "Label"
+            },
+            {
+                "type": "collection",
+                "id": "collection",
+                "label": "Collection"
+            },
+            {
+                "type": "range",
+                "id": "gap",
+                "label": "Gap",
+                "min": 0,
+                "max": 50,
+                "step": 1,
+                "unit": "px",
+                "default": 0
+            }
+        ],
+        "presets": [
+            {
+                "name": "Treatments"
+            }
+        ]
+    }
+{% endschema %}
