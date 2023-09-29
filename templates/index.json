@@ -62,7 +62,7 @@
       "settings": {
         "title": "SKINCARE  AS INDIVIDUAL  AS YOU ARE",
         "text": "Lorem ipsum dolor sit amet consectetur.  Fusce maecenas posuere acilisis duis.  Cum eget sit mattis mauris.",
-        "url": "#",
+        "url": "shopify:\/\/collections\/all",
         "btn_name": "Our products"
       }
     },
@@ -75,7 +75,7 @@
             "img": "shopify:\/\/shop_images\/Img_3.png",
             "title": "DOUGLAS PEREIRA SKIN HEALTH",
             "text": "Details",
-            "url": "",
+            "url": "shopify:\/\/products\/comfort-cleanse-200ml",
             "btn_name": "LEarn more"
           }
         },
@@ -85,7 +85,7 @@
             "img": "shopify:\/\/shop_images\/Img_3.png",
             "title": "DOUGLAS PEREIRA SKIN SCIENCE",
             "text": "Details",
-            "url": "",
+            "url": "shopify:\/\/products\/enzyme-cleanse-200ml",
             "btn_name": "LEarn more"
           }
         },
@@ -95,7 +95,7 @@
             "img": "shopify:\/\/shop_images\/Img_3.png",
             "title": "DOUGLAS PEREIRA Minerals",
             "text": "Details",
-            "url": "",
+            "url": "shopify:\/\/products\/lipid-pre-cleanse-200ml",
             "btn_name": "LEarn more"
           }
         }
@@ -123,7 +123,7 @@
         "subtitle": "<p>Orci nunc vestibulum et mollis sed facilisis proin. Sed cursus nulla amet sodales etiam purus nunc nisi lectus. Pellentesque natoque nisi.<\/p>",
         "subtitle_padding_bottom": 40,
         "btn_text": "Take the skincare regime",
-        "btn_url": "",
+        "btn_url": "shopify:\/\/collections\/all",
         "btn_style": "secondary",
         "text_width": 800,
         "text_align_item": "center",
@@ -196,7 +196,7 @@
             "subtitle": "<p>Lorem ipsum dolor sit amet consectetur. Eleifend blandit cursus tempor aliquam. Elementum gravida cras etiam diam gravida. Imperdiet in quis ullamcorper mattis elementum. Sit metus mattis et quam. <\/p>",
             "subtitle_padding_bottom": 62,
             "btn_text": "Take the skincare regime",
-            "btn_url": "",
+            "btn_url": "shopify:\/\/collections\/all",
             "btn_style": "prime",
             "text_width": 650,
             "text_align_item": "left",
@@ -243,7 +243,7 @@
             "subtitle": "<p>Lorem ipsum dolor sit amet consectetur. Et ornare dolor mauris aliquet lacus et interdum eu. Orci pharetra urna duis malesuada auctor amet odio. Aliquam sit ut bibendum pellentesque libero quisque auctor. Cras mauris id erat sagittis elit sit nunc libero. Mattis dignissim aliquam lacus nam hac.<\/p>",
             "subtitle_padding_bottom": 62,
             "btn_text": "Take the skincare regime",
-            "btn_url": "",
+            "btn_url": "shopify:\/\/collections\/all",
             "btn_style": "prime",
             "text_width": 800,
             "text_align_item": "left",
