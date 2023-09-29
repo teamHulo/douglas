@@ -44,7 +44,7 @@ option {
   --font-size-18: clamp(14px, 0.938vw, 18px);
   --font-size-16: clamp(14px, 0.833vw, 16px);
 }
-body::-webkit-scrollbar { width: 0; }
+/*body::-webkit-scrollbar { width: 0; }*/
 .template-index #main {
   margin-top: 0 !important;
 }
@@ -212,8 +212,8 @@ header .header__inner {
 }
 .header__cart-count {
   background-color: #383838 !important;
-  top: 7px !important;
-  right: 4px !important;
+  top: 8px !important;
+  right: 8px !important;
   color: #fff;
 }
 .header__cart-count span {

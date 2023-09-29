@@ -280,93 +280,108 @@ $(() => {
 });*/
 
 document.addEventListener("DOMContentLoaded", () => {
+  
   gsap.registerPlugin(ScrollTrigger);
 
   const container = document.querySelector(".scroll-about_wrap-body");
   const sections = gsap.utils.toArray(".special__section");
   const windowHeight = window.innerHeight;
   const images = gsap.utils.toArray(".bg__all-wrap img");
-  const totalSectionsHeight = sections.reduce(
-    (totalHeight, section) => totalHeight + section.clientHeight,
-    0
-  );
-
-  let indx = 0; // Индекс текущего изображения
-  const toggleActive = (index) => {
-    $(".bg__all-wrap img").removeClass("active"); // Убираем класс "active" у всех изображений
-    $(".bg__all-wrap img").eq(index).addClass("active"); // Добавляем класс "active" только к текущему изображению
-  };
-
-  toggleActive(indx);
-
-  let animateStart = true;
-  let scrollDirection = 1; // Направление скролла (1 - вниз, -1 - вверх)
-
-  function animateScroll() {
-    const currentY = gsap.getProperty(container, "y");
-    let newY = currentY - windowHeight * scrollDirection; // Учитываем направление скролла
-
-    // Проверка на достижение нижней границы
-    if (newY > 0) {
-      newY = 0;
-    }
-    // Проверка на достижение верхней границы
-    if (Math.abs(newY) > totalSectionsHeight - windowHeight) {
-      newY = -(totalSectionsHeight - windowHeight);
-    }
-
-    if (newY !== currentY) {
-      const newIndx = Math.abs(newY / windowHeight);
-      if (newIndx !== indx) {
-        indx = newIndx; // Обновляем индекс при изменении изображения
-        toggleActive(indx);
+  if($('.scroll-about-fade').length > 0 ){
+    const totalSectionsHeight = sections.reduce(
+      (totalHeight, section) => totalHeight + section.clientHeight,
+      0
+    );
+  
+    let indx = 0; // Индекс текущего изображения
+    const toggleActive = (index) => {
+      $(".bg__all-wrap img").removeClass("active"); // Убираем класс "active" у всех изображений
+      $(".bg__all-wrap img").eq(index).addClass("active"); // Добавляем класс "active" только к текущему изображению
+    };
+  
+    toggleActive(indx);
+  
+    let animateStart = true;
+    let scrollDirection = 1; // Направление скролла (1 - вниз, -1 - вверх)
+  
+    function animateScroll() {
+      const currentY = gsap.getProperty(container, "y");
+      let newY = currentY - windowHeight * scrollDirection; // Учитываем направление скролла
+  
+      // Проверка на достижение нижней границы
+      if (newY > 0) {
+        newY = 0;
       }
+      // Проверка на достижение верхней границы
+      if (Math.abs(newY) > totalSectionsHeight - windowHeight) {
+        newY = -(totalSectionsHeight - windowHeight);
+      }
+  
+      if (newY !== currentY) {
+        const newIndx = Math.abs(newY / windowHeight);
+        if (newIndx !== indx) {
+          indx = newIndx; // Обновляем индекс при изменении изображения
+          toggleActive(indx);
+        }
+      }
+      gsap.to(container, {
+        y: newY,
+        duration: 1,
+        ease: "power1.inOut",
+        onStart: () => {
+          console.log("началась");
+          $("body").css("overflow", "hidden");
+        },
+        onComplete: () => {
+          console.log("выполнилась");
+          animateStart = true;
+          $("body").css("overflow", "auto");
+        },
+      });
     }
-    gsap.to(container, {
-      y: newY,
-      duration: 1,
-      ease: "power1.inOut",
-      onStart: () => {
-        console.log("началась");
-        $("body").css("overflow", "hidden");
-      },
-      onComplete: () => {
-        console.log("выполнилась");
-        animateStart = true;
-        $("body").css("overflow", "auto");
+  
+    
+  
+  
+  
+  
+  
+    ScrollTrigger.create({
+      trigger: ".scroll-about-fade",
+      start: "top top+=0",
+      end: () => `bottom bottom-=${sections[sections.length - 3].clientHeight}`,
+      scrub: 1,
+      pin: true,
+      onUpdate: (self) => {
+        // Обновляем направление скролла на основе выполнения анимации ScrollTrigger
+        if (self.direction === -1) {
+          scrollDirection = -1;
+        } else if (self.direction === 1) {
+          scrollDirection = 1;
+        }
+  
+        if (animateStart) {
+          animateStart = false;
+          animateScroll();
+        }
       },
     });
-  }
-
-  ScrollTrigger.create({
-    trigger: ".scroll-about-fade",
-    start: "top top+=0",
-    end: () => `bottom bottom-=${sections[sections.length - 1].clientHeight}`,
-    scrub: 1,
-    pin: true,
-    onUpdate: (self) => {
-      // Обновляем направление скролла на основе выполнения анимации ScrollTrigger
-      if (self.direction === -1) {
+  
+    // Обработчик события прокрутки страницы
+    window.addEventListener("wheel", (event) => {
+      if (event.deltaY < 0) {
+        // Прокрутка вверх
         scrollDirection = -1;
-      } else if (self.direction === 1) {
+      } else if (event.deltaY > 0) {
+        // Прокрутка вниз
         scrollDirection = 1;
       }
+    });
 
-      if (animateStart) {
-        animateStart = false;
-        animateScroll();
-      }
-    },
-  });
 
-  // Обработчик события прокрутки страницы
-  window.addEventListener("wheel", (event) => {
-    if (event.deltaY < 0) {
-      // Прокрутка вверх
-      scrollDirection = -1;
-    } else if (event.deltaY > 0) {
-      // Прокрутка вниз
-      scrollDirection = 1;
-    }
-  });
+  }
+  
 });
+
+
+
