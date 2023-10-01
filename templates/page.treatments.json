@@ -7,6 +7,28 @@
         "content_max_width": 700
       }
     },
+    "9ec8491b-d3ca-4030-aa2f-2085ccdb3b03": {
+      "type": "section-image-baner",
+      "settings": {
+        "padding_x": 0,
+        "padding_y": 120,
+        "img": "shopify:\/\/shop_images\/Rectangle_226.jpg",
+        "color_text": "#fff",
+        "title": "Lorem ipsum dolor sit amet consectetur.",
+        "title_font": "h1",
+        "title_padding_bottom": 52,
+        "subtitle": "<p>Lorem ipsum dolor sit amet consectetur. Amet risus erat arcu.<\/p>",
+        "subtitle_padding_bottom": 52,
+        "btn_text": "Make a booking",
+        "btn_url": "shopify:\/\/collections\/all",
+        "btn_style": "secondary",
+        "text_width": 740,
+        "text_align_item": "left",
+        "text_position": "normal",
+        "text_padding_top": 0,
+        "text_padding_bottom": 0
+      }
+    },
     "6b6b45ab-be04-4a33-a2eb-ea0562fe6d9e": {
       "type": "section-treatments",
       "settings": {
@@ -26,6 +48,7 @@
   },
   "order": [
     "main",
+    "9ec8491b-d3ca-4030-aa2f-2085ccdb3b03",
     "6b6b45ab-be04-4a33-a2eb-ea0562fe6d9e",
     "b6f7e8ae-f9f3-456e-8f4e-fdd012fcc7a2"
   ]
