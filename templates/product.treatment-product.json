@@ -123,6 +123,8 @@
         "padding_top": 180,
         "padding_bottom": 180,
         "column_gap": 0,
+        "bg": "#151515",
+        "color_text": "#ffffff",
         "border": "none"
       }
     },
