@@ -1,32 +1,38 @@
+<link rel="stylesheet" href="{{ 'card-item.css' | asset_url }}">
 <style>
+    .treatments h1 {
+        margin-bottom: 32px;
+    }
     .treatments__wrapper {
         display: flex;
         flex-wrap: wrap;
-        gap: {{ section.settings.gap }}px;
+        margin-top: 80px;
+        gap: 24px;
     }
-    .item {
-        width: calc((100% / 3) - ({{ section.settings.gap }}px * 2 / 3) );
+    .treatments__title {
+        font-family: Proxima Nova;
+        font-size:var(--font-size-52);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 110%;
+        text-transform: uppercase;
     }
-    .item img {
-        width: 100%;
+    .treatments__label {
+        font-family: Raleway;
+        font-size:var(--font-size-24);
+        font-style: normal;
+        font-weight: 500;
+        line-height: 140%;
+        letter-spacing: 0.48px;
     }
-    .logo-list__item {
-        width: 100% !important;
-    }
-</style>
 
-<div class="treatments container">
-    <h1>{{ section.settings.collection.title }}</h1>
-    <h3>{{ section.settings.label }}</h3>
+</style>
+<div class="treatments container" style="margin-top: {{ section.settings.margin_top }}px">
+    <h1 class="treatments__title">{{ section.settings.collection.title }}</h1>
+    <h3 class="treatments__label">{{ section.settings.label }}</h3>
     <div class="treatments__wrapper">
         {% for item in section.settings.collection.products %}
-            <script>console.log({{ item | json  }})</script>
-            <div class="item">
-                {% 
-                    render 'logo-list-item' with 
-                    image: item.images[0]
-                %}
-            </div>
+            {% render 'card-item', url: item.url, img: item.images[0], title: item.title, text: 'Targeted treatment methods', btn_text: 'LEARN MORE' %}
         {% endfor %}
     </div>
 </div>
@@ -47,13 +53,13 @@
             },
             {
                 "type": "range",
-                "id": "gap",
-                "label": "Gap",
+                "id": "margin_top",
+                "label": "Margin top",
                 "min": 0,
-                "max": 50,
-                "step": 1,
-                "unit": "px",
-                "default": 0
+                "max": 120,
+                "step": 2,
+                "default": 0,
+                "unit": "px"
             }
         ],
         "presets": [
