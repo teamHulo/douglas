@@ -2,11 +2,31 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
+        "content_max_width": 700
+      }
+    },
+    "6b6b45ab-be04-4a33-a2eb-ea0562fe6d9e": {
+      "type": "section-treatments",
+      "settings": {
+        "label": "Available at our flagship clinic and partner clinics",
+        "collection": "skin-health-treatments",
+        "margin_top": 120
+      }
+    },
+    "b6f7e8ae-f9f3-456e-8f4e-fdd012fcc7a2": {
+      "type": "section-treatments",
+      "settings": {
+        "label": "Available at our flagship clinic and partner clinics",
+        "collection": "skin-health-treatments",
+        "margin_top": 120
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "6b6b45ab-be04-4a33-a2eb-ea0562fe6d9e",
+    "b6f7e8ae-f9f3-456e-8f4e-fdd012fcc7a2"
   ]
 }
