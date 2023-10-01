@@ -20,6 +20,10 @@
 {% endcase %}
 }
 
+#shopify-section-{{ section.id }} .image-text {
+   background-color: {{ section.settings.bg }};
+   color: {{ section.settings.color_text }};
+}
 #shopify-section-{{ section.id }} .image-text__text .wrapper {
     max-width: {{ section.settings.text_width }}px;
     height: max-content;
@@ -86,7 +90,7 @@
                             {% if block.settings.subtitle != 'blank' %}
                                 <div class="image-text__text-subtitle">{{ block.settings.subtitle }}</div>
                             {% endif %}
-                            {% if block.settings.btn_text != 'blank' %}
+                            {% if block.settings.btn_text != blank %}
                                 <a href="{{ block.settings.btn_url }}" class="a-btn {% if block.settings.btn_style == 'prime' %}prime{% endif %}{% if section.settings.btn_style == 'secondary' %}secondary{% endif %}">
                                     {{ block.settings.btn_text }}
                                 </a>
@@ -132,6 +136,18 @@
                 "unit": "px",
                 "label": "Column gap",
                 "default": 0
+            },
+            {
+                "type": "color",
+                "id": "bg",
+                "label": "Background color",
+                "default": "#fff"
+            },
+            {
+                "type": "color",
+                "id": "color_text",
+                "label": "Background color",
+                "default": "#000"
             },
             {
                 "type": "select",
