@@ -125,11 +125,34 @@
         "column_gap": 0,
         "border": "none"
       }
+    },
+    "b9fd11eb-f242-4e5c-8f41-976121e2bfec": {
+      "type": "section-image-baner",
+      "settings": {
+        "padding_x": 0,
+        "padding_y": 160,
+        "img": "shopify:\/\/shop_images\/Rectangle_241.jpg",
+        "color_text": "#fff",
+        "title": "Book Your Complimentary Virtual Consultation",
+        "title_font": "h3",
+        "title_padding_bottom": 40,
+        "subtitle": "<p>Orci nunc vestibulum et mollis sed facilisis proin. Sed cursus nulla amet sodales etiam purus nunc lectus. Pellentesque nisi.<\/p>",
+        "subtitle_padding_bottom": 40,
+        "btn_text": "booking now",
+        "btn_url": "",
+        "btn_style": "secondary",
+        "text_width": 690,
+        "text_align_item": "left",
+        "text_position": "end",
+        "text_padding_top": 0,
+        "text_padding_bottom": 0
+      }
     }
   },
   "order": [
     "main",
     "recommendations",
-    "0fe986d1-9bf1-404c-aba2-3456726bde8c"
+    "0fe986d1-9bf1-404c-aba2-3456726bde8c",
+    "b9fd11eb-f242-4e5c-8f41-976121e2bfec"
   ]
 }
