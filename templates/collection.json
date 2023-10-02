@@ -19,7 +19,7 @@
         "padding_y": 94,
         "img": "shopify:\/\/shop_images\/Rectangle_227.jpg",
         "color_text": "#ffffff",
-        "title": "Lorem ipsum dolor <br> sit amet consectetur.",
+        "title": "Lorem ipsum dolor  sit amet consectetur.",
         "title_font": "h1",
         "title_padding_bottom": 52,
         "subtitle": "<p>Lorem ipsum dolor sit amet consectetur. Amet risus erat arcu.<\/p>",
@@ -30,8 +30,8 @@
         "text_width": 740,
         "text_align_item": "left",
         "text_position": "normal",
-        "text_padding_top": 24,
-        "text_padding_bottom": 0
+        "text_padding_top": 42,
+        "text_padding_bottom": 64
       }
     },
     "product-grid": {
