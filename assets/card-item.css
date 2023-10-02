@@ -52,8 +52,8 @@
     text-transform: uppercase;
 }
 
-.item .content p {
-    padding: 24px 0;
+.item .content p, .item .content span {
+    margin-top: 24px;
 }
 
 @media (max-width: 990px){

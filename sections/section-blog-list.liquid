@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="{{ 'card-item.css' | asset_url }}">
 <style>
     .blog-list__title {
         display: flex;
@@ -12,7 +12,8 @@
     .blog-list__content {
         display: flex;
         flex-wrap: wrap;
-        row-gap: 48px;
+        margin-top: 80px;
+        gap: 24px;
     }
     .title {
         font-family: Proxima Nova;
@@ -93,13 +94,8 @@
                 {% assign variable = section.settings.blog.articles %}
                 {% assign arr = '1,2,3,4,5,6' | split: ',' %}
                 {%- for block in arr -%}
-                    {%
-                    render 'logo-list-item' with
-                    image: variable[0].image,
-                    link: variable[0].url,
-                    title: variable[0].title,
-                    btn_title: 'read more'
-                    %}
+
+                {% render 'card-item', url: variable[0].url, img: variable[0].image, title: variable[0].title, btn_text: 'READ MORE' %}
                 {%- endfor -%}
             </div>
         </div>
