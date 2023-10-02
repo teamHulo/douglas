@@ -74,6 +74,49 @@ option {
 .a-link svg {
   margin-left: 10px;
 }
+.tret-btns{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+  gap:16px;
+}
+.tret-btns .a-btn{
+  max-width:301px;
+  width:100%;
+}
+@media(max-width:500px){
+  .tret-btns .a-btn{
+    max-width:100%;
+    width:100%;
+  }
+}
+.tret-btns .a-btn.prime{
+  border: 1px solid var(--black, #080808);
+  background: var(--black, #080808);
+  color:#FFF !important;
+  transition: all 0.3s ease !important;
+}
+.tret-btns .a-btn.secondary{
+  border: 1px solid var(--black, #080808)!important; 
+  background: transparent !important;
+  color:#000 !important;
+  transition: all 0.3s ease !important;
+}
+
+.tret-btns .a-btn.prime:hover{
+
+  background: transparent !important;
+  color:#000 !important;
+  transition: all 0.3s ease !important;
+}
+.tret-btns .a-btn.secondary:hover{
+  
+  background: #000 !important;
+  color:#FFF !important;
+  transition: all 0.3s ease !important;
+}
+
+
 .a-btn {
   display: flex !important;
   justify-content: center !important;

@@ -38,10 +38,13 @@
             "show_labels": true
           }
         },
-        "buy_buttons": {
-          "type": "buy_buttons",
+        "e1e00903-d4c4-4360-b39c-33bbf5ac399d": {
+          "type": "btn_links",
           "settings": {
-            "show_dynamic_checkout": true
+            "btn_url1": "#",
+            "btn_name1": "Make a booking",
+            "btn_url2": "#",
+            "btn_name2": "Find out more"
           }
         }
       },
@@ -51,7 +54,7 @@
         "description",
         "variant_picker",
         "quantity_selector",
-        "buy_buttons"
+        "e1e00903-d4c4-4360-b39c-33bbf5ac399d"
       ],
       "settings": {
         "show_breadcrumbs": true,
@@ -68,21 +71,6 @@
         "enable_video_looping": true,
         "enable_animation": true,
         "enable_gift_card_recipient": true
-      }
-    },
-    "recommendations": {
-      "type": "product-recommendations",
-      "settings": {
-        "max_products": 6,
-        "columns": 3,
-        "title": "Recommended",
-        "subheading": "<p>You might want to take a closer look.<\/p>",
-        "text_max_width": 42,
-        "aspect_ratio": "natural",
-        "enable_animation": true,
-        "section_contrast": true,
-        "section_padding": "section--vertical-padding-top-bottom",
-        "padding_amount": "1.0"
       }
     },
     "0fe986d1-9bf1-404c-aba2-3456726bde8c": {
@@ -119,6 +107,7 @@
         "a448a021-0b53-4ef3-b28c-10307c6a3e03",
         "2368c524-f540-4f10-8540-e5b52d4fd28e"
       ],
+      "disabled": true,
       "settings": {
         "padding_top": 180,
         "padding_bottom": 180,
@@ -153,7 +142,6 @@
   },
   "order": [
     "main",
-    "recommendations",
     "0fe986d1-9bf1-404c-aba2-3456726bde8c",
     "b9fd11eb-f242-4e5c-8f41-976121e2bfec"
   ]
