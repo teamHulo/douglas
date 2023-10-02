@@ -428,49 +428,112 @@ $(() => {
 
 
 
-$(() => {
+/*$(() => {
   gsap.registerPlugin(ScrollTrigger);
-
-  const container = document.querySelector(".scroll-about_wrap-body");
   const sections = gsap.utils.toArray(".special__section");
-  const header = document.querySelector('header').clientHeight;
-  const windowHeight = window.innerHeight ;
-  
-  console.log(header);
+  const headerHeight = document.querySelector('header').clientHeight;
+  const windowHeight = window.innerHeight;
+  const announcementBars = document.querySelectorAll('.announcement-bar');
+  const announcementHeight = announcementBars.length > 0 ? announcementBars[0].clientHeight : 0;
+  const shift = announcementHeight + headerHeight;
+
+  console.log(shift);
+
   const toggleActive = (index) => {
-    $(".bg__all-wrap img").removeClass("active"); // Убираем класс "active" у всех изображений
-    $(".bg__all-wrap img").eq(index).addClass("active"); // Добавляем класс "active" только к текущему изображению
+    $(".bg__all-wrap img").removeClass("active");
+    $(".bg__all-wrap img").eq(index).addClass("active");
   };
 
-
   function goToSection(section, anim) {
-    
-      gsap.to(window, {
-        scrollTo: { y: section * windowHeight  , autoKill: false },
-        duration: 1
-      });
-
-      if (anim) {
-        anim.restart();
-      }
+    gsap.to(window, {
+      scrollTo: { y: section * windowHeight, autoKill: false },
+      duration: 1,
+    });
+    indx++;
+    if (anim) {
+      anim.restart();
+    }
   }
+  let indx = 1;
+  ScrollTrigger.create({
+    trigger: '.scroll-about-fade',
+    pin: '.scroll-about-fade .bg__all',
+    start: "top",
+    end: 'bottom bottom',
+  });
 
   sections.forEach((section, i) => {
     ScrollTrigger.create({
       trigger: section,
       onEnter: () => {
-        goToSection(i)
+        goToSection(i);
         toggleActive(i);
-      }
+        console.log(announcementHeight);
+      },
     });
-    
+
     ScrollTrigger.create({
       trigger: section,
-      start: "bottom bottom",
+      start: "bottom center",
       onEnterBack: () => {
         goToSection(i);
         toggleActive(i);
       },
     });
+  });
+});*/
+
+$(() => {
+  gsap.registerPlugin(ScrollTrigger);
+  const headerHeight = document.querySelector('header').clientHeight;
+  const windowHeight = window.innerHeight;
+  const announcementBars = document.querySelectorAll('.announcement-bar');
+  const announcementHeight = announcementBars.length > 0 ? announcementBars[0].clientHeight : 0;
+  const shift = announcementHeight + headerHeight;
+
+  console.log(shift);
+
+  const toggleActive = (index) => {
+    $(".bg__all-wrap img").removeClass("active");
+    $(".bg__all-wrap img").eq(index).addClass("active");
+  };
+
+  function goToSection(sectionIndex) {
+    $('body').css('overflow','hidden');
+    gsap.to(window, {
+      scrollTo: { y: sectionIndex * windowHeight + shift, autoKill: false },
+      duration: 1,
+      onComplete:()=>{
+        $('body').css('overflow','auto');
+        indx = sectionIndex;
+      }
+    });
+   
+  }
+
+  let indx = 0; // Скролировать к первой секции при загрузке страницы
+  toggleActive(0);
+
+
+  ScrollTrigger.create({
+    trigger: '.scroll-about-fade',
+    pin: '.scroll-about-fade .bg__all',
+    start: "top",
+    end: 'bottom bottom',
+  });
+
+  ScrollTrigger.create({
+    trigger: '.scroll-about__wrap',
+    top: "top top",
+    end: "bottom bottom",
+    markers:true,
+    markers: true,
+    onUpdate: () => {
+      const newIndex = Math.floor((window.scrollY + shift) / windowHeight);
+      if (newIndex !== indx) {
+        goToSection(newIndex);
+        toggleActive(newIndex);
+      }
+    }
   });
 });
