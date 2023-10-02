@@ -80,9 +80,12 @@
             flex-direction: column;
         }
     }
+    .article-tag {
+        display: flex;
+    }
 </style>
 
-{%- paginate section.settings.blog.articles by 4 -%}
+{%- paginate blog.articles by 4 -%}
     <div class="blog-list container">
         <div class="blog-list__wrapper">
             <div class="blog-list__title">
@@ -93,14 +96,26 @@
                 <div class="filter__wrapper">
                     <span>Filter by</span>
                     <div class="filter">
-                        {% for tag in section.settings.blog.all_tags %} 
-                            {{ tag | link_to_add_tag: tag }}
+                        {% for tag in blog.all_tags %} 
+                            {% if current_tags == tag %}
+                            <span class="article-tag active">
+                              {{ tag }} &#x2715;
+                            </span>
+                          {% elsif current_tags contains tag %}
+                            <span class="article-tag active">
+                              {{ tag | link_to_remove_tag: tag }} &#x2715;
+                            </span>
+                          {% else %}
+                            <span class="article-tag ">
+                              {{ tag | link_to_add_tag: tag }}
+                            </span>
+                          {% endif %}
                         {% endfor %}
                     </div>
                 </div>
             </div>
             <div class="blog-list__content">
-                {%- for item in section.settings.blog.articles -%}
+                {%- for item in blog.articles -%}
                     {% render 'card-item', url: item.url, img: item.image, title: item.title, btn_text: 'READ MORE' %}
                 {%- endfor -%}
             </div>
