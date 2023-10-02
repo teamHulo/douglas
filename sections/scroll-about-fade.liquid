@@ -14,91 +14,94 @@
 </style>
 
 <div class="scroll-about-fade">
-  <div class="bg__all">
-    <div class="bg__all-wrap">
-      {% for block in section.blocks %}
-
-      <img src="{{block.settings.img | img_url: 'master'}}" alt="" >
-
-      {% endfor %}
-    </div>
-  </div>
-  <div class="container">
-    <div class="scroll-about__wrap">
-      <div class="scroll-about_wrap-body">
+  <div class="wrap2">
+    <div class="bg__all">
+      <div class="bg__all-wrap">
         {% for block in section.blocks %}
-        {% case block.type %}
-          {% when 'section-1' %}
-          <div class="special__section special__section-1" data-index="{{forloop.index}}">
-            <div class="special__section-wrap">
-              <div class="title fade-in">
-                <h2 style="color:{{block.settings.color}};">
-                  {{ block.settings.title }}
-                </h2>
-              </div>
-              <div class="subtitle fade-in">
-                <p style="color:{{block.settings.color}} ;">
-                  {{ block.settings.subtitle }}
-                </p>
-              </div>
-              <div class="text fade-in" style="color:{{block.settings.color}} !important;">
-                {{ block.settings.text }}
-              </div>
-            </div>
-          </div>
-          {% when 'section-2' %}
-          <div class="special__section special__section-2" data-index="{{forloop.index}}">
-            <div class="special__section-wrap">
-              <div class="title fade-in">
-                <h2 style="color:{{block.settings.color}};">
-                  {{ block.settings.title }}
-                </h2>
-              </div>
-              <div class="subtitle fade-in">
-                <p style="color:{{block.settings.color}};">
-                  {{ block.settings.subtitle }}
-                </p>
-              </div>
-            </div>
-          </div>
-          {% when 'section-3' %}
-          <div class="special__section special__section-3 " style="justify-content:{{block.settings.alignment}}" data-index="{{forloop.index}}">
-            <div class="special__section-wrap">
-              <div class="title fade-in">
-                <h2 style="color:{{block.settings.color}};">
-                  {{ block.settings.title }}
-                </h2>
-              </div>
-              <div class="text fade-in" style="color:{{block.settings.color}};">
-
-                {{ block.settings.text }}
-
-              </div>
-              {% if block.settings.url != blank %}
-                <div class="special__section-btn fade-in">
-                  <a href="{{block.settings.url}}" class="a-btn {{block.settings.type_btn}}">{{ block.settings.btn_name }}</a>
+  
+        <img src="{{block.settings.img | img_url: 'master'}}" alt="" >
+  
+        {% endfor %}
+      </div>
+    </div>
+    <div class="container">
+      <div class="scroll-about__wrap">
+        <div class="scroll-about_wrap-body">
+          {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'section-1' %}
+            <div class="special__section special__section-1" data-index="{{forloop.index}}">
+              <div class="special__section-wrap">
+                <div class="title fade-in">
+                  <h2 style="color:{{block.settings.color}};">
+                    {{ block.settings.title }}
+                  </h2>
                 </div>
-              {% endif %}
-            </div>
-          </div>
-          {% when 'section-4' %}
-          <div class="special__section special__section-4" data-index="{{forloop.index}}">
-            <div class="special__section-wrap">
-              <div class="title fade-in">
-                <h2 style="color:{{block.settings.color}};">
-                  {{ block.settings.title }}
-                </h2>
-              </div>
-              <div class="text fade-in" style="color:{{block.settings.color}};">
-                {{ block.settings.text }}
+                <div class="subtitle fade-in">
+                  <p style="color:{{block.settings.color}} ;">
+                    {{ block.settings.subtitle }}
+                  </p>
+                </div>
+                <div class="text fade-in" style="color:{{block.settings.color}} !important;">
+                  {{ block.settings.text }}
+                </div>
               </div>
             </div>
-          </div>
-        {% endcase %}
-      {% endfor %}
+            {% when 'section-2' %}
+            <div class="special__section special__section-2" data-index="{{forloop.index}}">
+              <div class="special__section-wrap">
+                <div class="title fade-in">
+                  <h2 style="color:{{block.settings.color}};">
+                    {{ block.settings.title }}
+                  </h2>
+                </div>
+                <div class="subtitle fade-in">
+                  <p style="color:{{block.settings.color}};">
+                    {{ block.settings.subtitle }}
+                  </p>
+                </div>
+              </div>
+            </div>
+            {% when 'section-3' %}
+            <div class="special__section special__section-3 " style="justify-content:{{block.settings.alignment}}" data-index="{{forloop.index}}">
+              <div class="special__section-wrap">
+                <div class="title fade-in">
+                  <h2 style="color:{{block.settings.color}};">
+                    {{ block.settings.title }}
+                  </h2>
+                </div>
+                <div class="text fade-in" style="color:{{block.settings.color}};">
+  
+                  {{ block.settings.text }}
+  
+                </div>
+                {% if block.settings.url != blank %}
+                  <div class="special__section-btn fade-in">
+                    <a href="{{block.settings.url}}" class="a-btn {{block.settings.type_btn}}">{{ block.settings.btn_name }}</a>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+            {% when 'section-4' %}
+            <div class="special__section special__section-4" data-index="{{forloop.index}}">
+              <div class="special__section-wrap">
+                <div class="title fade-in">
+                  <h2 style="color:{{block.settings.color}};">
+                    {{ block.settings.title }}
+                  </h2>
+                </div>
+                <div class="text fade-in" style="color:{{block.settings.color}};">
+                  {{ block.settings.text }}
+                </div>
+              </div>
+            </div>
+          {% endcase %}
+        {% endfor %}
+        </div>
       </div>
     </div>
   </div>
+  
 </div>
 
 

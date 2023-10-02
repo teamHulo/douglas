@@ -31,82 +31,85 @@ $(() => {
 });
 $(() => {
   //console.clear();
-
-  gsap.registerPlugin(ScrollTrigger);
-
   const panels = gsap.utils.toArray(".panel");
-  const contentoEls = gsap.utils.toArray(".contento");
-  contentoEls[0].classList.add('revealed');
-  const toggleReveal = (index) => {
-    const next = contentoEls[index];
-    const prev = contentoEls[index - 1];
-    next && next.classList.toggle("revealed");
-    prev && prev.classList.toggle("revealed");
-  };
-  
-  gsap.set(panels, {
-    yPercent: (i) => (i ? 100 : 0),
-    opacity: (i) => (i ? 0 : 1), // Устанавливаем начальную нулевую непрозрачность для всех, кроме первой панели
-  });
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".section-scroll-slides",
-      start: "top top",
-      end: () => "+=" + 100 * panels.length + "%",
-      pin: true,
-      scrub: 1,
-      onLeave: ({ progress, direction }) => {
-        console.log(progress, direction);
-        if (progress <= 0 && direction === 0) {
-          contentoEls[0].classList.add('revealed');
-        }
-      },
-     
-    },
-  });
+  if(panels.length > 0){
+    gsap.registerPlugin(ScrollTrigger);
 
-  panels.forEach((panel, index) => {
-   
-    if (index) {
-      
-      tl.to(
-        panels[index - 1], // Предыдущая панель
-        {
-          opacity: 0, // Скрываем предыдущую панель (fade out)
-          yPercent: -100,
-          ease: "none",
-          onComplete: () => {
-            console.log(index);
-            if (index !== 0) {
-              contentoEls[0].classList.remove('revealed');
-            }
-          },
+ 
+    const contentoEls = gsap.utils.toArray(".contento");
+    contentoEls[0].classList.add('revealed');
+    const toggleReveal = (index) => {
+      const next = contentoEls[index];
+      const prev = contentoEls[index - 1];
+      next && next.classList.toggle("revealed");
+      prev && prev.classList.toggle("revealed");
+    };
+    
+    gsap.set(panels, {
+      yPercent: (i) => (i ? 100 : 0),
+      opacity: (i) => (i ? 0 : 1), // Устанавливаем начальную нулевую непрозрачность для всех, кроме первой панели
+    });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".section-scroll-slides",
+        start: "top top",
+        end: () => "+=" + 100 * panels.length + "%",
+        pin: true,
+        scrub: 1,
+        onLeave: ({ progress, direction }) => {
+          console.log(progress, direction);
+          if (progress <= 0 && direction === 0) {
+            contentoEls[0].classList.add('revealed');
+          }
         },
-        "+=0.15" // Задержка перед следующей анимацией
-      );
-      tl.to(
-        panel, // Текущая панель
-        {
-          opacity: 1, // Делаем текущую панель видимой (fade in)
-          yPercent: 0,
-          ease: "none",
-          onComplete: () => {
-            console.log(index);
-            if (index === 0) {
-              contentoEls[0].classList.add('revealed');
-            }
-          },
-        },
-        "-=0.15" // Перекрываем предыдущую анимацию (fade out)
-      );
+       
+      },
+    });
+  
+    panels.forEach((panel, index) => {
      
-      if (contentoEls[index]) {
-        tl.call(toggleReveal, [index], "<+=0.125");
+      if (index) {
+        
+        tl.to(
+          panels[index - 1], // Предыдущая панель
+          {
+            opacity: 0, // Скрываем предыдущую панель (fade out)
+            yPercent: -100,
+            ease: "none",
+            onComplete: () => {
+              console.log(index);
+              if (index !== 0) {
+                contentoEls[0].classList.remove('revealed');
+              }
+            },
+          },
+          "+=0.15" // Задержка перед следующей анимацией
+        );
+        tl.to(
+          panel, // Текущая панель
+          {
+            opacity: 1, // Делаем текущую панель видимой (fade in)
+            yPercent: 0,
+            ease: "none",
+            onComplete: () => {
+              console.log(index);
+              if (index === 0) {
+                contentoEls[0].classList.add('revealed');
+              }
+            },
+          },
+          "-=0.15" // Перекрываем предыдущую анимацию (fade out)
+        );
+       
+        if (contentoEls[index]) {
+          tl.call(toggleReveal, [index], "<+=0.125");
+        }
+      } else {
+        //tl.call(toggleReveal, [index], 0.125);
       }
-    } else {
-      //tl.call(toggleReveal, [index], 0.125);
-    }
-  });
+    });
+  }
+ 
 });
 
 
@@ -319,7 +322,7 @@ $(() => {
   });
 });*/
 
-document.addEventListener("DOMContentLoaded", () => {
+/*document.addEventListener("DOMContentLoaded", () => {
   
   gsap.registerPlugin(ScrollTrigger);
 
@@ -421,7 +424,53 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
   
+});*/
+
+
+
+$(() => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const container = document.querySelector(".scroll-about_wrap-body");
+  const sections = gsap.utils.toArray(".special__section");
+  const header = document.querySelector('header').clientHeight;
+  const windowHeight = window.innerHeight ;
+  
+  console.log(header);
+  const toggleActive = (index) => {
+    $(".bg__all-wrap img").removeClass("active"); // Убираем класс "active" у всех изображений
+    $(".bg__all-wrap img").eq(index).addClass("active"); // Добавляем класс "active" только к текущему изображению
+  };
+
+
+  function goToSection(section, anim) {
+    
+      gsap.to(window, {
+        scrollTo: { y: section * windowHeight  , autoKill: false },
+        duration: 1
+      });
+
+      if (anim) {
+        anim.restart();
+      }
+  }
+
+  sections.forEach((section, i) => {
+    ScrollTrigger.create({
+      trigger: section,
+      onEnter: () => {
+        goToSection(i)
+        toggleActive(i);
+      }
+    });
+    
+    ScrollTrigger.create({
+      trigger: section,
+      start: "bottom bottom",
+      onEnterBack: () => {
+        goToSection(i);
+        toggleActive(i);
+      },
+    });
+  });
 });
-
-
-
