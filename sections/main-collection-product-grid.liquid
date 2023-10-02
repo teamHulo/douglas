@@ -84,15 +84,17 @@
                   </div>
                   <div class="collection__products collection__infinite-container">
                     {% for product in collection.products %}
-                      {%
-                        render 'product-item' with
-                        product: product,
-                        aspect_ratio: section.settings.aspect_ratio,
-                        product_columns: section.settings.columns,
-                        product_columns_mobile: section.settings.columns_mobile,
-                        wrapper_class: 'animation-fade-up-reveal',
-                        show_price: false
-                      %}
+                      {% if product.type != 'treatments' %}
+                        {%
+                          render 'product-item' with
+                          product: product,
+                          aspect_ratio: section.settings.aspect_ratio,
+                          product_columns: section.settings.columns,
+                          product_columns_mobile: section.settings.columns_mobile,
+                          wrapper_class: 'animation-fade-up-reveal',
+                          show_price: false
+                        %}
+                      {% endif %}
                     {% else %}
                       <div class="collection__empty">
                         <div>{{ 'collections.general.no_products' | t }}</div>
