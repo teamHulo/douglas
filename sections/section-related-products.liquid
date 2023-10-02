@@ -1,0 +1,162 @@
+<style>
+    #shopify-section-{{ section.id }} {
+        margin-top: 100px;
+        border-top: 1px solid #D9D9D9;
+        border-bottom: 1px solid #D9D9D9; 
+        background-color: {{ section.settings.bg }};
+        color: {{ section.settings.color_text }};
+    }
+    .related {
+        display: flex;
+    }
+    .related__wrapper, .related__content {
+        display: flex;
+    }
+    .related__product img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        position: absolute;
+    }
+    .related__content {
+        flex: 4;
+        padding: 60px 0;
+    }
+    .related__label {
+        padding: 60px 80px;
+        border-right: 1px solid #D9D9D9;
+    }
+    .related__img {
+        padding: 60px 80px;
+    }
+    .related__label h3 {
+        flex: 1;
+        font-family: Proxima Nova;
+        font-size: var(--font-size-42);
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%;
+    }
+    .related__product {
+        display: flex;
+        flex-direction: column;
+    }
+    .product__text {
+        text-align: center;
+    }
+    .product__text h4 {
+        font-family: Proxima Nova;
+        font-size: var(--font-soze-26);
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 0.26px;
+        text-transform: uppercase;
+        margin: 16px 0;
+    }
+    .product__text p {
+        text-align: center;
+        font-family: Proxima Nova;
+        font-size: var(--font-soze-22);
+        font-style: normal;
+        font-weight: 600;
+        line-height: 140%;
+        letter-spacing: 0.15px;
+        text-transform: uppercase;
+    }
+    .product__img {
+        flex: 1;
+        padding-bottom: 100%;
+        position: relative;
+    }
+    .carousel-cell {
+        width: calc(100% / 3 );
+    }
+@media(max-width: 1200px) {
+    .carousel-cell {
+        width: 50%;
+    }
+}
+@media(max-width: 900px) {
+    .carousel-cell {
+        width: 100%;
+    }
+}
+    .carousel-cell.is-selected {
+    }
+    .carousel {
+    flex-grow: 1;
+    }
+    .flickity-button:disabled {
+        display: none;
+    }
+    .flickity-prev-next-button {
+        width: 60px;
+        height: 60px;
+        border: 1px solid #D9D9D9;
+    }
+</style>
+<div class="related container">
+    <div class="related__label"><h3>Shop Range</h3></div>
+    <div class="related__img carousel{% unless section.settings.carousel %}--off{% endunless %}" >
+        {% for item in section.settings.collection.products %}
+            <div class="related__product carousel-cell">
+                <div class="product__img">
+                    <img src="{{ item.media[0] |img_url: 'medium' }}" alt="">
+                </div>
+                <div class="product__text">
+                    <h4>{{ item.title }}</h4>
+                    <p>{{ item.price | money }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<script>
+    import(flu.chunks.flickity).then(({
+        Flickity
+      }) => {
+        var flkty = new Flickity( document.querySelector('.carousel'), {
+            cellAlign: 'left',
+            contain: true,
+            pageDots: false
+        });
+      });
+</script>
+{% schema %}
+    {
+        "name": "Slider with label",
+        "settings": [
+            {
+                "type": "color",
+                "id": "bg",
+                "label": "Background"
+            },
+            {
+                "type": "color",
+                "id": "color_text",
+                "label": "Text color"
+            },
+            {
+                "type": "collection",
+                "id": "collection",
+                "label": "Collection"
+            },
+            {
+                "type": "checkbox",
+                "id": "carousel",
+                "label": "Is carousel",
+                "default": true
+            }
+        ],
+        "presets": [
+            {
+                "name": "Slider with label"
+            }
+        ]
+    }
+{% endschema %}
+
+<script>
+
+</script>

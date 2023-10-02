@@ -1,0 +1,148 @@
+
+<style>
+    .blog-list__title {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 100px;
+        column-gap: {{ section.settings.gap }}px;
+    }
+    .blog-list__title .title, .blog-list__title .text {
+        flex: 1;
+    }
+    .blog-list__content {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 48px;
+    }
+    .title {
+        font-family: Proxima Nova;
+        font-size: var(--font-size-72);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 110%;
+        text-transform: uppercase;
+    }
+    .logo-list__item h3, .logo-list__item button {
+        font-family: Raleway;
+        font-size: var(--font-size-22);
+        font-style: normal;
+        font-weight: 600;
+        line-height: 140%;
+        letter-spacing: 0.22px;
+        padding: 24px 0;
+    }
+    .blog__filters {
+        display: flex;
+        justify-content: end;
+    }
+    .filter__wrapper {
+        position: relative;
+    }
+    .filter__wrapper span {
+        z-index: 3;
+        position: relative;
+        color: var(--black, #080808);
+        font-family: Proxima Nova;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: 0.64px;
+        text-transform: uppercase;
+    }
+    .filter__wrapper:hover .filter {
+        display: flex;
+        z-index: 2;
+    }
+    .filter {
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        background-color: white;
+        padding: 15px 0;
+        z-index: -1;
+    }
+    .filter a {
+        padding: 5px 16px;
+    }
+    .filter a:hover {
+        background-color: rgb(235, 235, 235);
+    }
+</style>
+
+{%- paginate section.settings.blog.articles by 4 -%}
+    <div class="blog-list container">
+        <div class="blog-list__wrapper">
+            <div class="blog-list__title">
+                <h2 class="title">{{ section.settings.title }}</h2>
+                <div class="text">{{ section.settings.text }}</div>
+            </div>
+            <div class="blog__filters">
+                <div class="filter__wrapper">
+                    <span>Filter by</span>
+                    <div class="filter">
+                        {% for tag in section.settings.blog.all_tags %} 
+                            {{ tag | link_to_add_tag: tag }}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="blog-list__content">
+                {% assign variable = section.settings.blog.articles %}
+                {% assign arr = '1,2,3,4,5,6' | split: ',' %}
+                {%- for block in arr -%}
+                    {%
+                    render 'logo-list-item' with
+                    image: variable[0].image,
+                    link: variable[0].url,
+                    title: variable[0].title,
+                    btn_title: 'read more'
+                    %}
+                {%- endfor -%}
+            </div>
+        </div>
+        {%- if paginate.pages > 1 -%}
+            {%- render 'pagination', paginate: paginate -%}
+        {%- endif -%}
+    </div>
+{%- endpaginate -%}
+
+{% schema %}
+    {
+        "name": "Blog list",
+        "settings": [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title"
+            },
+            {
+                "type": "richtext",
+                "id": "text",
+                "label": "Text"
+            },
+            {
+                "type": "blog",
+                "id": "blog",
+                "label": "Blog"
+            },
+            {
+                "type": "range",
+                "id": "gap",
+                "unit": "px",
+                "min": 0,
+                "max": 300,
+                "default": 0,
+                "label": "Gap",
+                "step": 5
+            }
+        ],
+        "presets": [
+            {
+                "name": "Blog list"
+            }
+        ]
+    }
+{% endschema %}
