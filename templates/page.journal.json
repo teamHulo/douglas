@@ -2,11 +2,23 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
+        "content_max_width": 700
+      }
+    },
+    "a677bac4-92bb-4547-ad2a-a8c1dc4c923c": {
+      "type": "section-blog-list",
+      "settings": {
+        "title": "Slider with label",
+        "text": "<p>Lorem ipsum dolor sit amet consectetur. Euismod bibendum dignissim aliquet diam pretium libero dictumst. Dui etiam sem tortor nisi arcu in dignissim. Ornare quisque faucibus in sodales diam tempus nisl elementum sed. Faucibus eget vulputate.<\/p>",
+        "blog": "news",
+        "gap": 0
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "a677bac4-92bb-4547-ad2a-a8c1dc4c923c"
   ]
 }
