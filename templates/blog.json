@@ -6,22 +6,35 @@
         "title": {
           "type": "title",
           "settings": {
-          }
-        },
-        "summary": {
-          "type": "summary",
-          "settings": {
+            "show_date": true
           }
         }
       },
       "block_order": [
         "title"
       ],
+      "disabled": true,
       "settings": {
+        "show_rss": true,
+        "articles_per_row": 2,
+        "aspect_ratio": "square",
+        "enable_animation": true
+      }
+    },
+    "071aa06a-262b-436e-91f9-9e43bd80bf57": {
+      "type": "section-blog-list",
+      "settings": {
+        "padding_top": 95,
+        "padding_bottom": 155,
+        "title": "Ideas & Inspiration",
+        "text": "<p>Lorem ipsum dolor sit amet consectetur. Euismod bibendum dignissim aliquet diam pretium libero dictumst. Dui etiam sem tortor nisi arcu in dignissim. Ornare quisque faucibus in sodales diam tempus nisl elementum sed. Faucibus eget vulputate.<\/p>",
+        "blog": "",
+        "gap": 0
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "071aa06a-262b-436e-91f9-9e43bd80bf57"
   ]
 }
