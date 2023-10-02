@@ -1,5 +1,9 @@
 <link rel="stylesheet" href="{{ 'card-item.css' | asset_url }}">
 <style>
+    #shopify-section-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
     .blog-list__title {
         display: flex;
         justify-content: space-between;
@@ -71,6 +75,11 @@
     .filter a:hover {
         background-color: rgb(235, 235, 235);
     }
+    @media (max-width: 767px) {
+        .blog-list__title {
+            flex-direction: column;
+        }
+    }
 </style>
 
 {%- paginate section.settings.blog.articles by 4 -%}
@@ -91,11 +100,8 @@
                 </div>
             </div>
             <div class="blog-list__content">
-                {% assign variable = section.settings.blog.articles %}
-                {% assign arr = '1,2,3,4,5,6' | split: ',' %}
-                {%- for block in arr -%}
-
-                {% render 'card-item', url: variable[0].url, img: variable[0].image, title: variable[0].title, btn_text: 'READ MORE' %}
+                {%- for item in section.settings.blog.articles -%}
+                    {% render 'card-item', url: item.url, img: item.image, title: item.title, btn_text: 'READ MORE' %}
                 {%- endfor -%}
             </div>
         </div>
@@ -109,6 +115,26 @@
     {
         "name": "Blog list",
         "settings": [
+            {
+                "type": "range",
+                "id": "padding_top",
+                "unit": "px",
+                "min": 0,
+                "max": 300,
+                "default": 0,
+                "label": "Padding top",
+                "step": 5
+            },
+            {
+                "type": "range",
+                "id": "padding_bottom",
+                "unit": "px",
+                "min": 0,
+                "max": 300,
+                "default": 0,
+                "label": "Padding top",
+                "step": 5
+            },
             {
                 "type": "text",
                 "id": "title",
