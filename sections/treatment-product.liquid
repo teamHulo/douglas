@@ -265,6 +265,19 @@
             {%- case block.type -%}
               {%- when '@app' -%}
               {% render block %}
+              {% when 'btn_links' %}
+                <div class="tret-btns">
+                  {%if block.settings.btn_url1 != blank%}
+                    <a href="{{block.settings.btn_url1}}" class="a-btn prime">
+                      {{block.settings.btn_name1}}
+                    </a>
+                  {%endif%}
+                  {%if block.settings.btn_url2 != blank%}
+                    <a href="{{block.settings.btn_url2}}" class="a-btn secondary">
+                      {{block.settings.btn_name2}}
+                    </a>
+                  {%endif%}
+                </div>
               {%- when 'border' -%}
               <div class="product__border product__block animation-fade-up-reveal"></div>
               {%- when 'title' -%}
@@ -1019,6 +1032,36 @@
       }
     ],
     "blocks": [
+      {
+        "type": "btn_links",
+        "name": "btn-links",
+        "limit": 1,
+        "settings": [
+          {
+            "type":"url",
+            "id":"btn_url1",
+            "label": "btn url 1"
+          },
+          {
+            "type":"text",
+            "id":"btn_name1",
+            "label": "btn name 1",
+            "default": "Make a booking"
+          },
+          {
+            "type":"url",
+            "id":"btn_url2",
+            "label": "btn url 2"
+          },
+          
+          {
+            "type":"text",
+            "id":"btn_name2",
+            "label": "btn name 2",
+            "default": "Find out more"
+          }
+        ]
+      },
       {
         "type": "@app"
       },
