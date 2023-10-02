@@ -2,11 +2,21 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
+        "content_max_width": 700
+      }
+    },
+    "f482143c-2613-42b6-b5db-62139c50825a": {
+      "type": "treatment-booking",
+      "settings": {
+        "title": "TREATMENT BOOKING AND PRICE ENQUIRY FORM",
+        "text": "<h4><strong>Please fill in the below form to arrange your treatment booking or to enquire about our treatment prices<\/strong><\/h4><p>Please fill in the below for to arrange your treatment booking or to enquire about our treatment prices. One of our customer care team members will be in contact with you to arrange a booking date and time<\/p>"
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "f482143c-2613-42b6-b5db-62139c50825a"
   ]
 }
