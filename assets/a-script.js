@@ -483,7 +483,7 @@ $(() => {
   });
 });*/
 
-$(() => {
+/*$(() => {
   gsap.registerPlugin(ScrollTrigger);
   const headerHeight = document.querySelector('header').clientHeight;
   const windowHeight = window.innerHeight;
@@ -504,7 +504,9 @@ $(() => {
       duration: 1,
       onComplete: ()=> {
         indx = sectionIndex;
-        setTimeout(() => isReady = true, 300);
+        gsap.delayedCall(0.15, () => {
+          isReady = true;
+        });
         
       }
     });
@@ -550,4 +552,93 @@ $(() => {
       }
     }
   });
+});*/
+
+$(() => {
+  const lengthSections = document.querySelectorAll('.special__section').length;
+  if(lengthSections > 0 ){
+    gsap.registerPlugin(ScrollTrigger);
+    const headerHeight = document.querySelector('header').clientHeight;
+    const windowHeight = window.innerHeight;
+    const announcementBars = document.querySelectorAll('.announcement-bar');
+    const announcementHeight = announcementBars.length > 0 ? announcementBars[0].clientHeight : 0;
+    const shift = announcementHeight + headerHeight;
+   
+    console.log(shift);
+  
+    const toggleActive = (index) => {
+      $(".bg__all-wrap img").removeClass("active");
+      $(".bg__all-wrap img").eq(index).addClass("active");
+    };
+  
+    function disableScroll() {
+      document.addEventListener('wheel', preventDefault, { passive: false });
+      document.addEventListener('touchmove', preventDefault, { passive: false });
+    }
+  
+    function enableScroll() {
+      document.removeEventListener('wheel', preventDefault);
+      document.removeEventListener('touchmove', preventDefault);
+    }
+  
+    function preventDefault(event) {
+      event.preventDefault();
+    }
+  
+    function goToSection(sectionIndex) {
+      isReady = false; // Отключаем скроллинг перед началом анимации
+      disableScroll(); // Отключаем скроллинг через обработчики событий
+      gsap.to(window, {
+        scrollTo: { y: sectionIndex * windowHeight + shift, autoKill: false },
+        duration: 1,
+        onComplete: () => {
+          indx = sectionIndex;
+          gsap.delayedCall(0.3, () => {
+            isReady = true; // Включаем скроллинг после завершения анимации
+            enableScroll(); // Включаем скроллинг через обработчики событий
+          });
+        },
+      });
+    }
+  
+    let indx = 0;
+    toggleActive(indx);
+    let isReady = false;
+  
+    ScrollTrigger.create({
+      trigger: '.scroll-about-fade',
+      pin: '.scroll-about-fade .bg__all',
+      start: "top",
+      end: 'bottom bottom',
+    });
+  
+    ScrollTrigger.create({
+      trigger: '.scroll-about__wrap',
+      top: "top top",
+      end: "bottom bottom",
+      markers: true,
+      onEnter: () => {
+        isReady = true;
+      },
+      onLeave: () => {
+        isReady = false;
+        enableScroll();
+      },
+      onEnterBack: () => {
+        isReady = true;
+      },
+      onUpdate: (self) => {
+        if (isReady) {
+          const newIndex = Math.floor((window.scrollY + shift) / windowHeight) + self.direction;
+          console.log(newIndex);
+          if (newIndex >= lengthSections) {
+            newIndex = lengthSections - 1;
+          }
+          goToSection(newIndex);
+          isReady = false;
+          newIndex <= 0 ? toggleActive(0) : toggleActive(newIndex);
+        }
+      }
+    });
+  }
 });

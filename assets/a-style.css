@@ -295,6 +295,9 @@ header .header__inner {
 [data-name="collection"] .announcement-bar__content span, [data-page="about"] .announcement-bar__content span{
   color: #080808;
 }
+[data-page="about"] .header__outer-wrapper{
+  position:static !important;
+}
 /*[data-page="about"] .header__outer-wrapper,[data-page="about"] .announcement-bar{
  
 }
