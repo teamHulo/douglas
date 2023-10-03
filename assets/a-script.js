@@ -600,9 +600,9 @@ $(() => {
         },
       });
     }
-  
+    let startImageIndex = Math.floor((window.scrollY + shift) / windowHeight);
     let indx = 0;
-    toggleActive(indx);
+    toggleActive(startImageIndex);
     let isReady = false;
   
     ScrollTrigger.create({
@@ -616,7 +616,6 @@ $(() => {
       trigger: '.scroll-about__wrap',
       top: "top top",
       end: "bottom bottom",
-      markers: true,
       onEnter: () => {
         isReady = true;
       },
