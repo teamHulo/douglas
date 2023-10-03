@@ -490,7 +490,7 @@ $(() => {
   const announcementBars = document.querySelectorAll('.announcement-bar');
   const announcementHeight = announcementBars.length > 0 ? announcementBars[0].clientHeight : 0;
   const shift = announcementHeight + headerHeight;
-
+  const lengthSections = document.querySelectorAll('.special__section').length;
   console.log(shift);
 
   const toggleActive = (index) => {
@@ -499,21 +499,18 @@ $(() => {
   };
 
   function goToSection(sectionIndex) {
-    // $('body').css('overflow','hidden');
     gsap.to(window, {
       scrollTo: { y: sectionIndex * windowHeight + shift, autoKill: false },
       duration: 1,
       onComplete: ()=> {
-        // $('body').css('overflow','auto');
         indx = sectionIndex;
-        setTimeout(() => isReady = true, 1000)
+        setTimeout(() => isReady = true, 10)
         
       }
     });
-   
   }
 
-  let indx = 0; // Скролировать к первой секции при загрузке страницы
+  let indx = 0;
   toggleActive(0);
   let isReady = false;
 
@@ -538,16 +535,18 @@ $(() => {
     },
     onEnterBack: () => {
       isReady = true;
+    
     },
     onUpdate: (self) => {
-      console.log('UPDATE')
-      const newIndex = Math.floor((window.scrollY + shift) / windowHeight) + self.direction;
-      console.log(newIndex);
-      console.log(Math.floor(window.scrollY ));
-      if ( isReady) {
+      if (isReady) {
+        let newIndex = indx + self.direction;
+        console.log(indx);
+        if (newIndex > lengthSections) {
+          newIndex = lengthSections - 1;
+        }
         goToSection(newIndex);
         isReady = false;
-        toggleActive(newIndex);
+        newIndex <= 0 ?  toggleActive(0) : toggleActive(newIndex);
       }
     }
   });
