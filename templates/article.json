@@ -6,6 +6,8 @@
         "title": {
           "type": "title",
           "settings": {
+            "blog_show_date": false,
+            "blog_show_social_sharing": false
           }
         },
         "featured_image": {
@@ -16,6 +18,9 @@
         "content": {
           "type": "content",
           "settings": {
+            "blog_show_social_sharing": false,
+            "blog_show_pagination": true,
+            "content_max_width": 600
           }
         }
       },
@@ -25,6 +30,7 @@
         "content"
       ],
       "settings": {
+        "enable_animation": true
       }
     }
   },
