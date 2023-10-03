@@ -20,7 +20,7 @@
           "settings": {
             "blog_show_social_sharing": false,
             "blog_show_pagination": true,
-            "content_max_width": 1300
+            "content_max_width": 1100
           }
         }
       },
