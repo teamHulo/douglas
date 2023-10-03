@@ -504,7 +504,7 @@ $(() => {
       duration: 1,
       onComplete: ()=> {
         indx = sectionIndex;
-        setTimeout(() => isReady = true, 10)
+        setTimeout(() => isReady = true, 300);
         
       }
     });
@@ -539,9 +539,9 @@ $(() => {
     },
     onUpdate: (self) => {
       if (isReady) {
-        let newIndex = indx + self.direction;
-        console.log(indx);
-        if (newIndex > lengthSections) {
+        const newIndex = Math.floor((window.scrollY + shift) / windowHeight) + self.direction;
+        console.log(newIndex);
+        if (newIndex >= lengthSections) {
           newIndex = lengthSections - 1;
         }
         goToSection(newIndex);
