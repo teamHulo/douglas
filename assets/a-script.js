@@ -499,13 +499,15 @@ $(() => {
   };
 
   function goToSection(sectionIndex) {
-    $('body').css('overflow','hidden');
+    // $('body').css('overflow','hidden');
     gsap.to(window, {
       scrollTo: { y: sectionIndex * windowHeight + shift, autoKill: false },
       duration: 1,
-      onComplete:()=>{
-        $('body').css('overflow','auto');
+      onComplete: ()=> {
+        // $('body').css('overflow','auto');
         indx = sectionIndex;
+        setTimeout(() => isReady = true, 1000)
+        
       }
     });
    
@@ -513,6 +515,7 @@ $(() => {
 
   let indx = 0; // Скролировать к первой секции при загрузке страницы
   toggleActive(0);
+  let isReady = false;
 
 
   ScrollTrigger.create({
@@ -526,12 +529,24 @@ $(() => {
     trigger: '.scroll-about__wrap',
     top: "top top",
     end: "bottom bottom",
-    markers:true,
     markers: true,
-    onUpdate: () => {
-      const newIndex = Math.floor((window.scrollY + shift) / windowHeight);
-      if (newIndex !== indx) {
+    onEnter: () => {
+      isReady = true;
+    },
+    onLeave: () => {
+      isReady = false;
+    },
+    onEnterBack: () => {
+      isReady = true;
+    },
+    onUpdate: (self) => {
+      console.log('UPDATE')
+      const newIndex = Math.floor((window.scrollY + shift) / windowHeight) + self.direction;
+      console.log(newIndex);
+      console.log(Math.floor(window.scrollY ));
+      if ( isReady) {
         goToSection(newIndex);
+        isReady = false;
         toggleActive(newIndex);
       }
     }
