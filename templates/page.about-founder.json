@@ -14,57 +14,46 @@
         "c1c31b6d-fb59-4a35-8be7-985cc1334d60": {
           "type": "section-1",
           "settings": {
+            "color": "#fefefe",
             "img": "shopify:\/\/shop_images\/unsplash_wE3hiKhAbuE_1.png",
-            "title": "DOUGLAS PEREIRA SKINSCIENCE:",
-            "subtitle": "(All skin type, uncomplicated skincare collection",
-            "text": "<p>Twelve years after founding our premium skincare range Douglas Pereira Skin Health we have launched our new range Douglas Pereira Skin Science. This collectionof products came from a need Douglas sawin the market, wheresome skincare consumers don’t want to have a complicated skincare routine, but still wanted to get most out of a few steps.<\/p><p>The rangeis a straightforward collection of products that has been developedfor all genders and skin types. Our universal formulations offerall in one skincare solutionsfor those not wanting a complicated homecare regime, but still striving for result driven skincare without toomany steps<\/p>"
+            "title": "Our Founder Douglas Pereira",
+            "subtitle": "Skincare Formulator | Dermal Therapist",
+            "text": "<p>Highly respected throughout the skincare, beauty, cosmetic and aesthetic medical world Douglas Pereira has been a part of the Australian beauty, skincare and wellness industry for nearly three decades. <br\/><br\/>He commenced his career at the young age of seventeen, working as a hands-on skin therapist in high-end day spas and skin clinics. He then progressed in his career to become a senior educator with leading international skincare groups, which saw him travel around Australia and abroad, educating on the fundamentals of the skin and luxury products.<br\/><br\/>After fourteen years of working with leading international brands, Douglas elevated his skills to become a dermal therapist and opened his first skin focus flagship dermal therapy clinic “Douglas Pereira Skin Health” in Sydney Australia. Where he treats an exclusive list of Australia and international clients. <br\/><br\/>In 2011 Douglas launch his first skincare range under his namesake. Working alongside some of Australia’s leading cosmeceutical formulators and using his years of practical, technical, and theoretical knowledge and drawing on his years of treating skin. His inspiration to create the range came from a need he saw in the skincare industry, for a range of luxury cosmeceutical grade skincare products and treatments that treats the skin based on dermal remodelling, barrier and DNA repair and counteract the effects that pollution, stress, and genetic ageing has on the skin. <br\/><br\/>Twelve years on his brand has expanded into three ranges under the “Douglas Pereira Cosmeceuticals” brand - <br\/><\/p>"
           }
         },
         "c0af95d9-96cb-4b14-baa9-b0fcba3a2742": {
           "type": "section-2",
           "settings": {
+            "color": "#fefefe",
             "img": "shopify:\/\/shop_images\/1666847428_2-celes-club-p-kot-na-chernom-fone-oboi-krasivo-2.jpg",
-            "title": "AN UNCOMPLICATED APPROACH:",
-            "subtitle": "The range has been divided into three collections making it easy for you to navigate and select your products. Core, Supportive and Enhancement collections."
+            "title": "Douglas Pereira Skin Health",
+            "subtitle": "A premium prescriptive collection of result driven products that have been formulated for a skincare savvy user or somebody that wants to elevate their skincare regime and achieve effective, visible, long-term results that will transform their skins health."
           }
         },
-        "d5eb7694-27ca-46a8-910c-a8f7a35a27f5": {
-          "type": "section-3",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/makeup-powders-and-brush.jpg",
-            "alignment": "flex-start",
-            "title": "Core collection",
-            "text": "<p>The core productcollectionis your everyday routine and hasbeen formulated to suite all skin types, eliminating the challenge of choosing the right products for your skin. <br\/>The system is straightforward and has minimal steps, so you don’t have to invest too much time looking after your skinbutcan have the confidence all bases are covered with just a few steps.<\/p>",
-            "url": "",
-            "btn_name": ""
-          }
-        },
-        "ae8e0f66-1cdf-4033-8c46-818f01155728": {
-          "type": "section-3",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/makeup-and-jewelry.jpg",
-            "alignment": "flex-end",
-            "title": "Universal cleanser",
-            "text": "<p>Lorem ipsum dolor sit amet consectetur. Orci hendrerit posuere volutpat egestas. Suscipit rutrum est urna sed porttitor elementum. Consectetur ut nec egestas felis nulla sed bibendum. Nisl risus ultricies enim sapien sollicitudin .<\/p>",
-            "url": "#",
-            "btn_name": "Learn more"
-          }
-        },
-        "1c0212c8-19c7-47cf-9f36-0c2894346569": {
+        "8d3b759d-43be-4573-8038-357b77d70d87": {
           "type": "section-4",
           "settings": {
-            "img": "shopify:\/\/shop_images\/Img_3.png",
-            "title": "Lorem ipsum",
-            "text": "<p>Lorem ipsum dolor sit amet consectetur. Orci hendrerit posuere volutpat egestas. Suscipit rutrum est urna sed porttitor elementum. Consectetur ut nec egestas felis nulla sed bibendum. Nisl risus ultricies enim sapien sollicitudin .<\/p><p>Suscipit rutrum est urna sed porttitor elementum. Consectetur ut nec egestas felis nulla sed bibendum. <\/p>"
+            "color": "#fefefe",
+            "img": "shopify:\/\/shop_images\/makeup-and-jewelry.jpg",
+            "title": "Douglas Pereira Skin Science",
+            "text": "<p>An uncomplicated skincare collection, with complex formulations, for everyday <\/p>"
+          }
+        },
+        "c8bbee42-347a-4106-921c-6fc457e42111": {
+          "type": "section-2",
+          "settings": {
+            "color": "#fefefe",
+            "img": "shopify:\/\/shop_images\/image_12.jpg",
+            "title": "Douglas Pereira Minerals",
+            "subtitle": "A collection of mineral makeup products to enhance your outer beauty. Each product in the range is formulated and manufactured in our Australian laboratory using the latest scientific innovative research and development. "
           }
         }
       },
       "block_order": [
         "c1c31b6d-fb59-4a35-8be7-985cc1334d60",
         "c0af95d9-96cb-4b14-baa9-b0fcba3a2742",
-        "d5eb7694-27ca-46a8-910c-a8f7a35a27f5",
-        "ae8e0f66-1cdf-4033-8c46-818f01155728",
-        "1c0212c8-19c7-47cf-9f36-0c2894346569"
+        "8d3b759d-43be-4573-8038-357b77d70d87",
+        "c8bbee42-347a-4106-921c-6fc457e42111"
       ],
       "settings": {
       }
