@@ -47,13 +47,17 @@
             "text": "<p>Three exfoliating serums called Skin Drops. These serums have been formulated to support your everyday core skin routine. They melt and digest away dead skin cells, tighten pores and smooth your skin texture. There are three different formulations to target your skin concerns. <\/p><p><strong>Products<\/strong><\/p><p>Nutrient skin drops<br\/>Glow skin drops<br\/>Balancing skin drops <br\/><\/p>"
           }
         },
-        "23452f70-46fa-41c5-ba6e-3b76b89bc104": {
-          "type": "section-4",
+        "90b92697-1b1e-4850-9dcf-ad75622d35f7": {
+          "type": "section-3",
           "settings": {
             "color": "#fefefe",
             "img": "shopify:\/\/shop_images\/49678deb1134e9ed1fc504570f44fcfb.jpg",
+            "type_btn": "secondary",
+            "alignment": "flex-start",
             "title": "Enhancement collection -",
-            "text": "<p>Enhance your skin routine by giving yourself a little pamper with one of our skin condition masks “see our at home facial guide below” <\/p><p><strong>Products<\/strong><\/p><p>Nutrient skin mask<br\/>Glow skin mask<br\/>Balancing skin mask<br\/>No water cleanser <\/p>"
+            "text": "<p>Enhance your skin routine by giving yourself a little pamper with one of our skin condition masks “see our at home facial guide below” <\/p><p><strong>Products<\/strong><\/p><p>Nutrient skin mask<br\/>Glow skin mask<br\/>Balancing skin mask<br\/>No water cleanser <br\/><\/p>",
+            "url": "",
+            "btn_name": ""
           }
         },
         "6413cf64-03a6-4290-a00a-95d908163d16": {
@@ -91,7 +95,7 @@
         "2b42172a-a506-4cd0-a0be-f0316e22261a",
         "74665ef5-3236-4f66-a02e-29ebbe0931cb",
         "c3fd8460-03b6-4369-85d2-d76d01923647",
-        "23452f70-46fa-41c5-ba6e-3b76b89bc104",
+        "90b92697-1b1e-4850-9dcf-ad75622d35f7",
         "6413cf64-03a6-4290-a00a-95d908163d16",
         "2c4af786-cd7e-4cf7-8b3d-8e9a043c84e5",
         "c20f6a99-9068-415c-904f-94b4e1041cdb"
