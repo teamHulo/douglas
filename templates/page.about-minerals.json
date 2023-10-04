@@ -14,57 +14,60 @@
         "c1c31b6d-fb59-4a35-8be7-985cc1334d60": {
           "type": "section-1",
           "settings": {
+            "color": "#fefefe",
             "img": "shopify:\/\/shop_images\/unsplash_wE3hiKhAbuE_1.png",
-            "title": "DOUGLAS PEREIRA SKINSCIENCE:",
-            "subtitle": "(All skin type, uncomplicated skincare collection",
-            "text": "<p>Twelve years after founding our premium skincare range Douglas Pereira Skin Health we have launched our new range Douglas Pereira Skin Science. This collectionof products came from a need Douglas sawin the market, wheresome skincare consumers don’t want to have a complicated skincare routine, but still wanted to get most out of a few steps.<\/p><p>The rangeis a straightforward collection of products that has been developedfor all genders and skin types. Our universal formulations offerall in one skincare solutionsfor those not wanting a complicated homecare regime, but still striving for result driven skincare without toomany steps<\/p>"
+            "title": "Douglas Pereira Mineral Makeup Collection:",
+            "subtitle": "A fusion of skin health science and the artistry of makeup.",
+            "text": "<p>In addition to our two skincare ranges we also have a collection of mineral makeup products to enhance your outer beauty. We believe your makeup is an extension of your skincare and they should work in synergy to better your skins health. Within the collection are mineral based tinted SPF moisturisers and mineral colour makeup for the cheeks and eyes, that will provide your skin with radiance and luminosity, whilst protecting your skin from damaging UVA and UVB exposure. <\/p>"
           }
         },
-        "c0af95d9-96cb-4b14-baa9-b0fcba3a2742": {
-          "type": "section-2",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/1666847428_2-celes-club-p-kot-na-chernom-fone-oboi-krasivo-2.jpg",
-            "title": "AN UNCOMPLICATED APPROACH:",
-            "subtitle": "The range has been divided into three collections making it easy for you to navigate and select your products. Core, Supportive and Enhancement collections."
-          }
-        },
-        "d5eb7694-27ca-46a8-910c-a8f7a35a27f5": {
-          "type": "section-3",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/makeup-powders-and-brush.jpg",
-            "alignment": "flex-start",
-            "title": "Core collection",
-            "text": "<p>The core productcollectionis your everyday routine and hasbeen formulated to suite all skin types, eliminating the challenge of choosing the right products for your skin. <br\/>The system is straightforward and has minimal steps, so you don’t have to invest too much time looking after your skinbutcan have the confidence all bases are covered with just a few steps.<\/p>",
-            "url": "",
-            "btn_name": ""
-          }
-        },
-        "ae8e0f66-1cdf-4033-8c46-818f01155728": {
-          "type": "section-3",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/makeup-and-jewelry.jpg",
-            "alignment": "flex-end",
-            "title": "Universal cleanser",
-            "text": "<p>Lorem ipsum dolor sit amet consectetur. Orci hendrerit posuere volutpat egestas. Suscipit rutrum est urna sed porttitor elementum. Consectetur ut nec egestas felis nulla sed bibendum. Nisl risus ultricies enim sapien sollicitudin .<\/p>",
-            "url": "#",
-            "btn_name": "Learn more"
-          }
-        },
-        "1c0212c8-19c7-47cf-9f36-0c2894346569": {
+        "e6c7caa0-631f-4006-98b2-283ace9fc50d": {
           "type": "section-4",
           "settings": {
-            "img": "shopify:\/\/shop_images\/Img_3.png",
-            "title": "Lorem ipsum",
-            "text": "<p>Lorem ipsum dolor sit amet consectetur. Orci hendrerit posuere volutpat egestas. Suscipit rutrum est urna sed porttitor elementum. Consectetur ut nec egestas felis nulla sed bibendum. Nisl risus ultricies enim sapien sollicitudin .<\/p><p>Suscipit rutrum est urna sed porttitor elementum. Consectetur ut nec egestas felis nulla sed bibendum. <\/p>"
+            "color": "#fefefe",
+            "img": "shopify:\/\/shop_images\/1616971213_46-p-temnii-fon-dlya-rabochego-stola-49.jpg",
+            "title": "Outer beauty radiance meets skin health–",
+            "text": "<p>The mineral makeup collection is all about outer beauty and enhancing your own natural radiance and luminosity. We use natural mineral colour pigments in each of our makeup formulations<\/p><p>When formulating our makeup collection, we not only consider how the product looks, feels, and wears on your skin but we also consider how your makeup impacts your skin health. We do this by bringing the science of our skincare into our makeup formulations, and including the powerful active ingredients used in our skincare. Thus, creating makeup products that enhance your skin health. <\/p>"
+          }
+        },
+        "355bc1d1-03a6-48ec-94ce-9ba559ccaf1f": {
+          "type": "section-4",
+          "settings": {
+            "color": "#fefefe",
+            "img": "shopify:\/\/shop_images\/1641863996_1-damion-club-p-temnii-fon-dlya-prezentatsii-1.jpg",
+            "title": "Colour adaptative science –",
+            "text": "<p>Each of our mineral makeup formulations utilise the science of “colour adaptiveness”. This science allows your mineral makeup product to adapt to your skin’s natural tones and individual hues. Allowing your makeup to look more like you. <br\/><\/p><p>We do this by formulating our makeup with our proprietary “colour dispersion technology” that combines two self-adjusting methods “Encapsulated colour dispersion and pH-reactive balancing”. <\/p><p>Our colour dispersion technology evenly distributes our encapsulated pigment when the product is rubbed into the skin, the rubbing action breaks down a coating around the colour pigment and releases the colour evenly over your skin. Whilst the pH-reactive balancer works by responding to your individual pH levels. The ingredients in the formulation react to the acidity or alkaline levels of your skin’s moisture and adapt the colour pigments to suit your tone.<br\/><\/p>"
+          }
+        },
+        "c09c6b6c-3095-445f-a9d8-c601695e496a": {
+          "type": "section-4",
+          "settings": {
+            "color": "#fefefe",
+            "img": "shopify:\/\/shop_images\/images.jpg",
+            "title": "UVA \/ UVB exposure –",
+            "text": "<p>Premature skin aging results from exposure to a range of environmental factors, primarily ultraviolet radiation, but also high-energy visible light in the blue spectrum, infrared radiation, and environmental pollution. These extrinsic factors result in photoaging and DNA damage. <\/p><p>Our formulation comprises of a dual combination of Zinc and titanium to protect your skin from UVA and UVB factor. <\/p>"
+          }
+        },
+        "139d6913-2eae-4a11-8a1e-124b88954600": {
+          "type": "section-3",
+          "settings": {
+            "color": "#fefefe",
+            "img": "shopify:\/\/shop_images\/Rectangle_239.jpg",
+            "type_btn": "secondary",
+            "alignment": "flex-end",
+            "title": "Mineral makeup collections:",
+            "text": "<p><strong>Skin Fluid SPF 30+ <\/strong><br\/>Beyond an average tinted moisturiser, the Skin Fluid SPF comes in three shades and is a five in one formulation that provides your skin with SPF protection, moisturisation, fights free radical damage, evens our colour tone, and smooths out textural imperfections. This lightweight formular has a foundation like finish that leaves your skin looking iridescently luminous, balances and protected.   <\/p><p><strong>Skin Fluid Bronze <\/strong><br\/>Delivering a sun kissed glow to the skin, this lightweight fluid can be used as an all over face bronzer or used to define and contour.<br\/><br\/><strong>Skin Fluid Cheeks and highlighter <\/strong><br\/>Providing the check and eyes with a flush of colour and definition. The Skin Fluid Cheeks and highlighter comes in three colour tones to enhance your inner glow. <br\/><\/p>",
+            "url": "",
+            "btn_name": ""
           }
         }
       },
       "block_order": [
         "c1c31b6d-fb59-4a35-8be7-985cc1334d60",
-        "c0af95d9-96cb-4b14-baa9-b0fcba3a2742",
-        "d5eb7694-27ca-46a8-910c-a8f7a35a27f5",
-        "ae8e0f66-1cdf-4033-8c46-818f01155728",
-        "1c0212c8-19c7-47cf-9f36-0c2894346569"
+        "e6c7caa0-631f-4006-98b2-283ace9fc50d",
+        "355bc1d1-03a6-48ec-94ce-9ba559ccaf1f",
+        "c09c6b6c-3095-445f-a9d8-c601695e496a",
+        "139d6913-2eae-4a11-8a1e-124b88954600"
       ],
       "settings": {
       }
