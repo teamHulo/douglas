@@ -269,26 +269,37 @@ header .header__inner {
   letter-spacing: 0.28px;
 }
 
-
 [data-name="collection"] header,
 [data-page="about"] header,
-[data-page="about-dp-skin-health-collection"] header {
+[data-page="about-dp-skin-health-collection"] header,
+[data-page="about-dp-minerals-colletion"] header,
+[data-page="about-dp-skin-science-collection"] header,
+[data-page="about-founder-douglas-pereira"] header {
   background-color: #080808 !important;
 }
 [data-name="collection"] header svg path,
 [data-page="about"] header svg path,
-[data-page="about-dp-skin-health-collection"] header svg path {
+[data-page="about-dp-skin-health-collection"] header svg path,
+[data-page="about-dp-minerals-colletion"] header svg path,
+[data-page="about-dp-skin-science-collection"] header svg path,
+[data-page="about-founder-douglas-pereira"] header svg path {
   stroke: #fff;
   fill: #fff;
 }
 [data-name="collection"] .header__icon-menu svg rect,
 [data-page="about"] .header__icon-menu svg rect,
-[data-page="about-dp-skin-health-collection"] .header__icon-menu svg rect {
+[data-page="about-dp-skin-health-collection"] .header__icon-menu svg rect,
+[data-page="about-dp-minerals-colletion"] .header__icon-menu svg rect,
+[data-page="about-dp-skin-science-collection"] .header__icon-menu svg rect,
+[data-page="about-founder-douglas-pereira"] .header__icon-menu svg rect {
   fill: #fff;
 }
 [data-name="collection"] .header__logo-link .image__img,
-[data-page="about"] .header__logo-link .image__img ,
-[data-page="about-dp-skin-health-collection"] .header__logo-link .image__img{
+[data-page="about"] .header__logo-link .image__img,
+[data-page="about-dp-skin-health-collection"] .header__logo-link .image__img,
+[data-page="about-dp-minerals-colletion"] .header__logo-link .image__img,
+[data-page="about-dp-skin-science-collection"] .header__logo-link .image__img,
+[data-page="about-founder-douglas-pereira"] .header__logo-link .image__img {
   filter: invert();
 }
 [data-name="collection"] .announcement-bar__item,
@@ -296,18 +307,34 @@ header .header__inner {
 [data-name="collection"] .announcement-bar__gradient-gap,
 [data-page="about"] .announcement-bar__item,
 [data-page="about"] .announcement-bar,
-[data-page="about"] .announcement-bar__gradient-gap ,
+[data-page="about"] .announcement-bar__gradient-gap,
 [data-page="about-dp-skin-health-collection"] .announcement-bar__item,
 [data-page="about-dp-skin-health-collection"] .announcement-bar,
-[data-page="about-dp-skin-health-collection"] .announcement-bar__gradient-gap{
+[data-page="about-dp-skin-health-collection"] .announcement-bar__gradient-gap,
+[data-page="about-dp-minerals-colletion"] .announcement-bar__item,
+[data-page="about-dp-minerals-colletion"] .announcement-bar,
+[data-page="about-dp-minerals-colletion"] .announcement-bar__gradient-gap,
+[data-page="about-dp-skin-science-collection"] .announcement-bar__item,
+[data-page="about-dp-skin-science-collection"] .announcement-bar,
+[data-page="about-dp-skin-science-collection"] .announcement-bar__gradient-gap,
+[data-page="about-founder-douglas-pereira"] .announcement-bar__item,
+[data-page="about-founder-douglas-pereira"] .announcement-bar,
+[data-page="about-founder-douglas-pereira"] .announcement-bar__gradient-gap {
   background: #d9d9d9;
 }
 [data-name="collection"] .announcement-bar__content span,
 [data-page="about"] .announcement-bar__content span,
-[data-page="about-dp-skin-health-collection"] .announcement-bar__content span {
+[data-page="about-dp-skin-health-collection"] .announcement-bar__content span,
+[data-page="about-dp-minerals-colletion"] .announcement-bar__content span,
+[data-page="about-dp-skin-science-collection"] .announcement-bar__content span,
+[data-page="about-founder-douglas-pereira"] .announcement-bar__content span {
   color: #080808;
 }
-[data-page="about"] .header__outer-wrapper, [data-page="about-dp-skin-health-collection"] .header__outer-wrapper {
+[data-page="about"] .header__outer-wrapper,
+[data-page="about-dp-skin-health-collection"] .header__outer-wrapper,
+[data-page="about-dp-minerals-colletion"] .header__outer-wrapper,
+[data-page="about-dp-skin-science-collection"] .header__outer-wrapper,
+[data-page="about-founder-douglas-pereira"] .header__outer-wrapper {
   position: static !important;
 }
 /*[data-page="about"] .header__outer-wrapper,[data-page="about"] .announcement-bar{
@@ -1460,7 +1487,7 @@ header .header__inner {
 }
 .special__section-1 .title,
 .special__section-1 .subtitle {
-  max-width: 963px;
+  max-width: 1200px;
 }
 .special__section-1 .text {
   max-width: 1200px;
@@ -1580,6 +1607,10 @@ header .header__inner {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 40px;
+}
+.special__section-4 {
+  max-width: calc(50% - 40px);
 }
 .special__section-4 {
   align-items: flex-start;
