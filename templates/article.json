@@ -18,9 +18,11 @@
         "content": {
           "type": "content",
           "settings": {
+            "blog_content_center": false,
+            "img_width": 50,
             "blog_show_social_sharing": false,
             "blog_show_pagination": true,
-            "content_max_width": 1100
+            "content_max_width": 1300
           }
         }
       },
