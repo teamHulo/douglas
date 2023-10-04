@@ -1612,6 +1612,11 @@ header .header__inner {
 .special__section-4 .title{
   max-width: calc(50% - 40px);
 }
+@media (max-width:767px){
+  .special__section-4 .title{
+    max-width: 100%;
+  }
+}
 .special__section-4 {
   align-items: flex-start;
   padding-top: clamp(50px, 5.208vw, 100px);
