@@ -2,11 +2,19 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_max_width": 700
+      }
+    },
+    "a8c3e5ce-311f-444f-b547-16921a936785": {
+      "type": "scroll-about-fade",
       "settings": {
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "a8c3e5ce-311f-444f-b547-16921a936785"
   ]
 }
