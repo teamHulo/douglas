@@ -1,5 +1,13 @@
 {% assign array = product.metafields.custom.steps_text.value %}
+{% assign arrayImages =  product.metafields.custom.steps_images.value%}
 {% assign arraySize = array | size %}
+
+{% if  arrayImages.count != blank%}
+  {% assign arrayImagesSize =  arrayImages.count %}
+{% else %}
+  {% assign arrayImagesSize =  0 %}
+{% endif %}
+
 
 {% if arraySize != 0 %}
   <div class="section-scroll-slides scroll-container">
@@ -17,11 +25,14 @@
                 <div class="text__wrap ">
                   {% for value in product.metafields.custom.steps_text.value %}
                     <div class="step contento">
-                      <div class="text">
-                        <p>
-                          {{ value }}
-                        </p>
+                      <div class="contento__wrap">
+                        <div class="text">
+                          <p>
+                            {{ value }}
+                          </p>
+                        </div>
                       </div>
+                     
                     </div>
                   {% endfor %}
                 </div>
@@ -38,6 +49,19 @@
                     <img src="{{ value | img_url : 'master' }}" alt="">
                   </div>
                 {% endfor %}
+                {% for value in product.metafields.custom.steps_text.value %}
+                  {% if arrayImagesSize == 0 %}
+                    <div class="step-image panel default-img">
+                      <img src="{{ product.images[0] | img_url : 'master' }}" alt="">
+                    </div>
+                  {%  else %}
+                    {%if forloop.index > arrayImagesSize%}
+                      <div class="step-image panel default-img">
+                        <img src="{{ product.images[0] | img_url : 'master' }}" alt="">
+                      </div>
+                    {%endif%}
+                  {% endif %}
+                {% endfor %}  
               </div>
             </div>
           </div>
