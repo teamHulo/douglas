@@ -44,8 +44,8 @@ option {
   --font-size-18: clamp(14px, 0.938vw, 18px);
   --font-size-16: clamp(14px, 0.833vw, 16px);
 }
-.section{
-  margin:0;
+.section {
+  margin: 0;
 }
 /*body::-webkit-scrollbar { width: 0; }*/
 .template-index #main {
@@ -77,48 +77,45 @@ option {
 .a-link svg {
   margin-left: 10px;
 }
-.tret-btns{
-  display:flex;
-  flex-wrap:wrap;
+.tret-btns {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  gap:16px;
+  gap: 16px;
 }
-.tret-btns .a-btn{
-  max-width:301px;
-  width:100%;
+.tret-btns .a-btn {
+  max-width: 301px;
+  width: 100%;
 }
-@media(max-width:500px){
-  .tret-btns .a-btn{
-    max-width:100%;
-    width:100%;
+@media (max-width: 500px) {
+  .tret-btns .a-btn {
+    max-width: 100%;
+    width: 100%;
   }
 }
-.tret-btns .a-btn.prime{
+.tret-btns .a-btn.prime {
   border: 1px solid var(--black, #080808);
   background: var(--black, #080808);
-  color:#FFF !important;
+  color: #fff !important;
   transition: all 0.3s ease !important;
 }
-.tret-btns .a-btn.secondary{
-  border: 1px solid var(--black, #080808)!important; 
+.tret-btns .a-btn.secondary {
+  border: 1px solid var(--black, #080808) !important;
   background: transparent !important;
-  color:#000 !important;
+  color: #000 !important;
   transition: all 0.3s ease !important;
 }
 
-.tret-btns .a-btn.prime:hover{
-
+.tret-btns .a-btn.prime:hover {
   background: transparent !important;
-  color:#000 !important;
+  color: #000 !important;
   transition: all 0.3s ease !important;
 }
-.tret-btns .a-btn.secondary:hover{
-  
+.tret-btns .a-btn.secondary:hover {
   background: #000 !important;
-  color:#FFF !important;
+  color: #fff !important;
   transition: all 0.3s ease !important;
 }
-
 
 .a-btn {
   display: flex !important;
@@ -271,17 +268,27 @@ header .header__inner {
   line-height: 0px; /* 0% */
   letter-spacing: 0.28px;
 }
-[data-name="collection"] header, [data-page="about"] header {
+
+
+[data-name="collection"] header,
+[data-page="about"] header,
+[data-page="about-dp-skin-health-collection"] header {
   background-color: #080808 !important;
 }
-[data-name="collection"] header svg path , [data-page="about"] header svg path{
+[data-name="collection"] header svg path,
+[data-page="about"] header svg path,
+[data-page="about-dp-skin-health-collection"] header svg path {
   stroke: #fff;
   fill: #fff;
 }
-[data-name="collection"] .header__icon-menu svg rect, [data-page="about"] .header__icon-menu svg rect {
+[data-name="collection"] .header__icon-menu svg rect,
+[data-page="about"] .header__icon-menu svg rect,
+[data-page="about-dp-skin-health-collection"] .header__icon-menu svg rect {
   fill: #fff;
 }
-[data-name="collection"] .header__logo-link .image__img, [data-page="about"] .header__logo-link .image__img {
+[data-name="collection"] .header__logo-link .image__img,
+[data-page="about"] .header__logo-link .image__img ,
+[data-page="about-dp-skin-health-collection"] .header__logo-link .image__img{
   filter: invert();
 }
 [data-name="collection"] .announcement-bar__item,
@@ -289,14 +296,19 @@ header .header__inner {
 [data-name="collection"] .announcement-bar__gradient-gap,
 [data-page="about"] .announcement-bar__item,
 [data-page="about"] .announcement-bar,
-[data-page="about"] .announcement-bar__gradient-gap {
+[data-page="about"] .announcement-bar__gradient-gap ,
+[data-page="about-dp-skin-health-collection"] .announcement-bar__item,
+[data-page="about-dp-skin-health-collection"] .announcement-bar,
+[data-page="about-dp-skin-health-collection"] .announcement-bar__gradient-gap{
   background: #d9d9d9;
 }
-[data-name="collection"] .announcement-bar__content span, [data-page="about"] .announcement-bar__content span{
+[data-name="collection"] .announcement-bar__content span,
+[data-page="about"] .announcement-bar__content span,
+[data-page="about-dp-skin-health-collection"] .announcement-bar__content span {
   color: #080808;
 }
-[data-page="about"] .header__outer-wrapper{
-  position:static !important;
+[data-page="about"] .header__outer-wrapper, [data-page="about-dp-skin-health-collection"] .header__outer-wrapper {
+  position: static !important;
 }
 /*[data-page="about"] .header__outer-wrapper,[data-page="about"] .announcement-bar{
  
@@ -1393,10 +1405,10 @@ header .header__inner {
 .scroll-about-fade {
   position: relative;
   background-color: #000;
-   /* Apply overflow hidden to hide content outside the container */
+  /* Apply overflow hidden to hide content outside the container */
   /*height: 100vh;*/
 }
-.wrap2{
+.wrap2 {
   position: relative;
 }
 .bg__all {
@@ -1406,7 +1418,6 @@ header .header__inner {
   height: 100vh;
   width: 100%;
   z-index: 0;
-
 }
 .bg__all-wrap {
   position: relative;
@@ -1421,16 +1432,16 @@ header .header__inner {
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
-.bg__all img.active{
+.bg__all img.active {
   opacity: 1;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 .special__section {
   width: 100%;
   min-height: 100vh;
-  height:100vh ;
+  height: 100vh;
   position: relative;
   z-index: 1;
 }
@@ -1439,11 +1450,9 @@ header .header__inner {
   position: relative; /* Позиционирование контейнера */
   display: flex;
   flex-direction: column; /* Содержимое будет вертикально выравниваться */
-
 }
 
-
-.scroll-about__wrap{
+.scroll-about__wrap {
   /*overflow: hidden;*/
 }
 
@@ -1454,12 +1463,12 @@ header .header__inner {
   max-width: 963px;
 }
 .special__section-1 .text {
-  max-width: 652px;
+  max-width: 1200px;
 }
 .special__section-1 .title h2 {
   color: #fefefe;
   font-family: Proxima Nova;
-  font-size: clamp(28px,3.229vw,62px);
+  font-size: clamp(28px, 3.229vw, 62px);
   font-style: normal;
   font-weight: 500;
   line-height: 120%;
@@ -1470,15 +1479,14 @@ header .header__inner {
 .special__section-1 .subtitle p {
   color: #fefefe;
   font-family: Proxima Nova;
-  font-size: clamp(18px,1.667vw,32px);
+  font-size: clamp(18px, 1.667vw, 32px);
   font-style: normal;
   font-weight: 500;
   line-height: 140%;
 }
 .special__section-1 .text p {
-  
   font-family: Raleway;
-  font-size: clamp(16px,0.833vw,24px);
+  font-size: clamp(16px, 0.833vw, 24px);
   font-style: normal;
   font-weight: 500;
   line-height: 140%; /* 33.6px */
@@ -1495,7 +1503,7 @@ header .header__inner {
   align-items: center;
 }
 
-.special__section-2{
+.special__section-2 {
   justify-content: center;
 }
 .special__section-2 .title {
@@ -1504,7 +1512,7 @@ header .header__inner {
 .special__section-2 .title h2 {
   color: #fefefe;
   font-family: Proxima Nova;
-  font-size: clamp(30px,4.271vw,82px);
+  font-size: clamp(30px, 4.271vw, 82px);
   font-style: normal;
   font-weight: 400;
   line-height: 110%;
@@ -1518,7 +1526,7 @@ header .header__inner {
   color: #fefefe;
   text-align: center;
   font-family: Raleway;
-  font-size: clamp(18px,1.771vw,34px);
+  font-size: clamp(18px, 1.771vw, 34px);
   font-style: normal;
   font-weight: 500;
   line-height: 140%; /* 47.6px */
@@ -1532,63 +1540,80 @@ header .header__inner {
 .special__section-3 .title h2 {
   color: #fefefe;
   font-family: Proxima Nova;
-  font-size: clamp(28px,3.750vw,72px);
+  font-size: clamp(28px, 3.75vw, 72px);
   font-style: normal;
   font-weight: 400;
   line-height: 120%; /* 86.4px */
   text-transform: uppercase;
 }
 .special__section-3 .text p {
-  max-width: 747px;
+  max-width: 1000px;
   font-family: Raleway;
-  font-size: clamp(16px,0.833vw,24px);
+  font-size: clamp(16px, 0.833vw, 24px);
   font-style: normal;
   font-weight: 500;
   line-height: 140%; /* 33.6px */
   letter-spacing: 0.48px;
 }
+.special__section-1 ul,
+.special__section-2 ul,
+.special__section-3 ul,
+.special__section-4 ul {
+  padding-left: 15px;
+}
+.special__section-1 li,
+.special__section-2 li,
+.special__section-3 li,
+.special__section-4 li {
+  font-family: Raleway;
+  font-size: clamp(16px, 0.833vw, 24px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 33.6px */
+  letter-spacing: 0.48px;
+  padding-left: 0;
+}
 .special__section-btn {
   margin-top: clamp(20px, 4.167vw, 80px);
 }
-.special__section-4 .special__section-wrap{
-  display:flex;
-  flex-wrap:wrap;
+.special__section-4 .special__section-wrap {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
-.special__section-4{
+.special__section-4 {
   align-items: flex-start;
-  padding-top:clamp(50px,5.208vw,100px);
-  gap:20px;
+  padding-top: clamp(50px, 5.208vw, 100px);
+  gap: 20px;
 }
-.special__section-4 .title{
-
+.special__section-4 .title {
 }
-.special__section-4 .title h2{
-  color: #FEFEFE;
+.special__section-4 .title h2 {
+  color: #fefefe;
   font-family: Proxima Nova;
-  font-size: clamp(28px,3.750vw,72px);
+  font-size: clamp(28px, 3.75vw, 72px);
   font-style: normal;
   font-weight: 400;
   line-height: 120%; /* 86.4px */
   text-transform: uppercase;
 }
-.special__section-4 .text{
-  max-width:696px;
+.special__section-4 .text {
+  max-width: 696px;
 }
-.special__section-4 .text p{
+.special__section-4 .text p {
   font-family: Raleway;
-  font-size: clamp(16px,0.833vw,24px);
+  font-size: clamp(16px, 0.833vw, 24px);
   font-style: normal;
   font-weight: 500;
   line-height: 140%; /* 33.6px */
   letter-spacing: 0.48px;
   margin-bottom: clamp(10px, 1.667vw, 32px);
 }
-.special__section-4 .text p:last-child{
-  margin-bottom:0;
+.special__section-4 .text p:last-child {
+  margin-bottom: 0;
 }
-.special__section-4 .special__section-wrap{
-  width:100%;
+.special__section-4 .special__section-wrap {
+  width: 100%;
 }
 @keyframes fade-in-animation {
   from {
