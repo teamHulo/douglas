@@ -1,0 +1,46 @@
+.article__header h1 {
+    font-family: Proxima Nova;
+    font-size: var(--font-size-72);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 110%;
+    margin-bottom: 60px;
+}
+.article__content h2 {
+    font-family: Proxima Nova;
+    font-size: var(--font-size-52);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    margin-top: 80px;
+}
+.article__content p {
+    font-family: Raleway;
+    font-size: var(--font-size-24);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 0.48px;
+}
+.article__content img {
+    margin-top: 60px;
+}
+
+.article__pagination a {
+    text-decoration: none;
+    font-family: Proxima Nova;
+    font-size: var(--font-size-16);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.64px;
+    text-transform: uppercase;
+}
+
+.article__pagination-link p {
+    font-family: Proxima Nova;
+    font-size: var(--font-size-32);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+}

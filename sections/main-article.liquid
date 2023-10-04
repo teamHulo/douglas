@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ 'article.css' | asset_url }}">
 {% liquid
   if comment.status == 'pending'
     assign number_of_comments = article.comments_count | plus: 1
@@ -41,13 +42,13 @@
   data-section-id="{{ section.id }}"
   data-section-type="article"
 >
-  <div class="article__inner page__inner">
+  <div class="article__inner container">
     <article itemscope itemtype="http://schema.org/BlogPosting">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'title' -%}
-            <header class="article__header page__header animation-fade-up-reveal" {{ block.shopify_attributes }}>
-              <h1 class="article__heading ff-heading fs-heading-1-base ta-c">
+            <header class="article__header animation-fade-up-reveal" {{ block.shopify_attributes }}>
+              <h1 class="article__heading ff-heading fs-heading-1-base">
                 {{ article.title }}
               </h1>
               {%- if block.settings.blog_show_date -%}
@@ -66,22 +67,27 @@
               </div>
             {%- endif -%}
           {%- when 'content' -%}
+            <style>
+              .article__content img {
+                width: {{ block.settings.img_width }}%;
+              }
+            </style>
             <div
               class="article__content animation-fade-up-reveal"
               {{ block.shopify_attributes }}
-              style="--content-max-width: {{ block.settings.content_max_width }}px;"
+              style="--content-max-width: {{ block.settings.content_max_width }}px;{% unless block.settings.blog_content_center %}margin: 0;{% endunless %}"
             >
               <div class="article__rte rte rte--article">
                 {{ article.content }}
               </div>
-              {%- if article.tags.size > 0 -%}
+              {% comment %} {%- if article.tags.size > 0 -%}
                 <ul class="article__tags fs-body-base">
                   <li>{{ 'blogs.article.tags' | t }}:</li>
                   {% for tag in article.tags %}
                     <li class="article__tag">{{ tag | link_to_tag: tag }}</li>
                   {% endfor %}
                 </ul>
-              {%- endif -%}
+              {%- endif -%} {% endcomment %}
 
               {%- if block.settings.blog_show_social_sharing -%}
                 <div class="article__share-bottom">
@@ -93,14 +99,20 @@
                 {%- if blog.previous_article or blog.next_article -%}
                   <div class="article__pagination ff-body fs-body-base">
                     {% if blog.previous_article %}
-                      <a href="{{ blog.previous_article }}" class="article__pagination-prev link">
-                        {{ 'blogs.article.pagination.previous' | t }}
-                      </a>
+                      <div class="article__pagination-link">
+                        <a href="{{ blog.previous_article }}" class="article__pagination-prev link">
+                          {{ 'blogs.article.pagination.previous' | t }}
+                        </a>
+                        <p>{{ blog.previous_article.title | truncatewords: 2 }}</p>
+                      </div>
                     {% endif %}
                     {% if blog.next_article %}
-                      <a href="{{ blog.next_article }}" class="article__pagination-next link">
-                        {{ 'blogs.article.pagination.next' | t }}
-                      </a>
+                      <div class="article__pagination-link">
+                        <a href="{{ blog.next_article }}" class="article__pagination-next link">
+                          {{ 'blogs.article.pagination.next' | t }}
+                        </a>
+                        <p>{{ blog.next_article.title | truncatewords: 2 }}</p>
+                      </div>
                     {% endif %}
                   </div>
                 {%- endif -%}
@@ -260,6 +272,22 @@
       "name": "t:sections.main_article.blocks.content.name",
       "limit": 1,
       "settings": [
+        {
+          "type": "checkbox",
+          "id": "blog_content_center",
+          "default": true,
+          "label": "Сontainer in the center"
+        },
+        {
+          "type": "range",
+          "id": "img_width",
+          "min": 30,
+          "max": 100,
+          "unit": "%",
+          "label": "Image width",
+          "default": 100,
+          "step": 1
+        },
         {
           "type": "checkbox",
           "id": "blog_show_social_sharing",
