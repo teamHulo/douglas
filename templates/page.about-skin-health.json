@@ -46,12 +46,34 @@
             "url": "",
             "btn_name": ""
           }
+        },
+        "f6867b26-e9ea-45d8-acc9-2d661e9660ec": {
+          "type": "section-1",
+          "settings": {
+            "color": "#fefefe",
+            "img": "shopify:\/\/shop_images\/1616971213_46-p-temnii-fon-dlya-rabochego-stola-49.jpg",
+            "title": "Skin integrity & resilience -  Supporting The Skins Barrier",
+            "subtitle": "",
+            "text": "<p>The unsung hero of resilient, healthy balanced skin is the skins barrier also known as the lipid barrier and is the frontline of your skin’s health. <br\/>Your natural skin barrier is made of a blend of lipids, fats and ceramides. Your barrier helps to keep your skin protected from extrinsic factors and defends against damaging pollution, UV light and infection, it helps lock in hydration and strengthens skin resilience. So aesthetically it’s important to keep it in optimum condition.<br\/><br\/>If our barrier becomes compromised, then skin can become red, shiny, sore, constantly dry, uncomfortable or itchy. A compromised barrier can also irritate and flair up skin challenges such as psoriasis, eczema and dermatitis. <br\/><br\/>To keep the skin barrier healthy, it’s essential to support and comfort the skin by supporting the barrier function and feeding the barrier with lipid enriched skincare. <br\/><br\/>The Douglas Pereira Skin Health range has been formulated to support a healthy skin barrier by using our exclusive barrier repair complex and barrier repairing peptides throughout the product range.<br\/><\/p>"
+          }
+        },
+        "2b6a4175-515d-46ac-9d94-698cdbe6d625": {
+          "type": "section-1",
+          "settings": {
+            "color": "#fefefe",
+            "img": "shopify:\/\/shop_images\/1642649880_42-phonoteka-org-p-anime-temnii-fon-42.jpg",
+            "title": "Active delivery system - Triphasic Bio-Active Delivery System",
+            "subtitle": "",
+            "text": "<p>Using our exclusive Triphasic Bio-Active delivery system (TBA) in our formulations, increases the penetration and delivery of the bio-actives for accelerated reversal of skin damage & scar tissue, inhibiting free radical assault to neutralise further ageing, and assist with treating your skin challenges. <br\/><br\/>The key science behind the Triphasic Bio-Active delivery system (TBA), is our lipophilic compound that aids our bio-actives ability to create cellular change by binding to the lipophilic cell cavity, assisting optimal integrity & delivery of all supporting actives in each product. <br\/><br\/>The lipophilic compound is attracted to the naturally produced oils & the phospholipid bilayer of the skin cells within the intercellular & extracellular matrix, in conjunction with naturally derived emulsifiers that provide vital biomimetic liquid crystalline structures, phospholipids & sphingolipids that greatly enhance and rebuild the lamellar structure surrounding the cells ‘like the mortar that surrounds bricks.’ Their physiological nature not only restores hydration but also offer long term correction & active delivery enhancement. <br\/><br\/>This function in each of our products is a major component in scientifically delivering the active ingredients to where they best perform. <br\/><\/p>"
+          }
         }
       },
       "block_order": [
         "c1c31b6d-fb59-4a35-8be7-985cc1334d60",
         "37109298-dc2b-4fd4-9aad-91b08ea9a005",
-        "aea5679a-f88a-4fb2-82ff-7318cf18ebf4"
+        "aea5679a-f88a-4fb2-82ff-7318cf18ebf4",
+        "f6867b26-e9ea-45d8-acc9-2d661e9660ec",
+        "2b6a4175-515d-46ac-9d94-698cdbe6d625"
       ],
       "settings": {
       }
