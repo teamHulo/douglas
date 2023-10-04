@@ -1609,7 +1609,7 @@ header .header__inner {
   justify-content: space-between;
   gap: 40px;
 }
-.special__section-4 {
+.special__section-4 .title{
   max-width: calc(50% - 40px);
 }
 .special__section-4 {
