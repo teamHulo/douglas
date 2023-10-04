@@ -1673,3 +1673,26 @@ header .header__inner {
   max-width:1000px;
   margin:0 auto;
 }
+
+.section-scroll__wrap  .text h1, .section-scroll__wrap  .text h2, .section-scroll__wrap  .text h3, .section-scroll__wrap  .text h4, .section-scroll__wrap  .text h5, .section-scroll__wrap  .text h6{
+  font-family: Proxima Nova;
+  color: #fefefe;
+}
+.section-scroll__wrap  .text h1{
+  font-size: var(--font-size-36);
+}
+.section-scroll__wrap  .text h2{
+  font-size: var(--font-size-34);
+}
+.section-scroll__wrap  .text h3{
+  font-size: var(--font-size-32);
+}
+.section-scroll__wrap  .text h4{
+  font-size: var(--font-size-28);
+}
+.section-scroll__wrap  .text h5{
+  font-size: var(--font-size-26);
+}
+.section-scroll__wrap  .text h6{
+  font-size: var(--font-size-24);
+}
