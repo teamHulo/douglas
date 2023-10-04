@@ -34,20 +34,24 @@
             "btn_name": ""
           }
         },
-        "4e60f390-bba1-44a5-8d37-0259f03bd09d": {
-          "type": "section-4",
+        "aea5679a-f88a-4fb2-82ff-7318cf18ebf4": {
+          "type": "section-3",
           "settings": {
             "color": "#fefefe",
-            "img": "shopify:\/\/shop_images\/1661429434_1-oir-mobi-p-estetichnii-fon-na-rabochii-stol-vkontakte-1.jpg",
-            "title": "Prescriptive approach:",
-            "text": "<p>The Douglas Pereira Skin Health collection is a range of products that has been designed so you can create the perfect result driven homecare regime for your skin. We believe your regime should be as individual as you are. <br\/><br\/>The collection takes a prescriptive approach to building a homecare regime. We have created the collection of products, so you can select the individual serums and supportive products to target your skin goals. <\/p><p>With so many products in the collection we understand it can be a little challenging for you to work out the best products for your skin. So, if you need a little advice and support to create your regime, we have four pathways to help you out. <\/p><ul><li>Online skincare regime builder questionnaire <\/li><li>Complementary virtual consultation <\/li><li>Complementary in clinic discovery consultation <\/li><li>In clinic signature consultation <br\/><br\/><\/li><\/ul>"
+            "img": "shopify:\/\/shop_images\/1641863996_1-damion-club-p-temnii-fon-dlya-prezentatsii-1.jpg",
+            "type_btn": "secondary",
+            "alignment": "flex-start",
+            "title": "Science and luxury:",
+            "text": "<p>Elevating scientific cosmeceutical skincare with a luxury experience is the essence of the Douglas Pereira Skin Health range. Each product we formulate begins with five key principals. <br\/><\/p><ul><li><strong>Scientific approach<\/strong><br\/>Research and development, Science, Innovation, and Technology.<\/li><li><strong>The best of the best Ingredients <\/strong><br\/>Quality ingredients in the right dosage that are skin identical. <\/li><li><strong>Skin integrity & resilience <\/strong><br\/>Supporting the skins barrier.<\/li><li><strong>Active delivery system<\/strong><br\/>Triphasic Bio-Active Delivery System <\/li><li><strong>Luxury experiences<\/strong><br\/>The fusion of cosmeceutical skincare the experience of luxury <br\/><br\/><br\/><\/li><\/ul>",
+            "url": "",
+            "btn_name": ""
           }
         }
       },
       "block_order": [
         "c1c31b6d-fb59-4a35-8be7-985cc1334d60",
         "37109298-dc2b-4fd4-9aad-91b08ea9a005",
-        "4e60f390-bba1-44a5-8d37-0259f03bd09d"
+        "aea5679a-f88a-4fb2-82ff-7318cf18ebf4"
       ],
       "settings": {
       }
