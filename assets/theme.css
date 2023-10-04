@@ -9961,6 +9961,10 @@ html:not(.no-js):not(.prefers-reduced-motion) .animation.revealed .shoppable-fea
   width:100%;
   height:100%
 }
+.product-item__image svg {
+  position: absolute;
+  top: 0;
+}
 .image__img.lazyload,
   .image__img.lazyloading{
     opacity:0;
