@@ -66,6 +66,15 @@
             "subtitle": "",
             "text": "<p>Using our exclusive Triphasic Bio-Active delivery system (TBA) in our formulations, increases the penetration and delivery of the bio-actives for accelerated reversal of skin damage & scar tissue, inhibiting free radical assault to neutralise further ageing, and assist with treating your skin challenges. <br\/><br\/>The key science behind the Triphasic Bio-Active delivery system (TBA), is our lipophilic compound that aids our bio-actives ability to create cellular change by binding to the lipophilic cell cavity, assisting optimal integrity & delivery of all supporting actives in each product. <br\/><br\/>The lipophilic compound is attracted to the naturally produced oils & the phospholipid bilayer of the skin cells within the intercellular & extracellular matrix, in conjunction with naturally derived emulsifiers that provide vital biomimetic liquid crystalline structures, phospholipids & sphingolipids that greatly enhance and rebuild the lamellar structure surrounding the cells ‘like the mortar that surrounds bricks.’ Their physiological nature not only restores hydration but also offer long term correction & active delivery enhancement. <br\/><br\/>This function in each of our products is a major component in scientifically delivering the active ingredients to where they best perform. <br\/><\/p>"
           }
+        },
+        "2d1af10f-d8c9-4ee7-9f70-cbba9f898360": {
+          "type": "section-2",
+          "settings": {
+            "color": "#fefefe",
+            "img": "shopify:\/\/shop_images\/images.jpg",
+            "title": "Luxury experiences – The fusion of cosmeceutical skincare the experience of luxury",
+            "subtitle": "Texture, penetration, aroma and how the product wears on the skin plays a big part in the products we create. When formulating, our goal is not only to create result driven products that work but to also create a product that feels luxurious and is an experience to use."
+          }
         }
       },
       "block_order": [
@@ -73,7 +82,8 @@
         "37109298-dc2b-4fd4-9aad-91b08ea9a005",
         "aea5679a-f88a-4fb2-82ff-7318cf18ebf4",
         "f6867b26-e9ea-45d8-acc9-2d661e9660ec",
-        "2b6a4175-515d-46ac-9d94-698cdbe6d625"
+        "2b6a4175-515d-46ac-9d94-698cdbe6d625",
+        "2d1af10f-d8c9-4ee7-9f70-cbba9f898360"
       ],
       "settings": {
       }
