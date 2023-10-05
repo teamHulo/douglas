@@ -37,6 +37,14 @@
         "margin_top": 120
       }
     },
+    "42ce59cc-a69f-4523-9c71-ac088159c1d0": {
+      "type": "section-treatments",
+      "settings": {
+        "label": "Available at our flagship clinic and partner clinics",
+        "collection": "signature-treatments",
+        "margin_top": 120
+      }
+    },
     "e5acf946-56e6-47dc-8783-6214982b6564": {
       "type": "section-treatments",
       "settings": {
@@ -59,6 +67,7 @@
     "main",
     "9ec8491b-d3ca-4030-aa2f-2085ccdb3b03",
     "6b6b45ab-be04-4a33-a2eb-ea0562fe6d9e",
+    "42ce59cc-a69f-4523-9c71-ac088159c1d0",
     "e5acf946-56e6-47dc-8783-6214982b6564",
     "09c7a2c8-4048-4a1d-8e27-e702eb5ec994"
   ]
