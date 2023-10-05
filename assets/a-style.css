@@ -1696,3 +1696,9 @@ header .header__inner {
 .section-scroll__wrap  .text h6{
   font-size: var(--font-size-24);
 }
+.product-item .placeholder-image svg{
+  position: absolute !important;
+  top:0 !important;
+  left:0 !important;
+
+}
