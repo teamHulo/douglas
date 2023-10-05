@@ -45,6 +45,14 @@
         "margin_top": 120
       }
     },
+    "e5acf946-56e6-47dc-8783-6214982b6564": {
+      "type": "section-treatments",
+      "settings": {
+        "label": "Available exclusively at our flagship clinic",
+        "collection": "flagship-clinic-exclusive-treatments",
+        "margin_top": 0
+      }
+    },
     "09c7a2c8-4048-4a1d-8e27-e702eb5ec994": {
       "type": "section-related-products",
       "settings": {
@@ -60,6 +68,7 @@
     "9ec8491b-d3ca-4030-aa2f-2085ccdb3b03",
     "6b6b45ab-be04-4a33-a2eb-ea0562fe6d9e",
     "b6f7e8ae-f9f3-456e-8f4e-fdd012fcc7a2",
+    "e5acf946-56e6-47dc-8783-6214982b6564",
     "09c7a2c8-4048-4a1d-8e27-e702eb5ec994"
   ]
 }
