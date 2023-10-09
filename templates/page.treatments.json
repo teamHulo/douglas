@@ -32,24 +32,24 @@
     "6b6b45ab-be04-4a33-a2eb-ea0562fe6d9e": {
       "type": "section-treatments",
       "settings": {
-        "label": "Available at our flagship clinic and partner clinics",
-        "collection": "skin-health-treatments",
+        "label": "",
+        "collection": "customised-skin-facials",
         "margin_top": 120
       }
     },
     "42ce59cc-a69f-4523-9c71-ac088159c1d0": {
       "type": "section-treatments",
       "settings": {
-        "label": "Available at our flagship clinic and partner clinics",
-        "collection": "signature-treatments",
+        "label": "",
+        "collection": "proprietary-complex-facials",
         "margin_top": 120
       }
     },
     "e5acf946-56e6-47dc-8783-6214982b6564": {
       "type": "section-treatments",
       "settings": {
-        "label": "Available exclusively at our flagship clinic",
-        "collection": "flagship-clinic-exclusive-treatments",
+        "label": "",
+        "collection": "skin-technology-treatments",
         "margin_top": 120
       }
     },
