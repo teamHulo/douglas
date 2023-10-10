@@ -51,9 +51,9 @@
       ],
       "settings": {
         "menu_bottom": "menu-bottom",
-        "color_bg": "#000",
+        "color_bg": "#000000",
         "logo": "shopify:\/\/shop_images\/DP_Logo_Cosmeceuticals_Horizontal_White_9f6e180d-e901-4e0c-9abe-ebcbf1017d95.png",
-        "max_width": 575
+        "max_width": 250
       }
     }
   },
