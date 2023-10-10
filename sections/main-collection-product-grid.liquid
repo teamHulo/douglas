@@ -58,10 +58,10 @@
           {% assign non_kitchen_products = non_kitchen_products | append: product %}
         {% endunless %}
       {% endfor %}
-      {{ non_kitchen_products | split : ' '}}
-
-      {% for it in  non_kitchen_products %}
-          {{ it}}
+      
+      {%  assign array = non_kitchen_products | split : ' ' %}
+      {% for it in  array %}
+          <p>{{ it}} </p>
       {% endfor %}
 
       
