@@ -61,7 +61,7 @@
 {% endfor %}
 
 {% for product in  new_array %}
-  {{ product.title }}
+  <div>{{ product }} </div>
 {% endfor %}
       {% paginate collection.products by section.settings.per_page %}
       
