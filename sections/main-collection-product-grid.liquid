@@ -86,7 +86,7 @@
                     {%- render 'active-filters' with results: collection -%}
                   </div>
                   <div class="collection__products collection__infinite-container">
-                    {% for product in collection.products %}
+                    {% for product in collection['all-product-not-treatments'].products%}
                       {% if product.type != 'treatments' %}
                         {%
                           render 'product-item' with
