@@ -51,7 +51,7 @@
       </script>
 
   
-      {% assign filtered_products = collection.products   | where: "type", "==", "treatments"%}
+      {% assign filtered_products = collection.products   | where: "type", "treatments"%}
      
       {% for product in filtered_products %}
                 {{ product.type }}    
