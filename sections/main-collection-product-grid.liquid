@@ -50,16 +50,17 @@
         {% endif %}
       </script>
 
-      {% assign non_kitchen_products = ''| split: '' %}
   
       {% for product in collection.products %}
-        {% unless product.type == "treatments" %}
+        {% if product.type == "treatments" %}
+          {% assign set_array = product | split: '' %}
+        {% else %}
           {% assign new_array = product | split: '' %}
-        {% endunless %}
+        {% endif %}
       {% endfor %}
       
       {{ new_array.size }}
- 
+       {{ set_array.size }}
 
       {{ array }}
       {% paginate collection.products by section.settings.per_page %}
