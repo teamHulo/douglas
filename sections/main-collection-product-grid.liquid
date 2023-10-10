@@ -59,8 +59,8 @@
     {% assign new_array = new_array | append: product %}
   {% endif %}
 {% endfor %}
-
-{% for product in  new_array %}
+ {% assign new_array = new_array | split: '' %}
+{% for product in new_array %}
   <div>{{ product }} </div>
 {% endfor %}
       {% paginate collection.products by section.settings.per_page %}
