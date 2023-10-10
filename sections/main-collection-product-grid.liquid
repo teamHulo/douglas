@@ -56,7 +56,7 @@
           {% assign non_kitchen_products = non_kitchen_products | concat: product %}
         {% endunless %}
       {% endfor %}
-      
+      {{ non_kitchen_products }}
       {% paginate non_kitchen_products by section.settings.per_page %}
         <div class="collection__container">
           <div class="collection__content">
