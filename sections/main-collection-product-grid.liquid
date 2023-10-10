@@ -68,7 +68,8 @@
               {% endfor %}
         </div>
    </div>  {% endcomment %}
-  {% assign types_to_filter = "Masks, treatments, ThirdType" | split: ',' %}
+  {{ collection.all_types }}
+  {% assign types_to_filter = "Masks,treatments,ThirdType" | split: ',' %}
   {% assign filtered_products = "" | split: ',' %}
   
   {% for type in types_to_filter %}
