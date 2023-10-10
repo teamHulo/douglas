@@ -50,15 +50,15 @@
         {% endif %}
       </script>
 
-      {% assign non_kitchen_products = '' %}
-      {%  assign new_array =  collection.products%}
+      {% assign non_kitchen_products = ''| split: '' %}
+  
       {% for product in collection.products %}
         {% unless product.type == "treatments" %}
-          {% assign non_kitchen_products = non_kitchen_products | append: product %}
+          {% assign new_array = product | split: '' %}
         {% endunless %}
       {% endfor %}
       
-      {%  assign array = non_kitchen_products | split: ""%}
+      {{ new_array }}
  
 
       {{ array }}
