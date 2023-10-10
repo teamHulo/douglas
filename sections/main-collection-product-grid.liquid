@@ -69,7 +69,7 @@
         </div>
    </div>  {% endcomment %}
 
-  {% assign all_type = collection.all_types | replace: 'treatments', '' | replace: '[' | replace: ']' | replace: '"','' %}
+  {% assign all_tags = collection.all_tags | replace: 'treatments', '' | replace: '[' | replace: ']' | replace: '"','' %}
   {% assign filter_collection = collection.products | where: "type", c %}
   {% assign all_type_array = all_type | split: ',' | join:''%}
 
