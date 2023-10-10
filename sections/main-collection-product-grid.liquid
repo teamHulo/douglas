@@ -89,7 +89,7 @@
                   </div>
                   <div class="collection__products collection__infinite-container">
                     {% for product in collection.products %}
-                      {% if product.type != 'treatments' %}
+                     
                         {%
                           render 'product-item' with
                           product: product,
@@ -99,7 +99,7 @@
                           wrapper_class: 'animation-fade-up-reveal',
                           show_price: false
                         %}
-                      {% endif %}
+                      
                     {% else %}
                       <div class="collection__empty">
                         <div>{{ 'collections.general.no_products' | t }}</div>
