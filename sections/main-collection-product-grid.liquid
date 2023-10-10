@@ -67,9 +67,18 @@
                        <div>   {{ product.type}}    </div>   
               {% endfor %}
         </div>
-   </div>  {% endcomment %}
+   </div> 
+       <div> 
+              {% for product in filtered_products %}
+                       <div>   {{ product.type}}    </div>   
+              {% endfor %}
+        </div>
+      
+      
+      
+      {% endcomment %}
 
-   {{ collection.all_tags | split : ',' }}
+   {{ collection.all_tags }}
 
 
 
@@ -85,11 +94,7 @@
   
   {% assign filtered_products = filtered_products | uniq %}
 
- <div> 
-              {% for product in filtered_products %}
-                       <div>   {{ product.type}}    </div>   
-              {% endfor %}
-        </div>
+
       {% paginate collection.products  by section.settings.per_page %}
       
         <div class="collection__container">
