@@ -58,7 +58,7 @@
      
 {{ all_type_array }}
   {% for product in filter_collection %}
-              {{ product.type}}       
+           <div>   {{ product.type}}    </div>   
   {% endfor %}
       {% paginate collection.products  by section.settings.per_page %}
       
