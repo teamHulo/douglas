@@ -50,7 +50,7 @@
         {% endif %}
       </script>
 
-      {% assign non_kitchen_products = "apple, select" | split: "" %}
+      {% assign non_kitchen_products = "apple, select" | split: "," %}
       {%  assign new_array =  collection.products%}
       <p>{{ new_array }}</p>
       {% for product in collection.products %}
