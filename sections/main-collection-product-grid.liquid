@@ -50,10 +50,10 @@
         {% endif %}
       </script>
 
-      {% assign non_kitchen_products = "" %}
+      {% assign non_kitchen_products = "" | split: "" %}
       {% for product in collection.products %}
         {% unless product.type == "treatments" %}
-          {% assign non_kitchen_products = product | split: "" %}
+          {% assign non_kitchen_products = non_kitchen_products | concat: product %}
         {% endunless %}
       {% endfor %}
       
