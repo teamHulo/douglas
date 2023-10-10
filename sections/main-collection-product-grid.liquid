@@ -54,7 +54,7 @@
       {% assign all_type = collection.all_types | split : ','  %}
       {% assign  new_arr_type_not_treatments = '' |  split : ''%}
       {% for type in all_type %}
-        {% if type != 'treatments' %}
+        {% if type == 'treatments' %}
           {% assign new_arr_type_not_treatments = type | split : ''  %}
         {% endif %}
       {% endfor %}
