@@ -51,22 +51,11 @@
       </script>
 
   
-      {% for product in collection.products %}
-        
-        {% if product.type == "treatments" %}
-          
-          {% assign set_array = product | split: '' %}
-        {% else %}
-          {% assign count = count | plus : 1%}
-          {% assign new_array = product | split: '' %}
-        {% endif %}
-      {% endfor %}
       
-      {{ count }}
-       {{ set_array.size }}
+      
 
-      {{ array }}
       {% paginate collection.products by section.settings.per_page %}
+         {{ collection.products.size }}
         <div class="collection__container">
           <div class="collection__content">
             <div class="collection__filters-wrapper">
