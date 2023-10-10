@@ -60,12 +60,18 @@
   {% endfor %}
   {% assign filtered_products = filtered_products | uniq %}
 
-  <div> 
-    {% for product in filtered_products %}
-               {{ product.title }}
-    {% endfor %}
-  </div>
-
+   <div style="display:flex; gap:20px;">
+        <div>
+              {% for type in all_type_array %}
+                   <div>   {{type}}    </div>   
+          {% endfor %}
+        </div>
+        <div> 
+              {% for product in filtered_products %}
+                       <div>   {{ product.type}}    </div>   
+              {% endfor %}
+        </div>
+   </div>  
   
 
       {% paginate collection.products  by section.settings.per_page %}
