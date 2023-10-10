@@ -76,7 +76,8 @@
   {{ all_type_array }}
 
       
-  {% assign types_to_filter = "Masks,treatments,ThirdType" | split: ',' %}
+  {% assign types_to_filter = "Masks,treatments,Third Type" | split: ',' %}
+  {{ types_to_filter }}
   {% assign filtered_products = "" | split: ',' %}
   
   {% for type in types_to_filter %}
