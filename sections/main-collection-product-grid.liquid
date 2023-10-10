@@ -74,11 +74,7 @@
               {% endfor %}
         </div>
       
-      
-      
-      {% endcomment %}
-
-   {{ collection.products.all_tags }}
+        {{ collection.products.all_tags }}
 
 
 
@@ -93,9 +89,18 @@
   {% endfor %}
   
   {% assign filtered_products = filtered_products | uniq %}
+      
+      {% endcomment %}
+
+ 
 
 
-      {% paginate collection.products  by section.settings.per_page %}
+
+      {% assign excluded_tag = 'treatments' %}
+      {% assign filtered_products = collection.products | where: 'tags', 'contains', excluded_tag | reverse %}
+      {% assign filtered_product_ids = filtered_products | map: 'id' %}
+
+      {% paginate collection.products  | where: 'id', 'not in', filtered_product_ids by section.settings.per_page %}
       
         <div class="collection__container">
           <div class="collection__content">
