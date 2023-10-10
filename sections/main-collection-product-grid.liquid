@@ -59,7 +59,7 @@
             {% assign notTreatments = new_array | concat : product %}
           {% endif %}
        {% endfor %}
-      {{ notTreatments.size }}
+      {{ notTreatments.count }}
       {% paginate collection.products by section.settings.per_page %}
       
         <div class="collection__container">
