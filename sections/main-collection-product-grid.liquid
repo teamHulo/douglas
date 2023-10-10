@@ -55,7 +55,8 @@
       {% assign new_arr_type_not_treatments = '' %}
       
       {% for type in all_type %}
-        {% if type != "treatments" %}
+        {% assign lowercase_type = type | downcase %}
+        {% if lowercase_type != 'treatments' %}
           {% assign new_arr_type_not_treatments = new_arr_type_not_treatments | append: type | append: ',' %}
         {% endif %}
       {% endfor %}
