@@ -51,7 +51,7 @@
       </script>
 
   
-      {% assign filtered_products = collection.products   | map: product %}
+      {% assign filtered_products = collection.products   | map: title %}
      
       {% for product in filtered_products %}
                 {{ product.type }}    
