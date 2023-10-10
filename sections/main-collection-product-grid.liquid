@@ -51,12 +51,11 @@
       </script>
 
   
-      {% assign filtered_products = collection.products  %}
+      {% assign filtered_products = collection.products   | where: "type", "==", "treatments"%}
       {{  filtered_products.size }}
       {% for product in filtered_products %}
                     
       {% endfor %}
-    //////////////////////////////////
       {% paginate collection.products  by section.settings.per_page %}
       
         <div class="collection__container">
