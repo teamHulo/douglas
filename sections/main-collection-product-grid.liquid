@@ -53,7 +53,7 @@
       {% assign non_kitchen_products = "" %}
       {% for product in collection.products %}
         {% unless product.type == "treatments" %}
-          {% assign non_kitchen_products = non_kitchen_products | append: product %}
+          {% assign non_kitchen_products = non_kitchen_products | split: product %}
         {% endunless %}
       {% endfor %}
       
