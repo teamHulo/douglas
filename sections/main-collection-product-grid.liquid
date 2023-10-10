@@ -56,7 +56,8 @@
 
        {% for product in collection.products %}
           {% if product.type != "treatments" %}
-            {% assign notTreatments = new_array | concat : product %}
+            {% assign notTreatments = new_array | split : product %}
+            {{ notTreatments }}
           {% endif %}
        {% endfor %}
       {{ notTreatments.count }}
