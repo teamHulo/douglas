@@ -52,8 +52,8 @@
 
   
   {% assign all_type = collection.all_types | replace: 'treatments', '' | replace: '[' | replace: ']' | replace: '"','' %}
-
-  {% assign c = "Serum, Masks" %}
+  {% assign filter_collection = collection.products | where: "type", c %}
+  {% assign c = "Serum, Masks" | split: ','%}
   {% assign all_type_array = all_type | split: ',' %}
   {% assign filter_collection =  collection.products | where: "type", c%}
    <div style="display:flex; gap:20px;">
