@@ -51,11 +51,8 @@
       </script>
 
   
-      {% assign filtered_products = collection.products   %}
-       {{  collection.all_types }}
-      {% for product in filtered_products %}
-                {{ product.type }}    
-      {% endfor %}
+      {% assign all_type = collection.products.all_type   %}
+      {{ all_type }}
       {% paginate collection.products  by section.settings.per_page %}
       
         <div class="collection__container">
