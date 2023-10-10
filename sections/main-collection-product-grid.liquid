@@ -52,7 +52,7 @@
 
   
       {% assign filtered_products = collection.products   | map: title %}
-     
+       {{  collection.title }}
       {% for product in filtered_products %}
                 {{ product.type }}    
       {% endfor %}
