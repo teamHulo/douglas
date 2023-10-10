@@ -57,12 +57,16 @@
   {% assign all_type_array = all_type | split: ',' %}
   {% assign filter_collection =  collection.products | where: "type", "Masks" ,"treatments"%} {% endcomment %}
 
-      {% assign types_to_filter = "Masks" | split: ',' %}
-      {% assign filter_collection = collection.products %}
-      
-      {% for type in types_to_filter %}
-        {% assign filter_collection = filter_collection | where: "type", type %}
-      {% endfor %}
+      {% assign types_to_filter = "Masks,treatments,ThirdType" | split: ',' %}
+{% assign filtered_products = "" | split: ',' %}
+
+{% for type in types_to_filter %}
+  {% assign type_products = collection.products | where: "type", type %}
+  {% assign filtered_products = filtered_products | concat: type_products %}
+{% endfor %}
+
+{% assign filtered_products = filtered_products | uniq %}
+
    <div style="display:flex; gap:20px;">
         <div>
               {% for type in all_type_array %}
@@ -70,7 +74,7 @@
           {% endfor %}
         </div>
         <div> 
-              {% for product in filter_collection %}
+              {% for product in filtered_products %}
                        <div>   {{ product.type}}    </div>   
               {% endfor %}
         </div>
