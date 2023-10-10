@@ -63,7 +63,7 @@
 {% for product in new_array %}
   <div>{{ product }} </div>
 {% endfor %}
-      {% paginate collection.products by section.settings.per_page %}
+      {% paginate new_array by section.settings.per_page %}
       
         <div class="collection__container">
           <div class="collection__content">
