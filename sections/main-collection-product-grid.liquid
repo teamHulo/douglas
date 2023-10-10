@@ -76,7 +76,7 @@
   {{ all_type_array }}
 
       
-  {% assign types_to_filter = "Masks,treatments,Third Type" | split: ',' %}
+  {% assign types_to_filter = "Masks,treatments,Special care" | split: ',' %}
   {{ types_to_filter }}
   {% assign filtered_products = "" | split: ',' %}
   
@@ -89,7 +89,7 @@
 
  <div> 
               {% for product in filtered_products %}
-                       <div>   {{ product.title}}    </div>   
+                       <div>   {{ product.type}}    </div>   
               {% endfor %}
         </div>
       {% paginate collection.products  by section.settings.per_page %}
