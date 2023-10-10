@@ -51,7 +51,7 @@
       </script>
 
   
-  {% assign all_type = collection.all_types | replace: 'treatments', '' | replace: '[' | replace: ']' | replace: '""', '' %}
+  {% assign all_type = collection.all_types | replace: 'treatments', '' | replace: '[' | replace: ']' | replace: '"', '' %}
 {% assign all_type_array = all_type | split: ',' %}
 {% for t in all_type_array %}
   <div>{{ t }}</div>
