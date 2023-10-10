@@ -61,14 +61,10 @@
   {% assign filtered_products = filtered_products | uniq %}
 
    <div style="display:flex; gap:20px;">
-        <div>
-              {% for type in all_type_array %}
-                   <div>   {{type}}    </div>   
-          {% endfor %}
-        </div>
+
         <div> 
               {% for product in filtered_products %}
-                       <div>   {{ product.title}}    </div>   
+                       <div>   {{ product.type}}    </div>   
               {% endfor %}
         </div>
    </div>  
