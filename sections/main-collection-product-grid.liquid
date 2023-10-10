@@ -56,7 +56,7 @@
 
 {% for product in collection.products %}
   {% if product.type != "treatments" %}
-    {% assign new_array = new_array | append: product %}
+    {% assign new_array = new_array | append: product.title %}
   {% endif %}
 {% endfor %}
  {% assign new_array = new_array | split: ',' %}
