@@ -51,7 +51,7 @@
       </script>
 
       {% assign non_kitchen_products = "" | split: "" %}
-      {%  assign new_array =  non_kitchen_products | concat : collection.products %}
+      {%  assign new_array =  collection.products%}
       <p>{{ new_array }}</p>
       {% for product in collection.products %}
         {% unless product.type == "treatments" %}
