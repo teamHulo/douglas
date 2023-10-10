@@ -52,10 +52,10 @@
 
   
       
-      
+         {{ collection.products.size }}
 
       {% paginate collection.products by section.settings.per_page %}
-         {{ collection.products.size }}
+      
         <div class="collection__container">
           <div class="collection__content">
             <div class="collection__filters-wrapper">
