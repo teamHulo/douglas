@@ -59,7 +59,7 @@
         {% endunless %}
       {% endfor %}
       {{ non_kitchen_products }}
-      {% paginate non_kitchen_products by section.settings.per_page %}
+      {% paginate collection.products by section.settings.per_page %}
         <div class="collection__container">
           <div class="collection__content">
             <div class="collection__filters-wrapper">
@@ -92,7 +92,7 @@
                     {%- render 'active-filters' with results: collection -%}
                   </div>
                   <div class="collection__products collection__infinite-container">
-                    {% for product in non_kitchen_products %}
+                    {% for product in collection.products %}
                       {% if product.type != 'treatments' %}
                         {%
                           render 'product-item' with
