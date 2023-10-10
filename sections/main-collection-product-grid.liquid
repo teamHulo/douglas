@@ -51,7 +51,7 @@
       </script>
 
   
-  {% assign all_type = collection.all_types | replace: 'treatments', '' | replace: '[' | replace: ']' | replace: '"','' %}
+  {% comment %}{% assign all_type = collection.all_types | replace: 'treatments', '' | replace: '[' | replace: ']' | replace: '"','' %}
   {% assign filter_collection = collection.products | where: "type", c %}
   {% assign all_type_array = all_type | split: ',' %}
   {% for type in all_type_array %}
@@ -67,9 +67,22 @@
                        <div>   {{ product.type}}    </div>   
               {% endfor %}
         </div>
-   </div>  
+   </div>  {% endcomment %}
+  {% assign types_to_filter = "Masks,treatments,ThirdType" | split: ',' %}
+  {% assign filtered_products = "" | split: ',' %}
   
+  {% for type in types_to_filter %}
+    {% assign type_products = collection.products | where: "type", type %}
+    {% assign filtered_products = filtered_products | concat: type_products %}
+  {% endfor %}
+  
+  {% assign filtered_products = filtered_products | uniq %}
 
+ <div> 
+              {% for product in filtered_products %}
+                       <div>   {{ product.type}}    </div>   
+              {% endfor %}
+        </div>
       {% paginate collection.products  by section.settings.per_page %}
       
         <div class="collection__container">
