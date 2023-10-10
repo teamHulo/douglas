@@ -55,7 +55,7 @@
   {% assign filter_collection = collection.products | where: "type", c %}
   {% assign c = "Serum, Masks" | split: ','%}
   {% assign all_type_array = all_type | split: ',' %}
-  {% assign filter_collection =  collection.products | where: "type", "Masks"%}
+  {% assign filter_collection =  collection.products | where: "type", "Masks", "treatments"%}
    <div style="display:flex; gap:20px;">
         <div>
               {% for type in all_type_array %}
