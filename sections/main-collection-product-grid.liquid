@@ -58,7 +58,7 @@
           {% assign non_kitchen_products = non_kitchen_products | append: product %}
         {% endunless %}
       {% endfor %}
-      {{ non_kitchen_products }}
+      {{ non_kitchen_products | split : ' '}}
       {% paginate collection.products by section.settings.per_page %}
         <div class="collection__container">
           <div class="collection__content">
