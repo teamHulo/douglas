@@ -58,7 +58,9 @@
         {% endunless %}
       {% endfor %}
       
-      {{ new_array.size }}
+      {% for p in new_array %}
+        {{ p.title }}
+      {% endfor %}
  
 
       {{ array }}
