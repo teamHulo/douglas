@@ -51,7 +51,7 @@
       </script>
 
   
-    {% assign all_type = collection.all_types | split: ',' %}
+    {% assign all_type = collection.all_types | split: ' ' %}
     {% assign new_arr_type_not_treatments = '' %}
       {{  all_type}}
 
@@ -62,7 +62,7 @@
       {% endunless %}
     {% endfor %}
     
-    {% assign new_arr_type_not_treatments = new_arr_type_not_treatments | remove: ',', '[', ']' | split: ',' %}
+    {% assign new_arr_type_not_treatments = new_arr_type_not_treatments | remove: ',' | remove: '[' | remove: ']' | split: ',' %}
 
     {{ new_arr_type_not_treatments }}
   
