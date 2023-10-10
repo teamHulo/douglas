@@ -52,15 +52,15 @@
 
   
       
-         {% assign new_array = '' %}
+      {% assign new_array = '' | split: ',' %}
 
-       {% for product in collection.products %}
-          {% if product.type != "treatments" %}
-            {% assign notTreatments = product | split : '' %}
-            {{ notTreatments.size }}
-          {% endif %}
-       {% endfor %}
-      {{ notTreatments.count }}
+{% for product in collection.products %}
+  {% if product.type != "treatments" %}
+    {% assign new_array = new_array | append: product %}
+  {% endif %}
+{% endfor %}
+
+{{ new_array.size }}
       {% paginate collection.products by section.settings.per_page %}
       
         <div class="collection__container">
