@@ -51,16 +51,19 @@
       </script>
 
   
-      {% assign all_type = collection.all_types | split : ','  %}
-      {% assign  new_arr_type_not_treatments = '' |  split : ''%}
+      {% assign all_type = collection.all_types | split: ',' %}
+      {% assign new_arr_type_not_treatments = '' %}
+      
       {% for type in all_type %}
-        {{ type }}
         {% if type != 'treatments' %}
-          {% assign new_arr_type_not_treatments = type | split : ''  %}
+          {% assign new_arr_type_not_treatments = new_arr_type_not_treatments | append: type | append: ',' %}
         {% endif %}
       {% endfor %}
-
-      {{ new_arr_type_not_treatments }}
+      
+      {% assign new_arr_type_not_treatments = new_arr_type_not_treatments | remove: ',' | split: ',' %}
+    {{ new_arr_type_not_treatments }}
+  
+     
       {% paginate collection.products  by section.settings.per_page %}
       
         <div class="collection__container">
