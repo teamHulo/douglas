@@ -69,7 +69,7 @@
         </div>
    </div>  {% endcomment %}
   {{ collection.all_types | replace : ' ' | join: ',' }}
-  {% assign types_to_filter = "Masks,treatments,ThirdType" | split: ',' %}
+  {% assign types_to_filter = collection.all_types | replace : ' ' | join: ',' | split: ',' %}
   {% assign filtered_products = "" | split: ',' %}
   
   {% for type in types_to_filter %}
