@@ -59,6 +59,12 @@
         {% endunless %}
       {% endfor %}
       {{ non_kitchen_products | split : ' '}}
+
+      {% for it in  non_kitchen_products %}
+          {{ it}}
+      {% endfor %}
+
+      
       {% paginate collection.products by section.settings.per_page %}
         <div class="collection__container">
           <div class="collection__content">
