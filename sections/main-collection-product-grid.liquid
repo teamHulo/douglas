@@ -54,7 +54,9 @@
   {% assign all_type = collection.all_types | replace: 'treatments', '' | replace: '[' | replace: ']' | replace: '"', '' %}
   {% assign all_type_array = all_type | split: ',' %}
   {% assign filter_collection =  collection.products | where : 'type', all_type_array %}
-
+  {% for product in filter_collection %}
+              {{ product.type }}       
+  {% endfor %}
       {% paginate collection.products  by section.settings.per_page %}
       
         <div class="collection__container">
