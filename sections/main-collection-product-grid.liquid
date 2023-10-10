@@ -52,8 +52,14 @@
 
   
       
-         {{ collection.products.count }}
+         {% assign new_array = '' %}
 
+       {% for product in collection.products %}
+          {% if product.type != "treatments" %}
+            {% assign notTreatments = new_array | concat : product %}
+          {% endif %}
+       {% endfor %}
+      {{ notTreatments.size }}
       {% paginate collection.products by section.settings.per_page %}
       
         <div class="collection__container">
@@ -89,7 +95,7 @@
                   </div>
                   <div class="collection__products collection__infinite-container">
                     {% for product in collection.products %}
-                     
+                      {% if product.type != 'treatments' %}
                         {%
                           render 'product-item' with
                           product: product,
@@ -99,7 +105,7 @@
                           wrapper_class: 'animation-fade-up-reveal',
                           show_price: false
                         %}
-                      
+                      {% endif %}
                     {% else %}
                       <div class="collection__empty">
                         <div>{{ 'collections.general.no_products' | t }}</div>
