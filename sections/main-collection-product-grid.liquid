@@ -59,7 +59,9 @@
       {% endfor %}
       
       {% for p in new_array %}
-        {{ p }}
+          {% for c in p %}
+              {{ c.title }}
+          {% endfor %}
       {% endfor %}
  
 
