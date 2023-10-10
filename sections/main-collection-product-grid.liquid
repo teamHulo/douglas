@@ -53,16 +53,12 @@
       {% assign non_kitchen_products = ''| split: '' %}
   
       {% for product in collection.products %}
-        {% unless product.type == "treatments" %}
+        {% unless product.type != "treatments" %}
           {% assign new_array = product | split: '' %}
         {% endunless %}
       {% endfor %}
       
-      {% for p in new_array %}
-          {% for c in p %}
-              {{ c.title }}
-          {% endfor %}
-      {% endfor %}
+    
  
 
       {{ array }}
