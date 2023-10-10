@@ -96,11 +96,13 @@
 
 
 
-      {% assign excluded_tag = 'treatments' %}
-      {% assign filtered_products = collection.products | where: 'tags', 'contains', excluded_tag | reverse %}
-      {% assign filtered_product_ids = filtered_products | map: 'id' %}
+    {% assign excluded_tag = 'treatments' %}
+{% assign filtered_products = collection.products | where: 'tags', 'contains', excluded_tag | map: 'id' %}
+{% assign all_products = collection.products | map: 'id' | join: ',' %}
+{% assign filtered_product_ids = filtered_products | join: ',' %}
+{% assign remaining_product_ids = all_products | remove: filtered_product_ids | split: ',' %}
 
-      {% paginate collection.products  | where: 'id', 'not in', filtered_product_ids by section.settings.per_page %}
+{% paginate remaining_product_ids.size by section.settings.per_page %}
       
         <div class="collection__container">
           <div class="collection__content">
