@@ -51,8 +51,8 @@
       </script>
 
   
-      {% assign filtered_products = collection.products   | map: title %}
-       {{  collection.all_products_count }}
+      {% assign filtered_products = collection.products   %}
+       {{  collection.all_tags }}
       {% for product in filtered_products %}
                 {{ product.type }}    
       {% endfor %}
