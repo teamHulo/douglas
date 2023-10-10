@@ -51,11 +51,14 @@
       </script>
 
   
-  {% assign all_type = collection.all_types | replace: 'treatments', '' | replace: '[' | replace: ']' | replace: '"','' %}
-  {% assign filter_collection = collection.products | where: "type", c %}
-  {% assign c = "Serum, Masks" | split: ','%}
-  {% assign all_type_array = all_type | split: ',' %}
-  {% assign filter_collection =  collection.products | where: "type", "Masks", "treatments"%}
+  
+
+      {% assign types_to_filter = "Masks,treatments,ThirdType" | split: ',' %}
+      {% assign filter_collection = collection.products %}
+      
+      {% for type in types_to_filter %}
+        {% assign filter_collection = filter_collection | where: "type", type %}
+      {% endfor %}
    <div style="display:flex; gap:20px;">
         <div>
               {% for type in all_type_array %}
