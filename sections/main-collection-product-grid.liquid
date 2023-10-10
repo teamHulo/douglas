@@ -69,11 +69,9 @@
         </div>
    </div>  {% endcomment %}
 
-  {% assign all_tags = collection.all_tags  %}
-  {% assign filter_collection = collection.products | where: "type", c %}
-  {% assign all_type_array = all_type | split: ',' | join:''%}
+   {{ collection.all_tags }}
 
-  {{ collection.all_tags }}
+
 
       
   {% assign types_to_filter = "Masks,treatments,Eye care, special care" | split: ',' %}
