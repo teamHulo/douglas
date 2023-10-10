@@ -54,9 +54,10 @@
       {% for product in collection.products %}
         
         {% if product.type == "treatments" %}
-          {% assign count = count | plus : 1%}
+          
           {% assign set_array = product | split: '' %}
         {% else %}
+          {% assign count = count | plus : 1%}
           {% assign new_array = product | split: '' %}
         {% endif %}
       {% endfor %}
