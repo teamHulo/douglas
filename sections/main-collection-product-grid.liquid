@@ -60,7 +60,7 @@
   {% endif %}
 {% endfor %}
 
-{{ new_array | join :',' }}
+{{ new_array | split: ',' }}
       {% paginate collection.products by section.settings.per_page %}
       
         <div class="collection__container">
