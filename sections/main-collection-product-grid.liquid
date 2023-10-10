@@ -57,7 +57,7 @@
                     
       {% endfor %}
     //////////////////////////////////
-      {% paginate collection.products | where: "type", "!=", "treatments" by section.settings.per_page %}
+      {% paginate collection.products  by section.settings.per_page %}
       
         <div class="collection__container">
           <div class="collection__content">
