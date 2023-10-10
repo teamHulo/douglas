@@ -54,9 +54,6 @@
   {% assign all_type = collection.all_types | replace: 'treatments', '' | replace: '[' | replace: ']' | replace: '"','' %}
   {% assign all_type_array = all_type | split: ',' %}
   {% assign filter_collection =  collection.products %}
-     {{ all_type }}
-     
-{{ all_type_array }}
    <div style="display:flex; gap:20px;">
         <div>
               {% for type in all_type_array %}
