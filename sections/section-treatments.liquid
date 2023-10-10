@@ -33,7 +33,7 @@
     <div class="treatments__wrapper">
         {% for item in section.settings.collection.products %}
             {% assign text =  item.metafields.custom.tretments_excerpt %}
-            {% render 'card-item', url: item.url, img: item.images[0], title: item.title, text: text, btn_text: 'LEARN MORE' %}
+            {% render 'card-item', url: item.url, img: item.images[0], title: item.title, text: text, btn_text: 'discover ' %}
         {% endfor %}
     </div>
 </div>
