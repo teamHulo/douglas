@@ -53,6 +53,7 @@
   
     {% assign all_type = collection.all_types | split: ',' %}
     {% assign new_arr_type_not_treatments = '' %}
+      {{  all_type}}
 
     {% for type in all_type %}
       {% assign lowercase_type = type | downcase %}
