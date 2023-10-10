@@ -51,8 +51,15 @@
       </script>
 
   
-      {% assign all_type = collection.all_types   %}
-      {{ all_type }}
+      {% assign all_type = collection.all_types | split : ','  %}
+      {% assign  new_arr_type_not_treatments = '' |  split : ''%}
+      {% for type in all_type %}
+        {% if type != 'treatments' %}
+          {% assign new_arr_type_not_treatments = type | split : ''  %}
+        {% endif %}
+      {% endfor %}
+
+      {{ new_arr_type_not_treatments }}
       {% paginate collection.products  by section.settings.per_page %}
       
         <div class="collection__container">
