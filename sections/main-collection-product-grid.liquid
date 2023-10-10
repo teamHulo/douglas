@@ -54,6 +54,7 @@
   {% assign all_type = collection.all_types | replace: 'treatments', '' | replace: '[' | replace: ']' | replace: '"', '' %}
   {% assign all_type_array = all_type | split: ',' %}
   {% assign filter_collection =  collection.products | where : 'type', all_type_array %}
+      {{  filter_collection.size }}
   {% for product in filter_collection %}
               {{ product.type }}       
   {% endfor %}
