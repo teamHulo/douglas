@@ -51,11 +51,12 @@
       </script>
 
   
-   
-    {% assign filters_product = collection.products | where: 'type', '!=treatments' %}
-    {% for product in filters_product %}
-      {{ product.type }}
-    {% endfor %}
+    {% assign all_type = collection.all_types | replace: 'treatments', '' %}
+    {% assign all_type_array = all_type | split: ' ' %}
+    {% assign filters_product = collection.products | where: 'type', all_type_array %}
+  {% for product in filters_product %}
+    {{ product.title }}
+  {% endfor %}
       {% paginate collection.products  by section.settings.per_page %}
       
         <div class="collection__container">
