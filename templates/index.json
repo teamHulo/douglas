@@ -132,55 +132,6 @@
         "text_padding_bottom": 0
       }
     },
-    "6fbf64d4-c0e4-4bac-a621-219775a0c45a": {
-      "type": "section-images-scroll",
-      "blocks": {
-        "ffbb99c7-ec53-4ca9-bd1e-23ff3dccfc16": {
-          "type": "image",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/The_Sydney_Morning_Herald_540x_1.png"
-          }
-        },
-        "bb5ca779-be42-4acc-bd6e-d52fd457b794": {
-          "type": "image",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/The_Sydney_Morning_Herald_540x_1_1.png"
-          }
-        },
-        "1229d3f3-3f63-4f4b-89aa-b471f3ced8ea": {
-          "type": "image",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/The_Sydney_Morning_Herald_540x_1_2.png"
-          }
-        },
-        "46727f9f-f164-4ce2-b29a-80d54f7481d9": {
-          "type": "image",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/The_Sydney_Morning_Herald_540x_1_3.png"
-          }
-        },
-        "986ee709-601e-441e-a47c-6cdf171a6c09": {
-          "type": "image",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/The_Sydney_Morning_Herald_540x_1_4.png"
-          }
-        }
-      },
-      "block_order": [
-        "ffbb99c7-ec53-4ca9-bd1e-23ff3dccfc16",
-        "bb5ca779-be42-4acc-bd6e-d52fd457b794",
-        "1229d3f3-3f63-4f4b-89aa-b471f3ced8ea",
-        "46727f9f-f164-4ce2-b29a-80d54f7481d9",
-        "986ee709-601e-441e-a47c-6cdf171a6c09"
-      ],
-      "settings": {
-        "padding_top": 90,
-        "padding_bottom": 50,
-        "name": "as seen in",
-        "name_padding_bottom": 36,
-        "column_gap": 50
-      }
-    },
     "701a8324-b670-4489-bde5-621c76cdd7d0": {
       "type": "section-image-with-text",
       "blocks": {
@@ -332,6 +283,55 @@
         "name": "",
         "title": "How to shop with us"
       }
+    },
+    "6fbf64d4-c0e4-4bac-a621-219775a0c45a": {
+      "type": "section-images-scroll",
+      "blocks": {
+        "ffbb99c7-ec53-4ca9-bd1e-23ff3dccfc16": {
+          "type": "image",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/The_Sydney_Morning_Herald_540x_1.png"
+          }
+        },
+        "bb5ca779-be42-4acc-bd6e-d52fd457b794": {
+          "type": "image",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/The_Sydney_Morning_Herald_540x_1_1.png"
+          }
+        },
+        "1229d3f3-3f63-4f4b-89aa-b471f3ced8ea": {
+          "type": "image",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/The_Sydney_Morning_Herald_540x_1_2.png"
+          }
+        },
+        "46727f9f-f164-4ce2-b29a-80d54f7481d9": {
+          "type": "image",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/The_Sydney_Morning_Herald_540x_1_3.png"
+          }
+        },
+        "986ee709-601e-441e-a47c-6cdf171a6c09": {
+          "type": "image",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/The_Sydney_Morning_Herald_540x_1_4.png"
+          }
+        }
+      },
+      "block_order": [
+        "ffbb99c7-ec53-4ca9-bd1e-23ff3dccfc16",
+        "bb5ca779-be42-4acc-bd6e-d52fd457b794",
+        "1229d3f3-3f63-4f4b-89aa-b471f3ced8ea",
+        "46727f9f-f164-4ce2-b29a-80d54f7481d9",
+        "986ee709-601e-441e-a47c-6cdf171a6c09"
+      ],
+      "settings": {
+        "padding_top": 90,
+        "padding_bottom": 50,
+        "name": "as seen in",
+        "name_padding_bottom": 36,
+        "column_gap": 50
+      }
     }
   },
   "order": [
@@ -339,10 +339,10 @@
     "59274cfa-014a-42aa-bef6-33567a0a50bf",
     "488d4fc0-4cab-4942-8eb2-eff919582ad8",
     "e93a0e87-b11a-40e2-b596-bd60239b309b",
-    "6fbf64d4-c0e4-4bac-a621-219775a0c45a",
     "701a8324-b670-4489-bde5-621c76cdd7d0",
     "a9582002-bf1a-412f-a25a-f2fb7ece2685",
     "6145700a-f292-470e-83b3-547f6dc781de",
-    "0e6446f7-19a6-45f3-bce1-13749fe15be2"
+    "0e6446f7-19a6-45f3-bce1-13749fe15be2",
+    "6fbf64d4-c0e4-4bac-a621-219775a0c45a"
   ]
 }
