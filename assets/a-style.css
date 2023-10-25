@@ -821,6 +821,9 @@ header .header__inner {
   gap: 40px;
   justify-content: space-between;
 }
+.footer__content .text {
+  max-width:500px;
+}
 .footer__content .links-item {
   width: max-content;
   /*flex-basis: 40%;*/
@@ -1717,3 +1720,4 @@ header .header__inner {
   left:0 !important;
 
 }
+
