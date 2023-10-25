@@ -691,12 +691,15 @@ header .header__inner {
 /*** end section tab hover ***/
 
 /**** footer ***/
-
+.footer__newsletter{
+  width:50%;
+}
 .footer__newsletter-wrap {
-  padding: clamp(20px, 1.667vw, 32px);
+ /* padding: clamp(20px, 1.667vw, 32px);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.08);
-  max-width: 571px;
+  background: rgba(255, 255, 255, 0.08);*/
+ /* max-width: 50%;*/
+ width: 100%;
 }
 .footer__newsletter-wrap .text h1,
 .footer__newsletter-wrap .text h2,
@@ -728,12 +731,13 @@ header .header__inner {
   margin-bottom: clamp(20px, 2.083vw, 40px);
 }
 .footer__newsletter {
-  width: max-content;
+  width: 40%;
+  margin-right: auto;
 }
 .footer-newsletter-form-wrap {
-  border-bottom: 1px solid rgb(217, 217, 217, 0.5);
+  /*border-bottom: 1px solid rgb(217, 217, 217, 0.5);
   border-top: 1px solid rgb(217, 217, 217, 0.5);
-  padding: clamp(20px, 2.083vw, 40px) 0;
+  padding: clamp(20px, 2.083vw, 40px) 0;*/
 }
 
 .footer-newsletter-form-wrap .title {
@@ -811,14 +815,15 @@ header .header__inner {
 
 .footer__content {
   display: flex;
-  flex-direction: column;
+  /*flex-direction: column;*/
   flex-wrap: wrap;
-  height: clamp(571px, 32.708vw, 628px);
-  gap: 20px;
+ /* height: clamp(571px, 32.708vw, 628px);*/
+  gap: 40px;
+  justify-content: space-between;
 }
 .footer__content .links-item {
   width: max-content;
-  flex-basis: 40%;
+  /*flex-basis: 40%;*/
 }
 .footer__content .links-item.mb {
   margin-bottom: auto;
@@ -868,6 +873,15 @@ header .header__inner {
 .footer__wrap {
   padding: clamp(50px, 4.167vw, 80px) 0 clamp(50px, 3.333vw, 64px) 0;
 }
+.footer__wrap .text p{
+  font-family: Proxima Nova;
+  font-size: var(--font-size-18);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.72px;
+  color:#fff;
+}
 .foooter__logo img {
   display: block;
   width: 100%;
@@ -877,7 +891,7 @@ header .header__inner {
   margin-bottom: clamp(50px, 4.167vw, 80px);
 }
 .newsletter-social {
-  padding-top: 40px;
+  /*padding-top: 40px;*/
 }
 .newsletter-social svg {
   width: 24px;
@@ -902,7 +916,8 @@ header .header__inner {
 }
 .footer__bottom {
   border-top: 1px solid rgba(217, 217, 217, 0.4);
-  padding-top: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .footer__bottom {
   display: block !important;
@@ -932,7 +947,7 @@ header .header__inner {
 }
 .footer__bottom .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
   align-items: center;
@@ -942,7 +957,7 @@ header .header__inner {
   padding: 0px;
 }
 .footer__bottom .left {
-  width: 50%;
+  width: auto;
 }
 .footer__bottom .footer__credits p {
   color: #d9d9d9;

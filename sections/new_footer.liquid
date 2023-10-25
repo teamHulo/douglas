@@ -24,21 +24,31 @@
               {% when 'newsletter' %}
               <div class="footer__newsletter">
                 <div class="footer__newsletter-wrap">
-                  {% if block.settings.text != blank %}
+                  {% comment %}{% if block.settings.text != blank %}
                     <div class="text">
                       {{ block.settings.text }}
                     </div>
-                  {% endif %}
+                  {% endif %} {% endcomment %}
                   <div class="footer-newsletter-form-wrap">
                     {% render 'my-newsletter', title: block.settings.title, text: block.settings.subtitle %}
                   </div>
-                  <div class="newsletter-social">
+                  {%comment%}<div class="newsletter-social">
+                    <div class="social__wrap">
+                      {% render 'social-icons' %}
+                    </div>
+                  </div> {% endcomment %}
+                </div>
+              </div>
+              {% when 'social' %}
+                <div class="newsletter-social">
                     <div class="social__wrap">
                       {% render 'social-icons' %}
                     </div>
                   </div>
+              {% when 'my-text' %}      
+                <div class="text">
+                  {{block.settings.text}}
                 </div>
-              </div>
               {% when 'links' %}
 
               {% if block.type == 'links' %}
@@ -95,6 +105,28 @@
   {
     "name": "t:sections.footer.name",
     "blocks": [
+      {
+        "type": "social",
+        "name": "social",
+        "limit": 1,
+        "settings": [
+         
+
+        ]
+      },
+      {
+        "type": "my-text",
+        "name": "text",
+        "limit": 1,
+        "settings": [
+          {
+            "id": "text",
+            "type": "richtext",
+            "label": "text"
+          }
+
+        ]
+      },
       {
         "type": "links",
         "name": "t:sections.footer.blocks.links.name",
