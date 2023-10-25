@@ -34,11 +34,15 @@
             "link_list": "discover"
           }
         },
-        "5c8fb106-6775-4d11-8a97-b0369d389ac8": {
-          "type": "links",
+        "b3f58a59-6516-4918-b44b-407d9c668f7c": {
+          "type": "my-text",
           "settings": {
-            "title": "more",
-            "link_list": "more"
+            "text": "<p>Lorem ipsum dolor sit amet consectetur. Senectus sed vel ac suspendisse mauris facilisi integer id olor sit amet roconut consectetu mauris sed.<\/p>"
+          }
+        },
+        "1f577472-60ca-46a7-8fe2-5cf7590d5676": {
+          "type": "social",
+          "settings": {
           }
         }
       },
@@ -47,12 +51,12 @@
         "06afd925-d6fa-4416-9e16-7f5f0665a352",
         "919e1c74-b25b-423a-a911-493b19753b9e",
         "564341bb-5793-4266-8670-71f9a07032ff",
-        "5c8fb106-6775-4d11-8a97-b0369d389ac8"
+        "b3f58a59-6516-4918-b44b-407d9c668f7c",
+        "1f577472-60ca-46a7-8fe2-5cf7590d5676"
       ],
       "settings": {
-        "menu_bottom": "menu-bottom",
+        "menu_bottom": "",
         "color_bg": "#000000",
-        "logo": "shopify:\/\/shop_images\/DP_Logo_Cosmeceuticals_Horizontal_White_9f6e180d-e901-4e0c-9abe-ebcbf1017d95.png",
         "max_width": 250
       }
     }
