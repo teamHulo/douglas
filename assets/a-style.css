@@ -394,7 +394,9 @@ header .header__inner {
   width: 100%;
   height: 100%;
 }
-
+.banner-slider-swiper .video-banner-bg{
+  height: 100%;
+}
 .banner-slider .container {
 }
 .banner-slider__wrap {
