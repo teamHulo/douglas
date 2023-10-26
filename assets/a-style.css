@@ -1062,14 +1062,17 @@ header .header__inner {
 }
 .product-container .product__top {
   display: flex;
+  justify-content: center;
   gap: 8.4%;
 }
 .product-container .product__media-container {
   width: 50.3%;
-  max-width: 868px;
+  /*max-width: 868px;*/
+  max-width: 616px;
 }
 .product-container .product__details {
-  max-width: 618px;
+  /*max-width: 618px;*/
+  max-width: 515px;
   width: 100%;
 }
 .product-container .product__meta {
@@ -1171,7 +1174,7 @@ header .header__inner {
   display: flex !important;
   padding: 0;
   width: 100%;
-  max-width: 301px;
+  max-width: 245px;
   height: 55px;
   color: #080808;
   text-align: center;
@@ -1197,7 +1200,7 @@ header .header__inner {
 }
 .shopify-payment-button {
   width: 100%;
-  max-width: 301px;
+  max-width: 245px;
 }
 .shopify-payment-button__button {
   margin-top: 0 !important;
