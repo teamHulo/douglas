@@ -14,27 +14,22 @@
         "c1c31b6d-fb59-4a35-8be7-985cc1334d60": {
           "type": "section-1",
           "settings": {
+            "color": "#fefefe",
             "img": "shopify:\/\/shop_images\/unsplash_wE3hiKhAbuE_1.png",
-            "title": "DOUGLAS PEREIRA SKINSCIENCE:",
-            "subtitle": "(All skin type, uncomplicated skincare collection",
-            "text": "<p>Twelve years after founding our premium skincare range Douglas Pereira Skin Health we have launched our new range Douglas Pereira Skin Science. This collectionof products came from a need Douglas sawin the market, wheresome skincare consumers don’t want to have a complicated skincare routine, but still wanted to get most out of a few steps.<\/p><p>The rangeis a straightforward collection of products that has been developedfor all genders and skin types. Our universal formulations offerall in one skincare solutionsfor those not wanting a complicated homecare regime, but still striving for result driven skincare without toomany steps<\/p>"
-          }
-        },
-        "c0af95d9-96cb-4b14-baa9-b0fcba3a2742": {
-          "type": "section-2",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/1666847428_2-celes-club-p-kot-na-chernom-fone-oboi-krasivo-2.jpg",
-            "title": "AN UNCOMPLICATED APPROACH:",
-            "subtitle": "The range has been divided into three collections making it easy for you to navigate and select your products. Core, Supportive and Enhancement collections."
+            "title": "Douglas Pereira Cosmeceuticals",
+            "subtitle": "",
+            "text": "<p>Douglas Pereira Cosmeceuticals is a skincare<br\/>brand that strive to boldly transcend the traditional realms of the skincare<br\/>Industery, by not getting caught up in the latest fads and trends, but instead,<br\/>we formulate skincare products that improve the health of skin cells,<br\/>optimising their function, protects the skins barrier and counteract the<br\/>effects that pollution, stress and ageing has on the skin. <\/p><p> <\/p><p>If we were to define the philosophy behind ‘Douglas<br\/>Pereira Cosmeceuticals’ in a few words, it would be. ‘We take a holistic<br\/>approach alongside scientifically – innovative formulations, that work in<br\/>conjunction with your skin’s biology.’ <\/p><p> <\/p><p>Our formulations are skin identical, work<br\/>deeply through the multiple layers of the skin, relate and have relevance to<br\/>each of the key skin function and the way they perform. By formulating products<br\/>that work with your skins biology we can achieve effective visible, long-term<br\/>results that will transform the health of your skin. <\/p><p> <\/p><p>We know choosing the correct products for your skin, budget and<br\/>lifestyle can be challenging. So, under the Douglas<br\/>Pereira Cosmeceuticals brand we have developed two skincare collections. ‘Douglas<br\/>Pereira Skin Health,’ a premium prescriptive collection of advanced products for<br\/>a skin savvy user and ‘Douglas Pereira Skin Science,’ an uncomplicated skincare<br\/>collection, with complex formulations’ for those looking for a simple routine. Both<br\/>ranges uphold our brand philosophy but have their own unique identity and concept.<br\/><\/p>"
           }
         },
         "d5eb7694-27ca-46a8-910c-a8f7a35a27f5": {
           "type": "section-3",
           "settings": {
+            "color": "#fefefe",
             "img": "shopify:\/\/shop_images\/makeup-powders-and-brush.jpg",
+            "type_btn": "secondary",
             "alignment": "flex-start",
-            "title": "Core collection",
-            "text": "<p>The core productcollectionis your everyday routine and hasbeen formulated to suite all skin types, eliminating the challenge of choosing the right products for your skin. <br\/>The system is straightforward and has minimal steps, so you don’t have to invest too much time looking after your skinbutcan have the confidence all bases are covered with just a few steps.<\/p>",
+            "title": "Douglas Pereira Skin Health Collection",
+            "text": "<p>Douglas Pereira Skin Health is a premium collection of result driven products that have been formulated for a skincare savvy user or somebody that wants to elevate their skincare regime and achieve<br\/>effective, visible, long-term results that will transform their skins health.<br\/>We believe your skincare regime should be as individual as you are.<\/p>",
             "url": "",
             "btn_name": ""
           }
@@ -42,29 +37,21 @@
         "ae8e0f66-1cdf-4033-8c46-818f01155728": {
           "type": "section-3",
           "settings": {
+            "color": "#fefefe",
             "img": "shopify:\/\/shop_images\/makeup-and-jewelry.jpg",
+            "type_btn": "secondary",
             "alignment": "flex-end",
-            "title": "Universal cleanser",
-            "text": "<p>Lorem ipsum dolor sit amet consectetur. Orci hendrerit posuere volutpat egestas. Suscipit rutrum est urna sed porttitor elementum. Consectetur ut nec egestas felis nulla sed bibendum. Nisl risus ultricies enim sapien sollicitudin .<\/p>",
+            "title": "Douglas Pereira Skin science Collection",
+            "text": "<p>Douglas Pereira Skin Science is an<br\/>uncomplicated skincare collection, with complex formulations, for everyday people. <\/p><p>This collection is a straightforward range of products that has been developed to suit all skin types, with our universal formulations and offers simple skincare solutions for those not wanting a complicated homecare regime, but still striving for result driven skincare without too many steps. <\/p>",
             "url": "#",
             "btn_name": "Learn more"
-          }
-        },
-        "1c0212c8-19c7-47cf-9f36-0c2894346569": {
-          "type": "section-4",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/Img_3.png",
-            "title": "Lorem ipsum",
-            "text": "<p>Lorem ipsum dolor sit amet consectetur. Orci hendrerit posuere volutpat egestas. Suscipit rutrum est urna sed porttitor elementum. Consectetur ut nec egestas felis nulla sed bibendum. Nisl risus ultricies enim sapien sollicitudin .<\/p><p>Suscipit rutrum est urna sed porttitor elementum. Consectetur ut nec egestas felis nulla sed bibendum. <\/p>"
           }
         }
       },
       "block_order": [
         "c1c31b6d-fb59-4a35-8be7-985cc1334d60",
-        "c0af95d9-96cb-4b14-baa9-b0fcba3a2742",
         "d5eb7694-27ca-46a8-910c-a8f7a35a27f5",
-        "ae8e0f66-1cdf-4033-8c46-818f01155728",
-        "1c0212c8-19c7-47cf-9f36-0c2894346569"
+        "ae8e0f66-1cdf-4033-8c46-818f01155728"
       ],
       "settings": {
       }
