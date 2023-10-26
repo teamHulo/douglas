@@ -45,12 +45,17 @@
         "c60df61b-9a99-4560-b107-843e8c40ca84": {
           "type": "item",
           "settings": {
+            "video": true,
+            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/780cb65a1ed24917a6cc3cdb1dea33af.mp4",
             "img": "shopify:\/\/shop_images\/Rectangle_227.jpg"
           }
         },
         "61a09a14-8e81-4938-9c9e-51bf23751c78": {
           "type": "item",
+          "disabled": true,
           "settings": {
+            "video": false,
+            "video_url": "",
             "img": "shopify:\/\/shop_images\/div.product-block-content.jpg"
           }
         }
@@ -113,6 +118,8 @@
     "e93a0e87-b11a-40e2-b596-bd60239b309b": {
       "type": "section-image-baner",
       "settings": {
+        "video": true,
+        "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/0bede705ccb04381820766fd328bca0c.mp4",
         "padding_x": 0,
         "padding_y": 140,
         "img": "shopify:\/\/shop_images\/Rectangle249-compress.jpg",
@@ -221,6 +228,8 @@
     "6145700a-f292-470e-83b3-547f6dc781de": {
       "type": "section-image-baner",
       "settings": {
+        "video": false,
+        "video_url": "",
         "padding_x": 0,
         "padding_y": 140,
         "img": "shopify:\/\/shop_images\/DP-Treatments-Background_19eb63ac-870c-471b-bb9a-974125dd8c05.jpg",
