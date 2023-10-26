@@ -55,7 +55,7 @@ option {
   --font-size-42: clamp(22px, 1.615vw, 31px);
   --font-size-36: clamp(20px, 1.406vw, 27px);
   --font-size-34: clamp(22px, 1.302vw, 25px);
-  --font-size-32: clamp(22px, 1.250vw, 24px);
+  --font-size-32: clamp(22px, 1.25vw, 24px);
   --font-size-30: clamp(22px, 1.146vw, 22px); /*** 15 %**/
   --font-size-28: clamp(22px, 1.458vw, 28px);
   --font-size-26: clamp(20px, 1.354vw, 26px);
@@ -389,7 +389,7 @@ header .header__inner {
 .banner-slider-swiper {
   height: 100%;
 }
-.banner-slider-swiper video{
+.banner-slider-swiper video {
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -794,7 +794,7 @@ header .header__inner {
 .footer-newsletter-form-wrap .text p {
   color: #fefefe;
   font-family: Raleway;
-  font-size: 14px;
+  font-size: 16px !important;
   font-style: normal;
   font-weight: 500;
   line-height: 140%; /* 19.6px */
@@ -871,7 +871,7 @@ header .header__inner {
   /*flex-direction: column;*/
   flex-wrap: wrap;
   /* height: clamp(571px, 32.708vw, 628px);*/
-  gap: 40px;
+  gap: 16px;
   justify-content: space-between;
 }
 .footer__content .text {
@@ -879,6 +879,7 @@ header .header__inner {
 }
 .footer__content .links-item {
   width: max-content;
+  min-width: 260px;
   /*flex-basis: 40%;*/
 }
 .footer__content .links-item.mb {
@@ -901,7 +902,7 @@ header .header__inner {
 .custom__footer .links__wrap .title h2 {
   color: #fff;
   font-family: Proxima Nova;
-  font-size: var(--font-size-22);
+  font-size: var(--font-size-16);
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -916,7 +917,7 @@ header .header__inner {
 }
 .custom__footer .footer__links-item a {
   font-family: Proxima Nova;
-  font-size: var(--font-size-18);
+  font-size: var(--font-size-16);
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -927,11 +928,11 @@ header .header__inner {
   transition: all 0.3s ease;
 }
 .footer__wrap {
-  padding: clamp(50px, 4.167vw, 80px) 0 clamp(50px, 3.333vw, 64px) 0;
+  padding: clamp(50px, 4.948vw, 95px) 0 42px 0;
 }
 .footer__wrap .text p {
   font-family: Proxima Nova;
-  font-size: var(--font-size-18);
+  font-size: var(--font-size-16);
   font-style: normal;
   font-weight: 500;
   line-height: normal;
