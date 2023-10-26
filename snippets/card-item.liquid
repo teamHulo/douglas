@@ -1,19 +1,19 @@
 <div class="item">
     <a href="{{ url }}">
-        <div class="img">
+        <div class="img element-animation">
             <div class="img__wrapper">
                 <img src="{{ img | img_url: 'master' }}" alt="">
             </div>
         </div>
         <div class="content">
             {% if title != blank %}
-                <h4>{{ title }}</h4>
+                <h4 class="element-animation">{{ title }}</h4>
             {% endif %}
             {% if text != blank %}
-                <p>{{ text }}</p>
+                <p class="element-animation">{{ text }}</p>
             {% endif %}
             {% if btn_text != blank %}
-                <span>{{ btn_text }} &#10230;</span>
+                <span class="element-animation a-btn prime" >{{ btn_text }} &#10230;</span>
             {% endif %}
         </div>
     </a>

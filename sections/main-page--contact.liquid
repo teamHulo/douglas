@@ -99,24 +99,24 @@
 >
   <div class="contact__inner container">
     {%- for block in section.blocks -%}
-      <div class="contact__info">
-        <h3>{{ block.settings.title }}</h3>
+      <div class="contact__info element-animation">
+        <h3 class="element-animation">{{ block.settings.title }}</h3>
         {{ block.settings.text }}
-        <p>{{ block.settings.label }}</p>
+        <p class="element-animation">{{ block.settings.label }}</p>
         
-        <p class="contact-info">{% render 'icon' with icon: 'mail', class: 'Contact' %}{{ block.settings.mail }}</p>
-        <p class="contact-info">{% render 'icon' with icon: 'phone', class: 'Contact' %}{{ block.settings.tel }}</p>
-        <p class="contact-info">{% render 'icon' with icon: 'location', class: 'Contact' %}{{ block.settings.address }}</p>
+        <p class="contact-info element-animation">{% render 'icon' with icon: 'mail', class: 'Contact' %}{{ block.settings.mail }}</p>
+        <p class="contact-info element-animation">{% render 'icon' with icon: 'phone', class: 'Contact' %}{{ block.settings.tel }}</p>
+        <p class="contact-info element-animation">{% render 'icon' with icon: 'location', class: 'Contact' %}{{ block.settings.address }}</p>
       </div>
     {%- endfor -%}
 
     <div class="contact__content">
       <header class="contact__header page__header">
-        <h1 class="contact__heading page__heading ff-heading fs-heading-1-base">{{ page.title }}</h1>
+        <h1 class="contact__heading element-animation page__heading ff-heading fs-heading-1-base">{{ page.title }}</h1>
       </header>
 
       {%- if page.content != blank -%}
-        <div class="contact__rte page__rte">
+        <div class="contact__rte element-animation page__rte">
           {{ page.content }}
         </div>
       {%- endif -%}
@@ -125,22 +125,22 @@
         {%- assign success_msg = 'contact.form.post_success' | t -%}
         {% render 'form-status', form: form, form_id: 'contact', success_message: success_msg %}
 
-        <label for="contact-ContactFormName" class="visually-hidden">{{ 'contact.form.name' | t }}</label>
+        <label for="contact-ContactFormName element-animation" class="visually-hidden">{{ 'contact.form.name' | t }}</label>
         <input
           type="text"
           name="contact[name]"
           id="contact-ContactFormName"
-          class="input"
+          class="input element-animation"
           placeholder="{{ 'contact.form.name' | t }}"
           value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}"
         >
 
-        <label for="contact-ContactFormEmail" class="visually-hidden">{{ 'contact.form.email' | t }}</label>
+        <label for="contact-ContactFormEmail element-animation" class="visually-hidden">{{ 'contact.form.email' | t }}</label>
         <input
           type="email"
           name="contact[email]"
           id="contact-ContactFormEmail"
-          class="input"
+          class="input element-animation"
           placeholder="{{ 'contact.form.email' | t }}"
           value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
           spellcheck="false"
@@ -148,19 +148,19 @@
           autocapitalize="off"
         >
 
-        <label for="contact-ContactFormPhone" class="visually-hidden">{{ 'contact.form.phone' | t }}</label>
+        <label for="contact-ContactFormPhone element-animation" class="visually-hidden">{{ 'contact.form.phone' | t }}</label>
         <input
           type="tel"
           name="contact[phone]"
           id="contact-ContactFormPhone"
-          class="input-reset input w-100"
+          class="input-reset input w-100 element-animation"
           placeholder="{{ 'contact.form.phone' | t }}"
           value="{% if form[phone] %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
           pattern="[0-9\-]*"
         >
 
         <label for="contact-ContactFormMessage" class="visually-hidden">{{ 'contact.form.message' | t }}</label>
-        <div class="radio-question">
+        <div class="radio-question element-animation">
           <p>How we can help you?</p>
             <div>
               <label>
@@ -202,7 +202,7 @@
           rows="3"
           name="contact[body]"
           id="contact-ContactFormMessage"
-          class="input-reset input w-100"
+          class="input-reset input w-100 element-animation"
           placeholder="{{ 'contact.form.message' | t }}"
           required
         >
@@ -211,7 +211,7 @@
           {%- endif -%}
         </textarea>
 
-        <button type="submit" class="btn btn--primary btn--form">{{ 'contact.form.submit' | t }}</button>
+        <button type="submit" class="btn btn--primary btn--form element-animation">{{ 'contact.form.submit' | t }}</button>
       {% endform %}
     </div>
   </div>

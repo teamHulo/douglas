@@ -4,12 +4,12 @@
     data-index="{{ forloop.index0 }}"
     {{ block.shopify_attributes }}
   >
-    <div class="widget__item-header">
+    <div class="widget__item-header ">
       {%- unless block.settings.icon == 'none' -%}
         {%- render 'icon' with icon: block.settings.icon -%}
       {%- endunless -%}
       {%- if block.settings.title != blank -%}
-        <h4 class="widget__item-heading ff-heading fs-heading-4-base">{{ block.settings.title }}</h4>
+        <h4 class="widget__item-heading element-animation ff-heading fs-heading-4-base">{{ block.settings.title }}</h4>
       {%- endif -%}
     </div>
 

@@ -12,7 +12,7 @@
 
   <div class="container">
     <div class="section-tab-hover__wrap">
-      <div class="big-title">
+      <div class="big-title element-animation">
         <h2>
           {{ section.settings.title }}
         </h2>
@@ -22,20 +22,20 @@
           <div class="tab-item {% if forloop.index == 1 %} active {% endif %}">
             <div class="tab-item__wrap">
               <div class="tab-item-content">
-                <div class="number">
+                <div class="number element-animation">
                   <span>
                     {{ forloop.index }}
                   </span>
                 </div>
-                <div class="title">
+                <div class="title element-animation">
                   <h3>{{ block.settings.title }}</h3>
                 </div>
-                <div class="text">
+                <div class="text element-animation">
                   <p>
                     {{ block.settings.text }}
                   </p>
                 </div>
-                <div class="tab-item-link">
+                <div class="tab-item-link element-animation">
                   <a href="{{block.settings.url}}" class="a-link">{{ block.settings.btn_name }} {% render 'icon-arrow-right' %}</a>
                 </div>
               </div>

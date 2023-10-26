@@ -35,12 +35,12 @@
 </style>
 <div class="scroll-image">
     <div class="scroll-image__wrapper">
-        <div class="name">
+        <div class="name element-animation">
             <span>
               {{ section.settings.name }}
             </span>
           </div>
-        <div class="scroll-image__img">
+        <div class="scroll-image__img element-animation">
             {% for block in section.blocks %}
                 <img src="{{ block.settings.img | img_url: 'master' }}" alt="">
             {% endfor %}

@@ -52,7 +52,7 @@
 
 <div
   class="
-    product-item
+    product-item element-animation
     {% if includes_aspect_ratio %} product-item--{{ aspect_ratio }}{% endif %}
     {% if product_columns_mobile == "2" %} product-item--compact {% endif %}
     {% if settings.enable_quick_add and current_variant.available and product != blank %} product-item--has-quick-add{% endif %}
@@ -61,7 +61,7 @@
   style="--z-index-item: {{ forloop.rindex }};"
 >
   <div class="product-item__inner">
-    <div class="product-item__media{% if multiple_images %} product-item__media--multiple-images{% endif %}">
+    <div class="product-item__media{% if multiple_images %} product-item__media--multiple-images{% endif %} element-animation">
       {%- if placeholder or product.featured_media == blank -%}
         {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
 
@@ -121,7 +121,7 @@
         </a>
 
         {%- unless product.available -%}
-          <div class="product-item__wash"></div>
+          <div class="product-item__wash element-animation"></div>
         {%- endunless -%}
 
         {%- if settings.enable_card_hover_options -%}
@@ -141,7 +141,7 @@
         </h4>
 
         {% if show_price %}
-          <span class="product-item__price-wrapper">
+          <span class="product-item__price-wrapper element-animation">
             {% if placeholder %}
               {{ 9999 | money -}}
               {%- if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif %}
@@ -152,7 +152,7 @@
                 {%- if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif -%}
               </s>
 
-              <span class="sale">
+              <span class="sale element-animation">
                 {% if product.price_varies %}
                   {%- assign sale_price = product.price | money -%}
                   {{ 'products.product.on_sale_from_html' | t: price: sale_price -}}
@@ -164,7 +164,7 @@
               </span>
 
               {%- if settings.enable_discount -%}
-                <span class="displayed-discount fs-body-small">
+                <span class="displayed-discount fs-body-small element-animation">
                   {%- if product.price_varies -%}
                     {{ 'products.product.on_sale_varied' | t }}
                     {{ 'products.product.on_sale_percent' | t: value: percent }}
@@ -179,7 +179,7 @@
                 {{ 'products.product.from_lowest_price_html' | t: lowest_price: price -}}
                 {%- if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif %}
               {% else %}
-                <span class="product-item__price">
+                <span class="product-item__price element-animation">
                   {{- product.price | money -}}
                   {%- if settings.currency_code_enabled %} {{ cart.currency.iso_code }}{% endif -%}
                 </span>
@@ -196,7 +196,7 @@
       {% # Add discount to sale badge, if enabled %}
 
       {%- if product.compare_at_price > product.price or product.available != true -%}
-        <div class="product-item__badges fs-body-x-small">
+        <div class="product-item__badges element-animation fs-body-x-small">
           {% if product.compare_at_price > product.price and product.available and settings.enable_sales_badge %}
             <div class="product-item__badge product-item__badge--sale">
               {%- if settings.sale_badge_includes_percent -%}
@@ -213,7 +213,7 @@
           {% endif %}
 
           {% unless product.available or placeholder %}
-            <div class="product-item__badge product-item__badge--sold-out fs-body-bold">
+            <div class="product-item__badge element-animation product-item__badge--sold-out fs-body-bold">
               {{ 'products.product.sold_out' | t }}
             </div>
           {% endunless %}
@@ -238,7 +238,7 @@
         {%- capture quick_add_content -%}
           <div class="product-item__quick-add-button-wrapper">
             {%- if settings.show_quick_add_quantity -%}
-              <div class="product-item__quick-add-qty-selector">
+              <div class="product-item__quick-add-qty-selector element-animation">
                 <button
                   type="button"
                   class="product-item__quick-add-qty-button product-item__quick-add-qty-button--minus"
@@ -274,7 +274,7 @@
               data-quick-add="{{ product.handle }}"
               data-product-id="{{ current_variant.id }}"
               type="{% if open_in_modal or settings.cart_type == 'flyout' %}button{% else %}submit{% endif %}"
-              class="product-item__quick-add-button btn btn--medium-small btn--primary btn--full"
+              class="product-item__quick-add-button element-animation btn btn--medium-small btn--primary btn--full"
               {% if open_in_modal %}
                 data-open-modal="true"
               {% endif %}
@@ -282,9 +282,9 @@
                 data-open-quick-cart="true"
               {% endif %}
             >
-              <span class="product-item__quick-add-button-text">{{ product_available_label }}</span>
-              <span class="product-item__quick-add-button-text-height">x</span>
-              {% render 'icon', icon: 'plus', class: "product-item__quick-add-button-icon" %}
+              <span class="product-item__quick-add-button-text element-animation ">{{ product_available_label }}</span>
+              <span class="product-item__quick-add-button-text-height element-animation">x</span>
+              {% render 'icon', icon: 'plus', class: "product-item__quick-add-button-icon element-animation" %}
               <div class="btn__loading-wrap">
                 <div class="btn__loading-bar"></div>
               </div>
@@ -304,7 +304,7 @@
             data-product-handle: product.handle,
             data-current-product-id: current_variant.id
           %}
-            <div class="product-item__quick-add-variant-selector">
+            <div class="product-item__quick-add-variant-selector element-animation">
               <select
                 name="id"
                 class="input"
@@ -333,7 +333,7 @@
     </div>
 
     {%- if settings.enable_quick_add and current_variant.available -%}
-      <div class="product-item__quick-add-container"></div>
+      <div class="product-item__quick-add-container element-animation"></div>
     {%- endif -%}
   </div>
 </div>

@@ -71,7 +71,7 @@
         {% endif %}
 
 
-        <div class="image-banner__text">
+        <div class="image-banner__text element-animation">
             {% case section.settings.title_font %}
                 {% when 'h1' %}
                     <h1>{{ section.settings.title }}</h1>
@@ -89,10 +89,10 @@
                     <p>{{ section.settings.title }}</p>
             {% endcase %}
             {% if section.settings.subtitle != 'blank' %}
-                <div class="image-banner__text-text">{{ section.settings.subtitle }}</div>
+                <div class="image-banner__text-text element-animation">{{ section.settings.subtitle }}</div>
             {% endif %}
             {% if section.settings.btn_text != 'blank' %}
-                <a href="{{ section.settings.btn_url }}" class="a-btn {% if section.settings.btn_style == 'prime' %}prime{% endif %}{% if section.settings.btn_style == 'secondary' %}secondary{% endif %}">
+                <a href="{{ section.settings.btn_url }}" class="a-btn {% if section.settings.btn_style == 'prime' %}prime{% endif %}{% if section.settings.btn_style == 'secondary' %}secondary{% endif %} element-animation">
                     {{ section.settings.btn_text }}
                 </a>
             {% endif %}

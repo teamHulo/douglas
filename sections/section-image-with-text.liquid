@@ -65,12 +65,12 @@
         {% for block in section.blocks %}
             {% case block.type %}
                 {% when 'image' %}                                        
-                    <div class="image-text__img">
+                    <div class="image-text__img element-animation">
                         <img src="{{ block.settings.img | img_url: 'master'}}" alt="">
                     </div>
                 {% when 'text' %}
-                    <div class="image-text__text">
-                        <div class="wrapper" style="max-width: {{ block.settings.text_width }}px;">
+                    <div class="image-text__text ">
+                        <div class="wrapper element-animation" style="max-width: {{ block.settings.text_width }}px;">
                             {% case block.settings.title_font %}
                                 {% when 'h1' %}
                                     <h1>{{ block.settings.title }}</h1>
@@ -88,10 +88,10 @@
                                     <p>{{ block.settings.title }}</p>
                             {% endcase %}
                             {% if block.settings.subtitle != 'blank' %}
-                                <div class="image-text__text-subtitle">{{ block.settings.subtitle }}</div>
+                                <div class="image-text__text-subtitle element-animation">{{ block.settings.subtitle }}</div>
                             {% endif %}
                             {% if block.settings.btn_text != blank %}
-                                <a href="{{ block.settings.btn_url }}" class="a-btn {% if block.settings.btn_style == 'prime' %}prime{% endif %}{% if section.settings.btn_style == 'secondary' %}secondary{% endif %}">
+                                <a href="{{ block.settings.btn_url }}" class="a-btn element-animation {% if block.settings.btn_style == 'prime' %}prime{% endif %}{% if section.settings.btn_style == 'secondary' %}secondary{% endif %}">
                                     {{ block.settings.btn_text }}
                                 </a>
                             {% endif %}

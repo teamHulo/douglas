@@ -28,8 +28,8 @@
 
 </style>
 <div class="treatments container" style="margin-top: {{ section.settings.margin_top }}px">
-    <h1 class="treatments__title">{{ section.settings.collection.title }}</h1>
-    <h3 class="treatments__label">{{ section.settings.label }}</h3>
+    <h1 class="treatments__title element-animation">{{ section.settings.collection.title }}</h1>
+    <h3 class="treatments__label element-animation">{{ section.settings.label }}</h3>
     <div class="treatments__wrapper">
         {% for item in section.settings.collection.products %}
             {% assign text =  item.metafields.custom.tretments_excerpt %}

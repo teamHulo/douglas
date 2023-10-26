@@ -165,19 +165,19 @@
 <div class="teatment-booking">
   <div class="container">
     <div class="treatment-booking__wrap">
-      <div class="title">
+      <div class="title element-animation">
         <h2>
           {{ section.settings.title }}
         </h2>
       </div>
-      <div class="text">
+      <div class="text element-animation">
         {{ section.settings.text }}
       </div>
 
       {% form 'contact', class: 'contact__form' %}
         {%- assign success_msg = 'contact.form.post_success' | t -%}
         {% render 'form-status', form: form, form_id: 'contact', success_message: success_msg %}
-        <div class="radio-question" required>
+        <div class="radio-question element-animation" required>
           <p>Please select how we can assist you (required)</p>
           <div>
             <label>
@@ -204,7 +204,7 @@
             </label>
           </div>
         </div>
-        <div class="radio-question" required>
+        <div class="radio-question element-animation" required>
           <p>Please select the treatment you would like to book or enquiring about (required)</p>
           <div>
             <label>
@@ -339,12 +339,12 @@
           </div>
         </div>
         
-        <div class="fields">
-            <div class="title">
+        <div class="fields ">
+            <div class="title element-animation">
                 <h3>YOUR CONTACT DETAILS
                     (required)</h3>
             </div>
-            <div class="names-fields">
+            <div class="names-fields element-animation">
                 <div class="my-field">
                     <label for="">First Name </label>
                     <div class="my-input__wrap">
@@ -368,7 +368,7 @@
                     </div>
                 </div>
             </div>
-            <div class="my-field">
+            <div class="my-field element-animation">
                     <label for="">Email (required)</label>
                     <div class="my-input__wrap">
                         <input
@@ -384,7 +384,7 @@
                       >
                     </div>
             </div>
-            <div class="my-field">
+            <div class="my-field element-animation">
                 <label for="">Contact mobile number(required)</label>
                 <div class="my-input__wrap">
                     <input
@@ -398,7 +398,7 @@
                     >
                 </div>
             </div>
-            <div class="my-field">
+            <div class="my-field element-animation">
                 <label for="">So we can find your nearest clinic </label>
                 <div class="my-input__wrap">
                     <textarea
@@ -410,11 +410,11 @@
                     value="" > </textarea>
                 </div>
             </div>
-            <div class="title">
+            <div class="title element-animation">
                 <h3>What state do you live in?
                     (required)</h3>
             </div>
-            <div class="my-field">
+            <div class="my-field element-animation">
                 <label for="">So we can find your nearest clinic </label>
                 <div class="my-input__wrap">
                     <input
@@ -428,7 +428,7 @@
             </div>
         </div>
        
-        <button type="submit" class="a-btn prime">{{ 'contact.form.submit' | t }}</button>
+        <button type="submit" class="a-btn prime element-animation">{{ 'contact.form.submit' | t }}</button>
       {% endform %}
 
 

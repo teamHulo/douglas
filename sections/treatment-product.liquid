@@ -266,14 +266,14 @@
               {%- when '@app' -%}
               {% render block %}
               {% when 'btn_links' %}
-                <div class="tret-btns">
+                <div class="tret-btns element-animation">
                   {%if block.settings.btn_url1 != blank%}
                     <a href="{{block.settings.btn_url1}}" class="a-btn prime">
                       {{block.settings.btn_name1}}
                     </a>
                   {%endif%}
                   {%if block.settings.btn_url2 != blank%}
-                    <a href="{{block.settings.btn_url2}}" class="a-btn secondary">
+                    <a href="{{block.settings.btn_url2}}" class="a-btn secondary element-animation">
                       {{block.settings.btn_name2}}
                     </a>
                   {%endif%}
@@ -281,11 +281,11 @@
               {%- when 'border' -%}
               <div class="product__border product__block animation-fade-up-reveal"></div>
               {%- when 'title' -%}
-              <h1 class="product__title product__block animation-fade-up-reveal product__block--small ff-heading fs-heading-1-base">
+              <h1 class="product__title element-animation product__block animation-fade-up-reveal product__block--small ff-heading fs-heading-1-base">
                 {{ product.title }}
               </h1>
               {%- when 'price' -%}
-              <div class="product__price product__block animation-fade-up-reveal product__block--small">
+              <div class="product__price product__block animation-fade-up-reveal product__block--small element-animation">
                 <span class="fs-heading-4-base" data-price>
                   {{- current_variant.price | money -}}
                   {%- if settings.currency_code_enabled %}
@@ -303,13 +303,13 @@
                 {% render 'unit-price', item: current_variant %}
               </div>
               {%- when 'sku' -%}
-              <div class="product__sku product__block animation-fade-up-reveal product__block--small" data-product-sku>
+              <div class="product__sku element-animation product__block animation-fade-up-reveal product__block--small" data-product-sku>
                 {% if current_variant.sku != blank %}
                   {{ 'products.product.sku_with_value' | t: value: current_variant.sku }}
                 {% endif %}
               </div>
               {%- when 'vendor' -%}
-              <div class="product__vendor product__block animation-fade-up-reveal product__block--small btn btn--text-link">
+              <div class="product__vendor element-animation product__block animation-fade-up-reveal product__block--small btn btn--text-link">
                 {{ product.vendor | link_to_vendor }}
               </div>
               {%- when 'variant_picker' -%}

@@ -29,7 +29,7 @@
                       {{ block.settings.text }}
                     </div>
                   {% endif %} {% endcomment %}
-                  <div class="footer-newsletter-form-wrap">
+                  <div class="footer-newsletter-form-wrap element-animation">
                     {% render 'my-newsletter', title: block.settings.title, text: block.settings.subtitle %}
                   </div>
                   {%comment%}<div class="newsletter-social">
@@ -41,12 +41,12 @@
               </div>
               {% when 'social' %}
                 <div class="newsletter-social">
-                    <div class="social__wrap">
+                    <div class="social__wrap element-animation">
                       {% render 'social-icons' %}
                     </div>
                   </div>
               {% when 'my-text' %}      
-                <div class="text">
+                <div class="text element-animation">
                   {{block.settings.text}}
                 </div>
               {% when 'links' %}
@@ -57,11 +57,11 @@
               <div class="links-item {% if count == 1 or count == 3%} mb {%endif%}">
                 <div class="links__wrap">
                   {% if block.settings.title != blank %}
-                    <div class="title">
+                    <div class="title element-animation">
                       <h2>{{ block.settings.title }}</h2>
                     </div>
                   {% endif %}
-                  <ul class="footer__links-list">
+                  <ul class="footer__links-list element-animation">
                     {%- assign link_list = linklists[block.settings.link_list].links -%}
                     {%- for link in link_list -%}
                       <li class="footer__links-item ">
@@ -84,14 +84,14 @@
         <ul class="footer__bottom-links-list">
           {%- assign link_list = linklists[section.settings.menu_bottom].links -%}
           {%- for link in link_list -%}
-            <li class="footer__links-item ">
+            <li class="footer__links-item element-animation">
               <a href="{{ link.url }}">{{ link.title }}</a>
             </li>
           {%- endfor -%}
         </ul>
       </div>
       <div class="right">
-        <div class="footer__credits fs-body-x-small">
+        <div class="footer__credits fs-body-x-small element-animation">
           <p>{{ 'sections.footer.copyright' | t }} &copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: '/' }}.</p>
          
         </div>

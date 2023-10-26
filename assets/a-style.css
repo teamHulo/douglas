@@ -66,6 +66,17 @@ option {
   --font-size-18: clamp(14px, 0.938vw, 18px);
   --font-size-16: clamp(14px, 0.833vw, 16px);
 }
+
+.element-animation {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.element-animation.element-show {
+  opacity: 1;
+  transition: all 0.5s;
+  transform: translateY(0%);
+}
 .section {
   margin: 0;
 }

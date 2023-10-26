@@ -97,14 +97,14 @@
     }
 </style>
 <div class="related container">
-    <div class="related__label"><h3>Shop Range</h3></div>
+    <div class="related__label element-animation"><h3>Shop Range</h3></div>
     <div class="related__img carousel{% unless section.settings.carousel %}--off{% endunless %}" >
         {% for item in section.settings.collection.products %}
             <div class="related__product carousel-cell">
-                <div class="product__img">
+                <div class="product__img element-animation">
                     <img src="{{ item.media[0] |img_url: 'medium' }}" alt="">
                 </div>
-                <div class="product__text">
+                <div class="product__text element-animation">
                     <h4>{{ item.title }}</h4>
                     <p>{{ item.price | money }}</p>
                 </div>
