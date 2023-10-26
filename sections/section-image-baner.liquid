@@ -6,7 +6,19 @@
 #shopify-section-{{ section.id }}  .image-banner__wrapper {
     justify-content: {{ section.settings.text_position }};
 }
-
+#shopify-section-{{ section.id }} .video-banner-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#shopify-section-{{ section.id }} .video-banner-bg video{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
 #shopify-section-{{ section.id }} .image-banner__img figure{
     background-image: url({{ section.settings.img | img_url: 'master'}});
 }
@@ -41,11 +53,24 @@
 
 </style>
 
-<div class="image-banner">
+<div class="image-banner dddd">
     <div class="image-banner__wrapper container">
-        <div class="image-banner__img">
-            <figure></figure>
-        </div>
+
+        
+        {% if section.settings.video == true  and section.settings.video_url != blank%}
+            <div class="video-banner-bg">
+                <video autoplay loop muted playsinline>
+                    <source src="{{section.settings.video_url}}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        {% else %}
+            <div class="image-banner__img">
+                <figure></figure>
+            </div>
+        {% endif %}
+
+
         <div class="image-banner__text">
             {% case section.settings.title_font %}
                 {% when 'h1' %}
@@ -81,6 +106,17 @@
         "tag": "section",
         "class": "section",
         "settings": [
+            {
+                "type":"checkbox",
+                "id":"video",
+                "label": "show video",
+                "default": false
+            },
+            {
+                "type": "text",
+                "id": "video_url",
+                "label":"video bg"
+            },
             {
                 "type": "range",
                 "id": "padding_x",

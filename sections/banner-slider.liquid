@@ -7,7 +7,17 @@
         {% for block in section.blocks %}
           <div class="swiper-slide">
             <div class="slide__wrap">
-              <img src="{{block.settings.img | img_url: 'master'}}" alt="#">
+              {% if block.settings.video == true  and block.settings.video_url != blank%}
+              <div class="video-banner-bg">
+                  <video autoplay loop muted playsinline>
+                      <source src="{{block.settings.video_url}}" type="video/mp4">
+                      Your browser does not support the video tag.
+                  </video>
+              </div>
+            {% else %}
+                <img src="{{block.settings.img | img_url: 'master'}}" alt="#">
+            {% endif %}
+              
             </div>
           </div>
         {% endfor %}
@@ -79,6 +89,17 @@
         "name": "item",
         "type": "item",
         "settings": [
+          {
+                "type":"checkbox",
+                "id":"video",
+                "label": "show video",
+                "default": false
+            },
+            {
+                "type": "text",
+                "id": "video_url",
+                "label":"video bg"
+            },
           {
             "type": "image_picker",
             "id": "img",

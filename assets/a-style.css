@@ -23,7 +23,7 @@ textarea,
 option {
   font-family: Raleway;
 }
-
+/* 
 :root {
   --font-size-82: clamp(36px, 4.271vw, 82px);
   --font-size-72: clamp(30px, 3.75vw, 72px);
@@ -35,6 +35,28 @@ option {
   --font-size-34: clamp(22px, 1.771vw, 34px);
   --font-size-32: clamp(22px, 1.667vw, 32px);
   --font-size-30: clamp(22px, 1.563vw, 30px);
+  --font-size-28: clamp(22px, 1.458vw, 28px);
+  --font-size-26: clamp(20px, 1.354vw, 26px);
+  --font-size-24: clamp(18px, 1.25vw, 24px);
+  --font-size-23: clamp(18px, 1.198vw, 23px);
+  --font-size-22: clamp(18px, 1.146vw, 22px);
+  --font-size-20: clamp(18px, 1.042vw, 20px);
+  --font-size-18: clamp(14px, 0.938vw, 18px);
+  --font-size-16: clamp(14px, 0.833vw, 16px);
+}
+
+*/
+:root {
+  --font-size-82: clamp(36px, 3.177vw, 61px);
+  --font-size-72: clamp(30px, 2.813vw, 54px);
+  --font-size-62: clamp(28px, 2.396vw, 46px);
+  --font-size-52: clamp(25px, 2.031vw, 39px);
+  --font-size-44: clamp(22px, 1.719vw, 33px);
+  --font-size-42: clamp(22px, 1.615vw, 31px);
+  --font-size-36: clamp(20px, 1.406vw, 27px);
+  --font-size-34: clamp(22px, 1.302vw, 25px);
+  --font-size-32: clamp(22px, 1.250vw, 24px);
+  --font-size-30: clamp(22px, 1.146vw, 22px); /*** 15 %**/
   --font-size-28: clamp(22px, 1.458vw, 28px);
   --font-size-26: clamp(20px, 1.354vw, 26px);
   --font-size-24: clamp(18px, 1.25vw, 24px);
@@ -356,6 +378,12 @@ header .header__inner {
 .banner-slider-swiper {
   height: 100%;
 }
+.banner-slider-swiper video{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
 .banner-slider .container {
 }
 .banner-slider__wrap {
@@ -691,15 +719,16 @@ header .header__inner {
 /*** end section tab hover ***/
 
 /**** footer ***/
-.footer__newsletter{
-  width:50%;
+.footer__newsletter {
+  width: 50%;
+  max-width: 536px;
 }
 .footer__newsletter-wrap {
- /* padding: clamp(20px, 1.667vw, 32px);
+  /* padding: clamp(20px, 1.667vw, 32px);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.08);*/
- /* max-width: 50%;*/
- width: 100%;
+  /* max-width: 50%;*/
+  width: 100%;
 }
 .footer__newsletter-wrap .text h1,
 .footer__newsletter-wrap .text h2,
@@ -741,7 +770,7 @@ header .header__inner {
 }
 
 .footer-newsletter-form-wrap .title {
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 .footer-newsletter-form-wrap .title h3 {
   color: #fefefe;
@@ -765,7 +794,7 @@ header .header__inner {
   border: 1px solid var(--white, #fefefe);
   overflow: hidden;
   position: relative;
-  margin-bottom: clamp(20px, 2.083vw, 40px);
+  margin-bottom: 24px;
 }
 .footer-newsletter-form-wrap .input__wrap input {
   height: 100%;
@@ -782,13 +811,26 @@ header .header__inner {
   letter-spacing: 0.4px;
 }
 .footer-newsletter-form-wrap .input__wrap input::placeholder {
-  color: #fefefe;
+  color: #ffffff8b;
   font-family: Raleway;
-  font-size: var(--font-size-20);
+  font-size: var(--font-size-16);
   font-style: normal;
   font-weight: 500;
   line-height: 140%; /* 28px */
   letter-spacing: 0.4px;
+}
+.newsletter-form__button {
+  /*text-align: right;
+  font: normal normal normal 16px/21px Helvetica Neue !important;
+  letter-spacing: 0px !important;*/
+  color: #ffffff !important;
+  opacity: 1 !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  font-size: 16px !important;
+  line-height: 21px !important;
+  font-family: "Helvetica Neue" !important;
 }
 .footer-newsletter-form-wrap .input__wrap input,
 .footer-newsletter-form-wrap .input__wrap input:focus {
@@ -817,12 +859,12 @@ header .header__inner {
   display: flex;
   /*flex-direction: column;*/
   flex-wrap: wrap;
- /* height: clamp(571px, 32.708vw, 628px);*/
+  /* height: clamp(571px, 32.708vw, 628px);*/
   gap: 40px;
   justify-content: space-between;
 }
 .footer__content .text {
-  max-width:500px;
+  max-width: 500px;
 }
 .footer__content .links-item {
   width: max-content;
@@ -876,14 +918,14 @@ header .header__inner {
 .footer__wrap {
   padding: clamp(50px, 4.167vw, 80px) 0 clamp(50px, 3.333vw, 64px) 0;
 }
-.footer__wrap .text p{
+.footer__wrap .text p {
   font-family: Proxima Nova;
   font-size: var(--font-size-18);
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   letter-spacing: 0.72px;
-  color:#fff;
+  color: #fff;
 }
 .foooter__logo img {
   display: block;
@@ -1629,11 +1671,11 @@ header .header__inner {
   justify-content: space-between;
   gap: 40px;
 }
-.special__section-4 .title{
+.special__section-4 .title {
   max-width: calc(50% - 40px);
 }
-@media (max-width:767px){
-  .special__section-4 .title{
+@media (max-width: 767px) {
+  .special__section-4 .title {
     max-width: 100%;
   }
 }
@@ -1687,37 +1729,40 @@ header .header__inner {
 }
 /*** end scroll about fade ***/
 
-.treatment-booking__wrap{
-  max-width:1000px;
-  margin:0 auto;
+.treatment-booking__wrap {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.section-scroll__wrap  .text h1, .section-scroll__wrap  .text h2, .section-scroll__wrap  .text h3, .section-scroll__wrap  .text h4, .section-scroll__wrap  .text h5, .section-scroll__wrap  .text h6{
+.section-scroll__wrap .text h1,
+.section-scroll__wrap .text h2,
+.section-scroll__wrap .text h3,
+.section-scroll__wrap .text h4,
+.section-scroll__wrap .text h5,
+.section-scroll__wrap .text h6 {
   font-family: Proxima Nova;
   color: #fefefe;
 }
-.section-scroll__wrap  .text h1{
+.section-scroll__wrap .text h1 {
   font-size: var(--font-size-36);
 }
-.section-scroll__wrap  .text h2{
+.section-scroll__wrap .text h2 {
   font-size: var(--font-size-34);
 }
-.section-scroll__wrap  .text h3{
+.section-scroll__wrap .text h3 {
   font-size: var(--font-size-32);
 }
-.section-scroll__wrap  .text h4{
+.section-scroll__wrap .text h4 {
   font-size: var(--font-size-28);
 }
-.section-scroll__wrap  .text h5{
+.section-scroll__wrap .text h5 {
   font-size: var(--font-size-26);
 }
-.section-scroll__wrap  .text h6{
+.section-scroll__wrap .text h6 {
   font-size: var(--font-size-24);
 }
-.product-item .placeholder-image svg{
+.product-item .placeholder-image svg {
   position: absolute !important;
-  top:0 !important;
-  left:0 !important;
-
+  top: 0 !important;
+  left: 0 !important;
 }
-
