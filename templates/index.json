@@ -173,6 +173,7 @@
         "26607107-68a6-4b07-8f5a-67289eb30010",
         "4613fc9c-99db-4989-8d2c-fa302419b981"
       ],
+      "disabled": true,
       "settings": {
         "padding_top": 120,
         "padding_bottom": 120,
