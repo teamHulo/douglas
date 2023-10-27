@@ -218,6 +218,29 @@
         "padding_amount": "1.0"
       }
     },
+    "3cb369bf-d763-48e1-a2f9-94d078cb4642": {
+      "type": "shoppable-feature",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/DPSS---Enhancement-Collection.jpg",
+        "image_position": "left",
+        "image_width": "two-thirds",
+        "aspect_ratio": "square",
+        "overlay_color": "#000",
+        "color_overlay_gradient": "",
+        "overlay_opacity": 30,
+        "heading": "Take the skincare regime",
+        "subheading": "<p>Lorem ipsum dolor sit amet consectetur. Et ornare dolor mauris aliquet lacus et interdum eu. Orci pharetra urna duis malesuada auctor amet odio. Aliquam sit ut bibendum pellentesque libero quisque auctor. Cras mauris id erat sagittis elit sit nunc libero. Mattis dignissim aliquam lacus nam hac.<\/p>",
+        "heading_max_width": 40,
+        "text_max_width": 40,
+        "text_alignment": "left",
+        "link_text": "Take the skincare regime",
+        "link": "shopify:\/\/collections\/all",
+        "enable_animation": true,
+        "section_contrast": false,
+        "section_padding": "section--vertical-padding-top-bottom",
+        "padding_amount": "1.0"
+      }
+    },
     "a9582002-bf1a-412f-a25a-f2fb7ece2685": {
       "type": "section-image-with-text",
       "blocks": {
@@ -252,6 +275,7 @@
         "13b1529e-4f92-47c7-b1ea-d018f88d176b",
         "35e30d95-bafe-45fb-a461-e3f1c98328a9"
       ],
+      "disabled": true,
       "settings": {
         "padding_top": 120,
         "padding_bottom": 120,
@@ -386,6 +410,7 @@
     "e93a0e87-b11a-40e2-b596-bd60239b309b",
     "701a8324-b670-4489-bde5-621c76cdd7d0",
     "63c20124-4680-4d58-867f-f48d6333cae7",
+    "3cb369bf-d763-48e1-a2f9-94d078cb4642",
     "a9582002-bf1a-412f-a25a-f2fb7ece2685",
     "6145700a-f292-470e-83b3-547f6dc781de",
     "0e6446f7-19a6-45f3-bce1-13749fe15be2",
