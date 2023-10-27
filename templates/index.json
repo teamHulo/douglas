@@ -182,6 +182,42 @@
         "border": "top"
       }
     },
+    "63c20124-4680-4d58-867f-f48d6333cae7": {
+      "type": "shoppable-feature",
+      "blocks": {
+        "bb15fb9a-a659-4a68-bc3f-e8b3376dc211": {
+          "type": "hotspot",
+          "settings": {
+            "product_item": "antioxidant-serum-30ml-1",
+            "horizontal_position": 36,
+            "vertical_position": 50
+          }
+        }
+      },
+      "block_order": [
+        "bb15fb9a-a659-4a68-bc3f-e8b3376dc211"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/2023-09-18_12-47.png",
+        "image_position": "right",
+        "image_width": "two-thirds",
+        "aspect_ratio": "square",
+        "overlay_color": "#000",
+        "color_overlay_gradient": "",
+        "overlay_opacity": 30,
+        "heading": "Lorem ipsum dolor sit amet consectetur. Turpis quisque augue et nullam. Porttitor accumsan vel bibendum vel. Tincidunt nunc amet cum bibendum elit.",
+        "subheading": "<p>Lorem ipsum dolor sit amet consectetur. Turpis quisque augue et nullam. Porttitor accumsan vel bibendum vel. Tincidunt nunc amet cum bibendum elit.<\/p>",
+        "heading_max_width": 40,
+        "text_max_width": 36,
+        "text_alignment": "left",
+        "link_text": "Take the skincare regime",
+        "link": "shopify:\/\/collections\/all",
+        "enable_animation": true,
+        "section_contrast": false,
+        "section_padding": "section--vertical-padding-top-bottom",
+        "padding_amount": "1.0"
+      }
+    },
     "a9582002-bf1a-412f-a25a-f2fb7ece2685": {
       "type": "section-image-with-text",
       "blocks": {
@@ -349,6 +385,7 @@
     "488d4fc0-4cab-4942-8eb2-eff919582ad8",
     "e93a0e87-b11a-40e2-b596-bd60239b309b",
     "701a8324-b670-4489-bde5-621c76cdd7d0",
+    "63c20124-4680-4d58-867f-f48d6333cae7",
     "a9582002-bf1a-412f-a25a-f2fb7ece2685",
     "6145700a-f292-470e-83b3-547f6dc781de",
     "0e6446f7-19a6-45f3-bce1-13749fe15be2",
