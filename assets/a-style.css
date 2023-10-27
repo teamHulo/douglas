@@ -1783,3 +1783,37 @@ header .header__inner {
   top: 0 !important;
   left: 0 !important;
 }
+
+
+/***** header *****/
+
+/*.drawer-menu__primary-links li:not(.child-visible){
+  display:block !important;
+}
+.drawer-menu__primary-links[data-depth="1"]{
+  overflow: visible !important;
+}
+.drawer-menu__main{
+  height: auto !important;
+}
+.drawer-menu__panel{
+  max-width: 50%;
+}
+.drawer-menu__list--sub.visible{
+  left:50%;
+}
+.drawer-menu__primary-links{
+  visibility: visible !important;
+}*/
+/**** end header ****/
+
+/**** section dots ***/ 
+
+
+.shoppable-feature{
+  padding:clamp(50px,5.208vw,100px) 0; 
+}
+.shoppable-feature__inner{
+  max-width: 1920px !important;
+}
+/*** end section dots ****/
