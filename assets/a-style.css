@@ -149,7 +149,9 @@ option {
   color: #fff !important;
   transition: all 0.3s ease !important;
 }
-
+.rich-text__inner{
+  padding:50px 0 ;
+}
 .a-btn {
   display: flex !important;
   justify-content: center !important;
@@ -267,6 +269,7 @@ option {
 }
 /*** end announcement-bar ***/
 /*** header ***/
+
 header {
   padding: 0 !important;
   background-color: #fff !important;
