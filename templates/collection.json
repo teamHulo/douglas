@@ -15,6 +15,8 @@
     "4f229f80-200a-4638-a1c5-f42deec5601a": {
       "type": "section-image-baner",
       "settings": {
+        "video": false,
+        "video_url": "",
         "padding_x": 0,
         "padding_y": 140,
         "img": "shopify:\/\/shop_images\/Rectangle_227.jpg",
@@ -36,6 +38,7 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "disabled": true,
       "settings": {
         "show_sort": true,
         "show_filters": true,
@@ -46,11 +49,41 @@
         "aspect_ratio": "natural",
         "enable_animation": true
       }
+    },
+    "ad3916a0-35cc-4fa7-8363-ba9606b0ae66": {
+      "type": "section-collection-categories",
+      "settings": {
+        "collection": "dp-skin-health",
+        "title": "ALL PRODUCTS",
+        "card_title": "Skin Science Range",
+        "img": "shopify:\/\/shop_images\/a3aeb630b86eae0691a3c8bc64de7848.jpg"
+      }
+    },
+    "33c9e46e-4fb7-43a7-b874-74fa2d43ce68": {
+      "type": "section-collection-categories",
+      "settings": {
+        "collection": "dp-skin-science",
+        "title": "",
+        "card_title": "Skin Science Range",
+        "img": "shopify:\/\/shop_images\/a3aeb630b86eae0691a3c8bc64de7848.jpg"
+      }
+    },
+    "bfb2287f-13bc-4b40-8025-c3672760b7e3": {
+      "type": "section-collection-categories",
+      "settings": {
+        "collection": "devices",
+        "title": "",
+        "card_title": "Skin Science Range",
+        "img": "shopify:\/\/shop_images\/a3aeb630b86eae0691a3c8bc64de7848.jpg"
+      }
     }
   },
   "order": [
     "banner",
     "4f229f80-200a-4638-a1c5-f42deec5601a",
-    "product-grid"
+    "product-grid",
+    "ad3916a0-35cc-4fa7-8363-ba9606b0ae66",
+    "33c9e46e-4fb7-43a7-b874-74fa2d43ce68",
+    "bfb2287f-13bc-4b40-8025-c3672760b7e3"
   ]
 }
