@@ -1,0 +1,73 @@
+{%  assign  products = section.settings.collection.products %} 
+
+<div class="collection-categories">
+    <div class="container">
+        <div class="collection-categ__wrap">
+            {% if  section.settings.title != blank%}
+                <div class="title element-animation">
+                    <h2>
+                        {{section.settings.title}}
+                    </h2>
+                </div>
+            {% endif %}
+            <div class="product__list">
+                {% for product in products %}
+                    {%
+                        render 'product-item' with
+                        product: product,
+                        aspect_ratio: section.settings.aspect_ratio,
+                        product_columns: section.settings.columns,
+                        product_columns_mobile: section.settings.columns_mobile,
+                        wrapper_class: 'animation-fade-up-reveal',
+                        show_price: false
+                      %}
+                {% endfor %}
+                <div class="product-item">
+                    <div class="product-item__wrap">
+                        <div class="product-item-bg">
+                            <img src="{{section.settings.img | img_url: 'master'}}" alt="">
+                        </div>
+                        <div class="title">
+                            <h4>
+                                {{ section.settings.card_title }}
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+      "name": "collection-product",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "collection"
+        },
+        {
+            "type":"text",
+            "id":"title",
+            "label":"title"
+        },
+        {
+            "type":"text",
+            "id":"card_title",
+            "label":"card title"
+        },
+        {
+            "type":"image_picker",
+            "id":"img",
+            "label":"card image"
+        }
+      ],
+      "presets": [
+        {
+          "name": "collection-product"
+        }
+      ]
+    }
+  {% endschema %}
