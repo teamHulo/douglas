@@ -7,102 +7,144 @@
 {% else %}
   {% assign arrayImagesSize =  0 %}
 {% endif %}
-
-
-{% if arraySize != 0 %}
-  <div class="section-scroll-slides scroll-container">
+{%  assign  arr_text = product.metafields.custom.steps_text.value | size %} 
+{% if product.type == 'treatments' %}
+  <div class="section-treatments-block">
     <div class="container">
-      <div class="section-scroll__wrap ">
-        <div class="left">
-          <div class="left__wrap">
-            <div class="content">
-              <div class="title">
+<div class="left {% if arr_text == 0 %} hide{% endif %}">
+        <div class="left__wrap">
+           <div class="title element-animation">
+              <h2>
                 {% for value in product.metafields.custom.step_title.value %}
-                  <h2 class="title-contento">
-                    {{ value }}
-                  </h2>
+                  {% if forloop.index0 == 0 %}
+                    {{value}}
+                  {% endif %}
                 {% endfor %}
-              </div>
-              <div class="text__body">
-                <div class="text__wrap ">
-                  {% for value in product.metafields.custom.steps_text.value %}
-                    <div class="step contento">
-                      <div class="contento__wrap">
-                        <div class="text">
-                          <p>
-                            {{ value }}
-                          </p>
-                        </div>
-                      </div>
-                     
-                    </div>
+              </h2>
+           </div>
+           <div class="text element-animation">
+            
+            {% for value in product.metafields.custom.steps_text.value %}
+              <p>
+                {{value}}
+              </p>
+            {% endfor %}
+              
+           </div>
+           <div class="treatments-btn element-animation">
+            <a href="/pages/treatment-booking-and-price-enquiry-form" class="a-btn prime">Make a booking</a>
+           </div>
+        </div>
+      </div>
+      <div class="right {% if arr_text == 0 %} w100{% endif %}">
+        <div class="right__wrap">
+            <div class="image element-animation">
+              {% for value in product.metafields.custom.steps_images.value %}
+                {% if forloop.index0 == 0 %}
+                  <img src="{{ value | img_url: 'master' }}" alt="">
+                {% endif %}
+              {% endfor %}
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% else  %}
+  {% if arraySize != 0 %}
+    <div class="section-scroll-slides scroll-container">
+      <div class="container">
+        <div class="section-scroll__wrap ">
+          <div class="left">
+            <div class="left__wrap">
+              <div class="content">
+                <div class="title">
+                  {% for value in product.metafields.custom.step_title.value %}
+                    <h2 class="title-contento">
+                      {{ value }}
+                    </h2>
                   {% endfor %}
+                </div>
+                <div class="text__body">
+                  <div class="text__wrap ">
+                    {% for value in product.metafields.custom.steps_text.value %}
+                      <div class="step contento">
+                        <div class="contento__wrap">
+                          <div class="text">
+                            <p>
+                              {{ value }}
+                            </p>
+                          </div>
+                        </div>
+                      
+                      </div>
+                    {% endfor %}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="right">
-          <div class="right__wrap">
-            <div class="images-scroll-container">
-              <div class="images__wrap panels" id="images-wrap">
-                {% for value in product.metafields.custom.steps_images.value %}
-                  <div class="step-image panel">
-                    <img src="{{ value | img_url : 'master' }}" alt="">
-                  </div>
-                {% endfor %}
-                {% for value in product.metafields.custom.steps_text.value %}
-                  {% if arrayImagesSize == 0 %}
-                    <div class="step-image panel default-img">
-                      <img src="{{ product.images[0] | img_url : 'master' }}" alt="">
+          <div class="right">
+            <div class="right__wrap">
+              <div class="images-scroll-container">
+                <div class="images__wrap panels" id="images-wrap">
+                  {% for value in product.metafields.custom.steps_images.value %}
+                    <div class="step-image panel">
+                      <img src="{{ value | img_url : 'master' }}" alt="">
                     </div>
-                  {%  else %}
-                    {%if forloop.index > arrayImagesSize%}
+                  {% endfor %}
+                  {% for value in product.metafields.custom.steps_text.value %}
+                    {% if arrayImagesSize == 0 %}
                       <div class="step-image panel default-img">
                         <img src="{{ product.images[0] | img_url : 'master' }}" alt="">
                       </div>
-                    {%endif%}
-                  {% endif %}
-                {% endfor %}  
+                    {%  else %}
+                      {%if forloop.index > arrayImagesSize%}
+                        <div class="step-image panel default-img">
+                          <img src="{{ product.images[0] | img_url : 'master' }}" alt="">
+                        </div>
+                      {%endif%}
+                    {% endif %}
+                  {% endfor %}  
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
 
 
-  <div class="mobile-metafields-product">
-    <div class="container">
-      <div class="mobile-metafields-product__wrap">
-        <div class="title">
-          <h2>
-            {{ product.metafields.custom.title }}
-          </h2>
-        </div>
-        <div class="items-list">
-          {% for i in (0..arraySize) %}
-          <div class="item">
-              <div class="item__wrap">
-                <div class="text">
-                  <p>
-                    {{ array[i] }}
-                  </p>
-                </div>
-                <div class="image">
-                  {% for value in product.metafields.custom.steps_images.value %}
-                    {% if i == forloop.index0 %}
-                      <img src="{{ value | img_url: 'master' }}" alt="">
-                    {% endif %}
-                  {% endfor %}
-                </div>
-              </div>
+    <div class="mobile-metafields-product">
+      <div class="container">
+        <div class="mobile-metafields-product__wrap">
+          <div class="title">
+            <h2>
+              {{ product.metafields.custom.title }}
+            </h2>
           </div>
-          {% endfor %}
+          <div class="items-list">
+            {% for i in (0..arraySize) %}
+            <div class="item">
+                <div class="item__wrap">
+                  <div class="text">
+                    <p>
+                      {{ array[i] }}
+                    </p>
+                  </div>
+                  <div class="image">
+                    {% for value in product.metafields.custom.steps_images.value %}
+                      {% if i == forloop.index0 %}
+                        <img src="{{ value | img_url: 'master' }}" alt="">
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+            </div>
+            {% endfor %}
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  {% endif %}
 {% endif %}
