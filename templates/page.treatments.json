@@ -10,6 +10,8 @@
     "9ec8491b-d3ca-4030-aa2f-2085ccdb3b03": {
       "type": "section-image-baner",
       "settings": {
+        "video": false,
+        "video_url": "",
         "padding_x": 0,
         "padding_y": 120,
         "img": "shopify:\/\/shop_images\/DP-Treatments-Background_19eb63ac-870c-471b-bb9a-974125dd8c05.jpg",
@@ -36,7 +38,7 @@
           "type": "text",
           "settings": {
             "subheading": "<p>Our collection of treatments have been designed and curated by our founder Douglas Pereira to support your skin journey. Each treatment in the collection is tailored to your individual skin needs and combines clinical technologies and<br\/>professional – grade formulations with the experience of touch. <\/p><p>Each treatment commences with our sublime three step signature cleansing experience. Starting with a soothing makeup removal with our No Water Cleanser, followed by a deep and relaxing facial massage cleanse with the luxurious Lipid Pre-Cleansing oil to purify and soften you skin. To conclude the cleansing method, your skin will experience a final cleanse with our treatment only Cleansing Milk, to refresh and hydrate your skin. Our signature three step<br\/>cleansing method is a facial treatment in its self.<\/p>",
-            "text_max_width": 48
+            "text_max_width": 100
           }
         }
       },
