@@ -17,9 +17,11 @@
           <div class="left__wrap">
             <div class="content">
               <div class="title">
-                <h2>
-                  {{ product.metafields.custom.title }}
-                </h2>
+                {% for value in product.metafields.custom.step_title.value %}
+                  <h2 class="title-contento">
+                    {{ value }}
+                  </h2>
+                {% endfor %}
               </div>
               <div class="text__body">
                 <div class="text__wrap ">

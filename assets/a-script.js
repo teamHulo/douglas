@@ -29,13 +29,17 @@ $(() => {
       .addClass("active");
   });
 });
+
 $(() => {
   //console.clear();
   const panels = gsap.utils.toArray(".panel");
   if(panels.length > 0){
     gsap.registerPlugin(ScrollTrigger);
-
- 
+    
+    const h2Elements = gsap.utils.toArray(".title-contento");
+    if (h2Elements[0]) {
+      h2Elements[0].classList.add('revealed');
+    }
     const contentoEls = gsap.utils.toArray(".contento");
     contentoEls[0].classList.add('revealed');
     const toggleReveal = (index) => {
@@ -43,6 +47,11 @@ $(() => {
       const prev = contentoEls[index - 1];
       next && next.classList.toggle("revealed");
       prev && prev.classList.toggle("revealed");
+
+      const nextH2 = h2Elements[index];
+      const prevH2 = h2Elements[index - 1];
+      nextH2 && nextH2.classList.toggle("revealed");
+      prevH2 && prevH2.classList.toggle("revealed");
     };
     
     gsap.set(panels, {
@@ -60,6 +69,7 @@ $(() => {
           console.log(progress, direction);
           if (progress <= 0 && direction === 0) {
             contentoEls[0].classList.add('revealed');
+            h2Elements[0].classList.add('revealed');
           }
         },
        
@@ -80,6 +90,7 @@ $(() => {
               console.log(index);
               if (index !== 0) {
                 contentoEls[0].classList.remove('revealed');
+                h2Elements[0].classList.remove('revealed');
               }
             },
           },
@@ -95,6 +106,8 @@ $(() => {
               console.log(index);
               if (index === 0) {
                 contentoEls[0].classList.add('revealed');
+                h2Elements[0].classList.add('revealed');
+                
               }
             },
           },
@@ -111,6 +124,7 @@ $(() => {
   }
  
 });
+
 
 
 

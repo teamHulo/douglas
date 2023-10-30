@@ -1,0 +1,29 @@
+{% if product.metafields.custom.key_active != blank   %}
+
+<div class="key-active">
+  <div class="container">
+    <div class="text">
+      {{product.metafields.custom.key_active | metafield_tag }}
+    </div>
+  </div>
+</div>
+{% endif %}
+
+
+{% schema %}
+  {
+    "name": "section-key-active",
+    "settings": [
+      {
+        "type": "text",
+        "id": "text",
+        "label": "text"
+      }
+    ],
+    "presets": [
+      {
+        "name": "section-key-active"
+      }
+    ]
+  }
+{% endschema %}

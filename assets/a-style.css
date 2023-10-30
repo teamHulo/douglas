@@ -1293,8 +1293,11 @@ header .header__inner {
 .section-scroll-slides {
   background: #151515;
 }
+
 .section-scroll-slides .title {
   margin-bottom: clamp(30px, 3.229vw, 62px);
+  position: relative;
+  height: 50px;
 }
 .section-scroll-slides .title h2 {
   color: #fefefe;
@@ -1303,6 +1306,9 @@ header .header__inner {
   font-style: normal;
   font-weight: 500;
   line-height: 110%;
+  position: absolute;
+  top:0;
+  left:0;
 }
 .section-scroll-slides .left {
   width: 40.3%;
@@ -1388,17 +1394,22 @@ header .header__inner {
   top: 0;
   left: 0;
 }
-.contento {
+.contento, .title-contento {
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
-.contento.revealed {
+.contento.revealed, .title-contento.revealed {
   opacity: 1;
   transform: translateY(0);
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
   transition-delay: 0.5s;
 }
+
+
+
+
+
 @media (max-width: 767px) {
   [data-name="product"] .pin-spacer {
     display: none !important;
@@ -1817,3 +1828,14 @@ header .header__inner {
   max-width: 1920px !important;
 }
 /*** end section dots ****/
+
+
+/**** section key active ****/
+.key-active{
+  padding:50px 0;
+}
+.key-active .text p{
+  margin-bottom:10px;
+  font-size: var(--font-size-20);
+}
+/*** end key active ****/
