@@ -82,10 +82,17 @@
         "section_padding": "section--vertical-padding-top-bottom",
         "padding_amount": "1.0"
       }
+    },
+    "b7579890-0b9c-45f0-a99f-ca3c95c5a7c1": {
+      "type": "section-key-active",
+      "settings": {
+        "text": ""
+      }
     }
   },
   "order": [
     "main",
-    "recommendations"
+    "recommendations",
+    "b7579890-0b9c-45f0-a99f-ca3c95c5a7c1"
   ]
 }
