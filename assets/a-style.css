@@ -2085,7 +2085,7 @@ header .header__inner {
   }
   .no-scroll {
     overflow: hidden;
-    position: fixed;
+    /*position: fixed;*/
   }
   
   
