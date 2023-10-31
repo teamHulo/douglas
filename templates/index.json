@@ -189,29 +189,56 @@
         "bb15fb9a-a659-4a68-bc3f-e8b3376dc211": {
           "type": "hotspot",
           "settings": {
-            "product_item": "antioxidant-serum-30ml-1",
+            "product_item": "enzyme-cleanse-200ml",
             "horizontal_position": 36,
-            "vertical_position": 50
+            "vertical_position": 66
+          }
+        },
+        "8896154e-24f7-4566-8174-74a2159071da": {
+          "type": "hotspot",
+          "settings": {
+            "product_item": "vitamin-b-serumб-30ml",
+            "horizontal_position": 23,
+            "vertical_position": 32
+          }
+        },
+        "2447b7ab-9201-45a1-98a4-6267c3e636f5": {
+          "type": "hotspot",
+          "settings": {
+            "product_item": "cera-fort-repair-cream-30ml",
+            "horizontal_position": 50,
+            "vertical_position": 36
+          }
+        },
+        "5d84714a-129d-4cc6-88b4-2d4b824a3f3f": {
+          "type": "hotspot",
+          "settings": {
+            "product_item": "luminosity-serum-30ml",
+            "horizontal_position": 69,
+            "vertical_position": 32
           }
         }
       },
       "block_order": [
-        "bb15fb9a-a659-4a68-bc3f-e8b3376dc211"
+        "bb15fb9a-a659-4a68-bc3f-e8b3376dc211",
+        "8896154e-24f7-4566-8174-74a2159071da",
+        "2447b7ab-9201-45a1-98a4-6267c3e636f5",
+        "5d84714a-129d-4cc6-88b4-2d4b824a3f3f"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/DP-Skin-Health-Grou.jpg",
+        "image": "shopify:\/\/shop_images\/DP_SkinhealthDiscoverimage.jpg",
         "image_position": "right",
         "image_width": "half",
         "aspect_ratio": "square",
         "overlay_color": "#000000",
         "color_overlay_gradient": "",
         "overlay_opacity": 0,
-        "heading": "Lorem ipsum dolor sit amet consectetur. Turpis quisque augue et nullam. Porttitor accumsan vel bibendum vel. Tincidunt nunc amet cum bibendum elit.",
-        "subheading": "<p>Lorem ipsum dolor sit amet consectetur. Turpis quisque augue et nullam. Porttitor accumsan vel bibendum vel. Tincidunt nunc amet cum bibendum elit.<\/p>",
+        "heading": "Skin Health Range",
+        "subheading": "<p>Result driven cosmeceutical formulations with a luxurious experience, is the essence of the Douglas Pereira Skin Health range. Each product we formulate begins with five key principals.  <\/p><p><strong>Scientific approach  <\/strong>Research and development, Science, Innovation, and Technology.<\/p><p><strong>The best of the best Ingredients <\/strong>Quality ingredients in the right dosage that are skin<br\/>identical. <\/p><p><strong>Skin integrity & resilience <\/strong>Supporting the skins barrier.<\/p><p><strong>Active delivery system <\/strong>Triphasic Bio-Active Delivery System <\/p><p><strong>Luxury experiences <\/strong>The fusion of cosmeceutical skincare the experience of luxury <\/p>",
         "heading_max_width": 40,
         "text_max_width": 36,
         "text_alignment": "left",
-        "link_text": "Take the skincare regime",
+        "link_text": "DISCOVER THE SKIN HEALTH RANGE",
         "link": "shopify:\/\/collections\/all",
         "enable_animation": true,
         "section_contrast": false,
@@ -229,12 +256,12 @@
         "overlay_color": "#000000",
         "color_overlay_gradient": "",
         "overlay_opacity": 0,
-        "heading": "Take the skincare regime",
-        "subheading": "<p>Lorem ipsum dolor sit amet consectetur. Et ornare dolor mauris aliquet lacus et interdum eu. Orci pharetra urna duis malesuada auctor amet odio. Aliquam sit ut bibendum pellentesque libero quisque auctor. Cras mauris id erat sagittis elit sit nunc libero. Mattis dignissim aliquam lacus nam hac.<\/p>",
+        "heading": "Skin Science Range",
+        "subheading": "<p>Douglas Pereira Skin Science is an uncomplicated skincare collection, with complex formulations, for everyday people. <\/p><p><\/p><p>The range is a straightforward collection of products that has been developed for all genders and skin types. Our universal formulations offer all in one skincare solutions for those not wanting a complicated homecare regime, but still striving for result driven skincare without too many steps. <\/p>",
         "heading_max_width": 40,
         "text_max_width": 40,
         "text_alignment": "left",
-        "link_text": "Take the skincare regime",
+        "link_text": "DISCOVER THE SKIN SCIENCE RANGE",
         "link": "shopify:\/\/collections\/all",
         "enable_animation": true,
         "section_contrast": false,
@@ -317,8 +344,8 @@
           "type": "item",
           "settings": {
             "img": "shopify:\/\/shop_images\/unsplash_wE3hiKhAbuE_1.png",
-            "title": "Lorem ipsum dolor sit",
-            "text": "Lorem ipsum dolor sit amet consectetur. Tellus aliquam quis sed viverra et aenean.",
+            "title": "Skincare regime builder questionnaire",
+            "text": "With just a few answers, discover your skins true potential with a personalized homecare regime for the morning and evening. Our skincare regime builder is a quick and easy way to discover the right products for your skin.",
             "url": "",
             "btn_name": "discover"
           }
@@ -327,8 +354,8 @@
           "type": "item",
           "settings": {
             "img": "shopify:\/\/shop_images\/1666847428_2-celes-club-p-kot-na-chernom-fone-oboi-krasivo-2.jpg",
-            "title": "Lorem ipsum dolor sit",
-            "text": "Lorem ipsum dolor sit amet consectetur. Tellus aliquam quis sed viverra et aenean.",
+            "title": "Complementary virtual or phone consultation",
+            "text": "Our complementary virtual consultation gives you the opportunity to receive skin advice from wherever you are. Our skin experts can talk to you about your skin challenges and goals, support you on your skin journey and assist you with selecting the perfect homecare for your skin.",
             "url": "#",
             "btn_name": "discover"
           }
@@ -337,8 +364,8 @@
           "type": "item",
           "settings": {
             "img": "shopify:\/\/shop_images\/lucija-ros-FzQiiLqcRtE-unsplash.jpg",
-            "title": "Lorem ipsum dolor sit",
-            "text": "Lorem ipsum dolor sit amet consectetur. Tellus aliquam quis sed viverra et aenean.",
+            "title": "In clinic consultation",
+            "text": "Visit our flagship clinic and discovery space for an in-person consultation, we offer two consultation types.  Complementary in clinic discovery consultation  A face-to-face consultation in our skin discovery zone.  In clinic signature consultation  Conducted within your own private treatment room and includes an in-depth conversation about your skin, followed by a discovery skin treatment. Your consultation concludes with the advice and recommendations for the best solutions for your skin.",
             "url": "#",
             "btn_name": "discover"
           }
