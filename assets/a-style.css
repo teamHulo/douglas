@@ -2035,6 +2035,10 @@ header .header__inner {
     display:flex;
     align-items:center;
     transition:all .5s ease;
+    padding:50px 0px;
+  }
+  .my-drawer-menu__inner-body{
+    overflow:auto;
   }
   .my-drawer-menu__inner.active{
     transform:translateX(0%);
