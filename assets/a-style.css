@@ -1975,3 +1975,10 @@ header .header__inner {
   }
 }
 /**** end section-treatments-block ****/
+.filter{
+  width:max-content;
+}
+.blog__filters{
+  position:relative;
+  z-index: 2;
+}
