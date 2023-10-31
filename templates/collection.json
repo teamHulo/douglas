@@ -55,7 +55,7 @@
       "settings": {
         "collection": "dp-skin-health",
         "title": "ALL PRODUCTS",
-        "card_title": "Skin Science Range",
+        "card_title": "DP Skin Health",
         "img": "shopify:\/\/shop_images\/a3aeb630b86eae0691a3c8bc64de7848.jpg"
       }
     },
@@ -64,7 +64,7 @@
       "settings": {
         "collection": "dp-skin-science",
         "title": "",
-        "card_title": "Skin Science Range",
+        "card_title": "DP skin science",
         "img": "shopify:\/\/shop_images\/a3aeb630b86eae0691a3c8bc64de7848.jpg"
       }
     },
@@ -73,7 +73,7 @@
       "settings": {
         "collection": "devices",
         "title": "",
-        "card_title": "Skin Science Range",
+        "card_title": "Devices",
         "img": "shopify:\/\/shop_images\/a3aeb630b86eae0691a3c8bc64de7848.jpg"
       }
     }
