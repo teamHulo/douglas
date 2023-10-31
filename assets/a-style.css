@@ -2039,6 +2039,7 @@ header .header__inner {
   }
   .my-drawer-menu__inner-body{
     overflow:auto;
+    max-height:100%;
   }
   .my-drawer-menu__inner.active{
     transform:translateX(0%);
