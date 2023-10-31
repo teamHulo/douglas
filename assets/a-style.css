@@ -1976,7 +1976,7 @@ header .header__inner {
 }
 /**** end section-treatments-block ****/
 .filter{
-  width:max-content;
+  width:max-content !important;
 }
 .blog__filters{
   position:relative;
