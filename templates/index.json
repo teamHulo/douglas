@@ -115,30 +115,6 @@
         "title": "We take a holistic approach alongside scientifically – innovative formulations, that work in conjunction with your skin’s biology."
       }
     },
-    "e93a0e87-b11a-40e2-b596-bd60239b309b": {
-      "type": "section-image-baner",
-      "settings": {
-        "video": true,
-        "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/0bede705ccb04381820766fd328bca0c.mp4",
-        "padding_x": 0,
-        "padding_y": 140,
-        "img": "shopify:\/\/shop_images\/Rectangle249-compress.jpg",
-        "color_text": "#ffffff",
-        "title": "The Skincare Regime Builder",
-        "title_font": "h2",
-        "title_padding_bottom": 40,
-        "subtitle": "<p>Orci nunc vestibulum et mollis sed facilisis proin. Sed cursus nulla amet sodales etiam purus nunc nisi lectus. Pellentesque natoque nisi.<\/p>",
-        "subtitle_padding_bottom": 40,
-        "btn_text": "Take the skincare regime",
-        "btn_url": "shopify:\/\/collections\/all",
-        "btn_style": "secondary",
-        "text_width": 800,
-        "text_align_item": "center",
-        "text_position": "center",
-        "text_padding_top": 0,
-        "text_padding_bottom": 0
-      }
-    },
     "701a8324-b670-4489-bde5-621c76cdd7d0": {
       "type": "section-image-with-text",
       "blocks": {
@@ -267,6 +243,30 @@
         "section_contrast": false,
         "section_padding": "section--vertical-padding-top-bottom",
         "padding_amount": "1.0"
+      }
+    },
+    "e93a0e87-b11a-40e2-b596-bd60239b309b": {
+      "type": "section-image-baner",
+      "settings": {
+        "video": true,
+        "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/0bede705ccb04381820766fd328bca0c.mp4",
+        "padding_x": 0,
+        "padding_y": 140,
+        "img": "shopify:\/\/shop_images\/Rectangle249-compress.jpg",
+        "color_text": "#ffffff",
+        "title": "The Skincare Regime Builder",
+        "title_font": "h2",
+        "title_padding_bottom": 40,
+        "subtitle": "<p>Orci nunc vestibulum et mollis sed facilisis proin. Sed cursus nulla amet sodales etiam purus nunc nisi lectus. Pellentesque natoque nisi.<\/p>",
+        "subtitle_padding_bottom": 40,
+        "btn_text": "Take the skincare regime",
+        "btn_url": "shopify:\/\/collections\/all",
+        "btn_style": "secondary",
+        "text_width": 800,
+        "text_align_item": "center",
+        "text_position": "center",
+        "text_padding_top": 0,
+        "text_padding_bottom": 0
       }
     },
     "a9582002-bf1a-412f-a25a-f2fb7ece2685": {
@@ -435,10 +435,10 @@
     "slideshow-1",
     "59274cfa-014a-42aa-bef6-33567a0a50bf",
     "488d4fc0-4cab-4942-8eb2-eff919582ad8",
-    "e93a0e87-b11a-40e2-b596-bd60239b309b",
     "701a8324-b670-4489-bde5-621c76cdd7d0",
     "63c20124-4680-4d58-867f-f48d6333cae7",
     "3cb369bf-d763-48e1-a2f9-94d078cb4642",
+    "e93a0e87-b11a-40e2-b596-bd60239b309b",
     "a9582002-bf1a-412f-a25a-f2fb7ece2685",
     "6145700a-f292-470e-83b3-547f6dc781de",
     "0e6446f7-19a6-45f3-bce1-13749fe15be2",
