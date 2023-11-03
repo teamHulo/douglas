@@ -6,6 +6,7 @@ $(() => {
       $(".my-drawer-menu ul").removeClass("active");
       $(".my-drawer-menu").removeClass("active");
       $("body").removeClass("no-scroll");
+      $(".my-drawer-menu__inner").removeClass('active');
     }
   );
 
@@ -28,7 +29,7 @@ $(() => {
       '.my-drawer-menu__list-second-level ul[data-title="' + atr + '"]'
     ).addClass("active");
   });
-  $(".header__icon-menu").on("click", function () {
+  $(".header__menu-icon").on("click", function () {
     $(".my-drawer-menu").addClass("active");
     $("body").addClass("no-scroll");
     $(".my-drawer-menu .my-drawer-menu__inner").addClass("active");
