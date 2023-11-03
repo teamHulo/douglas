@@ -83,6 +83,108 @@
         "padding_amount": "1.0"
       }
     },
+    "850b7be8-89a5-4603-baa1-581412874671": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--20944504455450__850b7be8-89a5-4603-baa1-581412874671-heading-1": {
+          "type": "heading",
+          "settings": {
+            "title": "THE PRODUCT",
+            "text_max_width": 32
+          }
+        },
+        "template--20944504455450__850b7be8-89a5-4603-baa1-581412874671-subheading-1": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "<p>A lightweight fluid serum that contains 10% active Niacinamide, to boosts the skins immunity and restores barrier function. The hyaluronic acid in this formulation acts as a super hydrator and regulates your skins moisture levels. Whilst the lactic acid provides the skin with a gentle daily exfoliation to assist with cellular turnover. <br\/><br\/>The Vitamin B serum is truly an essential product that needs to be a part of your skincare regime. <\/p>",
+            "text_max_width": 30
+          }
+        }
+      },
+      "block_order": [
+        "template--20944504455450__850b7be8-89a5-4603-baa1-581412874671-heading-1",
+        "template--20944504455450__850b7be8-89a5-4603-baa1-581412874671-subheading-1"
+      ],
+      "settings": {
+        "image_1": "shopify:\/\/shop_images\/VITAMIN_B_-_01.png",
+        "image_position": "right",
+        "image_width": "half",
+        "aspect_ratio": "natural",
+        "text_alignment": "left",
+        "enable_animation": true,
+        "section_contrast": true,
+        "section_padding": "section--vertical-padding-none",
+        "padding_amount": "1.0"
+      }
+    },
+    "25dbc00c-bd45-450e-bf6b-3dfaf3c511c8": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--20944504455450__25dbc00c-bd45-450e-bf6b-3dfaf3c511c8-heading-1": {
+          "type": "heading",
+          "settings": {
+            "title": "Directions",
+            "text_max_width": 32
+          }
+        },
+        "template--20944504455450__25dbc00c-bd45-450e-bf6b-3dfaf3c511c8-subheading-1": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "<p>Use 4-5 drops and massage into face, neck and décolletage. <br\/><br\/>Use: <br\/>Use In the morning as the first serum you apply in your regime. <br\/><br\/>Tips: <br\/>When commencing the use of the Vitamin B serum, if the lactic acid feels too active, you can blend a little water with your daily dose for the first few weeks, till your skin regulates.<\/p>",
+            "text_max_width": 32
+          }
+        }
+      },
+      "block_order": [
+        "template--20944504455450__25dbc00c-bd45-450e-bf6b-3dfaf3c511c8-heading-1",
+        "template--20944504455450__25dbc00c-bd45-450e-bf6b-3dfaf3c511c8-subheading-1"
+      ],
+      "settings": {
+        "image_1": "shopify:\/\/shop_images\/VITAMIN_B_-_02.png",
+        "image_position": "left",
+        "image_width": "half",
+        "aspect_ratio": "natural",
+        "text_alignment": "left",
+        "enable_animation": true,
+        "section_contrast": false,
+        "section_padding": "section--vertical-padding-top-bottom",
+        "padding_amount": "1.0"
+      }
+    },
+    "a51ba352-abb9-4b32-a946-10e91f36b555": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--20944504455450__a51ba352-abb9-4b32-a946-10e91f36b555-heading-1": {
+          "type": "heading",
+          "settings": {
+            "title": "Key Actives",
+            "text_max_width": 32
+          }
+        },
+        "template--20944504455450__a51ba352-abb9-4b32-a946-10e91f36b555-subheading-1": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "<p>Niacinamide – Vitamin B3<br\/>Repairs barrier function – reducing sensitivity<br\/>Potent anti-inflammatory – calming atopic skin disorders<br\/>Inhibits Melanosome transfer to Keratinocyte – normalising hyperpigmentation<br\/>Maintains surveillance function of Langerhan Cells during UV exposure – reducing tumour formation<br\/>Regulates moisture levels – over active sebaceous activity slowed – hydration levels restored<br\/>Delivery mechanism for other nutrients<br\/><br\/>Hyaluronic Acid <br\/>Natural Moisturising Factor that attracts + binds up to 1000 X its own weight in moisture <br\/>Plumps surface tissue to alleviate dry, thinning skin<br\/>Assists wound healing + repairs barrier function<br\/>Inhibits Trans Epidermal Water Loss– essential for atopic skins <br\/> <br\/>Vitamin B5 <br\/>Vital nourishment that adds moisture & maintains strength of barrier function<br\/>Anti-inflammatory – calming atopic skin disorders by reducing oxidative stress & environmental toxins<br\/>Smoothes roughness, irritation & fine lines<br\/>Revitalises cells helping to defy the ageing process<br\/>Regulates moisture levels – over active sebaceous activity slowed – hydration levels restored<br\/>Nutrients promote luminous, even toned skin by managing healthy levels of fibroblasts, prolific in skins connective tissue<br\/><br\/><\/p>",
+            "text_max_width": 32
+          }
+        }
+      },
+      "block_order": [
+        "template--20944504455450__a51ba352-abb9-4b32-a946-10e91f36b555-heading-1",
+        "template--20944504455450__a51ba352-abb9-4b32-a946-10e91f36b555-subheading-1"
+      ],
+      "settings": {
+        "image_1": "shopify:\/\/shop_images\/VITAMIN_B_-_03.png",
+        "image_position": "right",
+        "image_width": "half",
+        "aspect_ratio": "natural",
+        "text_alignment": "left",
+        "enable_animation": true,
+        "section_contrast": true,
+        "section_padding": "section--vertical-padding-none",
+        "padding_amount": "1.0"
+      }
+    },
     "b7579890-0b9c-45f0-a99f-ca3c95c5a7c1": {
       "type": "section-key-active",
       "settings": {
@@ -93,6 +195,9 @@
   "order": [
     "main",
     "recommendations",
+    "850b7be8-89a5-4603-baa1-581412874671",
+    "25dbc00c-bd45-450e-bf6b-3dfaf3c511c8",
+    "a51ba352-abb9-4b32-a946-10e91f36b555",
     "b7579890-0b9c-45f0-a99f-ca3c95c5a7c1"
   ]
 }

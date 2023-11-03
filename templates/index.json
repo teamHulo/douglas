@@ -67,8 +67,8 @@
       "settings": {
         "title": "SKINCARE  AS INDIVIDUAL  AS YOU ARE",
         "text": "",
-        "url": "shopify:\/\/collections\/all",
-        "btn_name": "Our products"
+        "url": "shopify:\/\/pages\/about",
+        "btn_name": "DISCOVER"
       }
     },
     "488d4fc0-4cab-4942-8eb2-eff919582ad8": {
@@ -77,7 +77,7 @@
         "8fc8a8fa-e0a1-482a-ab82-36854cb7c046": {
           "type": "item",
           "settings": {
-            "img": "shopify:\/\/shop_images\/DP-Skin-Health-Grou.jpg",
+            "img": "shopify:\/\/shop_images\/DP_SkinshealthGroup-WHITE.jpg",
             "title": "DOUGLAS PEREIRA SKIN HEALTH",
             "text": "",
             "url": "shopify:\/\/products\/comfort-cleanse-200ml",
@@ -87,7 +87,7 @@
         "d37195aa-510d-49c3-98f9-f4f72c48fbac": {
           "type": "item",
           "settings": {
-            "img": "shopify:\/\/shop_images\/Img_3.png",
+            "img": "shopify:\/\/shop_images\/DP_SkinHealthGroup-WHITE.jpg",
             "title": "DOUGLAS PEREIRA SKIN SCIENCE",
             "text": "",
             "url": "shopify:\/\/products\/enzyme-cleanse-200ml",
@@ -97,7 +97,7 @@
         "fc22061f-33eb-4659-8d24-8b9b23724322": {
           "type": "item",
           "settings": {
-            "img": "shopify:\/\/shop_images\/DP_MineralmakeupGroup.jpg",
+            "img": "shopify:\/\/shop_images\/DP_MineralmakeupGroup-WHITE.jpg",
             "title": "DOUGLAS PEREIRA Mineral MAkeup",
             "text": "",
             "url": "shopify:\/\/products\/lipid-pre-cleanse-200ml",
@@ -111,32 +111,8 @@
         "fc22061f-33eb-4659-8d24-8b9b23724322"
       ],
       "settings": {
-        "name": "Welcome to Douglas Pereira Cosemeceuticals",
-        "title": "Where beauty meets science in perfect harmony. We embrace a holistic approach, paring it with cutting-edge, scientifically innovative formulations that seamlessly complement your skin's biology."
-      }
-    },
-    "e93a0e87-b11a-40e2-b596-bd60239b309b": {
-      "type": "section-image-baner",
-      "settings": {
-        "video": true,
-        "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/0bede705ccb04381820766fd328bca0c.mp4",
-        "padding_x": 0,
-        "padding_y": 140,
-        "img": "shopify:\/\/shop_images\/Rectangle249-compress.jpg",
-        "color_text": "#ffffff",
-        "title": "The Skincare Regime Builder",
-        "title_font": "h2",
-        "title_padding_bottom": 40,
-        "subtitle": "<p>Orci nunc vestibulum et mollis sed facilisis proin. Sed cursus nulla amet sodales etiam purus nunc nisi lectus. Pellentesque natoque nisi.<\/p>",
-        "subtitle_padding_bottom": 40,
-        "btn_text": "Take the skincare regime",
-        "btn_url": "shopify:\/\/collections\/all",
-        "btn_style": "secondary",
-        "text_width": 800,
-        "text_align_item": "center",
-        "text_position": "center",
-        "text_padding_top": 0,
-        "text_padding_bottom": 0
+        "name": "SKINCARE AS INDIVIDUAL AS YOU ARE",
+        "title": "We take a holistic approach alongside scientifically – innovative formulations, that work in conjunction with your skin’s biology."
       }
     },
     "701a8324-b670-4489-bde5-621c76cdd7d0": {
@@ -267,6 +243,30 @@
         "section_contrast": false,
         "section_padding": "section--vertical-padding-top-bottom",
         "padding_amount": "1.0"
+      }
+    },
+    "e93a0e87-b11a-40e2-b596-bd60239b309b": {
+      "type": "section-image-baner",
+      "settings": {
+        "video": true,
+        "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/0bede705ccb04381820766fd328bca0c.mp4",
+        "padding_x": 0,
+        "padding_y": 140,
+        "img": "shopify:\/\/shop_images\/Rectangle249-compress.jpg",
+        "color_text": "#ffffff",
+        "title": "The Skincare Regime Builder",
+        "title_font": "h2",
+        "title_padding_bottom": 40,
+        "subtitle": "<p>Orci nunc vestibulum et mollis sed facilisis proin. Sed cursus nulla amet sodales etiam purus nunc nisi lectus. Pellentesque natoque nisi.<\/p>",
+        "subtitle_padding_bottom": 40,
+        "btn_text": "Take the skincare regime",
+        "btn_url": "shopify:\/\/collections\/all",
+        "btn_style": "secondary",
+        "text_width": 800,
+        "text_align_item": "center",
+        "text_position": "center",
+        "text_padding_top": 0,
+        "text_padding_bottom": 0
       }
     },
     "a9582002-bf1a-412f-a25a-f2fb7ece2685": {
@@ -435,10 +435,10 @@
     "slideshow-1",
     "59274cfa-014a-42aa-bef6-33567a0a50bf",
     "488d4fc0-4cab-4942-8eb2-eff919582ad8",
-    "e93a0e87-b11a-40e2-b596-bd60239b309b",
     "701a8324-b670-4489-bde5-621c76cdd7d0",
     "63c20124-4680-4d58-867f-f48d6333cae7",
     "3cb369bf-d763-48e1-a2f9-94d078cb4642",
+    "e93a0e87-b11a-40e2-b596-bd60239b309b",
     "a9582002-bf1a-412f-a25a-f2fb7ece2685",
     "6145700a-f292-470e-83b3-547f6dc781de",
     "0e6446f7-19a6-45f3-bce1-13749fe15be2",
