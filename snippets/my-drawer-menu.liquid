@@ -10,8 +10,7 @@
   <div class="my-drawer-menu__wrap">
     <div class="my-overlay"></div>
      <div class="my-drawer-menu__inner active">
-       <div class="my-drawer-menu__inner-body">
-           <div class="drawer-menu__close-wrapper">
+      <div class="drawer-menu__close-wrapper">
                 <button
                   type="button"
                   data-drawer-close
@@ -21,18 +20,21 @@
                   {% render 'icon-button' with icon: 'close-stroke' %}
                 </button>
               </div>
+       <div class="my-drawer-menu__inner-body">
+              
               <div class="my-drawer-menu__list-first-level menu-list">
                   <ul>
                       {%  for link in linklists[menu].links %}
+                        {%  assign  index = forloop.index0 | times: 0.1 | plus: 0.6%}
                         {% if link.links.size != 0 %}
-                        <li>
+                        <li class="first-link-menu" style="--i:{{index}}s;">
                            <span class="ff-heading fs-heading-2-large click-menu" data-title="{{ link.title }}"> 
                                 {{ link.title }} 
                                 {% render 'icon' with icon: 'arrow-stroke', class: 'menu-icon' %}
                            </span>
                         </li>
                         {% else %}
-                           <li>
+                           <li class="first-link-menu" style="--i:{{index}}s;">
                              <a class="drawer-menu__link" href="{{ link.url }}"> 
                                 <span class="ff-heading fs-heading-2-large"> {{ link.title }} </span>
                             </a>
@@ -41,7 +43,8 @@
                         
                       {% endfor %}
                       {%- if account_visible -%}
-                          <li class="drawer-menu__item" data-list-item>
+                          {%  assign index = linklists[menu].links | size | plus : 1 | times: 0.1 | plus: 0.6%}
+                          <li  class="first-link-menu" class="drawer-menu__item" data-list-item style="--i:{{index}}s;">
                             <a class="drawer-menu__link fs-body-large" href="{{ routes.account_url }}">
                               {%- if customer -%}
                                 {{ 'sections.drawer_menu.account.logged_in' | t }}
@@ -59,7 +62,8 @@
                         {% if link.links.size != 0 %}
                           <ul data-title="{{ link.title }}">
                             {% for second_link in link.links %}
-                               <li>
+                              {%  assign  index = forloop.index0 | times: 0.1 | plus: 0.6%}
+                               <li style="--i:{{index}}s;">
                                     <a class="drawer-menu__link" href="{{ second_link.url }}"> 
                                         <span class="ff-heading fs-heading-2-large"> {{ second_link.title }} </span>
                                     </a>
