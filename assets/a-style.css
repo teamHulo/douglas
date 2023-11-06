@@ -161,7 +161,7 @@ body::-webkit-scrollbar {
   height: clamp(40px, 2.865vw, 55px) !important;
   padding: 0 clamp(20px, 3.125vw, 60px) !important;
   width: max-content;
-  border-radius: 32px !important;
+  border-radius: 0px !important;
 
   font-family: Proxima Nova !important;
   font-size: var(--font-size-16) !important;
@@ -286,8 +286,7 @@ header .icon {
   stroke: #fff;
 }
 header .header__inner {
-  padding: clamp(20px, 2.24vw, 43px) clamp(20px, 4.167vw, 80px)
-    clamp(20px, 1.667vw, 32px) clamp(20px, 4.167vw, 80px);
+  padding: 0px clamp(20px, 4.167vw, 80px) 0px clamp(20px, 4.167vw, 80px);
   max-width: 1920px;
   margin: 0 auto;
 }
@@ -738,7 +737,6 @@ header .header__inner {
 
 /**** footer ***/
 .footer__newsletter {
-  width: 50%;
   max-width: 536px;
 }
 .footer__newsletter-wrap {
@@ -778,7 +776,6 @@ header .header__inner {
   margin-bottom: clamp(20px, 2.083vw, 40px);
 }
 .footer__newsletter {
-  width: 40%;
   margin-right: auto;
 }
 .footer-newsletter-form-wrap {
@@ -813,12 +810,13 @@ header .header__inner {
   overflow: hidden;
   position: relative;
   margin-bottom: 24px;
+  width:clamp(300px,27.917vw,536px);
 }
 .footer-newsletter-form-wrap .input__wrap input {
   height: 100%;
   width: 100%;
   display: block;
-  padding: 19px;
+  padding: 10px 19px;
 
   color: #fefefe;
   font-family: Raleway;
@@ -886,7 +884,7 @@ header .header__inner {
 }
 .footer__content .links-item {
   width: max-content;
-  min-width: 260px;
+  min-width: clamp(150px,13.542vw,260px);
   /*flex-basis: 40%;*/
 }
 .footer__content .links-item.mb {
@@ -920,7 +918,7 @@ header .header__inner {
   margin-bottom: 0;
 }
 .custom__footer .footer__links-item {
-  margin-bottom: 18px;
+  margin-bottom: 12px;
 }
 .custom__footer .footer__links-item a {
   font-family: Proxima Nova;
@@ -935,7 +933,7 @@ header .header__inner {
   transition: all 0.3s ease;
 }
 .footer__wrap {
-  padding: clamp(50px, 4.948vw, 95px) 0 42px 0;
+  padding: 40px 0 40px 0;
 }
 .footer__wrap .text p {
   font-family: Proxima Nova;
@@ -980,8 +978,8 @@ header .header__inner {
 }
 .footer__bottom {
   border-top: 1px solid rgba(217, 217, 217, 0.4);
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .footer__bottom {
   display: block !important;
@@ -1012,7 +1010,7 @@ header .header__inner {
 .footer__bottom .container {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap:20px;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -1027,7 +1025,7 @@ header .header__inner {
   color: #d9d9d9;
   text-align: center;
   font-family: Raleway;
-  font-size: 16px;
+  font-size: 8px;
   font-style: normal;
   font-weight: 500;
   line-height: 140%; /* 22.4px */
@@ -1043,7 +1041,7 @@ header .header__inner {
     justify-content: space-between;
   }
   .footer__newsletter {
-    width: 100%;
+   
   }
   .footer__content .links-item {
     width: max-content;
@@ -1061,6 +1059,9 @@ header .header__inner {
   }
   .footer__bottom .left {
     width: 100%;
+  }
+  .footer__bottom .left ul{
+    margin-top:0;
   }
 }
 
@@ -1205,7 +1206,7 @@ header .header__inner {
   line-height: normal !important;
   letter-spacing: 0.64px !important;
   text-transform: uppercase !important;
-  border-radius: 32px !important;
+  border-radius: 0px !important;
   border: 1px solid #080808 !important;
 }
 .product-form__cart-submit span {
@@ -1239,7 +1240,7 @@ header .header__inner {
   line-height: normal !important;
   letter-spacing: 0.64px !important;
   text-transform: uppercase !important;
-  border-radius: 32px !important;
+  border-radius: 0px !important;
   border: 1px solid #080808 !important;
 }
 .kqsiVA9Jf8LJAbxw8Bau {
@@ -1847,13 +1848,13 @@ header .header__inner {
 
 /***** section collection list  product ***/
 .collection-categories{
-  padding:50px;
+  padding:clamp(25px,2.604vw,50px) 0px;
 
 }
 .collection-categories .product__list{
   display:flex;
   flex-wrap:wrap;
-  gap:60px 2%;
+  gap:clamp(30px,3.125vw,60px) 2%;
 }
 .collection-categories .product__list .product-item{
   width:23%;
@@ -1911,7 +1912,7 @@ header .header__inner {
   
   }
 }
-@media(max-width:500px){
+@media(max-width:330px){
   .collection-categories .product__list .product-item{
     width:100%;
   

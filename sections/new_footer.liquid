@@ -80,16 +80,18 @@
   </div>
   <div class="footer__bottom">
     <div class="container">
-      <div class="left">
-        <ul class="footer__bottom-links-list">
-          {%- assign link_list = linklists[section.settings.menu_bottom].links -%}
-          {%- for link in link_list -%}
-            <li class="footer__links-item element-animation">
-              <a href="{{ link.url }}">{{ link.title }}</a>
-            </li>
-          {%- endfor -%}
-        </ul>
-      </div>
+      {% if linklists[section.settings.menu_bottom].links.size != 0 %}
+        <div class="left">
+          <ul class="footer__bottom-links-list">
+            {%- assign link_list = linklists[section.settings.menu_bottom].links -%}
+            {%- for link in link_list -%}
+              <li class="footer__links-item element-animation">
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {% endif %}
       <div class="right">
         <div class="footer__credits fs-body-x-small element-animation">
           <p>{{ 'sections.footer.copyright' | t }} &copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: '/' }}.</p>
