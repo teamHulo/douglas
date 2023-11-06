@@ -1,0 +1,289 @@
+{% style %}
+.section-image-text-{{ section.id}} .container{
+    padding-top:{{section.settings.pt}}px;
+    padding-bottom:{{section.settings.pb}}px;
+    max-width:2000px;
+}
+  .section-image-text-{{ section.id}}{
+    background:{{section.settings.bg}}
+  }
+  .section-image-text-{{ section.id}} .section-image-text__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:{{section.settings.img_alignment}};
+    /*align-items:center;*/
+    gap:20px 0;
+  }
+  .section-image-text .item {
+    width: 50%;
+  }
+  
+  .section-image-text-{{ section.id}}  .item.rigth{
+    padding:20px 0;
+    display:flex;
+    align-items:center;
+    {% if  section.settings.img_alignment == "row"%}
+        padding-right:clamp(20px,14.635vw,281px);
+        padding-left:14px;
+    {% else %}
+        padding-left:clamp(20px,14.635vw,281px);
+        padding-right:14px;
+    {% endif %}
+  }
+
+  .section-image-text-{{ section.id}}  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: {{ section.settings.img_width}}%;
+    max-height: {{ section.settings.img_height}}%;
+  }
+  .section-image-text-{{ section.id}} .image {
+    display:flex;
+    justify-content:{{section.settings.img_alignment_horizontal}};
+
+  }
+  .section-image-text-{{ section.id}} .item.left {
+    display:flex;
+    min-height:100%;
+    align-items:{{section.settings.img_alignment_vertical}};
+   
+  }
+  .section-image-text-{{ section.id}} .title{
+    margin-bottom:20px;
+  }
+  .section-image-text-{{ section.id}} .title h2{
+    text-align: left;
+    font-family: "Proxima Nova"; 
+    font-weight: normal; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-size: 30px; 
+    line-height: 100%; 
+    letter-spacing: 1.83px;
+    color: {{section.settings.color}};
+    text-transform: uppercase;
+  }
+  .section-image-text-{{ section.id}} .title p{
+    text-align: left;
+    font-style: normal; /* Стиль шрифта: Обычный */
+    font-weight: normal; /* Вес шрифта: Обычный */
+    font-stretch: 300; /* Номер шрифта */
+    font-size: 20px; /* Размер шрифта */
+    line-height: 100%; /* Межстрочное расстояние */
+    font-family: "Proxima Nova";
+    letter-spacing: 0px;
+    color: {{section.settings.color}};
+    
+  }
+  .section-image-text-{{ section.id}} .text {
+
+  }
+  .section-image-text-{{ section.id}} .text > *{
+    color: {{section.settings.color}};
+  }
+  .section-image-text-{{ section.id}} .text > p{
+    text-align: left;
+    font-style: normal; 
+    font-weight: normal; 
+    font-stretch: 300; 
+    font-size: 16px; 
+    line-height: 20px; 
+    font-family: "Proxima Nova"; 
+    letter-spacing: 0px;
+    margin-bottom:20px;
+  }
+  .section-image-text-{{ section.id}} .text > p:last-child{
+    margin-bottom:0;
+  }
+  .section-image-text-{{ section.id}}  .block-item{
+    margin-bottom:50px;
+  }
+  .section-image-text-{{ section.id}}  .block-item:last-child{
+    margin-bottom:0px;
+  }
+{% endstyle %}
+
+
+
+<div class="section-image-text section-image-text-{{section.id}}">
+  <div class="container">
+    <div class="section-image-text__wrap">
+      <div class="left item">
+        <div class="left__wrap item__wrap">
+          <div class="image">
+            <img src="{{section.settings.img | img_url: 'master'}}" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="rigth item">
+        <div class="right__wrap item__wrap">
+          <div class="block-list">
+            {% for block in section.blocks %}
+              <div class="block-item">
+                <div class="block-item__wrap">
+                  <div class="title">
+                    <h2>
+                      {{ block.settings.title }}
+                    </h2>
+                    {% if block.settings.subtitle != blank %}
+                      <p>
+                        {{ block.settings.subtitle }}
+                      </p>
+                    {% endif %}
+                  </div>
+                  <div class="text">
+                    {{ block.settings.text }}
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "new section image text",
+    "settings": [
+      {
+        "type": "color",
+        "id": "bg",
+        "label": "background",
+        "default": "#212121"
+      },
+      {
+        "type": "color",
+        "id": "color",
+        "label": "color text",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "range",
+        "id": "pb",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "padding-top",
+        "default": 50
+      },
+      {
+        "type": "range",
+        "id": "pt",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "padding-top",
+        "default": 50
+      },
+      {
+        "type": "image_picker",
+        "id": "img",
+        "label": "image"
+      },
+      {
+        "type": "range",
+        "id": "img_height",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "label": "max image height",
+        "default": 100
+      }, {
+        "type": "range",
+        "id": "img_width",
+        "min": 1,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "label": "max image width",
+        "default": 100
+      }, {
+        "type": "select",
+        "id": "img_alignment",
+        "label": "Vertical alignment",
+        "options": [
+          {
+            "value": "row",
+            "label": "left"
+          }, {
+            "value": "row-reverse",
+            "label": "right"
+          }
+        ],
+        "default": "row"
+      }, {
+        "type": "select",
+        "id": "img_alignment_vertical",
+        "label": "Vertical alignment image",
+        "options": [
+          {
+            "value": "flex-start",
+            "label": "top"
+          }, {
+            "value": "center",
+            "label": "center"
+          }, {
+            "value": "flex-end",
+            "label": "bottom"
+          }
+        ],
+        "default": "flex-start"
+      }, {
+        "type": "select",
+        "id": "img_alignment_horizontal",
+        "label": "Horizontal alignment image",
+        "options": [
+          {
+            "value": "flex-start",
+            "label": "left"
+          }, {
+            "value": "center",
+            "label": "center"
+          }, {
+            "value": "flex-end",
+            "label": "right"
+          }
+        ],
+        "default": "flex-start"
+      }
+      
+    ],
+    "blocks": [
+      {
+        "name": "text",
+        "type": "item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "title"
+          },
+          {
+            "type": "text",
+            "id": "subtitle",
+            "label": "subtitle"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "text"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "new section image text"
+      }
+    ]
+  }
+{% endschema %}
