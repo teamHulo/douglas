@@ -390,6 +390,17 @@ header .header__inner {
 .banner-slider {
   position: relative;
 }
+.banner-slider:before{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(8, 8, 8, 0.74);
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+}
 .banner-slider-swiper {
   height: 100%;
 }
@@ -605,10 +616,11 @@ header .header__inner {
   line-height: 110%; /* 90.2px */
   text-transform: uppercase;
   letter-spacing: 0;
+  font-size: var(--font-size-52);
 }
 .section-tab-hover__wrap .big-title {
   position: absolute;
-  top: clamp(50px, 7.292vw, 140px);
+  top: clamp(30px,2.604vw, 50px);
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -645,7 +657,7 @@ header .header__inner {
 }
 .section-tab-hover__wrap {
   height: 100dvh;
-  max-height: 980px;
+  max-height: 700px;
   min-height: 600px;
   position: relative;
   z-index: 1;
@@ -690,7 +702,7 @@ header .header__inner {
 .section-tab-hover .text p {
   color: rgba(255, 255, 255, 0.6);
   font-family: Raleway;
-  font-size: var(--font-size-23);
+  font-size: var(--font-size-18);
   font-style: normal;
   font-weight: 500;
   line-height: 140%; /* 32.2px */
@@ -708,7 +720,7 @@ header .header__inner {
   }
   .section-tab-hover__wrap .big-title {
     position: static;
-    padding: 50px clamp(20px, 4.167vw, 80px);
+    padding: 50px clamp(20px, 2.083vw, 40px);
     transform: translateX(0%);
   }
   .section-tab-hover__wrap {
@@ -2206,3 +2218,19 @@ header .header__inner {
 }
 
 /**** end my drawer menu ****/
+
+.image-banner{
+  position: relative;
+}
+.image-banner::before{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(8, 8, 8, 0.74);
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+
+}
