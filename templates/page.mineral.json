@@ -86,12 +86,50 @@
         "img_alignment_vertical": "flex-start",
         "img_alignment_horizontal": "flex-start"
       }
+    },
+    "be9f8166-66ee-47c2-a6dd-b06e11cf4f9c": {
+      "type": "section-image-text",
+      "blocks": {
+        "bab2cbc9-cc0e-44b3-a3a9-8f639bd0b492": {
+          "type": "item",
+          "settings": {
+            "title": "COLOUR ADAPTATIVE SCIENCE",
+            "subtitle": "",
+            "text": "<p>Each of our mineral makeup formulations utilise the science of “colour adaptiveness”. This science allows your mineral makeup product to adapt to your skin’s natural tones and individual hues. Allowing your makeup to look more like you. <\/p><p>We do this by formulating our makeup with our proprietary “colour dispersion technology” that combines two self-adjusting methods “Encapsulated colour dispersion and pH-reactive balancing”. <\/p><p>Our colour dispersion technology evenly distributes our encapsulated pigment when the product is rubbed into the skin, the rubbing action breaks down a coating around the colour pigment and releases the colour evenly over your skin. Whilst the pH-reactive balancer works by responding to your individual pH levels. The ingredients in the formulation react to the acidity or alkaline levels of your skin’s moisture and adapt the colour pigments to suit your tone.<\/p>"
+          }
+        },
+        "ec3d9335-2507-46d3-aa7c-4a9309d7f9fb": {
+          "type": "item",
+          "settings": {
+            "title": "UVA \/ UVB EXPOSURE",
+            "subtitle": "",
+            "text": "<p>Premature skin aging results from exposure to a range of environmental factors, primarily ultraviolet radiation, but also high-energy visible light in the blue spectrum, infrared radiation, and environmental pollution. These extrinsic factors result in photoaging and DNA damage. <\/p><p>Our formulation comprises of a dual combination of Zinc and titanium to protect your skin from UVA and UVB factor.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "bab2cbc9-cc0e-44b3-a3a9-8f639bd0b492",
+        "ec3d9335-2507-46d3-aa7c-4a9309d7f9fb"
+      ],
+      "settings": {
+        "bg": "#212121",
+        "color": "#FFFFFF",
+        "pb": 50,
+        "pt": 1,
+        "img": "shopify:\/\/shop_images\/A_ACNE_04.png",
+        "img_height": 100,
+        "img_width": 100,
+        "img_alignment": "row",
+        "img_alignment_vertical": "flex-start",
+        "img_alignment_horizontal": "flex-start"
+      }
     }
   },
   "order": [
     "main",
     "52e8bd89-b907-4a29-8d50-e9f455043794",
     "62ea5548-80ac-4aa7-8bf4-4134b9bb4e87",
-    "f06bf474-7adf-4189-9ca2-7bcca3c39f84"
+    "f06bf474-7adf-4189-9ca2-7bcca3c39f84",
+    "be9f8166-66ee-47c2-a6dd-b06e11cf4f9c"
   ]
 }
