@@ -2,6 +2,30 @@
   "type": "footer",
   "name": "t:groups.footer_group.name",
   "sections": {
+    "f2587122-3f99-486a-b96c-f7a27be41972": {
+      "type": "section-image-baner",
+      "settings": {
+        "video": false,
+        "video_url": "",
+        "padding_x": 0,
+        "padding_y": 0,
+        "img": "shopify:\/\/shop_images\/routine.jpg",
+        "color_text": "#fff",
+        "title": "the skincare regime builder",
+        "title_font": "h2",
+        "title_padding_bottom": 0,
+        "subtitle": "<p>Orci nunc vestibulum et mollis sed facilisis proit. Sed cursus nulla amet sodakes etiam purus nunc nisi lectus. Pellentesque natoque nisi.<\/p>",
+        "subtitle_padding_bottom": 0,
+        "btn_text": "Take the skincare regime",
+        "btn_url": "shopify:\/\/pages\/about",
+        "btn_style": "prime",
+        "text_width": 660,
+        "text_align_item": "left",
+        "text_position": "normal",
+        "text_padding_top": 104,
+        "text_padding_bottom": 102
+      }
+    },
     "new_footer": {
       "type": "new_footer",
       "blocks": {
@@ -62,6 +86,7 @@
     }
   },
   "order": [
+    "f2587122-3f99-486a-b96c-f7a27be41972",
     "new_footer"
   ]
 }
