@@ -2192,6 +2192,7 @@ header .header__inner {
     position: absolute;
     top:0;
     left:0;
+    width: max-content;
   }
   .my-drawer-menu__list-second-level ul.active{
     opacity: 1;
@@ -2201,6 +2202,7 @@ header .header__inner {
     opacity: 0;
     transform: translate3d(-1rem, 0, 0);
     transition: transform ease .8s,opacity ease .8s;
+    z-index: 1;
   }
   .my-drawer-menu__list-second-level ul.active li{
     opacity: 1;
@@ -2208,6 +2210,7 @@ header .header__inner {
     will-change: transform,opacity;
     transition: transform ease .8s,opacity ease .8s;
     transition-delay:var(--i);
+    z-index: 2;
   }
   .no-scroll {
     overflow: hidden;
