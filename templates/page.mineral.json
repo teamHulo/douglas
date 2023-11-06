@@ -61,14 +61,28 @@
     },
     "f06bf474-7adf-4189-9ca2-7bcca3c39f84": {
       "type": "section-image-text",
+      "blocks": {
+        "14c01a43-4126-49f3-adab-066465d0cf25": {
+          "type": "item",
+          "settings": {
+            "title": "OUTER BEAUTY RADIANCE MEETS SKIN HEALTH",
+            "subtitle": "",
+            "text": "<p>The mineral makeup collection is all about outer beauty and enhancing your own natural radiance and luminosity. We use natural mineral colour pigments in each of our makeup formulations.<\/p><p>When formulating our makeup collection, we not only consider how the product looks, feels, and wears on your skin but we also consider how your makeup impacts your skin health. We do this by bringing the science of our skincare into our makeup formulations, and including the powerful active ingredients used in our skincare. Thus, creating makeup products that enhance your skin health.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "14c01a43-4126-49f3-adab-066465d0cf25"
+      ],
       "settings": {
         "bg": "#212121",
         "color": "#FFFFFF",
         "pb": 50,
         "pt": 50,
+        "img": "shopify:\/\/shop_images\/VITAMIN_B_-_02-reverce.png",
         "img_height": 100,
         "img_width": 100,
-        "img_alignment": "row",
+        "img_alignment": "row-reverse",
         "img_alignment_vertical": "flex-start",
         "img_alignment_horizontal": "flex-start"
       }
