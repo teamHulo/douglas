@@ -111,7 +111,7 @@
     <div class="section-image-text__wrap">
       <div class="left item">
         <div class="left__wrap item__wrap">
-          <div class="image">
+          <div class="image element-animation">
             <img src="{{section.settings.img | img_url: 'master'}}" alt="">
           </div>
         </div>
@@ -123,16 +123,16 @@
               <div class="block-item">
                 <div class="block-item__wrap">
                   <div class="title">
-                    <h2>
+                    <h2 class="element-animation">
                       {{ block.settings.title }}
                     </h2>
                     {% if block.settings.subtitle != blank %}
-                      <p>
+                      <p class="element-animation">
                         {{ block.settings.subtitle }}
                       </p>
                     {% endif %}
                   </div>
-                  <div class="text">
+                  <div class="text element-animation">
                     {{ block.settings.text }}
                   </div>
                 </div>
