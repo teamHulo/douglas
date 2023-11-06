@@ -18,10 +18,10 @@
         "subtitle_padding_bottom": 0,
         "btn_text": "Take the skincare regime",
         "btn_url": "shopify:\/\/pages\/about",
-        "btn_style": "prime",
+        "btn_style": "secondary",
         "text_width": 660,
-        "text_align_item": "left",
-        "text_position": "normal",
+        "text_align_item": "center",
+        "text_position": "center",
         "text_padding_top": 104,
         "text_padding_bottom": 102
       }
