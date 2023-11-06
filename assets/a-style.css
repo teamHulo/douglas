@@ -66,7 +66,7 @@ option {
   --font-size-18: clamp(14px, 0.938vw, 18px);
   --font-size-16: clamp(14px, 0.833vw, 16px);
 }
-.collection{
+.collection, .collection__content{
   margin-top:0px !important;
 }
 body::-webkit-scrollbar {
