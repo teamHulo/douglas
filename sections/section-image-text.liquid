@@ -1,11 +1,13 @@
 {% style %}
 .section-image-text-{{ section.id}} .container{
-    padding-top:{{section.settings.pt}}px;
-    padding-bottom:{{section.settings.pb}}px;
+ 
     max-width:2000px;
+    padding:0;
 }
   .section-image-text-{{ section.id}}{
     background:{{section.settings.bg}}
+    padding-top:{{section.settings.pt}}px;
+    padding-bottom:{{section.settings.pb}}px;
   }
   .section-image-text-{{ section.id}} .section-image-text__wrap {
     display: flex;
