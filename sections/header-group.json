@@ -26,7 +26,7 @@
       "type": "header",
       "settings": {
         "logo": "shopify:\/\/shop_images\/DP_Logo_Cosmeceuticals_Horizontal_Black.svg",
-        "logo_max_width": 275,
+        "logo_max_width": 150,
         "menu": "main-menu",
         "secondary_menu": "",
         "style": "icon",
