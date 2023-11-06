@@ -2,11 +2,38 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
+        "content_max_width": 700
+      }
+    },
+    "52e8bd89-b907-4a29-8d50-e9f455043794": {
+      "type": "section-image-baner",
+      "settings": {
+        "video": false,
+        "video_url": "",
+        "padding_x": 0,
+        "padding_y": 0,
+        "img": "shopify:\/\/shop_images\/DPSS---Enhancement-Collection.jpg",
+        "color_text": "#fff",
+        "title": "DOUGLAS PEREIRA MINERAL MAKEUP RANGE",
+        "title_font": "h2",
+        "title_padding_bottom": 14,
+        "subtitle": "<p>We believe makeup is an extension of your skincare and they should work in synergy to better your skins health<\/p>",
+        "subtitle_padding_bottom": 0,
+        "btn_text": "Take the skincare regime",
+        "btn_url": "",
+        "btn_style": "prime",
+        "text_width": 1070,
+        "text_align_item": "left",
+        "text_position": "normal",
+        "text_padding_top": 60,
+        "text_padding_bottom": 60
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "52e8bd89-b907-4a29-8d50-e9f455043794"
   ]
 }
