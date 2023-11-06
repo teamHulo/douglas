@@ -2234,3 +2234,18 @@ header .header__inner {
   z-index: 1;
 
 }
+
+/*****/
+
+
+.section-collection-info {
+  padding:50px; 
+}
+.section-collection-info {
+  text-align: center;
+}
+.section-collection-info__wrap{
+  max-width: 1440px;
+  margin:0 auto
+}
+
