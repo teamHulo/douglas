@@ -14,6 +14,7 @@
     },
     "4f229f80-200a-4638-a1c5-f42deec5601a": {
       "type": "section-image-baner",
+      "disabled": true,
       "settings": {
         "video": false,
         "video_url": "",
