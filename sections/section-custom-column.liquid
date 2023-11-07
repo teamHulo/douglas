@@ -46,12 +46,18 @@
 </style>
 
 <div class="custom-column container">
-    <div class="section-title">
-        <h2>{{ section.settings.title }}</h2>
-        <div>
-            <p>{{ section.settings.text }}</p>
+    {% if section.settings.title != blank or section.settings.text != blank %}
+        <div class="section-title" style="margin: 0 auto;max-width: {{ section.settings.text_max_width }}px;">
+            {% if section.settings.title != blank %}
+                <h2>{{ section.settings.title }}</h2>
+            {% endif %}
+            {% if section.settings.text != blank %}
+                <div>
+                    <p>{{ section.settings.text }}</p>
+                </div>
+            {% endif %}
         </div>
-    </div>
+    {% endif %}
     <div class="custom-column__wrapper ">
         {% for block in section.blocks %}
             <div class="custom-column-card">
@@ -68,11 +74,16 @@
                         {% if block.settings.text != 'blank' %}
                             <div style="margin-top: {{ block.settings.text_margin_top }}px;" class="custom-column__text-subtitle element-animation">{{ block.settings.text }}</div>
                         {% endif %}
-                        {% if block.settings.btn_text != blank %}
+                        {% if block.settings.btn_text != blank or block.settings.price != blank %}
                             <div class="custom-column__btn loop-{{ forloop.index }}">
-                                <a href="{{ block.settings.btn_url }}" style="width: {{ block.settings.btn-full }}%;margin-top: {{ block.settings.btn_margin_top }}px;" class="a-btn element-animation {% if block.settings.btn_style == 'prime' %}prime{% endif %}{% if block.settings.btn_style == 'secondary' %}secondary{% endif %}">
-                                    {{ block.settings.btn_text }}
-                                </a>
+                                {% if block.settings.price != blank %}
+                                    <p style="margin-top: {{ block.settings.price_margin_top }}px;" class="custom-column__price">{{ block.settings.price | upcase }}</p>
+                                {% endif %}
+                                {% if block.settings.btn_text != blank %}
+                                    <a href="{{ block.settings.btn_url }}" style="{% if block.settings.btn_full %} width: 100%;{% endif %}margin-top: {{ block.settings.btn_margin_top }}px;" class="a-btn element-animation {% if block.settings.btn_style == 'prime' %}prime{% endif %}{% if block.settings.btn_style == 'secondary' %}secondary{% endif %}">
+                                        {{ block.settings.btn_text }}
+                                    </a>
+                                {% endif %}
                             </div>
                         {% endif %}
                     </div>
@@ -125,7 +136,7 @@
             {
                 "type": "color",
                 "id": "color_text",
-                "label": "Background color",
+                "label": "Text color",
                 "default": "#000"
             },
             {
@@ -139,6 +150,16 @@
                 "id": "text",
                 "label": "Text",
                 "default": "<p>The range has been divided into three collections making it easy for you to navigate and select your products. Core, Supportive and Enhancement collections.</p>"
+            },
+            {
+                "type": "range",
+                "id": "text_max_width",
+                "min": 600,
+                "max": 1200,
+                "step": 6,
+                "unit": "px",
+                "label": "Max width",
+                "default": 1200
             },
             {
                 "type": "checkbox",
@@ -222,6 +243,22 @@
                         "default": 0,
                         "unit": "px",
                         "label": "Text margin top"
+                    }, 
+                    {
+                        "type": "text",
+                        "id": "price",
+                        "label": "Second text",
+                        "default": "PRICE: COMPLEMENTARY | DURATION 30MIN"
+                    },
+                    {
+                        "type": "range",
+                        "id": "price_margin_top",
+                        "min": 0,
+                        "max": 80,
+                        "step": 2,
+                        "default": 0,
+                        "unit": "px",
+                        "label": "Second text margin top"
                     }, 
                     {
                         "type": "text",

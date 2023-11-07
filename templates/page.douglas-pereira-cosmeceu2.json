@@ -15,7 +15,7 @@
         "padding_x": 100,
         "padding_y": 100,
         "img": "shopify:\/\/shop_images\/black1.webp",
-        "color_text": "#fff",
+        "color_text": "#ffffff",
         "title": "DOUGLAS PEREIRA SKIN SCIENCE",
         "title_font": "h5",
         "title_padding_bottom": 24,
@@ -24,7 +24,7 @@
         "btn_text": "Take the skincare regime",
         "btn_url": "",
         "btn_style": "prime",
-        "text_width": 400,
+        "text_width": 790,
         "text_align_item": "left",
         "text_position": "normal",
         "text_padding_top": 0,
@@ -39,7 +39,7 @@
           "settings": {
             "title": "DOUGLAS PEREIRA SKIN SCIENCE",
             "subtitle": "",
-            "text": "<p>Douglas Pereira Skin Science is an uncomplicated skincare collection, with complex formulations, for everyday people. Twelve years after founding our premium skincare range Douglas Pereira Skin Health we have launched our new range Douglas Pereira Skin Science. This collection of products came from a need Douglas saw in the market, where some skincare consumers don’t want to have a complicated skincare routine, but still wanted to get most out of a few steps. The range is a straightforward collection of products that has been developed for all genders and skin types. Our universal formulations offer all in one skincare solutions for those not wanting a complicated homecare regime, but still striving for result driven skincare without too many steps.<\/p>"
+            "text": "<p>Douglas Pereira Skin Science is an uncomplicated skincare collection, with complex formulations, for everyday people.<\/p><p> Twelve years after founding our premium skincare range Douglas Pereira Skin Health we have launched our new range Douglas Pereira Skin Science. This collection of products came from a need Douglas saw in the market, where some skincare consumers don’t want to have a complicated skincare routine, but still wanted to get most out of a few steps. <\/p><p>The range is a straightforward collection of products that has been developed for all genders and skin types. Our universal formulations offer all in one skincare solutions for those not wanting a complicated homecare regime, but still striving for result driven skincare without too many steps.<\/p>"
           }
         }
       },
@@ -48,21 +48,198 @@
       ],
       "settings": {
         "bg": "#212121",
-        "color": "#FFFFFF",
+        "color": "#ffffff",
         "pb": 50,
         "pt": 50,
         "img": "shopify:\/\/shop_images\/Step-3-insalon.jpg",
         "img_height": 100,
-        "img_width": 100,
+        "img_width": 82,
         "img_alignment": "row",
         "img_alignment_vertical": "center",
-        "img_alignment_horizontal": "center"
+        "img_alignment_horizontal": "flex-start"
+      }
+    },
+    "15572b8a-834f-4482-8e77-44a05516d135": {
+      "type": "section-custom-column",
+      "blocks": {
+        "9997db7e-eefb-48e8-a309-2abf2ee53006": {
+          "type": "item",
+          "settings": {
+            "img_scale": 100,
+            "img": "shopify:\/\/shop_images\/3.png",
+            "title": "CORE COLLECTION",
+            "title_margin_top": 50,
+            "text": "<p>The core product collection is your everyday routine and has been formulated to suite all skin types, eliminating the challenge of choosing the right products for your skin. <\/p><p>The system is straightforward and has minimal steps, so you don’t have to invest too much time looking after your skin but can have the confidence all bases<\/p>",
+            "text_margin_top": 0,
+            "price": "",
+            "price_margin_top": 0,
+            "btn_text": "",
+            "btn_url": "",
+            "btn_margin_top": 0,
+            "btn_full": false,
+            "btn_style": "prime",
+            "text_width": 1200,
+            "text_align": "left"
+          }
+        },
+        "4c8f7abc-9f15-411d-82e7-a7d02dc3f959": {
+          "type": "item",
+          "settings": {
+            "img_scale": 100,
+            "img": "shopify:\/\/shop_images\/3.png",
+            "title": "CORE COLLECTION",
+            "title_margin_top": 50,
+            "text": "<p>The core product collection is your everyday routine and has been formulated to suite all skin types, eliminating the challenge of choosing the right products for your skin. <\/p><p>The system is straightforward and has minimal steps, so you don’t have to invest too much time looking after your skin but can have the confidence all bases<\/p>",
+            "text_margin_top": 0,
+            "price": "",
+            "price_margin_top": 0,
+            "btn_text": "",
+            "btn_url": "",
+            "btn_margin_top": 0,
+            "btn_full": false,
+            "btn_style": "prime",
+            "text_width": 1200,
+            "text_align": "left"
+          }
+        },
+        "f8732c33-408f-462c-a55e-8faef4546033": {
+          "type": "item",
+          "settings": {
+            "img_scale": 100,
+            "img": "shopify:\/\/shop_images\/3.png",
+            "title": "CORE COLLECTION",
+            "title_margin_top": 50,
+            "text": "<p>The core product collection is your everyday routine and has been formulated to suite all skin types, eliminating the challenge of choosing the right products for your skin. <\/p><p>The system is straightforward and has minimal steps, so you don’t have to invest too much time looking after your skin but can have the confidence all bases<\/p>",
+            "text_margin_top": 0,
+            "price": "",
+            "price_margin_top": 0,
+            "btn_text": "",
+            "btn_url": "",
+            "btn_margin_top": 0,
+            "btn_full": false,
+            "btn_style": "prime",
+            "text_width": 1200,
+            "text_align": "left"
+          }
+        }
+      },
+      "block_order": [
+        "9997db7e-eefb-48e8-a309-2abf2ee53006",
+        "4c8f7abc-9f15-411d-82e7-a7d02dc3f959",
+        "f8732c33-408f-462c-a55e-8faef4546033"
+      ],
+      "settings": {
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "column_gap": 34,
+        "bg": "#212121",
+        "color_text": "#ffffff",
+        "title": "AN UNCOMPLICATED APPROACH",
+        "text": "<p>The range has been divided into three collections making it easy for you to navigate and select your products. <\/p><p>Core, Supportive and Enhancement collections.<\/p>",
+        "text_max_width": 600,
+        "full_width": false,
+        "card_position": "normal"
+      }
+    },
+    "d7610059-5a44-4ad3-89de-8a0f0da634ed": {
+      "type": "section-custom-column",
+      "blocks": {
+        "69365660-da67-4577-acf8-b919ec104f2e": {
+          "type": "item",
+          "settings": {
+            "img_scale": 120,
+            "img": "shopify:\/\/shop_images\/3.png",
+            "title": "MORNING ROUTINE",
+            "title_margin_top": 50,
+            "text": "<p>Four uncomplicated steps<\/p><p><\/p><p>Step 1: Universal cleanser <\/p><p>Step 2: Multi active day Serum <\/p><p>3: Universal moisturiser Step <\/p><p>4: SPF protect 50+<\/p>",
+            "text_margin_top": 0,
+            "price": "",
+            "price_margin_top": 0,
+            "btn_text": "",
+            "btn_url": "",
+            "btn_margin_top": 0,
+            "btn_full": false,
+            "btn_style": "prime",
+            "text_width": 1200,
+            "text_align": "right"
+          }
+        },
+        "ff707c27-5fa8-4166-9fab-05474db3591a": {
+          "type": "item",
+          "settings": {
+            "img_scale": 120,
+            "img": "shopify:\/\/shop_images\/3.png",
+            "title": "EVENING ROUTINE",
+            "title_margin_top": 50,
+            "text": "<p>Three uncomplicated steps Step <\/p><p><\/p><p>1: Universal cleanser Step <\/p><p>2: Recovery night serum Step <\/p><p>3: Universal moisturiser<\/p>",
+            "text_margin_top": 0,
+            "price": "",
+            "price_margin_top": 0,
+            "btn_text": "",
+            "btn_url": "",
+            "btn_margin_top": 0,
+            "btn_full": false,
+            "btn_style": "prime",
+            "text_width": 1200,
+            "text_align": "left"
+          }
+        }
+      },
+      "block_order": [
+        "69365660-da67-4577-acf8-b919ec104f2e",
+        "ff707c27-5fa8-4166-9fab-05474db3591a"
+      ],
+      "settings": {
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "column_gap": 34,
+        "bg": "#212121",
+        "color_text": "#ffffff",
+        "title": "YOUR UNCOMPLICATED ROUTINE",
+        "text": "<p>Keeping things simple for all skin types<\/p>",
+        "text_max_width": 600,
+        "full_width": false,
+        "card_position": "center"
+      }
+    },
+    "129ed2ac-29d5-4420-af72-ed26191ee8c9": {
+      "type": "section-step-regime",
+      "blocks": {
+        "3301b26c-825a-4ce4-8fda-1c5941ca9ad5": {
+          "type": "item",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/3.png",
+            "title": "EXFOLIATING SKIN DROPS",
+            "text": "<p>Make your routine little more targeted for your skin needs by include one of the Skin Drops exfoliating serums. Apply this serum either in the morning or evening as the first serum you apply after cleansing.<\/p>"
+          }
+        },
+        "c62a74ea-6e32-419e-b040-29906977c768": {
+          "type": "item",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/1.png",
+            "title": "MASKS",
+            "text": "<p>Enhance your skin routine by giving yourself a little pamper with one of our masks.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "3301b26c-825a-4ce4-8fda-1c5941ca9ad5",
+        "c62a74ea-6e32-419e-b040-29906977c768"
+      ],
+      "settings": {
+        "bg": "#212121",
+        "color": "#FFFFFF",
+        "title": "STEP UP YOUR REGIME",
+        "text": "<p>With our supportive or enhancement products<\/p>"
       }
     }
   },
   "order": [
     "main",
     "b7394569-309d-4e4a-88d9-d2fb33780781",
-    "edd1f691-8fec-4344-a2f1-a58356944dd7"
+    "edd1f691-8fec-4344-a2f1-a58356944dd7",
+    "15572b8a-834f-4482-8e77-44a05516d135",
+    "d7610059-5a44-4ad3-89de-8a0f0da634ed",
+    "129ed2ac-29d5-4420-af72-ed26191ee8c9"
   ]
 }

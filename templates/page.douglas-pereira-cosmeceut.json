@@ -15,20 +15,20 @@
         "padding_x": 100,
         "padding_y": 100,
         "img": "shopify:\/\/shop_images\/DP_SKIN_HEATH_HEADER_1.png",
-        "color_text": "#fff",
+        "color_text": "#ffffff",
         "title": "DOUGLAS PEREIRA COSMECEUTICALS",
         "title_font": "h4",
-        "title_padding_bottom": 0,
+        "title_padding_bottom": 30,
         "subtitle": "<p>We formulate skincare products that improves the health of skin cells, optimising their function, protects the skins barrier and counteract the effects that pollution, stress and ageing has on the skin.<\/p>",
         "subtitle_padding_bottom": 0,
         "btn_text": "Take the skincare regime",
         "btn_url": "",
         "btn_style": "prime",
-        "text_width": 640,
+        "text_width": 750,
         "text_align_item": "left",
         "text_position": "normal",
         "text_padding_top": 0,
-        "text_padding_bottom": 0
+        "text_padding_bottom": 2
       }
     },
     "d62a52e3-02a1-48cb-ac7d-ce46dfeb993c": {
@@ -48,7 +48,7 @@
       ],
       "settings": {
         "bg": "#212121",
-        "color": "#FFFFFF",
+        "color": "#ffffff",
         "pb": 50,
         "pt": 50,
         "img": "shopify:\/\/shop_images\/Step-2-Consultation.jpg",
@@ -58,11 +58,99 @@
         "img_alignment_vertical": "center",
         "img_alignment_horizontal": "center"
       }
+    },
+    "18be4a48-5b71-437f-a496-adb21e4dc2b8": {
+      "type": "section-get-know",
+      "blocks": {
+        "c5acbcf1-0cbf-4e17-9511-4ff7f0e17b88": {
+          "type": "item",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/VITAMIN_B_-_02.png"
+          }
+        },
+        "bf9784fa-0228-4da4-add7-61affb0f470f": {
+          "type": "item",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/DP_SKIN_HEALTH_IMAGE_2_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "c5acbcf1-0cbf-4e17-9511-4ff7f0e17b88",
+        "bf9784fa-0228-4da4-add7-61affb0f470f"
+      ],
+      "settings": {
+        "bg": "#212121",
+        "color": "#ffffff",
+        "title": "GET KNOW OUR TWO RANGES",
+        "text": "<p>We know choosing the correct products for your skin, budget and lifestyle can be challenging.<\/p><p> We have created two different ranges each with their own identity, so you can find the best skincare solutions for you<\/p>"
+      }
+    },
+    "3b86a279-534b-43b3-91cf-7b121238b771": {
+      "type": "section-custom-column",
+      "blocks": {
+        "5a2d1e6d-a0ff-4e04-a160-1debb62177c1": {
+          "type": "item",
+          "settings": {
+            "img_scale": 100,
+            "title": "DOUGLAS PEREIRA SKIN SCIENCE",
+            "title_margin_top": 0,
+            "text": "<p>An uncomplicated skincare collection, with complex formulations for those looking for a simple routine.<\/p>",
+            "text_margin_top": 20,
+            "price": "",
+            "price_margin_top": 0,
+            "btn_text": "Discover",
+            "btn_url": "",
+            "btn_margin_top": 40,
+            "btn_full": false,
+            "btn_style": "secondary",
+            "text_width": 1200,
+            "text_align": "right"
+          }
+        },
+        "277f13ca-3988-4a62-83d9-6dc2f4064ae1": {
+          "type": "item",
+          "settings": {
+            "img_scale": 100,
+            "title": "DOUGLAS PEREIRA SKIN HEALTH",
+            "title_margin_top": 0,
+            "text": "<p> Douglas Pereira Skin Health A premium prescriptive collection of advanced products for a skin savvy user.<\/p>",
+            "text_margin_top": 20,
+            "price": "",
+            "price_margin_top": 0,
+            "btn_text": "Discover",
+            "btn_url": "",
+            "btn_margin_top": 40,
+            "btn_full": false,
+            "btn_style": "secondary",
+            "text_width": 1200,
+            "text_align": "left"
+          }
+        }
+      },
+      "block_order": [
+        "5a2d1e6d-a0ff-4e04-a160-1debb62177c1",
+        "277f13ca-3988-4a62-83d9-6dc2f4064ae1"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 50,
+        "column_gap": 38,
+        "bg": "#212121",
+        "color_text": "#ffffff",
+        "title": "",
+        "text": "",
+        "text_max_width": 1200,
+        "full_width": false,
+        "card_position": "center"
+      }
     }
   },
   "order": [
     "main",
     "06af0194-c5f4-412c-8948-c9bed88c6e3e",
-    "d62a52e3-02a1-48cb-ac7d-ce46dfeb993c"
+    "d62a52e3-02a1-48cb-ac7d-ce46dfeb993c",
+    "18be4a48-5b71-437f-a496-adb21e4dc2b8",
+    "3b86a279-534b-43b3-91cf-7b121238b771"
   ]
 }
