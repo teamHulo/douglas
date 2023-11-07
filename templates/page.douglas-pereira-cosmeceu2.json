@@ -18,7 +18,7 @@
         "color_text": "#fff",
         "title": "DOUGLAS PEREIRA SKIN SCIENCE",
         "title_font": "h5",
-        "title_padding_bottom": 0,
+        "title_padding_bottom": 24,
         "subtitle": "<p>An uncomplicated skincare collection, with complex formulations, for everyday people<\/p>",
         "subtitle_padding_bottom": 0,
         "btn_text": "Take the skincare regime",
@@ -30,10 +30,39 @@
         "text_padding_top": 0,
         "text_padding_bottom": 0
       }
+    },
+    "edd1f691-8fec-4344-a2f1-a58356944dd7": {
+      "type": "section-image-text",
+      "blocks": {
+        "f7812317-aa04-4a85-87ff-7458406439f5": {
+          "type": "item",
+          "settings": {
+            "title": "DOUGLAS PEREIRA SKIN SCIENCE",
+            "subtitle": "",
+            "text": "<p>Douglas Pereira Skin Science is an uncomplicated skincare collection, with complex formulations, for everyday people. Twelve years after founding our premium skincare range Douglas Pereira Skin Health we have launched our new range Douglas Pereira Skin Science. This collection of products came from a need Douglas saw in the market, where some skincare consumers don’t want to have a complicated skincare routine, but still wanted to get most out of a few steps. The range is a straightforward collection of products that has been developed for all genders and skin types. Our universal formulations offer all in one skincare solutions for those not wanting a complicated homecare regime, but still striving for result driven skincare without too many steps.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "f7812317-aa04-4a85-87ff-7458406439f5"
+      ],
+      "settings": {
+        "bg": "#212121",
+        "color": "#FFFFFF",
+        "pb": 50,
+        "pt": 50,
+        "img": "shopify:\/\/shop_images\/Step-3-insalon.jpg",
+        "img_height": 100,
+        "img_width": 100,
+        "img_alignment": "row",
+        "img_alignment_vertical": "center",
+        "img_alignment_horizontal": "center"
+      }
     }
   },
   "order": [
     "main",
-    "b7394569-309d-4e4a-88d9-d2fb33780781"
+    "b7394569-309d-4e4a-88d9-d2fb33780781",
+    "edd1f691-8fec-4344-a2f1-a58356944dd7"
   ]
 }
