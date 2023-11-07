@@ -46,7 +46,7 @@
 </style>
 
 <div class="custom-column container">
-    <div class="section-title">
+    <div class="section-title" style="max-width: {{ section.settings.text_max_width }}px;">
         <h2>{{ section.settings.title }}</h2>
         <div>
             <p>{{ section.settings.text }}</p>
@@ -70,7 +70,7 @@
                         {% endif %}
                         {% if block.settings.btn_text != blank %}
                             <div class="custom-column__btn loop-{{ forloop.index }}">
-                                <a href="{{ block.settings.btn_url }}" style="width: {{ block.settings.btn-full }}%;margin-top: {{ block.settings.btn_margin_top }}px;" class="a-btn element-animation {% if block.settings.btn_style == 'prime' %}prime{% endif %}{% if block.settings.btn_style == 'secondary' %}secondary{% endif %}">
+                                <a href="{{ block.settings.btn_url }}" style="{% if block.settings.btn_full %} width: 100%;{% endif %}margin-top: {{ block.settings.btn_margin_top }}px;" class="a-btn element-animation {% if block.settings.btn_style == 'prime' %}prime{% endif %}{% if block.settings.btn_style == 'secondary' %}secondary{% endif %}">
                                     {{ block.settings.btn_text }}
                                 </a>
                             </div>
@@ -125,7 +125,7 @@
             {
                 "type": "color",
                 "id": "color_text",
-                "label": "Background color",
+                "label": "Text color",
                 "default": "#000"
             },
             {
@@ -139,6 +139,16 @@
                 "id": "text",
                 "label": "Text",
                 "default": "<p>The range has been divided into three collections making it easy for you to navigate and select your products. Core, Supportive and Enhancement collections.</p>"
+            },
+            {
+                "type": "range",
+                "id": "text_max_width",
+                "min": 600,
+                "max": 1200,
+                "step": 6,
+                "unit": "px",
+                "label": "Column gap",
+                "default": 1200
             },
             {
                 "type": "checkbox",
