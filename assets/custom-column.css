@@ -59,7 +59,7 @@
 @media(max-width: 768px) {
     .custom-column__wrapper {
         flex-wrap: wrap;
-        gap: 40px;
+        gap: 40px !important;
     }
     .custom-column-card {
         width: 100%;
