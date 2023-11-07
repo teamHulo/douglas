@@ -1,0 +1,17 @@
+
+{%if product.metafields.custom.treatment_title.value != blank or product.metafields.custom.treatments_description.value != blank%}
+<div class="treatments-my-block">
+    <div class="container">
+        <div class="title">
+            <h2>
+                {{product.metafields.custom.treatment_title.value}}
+            </h2>
+        </div>
+        <div class="text">
+            <p>
+                {{product.metafields.custom.treatments_description.value}}
+            </p>
+        </div>
+    </div>
+</div>
+{% endif %}

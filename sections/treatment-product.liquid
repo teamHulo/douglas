@@ -107,7 +107,7 @@
     </div>
   </button>
 {% endcapture %}
-<div class="container product-container">
+<div class="container product-container my-product-treatments-container">
   <div
     class="
             product
@@ -813,7 +813,7 @@
 {%- assign models = product.media | where: 'media_type', 'model' | json -%}
 
 
-
+{% render 'treatments-block', product:product %}
 {% render 'scroll-slides', product:product %} 
 
 

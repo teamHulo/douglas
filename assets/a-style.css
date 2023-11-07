@@ -2402,6 +2402,85 @@ header .header__inner {
 
 /****************** end image text **************************/
 
+
+
+/****** my-product-treatments ****/
+.my-product-treatments-container{
+  max-width: 100%;
+  padding-left:0;
+  padding-right: 0;
+  padding-bottom:0px !important;
+}
+.my-product-treatments-container .product__media-container{
+  max-width: 100%;
+  flex:1;
+  width: 50%;
+
+}
+.my-product-treatments-container .product__top{
+  justify-content: stretch;
+  background-color: #F2F2F2;
+  gap:50px 0;
+  align-items: center;
+}
+.my-product-treatments-container .product__breadcrumbs{
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4.167vw, 80px);
+  width:100%;
+  
+}
+.my-product-treatments-container .product__details{
+  
+  max-width: 100%;
+  flex:1;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.my-product-treatments-container .product__details .product__meta{
+  max-width: 536px;
+  padding:50px;
+}
+.my-product-treatments-container .product__media, .my-product-treatments-container .product__media-item , .my-product-treatments-container .media , .my-product-treatments-container .media a, .my-product-treatments-container  .image{ 
+  height: 100%;
+  display: block;
+}
+.my-product-treatments-container .image{
+  padding-top: 100% !important;
+}
+@media (max-width:1023px){
+  .my-product-treatments-container .product__top{
+    flex-wrap:wrap;
+
+  }
+  .my-product-treatments-container .product__media-container{
+    max-width: 100%;
+    width:100%;
+     flex:auto;
+  }
+  .my-product-treatments-container .product__details{
+    width: 100%;
+    flex:auto;
+  }
+  .my-product-treatments-container .product__details .product__meta{
+    max-width:100%;
+    padding:50px 20px;
+  }
+}
+
+.treatments-my-block{
+  padding:50px 0;
+}
+.treatments-my-block .title{
+  margin-bottom:30px;
+
+}
+/***** end product treatments ****/
+
+
+
 h1,
 h2,
 h3,
