@@ -78,7 +78,7 @@
             "btn_margin_top": 0,
             "btn_full": false,
             "btn_style": "prime",
-            "text_width": 400,
+            "text_width": 1200,
             "text_align": "left"
           }
         },
@@ -98,7 +98,7 @@
             "btn_margin_top": 0,
             "btn_full": false,
             "btn_style": "prime",
-            "text_width": 400,
+            "text_width": 1200,
             "text_align": "left"
           }
         },
@@ -118,7 +118,7 @@
             "btn_margin_top": 0,
             "btn_full": false,
             "btn_style": "prime",
-            "text_width": 400,
+            "text_width": 1200,
             "text_align": "left"
           }
         }
