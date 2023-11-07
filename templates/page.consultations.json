@@ -1,0 +1,115 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_max_width": 700
+      }
+    },
+    "842f495e-39b1-46dc-b5a2-86ed67ddb916": {
+      "type": "section-image-baner",
+      "settings": {
+        "video": false,
+        "video_url": "",
+        "padding_x": 100,
+        "padding_y": 100,
+        "img": "shopify:\/\/shop_images\/black1.webp",
+        "color_text": "#fff",
+        "title": "CONSULTATIONS",
+        "title_font": "h5",
+        "title_padding_bottom": 20,
+        "subtitle": "<p>Douglas Pereira believes the key to achieving beautiful healthy-looking skin begins with a conversation about your skin’s history and its current condition. Your skin’s future awaits with a consultation with one of our skin experts.<\/p>",
+        "subtitle_padding_bottom": 0,
+        "btn_text": "Take the skincare regime",
+        "btn_url": "",
+        "btn_style": "prime",
+        "text_width": 600,
+        "text_align_item": "left",
+        "text_position": "normal",
+        "text_padding_top": 0,
+        "text_padding_bottom": 0
+      }
+    },
+    "d7abe965-d6a2-42e8-aa13-0f9eae97824b": {
+      "type": "section-custom-column",
+      "blocks": {
+        "1a724c7f-e019-484f-9c11-6bb2b045175e": {
+          "type": "item",
+          "settings": {
+            "img_scale": 100,
+            "img": "shopify:\/\/shop_images\/1.png",
+            "title": "the skincare regime builder",
+            "title_margin_top": 12,
+            "text": "<p>The core product collection is your everyday routine and has been formulated to suite all skin types, eliminating the challenge of choosing the right products for your skin. The system is straightforward and has minimal steps, so you don’t have to invest too much time looking after your skin but can have the confidence all bases<\/p>",
+            "text_margin_top": 0,
+            "btn_text": "MAKE A BOOKING",
+            "btn_url": "",
+            "btn_margin_top": 20,
+            "btn_full": true,
+            "btn_style": "prime",
+            "text_width": 700,
+            "text_align": "left"
+          }
+        },
+        "2fbbceed-7cb3-4860-9cd7-0f22e1722abb": {
+          "type": "item",
+          "settings": {
+            "img_scale": 100,
+            "img": "shopify:\/\/shop_images\/2.png",
+            "title": "the skincare regime builder",
+            "title_margin_top": 12,
+            "text": "<p>The core product collection is your everyday routine and has been formulated to suite all skin types, eliminating the challenge of choosing the right products for your skin. The system is straightforward and has minimal steps, so you don’t have to invest too much time looking after your skin but can have the confidence all bases<\/p>",
+            "text_margin_top": 0,
+            "btn_text": "MAKE A BOOKING",
+            "btn_url": "",
+            "btn_margin_top": 20,
+            "btn_full": true,
+            "btn_style": "prime",
+            "text_width": 700,
+            "text_align": "left"
+          }
+        },
+        "ad0ec109-5059-4922-a9b5-cf71e25ec302": {
+          "type": "item",
+          "settings": {
+            "img_scale": 100,
+            "img": "shopify:\/\/shop_images\/3.png",
+            "title": "the skincare regime builder",
+            "title_margin_top": 12,
+            "text": "<p>The core product collection is your everyday routine and has been formulated to suite all skin types, eliminating the challenge of choosing the right products for your skin. The system is straightforward and has minimal steps, so you don’t have to invest too much time looking after your skin but can have the confidence all bases<\/p>",
+            "text_margin_top": 0,
+            "btn_text": "MAKE A BOOKING",
+            "btn_url": "",
+            "btn_margin_top": 20,
+            "btn_full": true,
+            "btn_style": "prime",
+            "text_width": 700,
+            "text_align": "left"
+          }
+        }
+      },
+      "block_order": [
+        "1a724c7f-e019-484f-9c11-6bb2b045175e",
+        "2fbbceed-7cb3-4860-9cd7-0f22e1722abb",
+        "ad0ec109-5059-4922-a9b5-cf71e25ec302"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "column_gap": 0,
+        "bg": "#fff",
+        "color_text": "#000",
+        "title": "",
+        "text": "<p>We have four pathways to assist you with selecting your skincare needs and overcoming your skin challenges. Take the Online Skincare Regime Builder Questionnaire for your personalized homecare regime or book one of three consultations with our skin experts.<\/p><p> Douglas Pereira believes the key to achieving beautiful healthy-looking skin begins with a conversation about your skin’s history and its current condition. Your skin’s future is just one step away. <\/p><p>Select the below pathway that best suits you, and one of our skin experts will be in contact to start your skin journey.<\/p>",
+        "full_width": true,
+        "card_position": "space-between"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "842f495e-39b1-46dc-b5a2-86ed67ddb916",
+    "d7abe965-d6a2-42e8-aa13-0f9eae97824b"
+  ]
+}
