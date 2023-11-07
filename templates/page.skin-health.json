@@ -124,6 +124,16 @@
         "img_alignment_horizontal": "flex-start"
       }
     },
+    "8b5a6708-01a9-4c63-9cd6-889bc44a266d": {
+      "type": "section-best-ingredients",
+      "settings": {
+        "bg": "#212121",
+        "color": "#ffffff",
+        "title": "THE BEST OF THE BEST INGREDIENTS",
+        "text": "<p>Quality ingredients in the right dosage that are skin identical. <\/p><p>Our products are formulated with high concentrations of high-grade active ingredients scientifically proven to make a significant improvement in the health and appearance of skin. <\/p><p>The active ingredients are selected based on how they interact with each other, on skin, and within the formula itself. <\/p><p>The ingredient combination, delivery system, and formula of a well-designed product can optimise the effectiveness of its ingredients.<\/p>",
+        "img": "shopify:\/\/shop_images\/DP_SKIN_HEATH_IMAGE_5_ead19c18-9e07-410c-bf2f-c1b33e235831.png"
+      }
+    },
     "83b25282-6c65-439e-8bca-428ea3d6cf96": {
       "type": "section-image-text",
       "blocks": {
@@ -180,14 +190,32 @@
         "img_alignment_horizontal": "center"
       }
     },
-    "8b5a6708-01a9-4c63-9cd6-889bc44a266d": {
-      "type": "section-best-ingredients",
+    "85587947-23e5-43e8-bd1a-24d3f9e2c686": {
+      "type": "section-image-text",
+      "blocks": {
+        "5ae4547e-c272-462f-950f-d5bb2e8a5736": {
+          "type": "item",
+          "settings": {
+            "title": "SCIENTIFIC APPROACH",
+            "subtitle": "",
+            "text": "<p>Research and development, Science, Innovation, and Technology. <\/p><p>The human body and specifically the anatomy and physiology of the skin is our focus. Our research and development and the sciences behind our formulation have a direct correlation to how our skin response to the environment we live in and the ever-evolving modern lifestyle we lead. <\/p><p>Each formulation we create harnesses what we like to call “Skin Relevant”. By this, we mean the Science, Innovation, technology, and ingredients we use when formulating a product has a direct synergy to how our skin performs and functions. <\/p><p>We don’t get caught up in the latest fads and trends of the skincare world, but instead look to your skin and what is needs to achieve optimum health and radiance.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "5ae4547e-c272-462f-950f-d5bb2e8a5736"
+      ],
       "settings": {
         "bg": "#212121",
         "color": "#FFFFFF",
-        "title": "THE BEST OF THE BEST INGREDIENTS",
-        "text": "<p>Quality ingredients in the right dosage that are skin identical. <\/p><p>Our products are formulated with high concentrations of high-grade active ingredients scientifically proven to make a significant improvement in the health and appearance of skin. <\/p><p>The active ingredients are selected based on how they interact with each other, on skin, and within the formula itself. <\/p><p>The ingredient combination, delivery system, and formula of a well-designed product can optimise the effectiveness of its ingredients.<\/p>",
-        "img": "shopify:\/\/shop_images\/DP_SKIN_HEATH_IMAGE_5_ead19c18-9e07-410c-bf2f-c1b33e235831.png"
+        "pb": 50,
+        "pt": 50,
+        "img": "shopify:\/\/shop_images\/DP_SKIN_HEATH_IMAGE_4_1.png",
+        "img_height": 100,
+        "img_width": 100,
+        "img_alignment": "row-reverse",
+        "img_alignment_vertical": "flex-start",
+        "img_alignment_horizontal": "flex-start"
       }
     }
   },
@@ -197,8 +225,9 @@
     "08046961-db2d-4406-a66b-12054d8dcad8",
     "dadcc26f-6f9c-4b90-a138-1975baa31eca",
     "02966c31-505d-4306-9c81-4d9abd64fd5a",
+    "8b5a6708-01a9-4c63-9cd6-889bc44a266d",
     "83b25282-6c65-439e-8bca-428ea3d6cf96",
     "f5b22dc0-3e5c-4fc6-9867-6ca678b0677d",
-    "8b5a6708-01a9-4c63-9cd6-889bc44a266d"
+    "85587947-23e5-43e8-bd1a-24d3f9e2c686"
   ]
 }
