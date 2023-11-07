@@ -1,0 +1,108 @@
+{% style %}
+    .best-ingr-{{section.id}}{
+        padding:50px 0;
+        background:{{section.settings.bg}};
+    }
+    .best-ingr-{{section.id}} .title {
+        margin-bottom:20px;
+    }
+    .best-ingr-{{section.id}} .title h2{
+        text-align: center;
+        font-style: normal; /* Стиль шрифта: Обычный */
+        font-weight: normal; /* Вес шрифта: Обычный */
+        font-variant: normal; /* Вариант шрифта: Обычный */
+        font-size: 30px; /* Размер шрифта */
+        line-height: 100%; /* Межстрочное расстояние */
+        font-family: "Proxima Nova"; /* Название шрифта */
+
+        letter-spacing: 1.83px;
+        color:{{section.settings.color}};
+        text-transform: uppercase;
+    }
+    .best-ingr-{{section.id}} .text > *{
+        color:{{section.settings.color}};
+    }
+    .best-ingr-{{section.id}} .text p{
+        text-align: center;
+        font-style: normal; /* Стиль шрифта: Обычный */
+        font-weight: normal; /* Вес шрифта: Обычный */
+        font-stretch: 300; /* Номер шрифта */
+        font-size: 16px; /* Размер шрифта */
+        line-height: 20px; /* Межстрочное расстояние */
+        font-family: "Proxima Nova"; /* Название шрифта */
+
+        letter-spacing: 0px;
+        color:{{section.settings.color}};
+        margin-bottom:20px;
+    }
+    .best-ingr-{{section.id}} .text p:last-child{
+        margin-bottom:0;
+    }
+    .best-ingr-{{section.id}} .image {
+        display:flex;
+        justify-content:center;
+    }
+    .best-ingr-{{section.id}} .image img{
+        display:block;
+        width:100%;
+        height:100%;
+    }
+{% endstyle %}
+<div class="best-ingr best-ingr-{{section.id}}">
+    <div class="container">
+        <div class="best-ing__wrap">
+            <div class="title">
+                <h2>
+                    {{section.settings.title}}
+                </h2>
+            </div>
+            <div class="text">
+                {{section.settings.text}}
+            </div>
+            <div class="image">
+                <img src="{{section.settings.img | img_url: "master"}}" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+    {
+      "name": "section best ingredients",
+      "settings": [
+        {
+          "type": "color",
+          "id": "bg",
+          "label": "background",
+          "default": "#212121"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "color text",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "text"
+        },
+        {
+              "type": "image_picker",
+              "id": "img",
+              "label": "image"
+        }
+      ],
+      "presets": [
+        {
+          "name": "section best ingredients"
+        }
+      ]
+    }
+  {% endschema %}
