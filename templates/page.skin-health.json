@@ -179,6 +179,16 @@
         "img_alignment_vertical": "flex-start",
         "img_alignment_horizontal": "center"
       }
+    },
+    "8b5a6708-01a9-4c63-9cd6-889bc44a266d": {
+      "type": "section-best-ingredients",
+      "settings": {
+        "bg": "#212121",
+        "color": "#FFFFFF",
+        "title": "THE BEST OF THE BEST INGREDIENTS",
+        "text": "<p>Quality ingredients in the right dosage that are skin identical. <\/p><p>Our products are formulated with high concentrations of high-grade active ingredients scientifically proven to make a significant improvement in the health and appearance of skin. <\/p><p>The active ingredients are selected based on how they interact with each other, on skin, and within the formula itself. <\/p><p>The ingredient combination, delivery system, and formula of a well-designed product can optimise the effectiveness of its ingredients.<\/p>",
+        "img": "shopify:\/\/shop_images\/DP_SKIN_HEATH_IMAGE_5_ead19c18-9e07-410c-bf2f-c1b33e235831.png"
+      }
     }
   },
   "order": [
@@ -188,6 +198,7 @@
     "dadcc26f-6f9c-4b90-a138-1975baa31eca",
     "02966c31-505d-4306-9c81-4d9abd64fd5a",
     "83b25282-6c65-439e-8bca-428ea3d6cf96",
-    "f5b22dc0-3e5c-4fc6-9867-6ca678b0677d"
+    "f5b22dc0-3e5c-4fc6-9867-6ca678b0677d",
+    "8b5a6708-01a9-4c63-9cd6-889bc44a266d"
   ]
 }
