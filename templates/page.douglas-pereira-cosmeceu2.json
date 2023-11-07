@@ -140,12 +140,74 @@
         "full_width": false,
         "card_position": "normal"
       }
+    },
+    "d7610059-5a44-4ad3-89de-8a0f0da634ed": {
+      "type": "section-custom-column",
+      "blocks": {
+        "69365660-da67-4577-acf8-b919ec104f2e": {
+          "type": "item",
+          "settings": {
+            "img_scale": 150,
+            "img": "shopify:\/\/shop_images\/3.png",
+            "title": "MORNING ROUTINE",
+            "title_margin_top": 50,
+            "text": "<p>Four uncomplicated steps<\/p><p><\/p><p>Step 1: Universal cleanser <\/p><p>Step 2: Multi active day Serum <\/p><p>3: Universal moisturiser Step <\/p><p>4: SPF protect 50+<\/p>",
+            "text_margin_top": 0,
+            "price": "",
+            "price_margin_top": 0,
+            "btn_text": "",
+            "btn_url": "",
+            "btn_margin_top": 0,
+            "btn_full": false,
+            "btn_style": "prime",
+            "text_width": 1200,
+            "text_align": "right"
+          }
+        },
+        "ff707c27-5fa8-4166-9fab-05474db3591a": {
+          "type": "item",
+          "settings": {
+            "img_scale": 100,
+            "img": "shopify:\/\/shop_images\/3.png",
+            "title": "EVENING ROUTINE",
+            "title_margin_top": 50,
+            "text": "<p>Three uncomplicated steps Step <\/p><p><\/p><p>1: Universal cleanser Step <\/p><p>2: Recovery night serum Step <\/p><p>3: Universal moisturiser<\/p>",
+            "text_margin_top": 0,
+            "price": "",
+            "price_margin_top": 0,
+            "btn_text": "",
+            "btn_url": "",
+            "btn_margin_top": 0,
+            "btn_full": false,
+            "btn_style": "prime",
+            "text_width": 1200,
+            "text_align": "left"
+          }
+        }
+      },
+      "block_order": [
+        "69365660-da67-4577-acf8-b919ec104f2e",
+        "ff707c27-5fa8-4166-9fab-05474db3591a"
+      ],
+      "settings": {
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "column_gap": 34,
+        "bg": "#212121",
+        "color_text": "#ffffff",
+        "title": "YOUR UNCOMPLICATED ROUTINE",
+        "text": "<p>Keeping things simple for all skin types<\/p>",
+        "text_max_width": 600,
+        "full_width": false,
+        "card_position": "normal"
+      }
     }
   },
   "order": [
     "main",
     "b7394569-309d-4e4a-88d9-d2fb33780781",
     "edd1f691-8fec-4344-a2f1-a58356944dd7",
-    "15572b8a-834f-4482-8e77-44a05516d135"
+    "15572b8a-834f-4482-8e77-44a05516d135",
+    "d7610059-5a44-4ad3-89de-8a0f0da634ed"
   ]
 }
