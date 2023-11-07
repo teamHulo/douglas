@@ -53,10 +53,10 @@
         "pt": 50,
         "img": "shopify:\/\/shop_images\/DP_SKIN_HEALTH_Group_1.png",
         "img_height": 100,
-        "img_width": 100,
+        "img_width": 77,
         "img_alignment": "row",
         "img_alignment_vertical": "flex-start",
-        "img_alignment_horizontal": "flex-start"
+        "img_alignment_horizontal": "flex-end"
       }
     },
     "dadcc26f-6f9c-4b90-a138-1975baa31eca": {
@@ -113,7 +113,7 @@
       ],
       "settings": {
         "bg": "#212121",
-        "color": "#FFFFFF",
+        "color": "#ffffff",
         "pb": 50,
         "pt": 50,
         "img": "shopify:\/\/shop_images\/DAY_SERUM_30_ML_02_IMAGE_3.png",
@@ -141,7 +141,7 @@
       ],
       "settings": {
         "bg": "#212121",
-        "color": "#FFFFFF",
+        "color": "#ffffff",
         "pb": 50,
         "pt": 50,
         "img": "shopify:\/\/shop_images\/DP_SKIN_HEATH_IMAGE_6.png",
@@ -169,15 +169,15 @@
       ],
       "settings": {
         "bg": "#212121",
-        "color": "#FFFFFF",
+        "color": "#ffffff",
         "pb": 50,
         "pt": 50,
         "img": "shopify:\/\/shop_images\/DP_SKIN_HEATH_IMAGE_7.png",
         "img_height": 100,
-        "img_width": 100,
+        "img_width": 85,
         "img_alignment": "row",
         "img_alignment_vertical": "flex-start",
-        "img_alignment_horizontal": "flex-start"
+        "img_alignment_horizontal": "center"
       }
     }
   },

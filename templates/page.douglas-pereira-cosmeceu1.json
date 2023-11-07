@@ -2,11 +2,67 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
+        "content_max_width": 700
+      }
+    },
+    "c1d61efe-bf0a-4b6c-8050-d4011620df69": {
+      "type": "section-image-baner",
+      "settings": {
+        "video": false,
+        "video_url": "",
+        "padding_x": 100,
+        "padding_y": 100,
+        "img": "shopify:\/\/shop_images\/black1.webp",
+        "color_text": "#fff",
+        "title": "DOUGLAS PEREIRA COSMECEUTICALS",
+        "title_font": "h5",
+        "title_padding_bottom": 0,
+        "subtitle": "<p>We formulate skincare products that improves the health of skin cells, optimising their function, protects the skins barrier and counteract the effects that pollution, stress and ageing has on the skin.<\/p>",
+        "subtitle_padding_bottom": 0,
+        "btn_text": "Take the skincare regime",
+        "btn_url": "",
+        "btn_style": "prime",
+        "text_width": 660,
+        "text_align_item": "left",
+        "text_position": "normal",
+        "text_padding_top": 0,
+        "text_padding_bottom": 0
+      }
+    },
+    "f7cacbe4-ec6e-4a7b-9828-fb3c6a6805ed": {
+      "type": "section-image-text",
+      "blocks": {
+        "1107ac95-7d58-4c9c-8119-39d29e594913": {
+          "type": "item",
+          "settings": {
+            "title": "DOUGLAS PEREIRA",
+            "subtitle": "",
+            "text": "<p>Highly respected throughout the skincare, beauty, cosmetic and aesthetic medical world Douglas Pereira has been a part of the Australian beauty, skincare and wellness industry for nearly three decades.<\/p><p> He commenced his career at the young age of seventeen, working as a hands-on skin therapist in high-end day spas and skin clinics. He then progressed in his career to become a senior educator with leading international skincare groups, which saw him travel around Australia and abroad, educating on the fundamentals of the skin and luxury products.<\/p><p> After fourteen years of working with leading international brands, Douglas elevated his skills to become a dermal therapist and opened his first skin focus flagship dermal therapy clinic “Douglas Pereira Skin Health” in Sydney Australia. Where he treats an exclusive list of Australia and international clients.<\/p><p> In 2011 Douglas launch his first skincare range under his namesake. Working alongside some of Australia’s leading cosmeceutical formulators and using his years of practical, technical, and theoretical knowledge and drawing on his years of treating skin. His inspiration to create the range came from a need he saw in the skincare industry, for a range of luxury cosmeceutical grade skincare products and treatments that treats the skin based on dermal remodelling, barrier and DNA repair and counteract the effects that pollution, stress, and genetic ageing has on the skin. Twelve years on his brand has expanded into three ranges under the “Douglas Pereira Cosmeceuticals”<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1107ac95-7d58-4c9c-8119-39d29e594913"
+      ],
+      "settings": {
+        "bg": "#212121",
+        "color": "#FFFFFF",
+        "pb": 50,
+        "pt": 50,
+        "img": "shopify:\/\/shop_images\/SKIN-REMODELLING-TREATMENT.jpg",
+        "img_height": 100,
+        "img_width": 80,
+        "img_alignment": "row",
+        "img_alignment_vertical": "center",
+        "img_alignment_horizontal": "center"
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "c1d61efe-bf0a-4b6c-8050-d4011620df69",
+    "f7cacbe4-ec6e-4a7b-9828-fb3c6a6805ed"
   ]
 }
