@@ -69,11 +69,47 @@
             "img": "shopify:\/\/shop_images\/SKIN_FLUID_CHEEKS_02_d894a8bf-8a79-4075-925c-83b6e6fc91e8.png",
             "title": "SKIN FLUID SPF 30+",
             "title_margin_top": 20,
-            "text": "<p>SKIN FLUID SPF 30+ Providing the check and eyes with a flush of colour and definition. The Skin Fluid Cheeks and highlighter comes in three colour tones to enhance your inner glow.<\/p>",
+            "text": "<p>Providing the check and eyes with a flush of colour and definition. The Skin Fluid Cheeks and highlighter comes in three colour tones to enhance your inner glow.<\/p>",
             "text_margin_top": 0,
             "btn_text": "Discover",
             "btn_url": "",
-            "btn_margin_top": 0,
+            "btn_margin_top": 20,
+            "btn_full": false,
+            "btn_style": "secondary",
+            "text_width": 400,
+            "text_align": "center"
+          }
+        },
+        "a59d0020-453d-42c1-8e6b-cd8f08a9201f": {
+          "type": "item",
+          "settings": {
+            "img_scale": 100,
+            "img": "shopify:\/\/shop_images\/SKIN_FLUID_TINT_SPF_02.png",
+            "title": "SKIN FLUID SPF 30+",
+            "title_margin_top": 20,
+            "text": "<p>Beyond an average tinted moisturiser, the Skin Fluid SPF comes in three shades and is a five in one formulation that provides your skin with SPF protection, moisturisation, fights free radical damage, evens our colour tone, and smooths out textural imperfections. This lightweight formular has a foundation like finish that leaves your skin looking iridescently luminous, balances and protected.<\/p>",
+            "text_margin_top": 0,
+            "btn_text": "Discover",
+            "btn_url": "",
+            "btn_margin_top": 20,
+            "btn_full": false,
+            "btn_style": "secondary",
+            "text_width": 400,
+            "text_align": "center"
+          }
+        },
+        "1c378887-f9ff-41f5-a80f-480fff13bd38": {
+          "type": "item",
+          "settings": {
+            "img_scale": 100,
+            "img": "shopify:\/\/shop_images\/SKIN_FLUID_BRONZE_02_2.png",
+            "title": "SKIN FLUID BRONZE",
+            "title_margin_top": 20,
+            "text": "<p>SKIN FLUID BRONZE Delivering a sun kissed glow to the skin, this lightweight fluid can be used as an all over face bronzer or used to define and contour.<\/p>",
+            "text_margin_top": 0,
+            "btn_text": "Discover",
+            "btn_url": "",
+            "btn_margin_top": 20,
             "btn_full": false,
             "btn_style": "secondary",
             "text_width": 400,
@@ -82,7 +118,9 @@
         }
       },
       "block_order": [
-        "d436a8a2-387c-4be3-b915-309c564fd84b"
+        "d436a8a2-387c-4be3-b915-309c564fd84b",
+        "a59d0020-453d-42c1-8e6b-cd8f08a9201f",
+        "1c378887-f9ff-41f5-a80f-480fff13bd38"
       ],
       "settings": {
         "padding_top": 70,
