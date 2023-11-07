@@ -21,7 +21,7 @@
         "title_padding_bottom": 20,
         "subtitle": "<p>DOUGLAS PEREIRA MINERAL MAKEUP RANGE We believe makeup is an extension of your skincare and they should work in synergy to better your skins health.<\/p>",
         "subtitle_padding_bottom": 0,
-        "btn_text": "Take the skincare regime",
+        "btn_text": "",
         "btn_url": "",
         "btn_style": "prime",
         "text_width": 730,
@@ -141,7 +141,7 @@
       ],
       "settings": {
         "bg": "#212121",
-        "color": "#FFFFFF",
+        "color": "#ffffff",
         "pb": 50,
         "pt": 50,
         "img": "shopify:\/\/shop_images\/DP_SKIN_HEATH_IMAGE_4_1.png",
