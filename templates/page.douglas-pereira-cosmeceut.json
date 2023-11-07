@@ -27,7 +27,7 @@
         "text_width": 750,
         "text_align_item": "left",
         "text_position": "normal",
-        "text_padding_top": 0,
+        "text_padding_top": 40,
         "text_padding_bottom": 0
       }
     },
