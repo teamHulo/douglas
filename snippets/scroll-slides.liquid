@@ -50,7 +50,7 @@
     </div>
   </div>
 {% else  %}
-  {% if arraySize != 0 %}
+ {% comment %} {% if arraySize != 0 %}
     <div class="section-scroll-slides scroll-container">
       <div class="container">
         <div class="section-scroll__wrap ">
@@ -146,5 +146,43 @@
         </div>
       </div>
     </div>
+  {% endif %} {% endcomment %}
+  {% if arraySize != 0 %}
+    {% for value in product.metafields.custom.steps_text.value %}
+      {%  assign index = forloop.index0 %}
+      <div class="section-product-step">
+        <div class="container">
+          <div class="section-product-step__wrap">
+            <div class="left item">
+              <div class="left__wrap item__wrap">
+                <div class="title element-animation">
+                  <h2>
+                    {{product.metafields.custom.step_title.value[index]}}
+                  </h2>
+                </div>
+                <div class="text element-animation">
+                  <p>
+                    {{value}}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="right item">
+              <div class="right__wrap item__wrap">
+                <div class="image element-animation">
+                  {% for value in product.metafields.custom.steps_images.value %}
+                    {%if index == forloop.index0 %}
+                      <img src="{{ value | img_url : 'master' }}" alt="">
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
   {% endif %}
+
+
 {% endif %}

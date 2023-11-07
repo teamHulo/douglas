@@ -66,7 +66,7 @@
 
   
 
-{% paginate collections['all-product-not-treatments'].products by products_per_page %}
+{% paginate collection.products by products_per_page %}
       
         <div class="collection__container">
           <div class="collection__content">
@@ -100,7 +100,7 @@
                     {%- render 'active-filters' with results: collection -%}
                   </div>
                   <div class="collection__products collection__infinite-container">
-                    {% for product in collections['all-product-not-treatments'].products%}
+                    {% for product in collection.products%}
                       {% if product.type != 'treatments' %}
                         {%
                           render 'product-item' with

@@ -2245,7 +2245,81 @@ header .header__inner {
   max-width: 1440px;
   margin: 0 auto;
 }
+/****** product-step-item ****/
+.section-product-step{
+ /* padding:50px 0;*/
+}
+.section-product-step .title{
+  margin-bottom:30px;
+}
+.section-product-step .title h2{
+  text-align: left;
+  font-style: normal; /* Стиль шрифта: Обычный */
+  font-weight: normal; /* Вес шрифта: Обычный */
+  font-stretch: 300; /* Номер шрифта */
+  font-size: 40px; /* Размер шрифта */
+  line-height: 100%; /* Межстрочное расстояние */
+  /*font-family: "Helvetica Neue"; /* Название шрифта */
 
+  letter-spacing: 0px;
+  color: #000000;
+}
+.section-product-step .text p{
+  text-align: left;
+  font-style: normal; /* Стиль шрифта: Обычный */
+  font-weight: normal; /* Вес шрифта: Обычный */
+  font-variant: normal; /* Вариант шрифта: Обычный */
+  font-size: 16px; /* Размер шрифта */
+  line-height: 18px; /* Межстрочное расстояние */
+
+
+  letter-spacing: 0px;
+  color: #000000;
+}
+.section-product-step:nth-child(even){
+  background: rgba(244,244,244,1);
+}
+.section-product-step:nth-child(odd) .section-product-step__wrap{
+  flex-direction: row-reverse;
+}
+.section-product-step .container{
+  max-width: 2000px;
+  padding:0;
+}
+.section-product-step__wrap{
+  display: flex;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.section-product-step__wrap .item{
+  width: 50%;
+}
+.section-product-step__wrap .item img{
+  display:block;
+  width:100%;
+  height: 100%;
+}
+.section-product-step .left__wrap{
+  padding:50px 20px;
+  max-width: 619px;
+  margin:0 auto;
+}
+
+@media (max-width:767px){
+  .section-product-step__wrap .item{
+    width: 100%;
+  }
+  .section-product-step{
+    padding:50px 0;
+  }
+  
+  .section-product-step .left__wrap{
+    padding:50px 20px;
+    max-width: 619px;
+    margin:0 auto;
+  }
+}
+/****** end product step *****/
 /****************** section image text************************/
 
 /****************** end image text **************************/
