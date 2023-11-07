@@ -1,0 +1,312 @@
+<link rel="stylesheet" href="{{ 'custom-column.css' | asset_url }}">
+<style>
+#shopify-section-{{ section.id }}  .custom-column__wrapper {
+    display: flex;
+    justify-content: {{ section.settings.card_position }};
+    gap: {{ section.settings.column_gap }}px;
+}
+
+#shopify-section-{{ section.id }} {
+   background-color: {{ section.settings.bg }};
+   color: {{ section.settings.color_text }};
+   padding-top: {{ section.settings.padding_top }}px;
+   padding-bottom: {{ section.settings.padding_bottom }}px;
+}
+#shopify-section-{{ section.id }} .custom-column-card {
+    flex: 1;
+}
+#shopify-section-{{ section.id }} .section-title {
+    text-align: center;
+}
+
+{% for block in section.blocks %}
+    #shopify-section-{{ section.id }} .custom-column__text .loop-{{ forloop.index }} a {
+    {% case block.settings.text_align %}
+        {% when 'center' %}
+            margin: 0 auto;
+        {% when 'right' %}
+            margin-left: auto;
+        {% else %}
+            margin-left: inherit;
+    {% endcase %}
+    }
+{% endfor %}
+.section-title h2 {
+    text-align: center;
+    font-size: var(--font-size-30);
+    line-height: 20px ;
+    font-family: Proxima Nova;
+    letter-spacing: 1.83px;
+    text-transform: uppercase;
+}
+.section-title > div {
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+</style>
+
+<div class="custom-column container">
+    <div class="section-title">
+        <h2>{{ section.settings.title }}</h2>
+        <div>
+            <p>{{ section.settings.text }}</p>
+        </div>
+    </div>
+    <div class="custom-column__wrapper ">
+        {% for block in section.blocks %}
+            <div class="custom-column-card">
+                {% if block.settings.img != blank %}                 
+                    <div class="custom-column__img element-animation" style="padding-top: {{ block.settings.img_scale }}%">
+                        <img src="{{ block.settings.img | img_url: 'master'}}" alt="">
+                    </div>
+                {% endif %}
+                <div class="custom-column__text" style="text-align: {{ block.settings.text_align }}">
+                    <div class="wrapper element-animation" style="max-width: {{ block.settings.text_width }}px;">
+                        {% if block.settings.title != blank %}  
+                            <h2 style="margin-top: {{ block.settings.title_margin_top }}px;">{{ block.settings.title | upcase }}</h2>
+                        {% endif %}
+                        {% if block.settings.text != 'blank' %}
+                            <div style="margin-top: {{ block.settings.text_margin_top }}px;" class="custom-column__text-subtitle element-animation">{{ block.settings.text }}</div>
+                        {% endif %}
+                        {% if block.settings.btn_text != blank %}
+                            <div class="custom-column__btn loop-{{ forloop.index }}">
+                                <a href="{{ block.settings.btn_url }}" style="width: {{ block.settings.btn-full }}%;margin-top: {{ block.settings.btn_margin_top }}px;" class="a-btn element-animation {% if block.settings.btn_style == 'prime' %}prime{% endif %}{% if block.settings.btn_style == 'secondary' %}secondary{% endif %}">
+                                    {{ block.settings.btn_text }}
+                                </a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Custom column",
+        "settings": [
+            {
+                "type": "range",
+                "id": "padding_top",
+                "min": 0,
+                "max": 180,
+                "step": 2,
+                "unit": "px",
+                "label": "Section padding top",
+                "default": 0
+            }, 
+            {
+                "type": "range",
+                "id": "padding_bottom",
+                "min": 0,
+                "max": 180,
+                "step": 2,
+                "unit": "px",
+                "label": "Section padding bottom",
+                "default": 0
+            },
+            {
+                "type": "range",
+                "id": "column_gap",
+                "min": 0,
+                "max": 100,
+                "step": 2,
+                "unit": "px",
+                "label": "Column gap",
+                "default": 0
+            },
+            {
+                "type": "color",
+                "id": "bg",
+                "label": "Background color",
+                "default": "#fff"
+            },
+            {
+                "type": "color",
+                "id": "color_text",
+                "label": "Background color",
+                "default": "#000"
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title",
+                "default": "AN UNCOMPLICATED APPROACH"
+            },
+            {
+                "type": "richtext",
+                "id": "text",
+                "label": "Text",
+                "default": "<p>The range has been divided into three collections making it easy for you to navigate and select your products. Core, Supportive and Enhancement collections.</p>"
+            },
+            {
+                "type": "checkbox",
+                "id": "full_width",
+                "label": "Full width",
+                "default": false
+            },
+            {
+                "type": "select",
+                "id": "card_position",
+                "options": [
+                    {
+                        "value": "normal",
+                        "label": "Normal"
+                    },
+                    {
+                        "value": "center",
+                        "label": "Center"
+                    },
+                    {
+                        "value": "space-between",
+                        "label": "Space between"
+                    },
+                    {
+                        "value": "space-around",
+                        "label": "Space around"
+                    }
+                ],
+                "default": "normal",
+                "label": "Card position"
+            }
+        ],
+        "blocks": [
+            {
+                "name": "Item",
+                "type": "item",
+                "settings": [
+                    {
+                        "type": "range",
+                        "id": "img_scale",
+                        "min": 100,
+                        "max": 200,
+                        "step": 1,
+                        "default": 100,
+                        "unit": "px",
+                        "label": "Scale image"
+                    }, 
+                    {
+                        "type": "image_picker",
+                        "id": "img",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "text",
+                        "label": "Title",
+                        "id": "title",
+                        "default": "the skincare regime builder"
+                    },
+                    {
+                        "type": "range",
+                        "id": "title_margin_top",
+                        "min": 0,
+                        "max": 80,
+                        "step": 2,
+                        "default": 0,
+                        "unit": "px",
+                        "label": "Title margin top"
+                    }, 
+                    {
+                        "type": "richtext",
+                        "label": "Text",
+                        "id": "text",
+                        "default": "<p>The core product collection is your everyday routine and has been formulated to suite all skin types, eliminating the challenge of choosing the right products for your skin. The system is straightforward and has minimal steps, so you don’t have to invest too much time looking after your skin but can have the confidence all bases</p>"
+                    },
+                    {
+                        "type": "range",
+                        "id": "text_margin_top",
+                        "min": 0,
+                        "max": 80,
+                        "step": 2,
+                        "default": 0,
+                        "unit": "px",
+                        "label": "Text margin top"
+                    }, 
+                    {
+                        "type": "text",
+                        "label": "Button text",
+                        "id": "btn_text",
+                        "default": "Take the skincare regime"
+                    },
+                    {
+                        "type": "url",
+                        "label": "Button url",
+                        "id": "btn_url"
+                    },
+                    {
+                        "type": "range",
+                        "id": "btn_margin_top",
+                        "min": 0,
+                        "max": 80,
+                        "step": 2,
+                        "default": 0,
+                        "unit": "px",
+                        "label": "Button margin top"
+                    }, 
+                    {
+                        "type": "checkbox",
+                        "id": "btn_full",
+                        "label": "Full width button",
+                        "default": false
+                    },
+                    {
+                        "type": "select",
+                        "id": "btn_style",
+                        "options": [
+                            {
+                                "value": "prime",
+                                "label": "Prime"
+                            },
+                            {
+                                "value": "secondary",
+                                "label": "Secondary"
+                            }
+                        ],
+                        "default": "prime",
+                        "label": "Button style"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Block with text posution"
+                    }, 
+                    {
+                        "type": "range",
+                        "id": "text_width",
+                        "min": 200,
+                        "max": 1200,
+                        "step": 10,
+                        "default": 400,
+                        "unit": "px",
+                        "label": "Max width block with text"
+                    },
+                    {
+                        "type": "select",
+                        "id": "text_align",
+                        "options": [
+                            {
+                                "value": "left",
+                                "label": "Left"
+                            },
+                            {
+                                "value": "center",
+                                "label": "Center"
+                            },
+                            {
+                                "value": "right",
+                                "label": "Right"
+                            }
+                        ],
+                        "default": "left",
+                        "label": "Text align"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Custom column"
+            }
+        ]
+    }
+{% endschema %}
