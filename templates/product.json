@@ -105,6 +105,7 @@
         "template--20944504455450__850b7be8-89a5-4603-baa1-581412874671-heading-1",
         "template--20944504455450__850b7be8-89a5-4603-baa1-581412874671-subheading-1"
       ],
+      "disabled": true,
       "settings": {
         "image_1": "shopify:\/\/shop_images\/VITAMIN_B_-_01.png",
         "image_position": "right",
@@ -139,6 +140,7 @@
         "template--20944504455450__25dbc00c-bd45-450e-bf6b-3dfaf3c511c8-heading-1",
         "template--20944504455450__25dbc00c-bd45-450e-bf6b-3dfaf3c511c8-subheading-1"
       ],
+      "disabled": true,
       "settings": {
         "image_1": "shopify:\/\/shop_images\/VITAMIN_B_-_02.png",
         "image_position": "left",
@@ -173,6 +175,7 @@
         "template--20944504455450__a51ba352-abb9-4b32-a946-10e91f36b555-heading-1",
         "template--20944504455450__a51ba352-abb9-4b32-a946-10e91f36b555-subheading-1"
       ],
+      "disabled": true,
       "settings": {
         "image_1": "shopify:\/\/shop_images\/VITAMIN_B_-_03.png",
         "image_position": "right",
