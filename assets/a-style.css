@@ -2539,3 +2539,5 @@ option {
     font-size: 16px !important;
   }
 }
+
+.product__media-slide .media, .product__media-item .media{  border-radius: 0px;}
