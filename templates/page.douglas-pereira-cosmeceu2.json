@@ -82,6 +82,26 @@
             "text_align": "left"
           }
         },
+        "4c8f7abc-9f15-411d-82e7-a7d02dc3f959": {
+          "type": "item",
+          "settings": {
+            "img_scale": 100,
+            "img": "shopify:\/\/shop_images\/3.png",
+            "title": "CORE COLLECTION",
+            "title_margin_top": 50,
+            "text": "<p>The core product collection is your everyday routine and has been formulated to suite all skin types, eliminating the challenge of choosing the right products for your skin. <\/p><p>The system is straightforward and has minimal steps, so you don’t have to invest too much time looking after your skin but can have the confidence all bases<\/p>",
+            "text_margin_top": 0,
+            "price": "",
+            "price_margin_top": 0,
+            "btn_text": "",
+            "btn_url": "",
+            "btn_margin_top": 0,
+            "btn_full": false,
+            "btn_style": "prime",
+            "text_width": 400,
+            "text_align": "left"
+          }
+        },
         "f8732c33-408f-462c-a55e-8faef4546033": {
           "type": "item",
           "settings": {
@@ -105,12 +125,13 @@
       },
       "block_order": [
         "9997db7e-eefb-48e8-a309-2abf2ee53006",
+        "4c8f7abc-9f15-411d-82e7-a7d02dc3f959",
         "f8732c33-408f-462c-a55e-8faef4546033"
       ],
       "settings": {
         "padding_top": 50,
         "padding_bottom": 50,
-        "column_gap": 0,
+        "column_gap": 34,
         "bg": "#212121",
         "color_text": "#ffffff",
         "title": "AN UNCOMPLICATED APPROACH",
