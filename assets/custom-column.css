@@ -2,6 +2,9 @@
 .custom-column {
 
 }
+.custom-column__wrapper {
+    display: flex;
+}
 .custom-column-card {
     display: flex;
     flex-direction: column;
@@ -20,7 +23,7 @@
 }
 .custom-column__text h2 {
     font-size: var(--font-size-30);
-    line-height: 20px;
+    line-height: 1.2;
     font-family:  Proxima Nova;
     letter-spacing: 1.83px;
 }
@@ -51,4 +54,16 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+}
+
+@media(max-width: 768px) {
+    .custom-column__wrapper {
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+    .custom-column-card {
+        width: 100%;
+        max-width: 100%;
+        flex: auto !important;
+    }
 }

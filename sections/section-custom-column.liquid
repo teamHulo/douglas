@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="{{ 'custom-column.css' | asset_url }}">
 <style>
 #shopify-section-{{ section.id }}  .custom-column__wrapper {
-    display: flex;
     justify-content: {{ section.settings.card_position }};
     gap: {{ section.settings.column_gap }}px;
 }
