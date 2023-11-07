@@ -199,7 +199,7 @@
         "text": "<p>Keeping things simple for all skin types<\/p>",
         "text_max_width": 600,
         "full_width": false,
-        "card_position": "normal"
+        "card_position": "center"
       }
     }
   },
