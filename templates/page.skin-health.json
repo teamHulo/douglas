@@ -58,11 +58,49 @@
         "img_alignment_vertical": "flex-start",
         "img_alignment_horizontal": "flex-start"
       }
+    },
+    "dadcc26f-6f9c-4b90-a138-1975baa31eca": {
+      "type": "section-image-text",
+      "blocks": {
+        "1f2b2b2f-4622-43e6-8f94-b86638dad6be": {
+          "type": "item",
+          "settings": {
+            "title": "DOUGLAS PEREIRA MINERAL MAKEUP",
+            "subtitle": "Skincare as individual as you are",
+            "text": "<p>The Skin Health collection is a range of products that has been designed so you can create the perfect result driven homecare regime for your skin. <\/p><p>The collection takes a prescriptive approach to building a homecare regime. We have created the collection of products, so you can select the individual serums and supportive products to target your skin goals. <\/p><p>With so many products in the collection we understand it can be a little challenging for you to work out the best products for your skin. So, if you need a little advice and support to create your regime, we have four pathways to help you out. <\/p>"
+          }
+        },
+        "097d058f-4560-4268-b9f8-9efc9fc77f50": {
+          "type": "item",
+          "settings": {
+            "title": "DISCOVERING YOUR SKINS TRUE POTENTIAL",
+            "subtitle": "",
+            "text": "<p><a href=\"#\" title=\"#\">Online skincare regime builder questionnaire <\/a><\/p><p><a href=\"#\" title=\"#\">Complementary virtual consultation <\/a><\/p><p><a href=\"#\" title=\"#\">Complementary in clinic discovery consultation <\/a><\/p><p><a href=\"#\" title=\"#\">In clinic signature consultation<\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1f2b2b2f-4622-43e6-8f94-b86638dad6be",
+        "097d058f-4560-4268-b9f8-9efc9fc77f50"
+      ],
+      "settings": {
+        "bg": "#212121",
+        "color": "#FFFFFF",
+        "pb": 50,
+        "pt": 50,
+        "img": "shopify:\/\/shop_images\/DP_SKIN_HEALTH_IMAGE_2_1.png",
+        "img_height": 100,
+        "img_width": 100,
+        "img_alignment": "row-reverse",
+        "img_alignment_vertical": "flex-start",
+        "img_alignment_horizontal": "flex-start"
+      }
     }
   },
   "order": [
     "main",
     "0ebf1d86-267c-49e0-bd98-29d5bba62ce4",
-    "08046961-db2d-4406-a66b-12054d8dcad8"
+    "08046961-db2d-4406-a66b-12054d8dcad8",
+    "dadcc26f-6f9c-4b90-a138-1975baa31eca"
   ]
 }
