@@ -53,10 +53,10 @@
         "pt": 50,
         "img": "shopify:\/\/shop_images\/Step-3-insalon.jpg",
         "img_height": 100,
-        "img_width": 80,
+        "img_width": 82,
         "img_alignment": "row",
         "img_alignment_vertical": "center",
-        "img_alignment_horizontal": "center"
+        "img_alignment_horizontal": "flex-start"
       }
     }
   },
