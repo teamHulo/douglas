@@ -15,7 +15,7 @@
         "padding_x": 100,
         "padding_y": 100,
         "img": "shopify:\/\/shop_images\/DP_SKIN_HEATH_HEADER_1.png",
-        "color_text": "#fff",
+        "color_text": "#ffffff",
         "title": "DOUGLAS PEREIRA COSMECEUTICALS",
         "title_font": "h4",
         "title_padding_bottom": 0,
@@ -48,7 +48,7 @@
       ],
       "settings": {
         "bg": "#212121",
-        "color": "#FFFFFF",
+        "color": "#ffffff",
         "pb": 50,
         "pt": 50,
         "img": "shopify:\/\/shop_images\/Step-2-Consultation.jpg",
@@ -58,11 +58,39 @@
         "img_alignment_vertical": "center",
         "img_alignment_horizontal": "center"
       }
+    },
+    "18be4a48-5b71-437f-a496-adb21e4dc2b8": {
+      "type": "section-get-know",
+      "blocks": {
+        "c5acbcf1-0cbf-4e17-9511-4ff7f0e17b88": {
+          "type": "item",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/VITAMIN_B_-_02.png"
+          }
+        },
+        "bf9784fa-0228-4da4-add7-61affb0f470f": {
+          "type": "item",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/DP_SKIN_HEALTH_IMAGE_2_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "c5acbcf1-0cbf-4e17-9511-4ff7f0e17b88",
+        "bf9784fa-0228-4da4-add7-61affb0f470f"
+      ],
+      "settings": {
+        "bg": "#212121",
+        "color": "#FFFFFF",
+        "title": "GET KNOW OUR TWO RANGES",
+        "text": "<p>We know choosing the correct products for your skin, budget and lifestyle can be challenging.<\/p><p> We have created two different ranges each with their own identity, so you can find the best skincare solutions for you<\/p>"
+      }
     }
   },
   "order": [
     "main",
     "06af0194-c5f4-412c-8948-c9bed88c6e3e",
-    "d62a52e3-02a1-48cb-ac7d-ce46dfeb993c"
+    "d62a52e3-02a1-48cb-ac7d-ce46dfeb993c",
+    "18be4a48-5b71-437f-a496-adb21e4dc2b8"
   ]
 }
