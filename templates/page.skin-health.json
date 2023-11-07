@@ -151,6 +151,34 @@
         "img_alignment_vertical": "flex-start",
         "img_alignment_horizontal": "flex-start"
       }
+    },
+    "f5b22dc0-3e5c-4fc6-9867-6ca678b0677d": {
+      "type": "section-image-text",
+      "blocks": {
+        "5fe6da60-906a-449b-882d-a8eb541ed3eb": {
+          "type": "item",
+          "settings": {
+            "title": "ACTIVE DELIVERY SYSTEM",
+            "subtitle": "Triphasic Bio-Active Delivery System",
+            "text": "<p>Using our exclusive Triphasic Bio-Active delivery system (TBA) in our formulations, increases the penetration and delivery of the bio-actives for accelerated reversal of skin damage & scar tissue, inhibiting free radical assault to neutralise further ageing, and assist with treating your skin challenges. <\/p><p>The key science behind the Triphasic Bio-Active delivery system (TBA), is our lipophilic compound that aids our bio-actives ability to create cellular change by binding to the lipophilic cell cavity, assisting optimal integrity & delivery of all supporting actives in each product. <\/p><p>The lipophilic compound is attracted to the naturally produced oils & the phospholipid bilayer of the skin cells within the intercellular & extracellular matrix, in conjunction with naturally derived emulsifiers that provide vital biomimetic liquid crystalline structures, phospholipids & sphingolipids that greatly enhance and rebuild the lamellar structure surrounding the cells ‘like the mortar that surrounds bricks.’ Their physiological nature not only restores hydration but also offer long term correction & active delivery enhancement. <\/p><p>This function in each of our products is a major component in scientifically delivering the active ingredients to where they best perform.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "5fe6da60-906a-449b-882d-a8eb541ed3eb"
+      ],
+      "settings": {
+        "bg": "#212121",
+        "color": "#FFFFFF",
+        "pb": 50,
+        "pt": 50,
+        "img": "shopify:\/\/shop_images\/DP_SKIN_HEATH_IMAGE_7.png",
+        "img_height": 100,
+        "img_width": 100,
+        "img_alignment": "row",
+        "img_alignment_vertical": "flex-start",
+        "img_alignment_horizontal": "flex-start"
+      }
     }
   },
   "order": [
@@ -159,6 +187,7 @@
     "08046961-db2d-4406-a66b-12054d8dcad8",
     "dadcc26f-6f9c-4b90-a138-1975baa31eca",
     "02966c31-505d-4306-9c81-4d9abd64fd5a",
-    "83b25282-6c65-439e-8bca-428ea3d6cf96"
+    "83b25282-6c65-439e-8bca-428ea3d6cf96",
+    "f5b22dc0-3e5c-4fc6-9867-6ca678b0677d"
   ]
 }
