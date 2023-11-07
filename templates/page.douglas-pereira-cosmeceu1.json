@@ -49,8 +49,8 @@
       "settings": {
         "bg": "#212121",
         "color": "#ffffff",
-        "pb": 50,
-        "pt": 0,
+        "pb": 0,
+        "pt": 54,
         "img": "shopify:\/\/shop_images\/SKIN-REMODELLING-TREATMENT.jpg",
         "img_height": 100,
         "img_width": 80,
