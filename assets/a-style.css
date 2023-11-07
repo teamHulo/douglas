@@ -11,6 +11,7 @@ h3,
 h4,
 h5 {
   font-family: Proxima Nova;
+  letter-spacing: 0.3 !important;
 }
 
 p,
@@ -22,6 +23,7 @@ select,
 textarea,
 option {
   font-family: Raleway;
+  font-size: 14px !important;
 }
 /* 
 :root {
@@ -2399,3 +2401,24 @@ header .header__inner {
 /****************** section image text************************/
 
 /****************** end image text **************************/
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  
+  letter-spacing: 0.3 !important;
+}
+
+p,
+span,
+a,
+label,
+input,
+select,
+textarea,
+option {
+  
+  font-size: 14px !important;
+}
