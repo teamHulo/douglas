@@ -1874,7 +1874,7 @@ header .header__inner {
   gap: clamp(30px, 3.125vw, 60px) 2%;
 }
 .collection-categories .product__list .product-item {
-  width: 23%;
+  width: 32%;
 }
 .collection-categ__wrap {
   max-width: 1280px;
