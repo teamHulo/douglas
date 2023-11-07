@@ -138,7 +138,7 @@
         "text": "",
         "text_max_width": 1200,
         "full_width": false,
-        "card_position": "normal"
+        "card_position": "center"
       }
     }
   },
