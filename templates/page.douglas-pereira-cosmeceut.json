@@ -18,7 +18,7 @@
         "color_text": "#ffffff",
         "title": "DOUGLAS PEREIRA COSMECEUTICALS",
         "title_font": "h4",
-        "title_padding_bottom": 0,
+        "title_padding_bottom": 30,
         "subtitle": "<p>We formulate skincare products that improves the health of skin cells, optimising their function, protects the skins barrier and counteract the effects that pollution, stress and ageing has on the skin.<\/p>",
         "subtitle_padding_bottom": 0,
         "btn_text": "Take the skincare regime",
@@ -27,8 +27,8 @@
         "text_width": 750,
         "text_align_item": "left",
         "text_position": "normal",
-        "text_padding_top": 40,
-        "text_padding_bottom": 40
+        "text_padding_top": 0,
+        "text_padding_bottom": 2
       }
     },
     "d62a52e3-02a1-48cb-ac7d-ce46dfeb993c": {
