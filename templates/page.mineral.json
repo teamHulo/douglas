@@ -114,8 +114,8 @@
       "settings": {
         "bg": "#212121",
         "color": "#ffffff",
-        "pb": 50,
-        "pt": 1,
+        "pb": 1,
+        "pt": 50,
         "img": "shopify:\/\/shop_images\/SKIN_FLUID_CHEEKS_04.png",
         "img_height": 100,
         "img_width": 100,
