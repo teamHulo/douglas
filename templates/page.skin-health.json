@@ -15,7 +15,7 @@
         "padding_x": 0,
         "padding_y": 74,
         "img": "shopify:\/\/shop_images\/DP_SKIN_HEATH_HEADER_1.png",
-        "color_text": "#fff",
+        "color_text": "#ffffff",
         "title": "DOUGLAS PEREIRA MINERAL MAKEUP RANGE",
         "title_font": "h4",
         "title_padding_bottom": 20,
@@ -48,7 +48,7 @@
       ],
       "settings": {
         "bg": "#212121",
-        "color": "#FFFFFF",
+        "color": "#ffffff",
         "pb": 50,
         "pt": 50,
         "img": "shopify:\/\/shop_images\/DP_SKIN_HEALTH_Group_1.png",
@@ -85,7 +85,7 @@
       ],
       "settings": {
         "bg": "#212121",
-        "color": "#FFFFFF",
+        "color": "#ffffff",
         "pb": 50,
         "pt": 50,
         "img": "shopify:\/\/shop_images\/DP_SKIN_HEALTH_IMAGE_2_1.png",
@@ -95,12 +95,41 @@
         "img_alignment_vertical": "flex-start",
         "img_alignment_horizontal": "flex-start"
       }
+    },
+    "02966c31-505d-4306-9c81-4d9abd64fd5a": {
+      "type": "section-image-text",
+      "blocks": {
+        "11486aa1-ffc7-499a-a8b3-9bcc238c887f": {
+          "type": "item",
+          "settings": {
+            "title": "SCIENCE AND LUXURY",
+            "subtitle": "",
+            "text": "<p>Elevating scientific cosmeceutical skincare with a luxury experience is the essence of the Douglas Pereira Skin Health range. Each product we formulate begins with five key principals. <\/p><p>SCIENTIFIC APPROACH <\/p><p>Research and development, Science, Innovation, and Technology <\/p><p>THE BEST OF THE BEST INGREDIENTS <\/p><p>Quality ingredients in the right dosage that are skin identical <\/p><p>SKIN INTEGRITY & RESILIENCE<\/p><p> Supporting the skins barrier <\/p><p>ACTIVE DELIVERY SYSTEM <\/p><p>Triphasic Bio-Active Delivery <\/p><p>System LUXURY EXPERIENCES <\/p><p>The fusion of cosmeceutical skincare the experience of luxury<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "11486aa1-ffc7-499a-a8b3-9bcc238c887f"
+      ],
+      "settings": {
+        "bg": "#212121",
+        "color": "#FFFFFF",
+        "pb": 50,
+        "pt": 50,
+        "img": "shopify:\/\/shop_images\/DAY_SERUM_30_ML_02_IMAGE_3.png",
+        "img_height": 100,
+        "img_width": 100,
+        "img_alignment": "row",
+        "img_alignment_vertical": "flex-start",
+        "img_alignment_horizontal": "flex-start"
+      }
     }
   },
   "order": [
     "main",
     "0ebf1d86-267c-49e0-bd98-29d5bba62ce4",
     "08046961-db2d-4406-a66b-12054d8dcad8",
-    "dadcc26f-6f9c-4b90-a138-1975baa31eca"
+    "dadcc26f-6f9c-4b90-a138-1975baa31eca",
+    "02966c31-505d-4306-9c81-4d9abd64fd5a"
   ]
 }
