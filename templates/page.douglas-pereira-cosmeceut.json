@@ -55,7 +55,7 @@
         "img_height": 100,
         "img_width": 100,
         "img_alignment": "row",
-        "img_alignment_vertical": "flex-start",
+        "img_alignment_vertical": "center",
         "img_alignment_horizontal": "flex-start"
       }
     }
