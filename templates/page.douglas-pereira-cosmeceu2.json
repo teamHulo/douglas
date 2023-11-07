@@ -129,8 +129,8 @@
         "f8732c33-408f-462c-a55e-8faef4546033"
       ],
       "settings": {
-        "padding_top": 50,
-        "padding_bottom": 50,
+        "padding_top": 100,
+        "padding_bottom": 100,
         "column_gap": 34,
         "bg": "#212121",
         "color_text": "#ffffff",
