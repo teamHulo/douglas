@@ -59,6 +59,43 @@
         "img_alignment_horizontal": "flex-start"
       }
     },
+    "f425d34a-d7be-4f46-8dc5-e4c9eb28c5a0": {
+      "type": "section-custom-column",
+      "blocks": {
+        "d436a8a2-387c-4be3-b915-309c564fd84b": {
+          "type": "item",
+          "settings": {
+            "img_scale": 100,
+            "img": "shopify:\/\/shop_images\/SKIN_FLUID_CHEEKS_02_d894a8bf-8a79-4075-925c-83b6e6fc91e8.png",
+            "title": "SKIN FLUID SPF 30+",
+            "title_margin_top": 20,
+            "text": "<p>SKIN FLUID SPF 30+ Providing the check and eyes with a flush of colour and definition. The Skin Fluid Cheeks and highlighter comes in three colour tones to enhance your inner glow.<\/p>",
+            "text_margin_top": 0,
+            "btn_text": "Discover",
+            "btn_url": "",
+            "btn_margin_top": 0,
+            "btn_full": false,
+            "btn_style": "secondary",
+            "text_width": 400,
+            "text_align": "center"
+          }
+        }
+      },
+      "block_order": [
+        "d436a8a2-387c-4be3-b915-309c564fd84b"
+      ],
+      "settings": {
+        "padding_top": 70,
+        "padding_bottom": 0,
+        "column_gap": 0,
+        "bg": "#212121",
+        "color_text": "#ffffff",
+        "title": "MINERAL MAKEUP",
+        "text": "<p>Makeup that’s an extension of your skincare<\/p>",
+        "full_width": false,
+        "card_position": "center"
+      }
+    },
     "f06bf474-7adf-4189-9ca2-7bcca3c39f84": {
       "type": "section-image-text",
       "blocks": {
@@ -129,6 +166,7 @@
     "main",
     "52e8bd89-b907-4a29-8d50-e9f455043794",
     "62ea5548-80ac-4aa7-8bf4-4134b9bb4e87",
+    "f425d34a-d7be-4f46-8dc5-e4c9eb28c5a0",
     "f06bf474-7adf-4189-9ca2-7bcca3c39f84",
     "be9f8166-66ee-47c2-a6dd-b06e11cf4f9c"
   ]
