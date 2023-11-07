@@ -129,7 +129,7 @@
         "277f13ca-3988-4a62-83d9-6dc2f4064ae1"
       ],
       "settings": {
-        "padding_top": 50,
+        "padding_top": 0,
         "padding_bottom": 50,
         "column_gap": 38,
         "bg": "#212121",
