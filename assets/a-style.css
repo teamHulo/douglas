@@ -882,7 +882,7 @@ header .header__inner {
   border: none !important;
   outline: 0;
   box-shadow: none !important;
-
+  min-height: 0px !important;
   display: flex;
   height: 100%;
   align-items: center;
@@ -931,7 +931,7 @@ header .header__inner {
 .custom__footer .links__wrap .title h2 {
   color: #fff;
   font-family: Proxima Nova;
-  font-size: var(--font-size-16);
+  font-size: var(--font-size-16) !important;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
