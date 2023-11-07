@@ -30,10 +30,39 @@
         "text_padding_top": 0,
         "text_padding_bottom": 0
       }
+    },
+    "d62a52e3-02a1-48cb-ac7d-ce46dfeb993c": {
+      "type": "section-image-text",
+      "blocks": {
+        "a3f98b80-5885-4ed3-aa27-fb6c6c05e862": {
+          "type": "item",
+          "settings": {
+            "title": "DOUGLAS PEREIRA COSMECEUTICALS",
+            "subtitle": "",
+            "text": "<p>DOUGLAS PEREIRA COSMECEUTICALS Douglas Pereira Cosmeceuticals is a skincare brand that strive to boldly transcend the traditional realms of the skincare Industery, by not getting caught up in the latest fads and trends, but instead, we formulate skincare products that improves the health of skin cells, optimising their function, protects the skins barrier and counteract the effects that pollution, stress and ageing has on the skin. If we were to define the philosophy behind ‘Douglas Pereira Cosmeceuticals’ in a few words, it would be. ‘We take a holistic approach alongside scientifically – innovative formulations, that work in conjunction with your skin’s biology.’ Our formulations are skin identical, work deeply through the multiple layers of the skin, relate and have relevance to each of the key skin function and the way they perform. By formulating products that work with your skins biology we can achieve effective visible, long-term results that will transform the health of your skin.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "a3f98b80-5885-4ed3-aa27-fb6c6c05e862"
+      ],
+      "settings": {
+        "bg": "#212121",
+        "color": "#FFFFFF",
+        "pb": 50,
+        "pt": 50,
+        "img": "shopify:\/\/shop_images\/Step-2-Consultation.jpg",
+        "img_height": 100,
+        "img_width": 100,
+        "img_alignment": "row",
+        "img_alignment_vertical": "flex-start",
+        "img_alignment_horizontal": "flex-start"
+      }
     }
   },
   "order": [
     "main",
-    "06af0194-c5f4-412c-8948-c9bed88c6e3e"
+    "06af0194-c5f4-412c-8948-c9bed88c6e3e",
+    "d62a52e3-02a1-48cb-ac7d-ce46dfeb993c"
   ]
 }
