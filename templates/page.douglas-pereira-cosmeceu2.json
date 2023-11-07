@@ -58,11 +58,73 @@
         "img_alignment_vertical": "center",
         "img_alignment_horizontal": "flex-start"
       }
+    },
+    "15572b8a-834f-4482-8e77-44a05516d135": {
+      "type": "section-custom-column",
+      "blocks": {
+        "9997db7e-eefb-48e8-a309-2abf2ee53006": {
+          "type": "item",
+          "settings": {
+            "img_scale": 100,
+            "img": "shopify:\/\/shop_images\/3.png",
+            "title": "CORE COLLECTION",
+            "title_margin_top": 50,
+            "text": "<p>The core product collection is your everyday routine and has been formulated to suite all skin types, eliminating the challenge of choosing the right products for your skin. <\/p><p>The system is straightforward and has minimal steps, so you don’t have to invest too much time looking after your skin but can have the confidence all bases<\/p>",
+            "text_margin_top": 0,
+            "price": "PRICE: COMPLEMENTARY | DURATION 30MIN",
+            "price_margin_top": 0,
+            "btn_text": "Take the skincare regime",
+            "btn_url": "",
+            "btn_margin_top": 0,
+            "btn_full": false,
+            "btn_style": "prime",
+            "text_width": 400,
+            "text_align": "left"
+          }
+        },
+        "f8732c33-408f-462c-a55e-8faef4546033": {
+          "type": "item",
+          "settings": {
+            "img_scale": 100,
+            "img": "shopify:\/\/shop_images\/3.png",
+            "title": "CORE COLLECTION",
+            "title_margin_top": 50,
+            "text": "<p>The core product collection is your everyday routine and has been formulated to suite all skin types, eliminating the challenge of choosing the right products for your skin. <\/p><p>The system is straightforward and has minimal steps, so you don’t have to invest too much time looking after your skin but can have the confidence all bases<\/p>",
+            "text_margin_top": 0,
+            "price": "PRICE: COMPLEMENTARY | DURATION 30MIN",
+            "price_margin_top": 0,
+            "btn_text": "Take the skincare regime",
+            "btn_url": "",
+            "btn_margin_top": 0,
+            "btn_full": false,
+            "btn_style": "prime",
+            "text_width": 400,
+            "text_align": "left"
+          }
+        }
+      },
+      "block_order": [
+        "9997db7e-eefb-48e8-a309-2abf2ee53006",
+        "f8732c33-408f-462c-a55e-8faef4546033"
+      ],
+      "settings": {
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "column_gap": 0,
+        "bg": "#212121",
+        "color_text": "#ffffff",
+        "title": "AN UNCOMPLICATED APPROACH",
+        "text": "<p>The range has been divided into three collections making it easy for you to navigate and select your products. <\/p><p>Core, Supportive and Enhancement collections.<\/p>",
+        "text_max_width": 600,
+        "full_width": false,
+        "card_position": "normal"
+      }
     }
   },
   "order": [
     "main",
     "b7394569-309d-4e4a-88d9-d2fb33780781",
-    "edd1f691-8fec-4344-a2f1-a58356944dd7"
+    "edd1f691-8fec-4344-a2f1-a58356944dd7",
+    "15572b8a-834f-4482-8e77-44a05516d135"
   ]
 }
