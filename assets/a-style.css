@@ -2440,7 +2440,7 @@ header .header__inner {
   justify-content: center;
 }
 .my-product-treatments-container .product__details .product__meta{
-  max-width: 536px;
+  max-width: 700px;
   padding:50px;
 }
 .my-product-treatments-container .product__media, .my-product-treatments-container .product__media-item , .my-product-treatments-container .media , .my-product-treatments-container .media a, .my-product-treatments-container  .image{ 
