@@ -166,7 +166,7 @@ body::-webkit-scrollbar {
   padding: 0 clamp(20px, 3.125vw, 60px) !important;
   width: max-content;
   border-radius: 0px !important;
-
+  max-width: 100%;
   font-family: Proxima Nova !important;
   font-size: var(--font-size-16) !important;
   font-style: normal !important;
@@ -2320,6 +2320,82 @@ header .header__inner {
   }
 }
 /****** end product step *****/
+/**** step step-regime ****/
+.step-regime .title{
+  margin:0;
+}
+.step-regime .container{
+  max-width:2000px;
+  padding:0;
+}
+.step-regime .title h2{
+  text-align: center;
+  font-style: normal; /* Стиль шрифта: Обычный */
+  font-weight: normal; /* Вес шрифта: Обычный */
+  font-variant: normal; /* Вариант шрифта: Обычный */
+  font-size: 30px; /* Размер шрифта */
+  line-height: 100%; /* Межстрочное расстояние */
+  font-family: "Proxima Nova"; /* Название шрифта */
+
+  letter-spacing: 1.83px;
+  text-transform: uppercase;
+}
+.step-regime .text{
+  max-width:700px;
+  margin: 0 auto;
+}
+.step-regime .text p{
+  text-align: center;
+  font-style: normal; /* Стиль шрифта: Обычный */
+  font-weight: normal; /* Вес шрифта: Обычный */
+  font-stretch: 300; /* Номер шрифта */
+  font-size: 20px; /* Размер шрифта */
+  line-height: 20px; /* Межстрочное расстояние */
+  font-family: "Proxima Nova"; /* Название шрифта */
+
+  letter-spacing: 0px;
+  
+}
+.step-regime .block .text p{
+  text-align: left;
+}
+.step-regime .block:nth-child(even) .block__wrap{
+  flex-direction: row-reverse;
+}
+.step-regime .block{
+  padding:50px 0;
+}
+
+.step-regime .block .left__wrap {
+  max-width:600px;
+  padding:0 20px;
+  margin:0 auto
+}
+.step-regime .block__wrap .title{
+  margin-bottom:20px;
+}
+.step-regime .block__wrap .title h2{
+  text-align: left;
+}
+.step-regime .block__wrap{
+  display:flex;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.step-regime .item{
+  width: 50%;
+}
+.step-regime .item img{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width:767px){
+  .step-regime .item{
+    width: 100%;
+  }
+}
+/**** end step-regime ****/
 /****************** section image text************************/
 
 /****************** end image text **************************/

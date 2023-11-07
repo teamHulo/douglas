@@ -1,0 +1,113 @@
+{% style %}
+    .step-regime-{{section.id}}{
+        background:{{section.settings.bg}}
+    }
+    .step-regime-{{section.id}} .step-regime__wrap > *{
+        color:{{section.settings.color}};
+    }
+    .step-regime-{{section.id}}  .title h2{
+        color:{{section.settings.color}};
+    }
+    .step-regime-{{section.id}} .text p{
+        color:{{section.settings.color}};
+    }
+{% endstyle %}
+<div class="step-regime step-regime-{{section.id}}">
+    <div class="container">
+        <div class="step-regime__wrap">
+            <div class="title element-animation">
+                <h2>
+                    {{section.settings.title}}
+                </h2>
+            </div>
+            <div class="text element-animation">
+                {{section.settings.text}}
+            </div>
+        </div>
+        <div class="block-list">
+            {% for block in section.blocks %}
+                <div class="block">
+                    <div class="block__wrap">
+                        <div class="left item">
+                            <div class="left__wrap item__wrap">
+                                <div class="title element-animation">
+                                    <h2>
+                                        {{block.settings.title}}
+                                    </h2>
+                                </div>
+                                <div class="text element-animation">
+                                    {{block.settings.text}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right item">
+                            <div class="right  item__wrap">
+                                <div class="image element-animation">
+                                    <img src="{{block.settings.img | img_url: 'master'}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+    {
+      "name": "section step regime",
+      "settings": [
+        {
+          "type": "color",
+          "id": "bg",
+          "label": "background",
+          "default": "#212121"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "color text",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "text"
+        }
+      ],
+      "blocks": [
+        {
+          "name": "image",
+          "type": "item",
+          "settings": [
+            {
+              "type": "image_picker",
+              "id": "img",
+              "label": "image"
+            },{
+                "type": "text",
+                "id": "title",
+                "label": "title"
+                },
+                {
+                "type": "richtext",
+                "id": "text",
+                "label": "text"
+                }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "section step regime"
+        }
+      ]
+    }
+  {% endschema %}
