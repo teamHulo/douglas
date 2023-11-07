@@ -49,13 +49,13 @@
       "settings": {
         "bg": "#212121",
         "color": "#ffffff",
-        "pb": 0,
-        "pt": 54,
+        "pb": 50,
+        "pt": 50,
         "img": "shopify:\/\/shop_images\/SKIN-REMODELLING-TREATMENT.jpg",
-        "img_height": 75,
-        "img_width": 100,
+        "img_height": 100,
+        "img_width": 77,
         "img_alignment": "row",
-        "img_alignment_vertical": "flex-end",
+        "img_alignment_vertical": "center",
         "img_alignment_horizontal": "center"
       }
     }
