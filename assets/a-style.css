@@ -2408,8 +2408,8 @@ h3,
 h4,
 h5 {
   
-  letter-spacing: 0.3px !important;
-  text-decoration: uppercase !important;
+  letter-spacing: .2rem !important;
+  text-transform: uppercase !important;
 }
 h1 {
   font-size: 40px !important;
