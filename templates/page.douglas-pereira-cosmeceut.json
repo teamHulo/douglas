@@ -93,16 +93,16 @@
           "type": "item",
           "settings": {
             "img_scale": 100,
-            "title": "the skincare regime builder",
+            "title": "DOUGLAS PEREIRA SKIN SCIENCE",
             "title_margin_top": 0,
-            "text": "<p>The core product collection is your everyday routine and has been formulated to suite all skin types, eliminating the challenge of choosing the right products for your skin. The system is straightforward and has minimal steps, so you don’t have to invest too much time looking after your skin but can have the confidence all bases<\/p>",
+            "text": "<p>An uncomplicated skincare collection, with complex formulations for those looking for a simple routine.<\/p>",
             "text_margin_top": 0,
             "btn_text": "Take the skincare regime",
             "btn_url": "",
             "btn_margin_top": 0,
             "btn_full": false,
             "btn_style": "secondary",
-            "text_width": 400,
+            "text_width": 1200,
             "text_align": "right"
           }
         },
@@ -110,16 +110,16 @@
           "type": "item",
           "settings": {
             "img_scale": 100,
-            "title": "the skincare regime builder",
+            "title": "DOUGLAS PEREIRA SKIN HEALTH",
             "title_margin_top": 0,
-            "text": "<p>The core product collection is your everyday routine and has been formulated to suite all skin types, eliminating the challenge of choosing the right products for your skin. The system is straightforward and has minimal steps, so you don’t have to invest too much time looking after your skin but can have the confidence all bases<\/p>",
+            "text": "<p> Douglas Pereira Skin Health A premium prescriptive collection of advanced products for a skin savvy user.<\/p>",
             "text_margin_top": 0,
             "btn_text": "Take the skincare regime",
             "btn_url": "",
             "btn_margin_top": 0,
             "btn_full": false,
             "btn_style": "secondary",
-            "text_width": 400,
+            "text_width": 1200,
             "text_align": "left"
           }
         }
@@ -131,7 +131,7 @@
       "settings": {
         "padding_top": 50,
         "padding_bottom": 50,
-        "column_gap": 0,
+        "column_gap": 38,
         "bg": "#212121",
         "color_text": "#ffffff",
         "title": "",
