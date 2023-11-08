@@ -5,7 +5,7 @@
     "f2587122-3f99-486a-b96c-f7a27be41972": {
       "type": "section-image-baner",
       "settings": {
-        "video": false,
+        "video": true,
         "video_url": "",
         "padding_x": 0,
         "padding_y": 0,

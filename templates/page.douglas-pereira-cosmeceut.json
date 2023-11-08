@@ -47,7 +47,7 @@
         "a3f98b80-5885-4ed3-aa27-fb6c6c05e862"
       ],
       "settings": {
-        "bg": "#212121",
+        "bg": "#000000",
         "color": "#ffffff",
         "pb": 50,
         "pt": 50,
@@ -80,7 +80,7 @@
         "bf9784fa-0228-4da4-add7-61affb0f470f"
       ],
       "settings": {
-        "bg": "#212121",
+        "bg": "#000000",
         "color": "#ffffff",
         "title": "GET KNOW OUR TWO RANGES",
         "text": "<p>We know choosing the correct products for your skin, budget and lifestyle can be challenging.<\/p><p> We have created two different ranges each with their own identity, so you can find the best skincare solutions for you<\/p>"
@@ -136,7 +136,7 @@
         "padding_top": 0,
         "padding_bottom": 50,
         "column_gap": 38,
-        "bg": "#212121",
+        "bg": "#000000",
         "color_text": "#ffffff",
         "title": "",
         "text": "",
