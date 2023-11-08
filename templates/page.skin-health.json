@@ -112,7 +112,7 @@
         "11486aa1-ffc7-499a-a8b3-9bcc238c887f"
       ],
       "settings": {
-        "bg": "#212121",
+        "bg": "#000000",
         "color": "#ffffff",
         "pb": 50,
         "pt": 50,
@@ -140,7 +140,7 @@
         "5ae4547e-c272-462f-950f-d5bb2e8a5736"
       ],
       "settings": {
-        "bg": "#212121",
+        "bg": "#000000",
         "color": "#ffffff",
         "pb": 50,
         "pt": 50,
@@ -155,7 +155,7 @@
     "8b5a6708-01a9-4c63-9cd6-889bc44a266d": {
       "type": "section-best-ingredients",
       "settings": {
-        "bg": "#212121",
+        "bg": "#000000",
         "color": "#ffffff",
         "title": "THE BEST OF THE BEST INGREDIENTS",
         "text": "<p>Quality ingredients in the right dosage that are skin identical. <\/p><p>Our products are formulated with high concentrations of high-grade active ingredients scientifically proven to make a significant improvement in the health and appearance of skin. <\/p><p>The active ingredients are selected based on how they interact with each other, on skin, and within the formula itself. <\/p><p>The ingredient combination, delivery system, and formula of a well-designed product can optimise the effectiveness of its ingredients.<\/p>",
@@ -178,7 +178,7 @@
         "f71bbd13-25c7-4c17-8e2b-939bf3d13e82"
       ],
       "settings": {
-        "bg": "#212121",
+        "bg": "#000000",
         "color": "#ffffff",
         "pb": 50,
         "pt": 50,
@@ -206,7 +206,7 @@
         "5fe6da60-906a-449b-882d-a8eb541ed3eb"
       ],
       "settings": {
-        "bg": "#212121",
+        "bg": "#000000",
         "color": "#ffffff",
         "pb": 50,
         "pt": 50,
