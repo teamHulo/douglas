@@ -135,7 +135,7 @@
       "settings": {
         "padding_top": 0,
         "padding_bottom": 50,
-        "column_gap": 56,
+        "column_gap": 70,
         "bg": "#000000",
         "color_text": "#ffffff",
         "title": "",
