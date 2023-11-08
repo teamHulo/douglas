@@ -148,7 +148,7 @@
           "type": "item",
           "settings": {
             "img_scale": 120,
-            "img": "shopify:\/\/shop_images\/3.png",
+            "img": "shopify:\/\/shop_images\/MOURNING_ROUTINE.png",
             "title": "MORNING ROUTINE",
             "title_margin_top": 50,
             "text": "<p>Four uncomplicated steps<\/p><p><\/p><p>Step 1: Universal cleanser <\/p><p>Step 2: Multi active day Serum <\/p><p>3: Universal moisturiser Step <\/p><p>4: SPF protect 50+<\/p>",
@@ -228,7 +228,7 @@
       ],
       "settings": {
         "bg": "#212121",
-        "color": "#FFFFFF",
+        "color": "#ffffff",
         "title": "STEP UP YOUR REGIME",
         "text": "<p>With our supportive or enhancement products<\/p>"
       }
