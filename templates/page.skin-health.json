@@ -217,6 +217,33 @@
         "img_alignment_vertical": "flex-start",
         "img_alignment_horizontal": "center"
       }
+    },
+    "af005b40-842c-439a-b44f-96d8bb6a4870": {
+      "type": "section-image-text",
+      "blocks": {
+        "b89f78be-3c73-40e9-a377-40e69e598eea": {
+          "type": "item",
+          "settings": {
+            "title": "Luxury Experiences",
+            "subtitle": "Elevating the cosmeceutical experience ",
+            "text": "<p>The fusion of cosmeceutical skincare the experience of luxury <\/p><p>Texture, penetration, aroma and how the product wears on the skin plays a big part in the products we create. <\/p><p>When formulating, our goal is not only to create result driven products that work but to also create a product that feels luxurious and is an experience to use.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "b89f78be-3c73-40e9-a377-40e69e598eea"
+      ],
+      "settings": {
+        "bg": "#212121",
+        "color": "#FFFFFF",
+        "pb": 50,
+        "pt": 50,
+        "img_height": 100,
+        "img_width": 100,
+        "img_alignment": "row",
+        "img_alignment_vertical": "flex-start",
+        "img_alignment_horizontal": "flex-start"
+      }
     }
   },
   "order": [
@@ -228,6 +255,7 @@
     "85587947-23e5-43e8-bd1a-24d3f9e2c686",
     "8b5a6708-01a9-4c63-9cd6-889bc44a266d",
     "83b25282-6c65-439e-8bca-428ea3d6cf96",
-    "f5b22dc0-3e5c-4fc6-9867-6ca678b0677d"
+    "f5b22dc0-3e5c-4fc6-9867-6ca678b0677d",
+    "af005b40-842c-439a-b44f-96d8bb6a4870"
   ]
 }
