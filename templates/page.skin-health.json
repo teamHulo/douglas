@@ -65,7 +65,7 @@
         "1f2b2b2f-4622-43e6-8f94-b86638dad6be": {
           "type": "item",
           "settings": {
-            "title": "DOUGLAS PEREIRA MINERAL MAKEUP",
+            "title": "Prescriptive approach",
             "subtitle": "Skincare as individual as you are",
             "text": "<p>The Skin Health collection is a range of products that has been designed so you can create the perfect result driven homecare regime for your skin. <\/p><p>The collection takes a prescriptive approach to building a homecare regime. We have created the collection of products, so you can select the individual serums and supportive products to target your skin goals. <\/p><p><\/p>"
           }
@@ -235,7 +235,7 @@
       ],
       "settings": {
         "bg": "#000000",
-        "color": "#FFFFFF",
+        "color": "#ffffff",
         "pb": 50,
         "pt": 50,
         "img_height": 100,
