@@ -313,30 +313,6 @@
         "border": "top"
       }
     },
-    "6145700a-f292-470e-83b3-547f6dc781de": {
-      "type": "section-image-baner",
-      "settings": {
-        "video": false,
-        "video_url": "",
-        "padding_x": 0,
-        "padding_y": 140,
-        "img": "shopify:\/\/shop_images\/DP-Treatments-Background_19eb63ac-870c-471b-bb9a-974125dd8c05.jpg",
-        "color_text": "#ffffff",
-        "title": "Treatments",
-        "title_font": "h2",
-        "title_padding_bottom": 40,
-        "subtitle": "<p>Orci nunc vestibulum et mollis sed facilisis proin. Sed cursus nulla amet sodales etiam purus nunc nisi lectus. Pellentesque natoque nisi.<\/p>",
-        "subtitle_padding_bottom": 40,
-        "btn_text": "discover",
-        "btn_url": "shopify:\/\/collections\/all",
-        "btn_style": "secondary",
-        "text_width": 800,
-        "text_align_item": "center",
-        "text_position": "center",
-        "text_padding_top": 0,
-        "text_padding_bottom": 0
-      }
-    },
     "0e6446f7-19a6-45f3-bce1-13749fe15be2": {
       "type": "section-tab-hover",
       "blocks": {
@@ -379,6 +355,30 @@
       "settings": {
         "name": "",
         "title": "How to shop with us"
+      }
+    },
+    "6145700a-f292-470e-83b3-547f6dc781de": {
+      "type": "section-image-baner",
+      "settings": {
+        "video": false,
+        "video_url": "",
+        "padding_x": 0,
+        "padding_y": 140,
+        "img": "shopify:\/\/shop_images\/3.png",
+        "color_text": "#ffffff",
+        "title": "Treatments",
+        "title_font": "h2",
+        "title_padding_bottom": 40,
+        "subtitle": "<p>Orci nunc vestibulum et mollis sed facilisis proin. Sed cursus nulla amet sodales etiam purus nunc nisi lectus. Pellentesque natoque nisi.<\/p>",
+        "subtitle_padding_bottom": 40,
+        "btn_text": "discover",
+        "btn_url": "shopify:\/\/collections\/all",
+        "btn_style": "secondary",
+        "text_width": 800,
+        "text_align_item": "center",
+        "text_position": "center",
+        "text_padding_top": 0,
+        "text_padding_bottom": 0
       }
     },
     "6fbf64d4-c0e4-4bac-a621-219775a0c45a": {
@@ -440,8 +440,8 @@
     "3cb369bf-d763-48e1-a2f9-94d078cb4642",
     "e93a0e87-b11a-40e2-b596-bd60239b309b",
     "a9582002-bf1a-412f-a25a-f2fb7ece2685",
-    "6145700a-f292-470e-83b3-547f6dc781de",
     "0e6446f7-19a6-45f3-bce1-13749fe15be2",
+    "6145700a-f292-470e-83b3-547f6dc781de",
     "6fbf64d4-c0e4-4bac-a621-219775a0c45a"
   ]
 }
