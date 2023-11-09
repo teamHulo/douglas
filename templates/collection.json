@@ -44,7 +44,7 @@
         "show_filters": true,
         "columns": 3,
         "columns_mobile": "2",
-        "per_page": 12,
+        "per_page": 36,
         "pagination": "paginated",
         "aspect_ratio": "natural",
         "enable_animation": true
