@@ -19,7 +19,7 @@
         "title": "DOUGLAS PEREIRA MINERAL MAKEUP RANGE",
         "title_font": "h4",
         "title_padding_bottom": 14,
-        "subtitle": "<p>We believe makeup is an extension of your skincare and they should work in synergy to better your skins health<\/p>",
+        "subtitle": "",
         "subtitle_padding_bottom": 0,
         "btn_text": "",
         "btn_url": "",
@@ -47,7 +47,7 @@
         "05d89998-de55-4085-8927-356b03069305"
       ],
       "settings": {
-        "bg": "#212121",
+        "bg": "#000000",
         "color": "#ffffff",
         "pb": 50,
         "pt": 50,
@@ -131,8 +131,8 @@
       "settings": {
         "padding_top": 70,
         "padding_bottom": 0,
-        "column_gap": 26,
-        "bg": "#212121",
+        "column_gap": 20,
+        "bg": "#000000",
         "color_text": "#ffffff",
         "title": "MINERAL MAKEUP",
         "text": "<p>Makeup that’s an extension of your skincare<\/p>",
@@ -157,7 +157,7 @@
         "14c01a43-4126-49f3-adab-066465d0cf25"
       ],
       "settings": {
-        "bg": "#212121",
+        "bg": "#000000",
         "color": "#ffffff",
         "pb": 50,
         "pt": 50,
@@ -194,7 +194,7 @@
         "ec3d9335-2507-46d3-aa7c-4a9309d7f9fb"
       ],
       "settings": {
-        "bg": "#212121",
+        "bg": "#000000",
         "color": "#ffffff",
         "pb": 1,
         "pt": 50,
