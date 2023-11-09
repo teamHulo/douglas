@@ -75,12 +75,12 @@
         "columns": 3,
         "title": "Recommended",
         "subheading": "<p>You might want to take a closer look.<\/p>",
-        "text_max_width": 42,
+        "text_max_width": 38,
         "aspect_ratio": "natural",
-        "enable_animation": true,
+        "enable_animation": false,
         "section_contrast": true,
         "section_padding": "section--vertical-padding-top-bottom",
-        "padding_amount": "1.0"
+        "padding_amount": "0.5"
       }
     },
     "850b7be8-89a5-4603-baa1-581412874671": {
