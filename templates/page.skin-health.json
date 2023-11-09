@@ -234,13 +234,13 @@
         "b89f78be-3c73-40e9-a377-40e69e598eea"
       ],
       "settings": {
-        "bg": "#212121",
+        "bg": "#000000",
         "color": "#FFFFFF",
         "pb": 50,
         "pt": 50,
         "img_height": 100,
         "img_width": 100,
-        "img_alignment": "row",
+        "img_alignment": "row-reverse",
         "img_alignment_vertical": "flex-start",
         "img_alignment_horizontal": "flex-start"
       }
