@@ -19,7 +19,7 @@
         "title": "DOUGLAS PEREIRA SKIN SCIENCE",
         "title_font": "h5",
         "title_padding_bottom": 24,
-        "subtitle": "<p>An uncomplicated skincare collection, with complex formulations, for everyday people<\/p>",
+        "subtitle": "",
         "subtitle_padding_bottom": 0,
         "btn_text": "Take the skincare regime",
         "btn_url": "",
@@ -47,7 +47,7 @@
         "f7812317-aa04-4a85-87ff-7458406439f5"
       ],
       "settings": {
-        "bg": "#212121",
+        "bg": "#000000",
         "color": "#ffffff",
         "pb": 50,
         "pt": 50,
@@ -132,7 +132,7 @@
         "padding_top": 100,
         "padding_bottom": 100,
         "column_gap": 34,
-        "bg": "#212121",
+        "bg": "#000000",
         "color_text": "#ffffff",
         "title": "AN UNCOMPLICATED APPROACH",
         "text": "<p>The range has been divided into three collections making it easy for you to navigate and select your products. <\/p><p>Core, Supportive and Enhancement collections.<\/p>",
@@ -193,7 +193,7 @@
         "padding_top": 100,
         "padding_bottom": 100,
         "column_gap": 34,
-        "bg": "#212121",
+        "bg": "#000000",
         "color_text": "#ffffff",
         "title": "YOUR UNCOMPLICATED ROUTINE",
         "text": "<p>Keeping things simple for all skin types<\/p>",
@@ -227,7 +227,7 @@
         "c62a74ea-6e32-419e-b040-29906977c768"
       ],
       "settings": {
-        "bg": "#212121",
+        "bg": "#000000",
         "color": "#ffffff",
         "title": "STEP UP YOUR REGIME",
         "text": "<p>With our supportive or enhancement products<\/p>"
