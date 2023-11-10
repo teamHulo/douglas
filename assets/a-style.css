@@ -237,7 +237,7 @@ body::-webkit-scrollbar {
 }
 .name span {
   font-family: Proxima Nova;
-  font-size: var(--font-size-18);
+  font-size: var(--font-size-16) !important;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -401,7 +401,7 @@ header .header__inner {
   display: block;
   width: 100%;
   height: 100%;
-  background: rgba(8, 8, 8, 0.74);
+  background: rgba(8, 8, 8, 0.44);
   top: 0;
   left: 0;
   position: absolute;
@@ -603,7 +603,7 @@ header .header__inner {
   display: block;
   width: 100%;
   height: 100%;
-  background: rgba(8, 8, 8, 0.74);
+  background: rgba(8, 8, 8, 0.44);
   top: 0;
   left: 0;
   position: absolute;
@@ -2228,7 +2228,7 @@ header .header__inner {
   display: block;
   width: 100%;
   height: 100%;
-  background: rgba(8, 8, 8, 0.74);
+  background: rgba(8, 8, 8, 0.44);
   top: 0;
   left: 0;
   position: absolute;
