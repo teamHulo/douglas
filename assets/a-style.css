@@ -1885,6 +1885,12 @@ header .header__inner {
   display: flex;
   flex-direction: column;
 }
+.collection-categ__wrap .product-item__inner:hover .product-item__image--one{
+  opacity: 0;
+}
+.collection-categ__wrap .product-item__inner:hover .product-item__image--two{
+  opacity: 1;
+}
 .collection-categ__wrap .product-item__meta {
   flex: 1;
 }
