@@ -271,6 +271,11 @@
               <h1 class="product__title product__block animation-fade-up-reveal product__block--small ff-heading fs-heading-1-base">
                 {{ product.title }}
               </h1>
+              {% if product.metafields.custom._millitres != blank %}
+              <p style=" margin-bottom:20px;">
+                {{product.metafields.custom._millitres}}
+              </p>
+              {% endif %}
               {%- when 'price' -%}
               <div class="product__price product__block animation-fade-up-reveal product__block--small">
                 <span class="fs-heading-4-base" data-price>
