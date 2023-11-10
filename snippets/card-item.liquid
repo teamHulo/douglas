@@ -12,9 +12,14 @@
             {% if text != blank %}
                 <p class="element-animation">{{ text }}</p>
             {% endif %}
-            {% if btn_text != blank %}
-                <span class="element-animation a-btn prime" >{{ btn_text }} &#10230;</span>
-            {% endif %}
+            
         </div>
+        {% if btn_text != blank %}
+            <div class="item-btn">
+                
+                    <span class="element-animation a-btn prime" >{{ btn_text }}</span>
+            
+            </div>
+        {% endif %}
     </a>
 </div>

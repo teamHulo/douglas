@@ -30,7 +30,7 @@
                         <li class="first-link-menu" style="--i:{{index}}s;">
                            <span class="ff-heading fs-heading-2-large click-menu" data-title="{{ link.title }}"> 
                                 {{ link.title }} 
-                                {% render 'icon' with icon: 'arrow-stroke', class: 'menu-icon' %}
+                      {%comment %} {% render 'icon' with icon: 'arrow-stroke', class: 'menu-icon' %} {%endcomment%}
                            </span>
                         </li>
                         {% else %}

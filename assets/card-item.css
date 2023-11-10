@@ -1,7 +1,15 @@
 .item {
     width: calc((100% / 3) - 16px );
 }
+.item a {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 
+}
+.item-btn {
+    margin-top:auto;
+}
 .img__wrapper {
     position: relative;
     padding-top: 63%;
