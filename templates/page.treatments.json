@@ -78,6 +78,7 @@
     },
     "09c7a2c8-4048-4a1d-8e27-e702eb5ec994": {
       "type": "section-related-products",
+      "disabled": true,
       "settings": {
         "bg": "",
         "color_text": "",
