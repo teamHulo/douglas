@@ -68,21 +68,6 @@
         "enable_gift_card_recipient": true
       }
     },
-    "recommendations": {
-      "type": "product-recommendations",
-      "settings": {
-        "max_products": 6,
-        "columns": 3,
-        "title": "Recommended",
-        "subheading": "<p>You might want to take a closer look.<\/p>",
-        "text_max_width": 38,
-        "aspect_ratio": "natural",
-        "enable_animation": false,
-        "section_contrast": true,
-        "section_padding": "section--vertical-padding-top-bottom",
-        "padding_amount": "0.5"
-      }
-    },
     "850b7be8-89a5-4603-baa1-581412874671": {
       "type": "image-with-text",
       "blocks": {
@@ -193,14 +178,29 @@
       "settings": {
         "text": ""
       }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "max_products": 6,
+        "columns": 2,
+        "title": "Recommended",
+        "subheading": "<p>You might want to take a closer look.<\/p>",
+        "text_max_width": 38,
+        "aspect_ratio": "natural",
+        "enable_animation": false,
+        "section_contrast": true,
+        "section_padding": "section--vertical-padding-top-bottom",
+        "padding_amount": "0.5"
+      }
     }
   },
   "order": [
     "main",
-    "recommendations",
     "850b7be8-89a5-4603-baa1-581412874671",
     "25dbc00c-bd45-450e-bf6b-3dfaf3c511c8",
     "a51ba352-abb9-4b32-a946-10e91f36b555",
-    "b7579890-0b9c-45f0-a99f-ca3c95c5a7c1"
+    "b7579890-0b9c-45f0-a99f-ca3c95c5a7c1",
+    "recommendations"
   ]
 }
