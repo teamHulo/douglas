@@ -49,8 +49,8 @@
       "settings": {
         "bg": "#000000",
         "color": "#ffffff",
-        "pb": 20,
-        "pt": 20,
+        "pb": 10,
+        "pt": 10,
         "img": "shopify:\/\/shop_images\/SKIN_FLUID_TINT_SPF.png",
         "img_height": 100,
         "img_width": 100,
