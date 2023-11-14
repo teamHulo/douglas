@@ -238,6 +238,7 @@
         "color": "#ffffff",
         "pb": 50,
         "pt": 50,
+        "img": "shopify:\/\/shop_images\/DP-SKIN-HEATH-IMAGE-8.png",
         "img_height": 100,
         "img_width": 100,
         "img_alignment": "row-reverse",
