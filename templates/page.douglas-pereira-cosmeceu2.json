@@ -167,7 +167,7 @@
         "ff707c27-5fa8-4166-9fab-05474db3591a": {
           "type": "item",
           "settings": {
-            "img_scale": 120,
+            "img_scale": 100,
             "img": "shopify:\/\/shop_images\/NIGHT_ROUTINE.png",
             "title": "EVENING ROUTINE",
             "title_margin_top": 50,
