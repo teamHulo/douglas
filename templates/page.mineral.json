@@ -129,7 +129,7 @@
         "1c378887-f9ff-41f5-a80f-480fff13bd38"
       ],
       "settings": {
-        "padding_top": 70,
+        "padding_top": 0,
         "padding_bottom": 0,
         "column_gap": 20,
         "bg": "#000000",
