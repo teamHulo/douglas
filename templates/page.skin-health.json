@@ -187,7 +187,7 @@
         "img_width": 60,
         "img_alignment": "row-reverse",
         "img_alignment_vertical": "flex-start",
-        "img_alignment_horizontal": "flex-start"
+        "img_alignment_horizontal": "center"
       }
     },
     "f5b22dc0-3e5c-4fc6-9867-6ca678b0677d": {
