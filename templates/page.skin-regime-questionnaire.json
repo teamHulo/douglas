@@ -2,11 +2,47 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
+        "content_max_width": 700
+      }
+    },
+    "3eaf6a64-73c9-4f9c-93e5-f03d5822bf1c": {
+      "type": "rich-text",
+      "blocks": {
+        "template--21564032123162__3eaf6a64-73c9-4f9c-93e5-f03d5822bf1c-heading-1": {
+          "type": "heading",
+          "settings": {
+            "title": "Stay tuned we will soon be launching our Skin Regime QuestionnaireWhere you can answer a few short questions and our skin smart algorithm will recommend and design the ideal homecare regime for your skin. ",
+            "text_max_width": 100
+          }
+        }
+      },
+      "block_order": [
+        "template--21564032123162__3eaf6a64-73c9-4f9c-93e5-f03d5822bf1c-heading-1"
+      ],
+      "settings": {
+        "enable_animation": true,
+        "section_contrast": false,
+        "section_padding": "section--vertical-padding-top-bottom",
+        "padding_amount": "1.0"
+      }
+    },
+    "e410febc-d840-4d48-9e5c-ee3863b1ad4d": {
+      "type": "newsletter",
+      "settings": {
+        "title": "Subscribe",
+        "subheading": "<p>Signup to our newsletter to get notified when the questionnaire is live. <\/p>",
+        "enable_animation": true,
+        "section_contrast": true,
+        "section_padding": "section--vertical-padding-top-bottom",
+        "padding_amount": "1.0"
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "3eaf6a64-73c9-4f9c-93e5-f03d5822bf1c",
+    "e410febc-d840-4d48-9e5c-ee3863b1ad4d"
   ]
 }
