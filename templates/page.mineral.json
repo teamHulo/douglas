@@ -200,10 +200,10 @@
         "pt": 10,
         "img": "shopify:\/\/shop_images\/SKIN_FLUID_CHEEKS_04.png",
         "img_height": 100,
-        "img_width": 70,
+        "img_width": 80,
         "img_alignment": "row",
-        "img_alignment_vertical": "flex-start",
-        "img_alignment_horizontal": "flex-start"
+        "img_alignment_vertical": "flex-end",
+        "img_alignment_horizontal": "center"
       }
     }
   },
