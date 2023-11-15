@@ -1,17 +1,42 @@
+{% assign file_extension = product.metafields.custom.image_ingredients | split: '.' | last | downcase %}
 
+{% assign met = product.metafields.custom.image_ingredients | file_url %}
 {%if product.metafields.custom.treatment_title != blank or product.metafields.custom.treatments_description != blank%}
 <div class="treatments-my-block">
     <div class="container">
-        <div class="title element-animation">
-            <h2>
-                {{product.metafields.custom.treatment_title}}
-            </h2>
+        <div class="treatments-my-block__wrap">
+            <div class="left item">
+                <div class="left_wrap">
+                    {% if product.metafields.custom.treatment_title != blank %}
+                        <div class="title element-animation">
+                            <h2>
+                                {{product.metafields.custom.treatment_title}}
+                            </h2>
+                        </div>
+                    {% endif %}
+                    <div class="text element-animation">
+                        <p>
+                            {{product.metafields.custom.treatments_description}}
+                        </p>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="right item">
+                {% if file_extension contains 'video' %}
+                <div class="video">
+                    <video id="video-background" autoplay muted loop>
+                        <source src="{{met}}" >
+                    </video>
+                </div>
+                {% else %}
+                    <div class="image">
+                        <img src="{{product.metafields.custom.image_ingredients | img_url: 'master'}}" alt="">
+                    </div>
+                {% endif %}
+            </div>
         </div>
-        <div class="text element-animation">
-            <p>
-                {{product.metafields.custom.treatments_description}}
-            </p>
-        </div>
+       
     </div>
 </div>
 {% endif %}
