@@ -40,6 +40,11 @@
     "social_pinterest_link": "",
     "social_snapchat_link": "",
     "social_twitter_link": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/DP_Logo_Cosmeceuticals_Horizontal_Black.png",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "small",
+    "checkout_accent_color": "#000000",
+    "checkout_button_color": "#000000",
     "variant_popup_page": "size-guide",
     "content_for_index": [
 
