@@ -93,32 +93,12 @@
             "text_width": 700,
             "text_align": "left"
           }
-        },
-        "b976e121-d45d-4d1f-a3d4-3481c53ccd1f": {
-          "type": "item",
-          "settings": {
-            "img_scale": 100,
-            "title": "the skincare regime builder",
-            "title_margin_top": 0,
-            "text": "<p>The core product collection is your everyday routine and has been formulated to suite all skin types, eliminating the challenge of choosing the right products for your skin. The system is straightforward and has minimal steps, so you don’t have to invest too much time looking after your skin but can have the confidence all bases<\/p>",
-            "text_margin_top": 0,
-            "price": "PRICE: COMPLEMENTARY | DURATION 30MIN",
-            "price_margin_top": 0,
-            "btn_text": "Take the skincare regime",
-            "btn_url": "",
-            "btn_margin_top": 0,
-            "btn_full": false,
-            "btn_style": "prime",
-            "text_width": 400,
-            "text_align": "left"
-          }
         }
       },
       "block_order": [
         "1a724c7f-e019-484f-9c11-6bb2b045175e",
         "2fbbceed-7cb3-4860-9cd7-0f22e1722abb",
-        "ad0ec109-5059-4922-a9b5-cf71e25ec302",
-        "b976e121-d45d-4d1f-a3d4-3481c53ccd1f"
+        "ad0ec109-5059-4922-a9b5-cf71e25ec302"
       ],
       "settings": {
         "padding_top": 32,
