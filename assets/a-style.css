@@ -2560,3 +2560,7 @@ option {
   font-weight: 600;
   line-height: normal;
 }
+
+.news-btn:hover{
+  color:#FFF !important;
+}
