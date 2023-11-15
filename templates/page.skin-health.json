@@ -210,9 +210,9 @@
         "color": "#ffffff",
         "pb": 50,
         "pt": 50,
-        "img": "shopify:\/\/shop_images\/DP_SKIN_HEATH_IMAGE_7.png",
+        "img": "shopify:\/\/shop_images\/DP_SKIN_HEATH_IMAGE_7_c80d73d3-d9db-410f-aee2-d33e3a6299d2.png",
         "img_height": 100,
-        "img_width": 85,
+        "img_width": 70,
         "img_alignment": "row",
         "img_alignment_vertical": "flex-start",
         "img_alignment_horizontal": "center"
@@ -240,7 +240,7 @@
         "pt": 50,
         "img": "shopify:\/\/shop_images\/DP-SKIN-HEATH-IMAGE-8.png",
         "img_height": 100,
-        "img_width": 71,
+        "img_width": 70,
         "img_alignment": "row-reverse",
         "img_alignment_vertical": "flex-start",
         "img_alignment_horizontal": "center"
