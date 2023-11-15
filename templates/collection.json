@@ -45,7 +45,7 @@
         "columns": 3,
         "columns_mobile": "2",
         "per_page": 36,
-        "pagination": "infinite",
+        "pagination": "click",
         "aspect_ratio": "natural",
         "enable_animation": true
       }
