@@ -1,0 +1,218 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_max_width": 700
+      }
+    },
+    "52e8bd89-b907-4a29-8d50-e9f455043794": {
+      "type": "section-image-baner",
+      "settings": {
+        "video": false,
+        "video_url": "",
+        "padding_x": 0,
+        "padding_y": 56,
+        "img": "shopify:\/\/shop_images\/black1.webp",
+        "color_text": "#ffffff",
+        "title": "DOUGLAS PEREIRA MINERAL MAKEUP RANGE",
+        "title_font": "h4",
+        "title_padding_bottom": 14,
+        "subtitle": "",
+        "subtitle_padding_bottom": 0,
+        "btn_text": "",
+        "btn_url": "",
+        "btn_style": "prime",
+        "text_width": 750,
+        "text_align_item": "left",
+        "text_position": "normal",
+        "text_padding_top": 60,
+        "text_padding_bottom": 60
+      }
+    },
+    "62ea5548-80ac-4aa7-8bf4-4134b9bb4e87": {
+      "type": "section-image-text",
+      "blocks": {
+        "05d89998-de55-4085-8927-356b03069305": {
+          "type": "item",
+          "settings": {
+            "title": "DOUGLAS PEREIRA MINERAL MAKEUP",
+            "subtitle": "A fusion of skin health science and the artistry of makeup.",
+            "text": "<p>In addition to our two skincare ranges we also have a collection of mineral makeup products to enhance your outer beauty. We believe your makeup is an extension of your skincare and they should work in synergy to better your skins health. Within the collection are mineral based tinted SPF moisturisers and mineral colour makeup for the cheeks and eyes, that will provide your skin with radiance and luminosity, whilst protecting your skin from damaging UVA and UVB exposure.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "05d89998-de55-4085-8927-356b03069305"
+      ],
+      "settings": {
+        "bg": "#000000",
+        "color": "#ffffff",
+        "pb": 50,
+        "pt": 10,
+        "img": "shopify:\/\/shop_images\/SKIN_FLUID_TINT_SPF_9ae79340-79df-4414-9abb-1e2a537f750e.png",
+        "img_height": 100,
+        "img_width": 100,
+        "img_alignment": "row",
+        "img_alignment_vertical": "flex-start",
+        "img_alignment_horizontal": "flex-start"
+      }
+    },
+    "f425d34a-d7be-4f46-8dc5-e4c9eb28c5a0": {
+      "type": "section-custom-column",
+      "blocks": {
+        "d436a8a2-387c-4be3-b915-309c564fd84b": {
+          "type": "item",
+          "settings": {
+            "img_scale": 100,
+            "img": "shopify:\/\/shop_images\/SKIN_FLUID_CHEEKS_02_d894a8bf-8a79-4075-925c-83b6e6fc91e8.png",
+            "title": "Skin Fluid Cheeks",
+            "title_margin_top": 20,
+            "text": "<p>Providing the check and eyes with a flush of colour and definition. The Skin Fluid Cheeks and highlighter comes in three colour tones to enhance your inner glow.<\/p>",
+            "text_margin_top": 12,
+            "price": "",
+            "price_margin_top": 0,
+            "btn_text": "Discover",
+            "btn_url": "shopify:\/\/products\/skin-fluid-cheeks-15ml",
+            "btn_margin_top": 20,
+            "btn_full": false,
+            "btn_style": "secondary",
+            "text_width": 400,
+            "text_align": "center"
+          }
+        },
+        "a59d0020-453d-42c1-8e6b-cd8f08a9201f": {
+          "type": "item",
+          "settings": {
+            "img_scale": 100,
+            "img": "shopify:\/\/shop_images\/SKIN_FLUID_TINT_SPF_02.png",
+            "title": "SKIN FLUID SPF 30+",
+            "title_margin_top": 20,
+            "text": "<p>Beyond an average tinted moisturiser, the Skin Fluid SPF comes in three shades and is a five in one formulation that provides your skin with SPF protection, moisturisation, fights free radical damage, evens our colour tone, and smooths out textural imperfections. This lightweight formular has a foundation like finish that leaves your skin looking iridescently luminous, balances and protected.<\/p>",
+            "text_margin_top": 12,
+            "price": "",
+            "price_margin_top": 0,
+            "btn_text": "Discover",
+            "btn_url": "shopify:\/\/products\/skin-fluid-tint-spf-50ml",
+            "btn_margin_top": 20,
+            "btn_full": false,
+            "btn_style": "secondary",
+            "text_width": 400,
+            "text_align": "center"
+          }
+        },
+        "1c378887-f9ff-41f5-a80f-480fff13bd38": {
+          "type": "item",
+          "settings": {
+            "img_scale": 100,
+            "img": "shopify:\/\/shop_images\/SKIN_FLUID_BRONZE_02_2.png",
+            "title": "SKIN FLUID BRONZE",
+            "title_margin_top": 20,
+            "text": "<p>Delivering a sun kissed glow to the skin, this lightweight fluid can be used as an all over face bronzer or used to define and contour.<\/p>",
+            "text_margin_top": 12,
+            "price": "",
+            "price_margin_top": 0,
+            "btn_text": "Discover",
+            "btn_url": "shopify:\/\/products\/skin-fluid-bronze-50ml",
+            "btn_margin_top": 20,
+            "btn_full": false,
+            "btn_style": "secondary",
+            "text_width": 400,
+            "text_align": "center"
+          }
+        }
+      },
+      "block_order": [
+        "d436a8a2-387c-4be3-b915-309c564fd84b",
+        "a59d0020-453d-42c1-8e6b-cd8f08a9201f",
+        "1c378887-f9ff-41f5-a80f-480fff13bd38"
+      ],
+      "settings": {
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "column_gap": 20,
+        "bg": "#000000",
+        "color_text": "#ffffff",
+        "title": "MINERAL MAKEUP",
+        "text": "<p>Makeup that’s an extension of your skincare<\/p>",
+        "text_max_width": 1200,
+        "full_width": false,
+        "card_position": "center"
+      }
+    },
+    "f06bf474-7adf-4189-9ca2-7bcca3c39f84": {
+      "type": "section-image-text",
+      "blocks": {
+        "14c01a43-4126-49f3-adab-066465d0cf25": {
+          "type": "item",
+          "settings": {
+            "title": "OUTER BEAUTY RADIANCE MEETS SKIN HEALTH",
+            "subtitle": "",
+            "text": "<p>The mineral makeup collection is all about outer beauty and enhancing your own natural radiance and luminosity. We use natural mineral colour pigments in each of our makeup formulations.<\/p><p>When formulating our makeup collection, we not only consider how the product looks, feels, and wears on your skin but we also consider how your makeup impacts your skin health. We do this by bringing the science of our skincare into our makeup formulations, and including the powerful active ingredients used in our skincare. Thus, creating makeup products that enhance your skin health.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "14c01a43-4126-49f3-adab-066465d0cf25"
+      ],
+      "settings": {
+        "bg": "#000000",
+        "color": "#ffffff",
+        "pb": 100,
+        "pt": 100,
+        "img": "shopify:\/\/shop_images\/SKIN_FLUID_BRONZE_974a2c63-0a4e-400d-84c0-f81ad16e8287.png",
+        "img_height": 85,
+        "img_width": 100,
+        "img_alignment": "row-reverse",
+        "img_alignment_vertical": "flex-start",
+        "img_alignment_horizontal": "flex-start"
+      }
+    },
+    "be9f8166-66ee-47c2-a6dd-b06e11cf4f9c": {
+      "type": "section-image-text",
+      "blocks": {
+        "bab2cbc9-cc0e-44b3-a3a9-8f639bd0b492": {
+          "type": "item",
+          "settings": {
+            "title": "COLOUR ADAPTATIVE SCIENCE",
+            "subtitle": "",
+            "text": "<p>Each of our mineral makeup formulations utilise the science of “colour adaptiveness”. This science allows your mineral makeup product to adapt to your skin’s natural tones and individual hues. Allowing your makeup to look more like you. <\/p><p>We do this by formulating our makeup with our proprietary “colour dispersion technology” that combines two self-adjusting methods “Encapsulated colour dispersion and pH-reactive balancing”. <\/p><p>Our colour dispersion technology evenly distributes our encapsulated pigment when the product is rubbed into the skin, the rubbing action breaks down a coating around the colour pigment and releases the colour evenly over your skin. Whilst the pH-reactive balancer works by responding to your individual pH levels. The ingredients in the formulation react to the acidity or alkaline levels of your skin’s moisture and adapt the colour pigments to suit your tone.<\/p>"
+          }
+        },
+        "ec3d9335-2507-46d3-aa7c-4a9309d7f9fb": {
+          "type": "item",
+          "settings": {
+            "title": "UVA \/ UVB EXPOSURE",
+            "subtitle": "",
+            "text": "<p>Premature skin aging results from exposure to a range of environmental factors, primarily ultraviolet radiation, but also high-energy visible light in the blue spectrum, infrared radiation, and environmental pollution. These extrinsic factors result in photoaging and DNA damage. <\/p><p>Our formulation comprises of a dual combination of Zinc and titanium to protect your skin from UVA and UVB factor.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "bab2cbc9-cc0e-44b3-a3a9-8f639bd0b492",
+        "ec3d9335-2507-46d3-aa7c-4a9309d7f9fb"
+      ],
+      "settings": {
+        "bg": "#000000",
+        "color": "#ffffff",
+        "pb": 0,
+        "pt": 10,
+        "img": "shopify:\/\/shop_images\/SKIN_FLUID_CHEEKS_04.png",
+        "img_height": 100,
+        "img_width": 80,
+        "img_alignment": "row",
+        "img_alignment_vertical": "flex-end",
+        "img_alignment_horizontal": "center"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "52e8bd89-b907-4a29-8d50-e9f455043794",
+    "62ea5548-80ac-4aa7-8bf4-4134b9bb4e87",
+    "f425d34a-d7be-4f46-8dc5-e4c9eb28c5a0",
+    "f06bf474-7adf-4189-9ca2-7bcca3c39f84",
+    "be9f8166-66ee-47c2-a6dd-b06e11cf4f9c"
+  ]
+}
