@@ -15,7 +15,7 @@
     padding-top: 100%;
 }
 .custom-column__img img {
-    position: absolute;
+    position: absolute;z
     width: 100%;
     height: 100%;
     object-fit: contain;

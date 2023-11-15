@@ -2547,3 +2547,12 @@ option {
 }
 
 .product__media-slide .media, .product__media-item .media{  border-radius: 0px;}
+
+.product-ml{
+  color: #080808;
+  font-family: Proxima Nova;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
