@@ -51,12 +51,12 @@
         "color": "#ffffff",
         "pb": 50,
         "pt": 50,
-        "img": "shopify:\/\/shop_images\/20140528_0128.png",
+        "img": "shopify:\/\/shop_images\/PRODUCTS.png",
         "img_height": 100,
         "img_width": 77,
         "img_alignment": "row",
-        "img_alignment_vertical": "flex-end",
-        "img_alignment_horizontal": "center"
+        "img_alignment_vertical": "center",
+        "img_alignment_horizontal": "flex-start"
       }
     }
   },
