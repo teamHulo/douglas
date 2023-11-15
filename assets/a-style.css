@@ -1862,6 +1862,10 @@ header .header__inner {
   margin-bottom: 10px;
   font-size: var(--font-size-20);
 }
+.key-active .text{
+  max-width:800px;
+  margin:0 auto;
+}
 /*** end key active ****/
 
 /***** section collection list  product ***/
