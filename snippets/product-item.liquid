@@ -20,6 +20,18 @@
   .product-item__image-link .product-item__image {
     padding-top: 100%;
   }
+  .product-item__inner {
+    height: 100%;    
+    display: flex;
+    flex-direction: column;
+  }
+  .product-item__inner .product-item__meta{
+    flex-grow: 1;
+    
+  }
+  .product-item-btn{
+    margin-top:auto;
+  }
 </style>
 {%- liquid
   if product.media.size > 1
@@ -139,7 +151,9 @@
             <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
           {%- endif -%}
         </h4>
-
+        {% if product.metafields.custom.card_subtitle != blank %}
+          <p> {{product.metafields.custom.card_subtitle}}</p>
+        {% endif %}
         {% if show_price %}
           <span class="product-item__price-wrapper element-animation">
             {% if placeholder %}
@@ -328,7 +342,10 @@
         {%- endif -%}
       {%- endif -%}
       {% if settings.enable_quick_add == false %}
+      <div class="product-item-btn">
         <a style="align-self: center; width: 100%; margin-top: 15px" href="{{product.url}}" class="a-btn prime"> Discover</a>
+      </div>
+       
       {% endif %}
     </div>
 
