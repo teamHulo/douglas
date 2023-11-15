@@ -2566,3 +2566,39 @@ option {
 .news-btn:hover{
   color:#FFF !important;
 }
+
+/**********************************/
+
+.product-item__inner img, .product-item__inner h4, .product-item__inner .a-btn {
+  transition: all 0.3s !important;
+}
+.product-item__inner:hover img {
+  transform: scale(1.1);
+  transition: all 0.3s;
+}
+.product-item__inner:hover h4 {
+  font-weight: 600;
+  transition: all 0.3s;
+}
+.product-item__inner:hover .a-btn {
+  transform: translateY(5px);
+  transition: all 0.3s;
+}
+.product-item__image-link {
+  background-color: unset !important;
+}
+.product-item__image-link .product-item__image {
+  padding-top: 100%;
+}
+.product-item__inner {
+  height: 100%;    
+  display: flex;
+  flex-direction: column;
+}
+.product-item__inner .product-item__meta{
+  flex-grow: 1;
+  
+}
+.product-item-btn{
+  margin-top:auto;
+}
