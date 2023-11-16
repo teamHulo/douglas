@@ -1,0 +1,421 @@
+<style>
+  .contact__info {
+    display: flex;
+    flex-direction: column;
+  }
+  .contact__info h3 {
+    font-family: Proxima Nova;
+    font-size: var(--font-size-72);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+
+  .contact__info .contact-info {
+    font-family: Raleway;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: 0.44px;
+    margin-bottom: 16px;
+  }
+  .contact__info .contact-info span {
+    margin-right: 12px;
+  }
+  .contact__info p:not(.contact-info) {
+    font-family: Raleway;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 0.44px;
+    margin-bottom: 94px;
+  }
+  .item-icon {
+    display: flex;
+    align-items: center;
+  }
+  .radio-question {
+    margin: 52px 0;
+  }
+  .radio-question p {
+    font-family: Raleway;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    margin-bottom: 26px;
+  }
+  .radio-question label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+  }
+  .radio-question input{
+    width:20px;
+    height: 20px;
+    min-width:20px;
+    min-height: 20px;
+  }
+  .radio-question input::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1px solid black;
+  }
+  .contact__content input, .contact__content textarea, .contact__content input:focus, .contact__content textarea:focus {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-family: Raleway;
+  } 
+
+  .contact__content input, .contact__content textarea {
+    font-family: Raleway;
+    font-size: var(--font-size-32);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  } 
+  .contact__content input::placeholder, .contact__content textarea::placeholder, .contact__content .radio-question label {
+    font-size: var(--font-size-20);
+    letter-spacing: 0.4px;
+  } 
+  .contact__content input:focus, .contact__content textarea:focus {
+    box-shadow: none;
+  } 
+  .btn.btn--primary {
+    border-radius: 50px;
+    padding: 16px 60px !important;
+  }
+  .fields{
+    margin-top:40px;
+    border-top:1px solid #000;
+    padding-top:20px;
+  }
+  .fields .title{
+    margin-bottom:20px;
+  }
+  .my-field{
+    margin-bottom:30px;
+  }
+  .my-field label{
+    display: inline-block;
+    margin-bottom:10px;
+  }
+  .names-fields{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0 2%;
+  }
+  .names-fields .my-field{
+    width:49%;
+  }
+  @media (max-width:500px){
+    .names-fields .my-field{
+        width:100%;
+      }
+  }
+  .enquiry-form{
+    padding:50px 0;
+  }
+    .form__header, .border-form{
+        padding-bottom:20px;
+        border-bottom:1px solid #000;
+    }
+</style>
+
+<div class="enquiry-form">
+  <div class="container">
+    <div class="enquiry-form__wrap">
+     <div class="form__header">
+        <div class="title element-animation">
+            <h2>
+            {{ section.settings.title }}
+            </h2>
+        </div>
+        <div class="text element-animation">
+            {{ section.settings.text }}
+        </div>
+     </div>
+      
+
+      {% form 'contact', class: 'enquiry_form' %}
+        {%- assign success_msg = 'contact.form.post_success' | t -%}
+        {% render 'form-status', form: form, form_id: 'contact', success_message: success_msg %}
+        <div class="radio-question border-form element-animation" required>
+          <h5> How can we assist you?</h5>
+          <p>Please select how we can assist you (required)</p>
+          <div>
+            <label>
+              <input
+                type="checkbox"
+                name="contact[assist]"
+                value="I have an enquiry about a product." />I have an enquiry about a product.
+            </label>
+          </div>
+          <div>
+            <label>
+              <input
+                type="checkbox"
+                name="contact[assist]"
+                value="I have an enquiry about a treatment or consultation." />I have an enquiry about a treatment or consultation.
+            </label>
+          </div>
+          <div>
+            <label>
+              <input
+                type="checkbox"
+                name="contact[assist]"
+                value="I would like to book a treatment or consultation" />I would like to book a treatment or consultation
+                
+            </label>
+          </div>
+        </div>
+        <div class="radio-question element-animation" required>
+          <h4>For consultation and treatments please select the service/s you are interested in ?</h4>
+          <h3>CONSULTATIONS</h3>
+          <div>
+            <label>
+              <input
+                type="checkbox"
+                name="contact[consultation]"
+                value="Complementary virtual phone consultation" />Complementary virtual phone consultation
+            </label>
+          </div>
+          <div>
+            <label>
+              <input
+                type="checkbox"
+                name="contact[consultation]"
+                value="Complementary virtual phone consultation" />Complementary virtual phone consultation
+            </label>
+          </div>
+          <div>
+            <label>
+              <input
+                type="checkbox"
+                name="contact[consultation]"
+                value="Complementary in clinic discovery consultation (Conducted in our Sydney flagship space)" />Complementary in clinic discovery consultation (Conducted in our Sydney flagship space)
+            </label>
+          </div>
+          <div>
+            <label>
+              <input
+                type="checkbox"
+                name="contact[consultation]"
+                value="In clinic signature consultation (Conducted in our Sydney flagship space)" />In clinic signature consultation (Conducted in our Sydney flagship space)
+            </label>
+          </div>
+        </div>
+        <div class="radio-question element-animation" >
+          <h3>TREATMENTS:</h3>
+          <h3>CUSTOMISED SKIN FACIALS</h3>
+          <div>
+            <label>
+              <input
+                type="checkbox"
+                name="contact[skin]"
+                value="Douglas Pereira Skin Health Signature Facial" />Douglas Pereira Skin Health Signature Facial
+            </label>
+          </div>
+          <div>
+            <label>
+              <input
+                type="checkbox"
+                name="contact[skin]"
+                value="Skin Perfecting Enzyme or Peel Facials" />Skin Perfecting Enzyme or Peel Facials
+            </label>
+          </div>
+          <div>
+            <label>
+              <input
+                type="checkbox"
+                name="contact[skin]"
+                value="Skin Booster Facials" />Skin Booster Facials
+            </label>
+          </div>
+    
+        </div>
+        <div class="radio-question element-animation" >
+    
+          <h3>PROPRIETARY COMPLEX FACIALS</h3>
+          <div>
+            <label>
+              <input
+                type="checkbox"
+                name="contact[complex]"
+                value="Cera Fort Complex Facial" />Cera Fort Complex Facial
+            </label>
+          </div>
+          <div>
+            <label>
+              <input
+                type="checkbox"
+                name="contact[complex]"
+                value="Platinum Peptide Complex Facial" />Platinum Peptide Complex Facial
+            </label>
+          </div>
+          <div>
+            <label>
+              <input
+                type="checkbox"
+                name="contact[complex]"
+                value="Clarity Complex Facial" />Clarity Complex Facial
+            </label>
+          </div>
+          <div>
+            <label>
+              <input
+                type="checkbox"
+                name="contact[complex]"
+                value="Vitamin ABC Complex Facial" />Vitamin ABC Complex Facial
+            </label>
+          </div>
+        </div>
+        <div class="radio-question element-animation" >
+    
+        <h3>SKIN TECHNOLOGY TREATMENTS</h3>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              name="contact[technology]"
+              value="Dermal Infusion Treatment" />Dermal Infusion Treatment
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              name="contact[technology]"
+              value="RF Facial Tightening Treatment" />RF Facial Tightening Treatment
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              name="contact[technology]"
+              value="Skin Remodelling Treatment" />Skin Remodelling Treatment
+          </label>
+        </div>
+        
+      </div>
+        <div class="fields ">
+            <div class="title element-animation">
+                <h3>YOUR CONTACT DETAILS
+                    (required)</h3>
+            </div>
+            <div class="names-fields element-animation">
+                <div class="my-field">
+                    <label for="">First Name </label>
+                    <div class="my-input__wrap">
+                        <input
+                        type="text"
+                        name="contact[first name]"
+                        id="contact-ContactFormName"
+                        class="input"
+                        value="" required>
+                    </div>
+                </div>
+                <div class="my-field">
+                    <label for="">Last Name </label>
+                    <div class="my-input__wrap">
+                        <input
+                        type="text"
+                        name="contact[last name]"
+                        id="contact-ContactFormName"
+                        class="input"
+                        value="" required>
+                    </div>
+                </div>
+            </div>
+            <div class="my-field element-animation">
+                    <label for="">Email (required)</label>
+                    <div class="my-input__wrap">
+                        <input
+                        type="email"
+                        name="contact[email]"
+                        id="contact-ContactFormEmail"
+                        class="input"
+                        value=""
+                        spellcheck="false"
+                        autocomplete="off"
+                        autocapitalize="off"
+                        required
+                      >
+                    </div>
+            </div>
+            <div class="my-field element-animation">
+                <label for="">Contact mobile number(required)</label>
+                <div class="my-input__wrap">
+                    <input
+                        type="tel"
+                        name="contact[phone]"
+                        id="contact-ContactFormPhone"
+                        class="input-reset input w-100"
+                        value=""
+                        pattern="[0-9\-]*"
+                        required
+                    >
+                </div>
+            </div>
+            <div class="my-field element-animation">
+                <label for="">So we can find your nearest clinic </label>
+                <div class="my-input__wrap">
+                    <textarea
+                    type="text"
+                    name="contact[state]"
+                    id="contact-ContactFormName"
+                    class="input"
+                    
+                    value="" > </textarea>
+                </div>
+            </div>
+        </div>
+       
+        <button type="submit" class="a-btn prime element-animation">{{ 'contact.form.submit' | t }}</button>
+      {% endform %}
+
+
+    </div>
+  </div>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "enquiry-form",
+    "tag": "section",
+    "class": "page-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "title",
+        "default": "TREATMENT BOOKING AND ENQUIRY FORM"
+      }, {
+        "type": "richtext",
+        "id": "text",
+        "label": "text",
+        "default": "<p>Please fill in the below form to arrange a treatment booking, enquire about a treatment or product.</p>"
+      }
+    ],
+    "presets": [
+      {
+        "name": "enquiry-form"
+      }
+    ]
+
+  }
+{% endschema %}
