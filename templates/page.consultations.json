@@ -101,6 +101,7 @@
         "ad0ec109-5059-4922-a9b5-cf71e25ec302"
       ],
       "settings": {
+        "treatment": true,
         "padding_top": 32,
         "padding_bottom": 86,
         "column_gap": 20,
