@@ -13,6 +13,8 @@
 .custom-column__img {
     position: relative;
     padding-top: 100%;
+  display:flex;
+  justify-content:center;
 }
 .custom-column__img img {
     position: absolute;z
