@@ -1858,12 +1858,15 @@ header .header__inner {
 .key-active {
   padding: 50px 0;
 }
+.key-active .container{
+ 
+}
 .key-active .text p {
   margin-bottom: 10px;
   font-size: var(--font-size-20);
 }
 .key-active .text{
-  max-width:800px;
+  max-width: 1540px;
   margin:0 auto;
 }
 /*** end key active ****/
