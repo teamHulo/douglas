@@ -147,7 +147,7 @@
         "69365660-da67-4577-acf8-b919ec104f2e": {
           "type": "item",
           "settings": {
-            "img_scale": 120,
+            "img_scale": 110,
             "img": "shopify:\/\/shop_images\/MOURNING_ROUTINE_0074e13f-1044-4944-9f56-50643e1d507e.png",
             "title": "MORNING ROUTINE",
             "title_margin_top": 50,
@@ -167,7 +167,7 @@
         "ff707c27-5fa8-4166-9fab-05474db3591a": {
           "type": "item",
           "settings": {
-            "img_scale": 100,
+            "img_scale": 110,
             "img": "shopify:\/\/shop_images\/NIGHT_ROUTINE.png",
             "title": "EVENING ROUTINE",
             "title_margin_top": 50,
