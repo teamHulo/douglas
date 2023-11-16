@@ -57,13 +57,16 @@
             {% endif %}
         </div>
     {% endif %}
-    <div class="custom-column__wrapper ">
+    <div class="custom-column__wrapper style-treatment-wrap {% if section.settings.treatment == true %} style-treatment-wrap {%endif%}">
         {% for block in section.blocks %}
-            <div class="custom-column-card">
-                {% if block.settings.img != blank %}                 
-                    <div class="custom-column__img element-animation" style="padding-top: {{ block.settings.img_scale }}%">
-                        <img src="{{ block.settings.img | img_url: 'master'}}" alt="">
-                    </div>
+        <div class="custom-column-card style-treatment{% if section.settings.treatment == true %} style-treatment {%endif%}">
+                {% if block.settings.img != blank %}
+                    <div class="image">
+                        <div class="custom-column__img element-animation" style="padding-top: {{ block.settings.img_scale }}%">
+                            <img src="{{ block.settings.img | img_url: 'master'}}" alt="">
+                        </div>
+                    </div>                
+                    
                 {% endif %}
                 <div class="custom-column__text" style="text-align: {{ block.settings.text_align }}">
                     <div class="wrapper element-animation" style="max-width: {{ block.settings.text_width }}px;">
@@ -96,6 +99,12 @@
     {
         "name": "Custom column",
         "settings": [
+            {
+            "type": "checkbox",
+            "id": "treatment",
+            "label": "treatment style",
+            "default": false
+            },
             {
                 "type": "range",
                 "id": "padding_top",

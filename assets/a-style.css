@@ -2652,3 +2652,43 @@ option {
 .product-item-btn{
   margin-top:auto;
 }
+/********************************/
+
+.style-treatment .custom-column__img{
+  position: relative;
+  padding-top: 63% !important;
+}
+.style-treatment .custom-column__img  img{
+  object-fit: cover !important;
+
+}
+.style-treatment .custom-column__text h2{
+  margin-top:24px !important;
+  font-size: 22px!important;
+}
+.style-treatment .custom-column__text-subtitle{
+  margin-top:24px !important;
+}
+.style-treatment .custom-column__btn p{
+  margin-top:24px !important;
+}
+@media (max-width:990px){
+  .style-treatment-wrap.custom-column__wrapper{
+    flex-wrap:wrap;
+    gap:40px 2% !important;
+  }
+  .style-treatment-wrap .custom-column-card{
+    max-width:48%;
+    flex: auto !important;
+    width: 48%;
+  }
+}
+@media (max-width:768px){
+  
+  .style-treatment-wrap .custom-column-card{
+    max-width:100%;
+    width: 100%;
+    flex: auto !important;
+ 
+  }
+}
