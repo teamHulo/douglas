@@ -2,11 +2,21 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
+        "content_max_width": 700
+      }
+    },
+    "c7a3326f-0942-404c-ac75-a852a947c092": {
+      "type": "section-enquiry-form",
+      "settings": {
+        "title": "TREATMENT BOOKING AND ENQUIRY FORM",
+        "text": "<p>Please fill in the below form to arrange a treatment booking, enquire about a treatment or product.<\/p>"
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "c7a3326f-0942-404c-ac75-a852a947c092"
   ]
 }
