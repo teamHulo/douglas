@@ -184,17 +184,17 @@
                   <div class="text element-animation">
                     {{ block.settings.text }}
                   </div>
-                  {%if block.settings.url != blank%}
-                    <div class="btns" style="margin-top:30px;">
-                      <a href="{{block.settings.url}}" class="a-btn prime">{{block.settings.btn_name}}</a>
-                    </div>
-                  {% endif %}
+                  
                 </div>
               </div>
             {% endfor %}
-
+              
           </div>
-
+          {%if section.settings.url != blank%}
+                    <div class="btns" style="margin-top:30px;">
+                      <a href="{{section.settings.url}}" class="a-btn secondary">{{section.settings.btn_name}}</a>
+                    </div>
+          {% endif %}  
         </div>
       </div>
     </div>
@@ -308,7 +308,18 @@
           }
         ],
         "default": "flex-start"
-      }
+      },
+          {
+            "type": "text",
+            "id": "btn_name",
+            "label": "btn name",
+            "default": "discover consultations"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "btn url"
+          }
       
     ],
     "blocks": [
@@ -330,17 +341,6 @@
             "type": "richtext",
             "id": "text",
             "label": "text"
-          },
-          {
-            "type": "text",
-            "id": "btn_name",
-            "label": "btn name",
-            "default": "discover consultations"
-          },
-          {
-            "type": "url",
-            "id": "url",
-            "label": "btn url"
           }
         ]
       }
