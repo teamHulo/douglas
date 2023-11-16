@@ -1,5 +1,10 @@
 {
   "sections": {
+    "26a78db6-d3f2-4db7-94bb-5bf3b637579e": {
+      "type": "section-collection-info",
+      "settings": {
+      }
+    },
     "banner": {
       "type": "main-collection-banner",
       "disabled": true,
@@ -39,6 +44,7 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "disabled": true,
       "settings": {
         "show_sort": true,
         "show_filters": true,
@@ -79,6 +85,7 @@
     }
   },
   "order": [
+    "26a78db6-d3f2-4db7-94bb-5bf3b637579e",
     "banner",
     "4f229f80-200a-4638-a1c5-f42deec5601a",
     "product-grid",
