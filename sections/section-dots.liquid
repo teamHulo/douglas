@@ -1,0 +1,199 @@
+{%  style  %}  
+    #shopify-section-{{section.id}} h2, #shopify-section-{{section.id}} h3, #shopify-section-{{section.id}} p {
+        color:{{section.settings.color}};
+    }
+    #shopify-section-{{section.id}} .section-dots{
+        background:{{section.settings.bg}};
+    }
+    
+    
+{% endstyle %}
+
+<div class="section-dots">
+    <div class="container">
+        <div class="section-dots__wrap">
+            <div class="title element-animation">
+                <h2>
+                    {{section.settings.title}}
+                </h2>
+            </div>
+            <div class="text element-animation">
+                {{section.settings.text}}
+            </div>
+            <div class="list__items">
+                <div class="left item">
+                    <div class="left__wrap item__wrap">
+                        <div class="item__title element-animation">
+                            <h3>{{section.settings.title_left}}</h3>
+                        </div>
+                        <div class="item__text element-animation">
+                            {{section.settings.text_left}}
+                        </div>
+                        <div class="item__image element-animation">
+                            <div class="image">
+                                {% for block in section.blocks %}
+                                    {% if block.settings.aligment_dots == "left" %}
+                                        <a class="dots" href="{{ block.settings.url }}" style="top:{{block.settings.top}}%; left:{{block.settings.left}}%;">
+                                            <span>
+
+                                            </span>
+                                        </a>
+                                    {% endif %}
+                                {% endfor %}
+                                <img src="{{section.settings.img_left | img_url: 'master'}}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right item">
+                    <div class="right__wrap item__wrap">
+                        <div class="item__title element-animation">
+                            <h3>{{section.settings.title_right}}</h3>
+                        </div>
+                        <div class="item__text element-animation">
+                            {{section.settings.text_right}}
+                        </div>
+                        <div class="item__image element-animation">
+                            <div class="image">
+                                {% for block in section.blocks %}
+                                    {% if block.settings.aligment_dots == "right" %}
+                                        <a class="dots" href="{{ block.settings.url }}" style="top:{{block.settings.top}}%; left:{{block.settings.left}}%;">
+                                            <span>
+
+                                            </span>
+                                        </a>
+                                    {% endif %}
+                                {% endfor %}
+                                <img src="{{section.settings.img_right | img_url: 'master'}}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+      "name": "section dots",
+      "tag": "section",
+      "class": "page-section",
+      "settings": [
+        {
+            "type": "color",
+            "id": "color",
+            "label":"color text",
+            "default": "#FFF"
+        },
+        {
+            "type": "color",
+            "id": "bg",
+            "label":"background",
+            "default": "#000"
+        },
+        {
+            "type": "image_picker",
+            "id": "img_left",
+            "label": "image item left"
+        },
+        {
+            "type": "image_picker",
+            "id": "img_right",
+            "label": "image item right"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "title",
+          "default": "TREATMENT BOOKING AND ENQUIRY FORM"
+        }, {
+          "type": "richtext",
+          "id": "text",
+          "label": "text",
+          "default": "<p>Please fill in the below form to arrange a treatment booking, enquire about a treatment or product.</p>"
+        },
+        {
+          "type": "text",
+          "id": "title_left",
+          "label": "title left",
+          "default": "TREATMENT BOOKING AND ENQUIRY FORM"
+        }, 
+        {
+          "type": "richtext",
+          "id": "text_left",
+          "label": "text left",
+          "default": "<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde quod dolorum nam, adipisci ad omnis, consequuntur ipsa voluptates est ut rerum pariatur tenetur. Tenetur in excepturi accusantium nemo omnis explicabo.</p>"
+        },
+        {
+          "type": "text",
+          "id": "title_right",
+          "label": "title_right",
+          "default": "TREATMENT BOOKING AND ENQUIRY FORM "
+        }, 
+        {
+          "type": "richtext",
+          "id": "text_right",
+          "label": "text right",
+          "default": "<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde quod dolorum nam, adipisci ad omnis, consequuntur ipsa voluptates est ut rerum pariatur tenetur. Tenetur in excepturi accusantium nemo omnis explicabo.</p>"
+        }
+      ],
+        "blocks": [
+        {
+            "name": "dots",
+            "type": "dots",
+            "settings": [
+                {
+                    "type": "select",
+                    "id": "aligment_dots",
+                    "label": "alignment image dots",
+                    "options": [
+                        {
+                        "value": "left",
+                        "label": "Left"
+                        },
+                        {
+                        "value": "right",
+                        "label": "Right"
+                        }
+                    ],
+                    "default": "left"
+                },
+                {
+                    "type": "url",
+                    "id": "url",
+                    "label": "url"
+                },
+                {
+                    "type": "range",
+                    "id": "top",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "%",
+                    "label": "position top dots",
+                    "default": 0
+                },
+                {
+                    "type": "range",
+                    "id": "left",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "%",
+                    "label": "position left dots",
+                    "default": 0
+                }
+            
+            ]
+        }
+        ],
+      "presets": [
+        {
+          "name": "section dots"
+        }
+      ]
+  
+    }
+  {% endschema %}

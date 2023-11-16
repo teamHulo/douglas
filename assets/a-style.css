@@ -698,6 +698,7 @@ header .header__inner {
   font-weight: 500;
   line-height: 120%; /* 43.2px */
   letter-spacing: 0.25px;
+  word-break: break-all;
 }
 .section-tab-hover .tab-item-content {
   padding: clamp(20px, 4.167vw, 80px);
@@ -2692,3 +2693,84 @@ option {
  
   }
 }
+
+
+/********section-dots********/
+.section-dots .list__items{
+  display:flex;
+  flex-wrap:wrap;
+  gap:40px 3%;
+}
+.section-dots .item{
+  width: 47%;
+}
+.section-dots .item .item__wrap{
+  height: 100%;
+  display:flex;
+  flex-direction: column;
+}
+.section-dots .item__image .image{
+  position: relative;
+  padding-top:100%;
+}
+.section-dots .item__image .image img{
+  display:block;
+  width:100%;
+  height: 100%;
+  position: absolute;
+  object-fit: contain;
+  object-position: bottom;
+  top:0;
+  left:0;
+  z-index: 1;
+}
+.section-dots{
+  padding:clamp(50px, 6.944vw, 100px) 0;
+}
+.section-dots .title{
+  margin-bottom:30px;
+}
+.section-dots .text{
+  margin-bottom:50px;
+}
+.section-dots .item__title{
+  margin-bottom:20px;
+}
+.section-dots .item__text{
+  margin-bottom:20px;
+}
+.section-dots .dots{
+  border:1px solid #FFF;
+  border-radius: 50%;
+  width:35px;
+  height: 35px;
+  position: absolute;
+  display: block;
+  z-index: 2;
+  transform: scale(1);
+  transition: all .3s ease;
+}
+.section-dots .dots:hover{
+  transform: scale(1.1);
+  transition: all .3s ease;
+}
+.section-dots .dots__wrap{
+  position: relative;
+}
+.section-dots .dots span{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  width:25px;
+  height: 25px;
+  display: block;
+  background: #FFF;
+  border-radius: 50%;
+}
+@media (max-width:767px){
+  .section-dots .item{
+    width: 100%;
+  }
+}
+/********** section-dots end ******/
