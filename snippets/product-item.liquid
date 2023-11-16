@@ -35,6 +35,7 @@
     {% if product_columns_mobile == "2" %} product-item--compact {% endif %}
     {% if settings.enable_quick_add and current_variant.available and product != blank %} product-item--has-quick-add{% endif %}
    {{ wrapper_class }}
+   {{ class }}
   "
   style="--z-index-item: {{ forloop.rindex }};"
 >
