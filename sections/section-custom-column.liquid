@@ -57,9 +57,9 @@
             {% endif %}
         </div>
     {% endif %}
-    <div class="custom-column__wrapper style-treatment-wrap {% if section.settings.treatment == true %} style-treatment-wrap {%endif%}">
+    <div class="custom-column__wrapper  {% if section.settings.treatment == true %} style-treatment-wrap {%endif%}">
         {% for block in section.blocks %}
-        <div class="custom-column-card style-treatment{% if section.settings.treatment == true %} style-treatment {%endif%}">
+        <div class="custom-column-card {% if section.settings.treatment == true %} style-treatment {%endif%}">
                 {% if block.settings.img != blank %}
                     <div class="image">
                         <div class="custom-column__img element-animation" style="padding-top: {{ block.settings.img_scale }}%">
