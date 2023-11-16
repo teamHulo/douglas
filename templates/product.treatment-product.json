@@ -43,7 +43,7 @@
           "settings": {
             "btn_url1": "shopify:\/\/pages\/treatment-booking-and-price-enquiry-form",
             "btn_name1": "Make a booking",
-            "btn_url2": "#",
+            "btn_url2": "",
             "btn_name2": ""
           }
         }
