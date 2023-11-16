@@ -44,7 +44,7 @@
             "btn_url1": "shopify:\/\/pages\/treatment-booking-and-price-enquiry-form",
             "btn_name1": "Make a booking",
             "btn_url2": "#",
-            "btn_name2": "Find out more"
+            "btn_name2": ""
           }
         }
       },
@@ -99,7 +99,6 @@
         "2368c524-f540-4f10-8540-e5b52d4fd28e": {
           "type": "image",
           "settings": {
-            "img": "shopify:\/\/shop_images\/shutterstock_138953300.jpg"
           }
         }
       },
