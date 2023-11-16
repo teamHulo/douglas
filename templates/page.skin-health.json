@@ -118,7 +118,7 @@
         "pt": 50,
         "img": "shopify:\/\/shop_images\/DAY_SERUM_30_ML_02_729ee685-c83c-4bfb-ab0d-1cd691508e21.png",
         "img_height": 100,
-        "img_width": 70,
+        "img_width": 60,
         "img_alignment": "row",
         "img_alignment_vertical": "flex-start",
         "img_alignment_horizontal": "flex-start"
@@ -212,7 +212,7 @@
         "pt": 50,
         "img": "shopify:\/\/shop_images\/DP_SKIN_HEATH_IMAGE_7_c80d73d3-d9db-410f-aee2-d33e3a6299d2.png",
         "img_height": 100,
-        "img_width": 55,
+        "img_width": 45,
         "img_alignment": "row",
         "img_alignment_vertical": "flex-start",
         "img_alignment_horizontal": "center"
@@ -240,7 +240,7 @@
         "pt": 50,
         "img": "shopify:\/\/shop_images\/DP-SKIN-HEATH-IMAGE-8.png",
         "img_height": 100,
-        "img_width": 70,
+        "img_width": 50,
         "img_alignment": "row-reverse",
         "img_alignment_vertical": "flex-start",
         "img_alignment_horizontal": "center"
