@@ -195,7 +195,7 @@
       "settings": {
         "treatment": false,
         "padding_top": 100,
-        "padding_bottom": 100,
+        "padding_bottom": 138,
         "column_gap": 70,
         "bg": "#000000",
         "color_text": "#ffffff",
