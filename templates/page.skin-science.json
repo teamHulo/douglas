@@ -56,7 +56,9 @@
         "img_width": 82,
         "img_alignment": "row",
         "img_alignment_vertical": "center",
-        "img_alignment_horizontal": "flex-start"
+        "img_alignment_horizontal": "flex-start",
+        "btn_name": "discover consultations",
+        "url": ""
       }
     },
     "15572b8a-834f-4482-8e77-44a05516d135": {
@@ -79,7 +81,7 @@
             "btn_full": false,
             "btn_style": "prime",
             "text_width": 1200,
-            "text_align": "left"
+            "text_align": "center"
           }
         },
         "4c8f7abc-9f15-411d-82e7-a7d02dc3f959": {
@@ -129,6 +131,7 @@
         "f8732c33-408f-462c-a55e-8faef4546033"
       ],
       "settings": {
+        "treatment": false,
         "padding_top": 100,
         "padding_bottom": 100,
         "column_gap": 34,
@@ -190,6 +193,7 @@
         "ff707c27-5fa8-4166-9fab-05474db3591a"
       ],
       "settings": {
+        "treatment": false,
         "padding_top": 100,
         "padding_bottom": 100,
         "column_gap": 70,
