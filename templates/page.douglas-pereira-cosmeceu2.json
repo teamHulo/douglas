@@ -121,7 +121,7 @@
             "btn_full": false,
             "btn_style": "prime",
             "text_width": 1200,
-            "text_align": "left"
+            "text_align": "center"
           }
         }
       },
