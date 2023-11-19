@@ -39,7 +39,7 @@
         "color_icon_transparent": "#ffffff",
         "color_count_transparent": "#000000",
         "color_border_transparent": "#ffffff",
-        "opacity_border_transparent": 80
+        "opacity_border_transparent": 0
       }
     }
   },
