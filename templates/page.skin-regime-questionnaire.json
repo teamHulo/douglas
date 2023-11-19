@@ -13,13 +13,21 @@
         "template--21564032123162__3eaf6a64-73c9-4f9c-93e5-f03d5822bf1c-heading-1": {
           "type": "heading",
           "settings": {
-            "title": "Stay tuned we will soon be launching our Skin Regime QuestionnaireWhere you can answer a few short questions and our skin smart algorithm will recommend and design the ideal homecare regime for your skin. ",
+            "title": "LAUNCHING SOON ",
+            "text_max_width": 100
+          }
+        },
+        "798b0db3-ddd3-43c7-a168-68384c950228": {
+          "type": "text",
+          "settings": {
+            "subheading": "<p>We will soon be launching our skincare regime questionnaire. Where in a few short answers you can find your perfect homecare regime for your skin. <\/p><p>Signup to our newsletter to be notified when it launches.  <\/p>",
             "text_max_width": 100
           }
         }
       },
       "block_order": [
-        "template--21564032123162__3eaf6a64-73c9-4f9c-93e5-f03d5822bf1c-heading-1"
+        "template--21564032123162__3eaf6a64-73c9-4f9c-93e5-f03d5822bf1c-heading-1",
+        "798b0db3-ddd3-43c7-a168-68384c950228"
       ],
       "settings": {
         "enable_animation": true,
