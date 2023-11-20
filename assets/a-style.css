@@ -292,7 +292,7 @@ header .icon {
   stroke: #fff;
 }
 header .header__inner {
-  padding: 0px clamp(20px, 4.167vw, 80px) 0px clamp(20px, 4.167vw, 80px);
+  padding: 10px clamp(20px, 4.167vw, 80px) 10px clamp(20px, 4.167vw, 80px);
   max-width: 1920px;
   margin: 0 auto;
 }
