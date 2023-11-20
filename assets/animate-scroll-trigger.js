@@ -9,12 +9,8 @@ $(() => {
                 start: "top 60%",
                 end: "bottom center",
                 pinSpacing: false,
-                scrub:3,
-                markers:true,
-                onUpdate : (self) => {
-                    let progress = self.progress;
-                    console.log(progress);
-                }
+                scrub:2,
+               
             },
         }).to(trigger, { xPercent: xPercentValue, y: 0,ease: "none" },"+=0.15");
     };
