@@ -2782,3 +2782,7 @@ option {
 .section-image-text{
   overflow: hidden;
 }
+
+[data-name="collection"] .image-banner{
+  margin-top:50px !important;
+}
