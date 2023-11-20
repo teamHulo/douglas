@@ -2786,3 +2786,7 @@ option {
 [data-name="collection"] .image-banner{
   margin-top:50px !important;
 }
+.recommended-products__content{
+  max-width: 800px;
+  margin: 0 auto;
+}
