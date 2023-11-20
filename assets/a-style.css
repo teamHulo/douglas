@@ -2277,6 +2277,11 @@ header .header__inner {
   max-width: 1440px;
   margin: 0 auto;
 }
+.section-collection-info .text{
+  max-width: 830px;
+  padding-top:30px;
+  margin:0 auto;
+}
 /****** product-step-item ****/
 .section-product-step{
  /* padding:50px 0;*/
