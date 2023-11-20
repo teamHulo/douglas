@@ -3,12 +3,18 @@
     padding:0;
   }
 .section-image-text-{{ section.id}} .container{
- 
+  
     max-width:2200px;
     padding:0;
 }
   .section-image-text-{{ section.id}} .left__wrap, .section-image-text-{{ section.id}} .image{
     width:100%;
+  }
+  .section-image-text-{{ section.id}} .image-animate-left{
+      transform: translateX(-100%);
+  }
+  .section-image-text-{{ section.id}} .image-animate-right{
+    transform: translateX(100%);
   }
   .section-image-text-{{ section.id}}{
     background:{{section.settings.bg}};
@@ -43,8 +49,10 @@
     display: block;
     width: 100%;
     height: 100%;
+    position: static !important;
     max-width: {{ section.settings.img_width}}%;
     max-height: {{ section.settings.img_height}}%;
+    
   }
   .section-image-text-{{ section.id}} .image {
     display:flex;
@@ -160,8 +168,8 @@
     <div class="section-image-text__wrap">
       <div class="left item">
         <div class="left__wrap item__wrap">
-          <div class="image element-animation">
-            <img src="{{section.settings.img | img_url: 'master'}}" alt="">
+          <div class="image {% if section.settings.animate_aligment == "no animate"%} element-animation {% endif %}">
+            <img  class="{% if section.settings.animate_aligment == "right"%} image-animate-right {%  elsif  section.settings.animate_aligment == "left"%} image-animate-left {%else%}  {% endif %}" src="{{section.settings.img | img_url: 'master'}}" alt="">
           </div>
         </div>
       </div>
@@ -205,6 +213,26 @@
   {
     "name": "new section image text",
     "settings": [
+      {
+        "type": "select",
+        "id": "animate_aligment",
+        "label": "animate",
+        "options": [
+          {
+            "value": "left",
+            "label": "left"
+          },
+          {
+            "value": "right",
+            "label": "right"
+          },
+          {
+            "value": "no animate",
+            "label": "no animate"
+          }
+        ],
+        "default": "no animate"
+      },
       {
         "type": "color",
         "id": "bg",

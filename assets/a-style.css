@@ -2774,3 +2774,6 @@ option {
   }
 }
 /********** section-dots end ******/
+.section-image-text{
+  overflow: hidden;
+}

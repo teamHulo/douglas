@@ -1,3 +1,4 @@
+console.log('1');
 $(() => {
   const swiper = new Swiper(".banner-slider-swiper", {
     loop: true,
@@ -14,6 +15,7 @@ $(() => {
   $(".section-tab-hover .tab-item").on("click, mouseover", function () {
     let indx = $(this).index();
     console.log(indx);
+    console.error(indx);
     $(".section-tab-hover .tab-item").removeClass("active");
     $(this).addClass("active");
     $(this)
@@ -31,7 +33,6 @@ $(() => {
 });
 
 $(() => {
-  //console.clear();
   const panels = gsap.utils.toArray(".panel");
   if(panels.length > 0){
     gsap.registerPlugin(ScrollTrigger);
