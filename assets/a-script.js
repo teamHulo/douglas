@@ -309,3 +309,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+$(() => {
+  $('.product-thumbnails__item').each(function(){
+      let indx = $(this).index();
+     if(indx == 0){
+      $(this).find('button').trigger('click');
+      //$(this).find('button').addClass('active');
+     }
+  });
+});
