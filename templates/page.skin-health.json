@@ -47,6 +47,7 @@
         "d8cfc3c3-a8c2-42bb-b03c-8120877fef6e"
       ],
       "settings": {
+        "animate_aligment": "no animate",
         "bg": "#000000",
         "color": "#ffffff",
         "pb": 50,
@@ -86,6 +87,7 @@
         "097d058f-4560-4268-b9f8-9efc9fc77f50"
       ],
       "settings": {
+        "animate_aligment": "right",
         "bg": "#000000",
         "color": "#ffffff",
         "pb": 50,
@@ -116,6 +118,7 @@
         "11486aa1-ffc7-499a-a8b3-9bcc238c887f"
       ],
       "settings": {
+        "animate_aligment": "no animate",
         "bg": "#000000",
         "color": "#ffffff",
         "pb": 50,
@@ -146,6 +149,7 @@
         "5ae4547e-c272-462f-950f-d5bb2e8a5736"
       ],
       "settings": {
+        "animate_aligment": "right",
         "bg": "#000000",
         "color": "#ffffff",
         "pb": 50,
@@ -186,6 +190,7 @@
         "f71bbd13-25c7-4c17-8e2b-939bf3d13e82"
       ],
       "settings": {
+        "animate_aligment": "no animate",
         "bg": "#000000",
         "color": "#ffffff",
         "pb": 50,
@@ -216,6 +221,7 @@
         "5fe6da60-906a-449b-882d-a8eb541ed3eb"
       ],
       "settings": {
+        "animate_aligment": "no animate",
         "bg": "#000000",
         "color": "#ffffff",
         "pb": 50,
@@ -246,6 +252,7 @@
         "b89f78be-3c73-40e9-a377-40e69e598eea"
       ],
       "settings": {
+        "animate_aligment": "no animate",
         "bg": "#000000",
         "color": "#ffffff",
         "pb": 100,
