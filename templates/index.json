@@ -110,6 +110,7 @@
         "d37195aa-510d-49c3-98f9-f4f72c48fbac",
         "fc22061f-33eb-4659-8d24-8b9b23724322"
       ],
+      "disabled": true,
       "settings": {
         "name": "SKINCARE AS INDIVIDUAL AS YOU ARE",
         "title": "We take a holistic approach alongside scientifically – innovative formulations, that work in conjunction with your skin’s biology."
@@ -201,6 +202,7 @@
         "2447b7ab-9201-45a1-98a4-6267c3e636f5",
         "5d84714a-129d-4cc6-88b4-2d4b824a3f3f"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/DP_SkinhealthDiscoverimage.jpg",
         "image_position": "right",
@@ -224,6 +226,7 @@
     },
     "3cb369bf-d763-48e1-a2f9-94d078cb4642": {
       "type": "shoppable-feature",
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/DPSS---Enhancement-Collection.jpg",
         "image_position": "left",
@@ -247,6 +250,7 @@
     },
     "e93a0e87-b11a-40e2-b596-bd60239b309b": {
       "type": "section-image-baner",
+      "disabled": true,
       "settings": {
         "video": true,
         "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/0bede705ccb04381820766fd328bca0c.mp4",
@@ -352,6 +356,7 @@
         "91f9303d-6777-4ed0-a068-f592bc771e9b",
         "c459448a-740d-4168-a408-f1281187c0ab"
       ],
+      "disabled": true,
       "settings": {
         "name": "",
         "title": "How to shop with us"
@@ -359,6 +364,7 @@
     },
     "6145700a-f292-470e-83b3-547f6dc781de": {
       "type": "section-image-baner",
+      "disabled": true,
       "settings": {
         "video": false,
         "video_url": "",
@@ -379,6 +385,115 @@
         "text_position": "center",
         "text_padding_top": 0,
         "text_padding_bottom": 0
+      }
+    },
+    "0f0e9c23-f9e6-41e5-9c17-b6d0ba43d3ce": {
+      "type": "title-subtitle",
+      "settings": {
+        "title": "SKINCARE AS INDIVIDUAL AS YOU ARE",
+        "text": "<p>We take a holistic approach alongside scientifically - innovative formulations, that work in conjunction with your skin’s biology.<\/p>"
+      }
+    },
+    "c4353c86-4b14-40f6-baf8-f10687a53f25": {
+      "type": "section-award",
+      "settings": {
+        "title": "AWARD WINNING FORMULAS",
+        "text": "<p>“Prevention Best Of Beauty Awards 2023” Platinum Peptide Days Serum Won “Best Lifting Serum” & Skin Fluid Tint SPF Won “Best Tinted Moisturiser”<\/p>",
+        "img": "shopify:\/\/shop_images\/DP_SKIN_HEATH_IMAGE_6_da4de776-508a-48c5-8ae8-52c6393d387c.png"
+      }
+    },
+    "a6d215a8-f973-4577-9df6-f388d8a327e2": {
+      "type": "title-subtitle",
+      "settings": {
+        "title": "DICOVER OUR RANGES",
+        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>"
+      }
+    },
+    "422f42b3-7a05-45c9-89a0-3573eaea22ab": {
+      "type": "section-grid-items",
+      "blocks": {
+        "a566c02b-b483-4660-870f-94ef1621d218": {
+          "type": "item",
+          "settings": {
+            "btn_style": "secondary",
+            "img": "shopify:\/\/shop_images\/Essential_Nigth_Kit_02.png",
+            "ovrl": false,
+            "title": "",
+            "text": "",
+            "btn_name": "SHOP SKIN HEALTH",
+            "url": "#"
+          }
+        },
+        "29c9012f-8c89-4b68-ac1a-2cb94963fa6e": {
+          "type": "item",
+          "settings": {
+            "btn_style": "prime",
+            "img": "shopify:\/\/shop_images\/1.png",
+            "ovrl": true,
+            "title": "DISCOVER SKIN HEALTH RANGE",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
+            "btn_name": "DISCOVER",
+            "url": "#"
+          }
+        },
+        "26449348-d501-4d28-a009-3f5076588621": {
+          "type": "item",
+          "settings": {
+            "btn_style": "prime",
+            "img": "shopify:\/\/shop_images\/Dermal-Infusion-treatement.jpg",
+            "ovrl": true,
+            "title": "DISCOVER SKIN SCIENCE RANGE",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
+            "btn_name": "DISCOVER",
+            "url": ""
+          }
+        },
+        "2d680cbf-c313-48b2-9f68-489a7d8aa357": {
+          "type": "item",
+          "settings": {
+            "btn_style": "secondary",
+            "img": "shopify:\/\/shop_images\/Night_serum_02.png",
+            "ovrl": false,
+            "title": "",
+            "text": "",
+            "btn_name": "SHOP SKIN SCIENCE",
+            "url": "#"
+          }
+        },
+        "d949aeaf-a056-4ddb-8b7b-4e0d2d826141": {
+          "type": "item",
+          "settings": {
+            "btn_style": "secondary",
+            "img": "shopify:\/\/shop_images\/SKIN_FLUID_BRONZE_974a2c63-0a4e-400d-84c0-f81ad16e8287.png",
+            "ovrl": false,
+            "title": "",
+            "text": "",
+            "btn_name": "MINERAL MAKE UP",
+            "url": ""
+          }
+        },
+        "99a94cf4-1bd2-4fa5-b251-95a516d935d4": {
+          "type": "item",
+          "settings": {
+            "btn_style": "prime",
+            "img": "shopify:\/\/shop_images\/Dermal-Infusion-treatement.jpg",
+            "ovrl": true,
+            "title": "DICOVER MINERAL MAKEUP RANGE",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
+            "btn_name": "DISCOVER",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "a566c02b-b483-4660-870f-94ef1621d218",
+        "29c9012f-8c89-4b68-ac1a-2cb94963fa6e",
+        "26449348-d501-4d28-a009-3f5076588621",
+        "2d680cbf-c313-48b2-9f68-489a7d8aa357",
+        "d949aeaf-a056-4ddb-8b7b-4e0d2d826141",
+        "99a94cf4-1bd2-4fa5-b251-95a516d935d4"
+      ],
+      "settings": {
       }
     },
     "6fbf64d4-c0e4-4bac-a621-219775a0c45a": {
@@ -442,6 +557,10 @@
     "a9582002-bf1a-412f-a25a-f2fb7ece2685",
     "0e6446f7-19a6-45f3-bce1-13749fe15be2",
     "6145700a-f292-470e-83b3-547f6dc781de",
+    "0f0e9c23-f9e6-41e5-9c17-b6d0ba43d3ce",
+    "c4353c86-4b14-40f6-baf8-f10687a53f25",
+    "a6d215a8-f973-4577-9df6-f388d8a327e2",
+    "422f42b3-7a05-45c9-89a0-3573eaea22ab",
     "6fbf64d4-c0e4-4bac-a621-219775a0c45a"
   ]
 }
