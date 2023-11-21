@@ -47,6 +47,7 @@
         "f7812317-aa04-4a85-87ff-7458406439f5"
       ],
       "settings": {
+        "animate_aligment": "no animate",
         "bg": "#000000",
         "color": "#ffffff",
         "pb": 50,
@@ -265,12 +266,12 @@
         "cc6d66cc-9e60-46cf-91bd-f14dbd22df48"
       ],
       "settings": {
-        "color": "#FFF",
-        "bg": "#000",
+        "color": "#ffffff",
+        "bg": "#000000",
         "img_left": "shopify:\/\/shop_images\/EXFOLIATING_SKIN_DROPS.png",
         "img_right": "shopify:\/\/shop_images\/MASKS.png",
-        "title": "TREATMENT BOOKING AND ENQUIRY FORM",
-        "text": "<p>Please fill in the below form to arrange a treatment booking, enquire about a treatment or product.<\/p>",
+        "title": "SET UP YOUR REGIME",
+        "text": "<p>With our supportive or enhancement product.<\/p>",
         "title_left": "EXFOLIATING SKIN DROPS",
         "text_left": "<p>Make your routine little more targeted for your skin needs by include one of the Skin Drops exfoliating serums. Apply this serum either in the morning or evening as the first serum you apply after cleansing.<\/p>",
         "title_right": "MASKS",
