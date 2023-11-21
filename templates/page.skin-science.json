@@ -131,6 +131,9 @@
         "4c8f7abc-9f15-411d-82e7-a7d02dc3f959",
         "f8732c33-408f-462c-a55e-8faef4546033"
       ],
+      "custom_css": [
+        "section-title. {margin-bottom: 50px !important;}"
+      ],
       "settings": {
         "treatment": false,
         "padding_top": 100,
