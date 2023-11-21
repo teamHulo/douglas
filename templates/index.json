@@ -496,6 +496,52 @@
       "settings": {
       }
     },
+    "e40c577d-c173-4ef7-8e3c-7bf3378a3d85": {
+      "type": "title-subtitle",
+      "settings": {
+        "title": "IS IT TIME FOR US TO ASSIST IN YOUR SKINCARE JOURNEY?",
+        "text": "<p>We have four pathways to assist you with selecting your skincare needs and overcoming your skin challenges. Take the Online Skincare Regime Builder Questionnaire for your personalized homecare regime or book one of three consultations with our skin experts.<\/p>"
+      }
+    },
+    "d186b146-0c20-4ec0-b549-3822b96d10e8": {
+      "type": "section-image-title",
+      "blocks": {
+        "4983ab87-31bb-4c54-9e90-0285162f9ec7": {
+          "type": "item",
+          "settings": {
+            "title": "TAKE THE SKINCARE REGIME QUESTIONNAIRE"
+          }
+        },
+        "06933f48-8b2d-4c37-86ca-d6181a84d840": {
+          "type": "item",
+          "settings": {
+            "title": "COMPLEMENTARY VIRTUAL CONSULTATION"
+          }
+        },
+        "460ce212-2f76-478c-8bb9-0d1d20fc2cc9": {
+          "type": "item",
+          "settings": {
+            "title": "COMPLEMENTARY IN CLINIC DISCOVERY CONSULTATION"
+          }
+        },
+        "b8cd12d3-b6c0-4623-95d3-cb566731b6d4": {
+          "type": "item",
+          "settings": {
+            "title": "IN CLINIC SIGNATURE CONSULTATION"
+          }
+        }
+      },
+      "block_order": [
+        "4983ab87-31bb-4c54-9e90-0285162f9ec7",
+        "06933f48-8b2d-4c37-86ca-d6181a84d840",
+        "460ce212-2f76-478c-8bb9-0d1d20fc2cc9",
+        "b8cd12d3-b6c0-4623-95d3-cb566731b6d4"
+      ],
+      "settings": {
+        "img": "shopify:\/\/shop_images\/RF-Facial-Tightening-Treatment.jpg",
+        "color": "#ffffff"
+      }
+    },
     "6fbf64d4-c0e4-4bac-a621-219775a0c45a": {
       "type": "section-images-scroll",
       "blocks": {
@@ -561,6 +607,8 @@
     "c4353c86-4b14-40f6-baf8-f10687a53f25",
     "a6d215a8-f973-4577-9df6-f388d8a327e2",
     "422f42b3-7a05-45c9-89a0-3573eaea22ab",
+    "e40c577d-c173-4ef7-8e3c-7bf3378a3d85",
+    "d186b146-0c20-4ec0-b549-3822b96d10e8",
     "6fbf64d4-c0e4-4bac-a621-219775a0c45a"
   ]
 }
