@@ -241,30 +241,6 @@
     },
     "754d130d-768c-422d-9cd3-e545315ae41c": {
       "type": "section-dots",
-      "blocks": {
-        "330f7192-bf9e-4ff8-b6cd-65ba205e3d9f": {
-          "type": "dots",
-          "settings": {
-            "aligment_dots": "left",
-            "url": "#",
-            "top": 35,
-            "left": 43
-          }
-        },
-        "cc6d66cc-9e60-46cf-91bd-f14dbd22df48": {
-          "type": "dots",
-          "settings": {
-            "aligment_dots": "right",
-            "url": "#",
-            "top": 33,
-            "left": 2
-          }
-        }
-      },
-      "block_order": [
-        "330f7192-bf9e-4ff8-b6cd-65ba205e3d9f",
-        "cc6d66cc-9e60-46cf-91bd-f14dbd22df48"
-      ],
       "settings": {
         "color": "#ffffff",
         "bg": "#000000",
