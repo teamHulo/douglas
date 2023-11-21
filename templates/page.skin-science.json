@@ -245,7 +245,7 @@
     "754d130d-768c-422d-9cd3-e545315ae41c": {
       "type": "section-dots",
       "custom_css": [
-        ".section-dots .item__image .image img {width: 10%;margin: auto;}"
+        ".section-dots .item__image .image img {width: 60%; margin: auto;}"
       ],
       "settings": {
         "color": "#ffffff",
