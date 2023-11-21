@@ -445,7 +445,7 @@
             "title": "DISCOVER SKIN SCIENCE RANGE",
             "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
             "btn_name": "DISCOVER",
-            "url": ""
+            "url": "#"
           }
         },
         "2d680cbf-c313-48b2-9f68-489a7d8aa357": {
@@ -469,7 +469,7 @@
             "title": "",
             "text": "",
             "btn_name": "MINERAL MAKE UP",
-            "url": ""
+            "url": "#"
           }
         },
         "99a94cf4-1bd2-4fa5-b251-95a516d935d4": {
@@ -481,7 +481,7 @@
             "title": "DICOVER MINERAL MAKEUP RANGE",
             "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
             "btn_name": "DISCOVER",
-            "url": ""
+            "url": "#"
           }
         }
       },
