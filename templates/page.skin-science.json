@@ -132,7 +132,7 @@
         "f8732c33-408f-462c-a55e-8faef4546033"
       ],
       "custom_css": [
-        ".section-title > div {margin-bottom: 10px;}"
+        ".section-title > div {margin-bottom: 0px;}"
       ],
       "settings": {
         "treatment": false,
