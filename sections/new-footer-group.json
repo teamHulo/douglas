@@ -17,7 +17,7 @@
         "subtitle": "<p>With just a few answers, discover your skins true potential with a personalized homecare regime.<\/p>",
         "subtitle_padding_bottom": 40,
         "btn_text": "take the questionnaire",
-        "btn_url": "shopify:\/\/pages\/about",
+        "btn_url": "shopify:\/\/pages\/skin-regime-questionnaire",
         "btn_style": "secondary",
         "text_width": 660,
         "text_align_item": "center",
