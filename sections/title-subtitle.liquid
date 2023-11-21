@@ -1,0 +1,50 @@
+
+<div class="title-subtitle">
+  <div class="container">
+    <div class="title-subtitle__wrap">
+        <div class="left">
+            <div class="left__wrap">
+                <div class="title element-animation">
+                    <h2>
+                        {{section.settings.title}}
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="right__wrap">
+                <div class="text element-animation">
+                    {{section.settings.text}}
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "section-title-subtitile",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "title",
+        "default": "SKINCARE AS INDIVIDUAL AS YOU ARE"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "text",
+        "default": "<p>We take a holistic approach alongside scientifically - innovative formulations, that work in conjunction with your skin’s biology.</p>"
+      }
+    ],
+    "presets": [
+      {
+        "name": "section-title-subtitle"
+      }
+    ]
+  }
+{% endschema %}

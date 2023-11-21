@@ -1,0 +1,205 @@
+{%  style  %} 
+    .section-grid-items .list{
+        display:flex;
+        flex-wrap:wrap;
+    }
+    .section-grid-items .container{
+        padding: 0;
+    }
+    .section-grid-items .list .item{
+        width:50%;
+        position:relative;
+        padding: clamp(100px, 12.865vw, 247px) 20px clamp(100px, 10.677vw, 205px) 20px;
+    }
+    .section-grid-items .list .item .item-bg{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        z-index:0;
+    }
+    .section-grid-items .list .item .item-bg img{
+        display:block;
+        width:100%;
+        height:100%;
+        object-fit:cover;
+    }
+    .section-grid-items .item-bg__wrap{
+        position:relative;
+        height:100%;
+    }
+    .section-grid-items .ovrl:before{
+        content:'';
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background: rgba(0,0,0,.35);
+    }
+    .section-grid-items .title{
+        margin:0 0 44px 0;
+    }
+    .section-grid-items .title h2{
+        margin:0;
+        color:#FFF;
+        text-align:center;
+    }
+    .section-grid-items .text{
+        margin: 0 auto clamp(50px, 7.656vw, 147px) auto;
+        max-width:617px;
+    }
+    .section-grid-items .text p{
+        color:#FFF;
+        text-align:center;
+    }
+    .section-grid-items  .item__wrap{
+        position:relative;
+        z-index:1;
+        width:100%;
+        
+    }
+    .section-grid-items  .item-btn {
+        display:flex;
+        justify-content:center;
+
+    }
+    .section-grid-items .item{
+        display:flex;
+        align-items:flex-end;
+
+    }
+    .section-grid-items .item .a-btn.prime{
+        border: 1px solid #FFFFFF !important;
+        color:#FFF !important;
+    }
+    .section-grid-items .item .a-btn.secondary{
+        border: 1px solid #000000 !important;
+        color:#000 !important;
+        background:#FFF !important;
+        
+    }
+    .section-grid-items .item .a-btn.secondary:hover{
+        border: 1px solid #000000 !important;
+        color:#FFF !important;
+        background:#000 !important;
+        
+    }
+
+    @media (max-width:767px){
+        .section-grid-items .list .item{
+            width:100%;
+        }
+    }
+{% endstyle %} 
+
+<div class="section-grid-items">
+    <div class="container">
+        <div class="section-grid-items__wrap">
+            <div class="list">
+                {% for block in section.blocks %}
+                    <div class="item">
+                        <div class="item-bg {% if block.settings.ovrl == true %} ovrl {%endif%}">
+                            <div class="item-bg__wrap {% if block.settings.ovrl == true %} ovrl {%endif%}">
+                                <img src="{{block.settings.img | img_url: 'master'}}" alt="">
+                            </div>
+                        </div>
+                        <div class="item__wrap">
+                            {% if block.settings.title != blank %}
+                                <div class="title element-animation">
+                                    <h2>
+                                        {{block.settings.title}}
+                                    </h2>
+                                </div>
+                            {% endif %}
+                            {% if block.settings.text != blank %}
+                                <div class="text element-animation">
+                                    {{block.settings.text}}
+                                </div>
+                            {% endif %}
+                            {% if  block.settings.url != blank %}
+                            <div class="item-btn element-animation">
+                                    <a href="{{block.settings.url}}" class="a-btn {% if block.settings.btn_style == 'prime' %} prime {% else %} secondary {% endif %}">{{ block.settings.btn_name }}</a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+    {
+      "name": "section-grid-item",
+      "settings": [
+      
+       
+      ],
+      "blocks": [
+        {
+          "name": "item",
+          "type": "item",
+          "settings": [
+            {
+                "type": "select",
+                "id": "btn_style",
+                "label": "btn style",
+                "options": [
+                    {
+                    "value": "secondary",
+                    "label": "secondary"
+                    },
+                    {
+                    "value": "prime",
+                    "label": "prime"
+                    }
+                ],
+                "default": "secondary"
+            },
+            {
+                "type": "image_picker",
+                "id":"img",
+                "label": "bg image"
+            },
+            {
+                "type": "checkbox",
+                "id": "ovrl",
+                "label": "enable overlay"
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label": "title"
+            },
+            {
+                "type": "richtext",
+                "id": "text",
+                "label": "text"
+            },
+            {
+                "type": "text",
+                "id": "btn_name",
+                "label": "btn name",
+                "default": "DISCOVER"
+            },
+            {
+                "type": "url",
+                "id": "url",
+                "label": "url"
+                
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {   
+          "name": "section-grid-item"
+        }
+      ]
+    }
+  {% endschema %}

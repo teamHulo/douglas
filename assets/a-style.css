@@ -2790,3 +2790,35 @@ option {
   max-width: 800px;
   margin: 0 auto;
 }
+
+/***************title-subtitle*******************/
+.title-subtitle{
+
+}
+
+.title-subtitle__wrap{
+  padding:clamp(50px,4.167vw,80px) 0;
+  display:flex;
+  justify-content: space-between;
+  gap:20px;
+  margin: 0 auto;
+  
+}
+.title-subtitle__wrap .left{
+  max-width:536px;
+  width: 100%;
+}
+.title-subtitle__wrap .right{
+  max-width:950px;
+  width: 100%;
+}
+.title-subtitle__wrap .title, .title-subtitle__wrap p, .title-subtitle__wrap h2{
+  margin:0;
+}
+
+@media (max-width:767px) {
+ .title-subtitle__wrap{
+  flex-wrap:wrap;
+ }
+}
+/************************************/

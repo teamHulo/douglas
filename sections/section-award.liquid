@@ -1,0 +1,85 @@
+{%  style  %}  
+    .section-award{
+        padding:82px 0 28px 0 ;
+        background: transparent radial-gradient(closest-side at 50% 43%, #393838 0%, #000000 100%) 0% 0% no-repeat padding-box;
+        color:#FFF;
+    }
+    .section-award .title {
+        margin: 0 0 10px 0;
+    }
+    .section-award .title h2{
+        text-align:center;
+    }
+    .section-award .text{
+        max-width:750px;
+        margin:0 auto;
+    }
+    .section-award .text{
+        text-align:center;
+        margin-bottom:40px;
+        color:#FFF;
+    }
+    .section-award .text p{
+        color:#FFF;
+    }
+    .section-award .image{
+        max-width:800px;
+        margin:0 auto;
+
+    }
+    .section-award .image img{
+        display:block;
+        width:100%;
+        object-fit:cover;
+    }
+{% endstyle %}
+
+
+
+<div class="section-award">
+    <div class="container">
+        <div class="section-award__wrap">
+            <div class="title element-animation">
+                <h2>
+                    {{section.settings.title}}
+                </h2>
+            </div>
+            <div class="text element-animation">
+                {{section.settings.text}}
+            </div>
+            <div class="image element-animation">
+                <img src="{{section.settings.img | img_url: 'master'}}" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+      "name": "section-award",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "title",
+          "default": "AWARD WINNING FORMULAS "
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "text",
+          "default": "<p>“Prevention Best Of Beauty Awards 2023” Platinum Peptide Days Serum Won “Best Lifting Serum” & Skin Fluid Tint SPF Won “Best Tinted Moisturiser”</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "image"
+        }
+      ],
+      "presets": [
+        {
+          "name": "section-award"
+        }
+      ]
+    }
+  {% endschema %}
