@@ -319,3 +319,15 @@ $(() => {
      }
   });
 });
+
+
+
+$(() => {
+  $('.section-image-title .title').on("click, mouseover", function () {
+    let indx = $(this).index();
+    console.log(indx);
+    console.error(indx);
+    $(".section-image-title .bg img").removeClass("active");
+    $(this).closest('.section-image-title').find('img').eq(indx).addClass("active");
+  });
+});

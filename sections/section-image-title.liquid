@@ -23,6 +23,7 @@
     }
     .section-image-title .title{
         margin:0 0 44px 0;
+        cursor:pointer;
     }
     .section-image-title .title:last-child{
         margin:0;
@@ -35,11 +36,30 @@
         position:relative;
         z-index:1;
     }
+    .section-image-title .bg__wrap{
+        height:100%;
+        positon:relative;
+    }
+    .section-image-title .bg__wrap img{
+        position:absolute;
+        top:0;
+        left:0;
+        opacity:0;
+        transition: all .3s easy;
+    }
+    .section-image-title .bg__wrap img.active{
+        opacity:1;
+        transition: all .5s easy;
+    }
 {% endstyle %}
 
 <div class="section-image-title section-image-title-{{section.id}}">
     <div class="bg">
-                <img src="{{section.settings.img | img_url: 'master'}}" alt="">
+        <div class="bg__wrap">
+            {% for block in section.blocks %}
+                <img {% if forloop.index == 1 %} class="active" {% endif %} src="{{block.settings.img | img_url: 'master'}}" alt="">
+            {% endfor %}
+        </div>
     </div>
     <div class="container">
         <div class="section-image-title__wrap">
@@ -61,10 +81,6 @@
       "name": "section-image-title",
       "settings": [
         {
-          "type": "image_picker",
-          "id": "img",
-          "label": "image bg"
-        },{
           "type": "color",
           "id": "color",
           "label": "color text"
@@ -75,6 +91,11 @@
           "name": "item",
           "type": "item",
           "settings": [
+            {
+            "type": "image_picker",
+            "id": "img",
+            "label": "image bg"
+            },
             {
                 "type": "text",
                 "id": "title",
