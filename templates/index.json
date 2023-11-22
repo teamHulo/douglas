@@ -509,24 +509,28 @@
         "4983ab87-31bb-4c54-9e90-0285162f9ec7": {
           "type": "item",
           "settings": {
+            "img": "shopify:\/\/shop_images\/Shop_SkinHealth_815dc04b-f78b-4c76-9791-7c3adf7e3767.jpg",
             "title": "TAKE THE SKINCARE REGIME QUESTIONNAIRE"
           }
         },
         "06933f48-8b2d-4c37-86ca-d6181a84d840": {
           "type": "item",
           "settings": {
+            "img": "shopify:\/\/shop_images\/RF-Facial-Tightening-Treatment.jpg",
             "title": "COMPLEMENTARY VIRTUAL CONSULTATION"
           }
         },
         "460ce212-2f76-478c-8bb9-0d1d20fc2cc9": {
           "type": "item",
           "settings": {
+            "img": "shopify:\/\/shop_images\/DP_SKIN_HEATH_IMAGE_5_806b0b88-02f8-422a-a3b2-ffdf8e052f81.png",
             "title": "COMPLEMENTARY IN CLINIC DISCOVERY CONSULTATION"
           }
         },
         "b8cd12d3-b6c0-4623-95d3-cb566731b6d4": {
           "type": "item",
           "settings": {
+            "img": "shopify:\/\/shop_images\/DAY_SERUM_30_ML_02_729ee685-c83c-4bfb-ab0d-1cd691508e21.png",
             "title": "IN CLINIC SIGNATURE CONSULTATION"
           }
         }
@@ -538,7 +542,6 @@
         "b8cd12d3-b6c0-4623-95d3-cb566731b6d4"
       ],
       "settings": {
-        "img": "shopify:\/\/shop_images\/RF-Facial-Tightening-Treatment.jpg",
         "color": "#ffffff"
       }
     },
