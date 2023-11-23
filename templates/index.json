@@ -509,29 +509,41 @@
         "4983ab87-31bb-4c54-9e90-0285162f9ec7": {
           "type": "item",
           "settings": {
+            "video": true,
+            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/346237bba57148da972853df217e39dd.mp4",
             "img": "shopify:\/\/shop_images\/lucija-ros-FzQiiLqcRtE-unsplash.jpg",
-            "title": "TAKE THE SKINCARE REGIME QUESTIONNAIRE"
+            "title": "TAKE THE SKINCARE REGIME QUESTIONNAIRE",
+            "url": "shopify:\/\/pages\/skin-regime-questionnaire"
           }
         },
         "06933f48-8b2d-4c37-86ca-d6181a84d840": {
           "type": "item",
           "settings": {
+            "video": false,
+            "video_url": "",
             "img": "shopify:\/\/shop_images\/Step-2-Consultation.jpg",
-            "title": "COMPLEMENTARY VIRTUAL CONSULTATION"
+            "title": "COMPLEMENTARY VIRTUAL CONSULTATION",
+            "url": "shopify:\/\/pages\/consultations"
           }
         },
         "460ce212-2f76-478c-8bb9-0d1d20fc2cc9": {
           "type": "item",
           "settings": {
+            "video": false,
+            "video_url": "",
             "img": "shopify:\/\/shop_images\/Rectangle_226.jpg",
-            "title": "COMPLEMENTARY IN CLINIC DISCOVERY CONSULTATION"
+            "title": "COMPLEMENTARY IN CLINIC DISCOVERY CONSULTATION",
+            "url": "shopify:\/\/pages\/consultations"
           }
         },
         "b8cd12d3-b6c0-4623-95d3-cb566731b6d4": {
           "type": "item",
           "settings": {
+            "video": true,
+            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/62a891c60311450bae7934e37519acbf.mp4",
             "img": "shopify:\/\/shop_images\/Skin-Booster-Facials.jpg",
-            "title": "IN CLINIC SIGNATURE CONSULTATION"
+            "title": "IN CLINIC SIGNATURE CONSULTATION",
+            "url": "shopify:\/\/pages\/consultations"
           }
         }
       },
