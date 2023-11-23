@@ -234,7 +234,6 @@
         "3301b26c-825a-4ce4-8fda-1c5941ca9ad5",
         "c62a74ea-6e32-419e-b040-29906977c768"
       ],
-      "disabled": true,
       "settings": {
         "bg": "#000000",
         "color": "#ffffff",
@@ -244,6 +243,7 @@
     },
     "754d130d-768c-422d-9cd3-e545315ae41c": {
       "type": "section-dots",
+      "disabled": true,
       "custom_css": [
         ".section-dots .item__image .image img {width: 65%; margin: auto; object-position: center;}"
       ],
