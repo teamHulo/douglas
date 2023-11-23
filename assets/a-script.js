@@ -327,7 +327,7 @@ $(() => {
     let indx = $(this).index();
     console.log(indx);
     console.error(indx);
-    $(".section-image-title .bg img").removeClass("active");
-    $(this).closest('.section-image-title').find('img').eq(indx).addClass("active");
+    $(".section-image-title .bg .bg_visible").removeClass("active");
+    $(this).closest('.section-image-title').find('.bg_visible').eq(indx).addClass("active");
   });
 });

@@ -32,6 +32,9 @@
         margin:0;
         text-align:center;
     }
+    .section-image-title .title h3 a{
+        font-family: Proxima Nova;
+    }
     .section-image-title__wrap{
         position:relative;
         z-index:1;
@@ -59,10 +62,13 @@
         width:100%;
         height:100%;
         object-fit:cover;
+       
+    }
+    .bg_visible{
         opacity:0;
         transition: all .5s easy;
     }
-    .section-image-title .bg__wrap video.active{
+    .bg_visible.active{
         opacity:1;
         transition: all .5s easy;
     }
@@ -74,12 +80,12 @@
             {% for block in section.blocks %}
                 
                 {% if block.settings.video == true  and block.settings.video_url != blank%}
-                    <video autoplay loop muted playsinline>
+                    <video class="bg_visible {% if forloop.index == 1 %} active {% endif %}" autoplay loop muted playsinline>
                         <source src="{{block.settings.video_url}}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 {% else %}
-                    <img {% if forloop.index == 1 %} class="active" {% endif %} src="{{block.settings.img | img_url: 'master'}}" alt="">
+                    <img  class="bg_visible {% if forloop.index == 1 %} active {% endif %}" src="{{block.settings.img | img_url: 'master'}}" alt="">
                 {% endif %}
             {% endfor %}
             
@@ -94,7 +100,7 @@
                 {% for block in section.blocks %}
                     <div class="title element-animation">
                         <h3>
-                            {{block.settings.title}}
+                            <a href="{{block.settings.url}}">{{block.settings.title}}</a>
                         </h3>
                     </div>
                 {% endfor %}
@@ -138,6 +144,11 @@
                 "type": "text",
                 "id": "title",
                 "label": "title"
+            },
+            {
+                "type": "url",
+                "id": "url",
+                "label":"url title"
             }
           ]
         }
