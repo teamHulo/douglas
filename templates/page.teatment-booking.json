@@ -10,8 +10,8 @@
     "f482143c-2613-42b6-b5db-62139c50825a": {
       "type": "treatment-booking",
       "settings": {
-        "title": "TREATMENT BOOKING AND PRICE ENQUIRY FORM",
-        "text": "<h4><strong>Please fill in the below form to arrange your treatment booking or to enquire about our treatment prices<\/strong><\/h4><p>Please fill in the below for to arrange your treatment booking or to enquire about our treatment prices. One of our customer care team members will be in contact with you to arrange a booking date and time<\/p>"
+        "title": "TREATMENT BOOKING & PRODUCT  ENQUIRY",
+        "text": "<p>Please fill in the below form for product enquiries, or to arrange a consultation or treatment booking.<\/p><p> One of our customer care team members will be in contact with you within 24 hours. <\/p>"
       }
     }
   },
