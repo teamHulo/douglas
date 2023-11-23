@@ -7,11 +7,11 @@
           "type": "info",
           "settings": {
             "title": "Get in Touch",
-            "text": "<p>Lorem ipsum dolor sit amet consectetur. Tempor pulvinar sed nibh maecenas amet ullamcorper. Fames vitae accumsan ullamcorper neque etiam. Interdum sodales sit.<\/p>",
-            "label": "We’re happy to chat with you!",
-            "mail": "info@douglas.com",
-            "tel": "+1(555)-555-5555",
-            "address": "Douglas Pereira Skin Health, Level 6, Suite 4 \/ 60 Park Street Sydney NSW Australia 2000"
+            "text": "<p>Our client care team are her to support you with your skincare questions. <\/p>",
+            "label": "Client care is open Monday - Friday 9am - 6pm EST",
+            "mail": "bookings@beautyic.com.au",
+            "tel": "0407 443 350",
+            "address": "Douglas Pereira Cosmeceuticals, Level 6, Suite 4 \/ 60 Park Street Sydney NSW Australia 2000"
           }
         }
       },
