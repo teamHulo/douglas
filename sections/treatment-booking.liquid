@@ -177,7 +177,7 @@
       {% form 'contact', class: 'contact__form' %}
         {%- assign success_msg = 'contact.form.post_success' | t -%}
         {% render 'form-status', form: form, form_id: 'contact', success_message: success_msg %}
-        <div class="radio-question element-animation" required>
+        {% comment %}<div class="radio-question element-animation" required>
           <p>Please select how we can assist you (required)</p>
           <div>
             <label>
@@ -337,8 +337,174 @@
                 " />NEOCOLLAGENESIS REMODELING THERAPY
             </label>
           </div>
+      </div>{% endcomment %}
+      <div class="radio-question border-form element-animation" required>
+        <h5> How can we assist you?</h5>
+        <p>Please select how we can assist you (required)</p>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              name="contact[assist]"
+              value="I have an enquiry about a product." />I have an enquiry about a product.
+          </label>
         </div>
-        
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              name="contact[assist]"
+              value="I have an enquiry about my order." />I have an enquiry about my order.
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              name="contact[assist]"
+              value="I have an enquiry about a treatment or consultation." />I have an enquiry about a treatment or consultation.
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              name="contact[assist]"
+              value="I would like to book a treatment or consultation" />I would like to book a treatment or consultation
+              
+          </label>
+        </div>
+      </div>
+      <div class="radio-question element-animation" required>
+        <h4>For consultation and treatments please select the service/s you are interested in ?</h4>
+        <h3>CONSULTATIONS</h3>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              name="contact[consultation]"
+              value="Complementary virtual phone consultation" />Complementary virtual phone consultation
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              name="contact[consultation]"
+              value="Complementary virtual phone consultation" />Complementary virtual phone consultation
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              name="contact[consultation]"
+              value="Complementary in clinic discovery consultation (Conducted in our Sydney flagship space)" />Complementary in clinic discovery consultation (Conducted in our Sydney flagship space)
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              name="contact[consultation]"
+              value="In clinic signature consultation (Conducted in our Sydney flagship space)" />In clinic signature consultation (Conducted in our Sydney flagship space)
+          </label>
+        </div>
+      </div>
+      <div class="radio-question element-animation" >
+        <h3>TREATMENTS:</h3>
+        <h3>CUSTOMISED SKIN FACIALS</h3>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              name="contact[skin]"
+              value="Douglas Pereira Skin Health Signature Facial" />Douglas Pereira Skin Health Signature Facial
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              name="contact[skin]"
+              value="Skin Perfecting Enzyme or Peel Facials" />Skin Perfecting Enzyme or Peel Facials
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              name="contact[skin]"
+              value="Skin Booster Facials" />Skin Booster Facials
+          </label>
+        </div>
+  
+      </div>
+      <div class="radio-question element-animation" >
+  
+        <h3>PROPRIETARY COMPLEX FACIALS</h3>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              name="contact[complex]"
+              value="Cera Fort Complex Facial" />Cera Fort Complex Facial
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              name="contact[complex]"
+              value="Platinum Peptide Complex Facial" />Platinum Peptide Complex Facial
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              name="contact[complex]"
+              value="Clarity Complex Facial" />Clarity Complex Facial
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              type="checkbox"
+              name="contact[complex]"
+              value="Vitamin ABC Complex Facial" />Vitamin ABC Complex Facial
+          </label>
+        </div>
+      </div>
+      <div class="radio-question element-animation" >
+  
+      <h3>SKIN TECHNOLOGY TREATMENTS</h3>
+      <div>
+        <label>
+          <input
+            type="checkbox"
+            name="contact[technology]"
+            value="Dermal Infusion Treatment" />Dermal Infusion Treatment
+        </label>
+      </div>
+      <div>
+        <label>
+          <input
+            type="checkbox"
+            name="contact[technology]"
+            value="RF Facial Tightening Treatment" />RF Facial Tightening Treatment
+        </label>
+      </div>
+      <div>
+        <label>
+          <input
+            type="checkbox"
+            name="contact[technology]"
+            value="Skin Remodelling Treatment" />Skin Remodelling Treatment
+        </label>
+      </div>
+      
+    </div>
         <div class="fields ">
             <div class="title element-animation">
                 <h3>YOUR CONTACT DETAILS
