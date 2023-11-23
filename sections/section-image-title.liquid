@@ -51,14 +51,41 @@
         opacity:1;
         transition: all .5s easy;
     }
+    .section-image-title .bg__wrap video{
+        position:absolute;
+        top:0;
+        left:0;
+        display:block;
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        opacity:0;
+        transition: all .5s easy;
+    }
+    .section-image-title .bg__wrap video.active{
+        opacity:1;
+        transition: all .5s easy;
+    }
 {% endstyle %}
 
 <div class="section-image-title section-image-title-{{section.id}}">
     <div class="bg">
         <div class="bg__wrap">
             {% for block in section.blocks %}
-                <img {% if forloop.index == 1 %} class="active" {% endif %} src="{{block.settings.img | img_url: 'master'}}" alt="">
+                
+                {% if block.settings.video == true  and block.settings.video_url != blank%}
+                    <video autoplay loop muted playsinline>
+                        <source src="{{block.settings.video_url}}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                {% else %}
+                    <img {% if forloop.index == 1 %} class="active" {% endif %} src="{{block.settings.img | img_url: 'master'}}" alt="">
+                {% endif %}
             {% endfor %}
+            
+
+
+
         </div>
     </div>
     <div class="container">
@@ -91,6 +118,17 @@
           "name": "item",
           "type": "item",
           "settings": [
+            {
+                "type":"checkbox",
+                "id":"video",
+                "label": "show video",
+                "default": false
+            },
+            {
+                "type": "text",
+                "id": "video_url",
+                "label":"video bg"
+            },
             {
             "type": "image_picker",
             "id": "img",

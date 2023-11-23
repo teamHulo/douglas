@@ -338,7 +338,16 @@
             {{- form.body -}}
           {%- endif -%}
         </textarea>
-
+        <label for=" element-animation" class="visually-hidden">What state do you live in? (required)</label>
+        <input
+          type="text"
+          name="contact[what-state]"
+          id=""
+          class="input element-animation"
+          placeholder="What state do you live in? (required)"
+          value=""
+          style="margin:20px 0"
+        >  
         <button type="submit" class="btn btn--primary btn--form element-animation">{{ 'contact.form.submit' | t }}</button>
       {% endform %}
     </div>

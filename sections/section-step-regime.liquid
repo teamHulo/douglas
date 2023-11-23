@@ -11,6 +11,16 @@
     .step-regime-{{section.id}} .text p{
         color:{{section.settings.color}};
     }
+    .step-regime .right .item__wrap .image{
+      display: flex;
+      justify-content: center;
+    }
+    .step-regime .block .right .item__wrap .image{
+      justify-content: flex-start;
+    }
+    .step-regime .block:nth-child(even) .right .item__wrap .image{
+      justify-content: flex-end;
+    }
 {% endstyle %}
 <div class="step-regime step-regime-{{section.id}}">
     <div class="container">
