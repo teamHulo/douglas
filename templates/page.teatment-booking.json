@@ -11,7 +11,7 @@
       "type": "treatment-booking",
       "settings": {
         "title": "PRODUCT  ENQUIRY & TREATMENT BOOKINGS",
-        "text": "<h5><strong>Please fill in the below form for product enquiries, or to arrange a consultation or treatment booking.<\/strong><\/h5><h5><strong> One of our customer care team members will be in contact with you within 24 hours. <\/strong><\/h5>"
+        "text": "<h6>Please fill in the below form for product enquiries, or to arrange a consultation or treatment booking.<\/h6><h6> One of our customer care team members will be in contact with you within 24 hours. <\/h6>"
       }
     }
   },
