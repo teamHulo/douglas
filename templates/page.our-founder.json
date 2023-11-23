@@ -47,6 +47,7 @@
         "1107ac95-7d58-4c9c-8119-39d29e594913"
       ],
       "settings": {
+        "animate_aligment": "left",
         "bg": "#000000",
         "color": "#ffffff",
         "pb": 50,
@@ -56,7 +57,9 @@
         "img_width": 77,
         "img_alignment": "row",
         "img_alignment_vertical": "center",
-        "img_alignment_horizontal": "flex-start"
+        "img_alignment_horizontal": "flex-start",
+        "btn_name": "discover consultations",
+        "url": ""
       }
     }
   },
