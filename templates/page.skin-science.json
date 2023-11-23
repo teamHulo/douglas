@@ -234,6 +234,9 @@
         "3301b26c-825a-4ce4-8fda-1c5941ca9ad5",
         "c62a74ea-6e32-419e-b040-29906977c768"
       ],
+      "custom_css": [
+        ".step-regime .item img {width: 50%;}"
+      ],
       "settings": {
         "bg": "#000000",
         "color": "#ffffff",
