@@ -90,6 +90,9 @@
     border-radius: 50px;
     padding: 16px 60px !important;
   }
+  .radio-question.m0{
+    margin-top:0;
+  }
 </style>
 
 <div
@@ -124,6 +127,131 @@
       {% form 'contact', class: 'contact__form' %}
         {%- assign success_msg = 'contact.form.post_success' | t -%}
         {% render 'form-status', form: form, form_id: 'contact', success_message: success_msg %}
+        
+
+        <label for="contact-ContactFormMessage" class="visually-hidden">{{ 'contact.form.message' | t }}</label>
+        <div class="radio-question element-animation m0">
+          <p>How can we assist you?</p>
+            <div>
+              <label>
+                <input type="checkbox" name="contact[assist]" value="I would like to book a complementary virtual video consultation"/>I have an enquiry about a product.
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" name="contact[assist]" value="I have an enquiry about my order"/>I have an enquiry about my order
+              </label>
+            </div>
+              <div>
+                <label>
+                  <input type="checkbox" name="contact[assist]" value="I have an enquiry about a treatment or consultation."/>I have an enquiry about a treatment or consultation.
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input type="checkbox" name="contact[assist]" value="I would like to book a treatment or consultation."/>I would like to book a treatment or consultation.
+                </label>
+              </div>
+        </div>
+
+        <h5 class="element-animation"> For consultation and treatments please select the service/s you are interested in ?</h5>
+        <label for="contact-ContactFormMessage" class="visually-hidden">{{ 'contact.form.message' | t }}</label>
+        <div class="radio-question element-animation">
+          <p>CONSULTATIONS</p>
+            <div>
+              <label>
+                <input type="checkbox" name="contact[consultations]" value="Complementary virtual phone consultation"/>Complementary virtual phone consultation
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" name="contact[consultations]" value="Complementary in clinic discovery consultation (Conducted in our Sydney flagship space)"/>Complementary in clinic discovery consultation (Conducted in our Sydney flagship space)
+              </label>
+            </div>
+              <div>
+                <label>
+                  <input type="checkbox" name="contact[consultations]" value="In clinic signature consultation (Conducted in our Sydney flagship space)"/>In clinic signature consultation (Conducted in our Sydney flagship space)
+                </label>
+              </div>
+              
+        </div>
+
+
+        
+        <label for="contact-ContactFormMessage" class="visually-hidden">{{ 'contact.form.message' | t }}</label>
+        <div class="radio-question element-animation">
+          <p>TREATMENTS:</p>
+          <p>CUSTOMISED SKIN FACIALS</p>
+            <div>
+              <label>
+                <input type="checkbox" name="contact[skin-facials]" value="Douglas Pereira Skin Health Signature Facial"/>Douglas Pereira Skin Health Signature Facial
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" name="contact[skin-facials]" value="Skin Booster Facials"/>Skin Booster Facials
+              </label>
+            </div>
+              <div>
+                <label>
+                  <input type="checkbox" name="contact[skin-facials]" value="In clinic signature consultation (Conducted in our Sydney flagship space)"/>In clinic signature consultation (Conducted in our Sydney flagship space)
+                </label>
+              </div>
+              
+        </div>
+
+
+
+
+        <label for="contact-ContactFormMessage" class="visually-hidden">{{ 'contact.form.message' | t }}</label>
+        <div class="radio-question element-animation">
+          <p>PROPRIETARY COMPLEX FACIALS</p>
+            <div>
+              <label>
+                <input type="checkbox" name="contact[comlex-facials]" value="Cera Fort Complex Facial"/>Cera Fort Complex Facial
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" name="contact[comlex-facials]" value="Platinum Peptide Complex Facial"/>Platinum Peptide Complex Facial
+              </label>
+            </div>
+              <div>
+                <label>
+                  <input type="checkbox" name="contact[comlex-facials]" value="Clarity Complex Facial"/>Clarity Complex Facial
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input type="checkbox" name="contact[comlex-facials]" value="Vitamin ABC Complex Facial"/>Vitamin ABC Complex Facial
+                </label>
+              </div> 
+        </div>
+
+
+
+
+        <label for="contact-ContactFormMessage" class="visually-hidden">{{ 'contact.form.message' | t }}</label>
+        <div class="radio-question element-animation">
+          <p>SKIN TECHNOLOGY TREATMENT</p>
+            <div>
+              <label>
+                <input type="checkbox" name="contact[skin-technology]" value="Dermal Infusion Treatment"/>Dermal Infusion Treatment
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" name="contact[skin-technology]" value="RF Facial Tightening Treatment"/>RF Facial Tightening Treatment
+              </label>
+            </div>
+              <div>
+                <label>
+                  <input type="checkbox" name="contact[skin-technology]" value="Skin Remodelling Treatment"/>Skin Remodelling Treatment
+                </label>
+              </div>
+              
+        </div>
+
 
         <label for="contact-ContactFormName element-animation" class="visually-hidden">{{ 'contact.form.name' | t }}</label>
         <input
@@ -159,7 +287,7 @@
           pattern="[0-9\-]*"
         >
 
-        <label for="contact-ContactFormMessage" class="visually-hidden">{{ 'contact.form.message' | t }}</label>
+       {% comment %} <label for="contact-ContactFormMessage" class="visually-hidden">{{ 'contact.form.message' | t }}</label>
         <div class="radio-question element-animation">
           <p>How we can help you?</p>
             <div>
@@ -197,7 +325,7 @@
                   <input type="checkbox" name="contact[help-option-7]" value="Other"/>Other
                 </label>
               </div>
-        </div>
+          </div> {% endcomment %}
         <textarea
           rows="3"
           name="contact[body]"
