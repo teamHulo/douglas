@@ -445,7 +445,7 @@
           "settings": {
             "btn_style": "prime",
             "video": true,
-            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/346237bba57148da972853df217e39dd.mp4https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/346237bba57148da972853df217e39dd.mp4",
+            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/346237bba57148da972853df217e39dd.mp4",
             "img": "shopify:\/\/shop_images\/Dermal-Infusion-treatement.jpg",
             "ovrl": true,
             "title": "DISCOVER SKIN SCIENCE RANGE",
@@ -472,8 +472,8 @@
           "type": "item",
           "settings": {
             "btn_style": "secondary",
-            "video": true,
-            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/346237bba57148da972853df217e39dd.mp4",
+            "video": false,
+            "video_url": "",
             "img": "shopify:\/\/shop_images\/Shop_MineralMakeup.jpg",
             "ovrl": false,
             "title": "",
@@ -486,8 +486,8 @@
           "type": "item",
           "settings": {
             "btn_style": "prime",
-            "video": false,
-            "video_url": "",
+            "video": true,
+            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/346237bba57148da972853df217e39dd.mp4",
             "img": "shopify:\/\/shop_images\/Dermal-Infusion-treatement.jpg",
             "ovrl": true,
             "title": "DICOVER MINERAL MAKEUP RANGE",
