@@ -10,10 +10,10 @@ $(() => {
                 end: "bottom bottom",
                 pinSpacing: false,
                 scrub:2,
-                markers:true
+                
                
             },
-        }).to(trigger, { xPercent: xPercentValue, y: 0,ease: "none" },"+=0.15");
+        }).to(trigger, { xPercent: xPercentValue ,ease: "none" },"+=0.15");
     };
 
     const triggersLeft = document.querySelectorAll(".image-animate-left");

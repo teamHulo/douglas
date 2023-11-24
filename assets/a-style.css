@@ -2844,3 +2844,6 @@ option {
 .recommended-products .section-header{
   margin-bottom:40px !important;
 }
+#shopify-section-template--21427503694106__9fddcfae-82a9-4283-b629-98c227c3e6ec .image-banner::before{
+  background: rgba(8, 8, 8, 0.15)
+}
