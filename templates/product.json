@@ -184,8 +184,8 @@
       "settings": {
         "max_products": 6,
         "columns": 2,
-        "title": "Recommended",
-        "subheading": "<p>You might want to take a closer look.<\/p>",
+        "title": "you may also like",
+        "subheading": "<p>Discover some of our other formulations <\/p>",
         "text_max_width": 38,
         "aspect_ratio": "natural",
         "enable_animation": false,

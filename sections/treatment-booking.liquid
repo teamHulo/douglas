@@ -340,7 +340,7 @@
       </div>{% endcomment %}
       <div class="radio-question border-form element-animation" required>
         <h5> How can we assist you?</h5>
-        <p>Please select how we can assist you (required)</p>
+        <p>Please select (required)</p>
         <div>
           <label>
             <input
@@ -376,8 +376,11 @@
         </div>
       </div>
       <div class="radio-question element-animation" required>
-        <h4>For consultation and treatments please select the service/s you are interested in ?</h4>
-        <h3>CONSULTATIONS</h3>
+        <h5>CONSULTATION &amp; TREATMENT BOOKINGS</h5>
+        <p>Please select what you would like to book.</p>
+
+        
+        <h5>CONSULTATIONS</h5>
         <div>
           <label>
             <input
@@ -399,7 +402,7 @@
             <input
               type="checkbox"
               name="contact[consultation]"
-              value="Complementary in clinic discovery consultation (Conducted in our Sydney flagship space)" />Complementary in clinic discovery consultation (Conducted in our Sydney flagship space)
+              value="Complementary in clinic discovery consultation (Conducted in our Sydney flagship space)" />Complementary in clinic discovery consultation 
           </label>
         </div>
         <div>
@@ -407,13 +410,12 @@
             <input
               type="checkbox"
               name="contact[consultation]"
-              value="In clinic signature consultation (Conducted in our Sydney flagship space)" />In clinic signature consultation (Conducted in our Sydney flagship space)
+              value="In clinic signature consultation (Conducted in our Sydney flagship space)" />In clinic signature consultation 
           </label>
         </div>
       </div>
       <div class="radio-question element-animation" >
-        <h3>TREATMENTS:</h3>
-        <h3>CUSTOMISED SKIN FACIALS</h3>
+        <h5>CUSTOMISED SKIN FACIALS</h5>
         <div>
           <label>
             <input
@@ -442,7 +444,7 @@
       </div>
       <div class="radio-question element-animation" >
   
-        <h3>PROPRIETARY COMPLEX FACIALS</h3>
+        <h5>PROPRIETARY COMPLEX FACIALS</h5>
         <div>
           <label>
             <input
@@ -478,7 +480,7 @@
       </div>
       <div class="radio-question element-animation" >
   
-      <h3>SKIN TECHNOLOGY TREATMENTS</h3>
+      <h5>SKIN TECHNOLOGY TREATMENTS</h5>
       <div>
         <label>
           <input
@@ -507,8 +509,8 @@
     </div>
         <div class="fields ">
             <div class="title element-animation">
-                <h3>YOUR CONTACT DETAILS
-                    (required)</h3>
+                <h5>YOUR CONTACT DETAILS
+                    (required)</h5>
             </div>
             <div class="names-fields element-animation">
                 <div class="my-field">
@@ -551,7 +553,7 @@
                     </div>
             </div>
             <div class="my-field element-animation">
-                <label for="">Contact mobile number(required)</label>
+                <label for="">Contact mobile number (required)</label>
                 <div class="my-input__wrap">
                     <input
                         type="tel"
@@ -564,36 +566,26 @@
                     >
                 </div>
             </div>
-            <div class="my-field element-animation">
-                <label for="">So we can find your nearest clinic </label>
-                <div class="my-input__wrap">
-                    <textarea
-                    type="text"
-                    name="contact[state]"
-                    id="contact-ContactFormName"
-                    class="input"
-                    
-                    value="" > </textarea>
-                </div>
-            </div>
-            <div class="title element-animation">
-                <h3>What state do you live in?
-                    </h3>
-            </div>
-            <div class="my-field element-animation">
-                <label for="">So we can find your nearest clinic </label>
-                <div class="my-input__wrap">
-                    <input
-                    type="text"
-                    name="contact[state]"
-                    id="contact-ContactFormName"
-                    class="input"
-                    
-                    value="" >
-                </div>
-            </div>
+          <div class="my-field element-animation">
+                <label for="">Message</label>
+            <div class="my-input__wrap">
+                  <textarea
+          rows="3"
+          name="contact[body]"
+          id="contact-ContactFormMessage"
+          class="input-reset input w-100 element-animation"
+          placeholder="{{ 'contact.form.message' | t }}"
+          required
+        >
+          {%- if form.body -%}
+            {{- form.body -}}
+          {%- endif -%}
+        </textarea>
+          </div>
         </div>
-       
+        </div>
+
+      
         <button type="submit" class="a-btn prime element-animation">{{ 'contact.form.submit' | t }}</button>
       {% endform %}
 

@@ -47,6 +47,7 @@
         "05d89998-de55-4085-8927-356b03069305"
       ],
       "settings": {
+        "animate_aligment": "left",
         "bg": "#000000",
         "color": "#ffffff",
         "pb": 50,
@@ -56,7 +57,9 @@
         "img_width": 100,
         "img_alignment": "row",
         "img_alignment_vertical": "flex-start",
-        "img_alignment_horizontal": "flex-start"
+        "img_alignment_horizontal": "flex-start",
+        "btn_name": "discover consultations",
+        "url": ""
       }
     },
     "f425d34a-d7be-4f46-8dc5-e4c9eb28c5a0": {
@@ -89,7 +92,7 @@
             "img": "shopify:\/\/shop_images\/SKIN_FLUID_TINT_SPF_02.png",
             "title": "SKIN FLUID SPF 30+",
             "title_margin_top": 20,
-            "text": "<p>Beyond an average tinted moisturiser, the Skin Fluid SPF comes in three shades and is a five in one formulation that provides your skin with SPF protection, moisturisation, fights free radical damage, evens our colour tone, and smooths out textural imperfections. This lightweight formular has a foundation like finish that leaves your skin looking iridescently luminous, balances and protected.<\/p>",
+            "text": "<p>Beyond an average tinted moisturiser, the award winning Skin Fluid SPF comes in three shades and is a five in one formulation that provides your skin with SPF protection, moisturisation, fights free radical damage, evens our colour tone, and smooths out textural imperfections. This lightweight formular has a foundation like finish that leaves your skin looking iridescently luminous, balances and protected.<\/p>",
             "text_margin_top": 12,
             "price": "",
             "price_margin_top": 0,
@@ -129,6 +132,7 @@
         "1c378887-f9ff-41f5-a80f-480fff13bd38"
       ],
       "settings": {
+        "treatment": false,
         "padding_top": 50,
         "padding_bottom": 50,
         "column_gap": 20,
@@ -157,6 +161,7 @@
         "14c01a43-4126-49f3-adab-066465d0cf25"
       ],
       "settings": {
+        "animate_aligment": "right",
         "bg": "#000000",
         "color": "#ffffff",
         "pb": 100,
@@ -166,7 +171,9 @@
         "img_width": 100,
         "img_alignment": "row-reverse",
         "img_alignment_vertical": "flex-start",
-        "img_alignment_horizontal": "flex-start"
+        "img_alignment_horizontal": "flex-start",
+        "btn_name": "discover consultations",
+        "url": ""
       }
     },
     "be9f8166-66ee-47c2-a6dd-b06e11cf4f9c": {
@@ -194,6 +201,7 @@
         "ec3d9335-2507-46d3-aa7c-4a9309d7f9fb"
       ],
       "settings": {
+        "animate_aligment": "no animate",
         "bg": "#000000",
         "color": "#ffffff",
         "pb": 0,
@@ -203,7 +211,9 @@
         "img_width": 80,
         "img_alignment": "row",
         "img_alignment_vertical": "flex-end",
-        "img_alignment_horizontal": "center"
+        "img_alignment_horizontal": "center",
+        "btn_name": "discover consultations",
+        "url": ""
       }
     }
   },

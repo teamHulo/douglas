@@ -14,7 +14,7 @@
   }
 
   .contact__info .contact-info {
-    font-family: Raleway;
+    font-family: Proxima Nova;
     font-size: 22px;
     font-style: normal;
     font-weight: 600;
@@ -26,7 +26,7 @@
     margin-right: 12px;
   }
   .contact__info p:not(.contact-info) {
-    font-family: Raleway;
+    font-family: Proxima Nova;
     font-size: 22px;
     font-style: normal;
     font-weight: 400;
@@ -42,7 +42,7 @@
     margin: 52px 0;
   }
   .radio-question p {
-    font-family: Raleway;
+    font-family: Proxima Nova;
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
@@ -153,7 +153,7 @@
         {% render 'form-status', form: form, form_id: 'contact', success_message: success_msg %}
         <div class="radio-question border-form element-animation" required>
           <h5> How can we assist you?</h5>
-          <p>Please select how we can assist you (required)</p>
+          <p>Please select (required)</p>
           <div>
             <label>
               <input
@@ -189,8 +189,8 @@
           </div>
         </div>
         <div class="radio-question element-animation" required>
-          <h4>For consultation and treatments please select the service/s you are interested in ?</h4>
-          <h3>CONSULTATIONS</h3>
+          <h5>CONSULTATION & TREATMENT BOOKINGS</h5>
+          <p>Please select what you would like to book.</p>
           <div>
             <label>
               <input
@@ -212,7 +212,7 @@
               <input
                 type="checkbox"
                 name="contact[consultation]"
-                value="Complementary in clinic discovery consultation (Conducted in our Sydney flagship space)" />Complementary in clinic discovery consultation (Conducted in our Sydney flagship space)
+                value="Complementary in clinic discovery consultation (Conducted in our Sydney flagship space)" />Complementary in clinic discovery consultation 
             </label>
           </div>
           <div>
@@ -220,7 +220,7 @@
               <input
                 type="checkbox"
                 name="contact[consultation]"
-                value="In clinic signature consultation (Conducted in our Sydney flagship space)" />In clinic signature consultation (Conducted in our Sydney flagship space)
+                value="In clinic signature consultation (Conducted in our Sydney flagship space)" />In clinic signature consultation 
             </label>
           </div>
         </div>

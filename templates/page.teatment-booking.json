@@ -9,9 +9,12 @@
     },
     "f482143c-2613-42b6-b5db-62139c50825a": {
       "type": "treatment-booking",
+      "custom_css": [
+        ".teatment-booking .text h6 {text-align: center;}"
+      ],
       "settings": {
-        "title": "TREATMENT BOOKING AND PRICE ENQUIRY FORM",
-        "text": "<h4><strong>Please fill in the below form to arrange your treatment booking or to enquire about our treatment prices<\/strong><\/h4><p>Please fill in the below for to arrange your treatment booking or to enquire about our treatment prices. One of our customer care team members will be in contact with you to arrange a booking date and time<\/p>"
+        "title": "PRODUCT  ENQUIRY & TREATMENT BOOKINGS",
+        "text": "<h6>Please fill in the below form for product enquiries, to arrange a consultation or treatment booking.<\/h6><h6> One of our customer care team members will be in contact with you within 24 hours. <\/h6>"
       }
     }
   },
