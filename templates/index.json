@@ -423,7 +423,7 @@
         "text_width": 400,
         "text_align_item": "left",
         "text_position": "normal",
-        "text_padding_top": 0,
+        "text_padding_top": 56,
         "text_padding_bottom": 44
       }
     },
