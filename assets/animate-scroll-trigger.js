@@ -6,10 +6,11 @@ $(() => {
             scrollTrigger: {
                 trigger: trigger,
                 pin: true,
-                start: "top 60%",
-                end: "bottom center",
+                start: "top 70%",
+                end: "bottom bottom",
                 pinSpacing: false,
                 scrub:2,
+                markers:true
                
             },
         }).to(trigger, { xPercent: xPercentValue, y: 0,ease: "none" },"+=0.15");
