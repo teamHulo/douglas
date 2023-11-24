@@ -420,9 +420,9 @@
         "btn_text": "Discover",
         "btn_url": "shopify:\/\/pages\/consultations",
         "btn_style": "secondary",
-        "text_width": 400,
-        "text_align_item": "left",
-        "text_position": "normal",
+        "text_width": 880,
+        "text_align_item": "center",
+        "text_position": "center",
         "text_padding_top": 56,
         "text_padding_bottom": 44
       }
