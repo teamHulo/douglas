@@ -419,12 +419,12 @@
         "subtitle_padding_bottom": 0,
         "btn_text": "Discover",
         "btn_url": "shopify:\/\/pages\/consultations",
-        "btn_style": "prime",
+        "btn_style": "secondary",
         "text_width": 400,
         "text_align_item": "left",
         "text_position": "normal",
         "text_padding_top": 0,
-        "text_padding_bottom": 0
+        "text_padding_bottom": 44
       }
     },
     "a6d215a8-f973-4577-9df6-f388d8a327e2": {
