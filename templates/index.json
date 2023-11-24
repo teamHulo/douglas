@@ -396,10 +396,35 @@
     },
     "c4353c86-4b14-40f6-baf8-f10687a53f25": {
       "type": "section-award",
+      "disabled": true,
       "settings": {
         "title": "AWARD WINNING FORMULAS",
         "text": "<p>“Prevention Best Of Beauty Awards 2023” Platinum Peptide Days Serum Won “Best Lifting Serum” & Skin Fluid Tint SPF Won “Best Tinted Moisturiser”<\/p>",
         "img": "shopify:\/\/shop_images\/DP_awardwinningproducts.png"
+      }
+    },
+    "9fddcfae-82a9-4283-b629-98c227c3e6ec": {
+      "type": "section-image-baner",
+      "settings": {
+        "video": false,
+        "video_url": "",
+        "padding_x": 100,
+        "padding_y": 100,
+        "img": "shopify:\/\/shop_images\/Dermal-Infusion-treatement.jpg",
+        "color_text": "#fff",
+        "title": "AWARD WINNING FORMULAS",
+        "title_font": "h2",
+        "title_padding_bottom": 22,
+        "subtitle": "<p>“Prevention Best Of Beauty Awards 2023” Platinum Peptide Days Serum Won “Best Lifting Serum” & Skin Fluid Tint SPF Won “Best Tinted Moisturiser”<\/p>",
+        "subtitle_padding_bottom": 0,
+        "btn_text": "Discover",
+        "btn_url": "shopify:\/\/pages\/consultations",
+        "btn_style": "prime",
+        "text_width": 400,
+        "text_align_item": "left",
+        "text_position": "normal",
+        "text_padding_top": 0,
+        "text_padding_bottom": 0
       }
     },
     "a6d215a8-f973-4577-9df6-f388d8a327e2": {
@@ -632,6 +657,7 @@
     "6145700a-f292-470e-83b3-547f6dc781de",
     "0f0e9c23-f9e6-41e5-9c17-b6d0ba43d3ce",
     "c4353c86-4b14-40f6-baf8-f10687a53f25",
+    "9fddcfae-82a9-4283-b629-98c227c3e6ec",
     "a6d215a8-f973-4577-9df6-f388d8a327e2",
     "422f42b3-7a05-45c9-89a0-3573eaea22ab",
     "e40c577d-c173-4ef7-8e3c-7bf3378a3d85",
