@@ -10,7 +10,7 @@ $(() => {
                 end: "bottom bottom",
                 pinSpacing: false,
                 scrub:3,
-                markers:true
+               
                
             },
         }).to(trigger, { xPercent: xPercentValue , yPercent:0, y:0  ,ease: "none" },"+=0.15").set(trigger, { y: 0 });
@@ -24,7 +24,7 @@ $(() => {
                 end: "bottom bottom",
                 pinSpacing: false,
                 scrub:3,
-                markers:true
+                
                
             },
         }).to(trigger, { xPercent: xPercentValue , yPercent:0, y:0  ,ease: "none" },"+=0.15").set(trigger, { y: 0 });
