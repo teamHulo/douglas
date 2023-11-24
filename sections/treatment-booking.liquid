@@ -566,6 +566,18 @@
                     >
                 </div>
             </div>
+                  <textarea
+          rows="3"
+          name="contact[body]"
+          id="contact-ContactFormMessage"
+          class="input-reset input w-100 element-animation"
+          placeholder="{{ 'contact.form.message' | t }}"
+          required
+        >
+          {%- if form.body -%}
+            {{- form.body -}}
+          {%- endif -%}
+        </textarea>
         </div>
        
         <button type="submit" class="a-btn prime element-animation">{{ 'contact.form.submit' | t }}</button>
