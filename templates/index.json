@@ -416,14 +416,14 @@
         "title_font": "h2",
         "title_padding_bottom": 22,
         "subtitle": "<p>“Prevention Best Of Beauty Awards 2023” Platinum Peptide Days Serum Won “Best Lifting Serum” & Skin Fluid Tint SPF Won “Best Tinted Moisturiser”<\/p>",
-        "subtitle_padding_bottom": 40,
+        "subtitle_padding_bottom": 52,
         "btn_text": "Discover",
         "btn_url": "shopify:\/\/pages\/consultations",
         "btn_style": "secondary",
         "text_width": 880,
         "text_align_item": "center",
         "text_position": "center",
-        "text_padding_top": 56,
+        "text_padding_top": 100,
         "text_padding_bottom": 44
       }
     },
