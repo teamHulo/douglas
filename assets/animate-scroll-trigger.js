@@ -6,14 +6,14 @@ $(() => {
             scrollTrigger: {
                 trigger: trigger,
                 pin: true,
-                start: "top 70%",
-                end: "bottom bottom",
+                start: "top 99%",
+                end: "bottom center",
                 pinSpacing: false,
                 scrub:2,
-                
+               
                
             },
-        }).to(trigger, { xPercent: xPercentValue ,ease: "none" },"+=0.15");
+        }).to(trigger, { xPercent: xPercentValue , yPercent:0, y:0  ,ease: "none" },"+=0.15");
     };
 
     const triggersLeft = document.querySelectorAll(".image-animate-left");
