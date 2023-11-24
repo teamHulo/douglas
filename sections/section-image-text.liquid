@@ -10,10 +10,10 @@
   .section-image-text-{{ section.id}} .left__wrap, .section-image-text-{{ section.id}} .image{
     width:100%;
   }
-  .section-image-text-{{ section.id}} .image-animate-left{
+  .section-image-text-{{ section.id}} .image-animate-left, .section-image-text-{{ section.id}} .image-animate-left-start{
       transform: translateX(-100%);
   }
-  .section-image-text-{{ section.id}} .image-animate-right{
+  .section-image-text-{{ section.id}} .image-animate-right, .section-image-text-{{ section.id}} .image-animate-right-start{
     transform: translateX(100%);
   }
   .section-image-text-{{ section.id}}{
@@ -169,7 +169,7 @@
       <div class="left item">
         <div class="left__wrap item__wrap">
           <div class="image {% if section.settings.animate_aligment == "no animate"%} element-animation {% endif %}">
-            <img  class="{% if section.settings.animate_aligment == "right"%} image-animate-right {%  elsif  section.settings.animate_aligment == "left"%} image-animate-left {%else%}  {% endif %}" src="{{section.settings.img | img_url: 'master'}}" alt="">
+            <img  class="{% if section.settings.animate_aligment == "right"%} image-animate-right {%  elsif  section.settings.animate_aligment == "left"%} image-animate-left {% elsif section.settings.animate_aligment == "start-left" %} image-animate-left-start {% elsif section.settings.animate_aligment == "start-right" %}image-animate-left-right {%else%}  {% endif %}" src="{{section.settings.img | img_url: 'master'}}" alt="">
           </div>
         </div>
       </div>
@@ -225,6 +225,14 @@
           {
             "value": "right",
             "label": "right"
+          },
+          {
+            "value": "start-left",
+            "label": "start-left"
+          },
+          {
+            "value": "start-right",
+            "label": "start-right"
           },
           {
             "value": "no animate",
