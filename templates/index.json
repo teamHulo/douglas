@@ -408,7 +408,7 @@
       "settings": {
         "video": false,
         "video_url": "",
-        "padding_x": 260,
+        "padding_x": 0,
         "padding_y": 260,
         "img": "shopify:\/\/shop_images\/Dermal-Infusion-treatement.jpg",
         "color_text": "#ffffff",
