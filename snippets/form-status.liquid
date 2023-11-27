@@ -11,9 +11,9 @@
 {% if form.posted_successfully? or form.errors %}
   <div class="form-status">
     {%- if form.posted_successfully? -%}
-      <h2 class="form-status__message form-status__message--success form-status-msg" tabindex="0" data-form-status>
+      <h4 class="form-status__message form-status__message--success form-status-msg" tabindex="0" data-form-status>
         {{ success_message }}
-      </h2>
+      </h4>
     {%- endif -%}
 
     {% comment %} We need to add this so the errors are output in the right order {% endcomment %}
