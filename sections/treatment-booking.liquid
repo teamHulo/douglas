@@ -584,7 +584,7 @@
           </div>
         </div>
         </div>
-
+        {% render 'form-status', form: form, form_id: 'contact', success_message: success_msg %}
       
         <button type="submit" class="a-btn prime element-animation">{{ 'contact.form.submit' | t }}</button>
       {% endform %}

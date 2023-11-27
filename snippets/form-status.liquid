@@ -11,7 +11,7 @@
 {% if form.posted_successfully? or form.errors %}
   <div class="form-status">
     {%- if form.posted_successfully? -%}
-      <span class="form-status__message form-status__message--success" tabindex="0" data-form-status>
+      <span class="form-status__message form-status__message--success form-status-msg" tabindex="0" data-form-status>
         {{ success_message }}
       </span>
     {%- endif -%}
@@ -22,7 +22,7 @@
     {%- if form.errors -%}
 
       <div class="form-status__message form-status__message--error fs-body">
-        <span class="form-status__message__title fs-body-bold" tabindex="0" data-form-status>{{ 'general.accessibility.error' | t }}</span>
+        <h2 class="form-status__message__title fs-body-bold" tabindex="0" data-form-status>{{ 'general.accessibility.error' | t }}</h2>
         <ul>
           {% for error in error_order %}
             {% for field in form.errors %}

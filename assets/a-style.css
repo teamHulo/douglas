@@ -2847,3 +2847,8 @@ option {
 #shopify-section-template--21427503694106__9fddcfae-82a9-4283-b629-98c227c3e6ec .image-banner::before{
   background: rgba(8, 8, 8, 0.15)
 }
+
+.form-status-msg {
+  border:1px solid #21b646;
+  padding:20px;
+}

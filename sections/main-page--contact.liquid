@@ -344,7 +344,7 @@
         </textarea>
 
 
-
+        {% render 'form-status', form: form, form_id: 'contact', success_message: success_msg %}  
           
         <button type="submit" class="btn btn--primary btn--form element-animation">{{ 'contact.form.submit' | t }}</button>
       {% endform %}
