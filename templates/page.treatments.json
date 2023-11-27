@@ -70,6 +70,9 @@
     },
     "e5acf946-56e6-47dc-8783-6214982b6564": {
       "type": "section-treatments",
+      "custom_css": [
+        "element.style {padding-bottom: 100px;}"
+      ],
       "settings": {
         "label": "",
         "collection": "skin-technology-treatments",
