@@ -423,7 +423,7 @@
         "text_width": 880,
         "text_align_item": "center",
         "text_position": "center",
-        "text_padding_top": 0,
+        "text_padding_top": 100,
         "text_padding_bottom": 44
       }
     },
