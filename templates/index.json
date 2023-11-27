@@ -410,7 +410,7 @@
         "video_url": "",
         "padding_x": 0,
         "padding_y": 260,
-        "img": "shopify:\/\/shop_images\/Group_19_b63a6883-994d-4c97-8753-3a6a2ae645ea.jpg",
+        "img": "shopify:\/\/shop_images\/Group_19_2e68c8a2-5a2c-4dec-b33a-8146a55d47c1.jpg",
         "color_text": "#ffffff",
         "title": "AWARD WINNING FORMULAS",
         "title_font": "h2",
@@ -423,7 +423,7 @@
         "text_width": 880,
         "text_align_item": "center",
         "text_position": "center",
-        "text_padding_top": 100,
+        "text_padding_top": 0,
         "text_padding_bottom": 44
       }
     },
