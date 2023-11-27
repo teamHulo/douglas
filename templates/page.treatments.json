@@ -71,7 +71,7 @@
     "e5acf946-56e6-47dc-8783-6214982b6564": {
       "type": "section-treatments",
       "custom_css": [
-        ".treatments__wrapper {padding-bottom: 200px;}"
+        ".treatments__wrapper {margin-bottom: calc(var(--space-outer) * 2);}"
       ],
       "settings": {
         "label": "",
