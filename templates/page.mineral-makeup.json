@@ -47,7 +47,7 @@
         "05d89998-de55-4085-8927-356b03069305"
       ],
       "settings": {
-        "animate_aligment": "start-left",
+        "animate_aligment": "no animate",
         "bg": "#000000",
         "color": "#ffffff",
         "pb": 50,
@@ -161,7 +161,7 @@
         "14c01a43-4126-49f3-adab-066465d0cf25"
       ],
       "settings": {
-        "animate_aligment": "right",
+        "animate_aligment": "no animate",
         "bg": "#000000",
         "color": "#ffffff",
         "pb": 100,
