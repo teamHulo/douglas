@@ -22,7 +22,7 @@
     {%- if form.errors -%}
 
       <div class="form-status__message form-status__message--error fs-body">
-        <h2 class="form-status__message__title fs-body-bold" tabindex="0" data-form-status>{{ 'general.accessibility.error' | t }}</h2>
+        <h4 class="form-status__message__title fs-body-bold" tabindex="0" data-form-status>{{ 'general.accessibility.error' | t }}</h4>
         <ul>
           {% for error in error_order %}
             {% for field in form.errors %}

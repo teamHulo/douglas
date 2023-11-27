@@ -2851,4 +2851,5 @@ option {
 .form-status-msg {
   border:1px solid #21b646;
   padding:20px;
+  margin:0 20px;
 }
