@@ -13,7 +13,7 @@
         "video": false,
         "video_url": "",
         "padding_x": 0,
-        "padding_y": 74,
+        "padding_y": 80,
         "img": "shopify:\/\/shop_images\/black1.webp",
         "color_text": "#ffffff",
         "title": "DOUGLAS PEREIRA SKIN HEALTH RANGE",
@@ -87,7 +87,7 @@
         "097d058f-4560-4268-b9f8-9efc9fc77f50"
       ],
       "settings": {
-        "animate_aligment": "right",
+        "animate_aligment": "no animate",
         "bg": "#000000",
         "color": "#ffffff",
         "pb": 50,
@@ -149,7 +149,7 @@
         "5ae4547e-c272-462f-950f-d5bb2e8a5736"
       ],
       "settings": {
-        "animate_aligment": "right",
+        "animate_aligment": "left",
         "bg": "#000000",
         "color": "#ffffff",
         "pb": 50,
