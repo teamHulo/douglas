@@ -25,6 +25,7 @@
       width: 75%;
       
     }
+
 {% endstyle %}
 <div class="step-regime step-regime-{{section.id}}">
     <div class="container">
@@ -55,7 +56,7 @@
                             </div>
                         </div>
                         <div class="right item">
-                            <div class="right  item__wrap">
+                            <div class="right  item__wrap" style="display:flex; justify-content:{{block.settings.horizontal_alignment}};">
                                 <div class="image element-animation">
                                     <img src="{{block.settings.img | img_url: 'master'}}" alt="">
                                 </div>
@@ -114,6 +115,26 @@
                 "type": "richtext",
                 "id": "text",
                 "label": "text"
+                },
+                {
+                  "type": "select",
+                  "id": "horizontal_alignment",
+                  "label": "alignment image",
+                  "options": [
+                    {
+                      "value": "flex-start",
+                      "label": "left"
+                    },
+                    {
+                      "value": "center",
+                      "label": "middle"
+                    },
+                    {
+                      "value": "flex-end",
+                      "label": "right"
+                    }
+                  ],
+                  "default": "center"
                 }
           ]
         }
