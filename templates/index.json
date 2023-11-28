@@ -1,44 +1,5 @@
 {
   "sections": {
-    "slideshow-1": {
-      "type": "slideshow",
-      "blocks": {
-        "slide-1": {
-          "type": "slide",
-          "settings": {
-            "desktop_image": "shopify:\/\/shop_images\/lucija-ros-FzQiiLqcRtE-unsplash.jpg",
-            "focal_point": "image_presentation",
-            "mobile_focal_point": "image_presentation",
-            "title": "",
-            "subheading": "",
-            "heading_text_size": 64,
-            "overlay_shadow": 10,
-            "max_width_subheading": 40,
-            "link_text": "",
-            "link": "https:\/\/fluorescent.co\/help\/spark\/slideshow",
-            "alignment": "center_center",
-            "color_text": "#ffffff",
-            "color_text_button": "#181818",
-            "color_background_button": "#ffffff",
-            "color_overlay": "#000000",
-            "color_overlay_gradient": "",
-            "overlay_opacity": 30
-          }
-        }
-      },
-      "block_order": [
-        "slide-1"
-      ],
-      "disabled": true,
-      "settings": {
-        "image_aspect": "custom",
-        "desktop_height": 100,
-        "mobile_height": 100,
-        "duration_autoplay": 6,
-        "color_dot": "#ffffff",
-        "enable_animation": true
-      }
-    },
     "59274cfa-014a-42aa-bef6-33567a0a50bf": {
       "type": "banner-slider",
       "blocks": {
@@ -46,345 +7,19 @@
           "type": "item",
           "settings": {
             "video": true,
-            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/62a891c60311450bae7934e37519acbf.mp4",
+            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/17549c9b479447c38c7103a1390d7ae9.mp4",
             "img": "shopify:\/\/shop_images\/Rectangle_227.jpg"
-          }
-        },
-        "61a09a14-8e81-4938-9c9e-51bf23751c78": {
-          "type": "item",
-          "disabled": true,
-          "settings": {
-            "video": false,
-            "video_url": "",
-            "img": "shopify:\/\/shop_images\/div.product-block-content.jpg"
           }
         }
       },
       "block_order": [
-        "c60df61b-9a99-4560-b107-843e8c40ca84",
-        "61a09a14-8e81-4938-9c9e-51bf23751c78"
+        "c60df61b-9a99-4560-b107-843e8c40ca84"
       ],
       "settings": {
         "title": "SKINCARE AS INDIVIDUAL AS YOU ARE",
         "text": "Your Skincare Journey Starts Here",
         "url": "shopify:\/\/collections\/all",
         "btn_name": "SHOP"
-      }
-    },
-    "488d4fc0-4cab-4942-8eb2-eff919582ad8": {
-      "type": "section-about",
-      "blocks": {
-        "8fc8a8fa-e0a1-482a-ab82-36854cb7c046": {
-          "type": "item",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/DP_SkinshealthGroup-WHITE.jpg",
-            "title": "DOUGLAS PEREIRA SKIN HEALTH",
-            "text": "",
-            "url": "shopify:\/\/products\/comfort-cleanse-200ml",
-            "btn_name": "discover"
-          }
-        },
-        "d37195aa-510d-49c3-98f9-f4f72c48fbac": {
-          "type": "item",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/DP_SkinHealthGroup-WHITE.jpg",
-            "title": "DOUGLAS PEREIRA SKIN SCIENCE",
-            "text": "",
-            "url": "shopify:\/\/products\/enzyme-cleanse-200ml",
-            "btn_name": "discover"
-          }
-        },
-        "fc22061f-33eb-4659-8d24-8b9b23724322": {
-          "type": "item",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/DP_MineralmakeupGroup-WHITE.jpg",
-            "title": "DOUGLAS PEREIRA Mineral MAkeup",
-            "text": "",
-            "url": "shopify:\/\/products\/lipid-pre-cleanse-200ml",
-            "btn_name": "discover"
-          }
-        }
-      },
-      "block_order": [
-        "8fc8a8fa-e0a1-482a-ab82-36854cb7c046",
-        "d37195aa-510d-49c3-98f9-f4f72c48fbac",
-        "fc22061f-33eb-4659-8d24-8b9b23724322"
-      ],
-      "disabled": true,
-      "settings": {
-        "name": "SKINCARE AS INDIVIDUAL AS YOU ARE",
-        "title": "We take a holistic approach alongside scientifically – innovative formulations, that work in conjunction with your skin’s biology."
-      }
-    },
-    "701a8324-b670-4489-bde5-621c76cdd7d0": {
-      "type": "section-image-with-text",
-      "blocks": {
-        "26607107-68a6-4b07-8f5a-67289eb30010": {
-          "type": "text",
-          "settings": {
-            "padding_x": 0,
-            "padding_y": 0,
-            "color_text": "#ffffff",
-            "title": "Lorem ipsum dolor sit amet consectetur. Turpis quisque augue et nullam. Porttitor accumsan vel bibendum vel. Tincidunt nunc amet cum bibendum elit.",
-            "title_font": "h4",
-            "title_padding_bottom": 62,
-            "subtitle": "<p>Lorem ipsum dolor sit amet consectetur. Eleifend blandit cursus tempor aliquam. Elementum gravida cras etiam diam gravida. Imperdiet in quis ullamcorper mattis elementum. Sit metus mattis et quam. <\/p>",
-            "subtitle_padding_bottom": 62,
-            "btn_text": "Take the skincare regime",
-            "btn_url": "shopify:\/\/collections\/all",
-            "btn_style": "prime",
-            "text_width": 650,
-            "text_align_item": "left",
-            "text_position_x": "normal",
-            "text_position_y": "normal"
-          }
-        },
-        "4613fc9c-99db-4989-8d2c-fa302419b981": {
-          "type": "image",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/2023-09-18_12-47.png"
-          }
-        }
-      },
-      "block_order": [
-        "26607107-68a6-4b07-8f5a-67289eb30010",
-        "4613fc9c-99db-4989-8d2c-fa302419b981"
-      ],
-      "disabled": true,
-      "settings": {
-        "padding_top": 120,
-        "padding_bottom": 120,
-        "column_gap": 20,
-        "bg": "#ffffff",
-        "color_text": "#000000",
-        "border": "top"
-      }
-    },
-    "63c20124-4680-4d58-867f-f48d6333cae7": {
-      "type": "shoppable-feature",
-      "blocks": {
-        "bb15fb9a-a659-4a68-bc3f-e8b3376dc211": {
-          "type": "hotspot",
-          "settings": {
-            "product_item": "enzyme-cleanse-200ml",
-            "horizontal_position": 36,
-            "vertical_position": 66
-          }
-        },
-        "8896154e-24f7-4566-8174-74a2159071da": {
-          "type": "hotspot",
-          "settings": {
-            "product_item": "vitamin-b-serumб-30ml",
-            "horizontal_position": 23,
-            "vertical_position": 32
-          }
-        },
-        "2447b7ab-9201-45a1-98a4-6267c3e636f5": {
-          "type": "hotspot",
-          "settings": {
-            "product_item": "cera-fort-repair-cream-30ml",
-            "horizontal_position": 50,
-            "vertical_position": 36
-          }
-        },
-        "5d84714a-129d-4cc6-88b4-2d4b824a3f3f": {
-          "type": "hotspot",
-          "settings": {
-            "product_item": "luminosity-serum-30ml",
-            "horizontal_position": 69,
-            "vertical_position": 32
-          }
-        }
-      },
-      "block_order": [
-        "bb15fb9a-a659-4a68-bc3f-e8b3376dc211",
-        "8896154e-24f7-4566-8174-74a2159071da",
-        "2447b7ab-9201-45a1-98a4-6267c3e636f5",
-        "5d84714a-129d-4cc6-88b4-2d4b824a3f3f"
-      ],
-      "disabled": true,
-      "settings": {
-        "image": "shopify:\/\/shop_images\/DP_SkinhealthDiscoverimage.jpg",
-        "image_position": "right",
-        "image_width": "half",
-        "aspect_ratio": "square",
-        "overlay_color": "#000000",
-        "color_overlay_gradient": "",
-        "overlay_opacity": 0,
-        "heading": "Skin Health Range",
-        "subheading": "<p>Result driven cosmeceutical formulations with a luxurious experience, is the essence of the Douglas Pereira Skin Health range. Each product we formulate begins with five key principals.  <\/p><p><strong>Scientific approach  <\/strong>Research and development, Science, Innovation, and Technology.<\/p><p><strong>The best of the best Ingredients <\/strong>Quality ingredients in the right dosage that are skin<br\/>identical. <\/p><p><strong>Skin integrity & resilience <\/strong>Supporting the skins barrier.<\/p><p><strong>Active delivery system <\/strong>Triphasic Bio-Active Delivery System <\/p><p><strong>Luxury experiences <\/strong>The fusion of cosmeceutical skincare the experience of luxury <\/p>",
-        "heading_max_width": 40,
-        "text_max_width": 36,
-        "text_alignment": "left",
-        "link_text": "DISCOVER THE SKIN HEALTH RANGE",
-        "link": "shopify:\/\/collections\/all",
-        "enable_animation": true,
-        "section_contrast": false,
-        "section_padding": "section--vertical-padding-top-bottom",
-        "padding_amount": "1.0"
-      }
-    },
-    "3cb369bf-d763-48e1-a2f9-94d078cb4642": {
-      "type": "shoppable-feature",
-      "disabled": true,
-      "settings": {
-        "image": "shopify:\/\/shop_images\/DPSS---Enhancement-Collection.jpg",
-        "image_position": "left",
-        "image_width": "half",
-        "aspect_ratio": "square",
-        "overlay_color": "#000000",
-        "color_overlay_gradient": "",
-        "overlay_opacity": 0,
-        "heading": "Skin Science Range",
-        "subheading": "<p>Douglas Pereira Skin Science is an uncomplicated skincare collection, with complex formulations, for everyday people. <\/p><p><\/p><p>The range is a straightforward collection of products that has been developed for all genders and skin types. Our universal formulations offer all in one skincare solutions for those not wanting a complicated homecare regime, but still striving for result driven skincare without too many steps. <\/p>",
-        "heading_max_width": 40,
-        "text_max_width": 40,
-        "text_alignment": "left",
-        "link_text": "DISCOVER THE SKIN SCIENCE RANGE",
-        "link": "shopify:\/\/collections\/all",
-        "enable_animation": true,
-        "section_contrast": false,
-        "section_padding": "section--vertical-padding-top-bottom",
-        "padding_amount": "1.0"
-      }
-    },
-    "e93a0e87-b11a-40e2-b596-bd60239b309b": {
-      "type": "section-image-baner",
-      "disabled": true,
-      "settings": {
-        "video": true,
-        "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/0bede705ccb04381820766fd328bca0c.mp4",
-        "padding_x": 0,
-        "padding_y": 140,
-        "img": "shopify:\/\/shop_images\/Rectangle249-compress.jpg",
-        "color_text": "#ffffff",
-        "title": "Take the Skincare Regime Questionnaire",
-        "title_font": "h2",
-        "title_padding_bottom": 40,
-        "subtitle": "<p>With just a few answers, discover your skins true potential with a personalized homecare regime.<\/p>",
-        "subtitle_padding_bottom": 40,
-        "btn_text": "take the questionnaire",
-        "btn_url": "shopify:\/\/collections\/all",
-        "btn_style": "secondary",
-        "text_width": 800,
-        "text_align_item": "center",
-        "text_position": "center",
-        "text_padding_top": 0,
-        "text_padding_bottom": 0
-      }
-    },
-    "a9582002-bf1a-412f-a25a-f2fb7ece2685": {
-      "type": "section-image-with-text",
-      "blocks": {
-        "13b1529e-4f92-47c7-b1ea-d018f88d176b": {
-          "type": "image",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/a3aeb630b86eae0691a3c8bc64de7848.jpg"
-          }
-        },
-        "35e30d95-bafe-45fb-a461-e3f1c98328a9": {
-          "type": "text",
-          "settings": {
-            "padding_x": 120,
-            "padding_y": 0,
-            "color_text": "#ffffff",
-            "title": "Lorem Ipsum",
-            "title_font": "h2",
-            "title_padding_bottom": 62,
-            "subtitle": "<p>Lorem ipsum dolor sit amet consectetur. Et ornare dolor mauris aliquet lacus et interdum eu. Orci pharetra urna duis malesuada auctor amet odio. Aliquam sit ut bibendum pellentesque libero quisque auctor. Cras mauris id erat sagittis elit sit nunc libero. Mattis dignissim aliquam lacus nam hac.<\/p>",
-            "subtitle_padding_bottom": 62,
-            "btn_text": "Take the skincare regime",
-            "btn_url": "shopify:\/\/collections\/all",
-            "btn_style": "prime",
-            "text_width": 800,
-            "text_align_item": "left",
-            "text_position_x": "normal",
-            "text_position_y": "end"
-          }
-        }
-      },
-      "block_order": [
-        "13b1529e-4f92-47c7-b1ea-d018f88d176b",
-        "35e30d95-bafe-45fb-a461-e3f1c98328a9"
-      ],
-      "disabled": true,
-      "settings": {
-        "padding_top": 120,
-        "padding_bottom": 120,
-        "column_gap": 20,
-        "bg": "#ffffff",
-        "color_text": "#000000",
-        "border": "top"
-      }
-    },
-    "0e6446f7-19a6-45f3-bce1-13749fe15be2": {
-      "type": "section-tab-hover",
-      "blocks": {
-        "7ac15ed8-bfec-48f5-977f-82a5f745d39f": {
-          "type": "item",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/Step-1-regime-builder.jpg",
-            "title": "Skincare regime builder questionnaire",
-            "text": "With just a few answers, discover your skins true potential with a personalized homecare regime for the morning and evening. Our skincare regime builder is a quick and easy way to discover the right products for your skin.",
-            "url": "",
-            "btn_name": "discover"
-          }
-        },
-        "91f9303d-6777-4ed0-a068-f592bc771e9b": {
-          "type": "item",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/Step-2-Consultation.jpg",
-            "title": "Complementary virtual or phone consultation",
-            "text": "Our complementary virtual consultation gives you the opportunity to receive skin advice from wherever you are. Our skin experts can talk to you about your skin challenges and goals, support you on your skin journey and assist you with selecting the perfect homecare for your skin.",
-            "url": "#",
-            "btn_name": "discover"
-          }
-        },
-        "c459448a-740d-4168-a408-f1281187c0ab": {
-          "type": "item",
-          "settings": {
-            "img": "shopify:\/\/shop_images\/Step-3-insalon.jpg",
-            "title": "In clinic consultation",
-            "text": "Visit our flagship clinic and discovery space for an in-person consultation, we offer two consultation types.  Complementary in clinic discovery consultation  A face-to-face consultation in our skin discovery zone.  In clinic signature consultation  Conducted within your own private treatment room and includes an in-depth conversation about your skin, followed by a discovery skin treatment. Your consultation concludes with the advice and recommendations for the best solutions for your skin.",
-            "url": "#",
-            "btn_name": "discover"
-          }
-        }
-      },
-      "block_order": [
-        "7ac15ed8-bfec-48f5-977f-82a5f745d39f",
-        "91f9303d-6777-4ed0-a068-f592bc771e9b",
-        "c459448a-740d-4168-a408-f1281187c0ab"
-      ],
-      "disabled": true,
-      "settings": {
-        "name": "",
-        "title": "How to shop with us"
-      }
-    },
-    "6145700a-f292-470e-83b3-547f6dc781de": {
-      "type": "section-image-baner",
-      "disabled": true,
-      "settings": {
-        "video": false,
-        "video_url": "",
-        "padding_x": 0,
-        "padding_y": 140,
-        "img": "shopify:\/\/shop_images\/DP-Treatments-Background.jpg",
-        "color_text": "#ffffff",
-        "title": "Treatments",
-        "title_font": "h2",
-        "title_padding_bottom": 40,
-        "subtitle": "<p>Orci nunc vestibulum et mollis sed facilisis proin. Sed cursus nulla amet sodales etiam purus nunc nisi lectus. Pellentesque natoque nisi.<\/p>",
-        "subtitle_padding_bottom": 40,
-        "btn_text": "discover",
-        "btn_url": "shopify:\/\/collections\/all",
-        "btn_style": "secondary",
-        "text_width": 800,
-        "text_align_item": "center",
-        "text_position": "center",
-        "text_padding_top": 0,
-        "text_padding_bottom": 0
       }
     },
     "0f0e9c23-f9e6-41e5-9c17-b6d0ba43d3ce": {
@@ -394,15 +29,6 @@
         "text": "<p>‘We take a holistic approach alongside scientifically – innovative formulations, that work in conjunction with your skin’s biology.’<\/p><p><strong> <\/strong><\/p><p>We don’t get caught up in the latest fads and trends, but instead, we formulate skincare products that improves the health your skin cells, optimising their function, protects your skins barrier and counteract the effects that pollution, stress and ageing has on your skin.<\/p>"
       }
     },
-    "c4353c86-4b14-40f6-baf8-f10687a53f25": {
-      "type": "section-award",
-      "disabled": true,
-      "settings": {
-        "title": "AWARD WINNING FORMULAS",
-        "text": "<p>“Prevention Best Of Beauty Awards 2023” Platinum Peptide Days Serum Won “Best Lifting Serum” & Skin Fluid Tint SPF Won “Best Tinted Moisturiser”<\/p>",
-        "img": "shopify:\/\/shop_images\/DP_awardwinningproducts.png"
-      }
-    },
     "9fddcfae-82a9-4283-b629-98c227c3e6ec": {
       "type": "section-image-baner",
       "settings": {
@@ -410,14 +36,14 @@
         "video_url": "",
         "padding_x": 0,
         "padding_y": 260,
-        "img": "shopify:\/\/shop_images\/Dermal-Infusion-treatement.jpg",
+        "img": "shopify:\/\/shop_images\/Group_19_2e68c8a2-5a2c-4dec-b33a-8146a55d47c1.jpg",
         "color_text": "#ffffff",
         "title": "AWARD WINNING FORMULAS",
         "title_font": "h2",
         "title_padding_bottom": 22,
         "subtitle": "<p>“Prevention Best Of Beauty Awards 2023” Platinum Peptide Days Serum Won “Best Lifting Serum” & Skin Fluid Tint SPF Won “Best Tinted Moisturiser”<\/p>",
         "subtitle_padding_bottom": 52,
-        "btn_text": "Discover",
+        "btn_text": "",
         "btn_url": "shopify:\/\/pages\/consultations",
         "btn_style": "secondary",
         "text_width": 880,
@@ -448,7 +74,7 @@
             "title": "",
             "text": "",
             "btn_name": "SHOP SKIN HEALTH",
-            "url": "#"
+            "url": "shopify:\/\/collections\/douglas-pereira-skin-health"
           }
         },
         "29c9012f-8c89-4b68-ac1a-2cb94963fa6e": {
@@ -456,13 +82,12 @@
           "settings": {
             "btn_style": "prime",
             "video": true,
-            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/fb0dcfc63fb34319bb1b6ffe7917a140.mp4",
-            "img": "shopify:\/\/shop_images\/1.png",
+            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e6118cf719ed488f81ae2b37acd97e5c.mp4",
             "ovrl": true,
             "title": "DISCOVER SKIN HEALTH RANGE",
             "text": "<p>The Skin Health range is a premium prescriptive collection of advance products for a skin savvy user.<\/p>",
             "btn_name": "DISCOVER",
-            "url": "#"
+            "url": "shopify:\/\/pages\/skin-health-range"
           }
         },
         "26449348-d501-4d28-a009-3f5076588621": {
@@ -470,13 +95,12 @@
           "settings": {
             "btn_style": "prime",
             "video": true,
-            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/30b1bc6f6d0241ddacd43798fa9979dc.mp4",
-            "img": "shopify:\/\/shop_images\/Dermal-Infusion-treatement.jpg",
+            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/6a9d7cd2f99348029dadd9ebc6358f1b.mp4",
             "ovrl": true,
             "title": "DISCOVER SKIN SCIENCE RANGE",
             "text": "<p>The Skin Science range is an uncomplicated collection, with complex formulations for those looking for an affordable simple routine, with effective results. <\/p>",
             "btn_name": "DISCOVER",
-            "url": "#"
+            "url": "shopify:\/\/pages\/skin-science-range"
           }
         },
         "2d680cbf-c313-48b2-9f68-489a7d8aa357": {
@@ -490,7 +114,7 @@
             "title": "",
             "text": "",
             "btn_name": "SHOP SKIN SCIENCE",
-            "url": "#"
+            "url": "shopify:\/\/collections\/douglas-pereira-skin-science"
           }
         },
         "d949aeaf-a056-4ddb-8b7b-4e0d2d826141": {
@@ -504,7 +128,7 @@
             "title": "",
             "text": "",
             "btn_name": "SHOP MINERAL MAKE UP",
-            "url": "#"
+            "url": "shopify:\/\/collections\/douglas-pereira-mineral-makeup"
           }
         },
         "99a94cf4-1bd2-4fa5-b251-95a516d935d4": {
@@ -512,13 +136,12 @@
           "settings": {
             "btn_style": "prime",
             "video": true,
-            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/666a57b4113740008e76f6c36258cabd.mp4",
-            "img": "shopify:\/\/shop_images\/Dermal-Infusion-treatement.jpg",
+            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/95b1328504ad446193f92904cc2bfb88.mp4",
             "ovrl": true,
             "title": "DICOVER MINERAL MAKEUP RANGE",
             "text": "<p>The Mineral Makeup range is an extension of your skincare regime, enhancing outer beauty.<\/p>",
             "btn_name": "DISCOVER",
-            "url": "#"
+            "url": "shopify:\/\/pages\/mineral-makeup"
           }
         }
       },
@@ -645,18 +268,8 @@
     }
   },
   "order": [
-    "slideshow-1",
     "59274cfa-014a-42aa-bef6-33567a0a50bf",
-    "488d4fc0-4cab-4942-8eb2-eff919582ad8",
-    "701a8324-b670-4489-bde5-621c76cdd7d0",
-    "63c20124-4680-4d58-867f-f48d6333cae7",
-    "3cb369bf-d763-48e1-a2f9-94d078cb4642",
-    "e93a0e87-b11a-40e2-b596-bd60239b309b",
-    "a9582002-bf1a-412f-a25a-f2fb7ece2685",
-    "0e6446f7-19a6-45f3-bce1-13749fe15be2",
-    "6145700a-f292-470e-83b3-547f6dc781de",
     "0f0e9c23-f9e6-41e5-9c17-b6d0ba43d3ce",
-    "c4353c86-4b14-40f6-baf8-f10687a53f25",
     "9fddcfae-82a9-4283-b629-98c227c3e6ec",
     "a6d215a8-f973-4577-9df6-f388d8a327e2",
     "422f42b3-7a05-45c9-89a0-3573eaea22ab",
