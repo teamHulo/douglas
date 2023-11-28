@@ -149,7 +149,7 @@
         "5ae4547e-c272-462f-950f-d5bb2e8a5736"
       ],
       "settings": {
-        "animate_aligment": "left",
+        "animate_aligment": "no animate",
         "bg": "#000000",
         "color": "#ffffff",
         "pb": 50,
