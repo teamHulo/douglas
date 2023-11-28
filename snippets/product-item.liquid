@@ -121,6 +121,7 @@
         {% if product.metafields.custom.card_subtitle != blank %}
           <p> {{product.metafields.custom.card_subtitle}}</p>
         {% endif %}
+        <p style="margin:10px 0;">{{product.price | money}}</p>
         {% if show_price %}
           <span class="product-item__price-wrapper ">
             {% if placeholder %}
@@ -310,7 +311,28 @@
       {%- endif -%}
       {% if settings.enable_quick_add == false %}
       <div class="product-item-btn">
-        <a style="align-self: center; width: 100%; margin-top: 15px" href="{{product.url}}" class="a-btn prime"> Discover</a>
+    {% comment %} <a style="align-self: center; width: 100%; margin-top: 15px" href="{{product.url}}" class="a-btn prime"> Discover</a> {% endcomment %}
+        <button
+              data-quick-add="{{ product.handle }}"
+              data-product-id="{{ current_variant.id }}"
+              type="{% if open_in_modal or settings.cart_type == 'flyout' %}button{% else %}submit{% endif %}"
+              class="product-item__quick-add-button  btn btn--medium-small btn--primary btn--full a-btn prime"
+              {% if open_in_modal %}
+                data-open-modal="true"
+              {% endif %}
+              {% if settings.show_quick_cart_after_quick_add and settings.cart_type == 'flyout' %}
+                data-open-quick-cart="true"
+              {% endif %}
+            >
+             {% comment %} <span class="product-item__quick-add-button-text  ">{{ product_available_label }}</span>
+              <span class="product-item__quick-add-button-text-height ">x</span>
+              {% render 'icon', icon: 'plus', class: "product-item__quick-add-button-icon " %}
+              <div class="btn__loading-wrap">
+                <div class="btn__loading-bar"></div>
+              </div>
+            {% render 'icon', icon: 'check', class: "product-item__quick-add-button-check" %} {% endcomment %}
+              Add to card 
+            </button>
       </div>
        
       {% endif %}
