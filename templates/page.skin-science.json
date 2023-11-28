@@ -218,7 +218,8 @@
           "settings": {
             "img": "shopify:\/\/shop_images\/EXFOLIATING_SKIN_DROPS_cc1022c7-3626-46c2-90d3-6d7ec8294897.png",
             "title": "EXFOLIATING SKIN DROPS",
-            "text": "<p>The Skin Drops, liquid exfoliation collection of serums really packs a punch “she has quite a bite upon application” and is the power engine behind your skincare routine. <br\/><br\/><strong>THE THREE EXFOLIATING DROPS<\/strong><br\/><br\/><strong>Glow Skin Drops<\/strong><br\/>Brightens dull, lacklustre and pigmentation affected  skin.<br\/><br\/><strong>Balancing Skin Drops<\/strong><br\/>Balances oiliness, decongests pores, assists in preventing blemishes. <br\/><br\/><strong>Nutrient Skin Drops<\/strong><br\/>Targets anti-aging, dryness, and nutrient depleted skin. <\/p>"
+            "text": "<p>The Skin Drops, liquid exfoliation collection of serums really packs a punch “she has quite a bite upon application” and is the power engine behind your skincare routine. <br\/><br\/><strong>THE THREE EXFOLIATING DROPS<\/strong><br\/><br\/><strong>Glow Skin Drops<\/strong><br\/>Brightens dull, lacklustre and pigmentation affected  skin.<br\/><br\/><strong>Balancing Skin Drops<\/strong><br\/>Balances oiliness, decongests pores, assists in preventing blemishes. <br\/><br\/><strong>Nutrient Skin Drops<\/strong><br\/>Targets anti-aging, dryness, and nutrient depleted skin. <\/p>",
+            "horizontal_alignment": "flex-start"
           }
         },
         "c62a74ea-6e32-419e-b040-29906977c768": {
@@ -226,7 +227,8 @@
           "settings": {
             "img": "shopify:\/\/shop_images\/MASKS_66e52834-a938-4188-8fa3-0b1d36d8b897.png",
             "title": "MASKS",
-            "text": "<p>Enhance your skin routine by giving yourself a little pamper with one of our treatment masks. Each mask in the collection targets specific skin types and concerns. <br\/><br\/><strong>THE THREE MASKS <\/strong><br\/><br\/><strong>Enzyme Glow Mask<\/strong><br\/>An exfoliating mask that targets lacklustre, pigmentation and  Sun damaged skin<br\/><br\/><strong>Balancing Clay Mask<\/strong><br\/>A non drying clay formula the treats combination to oily and congested skin. <br\/><br\/><strong>Hydra Sleep Mask<\/strong><br\/>An ultra moisturising leave on mask for whilst you sleep. This mask can also be used as a moisturiser for deeper nourishment and hydration. <br\/><\/p>"
+            "text": "<p>Enhance your skin routine by giving yourself a little pamper with one of our treatment masks. Each mask in the collection targets specific skin types and concerns. <br\/><br\/><strong>THE THREE MASKS <\/strong><br\/><br\/><strong>Enzyme Glow Mask<\/strong><br\/>An exfoliating mask that targets lacklustre, pigmentation and  Sun damaged skin<br\/><br\/><strong>Balancing Clay Mask<\/strong><br\/>A non drying clay formula the treats combination to oily and congested skin. <br\/><br\/><strong>Hydra Sleep Mask<\/strong><br\/>An ultra moisturising leave on mask for whilst you sleep. This mask can also be used as a moisturiser for deeper nourishment and hydration. <br\/><\/p>",
+            "horizontal_alignment": "flex-end"
           }
         }
       },
