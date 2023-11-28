@@ -96,7 +96,7 @@
             {% if section.settings.subtitle != blank %}
                 <div class="image-banner__text-text element-animation">{{ section.settings.subtitle }}</div>
             {% endif %}
-            {% if section.settings.btn_url != blank %}
+            {% if section.settings.btn_url != blank and section.settings.btn_text != blank%}
                 <a href="{{ section.settings.btn_url }}" class="a-btn {% if section.settings.btn_style == 'prime' %}prime{% endif %}{% if section.settings.btn_style == 'secondary' %}secondary{% endif %} element-animation">
                     {{ section.settings.btn_text }}
                 </a>
