@@ -43,8 +43,8 @@
         "title_padding_bottom": 22,
         "subtitle": "<p>“Prevention Best Of Beauty Awards 2023” Platinum Peptide Days Serum Won “Best Lifting Serum” & Skin Fluid Tint SPF Won “Best Tinted Moisturiser”<\/p>",
         "subtitle_padding_bottom": 52,
-        "btn_text": "Shop",
-        "btn_url": "shopify:\/\/collections\/all-product-not-treatments",
+        "btn_text": "",
+        "btn_url": "shopify:\/\/pages\/consultations",
         "btn_style": "secondary",
         "text_width": 880,
         "text_align_item": "center",
@@ -74,7 +74,7 @@
             "title": "",
             "text": "",
             "btn_name": "SHOP SKIN HEALTH",
-            "url": "#"
+            "url": "shopify:\/\/collections\/dp-skin-health"
           }
         },
         "29c9012f-8c89-4b68-ac1a-2cb94963fa6e": {
@@ -87,7 +87,7 @@
             "title": "DISCOVER SKIN HEALTH RANGE",
             "text": "<p>The Skin Health range is a premium prescriptive collection of advance products for a skin savvy user.<\/p>",
             "btn_name": "DISCOVER",
-            "url": "#"
+            "url": "shopify:\/\/pages\/skin-health-range"
           }
         },
         "26449348-d501-4d28-a009-3f5076588621": {
