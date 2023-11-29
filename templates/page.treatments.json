@@ -78,16 +78,6 @@
         "collection": "skin-technology-treatments",
         "margin_top": 120
       }
-    },
-    "09c7a2c8-4048-4a1d-8e27-e702eb5ec994": {
-      "type": "section-related-products",
-      "disabled": true,
-      "settings": {
-        "bg": "",
-        "color_text": "",
-        "collection": "douglas-pereira-skin-health",
-        "carousel": true
-      }
     }
   },
   "order": [
@@ -96,7 +86,6 @@
     "38682336-6a89-4542-86ee-ac6129492c98",
     "6b6b45ab-be04-4a33-a2eb-ea0562fe6d9e",
     "42ce59cc-a69f-4523-9c71-ac088159c1d0",
-    "e5acf946-56e6-47dc-8783-6214982b6564",
-    "09c7a2c8-4048-4a1d-8e27-e702eb5ec994"
+    "e5acf946-56e6-47dc-8783-6214982b6564"
   ]
 }

@@ -39,6 +39,9 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "custom_css": [
+        "p, span, a, label, input, select, textarea, option {font-family: Proxima Nova;}"
+      ],
       "settings": {
         "show_sort": true,
         "show_filters": true,
