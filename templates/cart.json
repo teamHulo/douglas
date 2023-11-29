@@ -4,7 +4,7 @@
       "type": "main-cart",
       "settings": {
         "cart_ajax_enable": true,
-        "continue_shopping_link": "shopify:\/\/collections\/all-product-not-treatments"
+        "continue_shopping_link": "shopify:\/\/collections\/all"
       }
     }
   },
