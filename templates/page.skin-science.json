@@ -219,7 +219,7 @@
             "img": "shopify:\/\/shop_images\/EXFOLIATING_SKIN_DROPS_cc1022c7-3626-46c2-90d3-6d7ec8294897.png",
             "title": "EXFOLIATING SKIN DROPS",
             "text": "<p>The Skin Drops, liquid exfoliation collection of serums really packs a punch “she has quite a bite upon application” and is the power engine behind your skincare routine. <br\/><br\/><strong>THE THREE EXFOLIATING DROPS<\/strong><br\/><br\/><strong>Glow Skin Drops<\/strong><br\/>Brightens dull, lacklustre and pigmentation affected  skin.<br\/><br\/><strong>Balancing Skin Drops<\/strong><br\/>Balances oiliness, decongests pores, assists in preventing blemishes. <br\/><br\/><strong>Nutrient Skin Drops<\/strong><br\/>Targets anti-aging, dryness, and nutrient depleted skin. <\/p>",
-            "horizontal_alignment": "flex-start"
+            "horizontal_alignment": "center"
           }
         },
         "c62a74ea-6e32-419e-b040-29906977c768": {
@@ -228,7 +228,7 @@
             "img": "shopify:\/\/shop_images\/MASKS_66e52834-a938-4188-8fa3-0b1d36d8b897.png",
             "title": "MASKS",
             "text": "<p>Enhance your skin routine by giving yourself a little pamper with one of our treatment masks. Each mask in the collection targets specific skin types and concerns. <br\/><br\/><strong>THE THREE MASKS <\/strong><br\/><br\/><strong>Enzyme Glow Mask<\/strong><br\/>An exfoliating mask that targets lacklustre, pigmentation and  Sun damaged skin<br\/><br\/><strong>Balancing Clay Mask<\/strong><br\/>A non drying clay formula the treats combination to oily and congested skin. <br\/><br\/><strong>Hydra Sleep Mask<\/strong><br\/>An ultra moisturising leave on mask for whilst you sleep. This mask can also be used as a moisturiser for deeper nourishment and hydration. <br\/><\/p>",
-            "horizontal_alignment": "flex-end"
+            "horizontal_alignment": "center"
           }
         }
       },
@@ -245,25 +245,6 @@
         "title": "STEP UP YOUR REGIME",
         "text": "<p>With our supportive or enhancement products<\/p>"
       }
-    },
-    "754d130d-768c-422d-9cd3-e545315ae41c": {
-      "type": "section-dots",
-      "disabled": true,
-      "custom_css": [
-        ".section-dots .item__image .image img {width: 65%; margin: auto; object-position: center;}"
-      ],
-      "settings": {
-        "color": "#ffffff",
-        "bg": "#000000",
-        "img_left": "shopify:\/\/shop_images\/EXFOLIATING_SKIN_DROPS.png",
-        "img_right": "shopify:\/\/shop_images\/MASKS.png",
-        "title": "STEP UP YOUR REGIME",
-        "text": "<p>With our supportive or enhancement product.<\/p>",
-        "title_left": "EXFOLIATING SKIN DROPS",
-        "text_left": "<p>Make your routine little more targeted for your skin needs by include one of the Skin Drops exfoliating serums. Apply this serum either in the morning or evening as the first serum you apply after cleansing.<\/p>",
-        "title_right": "MASKS",
-        "text_right": "<p>Enhance your skin routine by giving yourself a little pamper with one of our masks.<\/p>"
-      }
     }
   },
   "order": [
@@ -272,7 +253,6 @@
     "edd1f691-8fec-4344-a2f1-a58356944dd7",
     "15572b8a-834f-4482-8e77-44a05516d135",
     "d7610059-5a44-4ad3-89de-8a0f0da634ed",
-    "129ed2ac-29d5-4420-af72-ed26191ee8c9",
-    "754d130d-768c-422d-9cd3-e545315ae41c"
+    "129ed2ac-29d5-4420-af72-ed26191ee8c9"
   ]
 }

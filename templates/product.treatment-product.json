@@ -72,53 +72,9 @@
         "enable_animation": true,
         "enable_gift_card_recipient": true
       }
-    },
-    "0fe986d1-9bf1-404c-aba2-3456726bde8c": {
-      "type": "section-image-with-text",
-      "blocks": {
-        "a448a021-0b53-4ef3-b28c-10307c6a3e03": {
-          "type": "text",
-          "settings": {
-            "padding_x": 0,
-            "padding_y": 0,
-            "color_text": "#ffffff",
-            "title": "Lorem",
-            "title_font": "h3",
-            "title_padding_bottom": 62,
-            "subtitle": "<p>Lorem ipsum dolor sit amet consectetur. Et ornare dolor mauris aliquet lacus et interdum eu. Orci pharetra urna duis malesuada auctor amet odio. Aliquam sit ut bibendum pellentesque libero quisque auctor. Cras mauris id erat sagittis elit sit nunc libero. Mattis dignissim aliquam lacus nam hac.<\/p>",
-            "subtitle_padding_bottom": 0,
-            "btn_text": "",
-            "btn_url": "",
-            "btn_style": "prime",
-            "text_width": 700,
-            "text_align_item": "left",
-            "text_position_x": "normal",
-            "text_position_y": "center"
-          }
-        },
-        "2368c524-f540-4f10-8540-e5b52d4fd28e": {
-          "type": "image",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "a448a021-0b53-4ef3-b28c-10307c6a3e03",
-        "2368c524-f540-4f10-8540-e5b52d4fd28e"
-      ],
-      "disabled": true,
-      "settings": {
-        "padding_top": 180,
-        "padding_bottom": 180,
-        "column_gap": 0,
-        "bg": "#151515",
-        "color_text": "#ffffff",
-        "border": "none"
-      }
     }
   },
   "order": [
-    "main",
-    "0fe986d1-9bf1-404c-aba2-3456726bde8c"
+    "main"
   ]
 }
