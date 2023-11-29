@@ -774,7 +774,7 @@ header .header__inner {
   opacity: 0.8;
   color: #fefefe;
   /* body */
-  font-family: Raleway;
+  font-family: Proxima Nova;
   font-size: var(--font-size-20);
   font-style: normal;
   font-weight: 500;
@@ -786,7 +786,7 @@ header .header__inner {
   opacity: 0.8;
   color: #fefefe;
   /* body */
-  font-family: Raleway;
+  font-family: Proxima Nova;
   font-size: var(--font-size-18);
   font-style: normal;
   font-weight: 500;
@@ -816,7 +816,7 @@ header .header__inner {
 }
 .footer-newsletter-form-wrap .text p {
   color: #fefefe;
-  font-family: Raleway;
+  font-family: Proxima Nova;
   font-size: 16px !important;
   font-style: normal;
   font-weight: 500;
@@ -844,7 +844,7 @@ header .header__inner {
   padding: 10px 19px;
 
   color: #fefefe;
-  font-family: Raleway;
+  font-family: Proxima Nova;
   font-size: var(--font-size-20);
   font-style: normal;
   font-weight: 500;
@@ -853,7 +853,7 @@ header .header__inner {
 }
 .footer-newsletter-form-wrap .input__wrap input::placeholder {
   color: #ffffff8b;
-  font-family: Raleway;
+  font-family: Proxima Nova;
   font-size: var(--font-size-16);
   font-style: normal;
   font-weight: 500;
@@ -1151,7 +1151,7 @@ header .header__inner {
   margin-bottom: clamp(20px, 2.188vw, 42px);
 }
 .product-container .product__description p {
-  font-family: Raleway;
+  font-family: Proxima Nova;
   font-size: var(--font-size-20);
   font-style: normal;
   font-weight: 500;
@@ -1192,7 +1192,7 @@ header .header__inner {
   font-size: 35px;
   height: auto;
   font-weight: 200;
-  font-family: "Raleway";
+  font-family: "Proxima Nova";
 }
 .product-container .product__input--quantity {
   color: #080808;
@@ -1466,7 +1466,7 @@ header .header__inner {
 }
 .mobile-metafields-product__wrap .text p {
   color: #fefefe;
-  font-family: Raleway;
+  font-family: Proxima Nova;
   font-size: var(--font-size-24);
   font-style: normal;
   font-weight: 500;
@@ -1629,7 +1629,7 @@ header .header__inner {
   line-height: 140%;
 }
 .special__section-1 .text p {
-  font-family: Raleway;
+  font-family: Proxima Nova;
   font-size: clamp(16px, 0.833vw, 24px);
   font-style: normal;
   font-weight: 500;
@@ -1670,7 +1670,7 @@ header .header__inner {
 .special__section-2 .special__section-wrap .subtitle p {
   color: #fefefe;
   text-align: center;
-  font-family: Raleway;
+  font-family: Proxima Nova;
   font-size: clamp(18px, 1.771vw, 34px);
   font-style: normal;
   font-weight: 500;
@@ -1693,7 +1693,7 @@ header .header__inner {
 }
 .special__section-3 .text p {
   max-width: 1000px;
-  font-family: Raleway;
+  font-family: Proxima Nova;
   font-size: clamp(16px, 0.833vw, 24px);
   font-style: normal;
   font-weight: 500;
@@ -1710,7 +1710,7 @@ header .header__inner {
 .special__section-2 li,
 .special__section-3 li,
 .special__section-4 li {
-  font-family: Raleway;
+  font-family: Proxima Nova;
   font-size: clamp(16px, 0.833vw, 24px);
   font-style: normal;
   font-weight: 500;
@@ -1755,7 +1755,7 @@ header .header__inner {
   max-width: 696px;
 }
 .special__section-4 .text p {
-  font-family: Raleway;
+  font-family: Proxima Nova;
   font-size: clamp(16px, 0.833vw, 24px);
   font-style: normal;
   font-weight: 500;
