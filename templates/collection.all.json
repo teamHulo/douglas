@@ -58,6 +58,9 @@
     },
     "ad3916a0-35cc-4fa7-8363-ba9606b0ae66": {
       "type": "section-collection-categories",
+      "custom_css": [
+        "p,span,a,label,input,select,textarea,option {font-family: Proxima Nova;}"
+      ],
       "settings": {
         "collection": "dp-skin-health",
         "title": "",
@@ -67,6 +70,9 @@
     },
     "33c9e46e-4fb7-43a7-b874-74fa2d43ce68": {
       "type": "section-collection-categories",
+      "custom_css": [
+        "p,span,a,label,input,select,textarea,option {font-family: Proxima Nova;}"
+      ],
       "settings": {
         "collection": "dp-skin-science",
         "title": "",
@@ -76,6 +82,9 @@
     },
     "bfb2287f-13bc-4b40-8025-c3672760b7e3": {
       "type": "section-collection-categories",
+      "custom_css": [
+        "p, span, a, label, input, select, textarea, option {font-family: Proxima Nova;}"
+      ],
       "settings": {
         "collection": "devices",
         "title": "",
