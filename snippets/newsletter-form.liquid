@@ -1,11 +1,14 @@
 {%- assign success_msg = 'general.newsletter_form.confirmation' | t -%}
-
+{% assign valueInputTags = 'newsletter'%}
+{% if questi %}
+  {% assign valueInputTags = 'newsletter, questionnaire'%}
+{% endif %}
 {% form 'customer', class: class, id: id %}
   {% render 'form-status', form: form, form_id: id, success_message: success_msg %}
 
   {%- unless form.posted_successfully? -%}
     <div class="newsletter-form-inner">
-      <input type="hidden" name="contact[tags]" value="newsletter">
+      <input type="hidden" name="contact[tags]" value="{{ valueInputTags }}">
       <label for="{{ id }}-email" class="visually-hidden">{{ 'general.newsletter_form.email_placeholder' | t }}</label>
       <input type="email"
         class="input"
