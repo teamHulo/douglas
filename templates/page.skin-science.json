@@ -158,7 +158,7 @@
             "img": "shopify:\/\/shop_images\/MOURNING_ROUTINE_0074e13f-1044-4944-9f56-50643e1d507e.png",
             "title": "MORNING ROUTINE",
             "title_margin_top": 50,
-            "text": "<p><strong><br\/>FOUR UNCOMPLICATED STEPS <\/strong><br\/>Step 1: Universal cleanser <\/p><p>Step 2: Multi active day Serum <\/p><p>Step 3: Universal moisturiser <\/p><p>Step 4: SPF protect 50+<\/p>",
+            "text": "<p><strong><br\/>THREE UNCOMPLICATED STEPS <\/strong><br\/>Step 1: Universal cleanser <\/p><p>Step 2: Multi active day Serum <\/p><p>Step 3: Universal moisturiser <\/p><p><\/p>",
             "text_margin_top": 0,
             "price": "",
             "price_margin_top": 0,
@@ -204,7 +204,7 @@
         "bg": "#000000",
         "color_text": "#ffffff",
         "title": "YOUR UNCOMPLICATED ROUTINE",
-        "text": "<p>A simple routine for the day and night<br\/><br\/>Four products <br\/><br\/>Three steps in the morning<br\/><br\/>Three steps in the evening <\/p>",
+        "text": "<p>A simple routine for the day and night<br\/><br\/>Four products <br\/><br\/>Three steps in the morning & Three steps in the evening <\/p>",
         "text_max_width": 600,
         "full_width": false,
         "card_position": "center"
