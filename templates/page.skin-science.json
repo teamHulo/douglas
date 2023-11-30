@@ -204,7 +204,7 @@
         "bg": "#000000",
         "color_text": "#ffffff",
         "title": "YOUR UNCOMPLICATED ROUTINE",
-        "text": "<p>A simple routine for the day and night <br\/><br\/>Three to four steps in the morning &  Three simple steps in the evening <\/p>",
+        "text": "<p>A simple routine for the day and night <br\/><br\/>Three simple steps in the morning &  evening <\/p>",
         "text_max_width": 600,
         "full_width": false,
         "card_position": "center"
