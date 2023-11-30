@@ -40,7 +40,7 @@
     </div>
 
     <div class="newsletter__form animation-fade-up-reveal">
-      {% render 'newsletter-form', id: 'newsletter-dynamic' %}
+      {% render 'newsletter-form', id: 'newsletter-dynamic', questi: section.settings.questi %}
     </div>
   </div>
 </div>
@@ -54,6 +54,12 @@
     "groups": ["header", "custom.overlay"]
   },
   "settings": [
+   {
+      "type": "checkbox",
+      "id": "show_questi",
+      "label": "show questi",
+      "default": false
+    },
     {
       "id": "title",
       "type": "text",
