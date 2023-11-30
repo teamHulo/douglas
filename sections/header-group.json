@@ -9,7 +9,7 @@
           "type": "announcement",
           "settings": {
             "title": "Take The Skin Regime Questionnaire",
-            "link": "",
+            "link": "shopify:\/\/pages\/skin-regime-questionnaire",
             "color_background": "#000000",
             "color_text": "#ffffff"
           }
