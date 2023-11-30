@@ -1,6 +1,6 @@
 {%- assign success_msg = 'general.newsletter_form.confirmation' | t -%}
 {% assign valueInputTags = 'newsletter'%}
-{% if questi == true %}
+{% if questi  %}
   {% assign valueInputTags = 'newsletter, questionnaire'%}
 {% endif %}
 {% form 'customer', class: class, id: id %}
