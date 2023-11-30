@@ -39,6 +39,7 @@
     "e410febc-d840-4d48-9e5c-ee3863b1ad4d": {
       "type": "newsletter",
       "settings": {
+        "show_questi": true,
         "title": "Subscribe",
         "subheading": "<p>Signup to our newsletter to get notified when the questionnaire is live. <\/p>",
         "enable_animation": true,
