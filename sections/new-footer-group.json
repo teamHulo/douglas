@@ -8,7 +8,7 @@
         "video": true,
         "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/0bede705ccb04381820766fd328bca0c.mp4",
         "padding_x": 0,
-        "padding_y": 50,
+        "padding_y": 56,
         "img": "shopify:\/\/shop_images\/routine.jpg",
         "color_text": "#ffffff",
         "title": "Take The Skincare Regime Questionnaire",
@@ -34,7 +34,7 @@
           "settings": {
             "text": "<h3>Acknowledgement of country<\/h3><p>Lorem ipsum dolor sit amet consectetur. Senectus sed vel ac suspendisse mauris facilisi integer id olor sit amet roconut consectetu mauris sed. <\/p>",
             "title": "Become a DP insider",
-            "subtitle": "WE RESPECT YOUR PRIVACY."
+            "subtitle": "We respect your privacy."
           }
         },
         "06afd925-d6fa-4416-9e16-7f5f0665a352": {
@@ -61,7 +61,7 @@
         "b3f58a59-6516-4918-b44b-407d9c668f7c": {
           "type": "my-text",
           "settings": {
-            "text": "<p>We acknowledge the Traditional Owners of the land where we work and live, the Gadigal of the Eora Nation and pay our respects to Elders past and present. <\/p>"
+            "text": "<p>Douglas Pereira Cosmeceuticals acknowledge the Traditional Owners of the land where we work and live, the Gadigal of the Eora Nation and pay our respects to Elders past and present.  <\/p>"
           }
         },
         "1f577472-60ca-46a7-8fe2-5cf7590d5676": {
