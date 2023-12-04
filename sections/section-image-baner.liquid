@@ -64,8 +64,8 @@
         
         {% if section.settings.video == true  and section.settings.video_url != blank%}
             <div class="video-banner-bg">
-                <video autoplay loop muted playsinline>
-                    <source src="{{section.settings.video_url}}" type="video/mp4">
+                <video autoplay loop muted playsinline data-wf-ignore="true">
+                    <source src="{{section.settings.video_url}}" type="video/mp4" data-wf-ignore="true">
                     Your browser does not support the video tag.
                 </video>
             </div>
