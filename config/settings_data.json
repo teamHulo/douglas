@@ -49,7 +49,15 @@
     "variant_popup_page": "size-guide",
     "content_for_index": [
 
-    ]
+    ],
+    "blocks": {
+      "4804304946286255945": {
+        "type": "shopify:\/\/apps\/avada-cookie-consent\/blocks\/app-embed\/deacc407-65bc-4a4e-84d9-f90e9e492cf3",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
   },
   "presets": {
     "Chic": {
