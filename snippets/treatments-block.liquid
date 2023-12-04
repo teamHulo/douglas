@@ -25,7 +25,7 @@
             <div class="right item">
                 {% if file_extension contains 'video' %}
                 <div class="video">
-                    <video id="video-background" autoplay muted loop>
+                    <video id="video-background" autoplay muted loop playsinline data-wf-ignore="true" data-object-fit="cover" >
                         <source src="{{met}}" >
                     </video>
                 </div>
