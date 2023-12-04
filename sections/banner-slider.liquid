@@ -62,10 +62,16 @@
 </div>
 
 <script>
-   let vid = document.getElementById("myVideo");
-   vid.autoplay = true;
-   vid.load();
-   console.log(324);
+  var video = document.getElementById('myVideo');
+
+  function enableAutoplay() {
+    console.log(324);
+    video.play().catch(error => {
+      console.error('Error playing video:', error);
+    });
+  }
+
+  video.addEventListener('loadeddata', enableAutoplay);
 </script>
 {% schema %}
   {
