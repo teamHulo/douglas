@@ -333,7 +333,7 @@ $(() => {
 });
 
 $(() => {
-  let video = $('video')[0];
+ /* let video = $('video')[0];
   let promise = video.play();
   if (promise !== undefined) {
       promise.then(function () {
@@ -344,5 +344,5 @@ $(() => {
           video.play();
         });
       });
-    }
+    }*/
 });
