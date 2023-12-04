@@ -1,4 +1,8 @@
-
+$(()=>{
+   let videos = document.querySelectorAll('video');
+       videos.autoplay = true;
+       videos.load();
+})
 
 
 $(() => {
