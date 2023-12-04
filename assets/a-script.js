@@ -1,15 +1,8 @@
-// $(() => {
-//   let videos = document.querySelectorAll('video');
-
-//   videos.forEach((video) => {
-//     video.addEventListener("loadeddata", function() {
-//       video.autoplay = true;
-//       video.play().catch(error => {
-//         console.error('Error playing video:', error);
-//       });
-//     });
-//   });
-// });
+$(() => {
+   let vid = document.querySelector("video");
+   vid.autoplay = true;
+   vid.load();
+});
 
 
 
