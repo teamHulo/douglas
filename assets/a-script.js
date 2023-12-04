@@ -1,8 +1,15 @@
-/*$(() => {
-   let vid = document.getElementById("myVideo");
-   vid.autoplay = true;
-   vid.load();
-});*/
+$(() => {
+  let videos = document.querySelectorAll('video');
+
+  videos.forEach((video) => {
+    video.addEventListener("loadeddata", function() {
+      video.autoplay = true;
+      video.play().catch(error => {
+        console.error('Error playing video:', error);
+      });
+    });
+  });
+});
 
 
 
