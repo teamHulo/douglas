@@ -1,5 +1,5 @@
 $(() => {
-   let vid = document.querySelector("video");
+   let vid = document.getElementById("myVideo");
    vid.autoplay = true;
    vid.load();
 });
