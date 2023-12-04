@@ -333,16 +333,7 @@ $(() => {
 });
 
 $(() => {
- /* let video = $('video')[0];
-  let promise = video.play();
-  if (promise !== undefined) {
-      promise.then(function () {
-        // Воспроизведение началось автоматически
-      }).catch(function (error) {
-        // Автовоспроизведение не удалось, можно запустить воспроизведение по событию
-        $(document).on('touchstart', function () {
-          video.play();
-        });
-      });
-    }*/
+  let vid = document.querySelectorAll('video');
+   vid.autoplay = true;
+  vid.load();
 });
