@@ -1,7 +1,7 @@
 $(()=>{
-   let videos = document.querySelectorAll('video');
-       videos.autoplay = true;
-       videos.load();
+   let vid = document.querySelectorAll('video');
+    vid.autoplay = true;
+    vid.load();
 })
 
 
