@@ -333,6 +333,6 @@ $(() => {
 });
 
 $(() => {
-  let video = $('video')[0];
+  let video = $('video');
   let promise = video.play();
 });
