@@ -7,8 +7,8 @@
           "type": "info",
           "settings": {
             "title": "Get in Touch",
-            "text": "<p>Our client care team are here to support you with your skincare questions. You can contact us directly via the contact details below, or fill in the enquiry form. <\/p><p>Client care line:  Monday - Friday 9am - 6pm EST<\/p><p>Flagship Clinic: By Appointment <\/p>",
-            "label": "Client care line:  Monday - Friday 9am - 6pm EST",
+            "text": "<p>Our client care team are here to support you with your skincare questions. You can contact us directly via the contact details below, or fill in the enquiry form.<br\/><br\/>Client care line:  Monday - Friday 9am - 6pm EST<br\/><br\/>Flagship Clinic: By Appointment <\/p>",
+            "label": "",
             "mail": "bookings@beautyic.com.au",
             "tel": "0407 443 350",
             "address": "Douglas Pereira Cosmeceuticals, L6, Suite 4\/60 Park Street Sydney NSW Australia 2000"
