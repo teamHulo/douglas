@@ -9,7 +9,7 @@
             <div class="slide__wrap">
               {% if block.settings.video == true  and block.settings.video_url != blank%}
               <div class="video-banner-bg">
-                  <video id="myVideo" class="banner-video" onloadeddata="enableAutoplay()" autoplay loop muted playsinline>
+                  <video id="myVideo" class="banner-video"  autoplay loop muted playsinline>
                       <source src="{{block.settings.video_url}}" type="video/mp4">
                       Your browser does not support the video tag.
                   </video>
@@ -63,11 +63,9 @@
 
 <script>
    let vid = document.getElementById("myVideo");
-   function enableAutoplay() { 
-      vid.autoplay = true;
-      vid.load();
-       console.log(324);
-    }
+   vid.autoplay = true;
+   vid.load();
+    
 </script>
 {% schema %}
   {
