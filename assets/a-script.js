@@ -1,8 +1,8 @@
-/*$(()=>{
+$(()=>{
    let vid = document.querySelector('video');
     vid.autoplay = true;
     vid.load();
-})*/
+})
 
 
 $(() => {
