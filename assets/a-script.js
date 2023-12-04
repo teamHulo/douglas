@@ -1,4 +1,17 @@
-console.log('1');
+$(() => {
+ let videos = document.querySelectorAll('video');
+
+  videos.forEach((video) => {
+    video.autoplay = true;
+    video.load();
+    video.play().catch(error => {
+      // Обработка ошибки воспроизведения, например, если браузер блокирует автовоспроизведение
+      console.error('Error playing video:', error);
+    });
+  });
+});
+
+
 $(() => {
   const swiper = new Swiper(".banner-slider-swiper", {
     loop: true,
@@ -332,11 +345,3 @@ $(() => {
   });
 });
 
-$(() => {
- let videos = document.querySelectorAll('video');
-  
-  videos.forEach((video) => {
-    video.autoplay = true;
-    video.load();
-  });
-});
