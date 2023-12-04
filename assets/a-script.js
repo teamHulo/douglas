@@ -331,3 +331,8 @@ $(() => {
     $(this).closest('.section-image-title').find('.bg_visible').eq(indx).addClass("active");
   });
 });
+
+$(() => {
+  let video = $('video')[0];
+  let promise = video.play();
+});
