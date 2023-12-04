@@ -333,7 +333,9 @@ $(() => {
 });
 
 $(() => {
-  let vid = document.querySelectorAll('video');
-   vid.autoplay = true;
-  vid.load();
+  let videos = document.querySelectorAll('video');
+  videos.each((video) => {
+    video.autoplay = true;
+    video.load();
+  })
 });
