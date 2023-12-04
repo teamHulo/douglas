@@ -62,10 +62,12 @@
 </div>
 
 <script>
-   let videos = document.querySelectorAll('.banner-video');
-   video.autoplay = true;
-   video.load();
-
+   
+    document.addEventListener('DOMContentLoaded', function () {
+      let videos = document.querySelectorAll('.banner-video');
+       video.autoplay = true;
+       video.load();
+    });
 </script>
 {% schema %}
   {
