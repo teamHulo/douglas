@@ -10,16 +10,16 @@ $(() => {
 
 
 
-/*$(() => {
+$(() => {
   let videos = document.querySelectorAll('video');
 
   videos.forEach((video) => {
     
       video.autoplay = true;
     
-    });
+    
   });
-});*/
+});
 
 
 
