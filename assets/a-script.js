@@ -1,4 +1,16 @@
 $(() => {
+  $('.section-image-title .title').on("click, mouseover", function () {
+    let indx = $(this).index();
+    console.log(indx);
+    console.error(indx);
+    $(".section-image-title .bg .bg_visible").removeClass("active");
+    $(this).closest('.section-image-title').find('.bg_visible').eq(indx).addClass("active");
+  });
+});
+
+
+
+$(() => {
   let videos = document.querySelectorAll('video');
 
   videos.forEach((video) => {
@@ -334,13 +346,5 @@ $(() => {
 
 
 
-$(() => {
-  $('.section-image-title .title').on("click, mouseover", function () {
-    let indx = $(this).index();
-    console.log(indx);
-    console.error(indx);
-    $(".section-image-title .bg .bg_visible").removeClass("active");
-    $(this).closest('.section-image-title').find('.bg_visible').eq(indx).addClass("active");
-  });
-});
+
 
