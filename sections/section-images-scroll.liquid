@@ -40,7 +40,7 @@
               {{ section.settings.name }}
             </span>
           </div>
-        <div class="scroll-image__img element-animation">
+        <div class="scroll-image__img ">
             {% for block in section.blocks %}
                 <img src="{{ block.settings.img | img_url: 'master' }}" alt="">
             {% endfor %}
