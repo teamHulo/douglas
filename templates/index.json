@@ -265,6 +265,38 @@
         "name_padding_bottom": 20,
         "column_gap": 50
       }
+    },
+    "1fbe280f-57fa-476f-adaf-fc1f514edea6": {
+      "type": "section-image-title",
+      "blocks": {
+        "978a65eb-99b5-4e1b-b052-d9690c589b06": {
+          "type": "item",
+          "settings": {
+            "video": false,
+            "video_url": "",
+            "img": "shopify:\/\/shop_images\/11119488640_704860256378460_2144856624489307003_o.jpg",
+            "title": "Example 3",
+            "url": "#"
+          }
+        },
+        "76651118-7c7f-4e7d-a4c7-c822e1615684": {
+          "type": "item",
+          "settings": {
+            "video": false,
+            "video_url": "",
+            "img": "shopify:\/\/shop_images\/Promotions_dreamstime_xl_6046831_42d4758b-ccc4-4684-97f5-88e34e9813c0.jpg",
+            "title": "Example 2",
+            "url": "#"
+          }
+        }
+      },
+      "block_order": [
+        "978a65eb-99b5-4e1b-b052-d9690c589b06",
+        "76651118-7c7f-4e7d-a4c7-c822e1615684"
+      ],
+      "settings": {
+        "color": ""
+      }
     }
   },
   "order": [
@@ -275,6 +307,7 @@
     "422f42b3-7a05-45c9-89a0-3573eaea22ab",
     "e40c577d-c173-4ef7-8e3c-7bf3378a3d85",
     "d186b146-0c20-4ec0-b549-3822b96d10e8",
-    "6fbf64d4-c0e4-4bac-a621-219775a0c45a"
+    "6fbf64d4-c0e4-4bac-a621-219775a0c45a",
+    "1fbe280f-57fa-476f-adaf-fc1f514edea6"
   ]
 }
