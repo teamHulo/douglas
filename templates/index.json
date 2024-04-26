@@ -47,8 +47,8 @@
         "btn_url": "shopify:\/\/collections\/dp-skin-science",
         "btn_style": "secondary",
         "text_width": 880,
-        "text_align_item": "left",
-        "text_position": "normal",
+        "text_align_item": "right",
+        "text_position": "end",
         "text_padding_top": 100,
         "text_padding_bottom": 44
       }
