@@ -32,10 +32,10 @@
     "9fddcfae-82a9-4283-b629-98c227c3e6ec": {
       "type": "section-image-baner",
       "settings": {
-        "video": false,
+        "video": true,
         "video_url": "",
         "padding_x": 0,
-        "padding_y": 260,
+        "padding_y": 52,
         "img": "shopify:\/\/shop_images\/1_reallygreatsite.jpg",
         "color_text": "#ffffff",
         "title": "THE NEW SKIN SCIENCE RANGE",
