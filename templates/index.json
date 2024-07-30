@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "59274cfa-014a-42aa-bef6-33567a0a50bf": {
@@ -35,16 +44,16 @@
         "video": true,
         "video_url": "",
         "padding_x": 0,
-        "padding_y": 152,
-        "img": "shopify:\/\/shop_images\/Day_Night_Kit_02.png",
+        "padding_y": 124,
+        "img": "shopify:\/\/shop_images\/PP_banner_Untitled_design-5.png",
         "color_text": "#ffffff",
-        "title": "THE NEW SKIN SCIENCE RANGE",
+        "title": "THE NEW PLATINUM PEPTIDE DAY & NIGHT CREAM",
         "title_font": "h1",
         "title_padding_bottom": 20,
-        "subtitle": "<h5>AN UNCOMPLICATED ROUTINE suited for all skin types <\/h5><p><strong><br\/>All you need is four products <br\/><\/strong>Universal Cleanser<br\/>Universal Moisturiser<br\/>Multi Active Day Serum<br\/>Recovery Night Serum <\/p><p><\/p>",
+        "subtitle": "<p>Targets fine lines to deep wrinkles. Volume loss. Firming. Plumping. Anti-ageing. Lifting. Pigmentation. Barrier Repair. <\/p>",
         "subtitle_padding_bottom": 52,
         "btn_text": "SHOP",
-        "btn_url": "shopify:\/\/collections\/dp-skin-science",
+        "btn_url": "shopify:\/\/products\/platinum-peptide-day-night-cream",
         "btn_style": "secondary",
         "text_width": 880,
         "text_align_item": "right",
