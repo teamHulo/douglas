@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "59274cfa-014a-42aa-bef6-33567a0a50bf": {
@@ -16,8 +16,8 @@
           "type": "item",
           "settings": {
             "video": true,
-            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/17549c9b479447c38c7103a1390d7ae9.mp4",
-            "img": "shopify:\/\/shop_images\/Rectangle_227.jpg"
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/17549c9b479447c38c7103a1390d7ae9.mp4",
+            "img": "shopify://shop_images/Rectangle_227.jpg"
           }
         }
       },
@@ -27,7 +27,7 @@
       "settings": {
         "title": "SKINCARE AS INDIVIDUAL AS YOU ARE",
         "text": "Your Skincare Journey Starts Here",
-        "url": "shopify:\/\/collections\/all",
+        "url": "shopify://collections/all",
         "btn_name": "SHOP"
       }
     },
@@ -35,7 +35,7 @@
       "type": "title-subtitle",
       "settings": {
         "title": "Douglas Pereira Cosmeceuticals",
-        "text": "<p>‘We take a holistic approach alongside scientifically – innovative formulations, that work in conjunction with your skin’s biology.’<\/p><p><strong> <\/strong><\/p><p>We don’t get caught up in the latest fads and trends, but instead, we formulate skincare products that improves the health your skin cells, optimising their function, protects your skins barrier and counteract the effects that pollution, stress and ageing has on your skin.<\/p>"
+        "text": "<p>‘We take a holistic approach alongside scientifically – innovative formulations, that work in conjunction with your skin’s biology.’</p><p><strong> </strong></p><p>We don’t get caught up in the latest fads and trends, but instead, we formulate skincare products that improves the health your skin cells, optimising their function, protects your skins barrier and counteract the effects that pollution, stress and ageing has on your skin.</p>"
       }
     },
     "9fddcfae-82a9-4283-b629-98c227c3e6ec": {
@@ -45,15 +45,15 @@
         "video_url": "",
         "padding_x": 0,
         "padding_y": 124,
-        "img": "shopify:\/\/shop_images\/Untitled_design.png",
+        "img": "shopify://shop_images/E-com_Home_page-2.png",
         "color_text": "#ffffff",
-        "title": "THE NEW PLATINUM PEPTIDE DAY & NIGHT CREAM",
+        "title": "AWARD WINNING FORMULATIONS",
         "title_font": "h1",
         "title_padding_bottom": 20,
-        "subtitle": "<p>Targets fine lines to deep wrinkles. Volume loss. Firming. Plumping. Anti-ageing. Lifting. Barrier Repair. <\/p><p><\/p>",
+        "subtitle": "<p>We won three products in the Prevention Best Of Beauty Awards 2024. </p><p></p>",
         "subtitle_padding_bottom": 52,
-        "btn_text": "SHOP",
-        "btn_url": "shopify:\/\/products\/platinum-peptide-day-night-cream",
+        "btn_text": "Discover the winners",
+        "btn_url": "shopify://collections/all",
         "btn_style": "secondary",
         "text_width": 880,
         "text_align_item": "right",
@@ -66,7 +66,7 @@
       "type": "title-subtitle",
       "settings": {
         "title": "DISCOVER OUR  PRODUCT RANGES",
-        "text": "<p>Douglas Pereira Cosmeceuticals has three product ranges to suit your skincare goals, budget and lifestyle. No matter where you are at in your skincare journey, we have the perfect skincare solutions for you. <\/p><p> <\/p><p>Each of our ranges have been formulated to have their own unique identity and concept. They consist of a premium range for a skin savvy user, a universal skin type range to suit someone that wants a simple no fuss skincare regime at an affordable price and our mineral makeup range for outer beauty radiance.<\/p>"
+        "text": "<p>Douglas Pereira Cosmeceuticals has three product ranges to suit your skincare goals, budget and lifestyle. No matter where you are at in your skincare journey, we have the perfect skincare solutions for you. </p><p> </p><p>Each of our ranges have been formulated to have their own unique identity and concept. They consist of a premium range for a skin savvy user, a universal skin type range to suit someone that wants a simple no fuss skincare regime at an affordable price and our mineral makeup range for outer beauty radiance.</p>"
       }
     },
     "422f42b3-7a05-45c9-89a0-3573eaea22ab": {
@@ -78,12 +78,12 @@
             "btn_style": "secondary",
             "video": false,
             "video_url": "",
-            "img": "shopify:\/\/shop_images\/Shop_SkinHealth_815dc04b-f78b-4c76-9791-7c3adf7e3767.jpg",
+            "img": "shopify://shop_images/Shop_SkinHealth_815dc04b-f78b-4c76-9791-7c3adf7e3767.jpg",
             "ovrl": false,
             "title": "",
             "text": "",
             "btn_name": "SHOP SKIN HEALTH",
-            "url": "shopify:\/\/collections\/douglas-pereira-skin-health"
+            "url": "shopify://collections/douglas-pereira-skin-health"
           }
         },
         "29c9012f-8c89-4b68-ac1a-2cb94963fa6e": {
@@ -91,12 +91,12 @@
           "settings": {
             "btn_style": "prime",
             "video": true,
-            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e6118cf719ed488f81ae2b37acd97e5c.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/e6118cf719ed488f81ae2b37acd97e5c.mp4",
             "ovrl": true,
             "title": "DISCOVER SKIN HEALTH RANGE",
-            "text": "<p>The Skin Health range is a premium prescriptive collection of advance products for a skin savvy user.<\/p>",
+            "text": "<p>The Skin Health range is a premium prescriptive collection of advance products for a skin savvy user.</p>",
             "btn_name": "DISCOVER",
-            "url": "shopify:\/\/pages\/skin-health-range"
+            "url": "shopify://pages/skin-health-range"
           }
         },
         "26449348-d501-4d28-a009-3f5076588621": {
@@ -104,12 +104,12 @@
           "settings": {
             "btn_style": "prime",
             "video": true,
-            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/6a9d7cd2f99348029dadd9ebc6358f1b.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/6a9d7cd2f99348029dadd9ebc6358f1b.mp4",
             "ovrl": true,
             "title": "DISCOVER SKIN SCIENCE RANGE",
-            "text": "<p>The Skin Science range is an uncomplicated collection, with complex formulations for those looking for an affordable simple routine, with effective results. <\/p>",
+            "text": "<p>The Skin Science range is an uncomplicated collection, with complex formulations for those looking for an affordable simple routine, with effective results. </p>",
             "btn_name": "DISCOVER",
-            "url": "shopify:\/\/pages\/skin-science-range"
+            "url": "shopify://pages/skin-science-range"
           }
         },
         "2d680cbf-c313-48b2-9f68-489a7d8aa357": {
@@ -118,12 +118,12 @@
             "btn_style": "secondary",
             "video": false,
             "video_url": "",
-            "img": "shopify:\/\/shop_images\/Shop_SkinScience_93eeb93f-6568-453a-a6d6-a1c8aa6cf2b6.jpg",
+            "img": "shopify://shop_images/Shop_SkinScience_93eeb93f-6568-453a-a6d6-a1c8aa6cf2b6.jpg",
             "ovrl": false,
             "title": "",
             "text": "",
             "btn_name": "SHOP SKIN SCIENCE",
-            "url": "shopify:\/\/collections\/douglas-pereira-skin-science"
+            "url": "shopify://collections/douglas-pereira-skin-science"
           }
         },
         "d949aeaf-a056-4ddb-8b7b-4e0d2d826141": {
@@ -132,12 +132,12 @@
             "btn_style": "secondary",
             "video": false,
             "video_url": "",
-            "img": "shopify:\/\/shop_images\/Shop_MineralMakeup_9e0e0e6d-ea2d-4093-be15-aeea750f962e.jpg",
+            "img": "shopify://shop_images/Shop_MineralMakeup_9e0e0e6d-ea2d-4093-be15-aeea750f962e.jpg",
             "ovrl": false,
             "title": "",
             "text": "",
             "btn_name": "SHOP MINERAL MAKE UP",
-            "url": "shopify:\/\/collections\/douglas-pereira-mineral-makeup"
+            "url": "shopify://collections/douglas-pereira-mineral-makeup"
           }
         },
         "99a94cf4-1bd2-4fa5-b251-95a516d935d4": {
@@ -145,12 +145,12 @@
           "settings": {
             "btn_style": "prime",
             "video": true,
-            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/95b1328504ad446193f92904cc2bfb88.mp4",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/95b1328504ad446193f92904cc2bfb88.mp4",
             "ovrl": true,
             "title": "DICOVER MINERAL MAKEUP RANGE",
-            "text": "<p>The Mineral Makeup range is an extension of your skincare regime, enhancing outer beauty.<\/p>",
+            "text": "<p>The Mineral Makeup range is an extension of your skincare regime, enhancing outer beauty.</p>",
             "btn_name": "DISCOVER",
-            "url": "shopify:\/\/pages\/mineral-makeup"
+            "url": "shopify://pages/mineral-makeup"
           }
         }
       },
@@ -169,7 +169,7 @@
       "type": "title-subtitle",
       "settings": {
         "title": "IS IT TIME FOR US TO ASSIST IN YOUR SKINCARE JOURNEY?",
-        "text": "<p>We have four pathways to help you with selecting your skincare needs and overcoming your skin challenges.<\/p><p><strong> <\/strong><\/p><p>Choosing the correct products for your skin, budget and lifestyle can be challenging. We are here to support, advise and help guide you with selecting the perfect products for your skin. <\/p><p> <\/p><p>We can assist you in person at our flagship clinic and discovery studio or spent time with you via our virtual video or phone consultation. You can even take our online skincare regime questionnaire for instant product recommendation based on a few short questions<\/p>"
+        "text": "<p>We have four pathways to help you with selecting your skincare needs and overcoming your skin challenges.</p><p><strong> </strong></p><p>Choosing the correct products for your skin, budget and lifestyle can be challenging. We are here to support, advise and help guide you with selecting the perfect products for your skin. </p><p> </p><p>We can assist you in person at our flagship clinic and discovery studio or spent time with you via our virtual video or phone consultation. You can even take our online skincare regime questionnaire for instant product recommendation based on a few short questions</p>"
       }
     },
     "d186b146-0c20-4ec0-b549-3822b96d10e8": {
@@ -179,10 +179,10 @@
           "type": "item",
           "settings": {
             "video": false,
-            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/346237bba57148da972853df217e39dd.mp4",
-            "img": "shopify:\/\/shop_images\/lucija-ros-FzQiiLqcRtE-unsplash.jpg",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/346237bba57148da972853df217e39dd.mp4",
+            "img": "shopify://shop_images/lucija-ros-FzQiiLqcRtE-unsplash.jpg",
             "title": "TAKE THE SKINCARE REGIME QUESTIONNAIRE",
-            "url": "shopify:\/\/pages\/skin-regime-questionnaire"
+            "url": "shopify://pages/skin-regime-questionnaire"
           }
         },
         "06933f48-8b2d-4c37-86ca-d6181a84d840": {
@@ -190,9 +190,9 @@
           "settings": {
             "video": false,
             "video_url": "",
-            "img": "shopify:\/\/shop_images\/11119488640_704860256378460_2144856624489307003_o.jpg",
+            "img": "shopify://shop_images/11119488640_704860256378460_2144856624489307003_o.jpg",
             "title": "COMPLIMENTARY  VIRTUAL CONSULTATION",
-            "url": "shopify:\/\/pages\/consultations"
+            "url": "shopify://pages/consultations"
           }
         },
         "460ce212-2f76-478c-8bb9-0d1d20fc2cc9": {
@@ -200,19 +200,19 @@
           "settings": {
             "video": false,
             "video_url": "",
-            "img": "shopify:\/\/shop_images\/Cera-Fort-Complex-Facial_jpg.webp",
+            "img": "shopify://shop_images/Cera-Fort-Complex-Facial_jpg.webp",
             "title": "COMPLIMENTARY  IN CLINIC DISCOVERY CONSULTATION",
-            "url": "shopify:\/\/pages\/consultations"
+            "url": "shopify://pages/consultations"
           }
         },
         "b8cd12d3-b6c0-4623-95d3-cb566731b6d4": {
           "type": "item",
           "settings": {
             "video": false,
-            "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/62a891c60311450bae7934e37519acbf.mp4",
-            "img": "shopify:\/\/shop_images\/Skin-Booster-Facials.jpg",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/62a891c60311450bae7934e37519acbf.mp4",
+            "img": "shopify://shop_images/Skin-Booster-Facials.jpg",
             "title": "IN CLINIC SIGNATURE CONSULTATION",
-            "url": "shopify:\/\/pages\/consultations"
+            "url": "shopify://pages/consultations"
           }
         }
       },
@@ -232,31 +232,31 @@
         "ffbb99c7-ec53-4ca9-bd1e-23ff3dccfc16": {
           "type": "image",
           "settings": {
-            "img": "shopify:\/\/shop_images\/The_Sydney_Morning_Herald_540x_1.png"
+            "img": "shopify://shop_images/The_Sydney_Morning_Herald_540x_1.png"
           }
         },
         "bb5ca779-be42-4acc-bd6e-d52fd457b794": {
           "type": "image",
           "settings": {
-            "img": "shopify:\/\/shop_images\/The_Sydney_Morning_Herald_540x_1_1.png"
+            "img": "shopify://shop_images/The_Sydney_Morning_Herald_540x_1_1.png"
           }
         },
         "1229d3f3-3f63-4f4b-89aa-b471f3ced8ea": {
           "type": "image",
           "settings": {
-            "img": "shopify:\/\/shop_images\/The_Sydney_Morning_Herald_540x_1_2.png"
+            "img": "shopify://shop_images/The_Sydney_Morning_Herald_540x_1_2.png"
           }
         },
         "46727f9f-f164-4ce2-b29a-80d54f7481d9": {
           "type": "image",
           "settings": {
-            "img": "shopify:\/\/shop_images\/The_Sydney_Morning_Herald_540x_1_3.png"
+            "img": "shopify://shop_images/The_Sydney_Morning_Herald_540x_1_3.png"
           }
         },
         "986ee709-601e-441e-a47c-6cdf171a6c09": {
           "type": "image",
           "settings": {
-            "img": "shopify:\/\/shop_images\/The_Sydney_Morning_Herald_540x_1_4.png"
+            "img": "shopify://shop_images/The_Sydney_Morning_Herald_540x_1_4.png"
           }
         }
       },
