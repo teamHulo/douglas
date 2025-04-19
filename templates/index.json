@@ -49,7 +49,7 @@
         "color_text": "#ffffff",
         "title": "SPEND & SAVE",
         "title_font": "h1",
-        "title_padding_bottom": 80,
+        "title_padding_bottom": 10,
         "subtitle": "<p><strong>SPEND $500 & GET  $50 OFF</strong></p><p><strong>SPEND $800 & GET $100 OFF</strong></p><p><strong>SPEND $1200 & GET $150 OFF</strong></p><p>Discount applied at checkout</p>",
         "subtitle_padding_bottom": 72,
         "btn_text": "SHOP",
