@@ -45,16 +45,16 @@
         "video_url": "",
         "padding_x": 0,
         "padding_y": 124,
-        "img": "shopify://shop_images/E-com_Home_page-7.png",
+        "img": "shopify://shop_images/Home_page_spend_save.png",
         "color_text": "#ffffff",
-        "title": "AWARD WINNING FORMULATIONS",
+        "title": "SPEND & SAVE",
         "title_font": "h3",
         "title_padding_bottom": 16,
-        "subtitle": "<p>We won three products in the Prevention Best Of Beauty Awards 2024. </p><p></p>",
+        "subtitle": "<p><strong>SPEND $500 & GET  $50 OFF</strong></p><p><strong>SPEND $800 & GET $100 OFF</strong></p><p><strong>SPEND $1200 & GET $150 OFF</strong></p><p>Discount applied at checkout</p>",
         "subtitle_padding_bottom": 52,
-        "btn_text": "Discover the winners",
-        "btn_url": "shopify://collections/prevention-beauty-awards-2024",
-        "btn_style": "secondary",
+        "btn_text": "SHOP",
+        "btn_url": "shopify://collections/all",
+        "btn_style": "prime",
         "text_width": 880,
         "text_align_item": "right",
         "text_position": "end",
@@ -162,8 +162,7 @@
         "d949aeaf-a056-4ddb-8b7b-4e0d2d826141",
         "99a94cf4-1bd2-4fa5-b251-95a516d935d4"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "e40c577d-c173-4ef7-8e3c-7bf3378a3d85": {
       "type": "title-subtitle",
