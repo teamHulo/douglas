@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "header",
   "name": "t:groups.header_group.name",
@@ -8,8 +17,8 @@
         "announcement-0": {
           "type": "announcement",
           "settings": {
-            "title": "Take The Skin Regime Questionnaire",
-            "link": "shopify:\/\/pages\/skin-regime-questionnaire",
+            "title": "SPEND & SAVE ON NOW | SPEND $500 GET $50 OFF | SPEND $800 GET $100 OFF | SPEND $1200 GET $150 OFF",
+            "link": "shopify://collections/all",
             "color_background": "#000000",
             "color_text": "#ffffff"
           }
@@ -25,7 +34,7 @@
     "header": {
       "type": "header",
       "settings": {
-        "logo": "shopify:\/\/shop_images\/DP_Logo_Cosmeceuticals_Horizontal_Black.svg",
+        "logo": "shopify://shop_images/DP_Logo_Cosmeceuticals_Horizontal_Black.svg",
         "logo_max_width": 275,
         "menu": "main-menu",
         "secondary_menu": "",
