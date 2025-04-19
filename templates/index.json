@@ -43,7 +43,7 @@
       "settings": {
         "video": true,
         "video_url": "",
-        "padding_x": 0,
+        "padding_x": 176,
         "padding_y": 124,
         "img": "shopify://shop_images/Home_page_spend_save.png",
         "color_text": "#ffffff",
