@@ -17,7 +17,7 @@
         "announcement-0": {
           "type": "announcement",
           "settings": {
-            "title": "SPEND & SAVE ON NOW | SPEND $500 GET $50 OFF | SPEND $800 GET $100 OFF | SPEND $1200 GET $150 OFF",
+            "title": "SPEND & SAVE  | SPEND $500 GET $50 OFF | SPEND $800 GET $100 OFF | SPEND $1200 GET $150 OFF",
             "link": "shopify://collections/all",
             "color_background": "#000000",
             "color_text": "#ffffff"
