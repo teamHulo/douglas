@@ -56,8 +56,8 @@
         "btn_url": "shopify://collections/all",
         "btn_style": "secondary",
         "text_width": 880,
-        "text_align_item": "center",
-        "text_position": "center",
+        "text_align_item": "right",
+        "text_position": "end",
         "text_padding_top": 100,
         "text_padding_bottom": 44
       }
