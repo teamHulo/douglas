@@ -51,7 +51,7 @@
         "title_font": "h1",
         "title_padding_bottom": 14,
         "subtitle": "<p><strong>SPEND $500 & GET  $50 OFF</strong></p><p><strong>SPEND $800 & GET $100 OFF</strong></p><p><strong>SPEND $1200 & GET $150 OFF</strong></p><p>Discount applied at checkout</p>",
-        "subtitle_padding_bottom": 72,
+        "subtitle_padding_bottom": 14,
         "btn_text": "SHOP",
         "btn_url": "shopify://collections/all",
         "btn_style": "prime",
