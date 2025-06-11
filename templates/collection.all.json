@@ -1,9 +1,17 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "26a78db6-d3f2-4db7-94bb-5bf3b637579e": {
       "type": "section-collection-info",
-      "settings": {
-      }
+      "settings": {}
     },
     "banner": {
       "type": "main-collection-banner",
@@ -25,12 +33,12 @@
         "video_url": "",
         "padding_x": 0,
         "padding_y": 140,
-        "img": "shopify:\/\/shop_images\/Rectangle_227.jpg",
+        "img": "shopify://shop_images/Rectangle_227.jpg",
         "color_text": "#ffffff",
         "title": "Shop all",
         "title_font": "h1",
         "title_padding_bottom": 52,
-        "subtitle": "<p>We formulate skincare products that improves the health of skin<br\/>cells, optimising their function, protects the skins barrier and counteract the<br\/>effects that pollution, stress and ageing has on the skin.<\/p>",
+        "subtitle": "<p>We formulate skincare products that improves the health of skin<br/>cells, optimising their function, protects the skins barrier and counteract the<br/>effects that pollution, stress and ageing has on the skin.</p>",
         "subtitle_padding_bottom": 52,
         "btn_text": "Take the skincare regime",
         "btn_url": "",
@@ -56,18 +64,6 @@
         "enable_animation": true
       }
     },
-    "ad3916a0-35cc-4fa7-8363-ba9606b0ae66": {
-      "type": "section-collection-categories",
-      "custom_css": [
-        "p,span,a,label,input,select,textarea,option {font-family: Proxima Nova;}"
-      ],
-      "settings": {
-        "collection": "dp-skin-health",
-        "title": "",
-        "card_title": "DP Skin Health",
-        "img": "shopify:\/\/shop_images\/a3aeb630b86eae0691a3c8bc64de7848.jpg"
-      }
-    },
     "33c9e46e-4fb7-43a7-b874-74fa2d43ce68": {
       "type": "section-collection-categories",
       "custom_css": [
@@ -77,19 +73,31 @@
         "collection": "dp-skin-science",
         "title": "",
         "card_title": "DP skin science",
-        "img": "shopify:\/\/shop_images\/a3aeb630b86eae0691a3c8bc64de7848.jpg"
+        "img": "shopify://shop_images/a3aeb630b86eae0691a3c8bc64de7848.jpg"
+      }
+    },
+    "ad3916a0-35cc-4fa7-8363-ba9606b0ae66": {
+      "type": "section-collection-categories",
+      "custom_css": [
+        "p,span,a,label,input,select,textarea,option {font-family: Proxima Nova;}"
+      ],
+      "settings": {
+        "collection": "dp-skin-health",
+        "title": "",
+        "card_title": "DP Skin Health",
+        "img": "shopify://shop_images/a3aeb630b86eae0691a3c8bc64de7848.jpg"
       }
     },
     "bfb2287f-13bc-4b40-8025-c3672760b7e3": {
       "type": "section-collection-categories",
       "custom_css": [
-        "p, span, a, label, input, select, textarea, option {font-family: Proxima Nova;}"
+        "p,span,a,label,input,select,textarea,option {font-family: Proxima Nova;}"
       ],
       "settings": {
         "collection": "devices",
         "title": "",
         "card_title": "Devices",
-        "img": "shopify:\/\/shop_images\/a3aeb630b86eae0691a3c8bc64de7848.jpg"
+        "img": "shopify://shop_images/a3aeb630b86eae0691a3c8bc64de7848.jpg"
       }
     }
   },
@@ -98,8 +106,8 @@
     "banner",
     "4f229f80-200a-4638-a1c5-f42deec5601a",
     "product-grid",
-    "ad3916a0-35cc-4fa7-8363-ba9606b0ae66",
     "33c9e46e-4fb7-43a7-b874-74fa2d43ce68",
+    "ad3916a0-35cc-4fa7-8363-ba9606b0ae66",
     "bfb2287f-13bc-4b40-8025-c3672760b7e3"
   ]
 }
