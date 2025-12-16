@@ -35,7 +35,7 @@
       "type": "header",
       "settings": {
         "logo": "shopify://shop_images/DP_AnniversaryLogo_Horiztonal_White-Goldanimation.gif",
-        "logo_max_width": 275,
+        "logo_max_width": 450,
         "menu": "main-menu",
         "secondary_menu": "",
         "style": "icon",
