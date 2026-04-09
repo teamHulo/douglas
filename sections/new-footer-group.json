@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "footer",
   "name": "t:groups.footer_group.name",
@@ -6,18 +15,18 @@
       "type": "section-image-baner",
       "settings": {
         "video": true,
-        "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/0bede705ccb04381820766fd328bca0c.mp4",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/0bede705ccb04381820766fd328bca0c.mp4",
         "padding_x": 0,
         "padding_y": 56,
-        "img": "shopify:\/\/shop_images\/routine.jpg",
+        "img": "shopify://shop_images/routine.jpg",
         "color_text": "#ffffff",
         "title": "Take The Skincare Regime Questionnaire",
         "title_font": "h2",
         "title_padding_bottom": 40,
-        "subtitle": "<p>With just a few answers, discover your skins true potential with a personalized homecare regime.<\/p>",
+        "subtitle": "<p>With just a few answers, discover your skins true potential with a personalized homecare regime.</p>",
         "subtitle_padding_bottom": 40,
         "btn_text": "take the questionnaire",
-        "btn_url": "shopify:\/\/pages\/skin-regime-questionnaire",
+        "btn_url": "shopify://pages/skin-regime-questionnaire",
         "btn_style": "secondary",
         "text_width": 660,
         "text_align_item": "center",
@@ -32,7 +41,7 @@
         "a116d8b7-b63e-4d82-8f73-40d9ab811bd1": {
           "type": "newsletter",
           "settings": {
-            "text": "<h3>Acknowledgement of country<\/h3><p>Lorem ipsum dolor sit amet consectetur. Senectus sed vel ac suspendisse mauris facilisi integer id olor sit amet roconut consectetu mauris sed. <\/p>",
+            "text": "<h3>Acknowledgement of country</h3><p>Lorem ipsum dolor sit amet consectetur. Senectus sed vel ac suspendisse mauris facilisi integer id olor sit amet roconut consectetu mauris sed. </p>",
             "title": "Become a DP insider",
             "subtitle": "We respect your privacy."
           }
@@ -61,13 +70,12 @@
         "b3f58a59-6516-4918-b44b-407d9c668f7c": {
           "type": "my-text",
           "settings": {
-            "text": "<p>Douglas Pereira Cosmeceuticals acknowledge the Traditional Owners of the land where we work and live, the Gadigal of the Eora Nation and pay our respects to Elders past and present.  <\/p>"
+            "text": "<p>Douglas Pereira Cosmeceuticals acknowledge the Traditional Owners of the land where we work and live, the Gadigal of the Eora Nation and pay our respects to Elders past and present.  </p>"
           }
         },
         "1f577472-60ca-46a7-8fe2-5cf7590d5676": {
           "type": "social",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -81,6 +89,7 @@
       "settings": {
         "menu_bottom": "",
         "color_bg": "#000000",
+        "logo": "shopify://shop_images/DP_AnniversaryLogo_GoldAnimation.gif",
         "max_width": 250
       }
     }
