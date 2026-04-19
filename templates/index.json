@@ -54,7 +54,7 @@
         "subtitle_padding_bottom": 14,
         "btn_text": "Shop Skin Science",
         "btn_url": "shopify://collections/douglas-pereira-skin-science",
-        "btn_style": "prime",
+        "btn_style": "secondary",
         "text_width": 400,
         "text_align_item": "right",
         "text_position": "end",
