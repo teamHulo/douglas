@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -14,7 +23,7 @@
         "video_url": "",
         "padding_x": 100,
         "padding_y": 100,
-        "img": "shopify:\/\/shop_images\/black1.webp",
+        "img": "shopify://shop_images/black1.webp",
         "color_text": "#ffffff",
         "title": "OUR FOUNDER, DOUGLAS PEREIRA",
         "title_font": "h5",
@@ -39,7 +48,7 @@
           "settings": {
             "title": "DOUGLAS PEREIRA",
             "subtitle": "",
-            "text": "<p>Highly respected throughout the skincare, beauty, cosmetic and aesthetic medical world Douglas Pereira has been a part of the Australian beauty, skincare and wellness industry for nearly three decades.<\/p><p> He commenced his career at the young age of seventeen, working as a hands-on skin therapist in high-end day spas and skin clinics. He then progressed in his career to become a senior educator with leading international skincare groups, which saw him travel around Australia and abroad, educating on the fundamentals of the skin and luxury products.<\/p><p> After fourteen years of working with leading international brands, Douglas elevated his skills to become a dermal therapist and opened his first skin focus flagship dermal therapy clinic “Douglas Pereira Skin Health” in Sydney Australia. Where he treats an exclusive list of Australia and international clients.<\/p><p> In 2011 Douglas launch his first skincare range under his namesake. Working alongside some of Australia’s leading cosmeceutical formulators and using his years of practical, technical, and theoretical knowledge and drawing on his years of treating skin. <\/p><p>His inspiration to create the range came from a need he saw in the skincare industry, for a range of luxury cosmeceutical grade skincare products and treatments that treats the skin based on dermal remodelling, barrier and DNA repair and counteract the effects that pollution, stress, and genetic ageing has on the skin. Twelve years on his brand has expanded into three ranges under the “Douglas Pereira Cosmeceuticals Brand”<\/p>"
+            "text": "<p>Highly respected throughout the skincare, beauty, cosmetic and aesthetic medical world Douglas Pereira has been a part of the Australian beauty, skincare and wellness industry for nearly three decades.</p><p> He commenced his career at the young age of seventeen, working as a hands-on skin therapist in high-end day spas and skin clinics. He then progressed in his career to become a senior educator with leading international skincare groups, which saw him travel around Australia and abroad, educating on the fundamentals of the skin and luxury products.</p><p> After fourteen years of working with leading international brands, Douglas elevated his skills to become a dermal therapist and opened his first skin focus flagship dermal therapy clinic “Douglas Pereira Skin Health” in Sydney Australia. Where he treats an exclusive list of Australia and international clients.</p><p> In 2011 Douglas launch his first skincare range under his namesake. Working alongside some of Australia’s leading cosmeceutical formulators and using his years of practical, technical, and theoretical knowledge and drawing on his years of treating skin. </p><p>His inspiration to create the range came from a need he saw in the skincare industry, for a range of luxury cosmeceutical grade skincare products and treatments that treats the skin based on dermal remodelling, barrier and DNA repair and counteract the effects that pollution, stress, and genetic ageing has on the skin. Twelve years on his brand has expanded into three ranges under the “Douglas Pereira Cosmeceuticals Brand”</p>"
           }
         }
       },
@@ -52,7 +61,7 @@
         "color": "#ffffff",
         "pb": 50,
         "pt": 50,
-        "img": "shopify:\/\/shop_images\/PRODUCTS.png",
+        "img": "shopify://shop_images/Profile_1.png",
         "img_height": 100,
         "img_width": 77,
         "img_alignment": "row",
