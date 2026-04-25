@@ -70,11 +70,37 @@
         "btn_name": "discover consultations",
         "url": ""
       }
+    },
+    "section_image_baner_69dVPq": {
+      "type": "section-image-baner",
+      "name": "Image banner",
+      "settings": {
+        "video": false,
+        "video_url": "",
+        "padding_x": 0,
+        "padding_y": 0,
+        "img": "shopify://shop_images/DP_AnniversaryLogo_GoldAnimation.gif",
+        "color_text": "#fff",
+        "title": "the skincare regime builder",
+        "title_font": "h3",
+        "title_padding_bottom": 0,
+        "subtitle": "",
+        "subtitle_padding_bottom": 0,
+        "btn_text": "Take the skincare regime",
+        "btn_url": "",
+        "btn_style": "prime",
+        "text_width": 400,
+        "text_align_item": "left",
+        "text_position": "normal",
+        "text_padding_top": 0,
+        "text_padding_bottom": 0
+      }
     }
   },
   "order": [
     "main",
     "c1d61efe-bf0a-4b6c-8050-d4011620df69",
-    "f7cacbe4-ec6e-4a7b-9828-fb3c6a6805ed"
+    "f7cacbe4-ec6e-4a7b-9828-fb3c6a6805ed",
+    "section_image_baner_69dVPq"
   ]
 }
