@@ -89,6 +89,7 @@
       "settings": {
         "menu_bottom": "",
         "color_bg": "#000000",
+        "logo": "shopify://shop_images/DP_AnniversaryLogo_GoldAnimation.gif",
         "max_width": 250
       }
     }
