@@ -23,7 +23,7 @@
     >
 
     <div class="checkbox-input__icon">
-      {% render 'icon' with icon: 'check' %}
+      {% render 'icon' with icon, icon: 'check' %}
     </div>
 
     <span class="checkbox-input__label">
@@ -162,3 +162,13 @@
     >
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'check' %}"
+  to: "{% render 'icon' with icon, icon: 'check' %}"
+  position: 729..773
+{% endcomment %}

@@ -13,7 +13,7 @@
           <button type="button" class="disclosure__toggle disclosure__toggle--currency input-reset input fs-body-x-small fs-body-bold" aria-expanded="false" aria-controls="currency-list-{{ id }}" aria-describedby="currency-heading-{{ id }}" data-disclosure-toggle>
             <span class="flag-icon flag-icon-{{ localization.country.iso_code | handleize }}"></span> {{ localization.country.name }} ({{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }})
             <span class="arrow">
-              {% render 'icon' with icon: 'chevron' %}
+              {% render 'icon' with icon, icon: 'chevron' %}
             </span>
           </button>
           <ul id="currency-list-{{ id }}" class="disclosure-list" data-disclosure-list>
@@ -41,7 +41,7 @@
           <button type="button" class="disclosure__toggle input-reset input fs-body-x-small fs-body-bold" aria-expanded="false" aria-controls="lang-list-{{ id }}" aria-describedby="lang-heading-{{ id }}" data-disclosure-toggle>
             {{ form.current_locale.endonym_name }}
             <span class="arrow">
-              {% render 'icon' with icon: 'chevron' %}
+              {% render 'icon' with icon, icon: 'chevron' %}
             </span>
           </button>
           <ul id="lang-list-{{ id }}" class="disclosure-list" data-disclosure-list>
@@ -62,4 +62,16 @@
   {%- endform -%}
 
 
-{%- endif -%}
+{%- endif -%}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'chevron' %}"
+  to: "{% render 'icon' with icon, icon: 'chevron' %}"
+  position: 961..1007
+- from: "{% render 'icon' with icon: 'chevron' %}"
+  to: "{% render 'icon' with icon, icon: 'chevron' %}"
+  position: 2643..2689
+{%- endcomment -%}

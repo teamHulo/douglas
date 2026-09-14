@@ -77,13 +77,7 @@
     {{ block.shopify_attributes }}
   >
     {%- if settings.image != blank -%}
-      {% render 'image' with
-        image: settings.image,
-        wrapper_class: 'mosaic-grid__item-image',
-        focal_point: settings.focal_point,
-        object_fit: settings.media_fit,
-        disable_style: true
-      %}
+      {% render 'image' with image, image: settings.image, wrapper_class: 'mosaic-grid__item-image', focal_point: settings.focal_point, object_fit: settings.media_fit, disable_style: true %}
     {%- endif -%}
 
     {%- if settings.video_url != blank -%}
@@ -125,4 +119,22 @@
   </div>
 {%- endif -%}
 
-{{ text_block }}
+{{ text_block }}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {% render 'image' with
+            image: settings.image,
+            wrapper_class: 'mosaic-grid__item-image',
+            focal_point: settings.focal_point,
+            object_fit: settings.media_fit,
+            disable_style: true
+          %}
+  to: "{% render 'image' with image, image: settings.image, wrapper_class: 'mosaic-grid__item-image',
+    focal_point: settings.focal_point, object_fit: settings.media_fit, disable_style:
+    true %}"
+  position: 3059..3243
+{%- endcomment -%}

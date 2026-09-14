@@ -24,7 +24,7 @@
         {%- else -%}
           {{ value.label | escape }}
         {%- endif -%}
-        {%- render 'icon' with icon: 'close-stroke' -%}
+        {%- render 'icon' with icon, icon: 'close-stroke' -%}
       </a>
     {%- endfor -%}
 
@@ -38,7 +38,7 @@
           {%- else -%}
             {{ filter.range_max | money }}
           {%- endif -%}
-          {%- render 'icon' with icon: 'close-stroke' -%}
+          {%- render 'icon' with icon, icon: 'close-stroke' -%}
         </a>
       {%- endif -%}
     {% endif %}
@@ -62,7 +62,7 @@
       data-value="{{ value }}"
     >
       Sort: {{ label }}
-      {%- render 'icon' with icon: 'close-stroke' -%}
+      {%- render 'icon' with icon, icon: 'close-stroke' -%}
     </a>
   {%- endif -%}
 
@@ -70,3 +70,19 @@
     <span>{{ 'filters.clear_filters' | t }}</span>
   </a>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'icon' with icon: 'close-stroke' -%}"
+  to: "{%- render 'icon' with icon, icon: 'close-stroke' -%}"
+  position: 889..942
+- from: "{%- render 'icon' with icon: 'close-stroke' -%}"
+  to: "{%- render 'icon' with icon, icon: 'close-stroke' -%}"
+  position: 1550..1603
+- from: "{%- render 'icon' with icon: 'close-stroke' -%}"
+  to: "{%- render 'icon' with icon, icon: 'close-stroke' -%}"
+  position: 2440..2493
+{% endcomment %}

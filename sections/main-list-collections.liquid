@@ -17,29 +17,14 @@
     <div class="list-collections__grid">
       {%- if section.settings.display_type == 'all' -%}
         {%- for collection in collections -%}
-          {%-
-            render 'collection-item' with
-            collection: collection,
-            aspect_ratio: aspect_ratio,
-            show_description: show_description,
-          -%}
+          {%- render 'collection-item' with collection, collection: collection, aspect_ratio: aspect_ratio, show_description: show_description -%}
         {%- endfor -%}
       {%- else -%}
         {%- for block in section.blocks -%}
-          {%-
-            render 'collection-item' with
-            collection: block.settings.collection,
-            aspect_ratio: aspect_ratio,
-            show_description: show_description,
-          -%}
+          {%- render 'collection-item' with collection, collection: block.settings.collection, aspect_ratio: aspect_ratio, show_description: show_description -%}
         {%- else -%}
           {%- for i in (1..max_collections) -%}
-            {%-
-              render 'collection-item' with
-              collection: empty,
-              aspect_ratio: aspect_ratio,
-              show_description: show_description,
-            -%}
+            {%- render 'collection-item' with collection, collection: "", aspect_ratio: aspect_ratio, show_description: show_description -%}
           {%- endfor -%}
         {%- endfor -%}
       {%- endif -%}
@@ -125,3 +110,40 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%-
+                render 'collection-item' with
+                collection: collection,
+                aspect_ratio: aspect_ratio,
+                show_description: show_description,
+              -%}
+  to: "{%- render 'collection-item' with collection, collection: collection, aspect_ratio:
+    aspect_ratio, show_description: show_description -%}"
+  position: 666..802
+- from: |-
+    {%-
+                render 'collection-item' with
+                collection: block.settings.collection,
+                aspect_ratio: aspect_ratio,
+                show_description: show_description,
+              -%}
+  to: "{%- render 'collection-item' with collection, collection: block.settings.collection,
+    aspect_ratio: aspect_ratio, show_description: show_description -%}"
+  position: 899..1050
+- from: |-
+    {%-
+                  render 'collection-item' with
+                  collection: empty,
+                  aspect_ratio: aspect_ratio,
+                  show_description: show_description,
+                -%}
+  to: '{%- render ''collection-item'' with collection, collection: "", aspect_ratio:
+    aspect_ratio, show_description: show_description -%}'
+  position: 1132..1260
+{% endcomment %}

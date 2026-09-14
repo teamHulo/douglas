@@ -30,21 +30,13 @@
       data-timer="{{ section.settings.timer | times: 1000 }}"
     >
       {%- for block in section.blocks -%}
-        {%-
-          render 'quote-item' with
-          block: block,
-          forloop: forloop,
-          quote: block.settings.quote,
-          text_max_width: block.settings.text_max_width
-          image: block.settings.image,
-          author: block.settings.author,
-        -%}
+        {%- render 'quote-item' with block, block: block, forloop: forloop, quote: block.settings.quote, text_max_width: block.settings.text_max_width, image: block.settings.image, author: block.settings.author -%}
       {%- endfor -%}
     </div>
 
     {% if section.blocks.size > 1 %}
       <div class="quote__navigation">
-        {%- render 'navigation-dots' with dot_count: section.blocks.size -%}
+        {%- render 'navigation-dots' with dot_count, dot_count: section.blocks.size -%}
       </div>
     {% endif %}
   </div>
@@ -188,3 +180,28 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%-
+              render 'quote-item' with
+              block: block,
+              forloop: forloop,
+              quote: block.settings.quote,
+              text_max_width: block.settings.text_max_width
+              image: block.settings.image,
+              author: block.settings.author,
+            -%}
+  to: "{%- render 'quote-item' with block, block: block, forloop: forloop, quote:
+    block.settings.quote, text_max_width: block.settings.text_max_width, image: block.settings.image,
+    author: block.settings.author -%}"
+  position: 809..1015
+- from: "{%- render 'navigation-dots' with dot_count: section.blocks.size -%}"
+  to: "{%- render 'navigation-dots' with dot_count, dot_count: section.blocks.size
+    -%}"
+  position: 1132..1211
+{% endcomment %}

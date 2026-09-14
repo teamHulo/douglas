@@ -108,9 +108,9 @@
         {{ block.settings.text }}
         <p class="element-animation">{{ block.settings.label }}</p>
         
-        <p class="contact-info element-animation">{% render 'icon' with icon: 'mail', class: 'Contact' %}{{ block.settings.mail }}</p>
-        <p class="contact-info element-animation">{% render 'icon' with icon: 'phone', class: 'Contact' %}{{ block.settings.tel }}</p>
-        <p class="contact-info element-animation">{% render 'icon' with icon: 'location', class: 'Contact' %}{{ block.settings.address }}</p>
+        <p class="contact-info element-animation">{% render 'icon' with icon, icon: 'mail', class: 'Contact' %}{{ block.settings.mail }}</p>
+        <p class="contact-info element-animation">{% render 'icon' with icon, icon: 'phone', class: 'Contact' %}{{ block.settings.tel }}</p>
+        <p class="contact-info element-animation">{% render 'icon' with icon, icon: 'location', class: 'Contact' %}{{ block.settings.address }}</p>
       </div>
     {%- endfor -%}
 
@@ -398,3 +398,19 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'mail', class: 'Contact' %}"
+  to: "{% render 'icon' with icon, icon: 'mail', class: 'Contact' %}"
+  position: 2772..2833
+- from: "{% render 'icon' with icon: 'phone', class: 'Contact' %}"
+  to: "{% render 'icon' with icon, icon: 'phone', class: 'Contact' %}"
+  position: 2913..2975
+- from: "{% render 'icon' with icon: 'location', class: 'Contact' %}"
+  to: "{% render 'icon' with icon, icon: 'location', class: 'Contact' %}"
+  position: 3054..3119
+{% endcomment %}

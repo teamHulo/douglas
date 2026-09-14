@@ -75,7 +75,7 @@
                 data-video-trigger
                 aria-label="{{ 'general.accessibility.play_video' | t }}"
               >
-                {% render 'icon' with icon: 'play_arrow' %}
+                {% render 'icon' with icon, icon: 'play_arrow' %}
               </button>
             </div>
           </div>
@@ -254,3 +254,13 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'play_arrow' %}"
+  to: "{% render 'icon' with icon, icon: 'play_arrow' %}"
+  position: 2691..2740
+{% endcomment %}

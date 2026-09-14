@@ -18,7 +18,7 @@
     {% unless heading == blank %}
       <div class="testimonials__item-heading-wrapper ff-heading {{ testimonial_heading_type }}">
         <div class="testimonials__item-icon-wrapper animation-fade-up-split-reveal">
-          <span class="testimonials__item-icon">&ensp;{% render 'icon' with icon: 'quote' %}</span>
+          <span class="testimonials__item-icon">&ensp;{% render 'icon' with icon, icon: 'quote' %}</span>
         </div>
         <div class="testimonials__item-heading-text-wrapper">
           <h4 class="testimonials__item-heading animation-fade-up-split-reveal">
@@ -47,3 +47,13 @@
     {% endunless %}
   </blockquote>
 {% endif %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'quote' %}"
+  to: "{% render 'icon' with icon, icon: 'quote' %}"
+  position: 868..912
+{% endcomment %}

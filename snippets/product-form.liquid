@@ -20,7 +20,7 @@
   endif
 -%}
 
-{% capture "form_classes" -%}
+{% capture form_classes -%}
   product-form product__block animation-fade-up-reveal product-form-{{ section.id }} {% if hidden %}visually-hidden{% endif %}
 {%- endcapture %}
 
@@ -136,7 +136,7 @@
         <div class="btn__loading-wrap">
           <div class="btn__loading-bar"></div>
         </div>
-        {% render 'icon' with icon: 'check' %}
+        {% render 'icon' with icon, icon: 'check' %}
       </button>
 
       {%- if show_dynamic_checkout -%}
@@ -158,3 +158,16 @@
     </div>
   </div>
 {%- endform -%}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% capture "form_classes" -%}'
+  to: "{% capture form_classes -%}"
+  position: 939..966
+- from: "{% render 'icon' with icon: 'check' %}"
+  to: "{% render 'icon' with icon, icon: 'check' %}"
+  position: 5156..5200
+{% endcomment %}

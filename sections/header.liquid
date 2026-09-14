@@ -51,11 +51,11 @@
       {% endif %}
     >
       {%- if logo != blank -%}
-        {%- render 'image' with image: logo, wrapper_class: 'regular-logo', preload: true -%}
+        {%- render 'image' with image, image: logo, wrapper_class: 'regular-logo', preload: true -%}
       {%- endif -%}
 
       {%- if logo_transparent != blank -%}
-        {%- render 'image' with image: logo_transparent, wrapper_class: 'transparent-logo', preload: true -%}
+        {%- render 'image' with image, image: logo_transparent, wrapper_class: 'transparent-logo', preload: true -%}
       {%- endif -%}
 
       {%- if logo == blank or logo_transparent == blank -%}
@@ -128,9 +128,9 @@
 {%- capture nav -%}
   <nav class="header__links" data-navigation>
     {%- if menu == blank and secondary_menu != blank -%}
-      {% render 'navigation' with menu: secondary_links %}
+      {% render 'navigation' with menu, menu: secondary_links %}
     {%- else -%}
-      {% render 'navigation' with menu: links %}
+      {% render 'navigation' with menu, menu: links %}
     {%- endif -%}
   </nav>
 {%- endcapture -%}
@@ -269,7 +269,7 @@
   </div>
 
   <div class="no-js-menu no-js-menu--desktop">
-    {% render 'no-js-navmenu' with menu: menu, secondary_menu: secondary_menu %}
+    {% render 'no-js-navmenu' with menu, menu: menu, secondary_menu: secondary_menu %}
   </div>
 
   {% render 'drawer-menu',
@@ -434,3 +434,31 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'image' with image: logo, wrapper_class: 'regular-logo', preload:
+    true -%}"
+  to: "{%- render 'image' with image, image: logo, wrapper_class: 'regular-logo',
+    preload: true -%}"
+  position: 1959..2051
+- from: "{%- render 'image' with image: logo_transparent, wrapper_class: 'transparent-logo',
+    preload: true -%}"
+  to: "{%- render 'image' with image, image: logo_transparent, wrapper_class: 'transparent-logo',
+    preload: true -%}"
+  position: 2124..2232
+- from: "{% render 'navigation' with menu: secondary_links %}"
+  to: "{% render 'navigation' with menu, menu: secondary_links %}"
+  position: 7172..7230
+- from: "{% render 'navigation' with menu: links %}"
+  to: "{% render 'navigation' with menu, menu: links %}"
+  position: 7254..7302
+- from: "{% render 'no-js-navmenu' with menu: menu, secondary_menu: secondary_menu
+    %}"
+  to: "{% render 'no-js-navmenu' with menu, menu: menu, secondary_menu: secondary_menu
+    %}"
+  position: 11564..11646
+{% endcomment %}

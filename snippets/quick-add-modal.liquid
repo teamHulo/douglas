@@ -11,9 +11,19 @@
       class="quick-add-modal__close-icon"
       aria-label="{{ 'general.accessibility.close_modal' | t }}"
       >
-        {% render 'icon-button' with icon: 'close-stroke' %}
+        {% render 'icon-button' with icon, icon: 'close-stroke' %}
       </button>
     </div>
     <div class="quick-add-modal__content"></div>
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon-button' with icon: 'close-stroke' %}"
+  to: "{% render 'icon-button' with icon, icon: 'close-stroke' %}"
+  position: 444..502
+{% endcomment %}

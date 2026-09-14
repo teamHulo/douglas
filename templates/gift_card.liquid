@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="{{ settings.color_button }}">
-    {% render 'meta-description' content="{{ 'gift_cards.issued.subtext' | t }}" %}
+    {% render 'meta-description' %}
 
     <link rel="canonical" href="{{ canonical_url }}">
 
@@ -127,3 +127,14 @@
     </main>
   </body>
 </html>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''meta-description'' content="{{ ''gift_cards.issued.subtext''
+    | t }}" %}'
+  to: "{% render 'meta-description' %}"
+  position: 454..485
+{% endcomment %}

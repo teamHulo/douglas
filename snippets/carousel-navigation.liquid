@@ -20,7 +20,7 @@
   aria-label="{{ 'general.accessibility.carousel_previous' | t }}"
   data-prev
 >
-  {% render 'icon', with icon: 'arrow',  non_focusable: true %}
+  {% render 'icon', icon: 'arrow', non_focusable: true %}
 </button>
 <button
   type="button"
@@ -28,5 +28,18 @@
   aria-label="{{ 'general.accessibility.carousel_next' | t }}"
   data-next
 >
-  {% render 'icon', with icon: 'arrow',  non_focusable: true %}
+  {% render 'icon', icon: 'arrow', non_focusable: true %}
 </button>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon', with icon: 'arrow',  non_focusable: true %}"
+  to: "{% render 'icon', icon: 'arrow', non_focusable: true %}"
+  position: 664..719
+- from: "{% render 'icon', with icon: 'arrow',  non_focusable: true %}"
+  to: "{% render 'icon', icon: 'arrow', non_focusable: true %}"
+  position: 988..1043
+{% endcomment %}

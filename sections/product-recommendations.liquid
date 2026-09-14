@@ -60,14 +60,14 @@
           <div class="recommended-products__slider" data-slider data-carousel-wraps="{{ carousel_wraps }}">
             {%- for product in recommendations.products -%}
               <div class="recommended-products__slide" data-slide>
-                {% render 'product-item' with product: product, aspect_ratio: section.settings.aspect_ratio, product_columns: columns %}
+                {% render 'product-item' with product, product: product, aspect_ratio: section.settings.aspect_ratio, product_columns: columns %}
               </div>
             {%- endfor -%}
           </div>
         {%- endif -%}
       </div>
 
-      {% render 'carousel-navigation' with columns: columns, item_count: recommendations.products_count %}
+      {% render 'carousel-navigation' with columns, columns: columns, item_count: recommendations.products_count %}
     </div>
   </div>
 </div>
@@ -207,3 +207,20 @@
   "templates": ["product"]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'product-item' with product: product, aspect_ratio: section.settings.aspect_ratio,
+    product_columns: columns %}"
+  to: "{% render 'product-item' with product, product: product, aspect_ratio: section.settings.aspect_ratio,
+    product_columns: columns %}"
+  position: 1995..2124
+- from: "{% render 'carousel-navigation' with columns: columns, item_count: recommendations.products_count
+    %}"
+  to: "{% render 'carousel-navigation' with columns, columns: columns, item_count:
+    recommendations.products_count %}"
+  position: 2232..2341
+{% endcomment %}

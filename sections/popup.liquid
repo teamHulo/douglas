@@ -48,7 +48,7 @@
               class="popup__close"
               aria-label="{{ 'general.accessibility.close_modal' | t }}"
             >
-              {% render 'icon-button' with icon: 'close-stroke' %}
+              {% render 'icon-button' with icon, icon: 'close-stroke' %}
             </button>
           {%- endunless -%}
 
@@ -89,7 +89,7 @@
                   --color-text-input: {{ block.settings.color_text_button | color_darken: 10 }};
                 "
               >
-                {% render 'newsletter-form' with id: 'popup' %}
+                {% render 'newsletter-form' with id, id: 'popup' %}
               </div>
             {%- endif -%}
 
@@ -357,3 +357,16 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon-button' with icon: 'close-stroke' %}"
+  to: "{% render 'icon-button' with icon, icon: 'close-stroke' %}"
+  position: 1782..1840
+- from: "{% render 'newsletter-form' with id: 'popup' %}"
+  to: "{% render 'newsletter-form' with id, id: 'popup' %}"
+  position: 3847..3898
+{% endcomment %}

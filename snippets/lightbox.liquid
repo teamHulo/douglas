@@ -4,7 +4,7 @@
       <div class="lightbox__image-nav-inner">
         {%- for image in images -%}
           <button type="button" class="lightbox__image-nav-image" data-nav-item data-index="{{ forloop.index0 }}">
-            {% render 'image' with image: image, disable_style: true %}
+            {% render 'image' with image, image: image, disable_style: true %}
           </button>
         {%- endfor -%}
       </div>
@@ -18,14 +18,14 @@
       aria-label="{{ 'general.accessibility.carousel_previous' | t }}"
       data-prev
     >
-      {% render 'icon', with icon: 'arrow',  non_focusable: true %}
+      {% render 'icon', icon: 'arrow', non_focusable: true %}
     </button>
     <button
       class="lightbox__button lightbox__button-close"
       data-close
       aria-label="{{ 'general.accessibility.close_modal' | t }}"
     >
-      {% render 'icon' with icon: 'close' %}
+      {% render 'icon' with icon, icon: 'close' %}
     </button>
     <button
       type="button"
@@ -33,7 +33,7 @@
       aria-label="{{ 'general.accessibility.carousel_next' | t }}"
       data-next
     >
-      {% render 'icon', with icon: 'arrow',  non_focusable: true %}
+      {% render 'icon', icon: 'arrow', non_focusable: true %}
     </button>
   </div>
   <div class="lightbox__images-wrapper">
@@ -45,9 +45,31 @@
           data-slide
           data-slide-index="{{ forloop.index0 }}"
         >
-          {% render 'image' with image: image, disable_style: true %}
+          {% render 'image' with image, image: image, disable_style: true %}
         </div>
       {%- endfor -%}
     </div>
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'image' with image: image, disable_style: true %}"
+  to: "{% render 'image' with image, image: image, disable_style: true %}"
+  position: 311..377
+- from: "{% render 'icon', with icon: 'arrow',  non_focusable: true %}"
+  to: "{% render 'icon', icon: 'arrow', non_focusable: true %}"
+  position: 678..733
+- from: "{% render 'icon' with icon: 'close' %}"
+  to: "{% render 'icon' with icon, icon: 'close' %}"
+  position: 908..952
+- from: "{% render 'icon', with icon: 'arrow',  non_focusable: true %}"
+  to: "{% render 'icon', icon: 'arrow', non_focusable: true %}"
+  position: 1147..1202
+- from: "{% render 'image' with image: image, disable_style: true %}"
+  to: "{% render 'image' with image, image: image, disable_style: true %}"
+  position: 1545..1611
+{% endcomment %}

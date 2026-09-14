@@ -53,7 +53,7 @@
     >
     {%- if type == 'checkbox' -%}
       <div class="filter-input__input ">
-        {% render 'icon' with icon: 'check' %}
+        {% render 'icon' with icon, icon: 'check' %}
       </div>
     {%- endif -%}
 
@@ -80,3 +80,13 @@
     {%- endif -%}
   </label>
 </li>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'check' %}"
+  to: "{% render 'icon' with icon, icon: 'check' %}"
+  position: 2245..2289
+{% endcomment %}

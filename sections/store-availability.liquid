@@ -7,9 +7,9 @@
 
   {% capture product_availability_icon %}
     {%- if closest_location.available -%}
-      {% render 'icon' with icon: 'in-stock' %}
+      {% render 'icon' with icon, icon: 'in-stock' %}
     {%- else -%}
-      {% render 'icon' with icon: 'out-of-stock' %}
+      {% render 'icon' with icon, icon: 'out-of-stock' %}
     {%- endif -%}
   {% endcapture %}
 
@@ -61,9 +61,9 @@
               </div>
               <div class="store-availability-list__stock">
                 {%- if availability.available -%}
-                  {% render 'icon' with icon: 'in-stock' %} {{ 'store_availability.general.pick_up_available' | t }}, {{ availability.pick_up_time | downcase }}
+                  {% render 'icon' with icon, icon: 'in-stock' %} {{ 'store_availability.general.pick_up_available' | t }}, {{ availability.pick_up_time | downcase }}
                 {%- else -%}
-                  {% render 'icon' with icon: 'out-of-stock' %} {{ 'store_availability.general.pick_up_currently_unavailable' | t }}
+                  {% render 'icon' with icon, icon: 'out-of-stock' %} {{ 'store_availability.general.pick_up_currently_unavailable' | t }}
                 {%- endif -%}
               </div>
               {%- assign address = availability.location.address -%}
@@ -82,3 +82,22 @@
     </div>
   {%- endif -%}
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'in-stock' %}"
+  to: "{% render 'icon' with icon, icon: 'in-stock' %}"
+  position: 390..437
+- from: "{% render 'icon' with icon: 'out-of-stock' %}"
+  to: "{% render 'icon' with icon, icon: 'out-of-stock' %}"
+  position: 461..512
+- from: "{% render 'icon' with icon: 'in-stock' %}"
+  to: "{% render 'icon' with icon, icon: 'in-stock' %}"
+  position: 3491..3538
+- from: "{% render 'icon' with icon: 'out-of-stock' %}"
+  to: "{% render 'icon' with icon, icon: 'out-of-stock' %}"
+  position: 3687..3738
+{% endcomment %}

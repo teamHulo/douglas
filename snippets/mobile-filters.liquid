@@ -15,7 +15,7 @@
   data-mobile-filters
 >
   <button type="button" class="mobile-filters__trigger btn element-animation" aria-label="{{ 'general.accessibility.mobile_filters' | t }}" data-mobile-trigger>
-    {% render 'icon' with icon: 'triangle' %}
+    {% render 'icon' with icon, icon: 'triangle' %}
   </button>
 
   {%- if filters_valid -%}
@@ -23,7 +23,7 @@
       <button type="button" class="mobile-filters__button mobile-filters__button-dropdown fs-body-small" data-filter-target="__tags" data-tags-dropdown>
         {{ 'filters.title' | t }}
 
-        {% render 'icon' with icon: 'triangle' %}
+        {% render 'icon' with icon, icon: 'triangle' %}
       </button>
     </div>
   {%- endif -%}
@@ -33,8 +33,24 @@
     <div class="mobile-filters__group" data-group="{{ heading }}">
       <button type="button" class="mobile-filters__button mobile-filters__button-dropdown fs-body-small" data-filter-target="__sort" data-sort-dropdown>
         {{ 'filters.sort_title' | t }}
-        {% render 'icon' with icon: 'triangle' %}
+        {% render 'icon' with icon, icon: 'triangle' %}
       </button>
     </div>
   {%- endif -%}
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'triangle' %}"
+  to: "{% render 'icon' with icon, icon: 'triangle' %}"
+  position: 498..545
+- from: "{% render 'icon' with icon: 'triangle' %}"
+  to: "{% render 'icon' with icon, icon: 'triangle' %}"
+  position: 879..926
+- from: "{% render 'icon' with icon: 'triangle' %}"
+  to: "{% render 'icon' with icon, icon: 'triangle' %}"
+  position: 1262..1309
+{% endcomment %}

@@ -73,19 +73,9 @@
             <div class="collection__filters-wrapper">
             <div class="title-collections" style="width:100%;">{% comment %}<span>ALL PRODUCTS</span>{% endcomment %}</div>
             <div class="collection__filters" data-filter-bar>
-              {%
-                render 'filter-bar' with
-                results: collection,
-                show_sort: section.settings.show_sort,
-                show_filters: section.settings.show_filters
-              %}
+              {% render 'filter-bar' with results, results: collection, show_sort: section.settings.show_sort, show_filters: section.settings.show_filters %}
 
-              {%
-                render 'mobile-filters' with
-                results: collection,
-                show_sort: section.settings.show_sort,
-                show_filters: section.settings.show_filters
-              %}
+              {% render 'mobile-filters' with results, results: collection, show_sort: section.settings.show_sort, show_filters: section.settings.show_filters %}
             </div>
             </div>
 
@@ -97,20 +87,12 @@
 
                 <div id="root" data-partial>
                   <div class="collection__active-filters-container animation-fade-up-reveal">
-                    {%- render 'active-filters' with results: collection -%}
+                    {%- render 'active-filters' with results, results: collection -%}
                   </div>
                   <div class="collection__products collection__infinite-container">
                     {% for product in collection.products%}
                       {% if product.type != 'treatments' %}
-                        {%
-                          render 'product-item' with
-                          product: product,
-                          aspect_ratio: section.settings.aspect_ratio,
-                          product_columns: section.settings.columns,
-                          product_columns_mobile: section.settings.columns_mobile,
-                          wrapper_class: 'animation-fade-up-reveal',
-                          show_price: false
-                        %}
+                        {% render 'product-item' with product, product: product, aspect_ratio: section.settings.aspect_ratio, product_columns: section.settings.columns, product_columns_mobile: section.settings.columns_mobile, wrapper_class: 'animation-fade-up-reveal', show_price: false %}
                       {% endif %}
                     {% else %}
                       <div class="collection__empty">
@@ -135,18 +117,9 @@
                   {% if paginated %}
                     <div class="animation-fade-up-reveal">
                       {% if paginate.pages > 1 %}
-                        {%
-                          render 'pagination' with
-                          paginate: paginate,
-                          type: 'general.pagination.products'
-                        %}
+                        {% render 'pagination' with paginate, paginate: paginate, type: 'general.pagination.products' %}
                       {% else %}
-                        {%
-                          render 'pagination' with
-                          paginate: paginate,
-                          type: 'general.pagination.products',
-                          display_paginate_item_count_only: true
-                        %}
+                        {% render 'pagination' with paginate, paginate: paginate, type: 'general.pagination.products', display_paginate_item_count_only: true %}
                       {% endif %}
                     </div>
                   {% endif %}
@@ -157,12 +130,7 @@
         </div>
       {% endpaginate %}
 
-      {%
-        render 'filter-drawer' with
-        results: collection,
-        show_sort: section.settings.show_sort,
-        show_filters: section.settings.show_filters,
-      %}
+      {% render 'filter-drawer' with results, results: collection, show_sort: section.settings.show_sort, show_filters: section.settings.show_filters %}
     {%- else -%}
       <div class="collection__empty ta-c">
         <p class="fs-body-large">{{ 'collections.general.no_matches' | t }}</p>
@@ -278,3 +246,76 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+                    render 'filter-bar' with
+                    results: collection,
+                    show_sort: section.settings.show_sort,
+                    show_filters: section.settings.show_filters
+                  %}
+  to: "{% render 'filter-bar' with results, results: collection, show_sort: section.settings.show_sort,
+    show_filters: section.settings.show_filters %}"
+  position: 2210..2353
+- from: |-
+    {%
+                    render 'mobile-filters' with
+                    results: collection,
+                    show_sort: section.settings.show_sort,
+                    show_filters: section.settings.show_filters
+                  %}
+  to: "{% render 'mobile-filters' with results, results: collection, show_sort: section.settings.show_sort,
+    show_filters: section.settings.show_filters %}"
+  position: 2369..2516
+- from: "{%- render 'active-filters' with results: collection -%}"
+  to: "{%- render 'active-filters' with results, results: collection -%}"
+  position: 2937..3002
+- from: |-
+    {%
+                              render 'product-item' with
+                              product: product,
+                              aspect_ratio: section.settings.aspect_ratio,
+                              product_columns: section.settings.columns,
+                              product_columns_mobile: section.settings.columns_mobile,
+                              wrapper_class: 'animation-fade-up-reveal',
+                              show_price: false
+                            %}
+  to: "{% render 'product-item' with product, product: product, aspect_ratio: section.settings.aspect_ratio,
+    product_columns: section.settings.columns, product_columns_mobile: section.settings.columns_mobile,
+    wrapper_class: 'animation-fade-up-reveal', show_price: false %}"
+  position: 3256..3521
+- from: |-
+    {%
+                              render 'pagination' with
+                              paginate: paginate,
+                              type: 'general.pagination.products'
+                            %}
+  to: "{% render 'pagination' with paginate, paginate: paginate, type: 'general.pagination.products'
+    %}"
+  position: 4632..4728
+- from: |-
+    {%
+                              render 'pagination' with
+                              paginate: paginate,
+                              type: 'general.pagination.products',
+                              display_paginate_item_count_only: true
+                            %}
+  to: "{% render 'pagination' with paginate, paginate: paginate, type: 'general.pagination.products',
+    display_paginate_item_count_only: true %}"
+  position: 4786..4922
+- from: |-
+    {%
+            render 'filter-drawer' with
+            results: collection,
+            show_sort: section.settings.show_sort,
+            show_filters: section.settings.show_filters,
+          %}
+  to: "{% render 'filter-drawer' with results, results: collection, show_sort: section.settings.show_sort,
+    show_filters: section.settings.show_filters %}"
+  position: 5140..5286
+{% endcomment %}

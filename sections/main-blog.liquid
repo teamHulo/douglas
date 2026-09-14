@@ -46,7 +46,7 @@
             href="{{ blog.url | append: '.atom' }}"
             aria-label="{{ 'general.accessibility.rss' | t }}"
           >
-            {% render 'icon-button' with icon: 'rss_feed' %}
+            {% render 'icon-button' with icon, icon: 'rss_feed' %}
           </a>
         {%- endif -%}
       </div>
@@ -101,9 +101,9 @@
 
       <div class="blog__pagination animation-fade-up-reveal">
         {% if paginate.pages > 1 %}
-          {% render 'pagination' with paginate: paginate, type: 'general.pagination.blog_posts' %}
+          {% render 'pagination' with paginate, paginate: paginate, type: 'general.pagination.blog_posts' %}
         {% else %}
-          {% render 'pagination' with paginate: paginate, type: 'general.pagination.blog_posts', display_paginate_item_count_only: true %}
+          {% render 'pagination' with paginate, paginate: paginate, type: 'general.pagination.blog_posts', display_paginate_item_count_only: true %}
         {% endif %}
       </div>
     </div>
@@ -201,3 +201,23 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon-button' with icon: 'rss_feed' %}"
+  to: "{% render 'icon-button' with icon, icon: 'rss_feed' %}"
+  position: 1437..1491
+- from: "{% render 'pagination' with paginate: paginate, type: 'general.pagination.blog_posts'
+    %}"
+  to: "{% render 'pagination' with paginate, paginate: paginate, type: 'general.pagination.blog_posts'
+    %}"
+  position: 3729..3827
+- from: "{% render 'pagination' with paginate: paginate, type: 'general.pagination.blog_posts',
+    display_paginate_item_count_only: true %}"
+  to: "{% render 'pagination' with paginate, paginate: paginate, type: 'general.pagination.blog_posts',
+    display_paginate_item_count_only: true %}"
+  position: 3857..3995
+{% endcomment %}

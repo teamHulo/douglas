@@ -5,7 +5,7 @@
 {%- endif -%}
 
   {%- if image != blank -%}
-    {% render 'image' with image: image, wrapper_class: "logo-list__item-image" %}
+    {% render 'image' with image, image: image, wrapper_class: "logo-list__item-image" %}
   {%- else -%}
     <div class="logo-list__item-image placeholder-image">
       {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
@@ -16,4 +16,15 @@
   </a>
 {%- else -%}
   </div>
-{%- endif -%}
+{%- endif -%}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''image'' with image: image, wrapper_class: "logo-list__item-image"
+    %}'
+  to: '{% render ''image'' with image, image: image, wrapper_class: "logo-list__item-image"
+    %}'
+  position: 254..339
+{%- endcomment -%}

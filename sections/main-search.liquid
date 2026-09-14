@@ -45,10 +45,10 @@
           <input type="hidden" name="options[prefix]" value="last">
           <div class="search__input-actions">
             <button type="button" class="search__clear" aria-label="{{ 'search.clear_search' | t }}" data-clear-search>
-              {% render 'icon' with icon: 'close-stroke' %}
+              {% render 'icon' with icon, icon: 'close-stroke' %}
             </button>
             <button type="submit" class="search__submit" aria-label="{{ 'search.search' | t }}">
-              {% render 'icon' with icon: 'arrow-stroke' %}
+              {% render 'icon' with icon, icon: 'arrow-stroke' %}
             </button>
           </div>
         </div>
@@ -66,14 +66,10 @@
 
           {%- if filters_active -%}
             <div class="search__filters animation-fade-up-reveal" data-filter-bar>
-              {% render 'filter-bar' with
-                results: search,
-                show_sort: section.settings.enable_sorting,
-                show_filters: section.settings.enable_filtering
-              %}
+              {% render 'filter-bar' with results, results: search, show_sort: section.settings.enable_sorting, show_filters: section.settings.enable_filtering %}
 
               <div class="search__active-filters-container">
-                {%- render 'active-filters' with results: search -%}
+                {%- render 'active-filters' with results, results: search -%}
               </div>
             </div>
           {%- endif -%}
@@ -95,9 +91,9 @@
                     <a href="{{ item.url }}" class="search__result-item" aria-label="{{ item.title }}">
                       <div class="search__result-image">
                         {%- if image != blank -%}
-                          {%- render 'image' with image: image, disable_style: true -%}
+                          {%- render 'image' with image, image: image, disable_style: true -%}
                         {%- else -%}
-                          {%- render 'icon' with icon: 'alphabetical' -%}
+                          {%- render 'icon' with icon, icon: 'alphabetical' -%}
                         {%- endif -%}
                       </div>
 
@@ -142,21 +138,14 @@
                 {%- endfor -%}
               </ul>
 
-              {% render 'pagination' with
-                type: 'general.pagination.results',
-                paginate: paginate
-              %}
+              {% render 'pagination' with type, type: 'general.pagination.results', paginate: paginate %}
 
             {% endpaginate %}
           {%- endif -%}
         {% endif %}
       </div>
 
-    {% render 'filter-drawer' with
-      results: search,
-      show_sort: section.settings.enable_sorting,
-      show_filters: section.settings.enable_filtering,
-    %}
+    {% render 'filter-drawer' with results, results: search, show_sort: section.settings.enable_sorting, show_filters: section.settings.enable_filtering %}
   </div>
 </div>
 
@@ -193,3 +182,51 @@
     ]
   }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'close-stroke' %}"
+  to: "{% render 'icon' with icon, icon: 'close-stroke' %}"
+  position: 1812..1863
+- from: "{% render 'icon' with icon: 'arrow-stroke' %}"
+  to: "{% render 'icon' with icon, icon: 'arrow-stroke' %}"
+  position: 1997..2048
+- from: |-
+    {% render 'filter-bar' with
+                    results: search,
+                    show_sort: section.settings.enable_sorting,
+                    show_filters: section.settings.enable_filtering
+                  %}
+  to: "{% render 'filter-bar' with results, results: search, show_sort: section.settings.enable_sorting,
+    show_filters: section.settings.enable_filtering %}"
+  position: 2563..2711
+- from: "{%- render 'active-filters' with results: search -%}"
+  to: "{%- render 'active-filters' with results, results: search -%}"
+  position: 2790..2851
+- from: "{%- render 'image' with image: image, disable_style: true -%}"
+  to: "{%- render 'image' with image, image: image, disable_style: true -%}"
+  position: 3926..3994
+- from: "{%- render 'icon' with icon: 'alphabetical' -%}"
+  to: "{%- render 'icon' with icon, icon: 'alphabetical' -%}"
+  position: 4058..4111
+- from: |-
+    {% render 'pagination' with
+                    type: 'general.pagination.results',
+                    paginate: paginate
+                  %}
+  to: "{% render 'pagination' with type, type: 'general.pagination.results', paginate:
+    paginate %}"
+  position: 7013..7104
+- from: |-
+    {% render 'filter-drawer' with
+          results: search,
+          show_sort: section.settings.enable_sorting,
+          show_filters: section.settings.enable_filtering,
+        %}
+  to: "{% render 'filter-drawer' with results, results: search, show_sort: section.settings.enable_sorting,
+    show_filters: section.settings.enable_filtering %}"
+  position: 7198..7349
+{% endcomment %}

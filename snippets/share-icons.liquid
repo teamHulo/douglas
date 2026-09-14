@@ -3,18 +3,33 @@
     aria-label="{{ 'general.social.alt_text.share_on_pinterest' | t }}"
     href="//pinterest.com/pin/create/button/?url={{ shop.url | append: url }}&amp;media={{ image | img_url: '1024x1024' }}&amp;description={{ title | url_param_escape }}"
   >
-    {% render 'icon' with icon: 'pinterest' %}
+    {% render 'icon' with icon, icon: 'pinterest' %}
   </a>
   <a
     aria-label="{{ 'general.social.alt_text.share_on_twitter' | t }}"
     href="//twitter.com/share?text={{ title | url_param_escape }}&amp;url={{ shop.url | append: url }}"
   >
-    {% render 'icon' with icon: 'twitter' %}
+    {% render 'icon' with icon, icon: 'twitter' %}
   </a>
   <a
     aria-label="{{ 'general.social.alt_text.share_on_facebook' | t }}"
     href="//www.facebook.com/sharer.php?u={{ shop.url | append: url }}"
   >
-    {% render 'icon' with icon: 'facebook' %}
+    {% render 'icon' with icon, icon: 'facebook' %}
   </a>
-</div>
+</div>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'pinterest' %}"
+  to: "{% render 'icon' with icon, icon: 'pinterest' %}"
+  position: 321..369
+- from: "{% render 'icon' with icon: 'twitter' %}"
+  to: "{% render 'icon' with icon, icon: 'twitter' %}"
+  position: 564..610
+- from: "{% render 'icon' with icon: 'facebook' %}"
+  to: "{% render 'icon' with icon, icon: 'facebook' %}"
+  position: 774..821
+{%- endcomment -%}

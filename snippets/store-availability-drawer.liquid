@@ -18,7 +18,7 @@
         class="store-availability-drawer__close"
         data-store-availability-close aria-label="{{ 'general.accessibility.close_modal' | t }}"
       >
-        {% render 'icon-button' with icon: 'close-stroke' %}
+        {% render 'icon-button' with icon, icon: 'close-stroke' %}
       </button>
     </div>
     <div class="store-availbility-drawer__product" data-store-availability-product></div>
@@ -27,3 +27,13 @@
   </div>
 </div>
 
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon-button' with icon: 'close-stroke' %}"
+  to: "{% render 'icon-button' with icon, icon: 'close-stroke' %}"
+  position: 814..872
+{% endcomment %}

@@ -10,11 +10,11 @@
       aria-controls="content-{{ forloop.index }}"
       aria-expanded="false"
     >
-      {% render 'icon' with icon: 'quote', class: 'questions__accordion-quote' %}
+      {% render 'icon' with icon, icon: 'quote', class: 'questions__accordion-quote' %}
       <span class="questions__accordion-title">
         {{ question }}
       </span>
-      {% render 'icon' with icon: 'triangle', class: 'questions__accordion-chevron' %}
+      {% render 'icon' with icon, icon: 'triangle', class: 'questions__accordion-chevron' %}
     </button>
   {%- endunless -%}
 
@@ -37,3 +37,20 @@
     </div>
   {%- endunless -%}
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'quote', class: 'questions__accordion-quote'
+    %}"
+  to: "{% render 'icon' with icon, icon: 'quote', class: 'questions__accordion-quote'
+    %}"
+  position: 365..446
+- from: "{% render 'icon' with icon: 'triangle', class: 'questions__accordion-chevron'
+    %}"
+  to: "{% render 'icon' with icon, icon: 'triangle', class: 'questions__accordion-chevron'
+    %}"
+  position: 538..624
+{% endcomment %}

@@ -74,7 +74,7 @@
     {%- endfor -%}
   </div>
 
-  {%- render 'navigation-dots' with dot_count: dot_count -%}
+  {%- render 'navigation-dots' with dot_count, dot_count: dot_count -%}
 </div>
 
 {% schema %}
@@ -408,3 +408,13 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'navigation-dots' with dot_count: dot_count -%}"
+  to: "{%- render 'navigation-dots' with dot_count, dot_count: dot_count -%}"
+  position: 2294..2363
+{% endcomment %}

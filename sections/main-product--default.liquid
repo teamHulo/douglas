@@ -57,18 +57,9 @@
             assign accordion_class = accordion_base_class | append: ' accordion--full' | append: ' accordion--' | append: block.settings.style
           -%}
 
-          {%-
-            render 'accordion-block' with
-            block: block,
-            classes: accordion_class,
-            heading: block.settings.heading,
-            content: block.settings.content -%}
+          {%- render 'accordion-block' with block, block: block, classes: accordion_class, heading: block.settings.heading, content: block.settings.content -%}
         {%- else -%}
-          {%
-             render 'widgets-accordion' with
-             classes: 'accordion--full'
-             block: block,
-             style: block.settings.style %}
+          {% render 'widgets-accordion' with classes, classes: 'accordion--full', block: block, style: block.settings.style %}
         {%- endif -%}
       {%- endif -%}
     {%- endif -%}
@@ -91,7 +82,7 @@
     data-social-share
     aria-haspopup="true">
     <span class="product__share-text fs-body-small fs-body-bold">
-      {%- render 'icon' with icon: 'social-share' -%}
+      {%- render 'icon' with icon, icon: 'social-share' -%}
       {{ 'general.social.share' | t }}
     </span>
 
@@ -99,11 +90,7 @@
       class="product__share-icons"
       aria-hidden="true"
       aria-label="{{ 'general.social.alt_text.share_menu' | t }}">
-      {%
-         render 'share-icons' with
-         url: product.url,
-         title: product.title,
-         image: product.featured_image %}
+      {% render 'share-icons' with url, url: product.url, title: product.title, image: product.featured_image %}
     </div>
   </button>
 {% endcapture %}
@@ -143,14 +130,7 @@
                 class="product__media-slide {% if media.id == featured_media.id %} is-initial-select{% endif %}"
                 data-slide
                 data-aspect-ratio="{{ image_aspect_ratio }}">
-                {%
-                   render 'media' with
-                   media: media,
-                   featured_media: featured_media,
-                   enable_product_lightbox: section.settings.enable_product_lightbox,
-                   loop_video: section.settings.enable_video_looping,
-                   aspect_ratio: image_aspect_ratio,
-                   mobile_carousel: true %}
+                {% render 'media' with media, media: media, featured_media: featured_media, enable_product_lightbox: section.settings.enable_product_lightbox, loop_video: section.settings.enable_video_looping, aspect_ratio: image_aspect_ratio, mobile_carousel: true %}
               </div>
             {%- else -%}
               <div class="product__media-item placeholder-image">
@@ -175,14 +155,7 @@
               data-media-item-id="{{ media.id }}"
               data-product-media-wrapper
               data-aspect-ratio="{{ image_aspect_ratio }}">
-              {%
-                 render 'media' with
-                 media: media,
-                 featured_media: featured_media,
-                 enable_product_lightbox: section.settings.enable_product_lightbox,
-                 loop_video: section.settings.enable_video_looping,
-                 aspect_ratio: image_aspect_ratio,
-                 has_reveal: true, %}
+              {% render 'media' with media, media: media, featured_media: featured_media, enable_product_lightbox: section.settings.enable_product_lightbox, loop_video: section.settings.enable_video_looping, aspect_ratio: image_aspect_ratio, has_reveal: true %}
             </div>
           {%- else -%}
             <div class="product__media-item placeholder-image">
@@ -201,14 +174,14 @@
             data-shopify-title="{{ product.title | escape }}"
             data-shopify-xr-hidden>
             <span>
-              {% render 'icon' with icon: '3d' %}
+              {% render 'icon' with icon, icon: '3d' %}
               <span class="product__view-in-space-text">{{ 'products.product.view_in_space' | t }}</span>
             </span>
           </button>
         {%- endif -%}
 
         {%- if gallery_style == 'thumbnails' or mobile_gallery_style == 'thumbnails' -%}
-          {% render 'product-thumbnails' with featured_media: featured_media %}
+          {% render 'product-thumbnails' with featured_media, featured_media: featured_media %}
         {%- endif -%}
 
         {% # Left column desktop blocks %}
@@ -218,29 +191,15 @@
             {%- if block.settings.column == 'left' -%}
               {%- assign accordion_class = accordion_base_class
                 | append: ' accordion--product product--column-left  product__block animation-fade-up-reveal product__block--small' -%}
-              {%-
-                render 'accordion-block' with
-                block: block,
-                classes: accordion_class,
-                small_text: true,
-                heading: block.settings.heading,
-                content: block.settings.content -%}
+              {%- render 'accordion-block' with block, block: block, classes: accordion_class, small_text: true, heading: block.settings.heading, content: block.settings.content -%}
             {%- endif -%}
             {%- when 'payment_widget' -%}
             {%- if block.settings.column == 'left' -%}
-              {%
-                 render 'widgets-accordion' with
-                 block: block,
-                 style: block.settings.style,
-                 classes: 'product__block animation-fade-up-reveal product__block--small product--column-left' %}
+              {% render 'widgets-accordion' with block, block: block, style: block.settings.style, classes: 'product__block animation-fade-up-reveal product__block--small product--column-left' %}
             {%- endif -%}
             {%- when 'security_widget' -%}
             {%- if block.settings.column == 'left' -%}
-              {%
-                 render 'widgets-accordion' with
-                 block: block,
-                 style: block.settings.style,
-                 classes: 'product__block animation-fade-up-reveal product__block--small product--column-left' %}
+              {% render 'widgets-accordion' with block, block: block, style: block.settings.style, classes: 'product__block animation-fade-up-reveal product__block--small product--column-left' %}
             {%- endif -%}
             {%- when 'shipping_widget' -%}
             {%- if block.settings.column == 'left' -%}
@@ -556,7 +515,7 @@
                         <div class="product__option-select-wrapper select-wrapper">
                           {{ option_values }}
 
-                          {% render 'icon' with icon: 'triangle' %}
+                          {% render 'icon' with icon, icon: 'triangle' %}
                         </div>
                       {%- endunless -%}
                     </div>
@@ -647,13 +606,7 @@
                 </div>
               {%- endunless -%}
 
-              {%
-                 render 'product-form' with
-                 product: product,
-                 current_variant: current_variant,
-                 show_dynamic_checkout: block.settings.show_dynamic_checkout,
-                 show_gift_card_recipient_form: section.settings.enable_gift_card_recipient,
-                 custom_text_input_title: custom_text_title %}
+              {% render 'product-form' with product, product: product, current_variant: current_variant, show_dynamic_checkout: block.settings.show_dynamic_checkout, show_gift_card_recipient_form: section.settings.enable_gift_card_recipient, custom_text_input_title: custom_text_title %}
 
               {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
                 <div class="product__policies product__block animation-fade-up-reveal rte" data-product-policies>
@@ -677,13 +630,7 @@
                     assign accordion_class = accordion_base_class | append: ' accordion--' | append: block.settings.style | append: ' accordion--product product__block animation-fade-up-reveal product__block--small'
                   -%}
 
-                {%-
-                  render 'accordion-block' with
-                  block: block,
-                  classes: accordion_class,
-                  small_text: true,
-                  heading: description_title,
-                  content: product.description -%}
+                {%- render 'accordion-block' with block, block: block, classes: accordion_class, small_text: true, heading: description_title, content: product.description -%}
               {%- endif -%}
               {%- when 'text' -%}
               <div class="product__text product__block animation-fade-up-reveal product__block--medium">
@@ -692,14 +639,7 @@
               {%- when 'share' -%}
               {{ social_share }}
               {%- when 'inventory-counter' -%}
-              {%-
-                render 'inventory-counter' with
-                product: product,
-                show_label: block.settings.show_label,
-                inventory_max: block.settings.inventory_max,
-                low_inventory_threshold: block.settings.low_inventory_threshold,
-                show_untracked_quantity: block.settings.show_untracked_quantity,
-                current_variant: current_variant, -%}
+              {%- render 'inventory-counter' with product, product: product, show_label: block.settings.show_label, inventory_max: block.settings.inventory_max, low_inventory_threshold: block.settings.low_inventory_threshold, show_untracked_quantity: block.settings.show_untracked_quantity, current_variant: current_variant -%}
 
               {% # Right column desktop blocks %}
               {%- when 'accordion' -%}
@@ -708,37 +648,19 @@
                   | append: ' accordion--'
                   | append: block.settings.style
                   | append: ' accordion--product product__block animation-fade-up-reveal product__block--small' -%}
-                {%-
-                  render 'accordion-block' with
-                  block: block,
-                  classes: accordion_class,
-                  small_text: true,
-                  heading: block.settings.heading,
-                  content: block.settings.content -%}
+                {%- render 'accordion-block' with block, block: block, classes: accordion_class, small_text: true, heading: block.settings.heading, content: block.settings.content -%}
               {%- endif -%}
               {%- when 'payment_widget' -%}
               {%- if block.settings.column == 'right' -%}
-                {%
-                   render 'widgets-accordion' with
-                   block: block,
-                   style: block.settings.style,
-                   classes: 'product__block animation-fade-up-reveal product__block--small', %}
+                {% render 'widgets-accordion' with block, block: block, style: block.settings.style, classes: 'product__block animation-fade-up-reveal product__block--small' %}
               {%- endif -%}
               {%- when 'security_widget' -%}
               {%- if block.settings.column == 'right' -%}
-                {%
-                   render 'widgets-accordion' with
-                   block: block,
-                   style: block.settings.style,
-                   classes: 'product__block animation-fade-up-reveal product__block--small', %}
+                {% render 'widgets-accordion' with block, block: block, style: block.settings.style, classes: 'product__block animation-fade-up-reveal product__block--small' %}
               {%- endif -%}
               {%- when 'shipping_widget' -%}
               {%- if block.settings.column == 'right' -%}
-                {%
-                   render 'widgets-accordion' with
-                   block: block,
-                   style: block.settings.style,
-                   classes: 'product__block animation-fade-up-reveal product__block--small', %}
+                {% render 'widgets-accordion' with block, block: block, style: block.settings.style, classes: 'product__block animation-fade-up-reveal product__block--small' %}
               {%- endif -%}
               {%- when 'complementary_products' -%}
               {%- if block.settings.column == 'right' -%}
@@ -792,7 +714,7 @@
     {%- endif -%}
 
     {%- assign images = product.media | where: 'media_type', 'image' -%}
-    {% render 'lightbox' with images: images %}
+    {% render 'lightbox' with images, images: images %}
     {%- if quick_purchase_bar_enabled -%}
       {%
          render 'quick-purchase-bar',
@@ -1628,4 +1550,191 @@
       }
     ]
   }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%-
+                render 'accordion-block' with
+                block: block,
+                classes: accordion_class,
+                heading: block.settings.heading,
+                content: block.settings.content -%}
+  to: "{%- render 'accordion-block' with block, block: block, classes: accordion_class,
+    heading: block.settings.heading, content: block.settings.content -%}"
+  position: 2333..2482
+- from: |-
+    {%
+                 render 'widgets-accordion' with
+                 classes: 'accordion--full'
+                 block: block,
+                 style: block.settings.style %}
+  to: "{% render 'widgets-accordion' with classes, classes: 'accordion--full', block:
+    block, style: block.settings.style %}"
+  position: 2514..2630
+- from: "{%- render 'icon' with icon: 'social-share' -%}"
+  to: "{%- render 'icon' with icon, icon: 'social-share' -%}"
+  position: 3339..3392
+- from: |-
+    {%
+             render 'share-icons' with
+             url: product.url,
+             title: product.title,
+             image: product.featured_image %}
+  to: "{% render 'share-icons' with url, url: product.url, title: product.title, image:
+    product.featured_image %}"
+  position: 3587..3693
+- from: |-
+    {%
+                       render 'media' with
+                       media: media,
+                       featured_media: featured_media,
+                       enable_product_lightbox: section.settings.enable_product_lightbox,
+                       loop_video: section.settings.enable_video_looping,
+                       aspect_ratio: image_aspect_ratio,
+                       mobile_carousel: true %}
+  to: "{% render 'media' with media, media: media, featured_media: featured_media,
+    enable_product_lightbox: section.settings.enable_product_lightbox, loop_video:
+    section.settings.enable_video_looping, aspect_ratio: image_aspect_ratio, mobile_carousel:
+    true %}"
+  position: 5470..5722
+- from: |-
+    {%
+                     render 'media' with
+                     media: media,
+                     featured_media: featured_media,
+                     enable_product_lightbox: section.settings.enable_product_lightbox,
+                     loop_video: section.settings.enable_video_looping,
+                     aspect_ratio: image_aspect_ratio,
+                     has_reveal: true, %}
+  to: "{% render 'media' with media, media: media, featured_media: featured_media,
+    enable_product_lightbox: section.settings.enable_product_lightbox, loop_video:
+    section.settings.enable_video_looping, aspect_ratio: image_aspect_ratio, has_reveal:
+    true %}"
+  position: 6679..6926
+- from: "{% render 'icon' with icon: '3d' %}"
+  to: "{% render 'icon' with icon, icon: '3d' %}"
+  position: 7597..7638
+- from: "{% render 'product-thumbnails' with featured_media: featured_media %}"
+  to: "{% render 'product-thumbnails' with featured_media, featured_media: featured_media
+    %}"
+  position: 7907..7992
+- from: |-
+    {%-
+                    render 'accordion-block' with
+                    block: block,
+                    classes: accordion_class,
+                    small_text: true,
+                    heading: block.settings.heading,
+                    content: block.settings.content -%}
+  to: "{%- render 'accordion-block' with block, block: block, classes: accordion_class,
+    small_text: true, heading: block.settings.heading, content: block.settings.content
+    -%}"
+  position: 8441..8608
+- from: |-
+    {%
+                     render 'widgets-accordion' with
+                     block: block,
+                     style: block.settings.style,
+                     classes: 'product__block animation-fade-up-reveal product__block--small product--column-left' %}
+  to: "{% render 'widgets-accordion' with block, block: block, style: block.settings.style,
+    classes: 'product__block animation-fade-up-reveal product__block--small product--column-left'
+    %}"
+  position: 8746..8927
+- from: |-
+    {%
+                     render 'widgets-accordion' with
+                     block: block,
+                     style: block.settings.style,
+                     classes: 'product__block animation-fade-up-reveal product__block--small product--column-left' %}
+  to: "{% render 'widgets-accordion' with block, block: block, style: block.settings.style,
+    classes: 'product__block animation-fade-up-reveal product__block--small product--column-left'
+    %}"
+  position: 9066..9247
+- from: "{% render 'icon' with icon: 'triangle' %}"
+  to: "{% render 'icon' with icon, icon: 'triangle' %}"
+  position: 25934..25981
+- from: |-
+    {%
+                     render 'product-form' with
+                     product: product,
+                     current_variant: current_variant,
+                     show_dynamic_checkout: block.settings.show_dynamic_checkout,
+                     show_gift_card_recipient_form: section.settings.enable_gift_card_recipient,
+                     custom_text_input_title: custom_text_title %}
+  to: "{% render 'product-form' with product, product: product, current_variant: current_variant,
+    show_dynamic_checkout: block.settings.show_dynamic_checkout, show_gift_card_recipient_form:
+    section.settings.enable_gift_card_recipient, custom_text_input_title: custom_text_title
+    %}"
+  position: 30167..30440
+- from: |-
+    {%-
+                      render 'accordion-block' with
+                      block: block,
+                      classes: accordion_class,
+                      small_text: true,
+                      heading: description_title,
+                      content: product.description -%}
+  to: "{%- render 'accordion-block' with block, block: block, classes: accordion_class,
+    small_text: true, heading: description_title, content: product.description -%}"
+  position: 31768..31927
+- from: |-
+    {%-
+                    render 'inventory-counter' with
+                    product: product,
+                    show_label: block.settings.show_label,
+                    inventory_max: block.settings.inventory_max,
+                    low_inventory_threshold: block.settings.low_inventory_threshold,
+                    show_untracked_quantity: block.settings.show_untracked_quantity,
+                    current_variant: current_variant, -%}
+  to: "{%- render 'inventory-counter' with product, product: product, show_label:
+    block.settings.show_label, inventory_max: block.settings.inventory_max, low_inventory_threshold:
+    block.settings.low_inventory_threshold, show_untracked_quantity: block.settings.show_untracked_quantity,
+    current_variant: current_variant -%}"
+  position: 32361..32674
+- from: |-
+    {%-
+                      render 'accordion-block' with
+                      block: block,
+                      classes: accordion_class,
+                      small_text: true,
+                      heading: block.settings.heading,
+                      content: block.settings.content -%}
+  to: "{%- render 'accordion-block' with block, block: block, classes: accordion_class,
+    small_text: true, heading: block.settings.heading, content: block.settings.content
+    -%}"
+  position: 33113..33280
+- from: |-
+    {%
+                       render 'widgets-accordion' with
+                       block: block,
+                       style: block.settings.style,
+                       classes: 'product__block animation-fade-up-reveal product__block--small', %}
+  to: "{% render 'widgets-accordion' with block, block: block, style: block.settings.style,
+    classes: 'product__block animation-fade-up-reveal product__block--small' %}"
+  position: 33427..33587
+- from: |-
+    {%
+                       render 'widgets-accordion' with
+                       block: block,
+                       style: block.settings.style,
+                       classes: 'product__block animation-fade-up-reveal product__block--small', %}
+  to: "{% render 'widgets-accordion' with block, block: block, style: block.settings.style,
+    classes: 'product__block animation-fade-up-reveal product__block--small' %}"
+  position: 33735..33895
+- from: |-
+    {%
+                       render 'widgets-accordion' with
+                       block: block,
+                       style: block.settings.style,
+                       classes: 'product__block animation-fade-up-reveal product__block--small', %}
+  to: "{% render 'widgets-accordion' with block, block: block, style: block.settings.style,
+    classes: 'product__block animation-fade-up-reveal product__block--small' %}"
+  position: 34043..34203
+- from: "{% render 'lightbox' with images: images %}"
+  to: "{% render 'lightbox' with images, images: images %}"
+  position: 36092..36143
+{%- endcomment -%}

@@ -154,7 +154,7 @@
                         class="footer__newsletter-button"
                         aria-label="{{ 'general.newsletter_form.submit' | t }}"
                       >
-                        {%- render 'icon' with icon: 'arrow-circle' -%}
+                        {%- render 'icon' with icon, icon: 'arrow-circle' -%}
                       </button>
                     </div>
                   {%- endunless -%}
@@ -174,11 +174,7 @@
             <span class="footer__arrow">{% render 'icon', icon: 'triangle' %}</span>
           </button>
           <div class="footer__group-content">
-            {%
-              render 'cross-border' with
-              show_currency: currency_selector,
-              id: 'mobile-currency'
-            %}
+            {% render 'cross-border' with show_currency, show_currency: currency_selector, id: 'mobile-currency' %}
           </div>
         </div>
       {%- endif -%}
@@ -192,11 +188,7 @@
             <span class="footer__arrow">{% render 'icon', icon: 'triangle' %}</span>
           </button>
           <div class="footer__group-content">
-            {%
-              render 'cross-border' with
-              show_locale: locale_selector,
-              id: 'mobile-locale'
-            %}
+            {% render 'cross-border' with show_locale, show_locale: locale_selector, id: 'mobile-locale' %}
           </div>
         </div>
       {%- endif -%}
@@ -224,12 +216,7 @@
       <div class="footer__bottom">
         {%- if locale_selector or currency_selector or show_social_icons -%}
           <div class="footer__bottom-left">
-            {%
-              render 'cross-border' with
-              show_locale: locale_selector,
-              show_currency: currency_selector,
-              id: 'footer'
-            %}
+            {% render 'cross-border' with show_locale, show_locale: locale_selector, show_currency: currency_selector, id: 'footer' %}
 
             {%- if show_social_icons -%}
               {% render 'social-icons' %}
@@ -552,3 +539,41 @@
   }
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'icon' with icon: 'arrow-circle' -%}"
+  to: "{%- render 'icon' with icon, icon: 'arrow-circle' -%}"
+  position: 7045..7098
+- from: |-
+    {%
+                  render 'cross-border' with
+                  show_currency: currency_selector,
+                  id: 'mobile-currency'
+                %}
+  to: "{% render 'cross-border' with show_currency, show_currency: currency_selector,
+    id: 'mobile-currency' %}"
+  position: 7846..7949
+- from: |-
+    {%
+                  render 'cross-border' with
+                  show_locale: locale_selector,
+                  id: 'mobile-locale'
+                %}
+  to: "{% render 'cross-border' with show_locale, show_locale: locale_selector, id:
+    'mobile-locale' %}"
+  position: 8524..8619
+- from: |-
+    {%
+                  render 'cross-border' with
+                  show_locale: locale_selector,
+                  show_currency: currency_selector,
+                  id: 'footer'
+                %}
+  to: "{% render 'cross-border' with show_locale, show_locale: locale_selector, show_currency:
+    currency_selector, id: 'footer' %}"
+  position: 9647..9769
+{% endcomment %}

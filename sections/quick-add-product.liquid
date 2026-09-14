@@ -197,7 +197,7 @@
                   <div class="product__option-select-wrapper select-wrapper">
                     {{ option_values }}
 
-                    {% render 'icon' with icon: 'triangle' %}
+                    {% render 'icon' with icon, icon: 'triangle' %}
                   </div>
                 {%- endunless -%}
               </div>
@@ -224,7 +224,7 @@
               data-subtract-quantity
               aria-label="{{ 'general.accessibility.quantity_add' | t }}"
             >
-              {% render 'icon' with icon: 'minus' true, non_focusable: true %}
+              {% render 'icon' with icon, icon: 'minus', non_focusable: true %}
             </button>
             <input
               type="number"
@@ -242,7 +242,7 @@
               data-add-quantity
               aria-label="{{ 'general.accessibility.quantity_subtract' | t }}"
             >
-              {% render 'icon' with icon: 'plus', non_focusable: true %}
+              {% render 'icon' with icon, icon: 'plus', non_focusable: true %}
             </button>
           </div>
         </div>
@@ -251,14 +251,35 @@
           {{ 'products.product.quantity_error' | t }}
         </div>
 
-        {%
-          render 'product-form' with
-          product: product,
-          current_variant: current_variant,
-          show_dynamic_checkout: false,
-          hide_shop_pay: true
-        %}
+        {% render 'product-form' with product, product: product, current_variant: current_variant, show_dynamic_checkout: false, hide_shop_pay: true %}
       </div>
     </div>
   {%- endif -%}
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'triangle' %}"
+  to: "{% render 'icon' with icon, icon: 'triangle' %}"
+  position: 9026..9073
+- from: "{% render 'icon' with icon: 'minus' true, non_focusable: true %}"
+  to: "{% render 'icon' with icon, icon: 'minus', non_focusable: true %}"
+  position: 10175..10240
+- from: "{% render 'icon' with icon: 'plus', non_focusable: true %}"
+  to: "{% render 'icon' with icon, icon: 'plus', non_focusable: true %}"
+  position: 10879..10943
+- from: |-
+    {%
+              render 'product-form' with
+              product: product,
+              current_variant: current_variant,
+              show_dynamic_checkout: false,
+              hide_shop_pay: true
+            %}
+  to: "{% render 'product-form' with product, product: product, current_variant: current_variant,
+    show_dynamic_checkout: false, hide_shop_pay: true %}"
+  position: 11188..11331
+{% endcomment %}

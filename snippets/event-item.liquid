@@ -20,13 +20,7 @@
     {%- if block.settings.enable_date_badge or block.settings.image != blank -%}
       <div class="event-item__image-wrapper hover">
         {%- unless block.settings.image == blank -%}
-          {%-
-            render 'image' with
-            wrapper_class: "event-item__image",
-            image: block.settings.image,
-            disable_style: image_is_constrained,
-            has_reveal_container: true
-          -%}
+          {%- render 'image' with wrapper_class, wrapper_class: "event-item__image", image: block.settings.image, disable_style: image_is_constrained, has_reveal_container: true -%}
         {%- endunless -%}
 
         {%- if block.settings.enable_date_badge -%}
@@ -59,3 +53,22 @@
     </div>
   </{{ link_element }}>
 </li>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%-
+                render 'image' with
+                wrapper_class: "event-item__image",
+                image: block.settings.image,
+                disable_style: image_is_constrained,
+                has_reveal_container: true
+              -%}
+  to: '{%- render ''image'' with wrapper_class, wrapper_class: "event-item__image",
+    image: block.settings.image, disable_style: image_is_constrained, has_reveal_container:
+    true -%}'
+  position: 681..852
+{% endcomment %}

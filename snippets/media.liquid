@@ -32,12 +32,7 @@
       {% endif %}
     {%- endcapture -%}
     <a {{ media_atributes }}>
-      {%
-        render 'image' with
-        image: media,
-        disable_style: image_is_constrained,
-        has_reveal: has_reveal
-      %}
+      {% render 'image' with image, image: media, disable_style: image_is_constrained, has_reveal: has_reveal %}
     </a>
   {%- elsif media.media_type == 'video' -%}
     {{ media | video_tag: image_size: '1024x' }}
@@ -56,8 +51,28 @@
     {{ media | model_viewer_tag: reveal: 'interaction', toggleable: true }}
     <a href="#" class="model-poster" style="background-image: url({{ media | img_url: '1000x' }})">
       <span class="media-badge model in-poster">
-        {% render 'icon' with icon: '3d-button-control' %}
+        {% render 'icon' with icon, icon: '3d-button-control' %}
       </span>
     </a>
   {%- endif -%}
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+            render 'image' with
+            image: media,
+            disable_style: image_is_constrained,
+            has_reveal: has_reveal
+          %}
+  to: "{% render 'image' with image, image: media, disable_style: image_is_constrained,
+    has_reveal: has_reveal %}"
+  position: 1070..1176
+- from: "{% render 'icon' with icon: '3d-button-control' %}"
+  to: "{% render 'icon' with icon, icon: '3d-button-control' %}"
+  position: 1931..1987
+{% endcomment %}

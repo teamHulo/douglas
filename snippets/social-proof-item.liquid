@@ -46,7 +46,7 @@
     <div class="social-proof__item-footer">
       {% unless likes == blank %}
         <div class="social-proof__item-likes fs-body-base">
-          {% render 'icon' with icon: 'heart' %}
+          {% render 'icon' with icon, icon: 'heart' %}
           <span><span>{{ likes }}</span>&nbsp;{{ 'sections.social_proof.likes' | t }}</span>
         </div>
       {% endunless %}
@@ -66,4 +66,13 @@
       {% endif %}
     </div>
   {% endif %}
-</div>
+</div>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'heart' %}"
+  to: "{% render 'icon' with icon, icon: 'heart' %}"
+  position: 1216..1260
+{%- endcomment -%}

@@ -43,13 +43,7 @@
       >
         {%- for product_item in block.settings.product_list limit: max_products -%}
           <div class="complementary-products__slide carousel__slide" data-slide>
-            {%
-              render 'product-item' with
-              product: product_item,
-              aspect_ratio: block.settings.aspect_ratio,
-              quick_view_is_beneath: true,
-              product_columns: columns
-            %}
+            {% render 'product-item' with product, product: product_item, aspect_ratio: block.settings.aspect_ratio, quick_view_is_beneath: true, product_columns: columns %}
           </div>
         {%- else -%}
           {%- for i in (1..max_products) -%}
@@ -67,7 +61,7 @@
     </div>
 
     {%- if block.settings.layout == 'slider' -%}
-      {% render 'carousel-navigation' with columns: block.settings.columns, item_count: recommendations.products_count %}
+      {% render 'carousel-navigation' with columns, columns: block.settings.columns, item_count: recommendations.products_count %}
     {%- endif -%}
   {% endcapture %}
 
@@ -100,13 +94,7 @@
             {%- if recommendations.products_count > 0 -%}
               {%- for product_item in recommendations.products -%}
                 <div class="complementary-products__slide carousel__slide" data-slide>
-                  {%
-                    render 'product-item' with
-                    product: product_item,
-                    aspect_ratio: block.settings.aspect_ratio,
-                    quick_view_is_beneath: true,
-                    product_columns: columns
-                  %}
+                  {% render 'product-item' with product, product: product_item, aspect_ratio: block.settings.aspect_ratio, quick_view_is_beneath: true, product_columns: columns %}
                 </div>
               {%- endfor -%}
             {%- endif -%}
@@ -114,7 +102,7 @@
         </div>
 
         {%- if block.settings.layout == 'slider' -%}
-          {% render 'carousel-navigation' with columns: block.settings.columns, item_count: recommendations.products_count %}
+          {% render 'carousel-navigation' with columns, columns: block.settings.columns, item_count: recommendations.products_count %}
         {%- endif -%}
       </div>
     {%- elsif request.design_mode -%}
@@ -156,7 +144,7 @@
         </div>
 
         {%- if block.settings.layout == 'slider' -%}
-          {% render 'carousel-navigation' with columns: block.settings.columns, item_count: recommendations.products_count %}
+          {% render 'carousel-navigation' with columns, columns: block.settings.columns, item_count: recommendations.products_count %}
         {%- endif -%}
       </div>
     {%- endif -%}
@@ -202,3 +190,49 @@
     {{ content }}
   </div>
 {%- endif -%}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+                  render 'product-item' with
+                  product: product_item,
+                  aspect_ratio: block.settings.aspect_ratio,
+                  quick_view_is_beneath: true,
+                  product_columns: columns
+                %}
+  to: "{% render 'product-item' with product, product: product_item, aspect_ratio:
+    block.settings.aspect_ratio, quick_view_is_beneath: true, product_columns: columns
+    %}"
+  position: 1712..1873
+- from: "{% render 'carousel-navigation' with columns: block.settings.columns, item_count:
+    recommendations.products_count %}"
+  to: "{% render 'carousel-navigation' with columns, columns: block.settings.columns,
+    item_count: recommendations.products_count %}"
+  position: 2411..2535
+- from: |-
+    {%
+                        render 'product-item' with
+                        product: product_item,
+                        aspect_ratio: block.settings.aspect_ratio,
+                        quick_view_is_beneath: true,
+                        product_columns: columns
+                      %}
+  to: "{% render 'product-item' with product, product: product_item, aspect_ratio:
+    block.settings.aspect_ratio, quick_view_is_beneath: true, product_columns: columns
+    %}"
+  position: 3917..4078
+- from: "{% render 'carousel-navigation' with columns: block.settings.columns, item_count:
+    recommendations.products_count %}"
+  to: "{% render 'carousel-navigation' with columns, columns: block.settings.columns,
+    item_count: recommendations.products_count %}"
+  position: 4253..4377
+- from: "{% render 'carousel-navigation' with columns: block.settings.columns, item_count:
+    recommendations.products_count %}"
+  to: "{% render 'carousel-navigation' with columns, columns: block.settings.columns,
+    item_count: recommendations.products_count %}"
+  position: 5949..6073
+{% endcomment %}

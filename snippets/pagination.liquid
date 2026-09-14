@@ -28,7 +28,7 @@
             "
             aria-label="{{ 'general.pagination.previous_page' | t: type: pagination_type }}"
           >
-            {% render 'icon', with icon: 'arrow-stroke',  non_focusable: true %}
+            {% render 'icon', icon: 'arrow-stroke', non_focusable: true %}
           </a>
         </li>
       {%- endif -%}
@@ -77,7 +77,7 @@
             "
             aria-label="{{ 'general.pagination.next_page' | t: type: pagination_type }}"
           >
-            {% render 'icon', with icon: 'arrow-stroke',  non_focusable: true %}
+            {% render 'icon', icon: 'arrow-stroke', non_focusable: true %}
           </a>
         </li>
       {%- endif -%}
@@ -86,3 +86,16 @@
 
   <p class="pagination__footer ff-body">{{ 'general.pagination.viewing' | t: of: current_pagination_range, total: paginate.items }} {{ pagination_type }}</p>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon', with icon: 'arrow-stroke',  non_focusable: true %}"
+  to: "{% render 'icon', icon: 'arrow-stroke', non_focusable: true %}"
+  position: 1109..1171
+- from: "{% render 'icon', with icon: 'arrow-stroke',  non_focusable: true %}"
+  to: "{% render 'icon', icon: 'arrow-stroke', non_focusable: true %}"
+  position: 2679..2741
+{% endcomment %}

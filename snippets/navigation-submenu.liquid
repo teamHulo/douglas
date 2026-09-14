@@ -36,7 +36,7 @@
             {{ link.title }}
           </span>
           <span class="navigation__submenu-icon">
-            {% render 'icon' with icon: 'chevron' %}
+            {% render 'icon' with icon, icon: 'chevron' %}
           </span>
         </button>
 
@@ -57,3 +57,13 @@
     {%- assign has_children = false -%}
   {%- endfor -%}
 </ul>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'chevron' %}"
+  to: "{% render 'icon' with icon, icon: 'chevron' %}"
+  position: 1199..1245
+{% endcomment %}

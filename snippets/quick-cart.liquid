@@ -8,7 +8,7 @@
       aria-label="{{ 'general.accessibility.close_modal' | t }}"
       data-close-icon
     >
-      {% render 'icon-button' with icon: 'close-stroke', class:'close-stroke' %}
+      {% render 'icon-button' with icon, icon: 'close-stroke', class: 'close-stroke' %}
     </button>
     <div class="quick-cart__cart visible" data-cart data-scroll-lock-ignore>
       <div class="quick-cart__header ff-heading fs-heading-2-large">{{ 'quick_cart.cart' | t }}</div>
@@ -37,3 +37,14 @@
     </div>
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon-button' with icon: 'close-stroke', class:'close-stroke' %}"
+  to: "{% render 'icon-button' with icon, icon: 'close-stroke', class: 'close-stroke'
+    %}"
+  position: 306..387
+{% endcomment %}

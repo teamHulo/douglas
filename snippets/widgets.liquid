@@ -6,7 +6,7 @@
   >
     <div class="widget__item-header ">
       {%- unless block.settings.icon == 'none' -%}
-        {%- render 'icon' with icon: block.settings.icon -%}
+        {%- render 'icon' with icon, icon: block.settings.icon -%}
       {%- endunless -%}
       {%- if block.settings.title != blank -%}
         <h4 class="widget__item-heading element-animation ff-heading fs-heading-4-base">{{ block.settings.title }}</h4>
@@ -37,7 +37,19 @@
       >
         {{ 'products.product.estimate_shipping' | t }}
       </button>
-      {% render 'shipping-estimator-modal' with id: 'widget' %}
+      {% render 'shipping-estimator-modal' with id, id: 'widget' %}
     {%- endif -%}
   </div>
-</div>
+</div>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'icon' with icon: block.settings.icon -%}"
+  to: "{%- render 'icon' with icon, icon: block.settings.icon -%}"
+  position: 294..352
+- from: "{% render 'shipping-estimator-modal' with id: 'widget' %}"
+  to: "{% render 'shipping-estimator-modal' with id, id: 'widget' %}"
+  position: 1316..1377
+{%- endcomment -%}

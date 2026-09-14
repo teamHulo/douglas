@@ -9,29 +9,49 @@
           data-product-thumbnail
           aria-label="{{ 'general.accessibility.image_thumbail' | t: number: forloop.index }}"
         >
-          {% render 'image' with
-            image: media.preview_image,
-            id: media.id
-            wrapper_class: 'product-thumbnails__item-image',
-            disable_style: true
-          %}
+          {% render 'image' with image, image: media.preview_image, id: media.id, wrapper_class: 'product-thumbnails__item-image', disable_style: true %}
 
           {% case media.media_type %}
             {% when 'video' %}
               <div class="product-thumbnails__item-badge">
-                {% render 'icon' with icon: 'play-badge' %}
+                {% render 'icon' with icon, icon: 'play-badge' %}
               </div>
             {% when 'external_video' %}
               <div class="product-thumbnails__item-badge">
-                {% render 'icon' with icon: 'play-badge' %}
+                {% render 'icon' with icon, icon: 'play-badge' %}
               </div>
             {% when 'model' %}
               <div class="product-thumbnails__item-badge">
-                {% render 'icon' with icon: '3d-badge' %}
+                {% render 'icon' with icon, icon: '3d-badge' %}
               </div>
           {% endcase %}
         </button>
       </li>
     {% endfor %}
   </ul>
-{% endif %}
+{% endif %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {% render 'image' with
+                image: media.preview_image,
+                id: media.id
+                wrapper_class: 'product-thumbnails__item-image',
+                disable_style: true
+              %}
+  to: "{% render 'image' with image, image: media.preview_image, id: media.id, wrapper_class:
+    'product-thumbnails__item-image', disable_style: true %}"
+  position: 534..677
+- from: "{% render 'icon' with icon: 'play-badge' %}"
+  to: "{% render 'icon' with icon, icon: 'play-badge' %}"
+  position: 823..872
+- from: "{% render 'icon' with icon: 'play-badge' %}"
+  to: "{% render 'icon' with icon, icon: 'play-badge' %}"
+  position: 1009..1058
+- from: "{% render 'icon' with icon: '3d-badge' %}"
+  to: "{% render 'icon' with icon, icon: '3d-badge' %}"
+  position: 1186..1233
+{%- endcomment -%}

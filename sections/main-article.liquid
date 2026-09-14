@@ -16,17 +16,12 @@
     aria-haspopup="true"
   >
     <span class="article__share-text fs-body-small fs-body-bold">
-      {%- render 'icon' with icon: 'social-share' -%}
+      {%- render 'icon' with icon, icon: 'social-share' -%}
       {{ 'general.social.share' | t }}
     </span>
 
     <div class="article__share-icons" aria-hidden="true" aria-label="{{ 'general.social.alt_text.share_menu' | t }}">
-      {%
-        render 'share-icons' with
-        url: article.url,
-        title: article.title,
-        image: article.image
-      %}
+      {% render 'share-icons' with url, url: article.url, title: article.title, image: article.image %}
     </div>
   </button>
 {% endcapture %}
@@ -63,7 +58,7 @@
           {%- when 'featured_image' -%}
             {%- if article.image != blank -%}
               <div class="article__image animation-fade-up-reveal" {{ block.shopify_attributes }}>
-                {% render 'image' with image: article.image %}
+                {% render 'image' with image, image: article.image %}
               </div>
             {%- endif -%}
           {%- when 'content' -%}
@@ -316,3 +311,26 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'icon' with icon: 'social-share' -%}"
+  to: "{%- render 'icon' with icon, icon: 'social-share' -%}"
+  position: 577..630
+- from: |-
+    {%
+            render 'share-icons' with
+            url: article.url,
+            title: article.title,
+            image: article.image
+          %}
+  to: "{% render 'share-icons' with url, url: article.url, title: article.title, image:
+    article.image %}"
+  position: 807..904
+- from: "{% render 'image' with image: article.image %}"
+  to: "{% render 'image' with image, image: article.image %}"
+  position: 2200..2253
+{% endcomment %}

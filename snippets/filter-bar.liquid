@@ -24,7 +24,7 @@
           {{ 'filters.title' | t }}
 
           <span class="filter-bar__icon">
-            {% render 'icon' with icon: 'triangle' %}
+            {% render 'icon' with icon, icon: 'triangle' %}
           </span>
         </button>
       </div>
@@ -37,7 +37,7 @@
           {{ 'filters.sort_title' | t }}
 
           <span class="filter-bar__icon">
-            {% render 'icon' with icon: 'triangle' %}
+            {% render 'icon' with icon, icon: 'triangle' %}
           </span>
         </button>
       </div>
@@ -45,3 +45,16 @@
   </div>
 </div>
 
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: 'triangle' %}"
+  to: "{% render 'icon' with icon, icon: 'triangle' %}"
+  position: 817..864
+- from: "{% render 'icon' with icon: 'triangle' %}"
+  to: "{% render 'icon' with icon, icon: 'triangle' %}"
+  position: 1271..1318
+{% endcomment %}

@@ -31,17 +31,7 @@
   <div class="section__inner">
     <div class="text-columns-with-images__grid">
       {%- for block in section.blocks -%}
-        {%-
-          render 'text-columns-with-images-item' with
-          columns: section.settings.columns,
-          image: block.settings.image,
-          heading: block.settings.heading,
-          subheading: block.settings.subheading,
-          text_max_width: block.settings.text_max_width,
-          link: block.settings.link,
-          link_text: block.settings.link_text
-          button_size: button_size,
-        -%}
+        {%- render 'text-columns-with-images-item' with columns, columns: section.settings.columns, image: block.settings.image, heading: block.settings.heading, subheading: block.settings.subheading, text_max_width: block.settings.text_max_width, link: block.settings.link, link_text: block.settings.link_text, button_size: button_size -%}
       {%- endfor -%}
     </div>
   </div>
@@ -221,3 +211,27 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%-
+              render 'text-columns-with-images-item' with
+              columns: section.settings.columns,
+              image: block.settings.image,
+              heading: block.settings.heading,
+              subheading: block.settings.subheading,
+              text_max_width: block.settings.text_max_width,
+              link: block.settings.link,
+              link_text: block.settings.link_text
+              button_size: button_size,
+            -%}
+  to: "{%- render 'text-columns-with-images-item' with columns, columns: section.settings.columns,
+    image: block.settings.image, heading: block.settings.heading, subheading: block.settings.subheading,
+    text_max_width: block.settings.text_max_width, link: block.settings.link, link_text:
+    block.settings.link_text, button_size: button_size -%}"
+  position: 996..1328
+{% endcomment %}

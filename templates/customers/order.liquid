@@ -54,10 +54,7 @@
                   <div class="order__product">
                     <div class="order__image">
                       {%- if line_item.product.featured_media != blank -%}
-                        {% render 'image' with
-                          image: line_item.product.featured_media,
-                          disable_style: true
-                        %}
+                        {% render 'image' with image, image: line_item.product.featured_media, disable_style: true %}
                       {%- endif -%}
                     </div>
                     <div class="order__product-details">
@@ -215,3 +212,18 @@
     </div>
   </div>
 </section>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {% render 'image' with
+                              image: line_item.product.featured_media,
+                              disable_style: true
+                            %}
+  to: "{% render 'image' with image, image: line_item.product.featured_media, disable_style:
+    true %}"
+  position: 2740..2833
+{% endcomment %}
